@@ -130,7 +130,7 @@ SEAHORSE_LIBS="$SEAHORSE_LIBS $GPGME_LIBS"
 # -----------------------------------------------------------------------------
 # Nemo
 
-PKG_CHECK_MODULES(NEMO, [libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0])
+PKG_CHECK_MODULES(NEMO, [libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0])
 
 AC_SUBST(NEMO_CFLAGS)
 AC_SUBST(NEMO_LIBS)

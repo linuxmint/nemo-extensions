@@ -39,7 +39,7 @@ net usershare list [-l|--long] [wildcard sharename] - to list user defined share
 
 ====Compilation from sources====
 * You need the following dependencies:
-** gnome nemo 2.10
+** gnome nemo 
 ** libglade
 ** gtk+
 
