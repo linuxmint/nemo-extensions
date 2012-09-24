@@ -19,7 +19,7 @@ Build-Depends: debhelper (>= 8),
                libgtk-3-dev,
                libgconf2-dev,
                gnome-pkg-tools,
-               libnemo-extension-dev (>= 2.12)
+               libnemo-extension-dev
 Standards-Version: 3.9.2
 Homepage: http://live.gnome.org/Seahorse
 
