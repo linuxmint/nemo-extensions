@@ -14838,12 +14838,12 @@ if test -n "$NEMO_CFLAGS"; then
     pkg_cv_NEMO_CFLAGS="$NEMO_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0") 2>&5
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_NEMO_CFLAGS=`$PKG_CONFIG --cflags "libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0" 2>/dev/null`
+  pkg_cv_NEMO_CFLAGS=`$PKG_CONFIG --cflags "libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0" 2>/dev/null`
 else
   pkg_failed=yes
 fi
@@ -14854,12 +14854,12 @@ if test -n "$NEMO_LIBS"; then
     pkg_cv_NEMO_LIBS="$NEMO_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0") 2>&5
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_NEMO_LIBS=`$PKG_CONFIG --libs "libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0" 2>/dev/null`
+  pkg_cv_NEMO_LIBS=`$PKG_CONFIG --libs "libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0" 2>/dev/null`
 else
   pkg_failed=yes
 fi
@@ -14879,14 +14879,14 @@ else
         _pkg_short_errors_supported=no
 fi
         if test $_pkg_short_errors_supported = yes; then
-	        NEMO_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0" 2>&1`
+	        NEMO_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0" 2>&1`
         else
-	        NEMO_PKG_ERRORS=`$PKG_CONFIG --print-errors "libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0" 2>&1`
+	        NEMO_PKG_ERRORS=`$PKG_CONFIG --print-errors "libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
 	echo "$NEMO_PKG_ERRORS" >&5
 
-	as_fn_error $? "Package requirements (libnemo-extension >= 2.12.0 glib-2.0 >= 2.10.0) were not met:
+	as_fn_error $? "Package requirements (libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0) were not met:
 
 $NEMO_PKG_ERRORS
 
