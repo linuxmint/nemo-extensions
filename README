@@ -4,3 +4,35 @@ STATUS
 nemo-dropbox: functional
 nemo-fileroller: functional
 
+nemo-sendto: compiles
+nemo-seahorse: compiles
+nemo-share: compiles
+
+NOT YET INCLUDED:
+----------------
+
+nemo-wallpaper: used gconf instead of gsettings, should be part of nemo itself
+nemo-bzr: part of bzr-gtk, needs to be isolated from it
+nemo-rabbitcvs: part of rabbitcvs, needs to be isolated from it
+
+NAUTILUS EXTENSIONS MISSING IN NEMO:
+---------------------------------
+
+arkose-nautilus                 - Desktop application sandboxing - nautilus 
+nautilus-actions                - nautilus extension to configure programs t
+nautilus-clamscan               - Antivirus scanning for Nautilus           
+nautilus-compare                - Context menu comparison extension for Naut
+nautilus-filename-repairer      - Nautilus extension for filename encoding r
+nautilus-ideviceinfo            - utility showing information of idevices on
+nautilus-image-converter        - nautilus extension to mass resize or rotat
+nautilus-image-manipulator      - Resize and send images from Nautilus      
+nautilus-qdigidoc  		    - Nautilus file manager support for QDigiDoc
+nautilus-script-audio-convert   - A nautilus audio converter script         
+nautilus-script-collection-svn  - Nautilus subversion management scripts    
+nautilus-script-manager         - A simple management tool for nautilus scri
+nautilus-script-purrr           -                                           
+nautilus-scripts-manager        - simple tool for nautilus scripts managemen
+nautilus-sendto-empathy         - GNOME multi-protocol chat and call client 
+nautilus-wipe                   - Secure deletion extension for Nautilus    
+nautilus-pastebin               - Nautilus extension to send files to a past
+nautilus-gtkhash                - nautilus extension for computing checksums
