@@ -1,0 +1,327 @@
+# translation of eu.po to Basque
+# Copyright (C) 2004-2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the nemo-sendto package.
+#
+# Mikel Olasagasti <hey_neken@mundurat.net>, 2005.
+# IÃ±aki LarraÃ±aga Murgoitio <dooteo@euskalgnu.org>, 2005, 2006.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2006, 2008, 2009, 2010.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: eu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-16 13:51+0100\n"
+"PO-Revision-Date: 2010-03-24 14:42+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Erabilitako azken plugina bidaltzeko"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Erabilitako azken artxibo mota"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"Nemo-sendto erabiltzean azken aldiko fitxategiak bidaltzean erabili zen "
+"plugina gordetzeko erabilita."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"Azken aldian erabilitako artxibo motak gordetzeko erabilita (0:zip, 1: tar."
+"gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "_Bidali honi..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "Bidali fitxategiak urruneko gailuetara, edo pertsonei"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "Bidali honi..."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../gaim_plugin/nemo-sendto-plugin.c:309
+#: ../pidgin_plugin/nemo-sendto-plugin.c:331
+msgid "Nemo Integration"
+msgstr "Nemo-en integrazioa"
+
+#. name
+#. version
+#. summary
+#. name
+#. version
+#. summary
+#: ../gaim_plugin/nemo-sendto-plugin.c:311
+#: ../gaim_plugin/nemo-sendto-plugin.c:312
+#: ../pidgin_plugin/nemo-sendto-plugin.c:333
+#: ../pidgin_plugin/nemo-sendto-plugin.c:334
+msgid "Provides integration with Nemo"
+msgstr "Nemo-ekin integratzea eskaintzen du"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "Bidali honi..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Bidali fitxategia posta elektrikoz, berehalako mezularitzaz..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Bidali fitxategiak posta elektrikoz, berehalako mezularitzaz..."
+
+#: ../src/nemo-sendto-command.c:533
+msgid "Files"
+msgstr "Fitxategiak"
+
+#: ../src/nemo-sendto-command.c:737
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "URIak edo fitxategi-izenak aukera gisa pasatzea espero da\n"
+
+#: ../src/nemo-sendto-command.c:754
+msgid "Nemo Sendto"
+msgstr "Nemo Sendto"
+
+#: ../src/nemo-sendto-command.c:758
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Ezin izan da komando-lerroko aukerak analizatu: %s\n"
+
+#: ../src/nemo-sendto-command.c:773
+msgid "Could not load any plugins."
+msgstr "Ezin izan da pluginik kargatu."
+
+#: ../src/nemo-sendto-command.c:776
+msgid "Please verify your installation"
+msgstr "Egiaztatu instalazioa."
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Konpresioa</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Helburua</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "Bidali _honela:"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "Bidali hemen _paketatua:"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "Bidali h_oni:"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "_Bidali"
+
+#: ../src/plugins/bluetooth/bluetooth.c:445
+msgid "Programming error, could not find the device in the list"
+msgstr "Programazioko errorea, ezin izan da gailua bilatu zerrendan"
+
+#: ../src/plugins/bluetooth/bluetooth.c:520
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Obex Push fitxategi-transferentzia ez dago onartuta"
+
+#: ../src/plugins/bluetooth/bluetooth.c:544
+msgid "Bluetooth (OBEX Push)"
+msgstr "Bluetooth (OBEX Push)"
+
+#: ../src/plugins/empathy/empathy.c:136
+msgid "The contact selected cannot receive files."
+msgstr "Hautatutako kontaktuak ezin du fitxategirik jaso."
+
+#: ../src/plugins/empathy/empathy.c:142
+msgid "The contact selected is offline."
+msgstr "Hautatutako kontaktuak lineaz kanpo dago."
+
+#: ../src/plugins/empathy/empathy.c:195 ../src/plugins/empathy/empathy.c:256
+msgid "No error message"
+msgstr "Errore mezurik gabe"
+
+#: ../src/plugins/empathy/empathy.c:309
+msgid "Instant Message (Empathy)"
+msgstr "Berehalako mezularitza (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:367
+msgid "Email"
+msgstr "Posta"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Ezin da kontaktua lortu: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Ezin izan da kontaktua aurkitu: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "Ezin da ikuspegi bilagarria sortu."
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "Ongi burutu da"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "Argumentu bat baliogabea da."
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "Helbide-liburua lanpetuta dago."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "Helbide-liburua lineaz kanpo dago."
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "Helbide-liburua ez da existitzen."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "\"Ni\" kontaktua ez da existitzen."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "Helbide-liburua ez da kargatu."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "Helbide-liburua jadanik kargatuta dago."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "Baimena ukatu egin da helbide-liburua atzitzean."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "Kontaktua ez da aurkitu."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "Kontaktuaren ID hau badago lehendik ere."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "Protokoloa ez dago onartuta."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "Eragiketa bertan behera utzi da."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "Eragiketa ezin izan da bertan behera utzi."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "Helbide-liburuaren autentifikazioak huts egin du."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid "Authentication is required to access the address book and was not given."
+msgstr "Autentifikazioa behar da helbide-liburua atzitzeko, eta ez da eman."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "Konexio segurua ez dago erabilgarri."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "CORBAren errorea gertatu da helbide-liburua atzitzean."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "Helbide-liburuaren iturburua ez da existitzen."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "Errore ezezaguna gertatu da."
+
+#: ../src/plugins/gaim/gaim.c:228
+msgid "Instant Message (Gaim)"
+msgstr "Berehalako mezularitza (Gaim)"
+
+#: ../src/plugins/gajim/gajim.c:402
+msgid "Unable to send file"
+msgstr "Ezin da fitxategia bidali"
+
+#: ../src/plugins/gajim/gajim.c:403
+msgid "There is no connection to gajim remote service."
+msgstr "Ez dago konexiorik urruneko gajim zerbitzuarekin."
+
+#: ../src/plugins/gajim/gajim.c:427 ../src/plugins/gajim/gajim.c:466
+msgid "Sending file failed"
+msgstr "Huts egin du fitxategia bidaltzean"
+
+#: ../src/plugins/gajim/gajim.c:428
+msgid "Recipient is missing."
+msgstr "Hartzailea falta da."
+
+#: ../src/plugins/gajim/gajim.c:466
+msgid "Unknown recipient."
+msgstr "Hartzaile ezezaguna."
+
+#: ../src/plugins/gajim/gajim.c:488
+msgid "Instant Message (Gajim)"
+msgstr "Berehalako mezularitza (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:70
+#: ../src/plugins/nemo-burn/nemo-burn.c:85
+msgid "New CD/DVD"
+msgstr "CD/DVD berria"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:83
+msgid "Existing CD/DVD"
+msgstr "Existitzen den CD/DVDa"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:162
+msgid "CD/DVD Creator"
+msgstr "CD/DVD sortzailea"
+
+#: ../src/plugins/pidgin/pidgin.c:350
+msgid "Instant Message (Pidgin)"
+msgstr "Berehalako mezularitza (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:219
+msgid "Removable disks and shares"
+msgstr "Unitate eta euskarri aldagarriak"
+
+#: ../src/plugins/upnp/upnp.c:298
+msgid "UPnP Media Server"
+msgstr "UPnP multimedia zerbitzaria"
+

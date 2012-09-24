@@ -1,0 +1,203 @@
+# translation of gl.po to Galego
+# translation of nemo-share to galician
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Iván Méndez <imendez@udc.es>, 2007.
+# Ignacio Casal Quinteiro <icq@svn.gnome.org>, 2007.
+# Fran Diéguez <frandieguez@ubuntu.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: gl\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-share&component=general\n"
+"POT-Creation-Date: 2010-02-19 22:18+0000\n"
+"PO-Revision-Date: 2010-03-04 14:21+0100\n"
+"Last-Translator: Fran Diéguez <frandieguez@ubuntu.com>\n"
+"Language-Team: Galician <gnome@g11n.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+"O Nemo precisa engadir algunhas autorizacións ao seu cartafol \"%s\" co "
+"fin de o compartir"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"O cartafol \"%s\" presia os seguintes permisos adicionais para o poder "
+"compartir:\n"
+"%s%s%sDesexa que o Nemo engada automaticamente as autorización ao "
+"cartafol? "
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr "  - permisos de lectura por outros\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr "  - permisos de escritura por outros\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr "  - permisos de execución por outros\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "Engadir os permisos automaticamente"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Non foi posíbel cambiar os permisos do cartafol \"%s\""
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "O nome compartido é moi longo"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "O nome compartido non pode ficar baleiro"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Produciuse un erro mentres se obtiña a información de compartición: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "Outro elemento compartido ten o mesmo nome"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "Modificar a _compartición"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "Crear unha _compartición"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "Produciuse un erro mentres se obtiña a información de compartición"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "Compartir"
+
+#: ../src/nemo-share.c:1114
+msgid "Folder Sharing"
+msgstr "Compartición de cartafoles"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "Opción de compartición"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "Compartir este cartafol"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "Devolveuse %s %s %s co sinal %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "Produciuse un erro en %s %s %s por unha razón que se descoñece"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "A rede compartida devolveu un erro %d: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "A rede compartida devolveu un erro %d"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "a saída da rede compartida non está codificada en UTF-8"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Produciuse un erro"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "Devolveuse un parámetro de proba de Samba co sinal %d"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr ""
+"Produciuse un erro no parámetro de proba de Samba por unha razón que se "
+"descoñece"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "O parámetro de proba de Samba devolveu un erro %d: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "O parámetro de proba de Samba devolveu un erro %d"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr ""
+"Non é posíbel eliminar a compartición para o camiño %s: este camiño non está "
+"compartido"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"Non é posíbel cambiar o camiño dunha compartición existente; elimine, "
+"primeiro, a compartición e engada unha nova"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Compartición de cartafoles</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "Co_mentario:"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "_Nome de compartición:"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "Compartir este carta_fol"
+
+#: ../interfaces/share-dialog.ui.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr ""
+"Permitirlle _a outras persoas crear e eliminar ficheiros neste cartafol"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "Acceso _invitado (para xente sen unha conta de usuario)"

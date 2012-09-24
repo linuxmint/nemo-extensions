@@ -1,0 +1,313 @@
+# translation of nemo-sendto.po.master.kn.po to Kannada
+# Kannada translation of nemo-sendto.
+# Copyright (C) 2009 nemo-sendto's COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-sendto package.
+#
+# Shankar Prasad <svenkate@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto.po.master.kn\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2009-07-02 14:58+0000\n"
+"PO-Revision-Date: 2009-07-15 16:29+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: Kannada <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "ಕಳುಹಿಸಲು ಬಳಸಲಾದ ಕೊನೆಯ ಪ್ಲಗ್‌ಇನ್"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "ಕೊನೆಯಲ್ಲಿ ಬಳಸಲಾದ ಅರ್ಕೈವ್‌ನ ಬಗೆ"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr "ಕಳೆದ ಬಾರಿ nemo-sendto ಅನ್ನು ಬಳಸಿಕೊಂಡು ಕಡತಗಳನ್ನು ಕಳುಹಿಸುವಾಗ ಯಾವ ಪ್ಲಗ್‌ಇನ್ ಅನ್ನು ಬಳಸಲಾಗಿತ್ತು ಎನ್ನುವುದನ್ನು ಶೇಖರಿಸಿಡಲು ಬಳಸಲಾಗುತ್ತದೆ."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"ಕಳೆದ ಬಾರಿಗೆ ಯಾವ ಬಗೆಯ ಆರ್ಕೈವನ್ನು ಬಳಸಲಾಗಿತ್ತು ಎನ್ನುವುದನ್ನು ಶೇಖರಿಸಿಡಲು ಬಳಸಲಾಗುತ್ತದೆ (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು(_S)..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "ಕಡತಗಳನ್ನು ದೂರದಲ್ಲಿನ ಸಾಧನಗಳಿಗೆ, ಅಥವ ಜನರಿಗೆ ಕಳುಹಿಸಿ"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು..."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../pidgin_plugin/nemo-sendto-plugin.c:342
+msgid "Nemo Integration"
+msgstr "ನಾಟಿಲಸ್ ಸಂಯೋಜನೆ"
+
+#. name
+#. version
+#. summary
+#: ../pidgin_plugin/nemo-sendto-plugin.c:344
+#: ../pidgin_plugin/nemo-sendto-plugin.c:345
+msgid "Provides integration with Nemo"
+msgstr "ನಾಟಿಲಸ್‌ನೊಂದಿಗೆ ಸಂಯೋಜಿಸುತ್ತದೆ"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "ಕಡತವನ್ನು ಮೇಲ್‌ನ ಮೂಲಕ, ಕ್ಷಿಪ್ರ ಸಂದೇಶದ ಮೂಲಕ ಕಳುಹಿಸಿ..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "ಕಡತಗಳನ್ನು ಮೇಲ್‌ನ ಮೂಲಕ, ಕ್ಷಿಪ್ರ ಸಂದೇಶದ ಮೂಲಕ ಕಳುಹಿಸಿ..."
+
+#: ../src/nemo-sendto-command.c:540
+msgid "Files"
+msgstr "ಕಡತಗಳು"
+
+#: ../src/nemo-sendto-command.c:744
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "URIಗಳ ಅಥವ ಕಡತದ ಹೆಸರುಗಳನ್ನು ಆಯ್ಕೆಗಳಾಗಿ ನೀಡುವಂತೆ ಅಪೇಕ್ಷಿಸುತ್ತದೆ\n"
+
+#: ../src/nemo-sendto-command.c:761
+msgid "Nemo Sendto"
+msgstr "Nemo Sendto"
+
+#: ../src/nemo-sendto-command.c:765
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "ಆಜ್ಞಾ-ಸಾಲಿನ ಆಯ್ಕೆಗಳನ್ನು ಪಾರ್ಸ್ ಮಾಡಲಾಗಿಲ್ಲ: %s\n"
+
+#: ../src/nemo-sendto-command.c:780
+msgid "Could not load any plugins."
+msgstr "ಯಾವುದೆ ಪ್ಲಗ್‌ಇನ್‌ಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಿಲ್ಲ."
+
+#: ../src/nemo-sendto-command.c:783
+msgid "Please verify your installation"
+msgstr "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಅನುಸ್ಥಾಪನೆಯನ್ನು ಪರಿಶೀಲಿಸಿ"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>ಸಂಕುಚನ</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>ಗುರಿ</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "ಹೀಗೆ ಕಳುಹಿಸು(_a):"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "ಪ್ಯಾಕ್‌ ಮಾಡಿದ್ದನ್ನು ಇಲ್ಲಿ ಕಳುಹಿಸು(_p):"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು(_o):"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "ಕಳುಹಿಸು(_S)"
+
+#: ../src/plugins/bluetooth/bluetooth.c:448
+msgid "Programming error, could not find the device in the list"
+msgstr "ಪ್ರೊಗ್ರಾಮಿಂಗ್ ದೋಷ, ಪಟ್ಟಿಯಲ್ಲಿನ ಸಾಧನವು ಕಂಡುಬಂದಿಲ್ಲ"
+
+#: ../src/plugins/bluetooth/bluetooth.c:523
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Obex ಪುಶ್ ಕಡತ ವರ್ಗಾವಣೆಯು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ"
+
+#: ../src/plugins/bluetooth/bluetooth.c:547
+msgid "Bluetooth (OBEX Push)"
+msgstr "ಬ್ಲೂಟೂತ್ (OBEX ಪುಶ್)"
+
+#: ../src/plugins/empathy/empathy.c:130
+msgid "The contact selected cannot receive files."
+msgstr "ಆಯ್ಕೆ ಮಾಡಲಾದ ಸಂಪರ್ಕ ವಿಳಾಸವು ಕಡತಗಳನ್ನು ಸ್ವೀಕರಿಸುವುದಿಲ್ಲ."
+
+#: ../src/plugins/empathy/empathy.c:136
+msgid "The contact selected is offline."
+msgstr "ಆಯ್ಕೆ ಮಾಡಲಾದ ಸಂಪರ್ಕ ವಿಳಾಸವು ಆಫ್‌ಲೈನಿನಲ್ಲಿದೆ."
+
+#: ../src/plugins/empathy/empathy.c:193
+msgid "No error message"
+msgstr "ಯಾವುದೆ ದೋಷ ಸಂದೇಶವಿಲ್ಲ"
+
+#: ../src/plugins/empathy/empathy.c:269
+msgid "Instant Message (Empathy)"
+msgstr "ಕ್ಷಿಪ್ರ ಸಂದೇಶ (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:366
+msgid "Email"
+msgstr "ಇಮೇಲ್"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "ಸಂಪರ್ಕ ವಿಳಾಸವು ಪಡೆಯಲಾಗಿಲ್ಲ: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "ಸಂಪರ್ಕ ವಿಳಾಸವು ಕಂಡುಬಂದಿಲ್ಲ: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "ಹುಡುಕಬಹುದಾದ ನೋಟವನ್ನು ರಚಿಸಲಾಗಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "ಯಶಸ್ವಿಯಾಗಿದೆ"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "ಒಂದು ಆರ್ಗುಮೆಂಟ್ ಅಮಾನ್ಯವಾಗಿದೆ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "ವಿಳಾಸ ಪುಸ್ತಕವು ಕಾರ್ಯನಿರತವಾಗಿದೆ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "ವಿಳಾಸ ಪುಸ್ತಕವು ಆಫ್‌ಲೈನಿನಲ್ಲಿದೆ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "ವಿಳಾಸಪುಸ್ತಕವು ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "\"ನಾನು\" ಸಂಪರ್ಕವಿಳಾಸವು ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "ವಿಳಾಸಪುಸ್ತಕವನ್ನು ಈಗಾಗಲೆ ಲೋಡ್ ಮಾಡಲಾಗಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "ವಿಳಾಸಪುಸ್ತಕವನ್ನು ಈಗಾಗಲೆ ಲೋಡ್ ಮಾಡಲಾಗಿದೆ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "ವಿಳಾಸಪುಸ್ತಕವನ್ನು ನಿಲುಕಿಸಿಕೊಳ್ಳುವಾಗ ಅನುಮತಿಯನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "ಸಂಪರ್ಕವಿಳಾಸವು ಕಂಡುಬಂದಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "ಈ ಸಂಪರ್ಕ ID ಯು ಈಗಾಗಲೆ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "ಪ್ರೊಟೊಕಾಲ್ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "ಕಾರ್ಯವನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "ಕಾರ್ಯವನ್ನು ರದ್ದುಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "ವಿಳಾಸಪುಸ್ತಕದ ದೃಢೀಕರಣವು ವಿಫಲಗೊಂಡಿದೆ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid "Authentication is required to access the address book and was not given."
+msgstr "ವಿಳಾಸಪುಸ್ತಕವನ್ನು ನಿಲುಕಿಸಿಕೊಳ್ಳಲು ಒಂದು ದೃಢೀಕರಣದ ಅಗತ್ಯವಿದೆ ಆದರೆ ಅದನ್ನು ಒದಗಿಸಲಾಗಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "ಒಂದು ಸುರಕ್ಷಿತ ಸಂಪರ್ಕವು ಲಭ್ಯವಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "ವಿಳಾಸ ಪುಸ್ತಕವನ್ನು ನಿಲುಕಿಸಿಕೊಳ್ಳುವಾಗ ಒಂದು CORBA ದೋಷವು ಎದುರಾಗಿದೆ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "ವಿಳಾಸ ಪುಸ್ತಕದ ಮೂಲವು ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "ಒಂದು ಅಜ್ಞಾತ ದೋಷವು ಎದುರಾಗಿದೆ."
+
+#: ../src/plugins/gajim/gajim.c:403
+msgid "Unable to send file"
+msgstr "ಕಡತವನ್ನು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: ../src/plugins/gajim/gajim.c:404
+msgid "There is no connection to gajim remote service."
+msgstr "gajim ದೂರಸ್ಥ ಸೇವೆಗೆ ಯಾವುದೆ ಸಂಪರ್ಕವಿಲ್ಲ."
+
+#: ../src/plugins/gajim/gajim.c:428 ../src/plugins/gajim/gajim.c:467
+msgid "Sending file failed"
+msgstr "ಕಡತವನ್ನು ಕಳುಹಿಸುವಲ್ಲಿ ವಿಫಲಗೊಂಡಿದೆ"
+
+#: ../src/plugins/gajim/gajim.c:429
+msgid "Recipient is missing."
+msgstr "ಸ್ವೀಕರಿಸುವವರ ವಿಳಾಸವಿಲ್ಲ."
+
+#: ../src/plugins/gajim/gajim.c:467
+msgid "Unknown recipient."
+msgstr "ಸ್ವೀಕರಿಸುವವರ ಬಗೆಗೆ ತಿಳಿದಿಲ್ಲ."
+
+#: ../src/plugins/gajim/gajim.c:489
+msgid "Instant Message (Gajim)"
+msgstr "ಕ್ಷಿಪ್ರ ಸಂದೇಶ (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:73
+#: ../src/plugins/nemo-burn/nemo-burn.c:88
+msgid "New CD/DVD"
+msgstr "ಹೊಸ CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:86
+msgid "Existing CD/DVD"
+msgstr "ಈಗಿರುವ CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:165
+msgid "CD/DVD Creator"
+msgstr "CD/DVD ನಿರ್ಮಾಣಗಾರ"
+
+#: ../src/plugins/pidgin/pidgin.c:353
+msgid "Instant Message (Pidgin)"
+msgstr "ಕ್ಷಿಪ್ರ ಸಂದೇಶ (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "ತೆಗೆಯಬಹುದಾದ ಡಿಸ್ಕುಗಳು ಹಾಗು ಹಂಚಿಕೆಗಳು"
+
+#: ../src/plugins/upnp/upnp.c:301
+msgid "UPnP Media Server"
+msgstr "UPnP ಮಾಧ್ಯಮ ಪರಿಚಾರಕ"
+

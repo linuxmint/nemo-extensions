@@ -2,7 +2,7 @@ Description: Unlink files that are going to be replaced by the unpack
  Without this, the unpack will fail with ETXTBUSY on some files which are
  being executed.
 Author: Raphaël Hertzog <hertzog@debian.org>
-Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/nautilus-dropbox/+bug/818014
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/nemo-dropbox/+bug/818014
 
 --- a/dropbox.in
 +++ b/dropbox.in

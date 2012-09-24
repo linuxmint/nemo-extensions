@@ -1,0 +1,15 @@
+<SECTION>
+<FILE>nemo-sendto-plugin</FILE>
+NST_INIT_PLUGIN
+NstPlugin
+NstPluginCapabilities
+NstPluginInfo
+</SECTION>
+
+<SECTION>
+<FILE>nst-enum-types</FILE>
+<SUBSECTION Standard>
+NST_TYPE_PLUGIN_CAPABILITIES
+nst_plugin_capabilities_get_type
+</SECTION>
+

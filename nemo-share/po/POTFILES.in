@@ -1,0 +1,3 @@
+src/nemo-share.c
+src/shares.c
+[type: gettext/glade]interfaces/share-dialog.ui

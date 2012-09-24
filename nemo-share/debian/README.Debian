@@ -1,0 +1,20 @@
+nemo-share for Debian
+-------------------------
+
+A quick and easy way to have it running (must be done as root):
+
+#export USERSHARES_DIR="/var/lib/samba/usershares"
+#export USERSHARES_GROUP="sambashare"
+#mkdir ${USERSHARES_DIR}
+#groupadd ${USERSHARES_GROUP}
+#chown root:${USERSHARES_GROUP} ${USERSHARES_DIR}
+#chmod 01770 ${USERSHARES_DIR}
+#mv /etc/samba/smb.conf{,.bak}
+#cp /usr/share/doc/nemo-share/examples/smb.conf /etc/samba/
+#/etc/init.d/samba restart
+
+You must add users who can share folder in the usershare group, in this example the group is "sambashare":
+
+#usermod -a -G sambashare your_username
+
+ -- Chow Loong Jin <hyperair@gmail.com Tue, 17 Mar 2009 11:48:18 +0800

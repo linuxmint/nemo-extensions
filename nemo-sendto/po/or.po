@@ -1,0 +1,335 @@
+# translation of or.po to Oriya
+# Oriya translation of nemo-sendto.HEAD.pot.
+# Copyright (C) 2006, 2009, Free Software Foundation, Inc.
+# This file is distributed under the same license as the nemo-sendto package.
+# $Id: or.po,v 1.2 2006/04/07 13:53:03 hadess Exp $
+#
+# Gora Mohanty <gora_mohanty@yahoo.co.in>, 2006.
+# Manoj Kumar Giri <mgiri@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: or\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2009-02-28 00:15+0000\n"
+"PO-Revision-Date: 2009-03-18 16:36+0530\n"
+"Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
+"Language-Team: Oriya <oriya-it@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n!=1);\n\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "ପଠାଇବା ପାଇଁ ବ୍ୟବହାର ହୋଇଥିବା ଅନ୍ତିମ ପ୍ଲଗଇନ"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "ବ୍ୟବହାର ହୋଇଥିବା ଅନ୍ତିମ ପ୍ରକାର ଆଲେଖୀ"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"ଗତ ଥର nemo-sendto ବ୍ୟବହାର କରି ଫାଇଲଗୁଡ଼ିକୁ ପଠାଇବା ପୂର୍ବରୁ କେଉଁ ପ୍ଲଗଇନ "
+"ବ୍ୟବହୃତ ହୋଇଥିଲା।"
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"ଗତଥର କେଉଁ ଆଲେଖୀ ବ୍ୟବହୃତ ହୋଇଥିଲା ତାହା ସଂରକ୍ଷଣ କରିବା ପାଇଁ (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+#| msgid "Send to..."
+msgid "_Send to..."
+msgstr "କୁ ପଠାନ୍ତୁ (_S)..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "ସୂଦୂର ଉପକରଣ, କିମ୍ବା ବ୍ଯକ୍ତି ପାଖକୁ ଫାଇଲ ପଠାନ୍ତୁ"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "ପଠାନ୍ତୁ..."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../gaim_plugin/nemo-sendto-plugin.c:309
+#: ../pidgin_plugin/nemo-sendto-plugin.c:332
+msgid "Nemo Integration"
+msgstr "ନଟିଲସ ସଂଯୁକ୍ତିକରଣ"
+
+#. name
+#. version
+#. summary
+#. name
+#. version
+#. summary
+#: ../gaim_plugin/nemo-sendto-plugin.c:311
+#: ../gaim_plugin/nemo-sendto-plugin.c:312
+#: ../pidgin_plugin/nemo-sendto-plugin.c:334
+#: ../pidgin_plugin/nemo-sendto-plugin.c:335
+msgid "Provides integration with Nemo"
+msgstr "ନଟିଲସ ସହିତ ସଂଯୁକ୍ତିକରଣ ପ୍ରଦାନ କରେ"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "ପଠାନ୍ତୁ..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "ଡାକରେ ଫାଇଲ ପଠାନ୍ତୁ, ତୁରନ୍ତ ସନ୍ଦେଶ..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "ଡାକରେ ଫାଇଲଗୁଡ଼ିକ ପଠାନ୍ତୁ, ତୁରନ୍ତ ସନ୍ଦେଶ..."
+
+#: ../src/nemo-sendto-command.c:533
+msgid "Files"
+msgstr "ଫାଇଲଗୁଡ଼ିକ"
+
+#: ../src/nemo-sendto-command.c:737
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "URIs କିମ୍ବା ଫାଇଲନାମଗୁଡ଼ିକୁ ବିକଳ୍ପ ଭାବରେ ପଠାଯାଇଥାଏ\n"
+
+#: ../src/nemo-sendto-command.c:754
+msgid "Nemo Sendto"
+msgstr "ନଟିଲସ ସେଣ୍ଡଟୁ"
+
+#: ../src/nemo-sendto-command.c:758
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "ନିର୍ଦ୍ଦେଶ ନାମା ବିକଳ୍ପଗୁଡ଼ିକୁ ବିଶ୍ଳେଷଣ କରିପାରିଲା ନାହିଁ: %s\n"
+
+#: ../src/nemo-sendto-command.c:773
+msgid "Could not load any plugins."
+msgstr "କୌଣସି ପ୍ଲଗଇନଗୁଡ଼ିକୁ ଧାରଣ କରିପାରିଲା ନାହିଁ।"
+
+#: ../src/nemo-sendto-command.c:776
+msgid "Please verify your installation"
+msgstr "ଆପଣଙ୍କର ସ୍ଥାପନାକୁ ଯାଞ୍ଚକରନ୍ତୁ"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>ସଙ୍କୋଚନ</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>ଲକ୍ଷ୍ଯସ୍ଥଳ</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+#| msgid "Send as:"
+msgid "Send _as:"
+msgstr "ଏହି ପରି ଭାବରେ ପଠାନ୍ତୁ (_a):"
+
+#: ../src/nemo-sendto.glade.h:5
+#| msgid "Send packed in"
+msgid "Send _packed in:"
+msgstr "ସାଇତି କରି ପଠାନ୍ତୁ (_p):"
+
+#: ../src/nemo-sendto.glade.h:6
+#| msgid "Send to:"
+msgid "Send t_o:"
+msgstr "କୁ ପଠାନ୍ତୁ (_o):"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "ପଠାନ୍ତୁ (_S)"
+
+#: ../src/plugins/bluetooth/bluetooth.c:445
+msgid "Programming error, could not find the device in the list"
+msgstr "ପ୍ରଗାମିଙ୍ଗ ତ୍ରୁଟି, ତାଲିକାରେ ଉପକରଣ ପାଇ ପାରିଲା ନାହିଁ"
+
+#: ../src/plugins/bluetooth/bluetooth.c:520
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Obex Push ଫାଇଲ ପରିବହନ ସମର୍ଥିତ ନୁହଁ"
+
+#: ../src/plugins/bluetooth/bluetooth.c:544
+#| msgid "Bluetooth (OBEX)"
+msgid "Bluetooth (OBEX Push)"
+msgstr "ବ୍ଲୁଟୂଥ (OBEX Push)"
+
+#: ../src/plugins/empathy/empathy.c:134
+msgid "The contact selected cannot receive files."
+msgstr "ବଛାଯାଇଥିବା ସମ୍ପର୍କ ଫାଇଲଗୁଡ଼ିକୁ ଗ୍ରହଣ କରିପାରିବ ନାହିଁ।"
+
+#: ../src/plugins/empathy/empathy.c:140
+msgid "The contact selected is offline."
+msgstr "ବଛାଯାଇଥିବା ସମ୍ପର୍କ ଅଫଲାଇନ ଅଛି।"
+
+#: ../src/plugins/empathy/empathy.c:195 ../src/plugins/empathy/empathy.c:256
+msgid "No error message"
+msgstr "କୌଣସି ତ୍ରୁଟି ସନ୍ଦେଶ ନାହିଁ"
+
+#: ../src/plugins/empathy/empathy.c:309
+#| msgid "Instant Message (Gaim)"
+msgid "Instant Message (Empathy)"
+msgstr "ତୁରନ୍ତ ସନ୍ଦେଶ (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:367
+msgid "Email"
+msgstr "ଇ-ଡାକ"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "ସମ୍ପର୍କ ପାଇ ପାରିବ ନାହିଁ: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "ସମ୍ପର୍କ ଖୋଜି ପାରିଲା ନାହିଁ: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "ସନ୍ଧାନଯୋଗ୍ୟ ଦୃଶ୍ୟ ସୃଷ୍ଟିକରିପାରିଲା ନାହିଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "ସଫଳତା"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "ଗୋଟିଏ ସ୍ୱତନ୍ତ୍ରଚର ଅବୈଧ ଅଛି।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "ଠିକଣା ପୁସ୍ତକଟି ବ୍ୟସ୍ତ ଅଛି।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "ଠିକଣା ପୁସ୍ତକଟି ଅଫଲାଇନ ଅଛି।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "ଠିକଣା ପୁସ୍ତକଟି ଅବସ୍ଥିତ ନାହିଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "\"Me\" ସମ୍ପର୍କ ଅବସ୍ଥିତ ନାହିଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "ଠିକଣା ପୁସ୍ତକଟି ଧାରଣ ହୋଇନାହିଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "ଠିକଣା ପୁସ୍ତକଟି ପୂର୍ବରୁ ଧାରଣ ହୋଇଛି।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "ଠିକଣା ବହିକୁ ଅଭିଗମ୍ୟ କରିବା ସମୟରେ ଅନୁମତିକୁ ବାରଣ କରାଯାଇଛି।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "ସମ୍ପର୍କଟି ମିଳୁନାହିଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "ସମ୍ପର୍କ ID ପୂର୍ବରୁ ଅବସ୍ଥିତ ଅଛି।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "ପ୍ରୋଟୋକଲଟି ସମର୍ଥିତ ନୁହଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "ପ୍ରୟୋଗଟି ବାତିଲ ହୋଇଛି।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "ପ୍ରୟୋଗକୁ ବାତିଲ କରିପାରିଲା ନାହିଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "ଠିକଣା ପୁସ୍ତକ ବୈଧିକରଣ ବିଫଳ ହୋଇଛି।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid "Authentication is required to access the address book and was not given."
+msgstr "ଠିକଣା ପୁସ୍ତକକୁ ଅଭିଗମ୍ୟ କରିବା ପାଇଁ ବୈଧିକରଣ ଆବଶ୍ୟକ ଏବଂ ପ୍ରଦାନ କରାଯାଇନାହିଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "ଗୋଟିଏ ସୁରକ୍ଷିତ ସଂଯୋଗ ଉପଲବ୍ଧ ନାହିଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "ଠିକଣା ପୁସ୍ତକକୁ ଅଭିଗମ୍ୟ କରିବା ସମୟରେ ଗୋଟିଏ CORBA ତ୍ରୁଟି ଘଟିଛି।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "ଠିକଣା ପୁସ୍ତକ ଉତ୍ସ ଅବସ୍ଥିତ ନାହିଁ।"
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "ଗୋଟିଏ ଅଜଣା ତ୍ରୁଟି ଘଟିଛି।"
+
+#: ../src/plugins/gaim/gaim.c:228
+msgid "Instant Message (Gaim)"
+msgstr "ତୁରନ୍ତ ସନ୍ଦେଶ (ଜି.ଏ.ଆଇ.ଏମ.)"
+
+#: ../src/plugins/gajim/gajim.c:402
+msgid "Unable to send file"
+msgstr "ଫାଇଲ ପଠାଇବାରେ ଅସମର୍ଥ"
+
+#: ../src/plugins/gajim/gajim.c:403
+msgid "There is no connection to gajim remote service."
+msgstr "gajim ସୂଦୀର ସର୍ଭିସକୁ କୌଣସି ସଂଯୋଗ ନାହିଁ।"
+
+#: ../src/plugins/gajim/gajim.c:427 ../src/plugins/gajim/gajim.c:466
+msgid "Sending file failed"
+msgstr "ଫାଇଲ ପଠାଇବା ବିଫଳ ହୋଇଛି"
+
+#: ../src/plugins/gajim/gajim.c:428
+msgid "Recipient is missing."
+msgstr "ଗ୍ରହଣକର୍ତ୍ତା ଅନୁପସ୍ଥିତ ଅଛି।"
+
+#: ../src/plugins/gajim/gajim.c:466
+msgid "Unknown recipient."
+msgstr "ଅଜଣା ଗ୍ରହଣକର୍ତ୍ତା।"
+
+#: ../src/plugins/gajim/gajim.c:488
+#| msgid "Instant Message (Gaim)"
+msgid "Instant Message (Gajim)"
+msgstr "ତୁରନ୍ତ ସନ୍ଦେଶ (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:70
+#: ../src/plugins/nemo-burn/nemo-burn.c:85
+msgid "New CD/DVD"
+msgstr "ନୂତନ CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:83
+msgid "Existing CD/DVD"
+msgstr "ସ୍ଥିତବାନ CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:162
+msgid "CD/DVD Creator"
+msgstr "CD/DVD ସୃଷ୍ଟିକର୍ତ୍ତା"
+
+#: ../src/plugins/pidgin/pidgin.c:350
+#| msgid "Instant Message (Gaim)"
+msgid "Instant Message (Pidgin)"
+msgstr "ତୁରନ୍ତ ସନ୍ଦେଶ (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:219
+msgid "Removable disks and shares"
+msgstr "କଢ଼ାଯୋଗ୍ୟ ଡିସ୍କ ଏବଂ ସହଭାଗୀ"
+
+#: ../src/plugins/upnp/upnp.c:298
+msgid "UPnP Media Server"
+msgstr "UPnP ମେଡିଆ ସର୍ଭର"
+

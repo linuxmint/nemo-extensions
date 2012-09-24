@@ -1,0 +1,250 @@
+nemo-share (0.7.3-1ubuntu2) precise; urgency=low
+
+  * No-change rebuild against libnemo-extension1a.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 12 Dec 2011 09:21:00 +0100
+
+nemo-share (0.7.3-1ubuntu1) oneiric; urgency=low
+
+  * Add debian/patches/03_use_apturl.patch
+    + Transition synaptic to apturl (LP: #840292)
+
+ -- Mitsuya Shibata <mty.shibata@gmail.com>  Tue, 04 Oct 2011 10:34:37 +0200
+
+nemo-share (0.7.3-1) unstable; urgency=low
+
+  * [216b642] Update watch URL
+  * [5935de3] Imported Upstream version 0.7.3 (Closes: #630248)
+  * [aee4fd0] Drop upstreamed patches
+  * [8b469c0] Refresh 02_install_missing_samba.patch
+  * [b3611df] Refresh 99_ltmain_as-needed.patch
+  * [a049722] Drop explicit libglib2.0-dev build-dep
+  * [63b282f] Move to dh7
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Fri, 08 Jul 2011 19:29:57 +0800
+
+nemo-share (0.7.2-15) experimental; urgency=low
+
+  * debian/patches/02_install_missing_samba.patch,
+    debian/patches/05_dependencies.patch,
+    debian/patches/11_use-gio.patch:
+    + Drop libgnomeui dependency as part of the GNOME 3 cleaning effort
+      (LP: #664745). Thanks Michael Terry for the patch
+  * debian/source/format: Move to 3.0 (quilt)
+  * debian/patches/*: Refresh all patches for 3.0 (quilt) since
+    dpkg-source is less tolerant
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Sat, 06 Nov 2010 13:01:19 +0800
+
+nemo-share (0.7.2-14) unstable; urgency=low
+
+  * debian/patches/15_user-acl.patch:
+    + Fix inverted logic when freeing memory causing nemo to crash
+      (LP: #655721)
+  * debian/control: No change Standards-version bump from 3.8.4 to 3.9.1
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Fri, 22 Oct 2010 14:46:29 +0800
+
+nemo-share (0.7.2-13) unstable; urgency=low
+
+  * debian/patches/02_install_missing_samba.patch:
+    + Fix bug where restarting session does not work due to
+      gnome_master_client () yielding NULL (LP: #487474)
+  * debian/patches/15_user-acl.patch:
+    + Make owner have full control over share (LP: #480316)
+  * debian/patches/*:
+    + Update DEP3 tags
+  * debian/control:
+    + No change bump of Standards-Version
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Sat, 17 Apr 2010 21:03:23 +0800
+
+nemo-share (0.7.2-12) unstable; urgency=low
+
+  * debian/patches/02_install_missing_samba.patch:
+    + Correct spelling "ou" to "you"
+  * debian/control:
+    + No change Standards-Version bump to 3.8.3
+  * debian/README.source:
+    + Copied from /usr/share/doc/quilt to satisfy lintian
+  * debian/patches/12_undoable-action.patch:
+    + Fix "Create Share" wording to "Create _Share" which resulted in
+      untranslated strings.
+  * debian/patches/14_glade-to-gtkbuilder.patch:
+    + Transition po files properly, and patch .ui file in instead of
+      auto-generating it. Also, manually specify gettext domain for GtkBuilder.
+      Fixes issue where interface loaded from GtkBuilder file is untranslated.
+      (LP: #425677)
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Tue, 08 Sep 2009 03:32:03 +0800
+
+nemo-share (0.7.2-11) unstable; urgency=low
+
+  * debian/control:
+    + Add samba-common-bin to binary dependencies, since testparm has been
+      moved to samba-common-bin (Closes: #536271)
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Thu, 09 Jul 2009 13:03:49 +0800
+
+nemo-share (0.7.2-10) unstable; urgency=low
+
+  * debian/patches/12_undoable-action.patch:
+    + Fix bug where user is unable to undo sharing/unsharing a folder without
+      closing the property window (LP: #392165)
+  * debian/patches/13_permissions.patch:
+    + Don't require permissions go+rx on folders to be shared any more, since
+  * debian/patches/14_glade-to-gtkbuilder.patch:
+    + Migrate from glade to gtkbuilder
+      samba doesn't appear to have that requirement
+  * debian/patches/*.patch:
+    + Organize/Add information to patch headers as per DEP-3
+  * debian/control:
+    + Drop libglade2-dev build dependency
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Wed, 01 Jul 2009 05:16:40 +0800
+
+nemo-share (0.7.2-9) unstable; urgency=low
+
+  * debian/patches/05_dependencies.patch, 11_use-gio.patch:
+    + Drop GnomeVFS dependency and use GIO instead. Thanks Andreas Henriksson
+      for the patch
+  * debian/control:
+    + Bump Standards-Version to 3.8.2
+    + Add Enhances: nemo
+    + Drop libgnomevfs2-dev build-dependency
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Mon, 22 Jun 2009 01:18:11 +0800
+
+nemo-share (0.7.2-8) unstable; urgency=low
+
+  * debian/patches/10_fix-writable-detection.patch:
+    + Fix parsing of share writability from the output of net (LP: #280480)
+  * debian/rules:
+    + Add -Wl,-z,defs to LDFLAGS
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Sun, 21 Jun 2009 16:37:48 +0800
+
+nemo-share (0.7.2-7) unstable; urgency=low
+
+  * debian/patches/08_change-confusing-wording.patch:
+    + Change some confusing wording: "Allow other people to write in this
+      folder" to "Allow others to make changes in this folder" 
+      (LP: #385801)
+  * debian/patches/09_change-comments-location.patch:
+    + Change confusing position of "Comment" field (LP: #385801)
+  * debian/patches/*.patch:
+    + Amend patch headers, the top line was accidentally excluded from all of
+      them
+  * debian/control:
+    + Change of email address in Maintainer field
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Fri, 12 Jun 2009 00:51:17 +0800
+
+nemo-share (0.7.2-6) unstable; urgency=low
+
+  * debian/control:
+    + Bumped up samba suggests to 3.0.27a
+    + Depends on samba-common 3.0.27a for "net" binary
+  * debian/patches/*:
+    + Add descriptions to patches
+  * debian/patches/01_fix_install_dir.patch:
+    + Drop FIXME lines from Makefile.am and Makefile.in, since it's fixed
+    + Fix Makefile.in to grab extensiondir from pkg-config as well
+    + Use $(PKG_CONFIG) instead of pkg-config directly
+  * debian/patches/02_install_missing_samba.patch:
+    + Rewritten to fix LP: #258570, and also be more robust when attempting to
+      enable sharing of multiple directories while installing samba.
+  * debian/patches/07_set-title.patch:
+    + Manually set the title of the Sharing Options dialog so that it can be
+      translated (LP: #356191)
+
+ -- Chow Loong Jin <hyperair@gmail.com>  Mon, 11 May 2009 00:55:13 +0800
+
+nemo-share (0.7.2-5) unstable; urgency=low
+
+  * debian/control,
+    debian/patches/05_dependencies.patch:
+    + Drop libeel dependency (Closes: #525543)
+  * debian/control:
+    + Bump Standards-Version
+
+ -- Chow Loong Jin <hyperair@gmail.com>  Mon, 27 Apr 2009 03:22:34 +0800
+
+nemo-share (0.7.2-4) unstable; urgency=low
+
+  * debian/patches/06_fix-validation.patch:
+    + Fix issue where field validation errors aren't cleared after being
+      corrected
+  * debian/patches/02_install_missing_samba.patch:
+    + Ask to retry if installation failed
+
+ -- Chow Loong Jin <hyperair@gmail.com>  Sat, 21 Mar 2009 20:11:02 +0800
+
+nemo-share (0.7.2-3) unstable; urgency=low
+
+  * debian/patches/04_use_correct_icon.patch:
+    + Use folder-remote instead of gnome-fs-share
+
+ -- Chow Loong Jin <hyperair@gmail.com>  Fri, 20 Mar 2009 01:37:56 +0800
+
+nemo-share (0.7.2-2) unstable; urgency=low
+
+  * debian/patches/04_use_correct_icon.patch:
+    + Updated to fix icon in properties dialog as well
+
+ -- Chow Loong Jin <hyperair@gmail.com>  Thu, 19 Mar 2009 23:21:45 +0800
+
+nemo-share (0.7.2-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+    + Change maintainer (Closes: #501938)
+    + Change build-dep to include CDBS and Quilt
+    + Move samba from Depends to Suggests since 02_install_missing_samba.patch
+      allows for automatic installing of samba
+    + Add libgnomevfs2-dev dependency
+  * debian/rules:
+    + Move to CDBS
+    + Build translation templates
+    + Omit installing useless doc files (retain AUTHORS only)
+    + Add -Wl,--as-needed to LDFLAGS to drop unnecessary dependencies
+  * debian/examples:
+    + Add smb.conf to this
+   * debian/copyright:
+    + Switched to new copyright format
+    + Added another name to Upstream-Maintainers
+  * debian/docs:
+    + Dropped, not needed.
+   * debian/smb.conf, debian/README.Debian:
+    + Update usershare directory (Closes: #500443)
+  * Import patches from Ubuntu:
+    + debian/patches/01_fix_install_dir.patch:
+      - Fix install dir location for nemo extensions (Closes: #475230)
+      - Modified to use extension path from pkg-config
+    + debian/patches/02_install_missing_samba.patch:
+      - Ask to install samba and libpam-smbpass if it is not installed already
+    + debian/patches/03_no_verbose_logging.patch:
+      - Don't print extra messages in session logs when there is no issue
+      - Modified to also omit initializing and shutdown messages
+    + debian/patches/04_use_correct_icon.patch:
+      - Use gnome-fs-share icon in Nemo
+   * debian/patches/05_dependencies.patch:
+    + Add needed cflags and libs from libgnomeui-2.0 and
+      gnome-vfs-2.0
+  * debian/patches/99_ltmain_as-needed.patch:
+    + Imported from Banshee packaging, adds -Wl,--as-needed support
+
+ -- Chow Loong Jin <hyperair@gmail.com>  Wed, 18 Mar 2009 00:30:15 +0800
+
+nemo-share (0.7.1-2) unstable; urgency=low
+
+  * Upload to unstable
+  * Added an example of samba configuration file
+
+ -- Thierry Randrianiriana <randrianiriana@gmail.com>  Sun, 29 Apr 2007 18:48:52 +0300
+
+nemo-share (0.7.1-1) experimental; urgency=low
+
+  * Initial release (Closes: #315229)
+
+ -- Thierry Randrianiriana <randrianiriana@gmail.com>  Sun, 18 Mar 2007 08:21:12 +0300

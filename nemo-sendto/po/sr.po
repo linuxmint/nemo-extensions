@@ -1,0 +1,295 @@
+# Serbian translation of nemo-send-to
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2010.
+# 
+# This file is distributed under the same license as the nemo-send-to package.
+#
+# Милош Поповић <gpopac@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-send-to\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2010-01-08 16:09+0000\n"
+"PO-Revision-Date: 2010-01-26 19:51+0000\n"
+"Last-Translator: Милош Поповић <gpopac@gmail.com>\n"
+"Language-Team: Serbian <gnome@prevod.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Последњи додатак којим је извршено слање"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Последња врста архиве у којој је послато"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"Служи за памћење додатка којим је извршено последње слање датотека из "
+"Наутилусовог пошиљаоца."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"Служи за памћење врсте архиве у којој је извршено последње слање датотека "
+"(0: zip, 1: tar.gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "По_шаљи у..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "Шаље датотеке удаљеним уређајима или људима"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "Пошаљи у..."
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.ui.h:3
+msgid "Send To..."
+msgstr "Пошаљи у..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Шаље датотеку е-поштом или брзом поруком..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Шаље датотеке е-поштом или брзом поруком..."
+
+#: ../src/nemo-sendto-command.c:547
+msgid "Files"
+msgstr "Датотеке"
+
+#: ../src/nemo-sendto-command.c:760
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Очекујем унос адреса или имена датотека у виду опција\n"
+
+#: ../src/nemo-sendto-command.c:777
+msgid "Nemo Sendto"
+msgstr "Наутилусов пошиљалац"
+
+#: ../src/nemo-sendto-command.c:781
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Не могу да рашчланим опције наредбе: %s\n"
+
+#: ../src/nemo-sendto-command.c:796
+msgid "Could not load any plugins."
+msgstr "Не могу да учитам додатке."
+
+#: ../src/nemo-sendto-command.c:799
+msgid "Please verify your installation"
+msgstr "Проверите да ли је програм исправно инсталиран."
+
+#: ../src/nemo-sendto.ui.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Паковање</b>"
+
+#: ../src/nemo-sendto.ui.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Одредиште</b>"
+
+#: ../src/nemo-sendto.ui.h:4
+msgid "Send _as:"
+msgstr "Пошаљи _у:"
+
+#: ../src/nemo-sendto.ui.h:5
+msgid "Send _packed in:"
+msgstr "Пошаљи _запаковано као:"
+
+#: ../src/nemo-sendto.ui.h:6
+msgid "Send t_o:"
+msgstr "Пошаљи _на:"
+
+#: ../src/nemo-sendto.ui.h:7
+msgid "_Send"
+msgstr "По_шаљи"
+
+#: ../src/plugins/bluetooth/bluetooth.c:448
+msgid "Programming error, could not find the device in the list"
+msgstr "Грешка у програму. Не могу да нађем уређај унутар списка"
+
+#: ../src/plugins/bluetooth/bluetooth.c:523
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Није подржан пренос датотека кроз Обекс"
+
+#: ../src/plugins/bluetooth/bluetooth.c:547
+msgid "Bluetooth (OBEX Push)"
+msgstr "Блутут (кроз Обекс)"
+
+#: ../src/plugins/empathy/empathy.c:144
+msgid "The contact selected cannot receive files."
+msgstr "Изабрани контакт не може да прими датотеке."
+
+#: ../src/plugins/empathy/empathy.c:150
+msgid "The contact selected is offline."
+msgstr "Изабрани контакт је ван мреже."
+
+#: ../src/plugins/empathy/empathy.c:205
+msgid "No error message"
+msgstr "Нема поруке о грешци"
+
+#: ../src/plugins/empathy/empathy.c:281
+msgid "Instant Message (Empathy)"
+msgstr "Брзе поруке (Интернет писмоноша)"
+
+#: ../src/plugins/evolution/evolution.c:369
+msgid "Email"
+msgstr "Е-пошта"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Не могу да преузмем контакт: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Не могу да нађем контакт: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "Не могу прикажем претрагу."
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "Успешно"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "Није исправан аргумент."
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "Адресар је заузет."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "Адресар је ван мреже."
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "Адресар не постоји."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "Не постоји контакт са подацима о вама."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "Адресар није учитан."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "Адресар је већ учитан."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "Немате овлашћења за приступ адресару."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "Контакт није пронађен."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "Већ постоји овај ИБ контакта."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "Овај протокол није подржан."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "Радња је прекинута."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "Не можете да прекинете ову радњу."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "Не могу да се пријавим у адресар."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr "Није о неопходна пријава како би приступили адресару."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "Није доступна сигурна веза."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "Дошло је до CORBA грешке приликом приступања адресару."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "Не постоји извор адресара."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "Дошло је до непознате грешке."
+
+#: ../src/plugins/gajim/gajim.c:417
+msgid "Unable to send file"
+msgstr "Не могу да пошаљем датотеку"
+
+#: ../src/plugins/gajim/gajim.c:418
+msgid "There is no connection to gajim remote service."
+msgstr "Не постоји веза са удаљеним Гајим сервисом."
+
+#: ../src/plugins/gajim/gajim.c:442 ../src/plugins/gajim/gajim.c:482
+msgid "Sending file failed"
+msgstr "Није успело слање датотеке"
+
+#: ../src/plugins/gajim/gajim.c:443
+msgid "Recipient is missing."
+msgstr "Недостаје прималац."
+
+#: ../src/plugins/gajim/gajim.c:482
+msgid "Unknown recipient."
+msgstr "Није познат прималац."
+
+#: ../src/plugins/gajim/gajim.c:505
+msgid "Instant Message (Gajim)"
+msgstr "Брзе поруке (Гајим)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:92
+msgid "New CD/DVD"
+msgstr "Нови ЦД/ДВД"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:99
+msgid "Existing CD/DVD"
+msgstr "Постојећи ЦД/ДВД"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:178
+msgid "CD/DVD Creator"
+msgstr "Место за израду дискова"
+
+#: ../src/plugins/pidgin/pidgin.c:464
+msgid "Instant Message (Pidgin)"
+msgstr "Брзе поруке (Пиџин)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "Уклоњиве или дељене дискове"
+
+#: ../src/plugins/upnp/upnp.c:309
+msgid "UPnP Media Server"
+msgstr "UPnP медијски сервер"

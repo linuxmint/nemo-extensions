@@ -1,0 +1,46 @@
+nemo-wallpaper (0.1-0ubuntu5) precise; urgency=low
+
+  * No-change-rebuild for libnemo-extension transition
+
+ -- Andreas Moog <amoog@ubuntu.com>  Sat, 10 Dec 2011 16:07:14 +0100
+
+nemo-wallpaper (0.1-0ubuntu4) maverick; urgency=low
+
+  * Convert to Debian Source Format 3.0 (quilt).
+  * Add debian/patches/04_translations.diff (LP: #489345).
+  * debian/copyright: Point to exact version of GPL.
+  * Bump Standards Version to 3.8.4
+  * debian/rules: Don't ignore errors in clean target.
+  * debian/control: Remove broken homepage link.
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Thu, 10 Jun 2010 13:30:11 -0400
+
+nemo-wallpaper (0.1-0ubuntu3) hardy; urgency=low
+
+  * debian/patches/02_add-gconf-pkgconfig.dpatch:
+    - Add gconf-2.0 pkg-config flags so it can compile
+  * debian/patches/03_move-to-extensions-2.0.dpatch:
+    - Change libdir to /usr/lib/nemo/extensions-2.0 in order to make it
+      work with the new Nemo (LP: #186938)
+  * debian/control:
+    - Added libgconf2-dev to build-depends
+  * debian/rules:
+    - Change install: rule to remove files from extensions-2.0 instead of extensions-1.0.
+
+ -- Chow Loong Jin <hyperair@gmail.com>  Fri, 18 Apr 2008 19:01:33 +0800
+
+nemo-wallpaper (0.1-0ubuntu2) gutsy; urgency=low
+
+  * debian/patches/01_libnemo-wallpaper-rename.dpatch:
+    - Add some LDFLAGS to prevent the resulting shared object file
+      from being buil with a soname in the filename. (LP: #144208)
+  * debian/control: Build-depend on dpatch.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Fri, 28 Sep 2007 21:53:46 +1000
+
+nemo-wallpaper (0.1-0ubuntu1) gutsy; urgency=low
+
+  * Initial release (LP: #107901)
+
+ -- Cyrille Grosdemange <ze.cyrilou@gmail.com>  Sat,  9 Jun 2007 06:29:25 +0200
+

@@ -1,0 +1,188 @@
+# Norwegian Bokmål translation of nemo-share.
+# Copyright (C) 2000-2005 Free Software Foundation, Inc.
+# Kjartan Maraas <kmaraas@gnome.org>, 2000-2008.
+# Åsmund Skjæveland <aasmunds@fys.uio.no>, 2003.
+# Terance Edward Sola <terance@lyse.net>, 2005.
+# Øivind Hoel <ohoel@cvs.gnome.org>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share 2.23.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-07 18:51+0200\n"
+"PO-Revision-Date: 2008-10-07 18:55+0200\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
+"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/nemo-share.c:129
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+
+#: ../src/nemo-share.c:137
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+
+#: ../src/nemo-share.c:141
+msgid "  - read permission by others\n"
+msgstr ""
+
+#: ../src/nemo-share.c:142
+msgid "  - write permission by others\n"
+msgstr ""
+
+#: ../src/nemo-share.c:143
+msgid "  - execute permission by others\n"
+msgstr ""
+
+#: ../src/nemo-share.c:147
+#, fuzzy
+msgid "Add the permissions automatically"
+msgstr "Rettigheter for filen."
+
+#: ../src/nemo-share.c:173
+#, fuzzy, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Kunne ikke endre rettigheter for «%s»: %s"
+
+#: ../src/nemo-share.c:444
+msgid "Share name is too long"
+msgstr ""
+
+#: ../src/nemo-share.c:478
+#, fuzzy
+msgid "The share name cannot be empty"
+msgstr "Emblemet kan ikke legges til."
+
+#: ../src/nemo-share.c:491
+#, fuzzy, c-format
+msgid "Error while getting share information: %s"
+msgstr "Feil under oppretting av lenke til «%B»."
+
+#: ../src/nemo-share.c:501
+msgid "Another share has the same name"
+msgstr ""
+
+#: ../src/nemo-share.c:669
+#, fuzzy
+msgid "There was an error while getting the sharing information"
+msgstr "Det oppsto en feil under henting av informasjon om «%B»."
+
+#: ../src/nemo-share.c:769
+msgid "Modify _Share"
+msgstr "Endre _delt ressurs"
+
+#: ../src/nemo-share.c:771
+msgid "Create _Share"
+msgstr "Opprett _delt ressurs"
+
+#: ../src/nemo-share.c:1029
+msgid "Share"
+msgstr "Delt ressurs"
+
+#: ../src/nemo-share.c:1129
+msgid "Sharing Options"
+msgstr "Alternativer for deling"
+
+#: ../src/nemo-share.c:1130
+msgid "Share this Folder"
+msgstr "Del denne mappen"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr ""
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr ""
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr ""
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr ""
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr ""
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Feilet"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr ""
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr ""
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr ""
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr ""
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr ""
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+
+#: ../interfaces/share-dialog.glade.in.h:1
+#, fuzzy
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Feil ved automatisk kjøring av program</b></big>"
+
+#: ../interfaces/share-dialog.glade.in.h:2
+msgid "Co_mment:"
+msgstr "Ko_mmentar:"
+
+#: ../interfaces/share-dialog.glade.in.h:3
+msgid "Share _name:"
+msgstr "_Navn på delt ressurs:"
+
+#: ../interfaces/share-dialog.glade.in.h:4
+#, fuzzy
+msgid "Share this _folder"
+msgstr "Lukk denne mappen"
+
+#: ../interfaces/share-dialog.glade.in.h:5
+#, fuzzy
+msgid "_Allow other people to write in this folder"
+msgstr "Monter volum som er assosiert med denne mappen"
+
+#: ../interfaces/share-dialog.glade.in.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr ""

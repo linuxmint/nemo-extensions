@@ -1,0 +1,348 @@
+# Catalan translation of nemo-sendto
+# Copyright © 2005 The Free Software Foundation, Inc.
+# This file is distributed under the same license as the
+#   nemo-sendto package.
+# Gil Forcada <gilforcada@guifi.net>, 2005, 2006, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-21 22:52+0200\n"
+"PO-Revision-Date: 2010-04-02 18:47+0200\n"
+"Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
+"Language-Team: Catalan <tradgnome@softcatala.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Últim connector que s'ha fet servir per enviar"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Últim tipus d'arxiu que s'ha fet servir"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"Es fa servir per a emmagatzemar el connector emprat la darrera vegada que es "
+"va enviar un fitxer amb el nemo-sendto."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"Es fa servir per a emmagatzemar quin tipus d'arxiu es va emprar la darrera "
+"vegada (0: zip, 1:tar.gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "_Envia a..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "Envia fitxers a dispositius remots o a altra gent"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "Envia a..."
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.ui.h:3
+msgid "Send To..."
+msgstr "Envia a..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Envia un fitxer per correu electrònic, missatgeria instantània..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Envia els fitxers per correu electrònic, missatgeria instantània..."
+
+#: ../src/nemo-sendto-command.c:569
+msgid "Files"
+msgstr "Fitxers"
+
+#: ../src/nemo-sendto-command.c:782
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Espera que es passen com a opcions els URI o noms de fitxers\n"
+
+#: ../src/nemo-sendto-command.c:803
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "No s'ha pogut analitzar les opcions de línia d'ordes: %s\n"
+
+#: ../src/nemo-sendto-command.c:818
+msgid "Could not load any plugins."
+msgstr "No s'ha pogut carregar cap connector."
+
+#: ../src/nemo-sendto-command.c:821
+msgid "Please verify your installation"
+msgstr "Comproveu la vostra instal·lació"
+
+#: ../src/nemo-sendto.ui.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Compressió</b>"
+
+#: ../src/nemo-sendto.ui.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Destinació</b>"
+
+#: ../src/nemo-sendto.ui.h:4
+msgid "Send _as:"
+msgstr "Envia com _a:"
+
+#: ../src/nemo-sendto.ui.h:5
+msgid "Send _packed in:"
+msgstr "Envia _empaquetat en:"
+
+#: ../src/nemo-sendto.ui.h:6
+msgid "Send t_o:"
+msgstr "E_nvia a:"
+
+#: ../src/nemo-sendto.ui.h:7
+msgid "_Send"
+msgstr "En_via"
+
+#: ../src/plugins/bluetooth/bluetooth.c:451
+msgid "Programming error, could not find the device in the list"
+msgstr "Error de programació, no s'ha pogut trobar el dispositiu a la llista"
+
+#: ../src/plugins/bluetooth/bluetooth.c:526
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "La transferència de fitxers Obex Push no està implementada"
+
+#: ../src/plugins/bluetooth/bluetooth.c:550
+msgid "Bluetooth (OBEX Push)"
+msgstr "Bluetooth (OBEX Push)"
+
+#: ../src/plugins/empathy/empathy.c:144
+msgid "The contact selected cannot receive files."
+msgstr "El contacte seleccionat no pot rebre fitxers."
+
+#: ../src/plugins/empathy/empathy.c:150
+msgid "The contact selected is offline."
+msgstr "El contacte seleccionat està fora de línia."
+
+#: ../src/plugins/empathy/empathy.c:205
+msgid "No error message"
+msgstr "Sense missatge d'error"
+
+#: ../src/plugins/empathy/empathy.c:281
+msgid "Instant Message (Empathy)"
+msgstr "Missatge instantani (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:369
+msgid "Email"
+msgstr "Correu electrònic"
+
+#: ../src/plugins/evolution/e-contact-entry.c:153
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "No s'ha pogut obtindre el contacte: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:186
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "No s'ha trobat el contacte: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:414
+msgid "Cannot create searchable view."
+msgstr "No s'ha pogut crear una visualització cercable."
+
+#: ../src/plugins/evolution/e-contact-entry.c:886
+msgid "Success"
+msgstr "Finalitzat"
+
+#: ../src/plugins/evolution/e-contact-entry.c:888
+msgid "An argument was invalid."
+msgstr "Un argument era no vàlid."
+
+#: ../src/plugins/evolution/e-contact-entry.c:890
+msgid "The address book is busy."
+msgstr "La llibreta d'adreces està ocupada."
+
+#: ../src/plugins/evolution/e-contact-entry.c:892
+msgid "The address book is offline."
+msgstr "La llibreta d'adreces està fora de línia."
+
+#: ../src/plugins/evolution/e-contact-entry.c:894
+msgid "The address book does not exist."
+msgstr "No existeix la llibreta d'adreces."
+
+# FIXME
+#: ../src/plugins/evolution/e-contact-entry.c:896
+msgid "The \"Me\" contact does not exist."
+msgstr "No existeix el contacte «Jo»."
+
+#: ../src/plugins/evolution/e-contact-entry.c:898
+msgid "The address book is not loaded."
+msgstr "No està carregada la llibreta d'adreces."
+
+#: ../src/plugins/evolution/e-contact-entry.c:900
+msgid "The address book is already loaded."
+msgstr "Ja està carregada la llibreta d'adreces."
+
+#: ../src/plugins/evolution/e-contact-entry.c:902
+msgid "Permission was denied when accessing the address book."
+msgstr "S'ha denegat el permís per a accedir a la llibreta d'adreces."
+
+#: ../src/plugins/evolution/e-contact-entry.c:904
+msgid "The contact was not found."
+msgstr "No s'ha trobat el contacte."
+
+#: ../src/plugins/evolution/e-contact-entry.c:906
+msgid "This contact ID already exists."
+msgstr "Ja existeix l'identificador del contacte."
+
+#: ../src/plugins/evolution/e-contact-entry.c:908
+msgid "The protocol is not supported."
+msgstr "El protocol no està implementat."
+
+#: ../src/plugins/evolution/e-contact-entry.c:910
+msgid "The operation was cancelled."
+msgstr "S'ha cancel·lat l'operació."
+
+#: ../src/plugins/evolution/e-contact-entry.c:912
+msgid "The operation could not be cancelled."
+msgstr "No s'ha pogut cancel·lar l'operació."
+
+#: ../src/plugins/evolution/e-contact-entry.c:914
+msgid "The address book authentication failed."
+msgstr "Ha fallat l'autenticació de la llibreta d'adreces."
+
+#: ../src/plugins/evolution/e-contact-entry.c:916
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr ""
+"Es requereix autenticació per a accedir a la llibreta d'adreces i no s'ha "
+"proporcionat."
+
+#: ../src/plugins/evolution/e-contact-entry.c:918
+msgid "A secure connection is not available."
+msgstr "No està disponible una connexió segura."
+
+#: ../src/plugins/evolution/e-contact-entry.c:920
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr ""
+"S'ha produït un error de CORBA mentre s'accedia a la llibreta d'adreces."
+
+#: ../src/plugins/evolution/e-contact-entry.c:922
+msgid "The address book source does not exist."
+msgstr "No existeix la font de la llibreta d'adreces."
+
+#: ../src/plugins/evolution/e-contact-entry.c:924
+#: ../src/plugins/evolution/e-contact-entry.c:927
+msgid "An unknown error occurred."
+msgstr "S'ha produït un error desconegut."
+
+#: ../src/plugins/gajim/gajim.c:417
+msgid "Unable to send file"
+msgstr "No s'ha pogut enviar el fitxer"
+
+#: ../src/plugins/gajim/gajim.c:418
+msgid "There is no connection to gajim remote service."
+msgstr "No hi ha connexió amb el servei remot gajim."
+
+#: ../src/plugins/gajim/gajim.c:442 ../src/plugins/gajim/gajim.c:482
+msgid "Sending file failed"
+msgstr "S'ha produït un error en enviar el fitxer"
+
+#: ../src/plugins/gajim/gajim.c:443
+msgid "Recipient is missing."
+msgstr "Falta el destinatari."
+
+#: ../src/plugins/gajim/gajim.c:482
+msgid "Unknown recipient."
+msgstr "Destinatari desconegut."
+
+#: ../src/plugins/gajim/gajim.c:505
+msgid "Instant Message (Gajim)"
+msgstr "Missatge instantani (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:92
+msgid "New CD/DVD"
+msgstr "CD/DVD nou"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:99
+msgid "Existing CD/DVD"
+msgstr "CD/DVD existent"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:178
+msgid "CD/DVD Creator"
+msgstr "Creador de CD/DVD"
+
+#: ../src/plugins/pidgin/pidgin.c:464
+msgid "Instant Message (Pidgin)"
+msgstr "Missatge instantani (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "Discos extraïbles i comparticions"
+
+#: ../src/plugins/upnp/upnp.c:309
+msgid "UPnP Media Server"
+msgstr "Servidor multimèdia UPnP"
+
+#~ msgid "Nemo Integration"
+#~ msgstr "Integració amb el Nemo"
+
+#~ msgid "Provides integration with Nemo"
+#~ msgstr "Proporciona integració amb el Nemo"
+
+#~ msgid "Nemo Sendto"
+#~ msgstr "Emissor del Nemo"
+
+#~ msgid "Email (Evolution)"
+#~ msgstr "Correu electrònic (Evolution)"
+
+#~ msgid "Instant Message (Gaim)"
+#~ msgstr "Missatge instantani (Gaim)"
+
+#~ msgid "Default folder to use"
+#~ msgstr "Directori per defecte a utilitzar"
+
+#~ msgid "You don't insert the package name"
+#~ msgstr "No heu introduït el nom del paquet"
+
+#~ msgid "Email (Balsa)"
+#~ msgstr "Correu electrònic (Balsa)"
+
+#~ msgid "Device does not support Obex File Transfer"
+#~ msgstr "El dispositiu no permet la transferència de fitxers per Obex"
+
+#~ msgid "Email (Claws Mail)"
+#~ msgstr "Correu electrònic (Claws Mail)"
+
+#~ msgid "Email (Thunderbird)"
+#~ msgstr "Correu electrònic (Thunderbird)"
+
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid ""
+#~ ".zip\n"
+#~ ".tar.gz\n"
+#~ ".tar.bz2"
+#~ msgstr ""
+#~ ".zip\n"
+#~ ".tar.gz\n"
+#~ ".tar.bz2"
+
+#~ msgid "FOLDER"
+#~ msgstr "DIRECTORI"
+
+#~ msgid "Email (Sylpheed-Claws)"
+#~ msgstr "Correu electrònic (Sylpheed-Claws)"
+
+#~ msgid "*"
+#~ msgstr "*"

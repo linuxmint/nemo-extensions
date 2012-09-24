@@ -1,0 +1,427 @@
+==============
+Version 3.0.1
+==============
+
+Nemo Sendto
+
+- Updated translations
+
+==============
+Version 3.0.0
+==============
+
+Nemo Sendto
+
+- Translation updates
+- Fix schema path
+
+==============
+Version 2.91.6
+==============
+
+Nemo Sendto
+
+- Translation updates
+
+==============
+Version 2.90.0
+==============
+
+Nemo Sendto
+
+- Port to GTK+ 3.x and GSettings
+- Remove Bluetooth plugin, now in gnome-bluetooth itself
+- Remove Empathy plugin, now in empathy itself
+- Fix handling of shadowed mounts in the removable drives plugin
+- Never unload plugins, to avoid crashes
+- Fix mailto: command for Thunderbird
+- Make the last select medium's widget grab focus on startup
+
+==============
+Version 2.28.4
+==============
+
+Nemo Sendto
+
+- Release for GNOME 2.30
+- Updated translations
+
+==============
+Version 2.28.3
+==============
+
+Nemo Sendto
+
+Bug fixes:
+	- Fix undefined references when linking plugins
+	- Fix possible crasher in Bluetooth plugin
+	- Respect the "gtk-button-images" setting
+	- Fix keyboard selection in mail plugin
+
+==============
+Version 2.28.2
+==============
+
+Nemo Sendto
+
+Bug fixes:
+	- Fix build and distcheck problems
+
+==============
+Version 2.28.1
+==============
+
+Nemo Sendto
+
+General:
+	- Add API documentation for out-of-tree plugins
+	- Remove need for the pidgin plugin, use the
+	  D-Bus pidgin API
+
+Bug fixes:
+	- Add support for Anjal and Seamonkey mail clients
+	- Fix Balsa support
+	- Fix Thunderbird support for some cases
+	- Update man page
+	- Remove build requirement on gajim
+
+==============
+Version 2.28.0
+==============
+
+Nemo Sendto
+
+Bug fixes:
+	- Fix command-line for Claws and Sylpheed
+	- Fix icons for the nemo-burn plugin
+	- Fix Thunderbird's command-line arguments
+	- Update UPNP plugin for gupnp 0.13
+
+=============
+Version 1.1.7
+=============
+
+Nemo Sendto
+
+Bug fixes:
+	- Port to newer Empathy API
+	- Enable nemo-burn plugin by default
+
+=============
+Version 1.1.6
+=============
+
+Nemo Sendto
+
+Bug fixes:
+	- Fix problems with long plugin descriptions
+	- Add "claws" as a Sylpheed variant
+	- Update for new Empathy file transfer API
+	- Only display users that can receive files in the
+	  Empathy plugin
+
+Other changes:
+	- Port to GtkBuilder
+	- Disable the evolution plugin for newers versions
+	  of Evolution, it's builtin
+
+=============
+Version 1.1.5
+=============
+
+Nemo Sendto
+
+Bug fixes:
+	- Fix the plugins not getting translated properly
+	- Remove mention of "Evolution" in the mail plugin
+
+===============
+Version 1.1.4.1
+===============
+
+Nemo Sendto
+
+Bug fixes:
+	- Fix infinite loop in the Pidgin plugin
+
+=============
+Version 1.1.4
+=============
+
+Nemo Sendto
+
+Bug fixes:
+	- Fix crash in the Pidgin plugin when the file system is full
+	- Pidgin plugin cleanups
+
+Other changes:
+	- Remove Gaim plugin
+
+=============
+Version 1.1.3
+=============
+
+Nemo Sendto
+
+Bug fixes:
+	* Use new EmpathyContactSelector and update for latest Empathy
+
+
+=============
+Version 1.1.2
+=============
+
+Nemo Sendto
+
+New features:
+	* Add an evolution plugin to allow sending arbitrary attachments
+	  through nemo-sendto
+	* Add a "Removable devices" plugin
+	* Enable the "burn" plugin by default
+
+Bug fixes:
+	* Remove the separate mailer plugins, and use the default
+	GNOME mailer instead
+	* Fix no plugins being able to send files (oops)
+	* Be more lax when checking whether a device supports ObexFTP,
+	  also check for the File Transfer profile, and update the profiles
+	  if a supported on doesn't appear
+	* Make it possible for plugins to support sending directories
+	* Support the "Pecan" Pidgin MSN plugin
+	* Fix a few memory leaks
+
+=============
+Version 1.1.1
+=============
+
+Nemo Sendto
+	* Add plugin to allow sending files to UPNP Media Servers
+	* Add plugin to allow sending files through Empathy
+	* Add plugin to send files to be burnt through nemo-cd-burner
+	  (currently disabled by default)
+	* Allow sending remote files when GVFS FUSE is available
+	* Stop (null) showing up in the contact entry (Evolution)
+	* Try to avoid the wrong contact being selected when using
+	  Enter to validate the selection (Evolution)
+	* Use "Alias" instead of "Name" so Bluetooth addresses only
+	  show up when the Name isn't available (Bluetooth)
+	* Show an icon for Bluetooth devices (Bluetooth)
+	* Remember last used Bluetooth device (Bluetooth)
+	* Sort the contacts alphabetically (Pidgin)
+
+=============
+Version 1.1.0
+=============
+
+Nemo Sendto
+	* Port to Bluetooth plugin to BlueZ 4.x API
+
+=============
+Version 1.0.1
+=============
+
+Nemo Sendto
+	* Fix e-mail selection in the Evolution plugin when a
+	single contact has multiple addresses
+	* Fix sending from nemo when the path contains an
+	ampersand
+
+=============
+Version 1.0.0
+=============
+
+Nemo Sendto
+	* Fix sending e-mails using evolution after having auto-
+	completed the user address
+	* Get buddy list changes instantly in the Pidgin plugin
+	* Force loading the Pidgin plugin on startup
+	* Fix the mnemonic for "Send to" not working
+	* Make it impossible to send files packed in an archive
+	if the archive has no names
+	* Fix "Send to..." label
+
+
+===============
+Version 0.14.0
+===============
+
+Nemo Sendto
+	* Nicer icons all around
+	* Fix sending e-mails with Evolution when entering
+	"Surname, Name <address>" manually
+	* Enable the Thunderbird plugin by default, and
+	fix sending attachments
+
+===============
+Version 0.13.2
+===============
+
+Nemo Sendto
+	* Fix a crasher when launching bluetooth-sendto
+	* Add a nice icon to the UI
+
+===============
+Version 0.13.1
+===============
+
+Nemo Sendto
+	* Remove unused gnome-vfs includes, fixes build with newer nemo
+
+=============
+Version 0.13
+=============
+
+Nemo Sendto
+	* Fix a crash in the main code when the status label was being cleared
+	* Fix loading the Pidgin plugin
+	* Show ICQ/AIM and Bonjour buddies in the Pidgin plugin
+	* Fix conflicting mnemonics in the main UI
+	* Fix installation with the new gio-based Nemo
+	* Pass the full name of the contact to Evolution when it's available
+	* Allow running nemo-sendto uninstalled
+
+=============
+Version 0.12
+=============
+
+Nemo Sendto
+	* Fix a crash in the Thunderbird plugin when gtk_entry_get_text returns NULL
+	* Fix application name in the man page
+	* Fix possible crashes when no Bluetooth adapters are available
+	* Fix GAIM/Pidgin not starting up when the home directory is read-only
+
+=============
+Version 0.11
+=============
+
+Nemo Sendto
+	* Some UI love to bring it closer to the HIG
+	* Add Pidgin/libpurple support
+	* Fix a typo that might make DiscoverDevices not work (Bluetooth)
+	* Don't resolve Bluetooth device names, DiscoverDevices already does
+	  that for us
+
+=============
+Version 0.10
+=============
+
+Nemo Sendto
+	* Fix compilation of the gajim and thunderbird plugins
+	* Fix loading the nemo extension
+
+============
+Version 0.9
+============
+
+Nemo Sendto
+	* Search the Sylpheed-claws binary harder
+	* Use D-Bus and bluez-utils for the bluetooth plugin,
+	  remove compile-time dependency on gnome-bluetooth
+	* Show an error when no plugins can be found on startup
+	* Cleanup run-time dependencies
+
+============
+Version 0.8
+============
+
+Nemo Sendto
+	* Fix build error in gaim2
+	* Solved evolution Bug #348941 Evolution Autocompletion not offered for all Address Books. Thanks Øystein Gisnås, Karsten Bräckelmann
+	* Added man page
+	* Nemo-sendto remember the last selected medium used to send files . Thanks Colin Leroy and Bastien Nocera
+	* Some bug fixes more.
+
+============
+Version 0.7
+============
+
+Nemo Sendto 
+	* Quick revision. I don't include some files to POTFILES.in
+
+============
+Version 0.6
+============
+
+Nemo Sendto
+	* Added support for gajim 
+	* Added support for sylpheed-claws
+	* Added initial support for thunderbird. Thunderbird don't support attachment by command line atm.
+	* Added initial support for Balsa. Balsa don't support attachment by command line atm.
+	* Many bugfixes
+
+	Special Thanks to :
+		Bastien Nocera (He resolve many many bugs while i was busy in my work, Thanks guy !)
+		Dimitur Kirov (He developed gajim support)
+		Peter Enseleit (he developed balsa, sylpheed and thunderbird support) 
+
+============
+Version 0.5
+============
+
+Nemo Sendto
+	* Fix (I think so) the nemo-sendto crash. Thanks Peter Johanson. [Bug 317081]
+        * Fix bluetooth bug in nemo sendto plugin [Bug 324278]
+        * Now nemo sendto compile evolution plugin if evolution is available
+        * Force the dependencies to gnome2.13-14
+        * Fix crash if no plugins [Bug 321063] .Thanks Alex Larsson
+	* Many translations !! THANKS ALL NEMO-SENDTO TRANSLATORS !!!
+
+=============
+Version 0.4
+=============
+
+Nemo Sendto
+	* New support for gnome-bluetooth (Bastien Nocera)
+	* Some Bugfixes (Ruben, me)
+	* Many translations added
+
+=============
+Version 0.3
+=============
+
+Nemo Sendto
+	* Support for new nemo extension interface
+	* HIG support for nemo-sendto dialog (thanks Paolo Bacchilega)
+
+=============
+Version 0.2-1
+=============
+
+Nemo Sendto
+	*Added support for gaim 1.0
+	*Added support for evolution 2.0
+
+=============
+Version 0.2
+=============
+
+Nemo Sendto
+	
+	*New plugins support!! Now evolution and gaim support are plugins
+	*New UI, more beatiful, more flexible
+	*All plugins support the gnome icon theme
+	
+Translations 
+	Nothing at the moment
+
+=============
+Version 0.1-1
+=============
+
+Nemo Sendto
+	* A little bugfix
+
+==============
+Version 0.1
+==============
+
+Nemo Sendto
+
+	* Nemo context menu componente "Send To.."
+	* Support for send file or compressed files with nemo
+	to evolution contact or gaim contact
+	* Gaim plugin for nemo integration
+
+Translations
+	
+	Nothing at the moment 

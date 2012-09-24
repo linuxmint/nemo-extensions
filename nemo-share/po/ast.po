@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Asturian translation for nemo-share
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the nemo-share package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Xandru Armesto <xandru@softastur.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product"
+"=nemo-share&component=general\n"
+"POT-Creation-Date: 2010-03-14 11:09+0000\n"
+"PO-Revision-Date: 2010-03-30 06:07+0200\n"
+"Last-Translator: Xandru Armesto <xandru@softastur.org>\n"
+"Language-Team: Asturian Team alministradores@softastur.org\n"
+"Language: ast\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Virtaal 0.5.2\n"
+"X-Launchpad-Export-Date: 2008-10-22 10:12+0000\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to share "
+"it"
+msgstr ""
+"Nemo necesita amestar dalgunos permisos a la so carpeta «%s» pa poder "
+"compartila"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"La carpeta «%s» necesita los permisos darréu adicionales pa poder "
+"compartila:\n"
+"%s%s%s¿Quier que Nemo ameste automáticamente estos permisos a la "
+"carpeta?"
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr "  - permisos de llectura pa otros\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr "  - permisos d'escritura pa otros\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr "  - permisos d'execución pa otros\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "Amestar los permisos automáticamente"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Nun se pue camudar los permisos de la carpeta «%s»"
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "El nome compartíu ye llargu abondo"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "El nome compartíu nun pue tar vacíu"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Fallu al garrar la informaci'on de compartición: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "Otru recursu compartíu tien el mesmu nome"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "Camudar _compartición"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "Facer _compartición"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "Ocurrió un fallu al garrar la información de compartición"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "Compartir"
+
+#: ../src/nemo-share.c:1114
+msgid "Folder Sharing"
+msgstr "Compartición de Carpetes"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "Opciones de compartición"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "Compartir esta carpeta"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "devolvióse %s %s %s cola señal %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s falló por una razón descoñocía"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "La «rede compartía» devolvió'l fallu %d: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "La «rede compartía» devolvió'l fallu %d"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "La salida de la «rede compartía» nun tá codificada en UTF-8"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Fallu"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "Devolvióse'l parámetru de prueba de Samba cola señal %d"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "El parámetru de prueba de Samba nun se sabe por que falló"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "El parámetru de prueba de Samba devolvió'l fallu %d: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "El parámetru de prueba de Samba devolvió'l fallu %d"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr ""
+"Nun se pue desaniciar la compartición pa la ruta %s: esa ruta nun ta "
+"compartida"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"Nun se pue camudar la ruta d'una compartición esistente; desaniciar la "
+"compartición vieya primero y amiesta una nueva"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Compartición de Carpetes</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "Co_mentariu:"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "_Nome pa compartir:"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "Compartir esta car_peta"
+
+#: ../interfaces/share-dialog.ui.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr "Permitir _a otros crear y esborrar ficheros nesta carpeta"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "Accesu d'invi_táu (pa xente ensin cuenta d'usuariu)"
+
+#~ msgid "Sharing service is not installed"
+#~ msgstr "El serviciu de compartición nun tá istaláu"
+
+#~ msgid ""
+#~ "You need to install the Windows networks sharing service in order to "
+#~ "share your folders."
+#~ msgstr ""
+#~ "Necesita istalar el serviciu de compartición de redes Windows pa poder "
+#~ "compartir les sos carpetes."
+
+#~ msgid "Install service"
+#~ msgstr "Istalar el serviciu"

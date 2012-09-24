@@ -1,0 +1,398 @@
+Description: Updates translation infrastructure and adds Spanish translations.
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/nemo-wallpaper/+bug/489345
+Author: Andrew Starr-Bochicchio <a.starr.b@gmail.com>
+Index: nemo-wallpaper-0.1/po/es.po
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ nemo-wallpaper-0.1/po/es.po	2010-06-10 13:51:42.000000000 -0400
+@@ -0,0 +1,25 @@
++# SOME DESCRIPTIVE TITLE.
++# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
++# This file is distributed under the same license as the PACKAGE package.
++# Federico Vera <dktcoding[at]gmail[dot]com>, 2009.
++#
++#, fuzzy
++msgid ""
++msgstr ""
++"Project-Id-Version: PACKAGE VERSION\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2005-10-03 03:18-0500\n"
++"PO-Revision-Date: 2009-11-27 13:15-0300\n"
++"Last-Translator: Federico Vera <dktcoding[at]gmail[dot]com>\n"
++"Language-Team: \n"
++"MIME-Version: 1.0\n"
++"Content-Type: text/plain; charset=CHARSET\n"
++"Content-Transfer-Encoding: 8bit\n"
++
++#: src/nemo-nwe.c:105
++msgid "Set as Wallpaper..."
++msgstr "Poner como fondo..."
++
++#: src/nemo-nwe.c:106
++msgid "Set image as the current wallpaper..."
++msgstr "Colocar la imagen como fondo de pantalla..."
+Index: nemo-wallpaper-0.1/po/Makefile.in.in
+===================================================================
+--- nemo-wallpaper-0.1.orig/po/Makefile.in.in	2010-06-10 13:51:17.147212289 -0400
++++ nemo-wallpaper-0.1/po/Makefile.in.in	2010-06-10 14:05:36.168188676 -0400
+@@ -11,78 +11,78 @@
+ #
+ # - Modified by jacob berkman <jacob@ximian.com> to install
+ #   Makefile.in.in and po2tbl.sed.in for use with glib-gettextize
++#
++# - Modified by Rodney Dawes <dobey@novell.com> for use with intltool
++#
++# We have the following line for use by intltoolize:
++# INTLTOOL_MAKEFILE
+ 
+ GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
+ PACKAGE = @PACKAGE@
+ VERSION = @VERSION@
+ 
+ SHELL = /bin/sh
+-@SET_MAKE@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++top_builddir = ..
+ VPATH = @srcdir@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ datadir = @datadir@
++datarootdir = @datarootdir@
+ libdir = @libdir@
+-localedir = $(libdir)/locale
+-gnulocaledir = $(datadir)/locale
+-gettextsrcdir = $(datadir)/glib-2.0/gettext/po
++DATADIRNAME = @DATADIRNAME@
++itlocaledir = $(prefix)/$(DATADIRNAME)/locale
+ subdir = po
++install_sh = @install_sh@
++# Automake >= 1.8 provides @mkdir_p@.
++# Until it can be supposed, use the safe fallback:
++mkdir_p = $(install_sh) -d
+ 
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+-MKINSTALLDIRS = $(top_srcdir)/@MKINSTALLDIRS@
+ 
+-CC = @CC@
+-GENCAT = @GENCAT@
+ GMSGFMT = @GMSGFMT@
+ MSGFMT = @MSGFMT@
+ XGETTEXT = @XGETTEXT@
+-MSGMERGE = msgmerge
++INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
++INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
++MSGMERGE = INTLTOOL_EXTRACT=$(INTLTOOL_EXTRACT) srcdir=$(srcdir) $(INTLTOOL_UPDATE) --gettext-package $(GETTEXT_PACKAGE) --dist
++GENPOT   = INTLTOOL_EXTRACT=$(INTLTOOL_EXTRACT) srcdir=$(srcdir) $(INTLTOOL_UPDATE) --gettext-package $(GETTEXT_PACKAGE) --pot
+ 
+-DEFS = @DEFS@
+-CFLAGS = @CFLAGS@
+-CPPFLAGS = @CPPFLAGS@
++ALL_LINGUAS = @ALL_LINGUAS@
+ 
+-INCLUDES = -I.. -I$(top_srcdir)/intl
++PO_LINGUAS=$(shell if test -r $(srcdir)/LINGUAS; then grep -v "^\#" $(srcdir)/LINGUAS; fi)
+ 
+-COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS)
++POFILES=$(shell if test -n "$(PO_LINGUAS)"; then LINGUAS="$(PO_LINGUAS)"; else LINGUAS="$(ALL_LINGUAS)"; fi; for lang in $$LINGUAS; do printf "$$lang.po "; done)
+ 
+-SOURCES = 
+-POFILES = @POFILES@
+-GMOFILES = @GMOFILES@
+-DISTFILES = ChangeLog Makefile.in.in POTFILES.in $(GETTEXT_PACKAGE).pot \
+-$(POFILES) $(GMOFILES) $(SOURCES)
++DISTFILES = ChangeLog Makefile.in.in POTFILES.in $(POFILES)
++EXTRA_DISTFILES = POTFILES.skip Makevars LINGUAS
+ 
+ POTFILES = \
++#This Gets Replace for some reason
+ 
+-CATALOGS = @CATALOGS@
+-CATOBJEXT = @CATOBJEXT@
+-INSTOBJEXT = @INSTOBJEXT@
++CATALOGS=$(shell if test -n "$(PO_LINGUAS)"; then LINGUAS="$(PO_LINGUAS)"; else LINGUAS="$(ALL_LINGUAS)"; fi; for lang in $$LINGUAS; do printf "$$lang.gmo "; done)
+ 
+ .SUFFIXES:
+-.SUFFIXES: .c .o .po .pox .gmo .mo .msg .cat
+-
+-.c.o:
+-	$(COMPILE) $<
++.SUFFIXES: .po .pox .gmo .mo .msg .cat
+ 
+ .po.pox:
+ 	$(MAKE) $(GETTEXT_PACKAGE).pot
+-	$(MSGMERGE) $< $(srcdir)/$(GETTEXT_PACKAGE).pot -o $*.pox
++	$(MSGMERGE) $< $(GETTEXT_PACKAGE).pot -o $*.pox
+ 
+ .po.mo:
+ 	$(MSGFMT) -o $@ $<
+ 
+ .po.gmo:
+-	file=$(srcdir)/`echo $* | sed 's,.*/,,'`.gmo \
+-	  && rm -f $$file && $(GMSGFMT) -c -o $$file $<
++	file=`echo $* | sed 's,.*/,,'`.gmo \
++	  && rm -f $$file && $(GMSGFMT) -o $$file $<
+ 
+ .po.cat:
+ 	sed -f ../intl/po2msg.sed < $< > $*.msg \
+-	  && rm -f $@ && $(GENCAT) $@ $*.msg
++	  && rm -f $@ && gencat $@ $*.msg
+ 
+ 
+ all: all-@USE_NLS@
+@@ -90,141 +90,105 @@
+ all-yes: $(CATALOGS)
+ all-no:
+ 
+-$(srcdir)/$(GETTEXT_PACKAGE).pot: $(POTFILES)
+-	$(XGETTEXT) --default-domain=$(GETTEXT_PACKAGE) --directory=$(top_srcdir) \
+-	  --add-comments --keyword=_ --keyword=N_ \
+-          --flag=g_strdup_printf:1:c-format \
+-          --flag=g_string_printf:2:c-format \
+-          --flag=g_string_append_printf:2:c-format \
+-          --flag=g_error_new:3:c-format \
+-          --flag=g_set_error:4:c-format \
+-          --flag=g_markup_printf_escaped:1:c-format \
+-          --flag=g_log:3:c-format \
+-          --flag=g_print:1:c-format \
+-          --flag=g_printerr:1:c-format \
+-          --flag=g_printf:1:c-format \
+-          --flag=g_fprintf:2:c-format \
+-          --flag=g_sprintf:2:c-format \
+-          --flag=g_snprintf:3:c-format \
+-          --flag=g_scanner_error:2:c-format \
+-          --flag=g_scanner_warn:2:c-format \
+-	  --files-from=$(srcdir)/POTFILES.in \
+-	&& test ! -f $(GETTEXT_PACKAGE).po \
+-	   || ( rm -f $(srcdir)/$(GETTEXT_PACKAGE).pot \
+-		&& mv $(GETTEXT_PACKAGE).po $(srcdir)/$(GETTEXT_PACKAGE).pot )
++$(GETTEXT_PACKAGE).pot: $(POTFILES)
++	$(GENPOT)
+ 
+-install: install-exec install-data
+-install-exec:
++install: install-data
+ install-data: install-data-@USE_NLS@
+ install-data-no: all
+ install-data-yes: all
+-	if test -r "$(MKINSTALLDIRS)"; then \
+-	  $(MKINSTALLDIRS) $(DESTDIR)$(datadir); \
++	$(mkdir_p) $(DESTDIR)$(itlocaledir)
++	if test -n "$(PO_LINGUAS)"; then \
++	  linguas="$(PO_LINGUAS)"; \
+ 	else \
+-	  $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir); \
+-	fi
+-	@catalogs='$(CATALOGS)'; \
+-	for cat in $$catalogs; do \
+-	  cat=`basename $$cat`; \
+-	  case "$$cat" in \
+-	    *.gmo) destdir=$(gnulocaledir);; \
+-	    *)     destdir=$(localedir);; \
+-	  esac; \
+-	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
+-	  dir=$(DESTDIR)$$destdir/$$lang/LC_MESSAGES; \
+-	  if test -r "$(MKINSTALLDIRS)"; then \
+-	    $(MKINSTALLDIRS) $$dir; \
+-	  else \
+-	    $(SHELL) $(top_srcdir)/mkinstalldirs $$dir; \
+-	  fi; \
+-	  if test -r $$cat; then \
+-	    $(INSTALL_DATA) $$cat $$dir/$(GETTEXT_PACKAGE)$(INSTOBJEXT); \
+-	    echo "installing $$cat as $$dir/$(GETTEXT_PACKAGE)$(INSTOBJEXT)"; \
+-	  else \
+-	    $(INSTALL_DATA) $(srcdir)/$$cat $$dir/$(GETTEXT_PACKAGE)$(INSTOBJEXT); \
+-	    echo "installing $(srcdir)/$$cat as" \
+-		 "$$dir/$(GETTEXT_PACKAGE)$(INSTOBJEXT)"; \
+-	  fi; \
+-	  if test -r $$cat.m; then \
+-	    $(INSTALL_DATA) $$cat.m $$dir/$(GETTEXT_PACKAGE)$(INSTOBJEXT).m; \
+-	    echo "installing $$cat.m as $$dir/$(GETTEXT_PACKAGE)$(INSTOBJEXT).m"; \
+-	  else \
+-	    if test -r $(srcdir)/$$cat.m ; then \
+-	      $(INSTALL_DATA) $(srcdir)/$$cat.m \
+-		$$dir/$(GETTEXT_PACKAGE)$(INSTOBJEXT).m; \
+-	      echo "installing $(srcdir)/$$cat as" \
+-		   "$$dir/$(GETTEXT_PACKAGE)$(INSTOBJEXT).m"; \
++	  linguas="$(ALL_LINGUAS)"; \
++	fi; \
++	for lang in $$linguas; do \
++	  dir=$(DESTDIR)$(itlocaledir)/$$lang/LC_MESSAGES; \
++	  $(mkdir_p) $$dir; \
++	  if test -r $$lang.gmo; then \
++	    $(INSTALL_DATA) $$lang.gmo $$dir/$(GETTEXT_PACKAGE).mo; \
++	    echo "installing $$lang.gmo as $$dir/$(GETTEXT_PACKAGE).mo"; \
++	  else \
++	    $(INSTALL_DATA) $(srcdir)/$$lang.gmo $$dir/$(GETTEXT_PACKAGE).mo; \
++	    echo "installing $(srcdir)/$$lang.gmo as" \
++		 "$$dir/$(GETTEXT_PACKAGE).mo"; \
++	  fi; \
++	  if test -r $$lang.gmo.m; then \
++	    $(INSTALL_DATA) $$lang.gmo.m $$dir/$(GETTEXT_PACKAGE).mo.m; \
++	    echo "installing $$lang.gmo.m as $$dir/$(GETTEXT_PACKAGE).mo.m"; \
++	  else \
++	    if test -r $(srcdir)/$$lang.gmo.m ; then \
++	      $(INSTALL_DATA) $(srcdir)/$$lang.gmo.m \
++		$$dir/$(GETTEXT_PACKAGE).mo.m; \
++	      echo "installing $(srcdir)/$$lang.gmo.m as" \
++		   "$$dir/$(GETTEXT_PACKAGE).mo.m"; \
+ 	    else \
+ 	      true; \
+ 	    fi; \
+ 	  fi; \
+ 	done
+-	if test "$(PACKAGE)" = "glib"; then \
+-	  if test -r "$(MKINSTALLDIRS)"; then \
+-	    $(MKINSTALLDIRS) $(DESTDIR)$(gettextsrcdir); \
+-	  else \
+-	    $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(gettextsrcdir); \
+-	  fi; \
+-	  $(INSTALL_DATA) $(srcdir)/Makefile.in.in \
+-			  $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
+-	else \
+-	  : ; \
+-	fi
++
++# Empty stubs to satisfy archaic automake needs
++dvi info tags TAGS ID:
+ 
+ # Define this as empty until I found a useful application.
+ installcheck:
+ 
+ uninstall:
+-	catalogs='$(CATALOGS)'; \
+-	for cat in $$catalogs; do \
+-	  cat=`basename $$cat`; \
+-	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
+-	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE)$(INSTOBJEXT); \
+-	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE)$(INSTOBJEXT).m; \
+-	  rm -f $(DESTDIR)$(gnulocaledir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE)$(INSTOBJEXT); \
+-	  rm -f $(DESTDIR)$(gnulocaledir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE)$(INSTOBJEXT).m; \
++	if test -n "$(PO_LINGUAS)"; then \
++	  linguas="$(PO_LINGUAS)"; \
++	else \
++	  linguas="$(ALL_LINGUAS)"; \
++	fi; \
++	for lang in $$linguas; do \
++	  rm -f $(DESTDIR)$(itlocaledir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE).mo; \
++	  rm -f $(DESTDIR)$(itlocaledir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE).mo.m; \
+ 	done
+-	if test "$(PACKAGE)" = "glib"; then \
+-	  rm -f $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
+-	fi
+-
+-check: all
+ 
+-dvi info tags TAGS ID:
++check: all $(GETTEXT_PACKAGE).pot
+ 
+ mostlyclean:
+-	rm -f core core.* *.pox $(GETTEXT_PACKAGE).po *.old.po cat-id-tbl.tmp
+-	rm -fr *.o
++	rm -f *.pox $(GETTEXT_PACKAGE).pot *.old.po cat-id-tbl.tmp
++	rm -f .intltool-merge-cache
+ 
+ clean: mostlyclean
+ 
+ distclean: clean
+-	rm -f Makefile Makefile.in POTFILES *.mo *.msg *.cat *.cat.m
++	rm -f Makefile Makefile.in POTFILES stamp-it
++	rm -f *.mo *.msg *.cat *.cat.m *.gmo
+ 
+ maintainer-clean: distclean
+ 	@echo "This command is intended for maintainers to use;"
+ 	@echo "it deletes files that may require special tools to rebuild."
+-	rm -f $(GMOFILES)
++	rm -f Makefile.in.in
+ 
+-distdir = ../$(GETTEXT_PACKAGE)-$(VERSION)/$(subdir)
+-dist distdir: update-po $(DISTFILES)
++distdir = ../$(PACKAGE)-$(VERSION)/$(subdir)
++dist distdir: $(DISTFILES)
+ 	dists="$(DISTFILES)"; \
++	extra_dists="$(EXTRA_DISTFILES)"; \
++	for file in $$extra_dists; do \
++	  test -f $(srcdir)/$$file && dists="$$dists $(srcdir)/$$file"; \
++	done; \
+ 	for file in $$dists; do \
+-	  ln $(srcdir)/$$file $(distdir) 2> /dev/null \
+-	    || cp -p $(srcdir)/$$file $(distdir); \
++	  test -f $$file || file="$(srcdir)/$$file"; \
++	  ln $$file $(distdir) 2> /dev/null \
++	    || cp -p $$file $(distdir); \
+ 	done
+ 
+ update-po: Makefile
+ 	$(MAKE) $(GETTEXT_PACKAGE).pot
+ 	tmpdir=`pwd`; \
+-	cd $(srcdir); \
+-	catalogs='$(CATALOGS)'; \
+-	for cat in $$catalogs; do \
+-	  cat=`basename $$cat`; \
+-	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
++	if test -n "$(PO_LINGUAS)"; then \
++	  linguas="$(PO_LINGUAS)"; \
++	else \
++	  linguas="$(ALL_LINGUAS)"; \
++	fi; \
++	for lang in $$linguas; do \
+ 	  echo "$$lang:"; \
+-	  if $(MSGMERGE) $$lang.po $(GETTEXT_PACKAGE).pot -o $$tmpdir/$$lang.new.po; then \
+-	    if cmp $$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
++	  result="`$(MSGMERGE) -o $$tmpdir/$$lang.new.po $$lang`"; \
++	  if $$result; then \
++	    if cmp $(srcdir)/$$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
+ 	      rm -f $$tmpdir/$$lang.new.po; \
+             else \
+ 	      if mv -f $$tmpdir/$$lang.new.po $$lang.po; then \
+@@ -236,33 +200,18 @@
+ 	      fi; \
+ 	    fi; \
+ 	  else \
+-	    echo "msgmerge for $$cat failed!"; \
++	    echo "msgmerge for $$lang.gmo failed!"; \
+ 	    rm -f $$tmpdir/$$lang.new.po; \
+ 	  fi; \
+ 	done
+ 
+-# POTFILES is created from POTFILES.in by stripping comments, empty lines
+-# and Intltool tags (enclosed in square brackets), and appending a full
+-# relative path to them
+-POTFILES: POTFILES.in
+-	( if test 'x$(srcdir)' != 'x.'; then \
+-	    posrcprefix='$(top_srcdir)/'; \
+-	  else \
+-	    posrcprefix="../"; \
+-	  fi; \
+-	  rm -f $@-t $@ \
+-	    && (sed -e '/^#/d' 						\
+-		    -e "s/^\[.*\] +//" 					\
+-		    -e '/^[ 	]*$$/d' 				\
+-		    -e "s@.*@	$$posrcprefix& \\\\@" < $(srcdir)/$@.in	\
+-		| sed -e '$$s/\\$$//') > $@-t \
+-	    && chmod a-w $@-t \
+-	    && mv $@-t $@ )
+-
+-Makefile: Makefile.in.in ../config.status POTFILES
+-	cd .. \
+-	  && CONFIG_FILES=$(subdir)/$@.in CONFIG_HEADERS= \
+-	       $(SHELL) ./config.status
++Makefile POTFILES: stamp-it
++	@if test ! -f $@; then \
++	  rm -f stamp-it; \
++	  $(MAKE) stamp-it; \
++	fi
++
++stamp-it:
+ 
+ # Tell versions [3.59,3.63) of GNU make not to export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+Index: nemo-wallpaper-0.1/po/LINGUAS
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ nemo-wallpaper-0.1/po/LINGUAS	2010-06-10 14:06:31.043192592 -0400
+@@ -0,0 +1 @@
++es

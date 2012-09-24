@@ -1,0 +1,291 @@
+# nemo-sendto ja.po.
+# Copyright (C) 2004-2009,2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the nemo-sendto package.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2004-2009.
+# Jiro Matsuzawa <matsuzawa.jr@gmail.com>, 2011
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-sendto&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-03-13 18:46+0000\n"
+"PO-Revision-Date: 2011-03-22 22:29+0900\n"
+"Last-Translator: Jiro Matsuzawa <matsuzawa.jr@gmail.com>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.ui.h:3
+msgid "Send To..."
+msgstr "送る..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr ""
+"ファイルをメールやインスタント・メッセンジャーなどを使って送信します..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr ""
+"ファイルをメールやインスタント・メッセンジャーなどを使って送信します..."
+
+#: ../src/nemo-sendto-command.c:572
+msgid "Files"
+msgstr "ファイル"
+
+#: ../src/nemo-sendto-command.c:783
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "オプションとして URI または ファイル名を指定してください\n"
+
+#: ../src/nemo-sendto-command.c:804
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "コマンドライン・オプションを解析できませんでした: %s\n"
+
+#: ../src/nemo-sendto-command.c:819
+msgid "Could not load any plugins."
+msgstr "プラグインを読み込めませんでした。"
+
+#: ../src/nemo-sendto-command.c:822
+msgid "Please verify your installation"
+msgstr "インストールを確認してください"
+
+#: ../src/nemo-sendto.ui.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>圧縮</b>"
+
+#: ../src/nemo-sendto.ui.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>送信先</b>"
+
+#: ../src/nemo-sendto.ui.h:4
+msgid "Send _as:"
+msgstr "使用するアプリ(_A):"
+
+#: ../src/nemo-sendto.ui.h:5
+msgid "Send _packed in:"
+msgstr "書庫にして送信する(_P):"
+
+#: ../src/nemo-sendto.ui.h:6
+msgid "Send t_o:"
+msgstr "宛先(_O):"
+
+#: ../src/nemo-sendto.ui.h:7
+msgid "_Send"
+msgstr "送信(_S)"
+
+#: ../src/plugins/evolution/evolution.c:378
+msgid "Email"
+msgstr "メーラー"
+
+#: ../src/plugins/evolution/e-contact-entry.c:153
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "次の連絡先を取得できません: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:186
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "次の連作先が見つかりませんでした: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:414
+msgid "Cannot create searchable view."
+msgstr "検索可能な表示を生成できません。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:886
+msgid "Success"
+msgstr "成功"
+
+#: ../src/plugins/evolution/e-contact-entry.c:888
+msgid "An argument was invalid."
+msgstr "引数が間違っています。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:890
+msgid "The address book is busy."
+msgstr "アドレス帳が使用中です。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:892
+msgid "The address book is offline."
+msgstr "アドレス帳がオフラインです。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:894
+msgid "The address book does not exist."
+msgstr "アドレス帳が見つかりません。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:896
+msgid "The \"Me\" contact does not exist."
+msgstr "自分の連作先が存在しません。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:898
+msgid "The address book is not loaded."
+msgstr "アドレス帳が読み込まれていません。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:900
+msgid "The address book is already loaded."
+msgstr "アドレス帳は既に読み込み済です。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:902
+msgid "Permission was denied when accessing the address book."
+msgstr "読み込み権限が無いためアドレス帳にアクセスできません。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:904
+msgid "The contact was not found."
+msgstr "連絡先が見つかりませんした。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:906
+msgid "This contact ID already exists."
+msgstr "この連絡先 ID が既に存在しています。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:908
+msgid "The protocol is not supported."
+msgstr "そのプロトコルはサポートされていません。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:910
+msgid "The operation was cancelled."
+msgstr "操作がキャンセルされました。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:912
+msgid "The operation could not be cancelled."
+msgstr "操作をキャンセルできませんでした。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:914
+msgid "The address book authentication failed."
+msgstr "アドレス帳の認証に失敗しました。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:916
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr "アドレス帳にアクセスするには認証が必要ですが指定されていません。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:918
+msgid "A secure connection is not available."
+msgstr "セキュアな接続を利用できません。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:920
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "アドレス帳にアクセスする際に CORBA エラーが発生しました。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:922
+msgid "The address book source does not exist."
+msgstr "アドレス帳のソースが存在しません。"
+
+#: ../src/plugins/evolution/e-contact-entry.c:924
+#: ../src/plugins/evolution/e-contact-entry.c:927
+msgid "An unknown error occurred."
+msgstr "原因不明のエラーが発生しました。"
+
+#: ../src/plugins/gajim/gajim.c:417
+msgid "Unable to send file"
+msgstr "ファイルを送信できません"
+
+#: ../src/plugins/gajim/gajim.c:418
+msgid "There is no connection to gajim remote service."
+msgstr "gajim のリモート・サービスへ接続していません。"
+
+#: ../src/plugins/gajim/gajim.c:442 ../src/plugins/gajim/gajim.c:482
+msgid "Sending file failed"
+msgstr "ファイルの送信に失敗しました"
+
+#: ../src/plugins/gajim/gajim.c:443
+msgid "Recipient is missing."
+msgstr "応答メッセージがありません。"
+
+#: ../src/plugins/gajim/gajim.c:482
+msgid "Unknown recipient."
+msgstr "不明な応答メッセージです。"
+
+#: ../src/plugins/gajim/gajim.c:505
+msgid "Instant Message (Gajim)"
+msgstr "インスタント・メッセージ (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:92
+msgid "New CD/DVD"
+msgstr "新しい CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:99
+msgid "Existing CD/DVD"
+msgstr "既存の CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:178
+msgid "CD/DVD Creator"
+msgstr "CD/DVD の作成"
+
+#: ../src/plugins/pidgin/pidgin.c:464
+msgid "Instant Message (Pidgin)"
+msgstr "インスタント・メッセンジャー (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:248
+msgid "Removable disks and shares"
+msgstr "リムーバブル・ディスクと共有"
+
+#: ../src/plugins/upnp/upnp.c:309
+msgid "UPnP Media Server"
+msgstr "UPnP メディア・サーバ"
+
+#~ msgid "Last plugin used to send"
+#~ msgstr "最後に使用した送信プラグイン"
+
+#~ msgid "Last type of archive used"
+#~ msgstr "最後に使用したアーカイブの種類"
+
+#~ msgid ""
+#~ "Used to store which plugin was used the last time files were sent using "
+#~ "nemo-sendto."
+#~ msgstr ""
+#~ "nemo-sendto を使って最後にファイルを送信した時に使用したプラグインの名"
+#~ "前を格納します。"
+
+#~ msgid ""
+#~ "Used to store which type of archive was used the last time (0: zip, 1: "
+#~ "tar.gz, 2: tar.bz2)."
+#~ msgstr ""
+#~ "nemo-sendto を使って、最後に送信したアーカイブの種類を格納します (0: "
+#~ "zip、1: tar.gz、2: tar.bz2)。"
+
+#~ msgid "_Send to..."
+#~ msgstr "送る(_S)..."
+
+#~ msgid "Send files to remote devices, or people"
+#~ msgstr ""
+#~ "リモート・デバイスや指定したアドレスにファイルを送信するプラグインです。"
+
+#~ msgid "Send to..."
+#~ msgstr "ファイルを送る"
+
+#~ msgid "Nemo Integration"
+#~ msgstr "Nemo との連携"
+
+#~ msgid "Provides integration with Nemo"
+#~ msgstr "GNOME Nemo との連携機能を提供します。"
+
+#~ msgid "Nemo Sendto"
+#~ msgstr "Nemo Sendto"
+
+#~ msgid "Programming error, could not find the device in the list"
+#~ msgstr "プログラム・エラーです (Bluetooth のデバイスを検出できませんでした)"
+
+#~ msgid "Obex Push file transfer unsupported"
+#~ msgstr "Obex プッシュ式ファイル転送はサポートしていません"
+
+#~ msgid "Bluetooth (OBEX Push)"
+#~ msgstr "Bluetooth (OBEX プッシュ)"
+
+#~ msgid "The contact selected cannot receive files."
+#~ msgstr "この仲間はファイルを受け取ることができません。"
+
+#~ msgid "The contact selected is offline."
+#~ msgstr "この仲間はオフラインのようです。"
+
+#~ msgid "No error message"
+#~ msgstr "エラー・メッセージ無し"
+
+#~ msgid "Instant Message (Empathy)"
+#~ msgstr "インスタント・メッセンジャー (Empathy)"
+
+#~ msgid "Instant Message (Gaim)"
+#~ msgstr "インスタント・メッセンジャー"

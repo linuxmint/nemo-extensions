@@ -1,0 +1,338 @@
+# translation of nemo-sendto.HEAD.po to Hebrew
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Yuval Tanny, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto.HEAD\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2009-04-27 13:10+0000\n"
+"PO-Revision-Date: 2009-05-25 23:34+0200\n"
+"Last-Translator: Mark Krapivner <mark125@gmail.com>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Hebrew\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Last plugin used to send"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Last type of archive used"
+
+#: ../nst.schemas.in.h:3
+msgid "Used to store which plugin was used the last time files were sent using nemo-sendto."
+msgstr "Used to store which plugin was used the last time files were sent using nemo-sendto."
+
+#: ../nst.schemas.in.h:4
+msgid "Used to store which type of archive was used the last time (0: zip, 1: tar.gz, 2: tar.bz2)."
+msgstr "Used to store which type of archive was used the last time (0: zip, 1: tar.gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+#| msgid "Send to..."
+msgid "_Send to..."
+msgstr "_שלח אל..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "שליח קבצים להתקנים או אנשים מרוחקים"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "שלח אל..."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../pidgin_plugin/nemo-sendto-plugin.c:342
+msgid "Nemo Integration"
+msgstr "שילוב ב־Nemo"
+
+#. name
+#. version
+#. summary
+#: ../pidgin_plugin/nemo-sendto-plugin.c:344
+#: ../pidgin_plugin/nemo-sendto-plugin.c:345
+msgid "Provides integration with Nemo"
+msgstr "מספק שילוב ב־Nemo"
+
+#: ../src/nemo-nste.c:92
+#: ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "שלח אל..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "שלח קובץ בדוא\"ל, מסרים מידיים..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "שלח קבצים בדוא\"ל, מסרים מידיים..."
+
+#: ../src/nemo-sendto-command.c:533
+msgid "Files"
+msgstr "קבצים"
+
+#: ../src/nemo-sendto-command.c:737
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Expects URIs or filenames to be passed as options\n"
+
+#: ../src/nemo-sendto-command.c:754
+msgid "Nemo Sendto"
+msgstr "Nemo Sendto"
+
+#: ../src/nemo-sendto-command.c:758
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Could not parse command-line options: %s\n"
+
+#: ../src/nemo-sendto-command.c:773
+msgid "Could not load any plugins."
+msgstr "לא ניתן היה לטעון תוספים"
+
+#: ../src/nemo-sendto-command.c:776
+msgid "Please verify your installation"
+msgstr "נא לוודא את תקינות ההתקנה"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>כיווץ</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>יעד</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "שלח _כ:"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "שלח ארוז _ב:"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "שלח _אל:"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "_שלח"
+
+#: ../src/plugins/bluetooth/bluetooth.c:448
+msgid "Programming error, could not find the device in the list"
+msgstr "שגיאת תכנות, ההתקן לא נמצא ברשימה"
+
+#: ../src/plugins/bluetooth/bluetooth.c:523
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "העברת קבצים מסוג Obex Push לא נתמכת"
+
+#: ../src/plugins/bluetooth/bluetooth.c:547
+msgid "Bluetooth (OBEX Push)"
+msgstr "Bluetooth (OBEX Push)"
+
+#: ../src/plugins/empathy/empathy.c:124
+msgid "The contact selected cannot receive files."
+msgstr "איש הקשר שנבחר לא יכול לקבל קבצים."
+
+#: ../src/plugins/empathy/empathy.c:130
+#| msgid "The contact was not found."
+msgid "The contact selected is offline."
+msgstr "איש הקשר שנבחר מנותק."
+
+#: ../src/plugins/empathy/empathy.c:183
+#: ../src/plugins/empathy/empathy.c:244
+msgid "No error message"
+msgstr "אין הודעת שגיאה"
+
+#: ../src/plugins/empathy/empathy.c:294
+#| msgid "Instant Message (Gaim)"
+msgid "Instant Message (Empathy)"
+msgstr "מסר מיידי (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:366
+msgid "Email"
+msgstr "דואר אלקטרוני"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "לא ניתן לקבל איש קשר: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "לא ניתן למצוא איש קשר: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "לא ניתן ליצור תצוגה ניתנת לחיפוש"
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "הצלחה"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "ארגומנט היה שגוי"
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "ספר הכתובות עסוק."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "ספר הכתובות אינו מקוון."
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "ספר הכתובות אינו קיים."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "איש הקשר \"אני\" אינו קיים."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "ספר הכתובות אינו טעון."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "ספר הכתובות כבר טעון."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "ההרשאה נדחתה בזמן הגישה לספר הכתובות."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "איש הקשר לא נימצא."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "מזהה איש הקשר כבר קיים."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "הפרוטוקול אינו נתמך."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "הפעולה בוטלה."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "לא ניתן לבטל את הפעולה."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "אימות ספר הכתובות נכשל."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid "Authentication is required to access the address book and was not given."
+msgstr "אימות נדרש על מנת לגשת לספר הכתובות."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "חיבור מאובטח אינו זמין."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "התרחשה שגיאת CORBA בזמן הגישה לספר הכתובות."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "ספר הכתובות אינו קיים."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "ארעה שגיעה לא ידועה."
+
+#: ../src/plugins/gajim/gajim.c:403
+msgid "Unable to send file"
+msgstr "לא ניתן לשלוח קובץ"
+
+#: ../src/plugins/gajim/gajim.c:404
+msgid "There is no connection to gajim remote service."
+msgstr "אין חיבור לשירות מרוחק של gajim."
+
+#: ../src/plugins/gajim/gajim.c:428
+#: ../src/plugins/gajim/gajim.c:467
+msgid "Sending file failed"
+msgstr "שליחת קובץ נכשלה"
+
+#: ../src/plugins/gajim/gajim.c:429
+msgid "Recipient is missing."
+msgstr "הנמען חסר."
+
+#: ../src/plugins/gajim/gajim.c:467
+msgid "Unknown recipient."
+msgstr "נמען לא ידוע."
+
+#: ../src/plugins/gajim/gajim.c:489
+msgid "Instant Message (Gajim)"
+msgstr "מסר מיידי (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:73
+#: ../src/plugins/nemo-burn/nemo-burn.c:88
+msgid "New CD/DVD"
+msgstr "תקליטור חדש"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:86
+msgid "Existing CD/DVD"
+msgstr "טקליטור קיים"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:165
+msgid "CD/DVD Creator"
+msgstr "יוצר התקליטורים"
+
+#: ../src/plugins/pidgin/pidgin.c:353
+msgid "Instant Message (Pidgin)"
+msgstr "מסר מיידי (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "שיתופים וכוננים נתיקים"
+
+#: ../src/plugins/upnp/upnp.c:301
+msgid "UPnP Media Server"
+msgstr "שרת מדיה UPnP"
+
+#~ msgid "Default folder to use"
+#~ msgstr "תיקיית ברירת מחדל לשימוש"
+#~ msgid "Email (Balsa)"
+#~ msgstr "דוא\"ל (Balsa)"
+#~ msgid "Device does not support Obex File Transfer"
+#~ msgstr "ההתקן אינו תומך בהעברת קבצים בעזרת Obex"
+#~ msgid "Email (Claws Mail)"
+#~ msgstr "דוא\"ל (Claws Mail)"
+#~ msgid "Email (Thunderbird)"
+#~ msgstr "דוא\"ל (Thunderbird)"
+#~ msgid "FOLDER"
+#~ msgstr "תיקייה"
+#~ msgid "You don't insert the package name"
+#~ msgstr "לא הכנסת את שם האריזה"
+#~ msgid ""
+#~ ".zip\n"
+#~ ".tar.gz\n"
+#~ ".tar.bz2"
+#~ msgstr ""
+#~ ".zip\n"
+#~ ".tar.gz\n"
+#~ ".tar.bz2"
+#~ msgid "*"
+#~ msgstr "*"
+

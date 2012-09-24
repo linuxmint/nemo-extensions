@@ -1,0 +1,183 @@
+# Korean translation of nemo-share.
+# Copyright (C) 2008 THE nemo-share'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-share package.
+# Namhyung Kim <namhyung@gmail.com>, 2008.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-12-31 03:55+0000\n"
+"PO-Revision-Date: 2008-01-07 17:02+0900\n"
+"Last-Translator: Namhyung Kim <namhyung@gmail.com>\n"
+"Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../src/nemo-share.c:129
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+"\"%s\" 폴더를 공유하기 위해 몇 가지 접근 권한을 더해야 합니다"
+
+#: ../src/nemo-share.c:137
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"\"%s\" 폴더를 공유하기 위해서는 다음과 같은 추가적인 접근 권한이 필요합니다:\n"
+"%s%s%s노틸러스가 해당 폴더에 이 접근 권한들을 자동으로 더하도록 하시겠습니까?"
+
+#: ../src/nemo-share.c:141
+msgid "  - read permission by others\n"
+msgstr "  - 다른 사람들이 읽을 수 있는 권한\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - write permission by others\n"
+msgstr "  - 다른 사람들이 쓸 수 있는 권한\n"
+
+#: ../src/nemo-share.c:143
+msgid "  - execute permission by others\n"
+msgstr "  - 다른 사람들이 실행할 수 있는 권한\n"
+
+#: ../src/nemo-share.c:147
+msgid "Add the permissions automatically"
+msgstr "자동으로 접근 권한을 더하기"
+
+#: ../src/nemo-share.c:173
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "\"%s\" 폴더의 접근 권한을 바꿀 수 없습니다"
+
+#: ../src/nemo-share.c:444
+msgid "Share name is too long"
+msgstr "공유 이름이 너무 깁니다"
+
+#: ../src/nemo-share.c:478
+msgid "The share name cannot be empty"
+msgstr "공유 이름을 입력해 주십시오"
+
+#: ../src/nemo-share.c:491
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "공유 정보를 가져오는 중 오류: %s"
+
+#: ../src/nemo-share.c:501
+msgid "Another share has the same name"
+msgstr "다른 공유 설정에서 해당 이름을 사용 중입니다"
+
+#: ../src/nemo-share.c:669
+msgid "There was an error while getting the sharing information"
+msgstr "공유 정보를 가져오는 도중 오류가 발생했습니다"
+
+#: ../src/nemo-share.c:769
+msgid "Modify _Share"
+msgstr "공유 정보 수정(_S)"
+
+#: ../src/nemo-share.c:771
+msgid "Create _Share"
+msgstr "공유 만들기(_S)"
+
+#: ../src/nemo-share.c:1029
+msgid "Share"
+msgstr "공유"
+
+#: ../src/nemo-share.c:1129
+msgid "Sharing Options"
+msgstr "공유 옵션"
+
+#: ../src/nemo-share.c:1130
+msgid "Share this Folder"
+msgstr "이 폴더 공유"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s에서 시그널 %d을(를) 반환"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s 실패 (알 수 없는 이유)"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "'net usershare'에서 에러 %d을(를) 반환: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "'net usershare'에서 에러 %d을(를) 반환"
+
+#: ../src/shares.c:187
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "'net usershare'의 출력이 올바른 UTF-8 인코딩이 아님"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+msgid "Failed"
+msgstr "실패"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "삼바의 testparm에서 시그널 %d을(를) 반환"
+
+#: ../src/shares.c:556
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "삼바의 testparm 실패 (알 수 없는 이유)"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "삼바의 testparm에서 에러 %d을(를) 반환: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "삼바의 testparm에서 에러 %d을(를) 반환"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr "%s 경로에서 공유를 지울 수 없음: 해당 경로가 공유되지 않았습니다"
+
+#: ../src/shares.c:726
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"기존의 공유에서 경로를 바꿀 수 없음. 먼저 기존의 공유를 지운 후에, "
+"새로운 공유를 더하십시오"
+
+#: ../interfaces/share-dialog.glade.in.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>폴더 공유</b></big>"
+
+#: ../interfaces/share-dialog.glade.in.h:2
+msgid "Co_mment:"
+msgstr "설명(_M):"
+
+#: ../interfaces/share-dialog.glade.in.h:3
+msgid "Share _name:"
+msgstr "공유 이름(_N):"
+
+#: ../interfaces/share-dialog.glade.in.h:4
+msgid "Share this _folder"
+msgstr "이 폴더 공유(_F)"
+
+#: ../interfaces/share-dialog.glade.in.h:5
+msgid "_Allow other people to write in this folder"
+msgstr "다른 사람이 이 폴더에 쓰도록 허용(_A)"
+
+#: ../interfaces/share-dialog.glade.in.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "게스트 접근 허용(사용자 계정이 없는 사람들)(_G)"
+

@@ -1,0 +1,227 @@
+# Alexander Nyakhaychyk <nab@mail.by>, 2008.
+# Ladyko Andrey <fylh.if@gmail.com>, 2009.
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto.master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-20 17:02+0300\n"
+"PO-Revision-Date: 2011-09-20 17:02+0300\n"
+"Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
+"Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.ui.h:3
+msgid "Send To..."
+msgstr "Паслаць..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Паслаць файл электронным лістом, імгненным паведамленнем і г.д."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Паслаць файлы электронным лістом, імгненным паведамленнем і г.д."
+
+#: ../src/nemo-sendto-command.c:572
+msgid "Files"
+msgstr "Файлы"
+
+#: ../src/nemo-sendto-command.c:783
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Чакае перадачы адрасоў і назваў файлаў праз опцыі\n"
+
+#: ../src/nemo-sendto-command.c:804
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Не ўдалося разабраць опцыі загаднага радка: %s\n"
+
+#: ../src/nemo-sendto-command.c:819
+msgid "Could not load any plugins."
+msgstr "Не ўдалося загрузіць плугіны."
+
+#: ../src/nemo-sendto-command.c:822
+msgid "Please verify your installation"
+msgstr "Праверце правільнасць усталёўкі"
+
+#: ../src/nemo-sendto.ui.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Сцісканне</b>"
+
+#: ../src/nemo-sendto.ui.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Мэтавае месцапалажэнне</b>"
+
+#: ../src/nemo-sendto.ui.h:4
+msgid "Send _as:"
+msgstr "Паслаць _як:"
+
+#: ../src/nemo-sendto.ui.h:5
+msgid "Send _packed in:"
+msgstr "Паслаць _запакаваным у:"
+
+#: ../src/nemo-sendto.ui.h:6
+msgid "Send t_o:"
+msgstr "_Паслаць:"
+
+#: ../src/nemo-sendto.ui.h:7
+msgid "_Send"
+msgstr "_Паслаць"
+
+#: ../src/plugins/evolution/evolution.c:378
+msgid "Email"
+msgstr "Электронная пошта"
+
+#: ../src/plugins/evolution/e-contact-entry.c:153
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Не ўдалося атрымаць кантактную інфармацыю: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:186
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Не ўдалося знайсці кантактную інфармацыю: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:414
+msgid "Cannot create searchable view."
+msgstr "Не ўдалося выгляд, прыдатны для пошуку."
+
+#: ../src/plugins/evolution/e-contact-entry.c:886
+msgid "Success"
+msgstr "Поспех"
+
+#: ../src/plugins/evolution/e-contact-entry.c:888
+msgid "An argument was invalid."
+msgstr "Хібны аргумент."
+
+#: ../src/plugins/evolution/e-contact-entry.c:890
+msgid "The address book is busy."
+msgstr "Адрасная кніга занята."
+
+#: ../src/plugins/evolution/e-contact-entry.c:892
+msgid "The address book is offline."
+msgstr "Адрасная кніга недаступна."
+
+#: ../src/plugins/evolution/e-contact-entry.c:894
+msgid "The address book does not exist."
+msgstr "Адрасная кніга не існуе."
+
+#: ../src/plugins/evolution/e-contact-entry.c:896
+msgid "The \"Me\" contact does not exist."
+msgstr "Кантакт \"Я\" не існуе."
+
+#: ../src/plugins/evolution/e-contact-entry.c:898
+msgid "The address book is not loaded."
+msgstr "Адрасная кніга не загружана."
+
+#: ../src/plugins/evolution/e-contact-entry.c:900
+msgid "The address book is already loaded."
+msgstr "Адрасная кніга ўжо загружана."
+
+#: ../src/plugins/evolution/e-contact-entry.c:902
+msgid "Permission was denied when accessing the address book."
+msgstr "Доступ да адраснай кнігі забаронены."
+
+#: ../src/plugins/evolution/e-contact-entry.c:904
+msgid "The contact was not found."
+msgstr "Кантактная інфармацыя не знойдзена."
+
+#: ../src/plugins/evolution/e-contact-entry.c:906
+msgid "This contact ID already exists."
+msgstr "Ідэнтыфікатар запісу кантактнай інфармацыі ўжо існуе."
+
+#: ../src/plugins/evolution/e-contact-entry.c:908
+msgid "The protocol is not supported."
+msgstr "Пратакол не падтрымліваецца."
+
+#: ../src/plugins/evolution/e-contact-entry.c:910
+msgid "The operation was cancelled."
+msgstr "Аперацыя скасавана."
+
+#: ../src/plugins/evolution/e-contact-entry.c:912
+msgid "The operation could not be cancelled."
+msgstr "Не ўдалося скасаваць аперацыю."
+
+#: ../src/plugins/evolution/e-contact-entry.c:914
+msgid "The address book authentication failed."
+msgstr "Не ўдалося ідэнтыфікаваць сябе для доступу да адраснай кнігі."
+
+#: ../src/plugins/evolution/e-contact-entry.c:916
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr ""
+"Для доступу да адраснай кнігі трэба ідэнтыфікаваць сябе, але гэта не было "
+"зроблена."
+
+#: ../src/plugins/evolution/e-contact-entry.c:918
+msgid "A secure connection is not available."
+msgstr "Бяспечнае злучэнне недаступна."
+
+#: ../src/plugins/evolution/e-contact-entry.c:920
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "Пры доступе да адраснай кнігі ўзнікла памылка CORBA."
+
+#: ../src/plugins/evolution/e-contact-entry.c:922
+msgid "The address book source does not exist."
+msgstr "Крыніца адраснай кнігі не існуе."
+
+#: ../src/plugins/evolution/e-contact-entry.c:924
+#: ../src/plugins/evolution/e-contact-entry.c:927
+msgid "An unknown error occurred."
+msgstr "Узнікла невядомая памылка."
+
+#: ../src/plugins/gajim/gajim.c:417
+msgid "Unable to send file"
+msgstr "Не ўдалося паслаць файл"
+
+#: ../src/plugins/gajim/gajim.c:418
+msgid "There is no connection to gajim remote service."
+msgstr "Няма злучэння з аддаленым сэрвісам Gajim."
+
+#: ../src/plugins/gajim/gajim.c:442 ../src/plugins/gajim/gajim.c:482
+msgid "Sending file failed"
+msgstr "Не ўдалося паслаць файл"
+
+#: ../src/plugins/gajim/gajim.c:443
+msgid "Recipient is missing."
+msgstr "Адрасат адсутнічае."
+
+#: ../src/plugins/gajim/gajim.c:482
+msgid "Unknown recipient."
+msgstr "Невядомы адрасат."
+
+#: ../src/plugins/gajim/gajim.c:505
+msgid "Instant Message (Gajim)"
+msgstr "Імгненнае паведамленне (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:92
+msgid "New CD/DVD"
+msgstr "Новы CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:99
+msgid "Existing CD/DVD"
+msgstr "Існуючы CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:178
+msgid "CD/DVD Creator"
+msgstr "Стваральнік CD/DVD"
+
+#: ../src/plugins/pidgin/pidgin.c:464
+msgid "Instant Message (Pidgin)"
+msgstr "Імгненнае паведамленне (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:248
+msgid "Removable disks and shares"
+msgstr "Зменныя дыскі і супольныя рэсурсы"
+
+#: ../src/plugins/upnp/upnp.c:309
+msgid "UPnP Media Server"
+msgstr "Медыясервер UPnP"

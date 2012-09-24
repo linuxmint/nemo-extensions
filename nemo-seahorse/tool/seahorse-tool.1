@@ -1,0 +1,108 @@
+.\"
+.\" This page was created on 2006-05-06 19:28:04 by makeman.pl
+.\" ``makeman.pl'' is part of the ``MakeMan'' project.
+.\" For more information, please see http://mama.sourceforge.net
+.\"
+.TH seahorse-tool 1 "May 04, 2006" "seahorse" "GNOME" 
+
+.SH NAME
+seahorse-tool \- PGP/GnuPG file encryption for the GNOME Desktop
+
+.SH SYNOPSIS
+\fBseahorse-tool\fR
+[ \fIOPTION\fR... ] 
+
+.SH "DESCRIPTION"
+.PP
+Seahorse is a GNOME application for managing encryption keys. 
+\fBseahorse-tool\fR allows you to encrypt, decrypt or sign files. It is integrated into the nemo right-click menu, but can also be used from the command line.
+
+.SH "OPTIONS"
+
+.SS "Help options"
+.\" Begin List
+.TP
+\fB\-?, \-\-help\fR
+Show summary of all options and exit.
+.TP
+\fB\-\-usage\fR
+Display brief usage message and exit.
+.\" End List
+
+.SS "Application options"
+.\" Begin List
+.TP
+\fB\-i \fR\fIFILE\fR, \fB\-\-import \fR\fIFILE\fR
+Import keys from the FILE.
+.TP
+\fB\-e \fR\fIFILE\fR, \fB\-\-encrypt \fR\fIFILE\fR
+Encrypt FILE.
+.TP
+\fB\-s \fR\fIFILE\fR, \fB\-\-sign \fR\fIFILE\fR
+Sign FILE with default key.
+.TP
+\fB\-d \fR\fIFILE\fR, \fB\-\-decrypt \fR\fIFILE\fR
+Decrypt encrypted FILE.
+.TP
+\fB\-v \fR\fIFILE\fR, \fB\-\-verify \fIFILE\fR
+Verify signature FILE.
+.TP
+\fB\-T, \-\-uri\-list\fR
+Read list of URIs on standard in.
+.TP
+\fB\-\-version\fR
+Show version information and exit.
+.\" End List
+
+.SS "Additional options"
+.PP
+In addition, the usual GTK+ and GNOME command line options apply. See the output of \-\-help for details.
+
+.SH "VERSION"
+.PP
+This man page describes \fBseahorse\fR version 0.9.
+
+.SH "BUGS"
+.PP
+If you find a bug, please report it at 
+ \fIhttp://bugzilla.gnome.org/enter_bug.cgi?product=seahorse\fR.
+
+.SH "AUTHORS"
+.PP
+Jacob
+Perkins
+<jap1@users.sourceforge.net>
+.PP
+Stef
+Walter
+<stef@memberwebs.com>
+.PP
+Adam
+Schreiber
+<sadam@clemson.edu>
+.PP
+This man page was originally written by
+Michael
+Mende
+<debian@menole.net>
+for the Debian system.
+
+.SH "COPYRIGHT"
+.PP
+.br
+Copyright (C) 2001, 2002 Jose Carlos Garcia Sogo
+.br
+Copyright (C) 2002, 2003 Jacob Perkins
+.br
+Copyright (C) 2004, 2006 Stef Walter, Adam Schreiber
+
+.SH "LICENSE"
+.PP
+.br
+You are free to distribute this software under the terms of the GNU General Public License.
+.br
+Documentation and help files are covered by GFDL license.
+
+.SH "SEE ALSO"
+.PP
+\fBseahorse\-daemon(1)\fR,

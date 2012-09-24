@@ -1,0 +1,298 @@
+# Afrikaans translation for nemo-sendto.
+# Copyright (C) 2010 nemo-sendto's COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-sendto package.
+# F Wolff <friedel@translate.org.za>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2010-03-13 17:28+0000\n"
+"PO-Revision-Date: 2010-03-10 09:11+0100\n"
+"Last-Translator: F Wolff <friedel@translate.org.za>\n"
+"Language-Team: translate-discuss-af@lists.sourceforge.net\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: af\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.5.2\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Laaste inprop wat gebruik is om te stuur"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Die tipe argief wat gebruik is"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "_Stuur na..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "Stuur lêers na afgeleë toestelle of mense"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "Stuur na..."
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.ui.h:3
+msgid "Send To..."
+msgstr "Stuur na..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Stuur lêer per pos, kitsboodskap..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Stuur lêers per pos, kitsboodskap..."
+
+#: ../src/nemo-sendto-command.c:569
+msgid "Files"
+msgstr "Lêers"
+
+#: ../src/nemo-sendto-command.c:782
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Verwag URI's of lêername om as opsies aangegee te word\n"
+
+#: ../src/nemo-sendto-command.c:799
+msgid "Nemo Sendto"
+msgstr "Nemo-stuurna"
+
+#: ../src/nemo-sendto-command.c:803
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Kon nie opdraglynopsies ontleed nie: %s\n"
+
+#: ../src/nemo-sendto-command.c:818
+msgid "Could not load any plugins."
+msgstr "Kon nie enige inproppe laai nie."
+
+#: ../src/nemo-sendto-command.c:821
+msgid "Please verify your installation"
+msgstr "Gaan asb. u installasie na"
+
+#: ../src/nemo-sendto.ui.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Saampersing</b>"
+
+#: ../src/nemo-sendto.ui.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Teiken</b>"
+
+#: ../src/nemo-sendto.ui.h:4
+msgid "Send _as:"
+msgstr "Stuur _as:"
+
+#: ../src/nemo-sendto.ui.h:5
+msgid "Send _packed in:"
+msgstr "Stuur _verpak in:"
+
+#: ../src/nemo-sendto.ui.h:6
+msgid "Send t_o:"
+msgstr "Stuur _na:"
+
+#: ../src/nemo-sendto.ui.h:7
+msgid "_Send"
+msgstr "_Stuur"
+
+#: ../src/plugins/bluetooth/bluetooth.c:451
+msgid "Programming error, could not find the device in the list"
+msgstr "Programmeerfout. Kon nie die toestel in die lys kry nie"
+
+#: ../src/plugins/bluetooth/bluetooth.c:526
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr ""
+
+#: ../src/plugins/bluetooth/bluetooth.c:550
+msgid "Bluetooth (OBEX Push)"
+msgstr ""
+
+#: ../src/plugins/empathy/empathy.c:144
+msgid "The contact selected cannot receive files."
+msgstr "Die gekose kontak kan nie lêers ontvang nie."
+
+#: ../src/plugins/empathy/empathy.c:150
+msgid "The contact selected is offline."
+msgstr "Die gekose kontak is vanlyn."
+
+#: ../src/plugins/empathy/empathy.c:205
+msgid "No error message"
+msgstr "Geen foutboodskap nie"
+
+#: ../src/plugins/empathy/empathy.c:281
+msgid "Instant Message (Empathy)"
+msgstr "Kitsboodskap (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:369
+msgid "Email"
+msgstr "E-pos"
+
+#: ../src/plugins/evolution/e-contact-entry.c:153
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Kan nie kontak kry nie: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:186
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Kon nie kontak kry vind nie: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:414
+msgid "Cannot create searchable view."
+msgstr ""
+
+#: ../src/plugins/evolution/e-contact-entry.c:886
+msgid "Success"
+msgstr "Sukses"
+
+#: ../src/plugins/evolution/e-contact-entry.c:888
+msgid "An argument was invalid."
+msgstr ""
+
+#: ../src/plugins/evolution/e-contact-entry.c:890
+msgid "The address book is busy."
+msgstr "Die adresboek is besig."
+
+#: ../src/plugins/evolution/e-contact-entry.c:892
+msgid "The address book is offline."
+msgstr "Die adresboek is vanlyn."
+
+#: ../src/plugins/evolution/e-contact-entry.c:894
+msgid "The address book does not exist."
+msgstr "Die adresboek bestaan nie."
+
+#: ../src/plugins/evolution/e-contact-entry.c:896
+msgid "The \"Me\" contact does not exist."
+msgstr ""
+
+#: ../src/plugins/evolution/e-contact-entry.c:898
+msgid "The address book is not loaded."
+msgstr "Die adresboek is nie gelaai nie."
+
+#: ../src/plugins/evolution/e-contact-entry.c:900
+msgid "The address book is already loaded."
+msgstr "Die adresboek is reeds gelaai."
+
+#: ../src/plugins/evolution/e-contact-entry.c:902
+msgid "Permission was denied when accessing the address book."
+msgstr ""
+
+#: ../src/plugins/evolution/e-contact-entry.c:904
+msgid "The contact was not found."
+msgstr "Die kontak is nie gevind nie."
+
+#: ../src/plugins/evolution/e-contact-entry.c:906
+msgid "This contact ID already exists."
+msgstr "Die kontak-ID bestaan reeds."
+
+#: ../src/plugins/evolution/e-contact-entry.c:908
+msgid "The protocol is not supported."
+msgstr "Die protokol word nie ondersteun nie."
+
+#: ../src/plugins/evolution/e-contact-entry.c:910
+#, fuzzy
+msgid "The operation was cancelled."
+msgstr "Die bewerking is gekanselleer."
+
+#: ../src/plugins/evolution/e-contact-entry.c:912
+#, fuzzy
+msgid "The operation could not be cancelled."
+msgstr "Die bewerking kon nie gekanselleer word nie."
+
+#: ../src/plugins/evolution/e-contact-entry.c:914
+msgid "The address book authentication failed."
+msgstr ""
+
+#: ../src/plugins/evolution/e-contact-entry.c:916
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr ""
+
+#: ../src/plugins/evolution/e-contact-entry.c:918
+msgid "A secure connection is not available."
+msgstr "'n Beveiligde verbinding is nie beskikbaar nie."
+
+#: ../src/plugins/evolution/e-contact-entry.c:920
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "'n CORBA-fout het voorgekom tydens toegang tot die adresboek."
+
+#: ../src/plugins/evolution/e-contact-entry.c:922
+msgid "The address book source does not exist."
+msgstr ""
+
+#: ../src/plugins/evolution/e-contact-entry.c:924
+#: ../src/plugins/evolution/e-contact-entry.c:927
+msgid "An unknown error occurred."
+msgstr "'n Onbekende fout het voorgekom."
+
+#: ../src/plugins/gajim/gajim.c:417
+msgid "Unable to send file"
+msgstr "Kan nie lêer stuur nie"
+
+#: ../src/plugins/gajim/gajim.c:418
+msgid "There is no connection to gajim remote service."
+msgstr ""
+
+#: ../src/plugins/gajim/gajim.c:442 ../src/plugins/gajim/gajim.c:482
+msgid "Sending file failed"
+msgstr "Kon lêer nie stuur nie"
+
+#: ../src/plugins/gajim/gajim.c:443
+#, fuzzy
+msgid "Recipient is missing."
+msgstr "Ontvanger is weg."
+
+#: ../src/plugins/gajim/gajim.c:482
+msgid "Unknown recipient."
+msgstr "Onbekende ontvanger."
+
+#: ../src/plugins/gajim/gajim.c:505
+msgid "Instant Message (Gajim)"
+msgstr "Kitsboodskap (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:92
+msgid "New CD/DVD"
+msgstr "Nuwe CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:99
+msgid "Existing CD/DVD"
+msgstr "Bestaande CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:178
+#, fuzzy
+msgid "CD/DVD Creator"
+msgstr "CD/DVD-skepper"
+
+#: ../src/plugins/pidgin/pidgin.c:464
+msgid "Instant Message (Pidgin)"
+msgstr "Kitsboodskap (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+#, fuzzy
+msgid "Removable disks and shares"
+msgstr "Verwyderbare skywe en gedeelde netwerkgidse"
+
+#: ../src/plugins/upnp/upnp.c:309
+msgid "UPnP Media Server"
+msgstr "UPnP-mediabediener"
+

@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>nemo-sendto-plugin</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="nemo-sendto Reference Manual">
+<link rel="up" href="ch01.html" title="nemo-sendto documentation">
+<link rel="prev" href="ch01.html" title="nemo-sendto documentation">
+<link rel="next" href="api-index-full.html" title="API Index">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">nemo-sendto Reference Manual</th>
+<td><a accesskey="n" href="api-index-full.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#nemo-sendto-nemo-sendto-plugin.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#nemo-sendto-nemo-sendto-plugin.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#nemo-sendto-nemo-sendto-plugin.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="nemo-sendto-nemo-sendto-plugin"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="nemo-sendto-nemo-sendto-plugin.top_of_page"></a>nemo-sendto-plugin</span></h2>
+<p>nemo-sendto-plugin — nemo-sento plug-in</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="nemo-sendto-nemo-sendto-plugin.stability-level"></a><h2>Stability Level</h2>
+Stable, unless otherwise indicated
+</div>
+<div class="refsynopsisdiv">
+<a name="nemo-sendto-nemo-sendto-plugin.synopsis"></a><h2>Synopsis</h2>
+<a name="NstPluginCapabilities"></a><pre class="synopsis">
+#include &lt;bluetooth-plugin.h&gt;
+
+#define             <a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NST-INIT-PLUGIN:CAPS" title="NST_INIT_PLUGIN()">NST_INIT_PLUGIN</a>                     (plugininfo)
+struct              <a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NstPlugin" title="struct NstPlugin">NstPlugin</a>;
+enum                <a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NstPluginCapabilities-enum" title="enum NstPluginCapabilities">NstPluginCapabilities</a>;
+struct              <a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NstPluginInfo" title="struct NstPluginInfo">NstPluginInfo</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="nemo-sendto-nemo-sendto-plugin.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GFlags
+   +----NstPluginCapabilities
+</pre>
+</div>
+<div class="refsect1">
+<a name="nemo-sendto-nemo-sendto-plugin.description"></a><h2>Description</h2>
+<p>
+Plug-ins can be used to extend nemo-sendto.
+</p>
+</div>
+<div class="refsect1">
+<a name="nemo-sendto-nemo-sendto-plugin.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="NST-INIT-PLUGIN:CAPS"></a><h3>NST_INIT_PLUGIN()</h3>
+<pre class="programlisting">#define             NST_INIT_PLUGIN(plugininfo)</pre>
+<p>
+Call this on an <a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NstPluginInfo" title="struct NstPluginInfo"><span class="type">NstPluginInfo</span></a> structure to make it available to nemo-sendto.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>plugininfo</code></em> :</span></p></td>
+<td>a <a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NstPluginInfo" title="struct NstPluginInfo"><span class="type">NstPluginInfo</span></a> structure representing the plugin</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NstPlugin"></a><h3>struct NstPlugin</h3>
+<pre class="programlisting">struct NstPlugin {
+	GModule *module;
+	NstPluginInfo *info;
+};
+</pre>
+<p>
+A structure as used in nemo-sendto.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Dynamic-Loading-of-Modules.html#GModule"><span class="type">GModule</span></a> *<em class="structfield"><code><a name="NstPlugin.module"></a>module</code></em>;</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Dynamic-Loading-of-Modules.html#GModule"><span class="type">GModule</span></a> for the opened shared library</td>
+</tr>
+<tr>
+<td><p><span class="term"><a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NstPluginInfo" title="struct NstPluginInfo"><span class="type">NstPluginInfo</span></a> *<em class="structfield"><code><a name="NstPlugin.info"></a>info</code></em>;</span></p></td>
+<td>a <a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NstPluginInfo" title="struct NstPluginInfo"><span class="type">NstPluginInfo</span></a> structure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NstPluginCapabilities-enum"></a><h3>enum NstPluginCapabilities</h3>
+<pre class="programlisting">typedef enum {
+	NEMO_CAPS_NONE = 0,
+	NEMO_CAPS_SEND_DIRECTORIES = 1 &lt;&lt; 0,
+	NEMO_CAPS_SEND_IMAGES = 1 &lt;&lt; 1,
+} NstPluginCapabilities;
+</pre>
+<p>
+Capabilities of the plugin.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="NEMO-CAPS-NONE:CAPS"></a><span class="term"><code class="literal">NEMO_CAPS_NONE</code></span></p></td>
+<td>No capabilities
+</td>
+</tr>
+<tr>
+<td><p><a name="NEMO-CAPS-SEND-DIRECTORIES:CAPS"></a><span class="term"><code class="literal">NEMO_CAPS_SEND_DIRECTORIES</code></span></p></td>
+<td>The plugin can send whole directories without compression
+</td>
+</tr>
+<tr>
+<td><p><a name="NEMO-CAPS-SEND-IMAGES:CAPS"></a><span class="term"><code class="literal">NEMO_CAPS_SEND_IMAGES</code></span></p></td>
+<td>The plugin only sends images which could be resized
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NstPluginInfo"></a><h3>struct NstPluginInfo</h3>
+<pre class="programlisting">struct NstPluginInfo {
+	gchar                             *icon;
+	gchar                             *id;
+	gchar                             *description;
+	gchar                             *gettext_package;
+	NstPluginCapabilities              capabilities;
+	gboolean (*init)                  (NstPlugin *plugin);
+	GtkWidget* (*get_contacts_widget) (NstPlugin *plugin);
+	gboolean (*validate_destination)  (NstPlugin *plugin, GtkWidget *contact_widget, char **error);
+	gboolean (*send_files)            (NstPlugin *plugin,
+					   GtkWidget *contact_widget,
+					   GList *file_list);
+	gboolean (*destroy)               (NstPlugin *plugin) ;
+};
+</pre>
+<p>
+A structure representing a nemo-sendto plugin. You should also call <a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NST-INIT-PLUGIN:CAPS" title="NST_INIT_PLUGIN()"><code class="function">NST_INIT_PLUGIN()</code></a> on the plugin structure to export it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="NstPluginInfo.icon"></a>icon</code></em>;</span></p></td>
+<td>The icon name for the plugin selection drop-down</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="NstPluginInfo.id"></a>id</code></em>;</span></p></td>
+<td>A unique ID representing the plugin</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="NstPluginInfo.description"></a>description</code></em>;</span></p></td>
+<td>The label used in the plugin selection drop-down</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="NstPluginInfo.gettext-package"></a>gettext_package</code></em>;</span></p></td>
+<td>The domain to use to translate the description, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the plugin is part of nemo-sendto</td>
+</tr>
+<tr>
+<td><p><span class="term"><a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NstPluginCapabilities"><span class="type">NstPluginCapabilities</span></a> <em class="structfield"><code><a name="NstPluginInfo.capabilities"></a>capabilities</code></em>;</span></p></td>
+<td>a bitmask of <a class="link" href="nemo-sendto-nemo-sendto-plugin.html#NstPluginCapabilities"><span class="type">NstPluginCapabilities</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="NstPluginInfo.init"></a>init</code></em> ()</span></p></td>
+<td>Check for dependencies, and return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if dependencies such as programs are missing.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="NstPluginInfo.get-contacts-widget"></a>get_contacts_widget</code></em> ()</span></p></td>
+<td>Return the contact widget, the widget to select the destination of the files</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="NstPluginInfo.validate-destination"></a>validate_destination</code></em> ()</span></p></td>
+<td>Validate whether the destination can receive the file. This callback is optional.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="NstPluginInfo.send-files"></a>send_files</code></em> ()</span></p></td>
+<td>Actually send the files to the selected destination. The file list is a <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of URI strings.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="NstPluginInfo.destroy"></a>destroy</code></em> ()</span></p></td>
+<td>Free all the resources used by the plugin.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>

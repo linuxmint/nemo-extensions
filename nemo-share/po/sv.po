@@ -1,0 +1,184 @@
+# Swedish translation of nemo-share.
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the nemo-share package.
+# Daniel Nylander <po@danielnylander.se>, 2007, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-20 22:08+0200\n"
+"PO-Revision-Date: 2009-08-20 22:09+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid "Nemo needs to add some permissions to your folder \"%s\" in order to share it"
+msgstr "Nemo behöver lägga till några rättigheter till din mapp \"%s\" för att kunna dela ut den"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder automatically?"
+msgstr ""
+"Mappen \"%s\" behöver följande extra rättigheter för att utdelningen ska fungera:\n"
+"%s%s%sVill du att Nemo automatiskt ska lägga till dessa rättigheter till mappen?"
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr "  - läsrättighet för andra\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr "  - skrivrättighet för andra\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr "  - körrättighet för andra\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "Lägg till rättigheterna automatiskt"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Kunde inte ändra rättigheterna för mappen \"%s\""
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "Utdelningsnamnet är för långt"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "Utdelningsnamnet får inte vara blankt"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Fel vid hämtning av utdelningsinformation: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "En annan utdelning har samma namn"
+
+#: ../src/nemo-share.c:555
+#: ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "Ändra _utdelning"
+
+#: ../src/nemo-share.c:555
+#: ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "Skapa _utdelning"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "Det inträffade ett fel med hämtning av utdelningsinformation"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "Utdelning"
+
+#: ../src/nemo-share.c:1114
+msgid "Folder Sharing"
+msgstr "Mapputdelning"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "Utdelningsalternativ"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "Dela ut den här mappen"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s returnerade signal %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s misslyckades på grund av en okänd anledning"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "\"net usershare\" returnerade fel %d: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "\"net usershare\" returnerade fel %d"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "utdata från \"net usershare\" är inte i en giltig UTF-8-kodning"
+
+#: ../src/shares.c:442
+#: ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Misslyckades"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "Sambas testparm returnerade signal %d"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "Sambas testparm misslyckades på grund av en okänd anledning"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "Sambas testparm returnerade fel %d: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "Sambas testparm returnerade fel %d"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr "Kan inte ta bort utdelningen för sökvägen %s: den sökvägen är inte utdelad"
+
+#: ../src/shares.c:726
+#, c-format
+msgid "Cannot change the path of an existing share; please remove the old share first and add a new one"
+msgstr "Kan inte ändra sökvägen för en befintlig utdelning; ta bort den gamla först och lägg sedan till den nya"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Mapputdelning</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "Ko_mmentar:"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "Utdelnings_namn:"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "Dela ut den här _mappen"
+
+#: ../interfaces/share-dialog.ui.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr "_Tillåt andra personer att skapa och ta bort filer i den här mappen"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "_Gäståtkomst (för personer utan ett användarkonto)"
+

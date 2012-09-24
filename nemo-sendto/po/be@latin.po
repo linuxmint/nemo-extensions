@@ -1,0 +1,313 @@
+# Biełaruski pierakład nemo-sendto.
+# Copyright (C) 2007 Ihar Hrachyshka
+# This file is distributed under the same license as the nemo-sendto package.
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2007.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-19 01:50+0300\n"
+"PO-Revision-Date: 2008-02-01 12:55+0200\n"
+"Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
+"Language-Team: Belarusian Latin <i18n@mova.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Apošni plugin, jakim dasyłaŭ"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Apošni vykarystany typ archiva"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"Vykarystoŭvajecca dziela zachoŭvańnia źviestak ab pluginie, jakim apošni raz "
+"dasyłalisia fajły praz nemo-sendto."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"Vykarystoŭvajecca dziela zachoŭvańnia źviestak ab typie archiva, jaki "
+"vykarystoŭvaŭsia apošni raz (0: zip, 1: tar.gz, 2: tar.bz2)."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../gaim_plugin/nemo-sendto-plugin.c:308
+#: ../pidgin_plugin/nemo-sendto-plugin.c:331
+msgid "Nemo Integration"
+msgstr "Intehracyja z Nemoam"
+
+#. name
+#. version
+#. summary
+#. name
+#. version
+#. summary
+#: ../gaim_plugin/nemo-sendto-plugin.c:310
+#: ../gaim_plugin/nemo-sendto-plugin.c:311
+#: ../pidgin_plugin/nemo-sendto-plugin.c:333
+#: ../pidgin_plugin/nemo-sendto-plugin.c:334
+msgid "Provides integration with Nemo"
+msgstr "Intehruje z Nemoam"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "Dašli da..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Dašli fajł poštaj, imhniennym paviedamlenniem..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Dašli fajły poštaj, imhniennym paviedamlenniem..."
+
+#: ../src/nemo-sendto-command.c:76
+msgid "Default folder to use"
+msgstr "Zmoŭčany kataloh"
+
+#: ../src/nemo-sendto-command.c:534
+msgid "Files"
+msgstr "Fajły"
+
+#: ../src/nemo-sendto-command.c:740
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Čakaje adrasoŭ (URI) ci nazvaŭ fajłaŭ, padadzienych jak opcyi\n"
+
+#: ../src/nemo-sendto-command.c:757
+msgid "Nemo Sendto"
+msgstr "Dasyłańnie Nemoam"
+
+#: ../src/nemo-sendto-command.c:761
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Niemahčyma razabrać opcyi zahadnaha radka: %s\n"
+
+#: ../src/nemo-sendto-command.c:776
+msgid "Could not load any plugins."
+msgstr "Niemahčyma zahruzić nivodnaha plugina."
+
+#: ../src/nemo-sendto-command.c:779
+msgid "Please verify your installation"
+msgstr "Pravier svaju instalacyju"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Kampresija</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Meta</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "Dašli _jak:"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "_Dašli zapakavanym:"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "Dašli _da:"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "_Dašli"
+
+#: ../src/plugins/balsa.c:103
+msgid "Email (Balsa)"
+msgstr "Email (Balsa)"
+
+#: ../src/plugins/bluetooth.c:350 ../src/plugins/bluetooth.c:358
+msgid "Programming error, could not find the device in the list"
+msgstr "Pamyłka prahrameraŭ, niemahčyma znajści pryładu ŭ śpisie"
+
+#: ../src/plugins/bluetooth.c:407
+msgid "Obex Push file transfer unsupported"
+msgstr "Pierasyłańnie fajłaŭ praz „Obex Push” nie absłuhoŭvajecca."
+
+#: ../src/plugins/bluetooth.c:431
+msgid "Bluetooth (OBEX Push)"
+msgstr "Bluetooth (OBEX Push)"
+
+#: ../src/plugins/evolution.c:221
+msgid "Email"
+msgstr "Email"
+
+#: ../src/plugins/e-contact-entry.c:158
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Niemahčyma atrymać kantakt: %s"
+
+#: ../src/plugins/e-contact-entry.c:191
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Niemahčyma znajści kantakt: %s"
+
+#: ../src/plugins/e-contact-entry.c:417
+msgid "Cannot create searchable view."
+msgstr "Niemahčyma stvaryć vyhlad z mahčymaściu pošuku."
+
+#: ../src/plugins/e-contact-entry.c:889
+msgid "Success"
+msgstr "Pośpiech"
+
+#: ../src/plugins/e-contact-entry.c:891
+msgid "An argument was invalid."
+msgstr "Byŭ padadzieny niapravilny arhument."
+
+#: ../src/plugins/e-contact-entry.c:893
+msgid "The address book is busy."
+msgstr "Adrasnaja kniha zaniataja."
+
+#: ../src/plugins/e-contact-entry.c:895
+msgid "The address book is offline."
+msgstr "Adrasnaja kniha nia ŭklučanaja ŭ sietku."
+
+#: ../src/plugins/e-contact-entry.c:897
+msgid "The address book does not exist."
+msgstr "Adrasnaja kniha nie isnuje."
+
+#: ../src/plugins/e-contact-entry.c:899
+msgid "The \"Me\" contact does not exist."
+msgstr "Kantakt \"Ja\" nie isnuje."
+
+#: ../src/plugins/e-contact-entry.c:901
+msgid "The address book is not loaded."
+msgstr "Adrasnaja kniha nie zahružanaja."
+
+#: ../src/plugins/e-contact-entry.c:903
+msgid "The address book is already loaded."
+msgstr "Adrasnaja kniha ŭžo zahružanaja."
+
+#: ../src/plugins/e-contact-entry.c:905
+msgid "Permission was denied when accessing the address book."
+msgstr "Dostup da adrasnaj knihi zabaronieny."
+
+#: ../src/plugins/e-contact-entry.c:907
+msgid "The contact was not found."
+msgstr "Kantakt nia znojdzieny."
+
+#: ../src/plugins/e-contact-entry.c:909
+msgid "This contact ID already exists."
+msgstr "Kantakt z takim ID užo isnuje."
+
+#: ../src/plugins/e-contact-entry.c:911
+msgid "The protocol is not supported."
+msgstr "Pratakoł nie padtrymlivajecca."
+
+#: ../src/plugins/e-contact-entry.c:913
+msgid "The operation was cancelled."
+msgstr "Aperacyja anulavanaja."
+
+#: ../src/plugins/e-contact-entry.c:915
+msgid "The operation could not be cancelled."
+msgstr "Niemahčyma anulavać hetuju aperacyju."
+
+#: ../src/plugins/e-contact-entry.c:917
+msgid "The address book authentication failed."
+msgstr "Niaŭdałaja aŭtaryzacyja dla dostupu da adrasnaj knihi."
+
+#: ../src/plugins/e-contact-entry.c:919
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr ""
+"Kab atrymać dostup da adrasnaj knihi, treba aŭtarayzavacca, ale źviestak "
+"aŭtaryzacyi nie było padadziena."
+
+#: ../src/plugins/e-contact-entry.c:921
+msgid "A secure connection is not available."
+msgstr "Bieśpiečnaje spałučeńnie niedastupnaje."
+
+#: ../src/plugins/e-contact-entry.c:923
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "Padčas dostupu da adrasnaj knihi ŭźnikła pamyłka CORBA."
+
+#: ../src/plugins/e-contact-entry.c:925
+msgid "The address book source does not exist."
+msgstr "Krynica adrasnaj knihi nie isnuje."
+
+#: ../src/plugins/e-contact-entry.c:927 ../src/plugins/e-contact-entry.c:930
+msgid "An unknown error occurred."
+msgstr "Uźnikła nieviadomaja pamyłka."
+
+#: ../src/plugins/gaim.c:228
+msgid "Instant Message (Gaim)"
+msgstr "Imhniennaje paviedamleńnie (Gaim)"
+
+#: ../src/plugins/gajim.c:402
+msgid "Unable to send file"
+msgstr "Niemahčyma dasłać fajł"
+
+#: ../src/plugins/gajim.c:403
+msgid "There is no connection to gajim remote service."
+msgstr "Niama spałučeńnia z addalenaj pasłuhaj gajim."
+
+#: ../src/plugins/gajim.c:427 ../src/plugins/gajim.c:466
+msgid "Sending file failed"
+msgstr "Pamyłka dasyłańnia fajłu"
+
+#: ../src/plugins/gajim.c:428
+msgid "Recipient is missing."
+msgstr "Atrymoŭcy niama."
+
+#: ../src/plugins/gajim.c:466
+msgid "Unknown recipient."
+msgstr "Nieviadomy atrymoŭca."
+
+#: ../src/plugins/gajim.c:488
+msgid "Instant Message (Gajim)"
+msgstr "Imhniennaje paviedamleńnie (Gajim)"
+
+#: ../src/plugins/pidgin.c:239
+msgid "Instant Message (Pidgin)"
+msgstr "Imhniennaje paviedamleńnie (Pidgin)"
+
+#: ../src/plugins/sylpheed-claws.c:131
+msgid "Email (Claws Mail)"
+msgstr "Email (Claws Mail)"
+
+#: ../src/plugins/thunderbird.c:105
+msgid "Email (Thunderbird)"
+msgstr "Email (Thunderbird)"
+
+#~ msgid "Send to..."
+#~ msgstr "Dašli da..."
+
+#~ msgid "You don't insert the package name"
+#~ msgstr "Ty nia ŭvioŭ nazvy pakunka"
+
+#~ msgid "Device does not support Obex File Transfer"
+#~ msgstr "Pryłada nie padtrymvaje pieradačy fajłaŭ Obex"
+
+#~ msgid "FOLDER"
+#~ msgstr "KATALOH"
+
+#~ msgid ""
+#~ ".zip\n"
+#~ ".tar.gz\n"
+#~ ".tar.bz2"
+#~ msgstr ""
+#~ ".zip\n"
+#~ ".tar.gz\n"
+#~ ".tar.bz2"
+
+#~ msgid "Email (Sylpheed-Claws)"
+#~ msgstr "Email (Sylpheed-Claws)"

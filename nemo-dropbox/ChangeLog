@@ -47,7 +47,7 @@ Version 0.6.3 (6/14/10):
 -----------------------
 	* Add support for get_emblems and get_emblems path so client can tell us what to use.
 	* Remove useless notify dependency.
-	* Remove nautilus dependency so that it's easier to install.
+	* Remove nemo dependency so that it's easier to install.
 	* Start using dropbox.com instead of getdropbox.com
 
 Version 0.6.2 (3/16/10):
@@ -60,7 +60,7 @@ Version 0.6.2 (3/16/10):
 Version 0.3.0 (7/17/08):
 -----------------------
 	* Removed some bugs based on incorrect assertion usage
-	* Notifications when browser or nautilus fails to open
+	* Notifications when browser or nemo fails to open
 	* Now affected file opens when you get a notification.
 
 Version 0.2.0 (7/9/08):
@@ -71,7 +71,7 @@ Version 0.2.0 (7/9/08):
 	* Dragging and dropping now works (no outdated dropbox status).
 	* Tray icon is now more accurate regarding the current state of Dropbox.
 	* Folder tags (Photos/Public/Shared) are now implemented.
-	* Used nautilus workaround to always show dropbox status emblems.
+	* Used nemo workaround to always show dropbox status emblems.
 
 Version 0.1.0 (7/3/08):
 -----------------------

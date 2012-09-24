@@ -1,0 +1,230 @@
+# Finnish translations for nemo-share package.
+# Copyright (C) 2005 THE nemo-share'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-share package.
+# sebastien estienne <sebastien.estienne@gmail.com>, 2005.
+# Timo Jyrinki <timo.jyrinki@iki.fi>, 2009.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share 0.6.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-08 12:53+0300\n"
+"PO-Revision-Date: 2009-10-08 12:53+0300\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Language: Finnish\n"
+"X-Poedit-Country: FINNISH\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+"Nautiluksen täytyy lisätä joitain oikeuksia kansioosi \"%s\", jotta se "
+"voidaan jakaa"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"Kansiolle \"%s\" täytyy antaa seuraavat lisäoikeudet, jotta jako toimii:\n"
+"%s%s%sHaluatko Nautiluksen muuttavan kansion oikeudet automaattisesti?"
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr " - lukuoikeudet muille\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr " - kirjoitusoikeudet muille\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr " - suoritusoikeudet muille\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "Lisää oikeudet automaattisesti"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Kansion \"%s\" oikeuksia ei voitu muuttaa"
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "Jaon nimi on liian pitkä"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "Jaon nimi ei voi olla tyhjä"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Virhe haettaessa jaon tietoja: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "Toinen jako on olemassa samalla nimellä"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "Muokkaa _levyjakoa"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "Luo _levyjako"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "Virhe haettaessa tietoja levyjaosta"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "Jaa"
+
+#: ../src/nemo-share.c:1114
+msgid "Folder Sharing"
+msgstr "Kansioiden jakaminen"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "Jakamisen valinnat"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "Jaa tämä kansio"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s palautui signaalilla %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s epäonnistui tuntemattomasta syystä"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "komento 'net usershare' palautti virheen %d: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "'net usershare' palautti virheen %d"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "tuloste komennolta 'net usershare' ei ole UTF-8-koodattu"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Epäonnistui"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "Samban testparm suljettiin signaaliin %d"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "Samban testparm epäonnistui tuntemattomasta syystä"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "Samban testparm palautti virheen %d: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "Samban testparm palautti virheen %d"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr "Jakoa polulle %s ei voi poistaa: polku ei ole jaettu"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"Olemassaolevan jaon polkua ei voi muuttaa: ole hyvä ja poista ensin vanha "
+"jako, ja lisää sitten uusi jako"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Kansion jako</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "Kommentti:"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "Jaon _nimi:"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "Jaa tämä _kansio"
+
+#: ../interfaces/share-dialog.ui.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr "S_alli muiden luoda ja poistaa tiedostoja tässä kansiossa"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "_Vieras-pääsyoikeudet (ihmisille joilla ei käyttäjätiliä)"
+
+# This file is a partial export from Launchpad.net.
+# See https://help.launchpad.net/Translations/PartialPOExport
+# for more information.
+#~ msgid "Restart your session"
+#~ msgstr "Käynnistä istunto uudelleen"
+
+#~ msgid "You need to restart your session in order to enable sharing."
+#~ msgstr "Istunto tulee käynnistää uudelleen, jotta jakaminen olisi käytössä."
+
+#~ msgid "Restart session"
+#~ msgstr "Käynnistä istunto uudelleen"
+
+#~ msgid "Sharing service installation failed"
+#~ msgstr "Jakamispalvelun asennus epäonnistui"
+
+#~ msgid ""
+#~ "Sharing service installation has failed. Would you like to retry the "
+#~ "installation?"
+#~ msgstr ""
+#~ "Jakamispalvelun asennus epäonnistui. Haluatko koettaa asennusta uudelleen?"
+
+#~ msgid "Retry"
+#~ msgstr "Yritä uudelleen"
+
+#~ msgid "Sharing service is not installed"
+#~ msgstr "Jakopalvelu ei ole asennettu"
+
+#~ msgid ""
+#~ "You need to install the Windows networks sharing service in order to "
+#~ "share your folders."
+#~ msgstr "Windows-verkkojen jakopalvelu tulee asentaa kansioiden jakamiseksi."
+
+#~ msgid "Install service"
+#~ msgstr "Asenna palvelu"

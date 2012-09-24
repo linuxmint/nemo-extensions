@@ -1,0 +1,6 @@
+nemo-seahorse 3.3.1
+
+ * Initial unstable release split out from seahorse-plugins
+ * Cleanup and refactor code
+
+Versions prior to 3.0.0 were released as part of seahorse-plugins

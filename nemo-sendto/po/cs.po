@@ -1,0 +1,325 @@
+# Czech translation of nemo-sendto.
+# Copyright (C) 2004, 2005, 2009 the author(s) of nemo-sendto.
+# Copyright (C) 2004, 2005 Miloslav Trmac <mitr@volny.cz>.
+# This file is distributed under the same license as the nemo-sendto package.
+# Miloslav Trmac <mitr@volny.cz>, 2004, 2005.
+# Kamil Páral <ripper42@gmail.com>, 2008, 2009.
+# Petr Kovar <pknbe@volny.cz>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-31 15:39+0200\n"
+"PO-Revision-Date: 2009-03-30 22:35+0100\n"
+"Last-Translator: Kamil Páral <ripper42@gmail.com>\n"
+"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Posledně použitý zásuvný modul pro odesílání"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Posledně použitý typ archivu"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"Použito pro ukládání zásuvného modulu, který byl naposledy použit při "
+"posílání souborů přes nemo-sendto."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"Použito pro ukládání naposledy použitého typu archivu (0: zip, 1: tar.gz, 2: "
+"tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "Ode_slat..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "Odeslat soubory na vzdálené zařízení nebo lidem"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "Odeslat..."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../gaim_plugin/nemo-sendto-plugin.c:309
+#: ../pidgin_plugin/nemo-sendto-plugin.c:331
+msgid "Nemo Integration"
+msgstr "Integrace s Nautilem"
+
+#. name
+#. version
+#. summary
+#. name
+#. version
+#. summary
+#: ../gaim_plugin/nemo-sendto-plugin.c:311
+#: ../gaim_plugin/nemo-sendto-plugin.c:312
+#: ../pidgin_plugin/nemo-sendto-plugin.c:333
+#: ../pidgin_plugin/nemo-sendto-plugin.c:334
+msgid "Provides integration with Nemo"
+msgstr "Poskytuje integraci s Nautilem"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "Odeslat..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Odeslat soubor e-mailem, rychlou zprávou..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Odeslat soubory e-mailem, rychlou zprávou..."
+
+#: ../src/nemo-sendto-command.c:533
+msgid "Files"
+msgstr "Soubory"
+
+#: ../src/nemo-sendto-command.c:737
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Očekává URI nebo názvy souborů zadané jako volby\n"
+
+#: ../src/nemo-sendto-command.c:754
+msgid "Nemo Sendto"
+msgstr "Nemo - Odeslat"
+
+#: ../src/nemo-sendto-command.c:758
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Nelze zpracovat volby příkazové řádky: %s\n"
+
+#: ../src/nemo-sendto-command.c:773
+msgid "Could not load any plugins."
+msgstr "Nelze nahrát žádné zásuvné moduly."
+
+#: ../src/nemo-sendto-command.c:776
+msgid "Please verify your installation"
+msgstr "Prosím zkontrolujte svoji instalaci"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Komprese</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Umístění</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "Odeslat j_ako:"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "Odeslat za_baleno v:"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "Odeslat _komu:"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "_Odeslat"
+
+#: ../src/plugins/bluetooth/bluetooth.c:445
+msgid "Programming error, could not find the device in the list"
+msgstr "Chyba programování, nelze nalézt zařízení v seznamu"
+
+#: ../src/plugins/bluetooth/bluetooth.c:520
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Přenos souborů pomocí Obex Push není podporován"
+
+#: ../src/plugins/bluetooth/bluetooth.c:544
+msgid "Bluetooth (OBEX Push)"
+msgstr "Bluetooth (OBEX Push)"
+
+#: ../src/plugins/empathy/empathy.c:121
+msgid "The contact selected cannot receive files."
+msgstr "Vybraný kontakt nemůže přijímat soubory."
+
+#: ../src/plugins/empathy/empathy.c:127
+msgid "The contact selected is offline."
+msgstr "Vybraný kontakt je odpojen."
+
+#: ../src/plugins/empathy/empathy.c:180 ../src/plugins/empathy/empathy.c:241
+msgid "No error message"
+msgstr "Žádná chybová zpráva"
+
+#: ../src/plugins/empathy/empathy.c:291
+msgid "Instant Message (Empathy)"
+msgstr "Rychlá zpráva (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:367
+msgid "Email"
+msgstr "E-mail"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Nelze získat kontakt: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Nelze najít kontakt: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "Nelze vytvořit prohledávatelný pohled."
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "Úspěch"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "Parametr byl neplatný."
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "Adresář je zaneprázdněn."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "Adresář je odpojen."
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "Adresář neexistuje."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "Kontakt \"Já\" neexistuje."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "Adresář není nahrán."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "Adresář již je nahrán."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "Oprávnění bylo zamítnuto během přístupu k adresáři."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "Kontakt nebyl nalezen."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "Tento identifikátor kontaktu již existuje."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "Protokol není podporován."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "Operace byla zrušena."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "Operace nemohla být zrušena."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "Autentizace adresáře selhala."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr "Autentizace je vyžadována k přístupu k adresáři a nebyla poskytnuta."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "Bezpečné spojení není dostupné."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "Během přístupu k adresáři nastala chyba CORBA."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "Zdroj adresáře neexistuje."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "Přihodila se neznámá chyba."
+
+#: ../src/plugins/gaim/gaim.c:228
+msgid "Instant Message (Gaim)"
+msgstr "Rychlá zpráva (Gaim)"
+
+#: ../src/plugins/gajim/gajim.c:402
+msgid "Unable to send file"
+msgstr "Nelze odeslat soubor"
+
+#: ../src/plugins/gajim/gajim.c:403
+msgid "There is no connection to gajim remote service."
+msgstr "Neexistuje spojení ke vzdálené službě gajim."
+
+#: ../src/plugins/gajim/gajim.c:427 ../src/plugins/gajim/gajim.c:466
+msgid "Sending file failed"
+msgstr "Odesílání souboru selhalo"
+
+#: ../src/plugins/gajim/gajim.c:428
+msgid "Recipient is missing."
+msgstr "Chybí příjemce."
+
+#: ../src/plugins/gajim/gajim.c:466
+msgid "Unknown recipient."
+msgstr "Neznámý příjemce."
+
+#: ../src/plugins/gajim/gajim.c:488
+msgid "Instant Message (Gajim)"
+msgstr "Rychlá zpráva (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:70
+#: ../src/plugins/nemo-burn/nemo-burn.c:85
+msgid "New CD/DVD"
+msgstr "Nové CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:83
+msgid "Existing CD/DVD"
+msgstr "Existující CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:162
+msgid "CD/DVD Creator"
+msgstr "Tvůrce CD/DVD"
+
+#: ../src/plugins/pidgin/pidgin.c:350
+msgid "Instant Message (Pidgin)"
+msgstr "Rychlá zpráva (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:219
+msgid "Removable disks and shares"
+msgstr "Výměnné disky a sdílené složky"
+
+#: ../src/plugins/upnp/upnp.c:298
+msgid "UPnP Media Server"
+msgstr "Multimediální server UPnP"

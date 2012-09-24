@@ -1,0 +1,531 @@
+# translation of mr.po to marathi
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: mr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-07 11:29+0200\n"
+"PO-Revision-Date: 2008-08-25 12:58+0530\n"
+"Last-Translator: Sandeep Shedmake <sandeep.shedmake@gmail.com>\n"
+"Language-Team: marathi\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../nemo-ext/nemo-seahorse.c:158
+msgid "Encrypt..."
+msgstr "ऐंक्रीप्ट..."
+
+#: ../nemo-ext/nemo-seahorse.c:159
+msgid "Encrypt (and optionally sign) the selected file"
+msgid_plural "Encrypt the selected files"
+msgstr[0] "निवडलेली फाइल ऐंक्रीप्ट (व वैक्लपीकरित्या स्वाक्षरी करा)"
+msgstr[1] "निवडलेली फाइल ऐंक्रीप्ट (व वैक्लपीकरित्या स्वाक्षरी करा)"
+
+#: ../nemo-ext/nemo-seahorse.c:165
+msgid "Sign"
+msgstr "स्वाक्षरी"
+
+#: ../nemo-ext/nemo-seahorse.c:166
+msgid "Sign the selected file"
+msgid_plural "Sign the selected files"
+msgstr[0] "निवडलेली फाइल स्वाक्षरी करा"
+msgstr[1] "निवडलेली फाइल स्वाक्षरी करा"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:1
+msgid "<b>You have selected multiple files or folders</b>"
+msgstr "<b>तुम्ही एकापेक्षा जास्त फाइलं किंवा संचयीका निवडले आहे</b>"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:2
+msgid ""
+"Because the files are located remotely, each file will be encrypted "
+"separately."
+msgstr "फाइल दूरस्थ ठिकाणी स्थीत असल्यामुळे, प्रत्येक फाइल वेगळेरित्या ऐंक्रीप्ट केले जाते."
+
+#: ../tool/seahorse-multi-encrypt.xml.h:3
+msgid "Encrypt Multiple Files"
+msgstr "बहू फाइलं ऐंक्रीप्ट करा"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:4
+msgid "Encrypt each file separately"
+msgstr "प्रत्येक फाइ ऐंक्रीप्ट करा"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:5
+msgid "Encrypt packed together in a package"
+msgstr "संकुल मध्ये एकत्र ऐंक्रीप्ट केले गेले"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:6
+msgid "Package Name:"
+msgstr "संकुल नाव:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:7
+msgid "Packaging:"
+msgstr "संकुलन:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:8
+msgid "encrypted-package"
+msgstr "ऐंक्रीप्टेड-संकुल"
+
+#: ../tool/seahorse-notification.c:580 ../tool/seahorse-notification.c:605
+msgid "Key Imported"
+msgid_plural "Keys Imported"
+msgstr[0] "किल्ली प्राप्त केले"
+msgstr[1] "किल्ली प्राप्त केले"
+
+#: ../tool/seahorse-notification.c:584 ../tool/seahorse-notification.c:604
+#, c-format
+msgid "Imported %i key"
+msgid_plural "Imported %i keys"
+msgstr[0] "%i किल्ली प्राप्त केले"
+msgstr[1] "%i किल्ली प्राप्त केले"
+
+#: ../tool/seahorse-notification.c:586
+#, c-format
+msgid "Imported a key for"
+msgid_plural "Imported keys for"
+msgstr[0] "करीता किल्ली प्राप्त केले"
+msgstr[1] "करीता किल्ली प्राप्त केले"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:623
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>expired</b></i> on %s."
+msgstr "<i><key id='%1$s'/> द्वारे स्वाक्षरीत <b> %2$s ला कालबाह्य झाले</b></i>."
+
+#: ../tool/seahorse-notification.c:624
+msgid "Invalid Signature"
+msgstr "अवैध स्वाक्षरी"
+
+#: ../tool/seahorse-notification.c:630
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s <b>Expired</b>."
+msgstr "<i><key id='%1$s'/> द्वारे स्वाक्षरीत </i> %2$s ला <b> कालबाह्य झाले</b>."
+
+#: ../tool/seahorse-notification.c:631
+msgid "Expired Signature"
+msgstr "स्वाक्षरी कालबाह्य झाले"
+
+#: ../tool/seahorse-notification.c:637
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>Revoked</b></i> on %s."
+msgstr "<i><key id='%1$s'/> द्वारे स्वाक्षरीत %2$s ला <b> पुन्ह प्राप्त झाले</b> </i>."
+
+#: ../tool/seahorse-notification.c:638
+msgid "Revoked Signature"
+msgstr "स्वाक्षरी पुन्हाप्राप्त केले"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:644
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s."
+msgstr "%s ला <i><key id='%s'/></i> द्वारे स्वाक्षरीत."
+
+#: ../tool/seahorse-notification.c:645
+msgid "Good Signature"
+msgstr "चांगली स्वाक्षरी"
+
+#: ../tool/seahorse-notification.c:650
+msgid "Signing key not in keyring."
+msgstr "स्वाक्षरी किल्ली किरींग मध्ये आढळली नाही."
+
+#: ../tool/seahorse-notification.c:651
+msgid "Unknown Signature"
+msgstr "अपरिचीत स्वाक्षरी"
+
+#: ../tool/seahorse-notification.c:655
+msgid "Bad or forged signature. The signed data was modified."
+msgstr "चूकीची किंवा दोषीत स्वाक्षरी. स्वाक्षरी रहीत माहिती संपादीत केले गेली."
+
+#: ../tool/seahorse-notification.c:656
+msgid "Bad Signature"
+msgstr "चूकीची स्वाक्षरी"
+
+#: ../tool/seahorse-notification.c:664
+msgid "Couldn't verify signature."
+msgstr "स्वाक्षरी तपासली गेली नाही."
+
+#: ../tool/seahorse-notify.xml.h:1
+msgid "Notification Messages"
+msgstr "सूचना संदेश"
+
+#: ../tool/seahorse-passphrase.c:200
+msgid "Passphrase"
+msgstr "गुप्तवाक्यरचना"
+
+#: ../tool/seahorse-passphrase.c:203
+msgid "Password:"
+msgstr "गुप्तशब्द:"
+
+#. The second and main entry
+#: ../tool/seahorse-passphrase.c:267
+msgid "Confirm:"
+msgstr "निश्चित:"
+
+#: ../tool/seahorse-passphrase.c:355
+#, c-format
+msgid "Wrong passphrase."
+msgstr "चूकीची वाक्यरचना."
+
+#: ../tool/seahorse-passphrase.c:359
+#, c-format
+msgid "Enter new passphrase for '%s'"
+msgstr "'%s' करीता नविन गुप्तवाक्यरचना प्रविष्ट करा"
+
+#: ../tool/seahorse-passphrase.c:361
+#, c-format
+msgid "Enter passphrase for '%s'"
+msgstr "'%s' करीता गुप्तवाक्यरचना प्रविष्ट करा"
+
+#: ../tool/seahorse-passphrase.c:364
+msgid "Enter new passphrase"
+msgstr "नविन गुप्तशब्द प्रविष्ट करा"
+
+#: ../tool/seahorse-passphrase.c:366
+msgid "Enter passphrase"
+msgstr "गुप्तवाक्यरचन प्रविष्ट करा"
+
+#: ../tool/seahorse-pgp-encrypted.desktop.in.in.h:1
+msgid "Decrypt File"
+msgstr "फाइल डीक्रीप्ट करा"
+
+#: ../tool/seahorse-pgp-keys.desktop.in.in.h:1
+msgid "Import Key"
+msgstr "किल्ली प्राप्त करा"
+
+#: ../tool/seahorse-pgp-signature.desktop.in.in.h:1
+msgid "Verify Signature"
+msgstr "स्वाक्षरी तपासा"
+
+#: ../tool/seahorse-progress.xml.h:1
+msgid "Progress Title"
+msgstr "प्रगती शिर्षक"
+
+#: ../tool/seahorse-tool.c:61
+msgid "Import keys from the file"
+msgstr "फाइल पासून किल्ली प्राप्त करा"
+
+#: ../tool/seahorse-tool.c:63
+msgid "Encrypt file"
+msgstr "फाइल ऐंक्रीप्ट करा"
+
+#: ../tool/seahorse-tool.c:65
+msgid "Sign file with default key"
+msgstr "मुलभूत किल्लीसह फाइल स्वाक्षरी करा"
+
+#: ../tool/seahorse-tool.c:67
+msgid "Encrypt and sign file with default key"
+msgstr "मुलभूत किल्लीसह फाइल ऐंक्रीप्ट व स्वाक्षरी करा"
+
+#: ../tool/seahorse-tool.c:69
+msgid "Decrypt encrypted file"
+msgstr "ऐंक्रीप्टेड फाइल डीक्रीप्ट करा"
+
+#: ../tool/seahorse-tool.c:71
+msgid "Verify signature file"
+msgstr "स्वाक्षरी फाइल तपासा"
+
+#: ../tool/seahorse-tool.c:73
+msgid "Read list of URIs on standard in"
+msgstr "मानक इनपुट करीता URIची यादी वाचा"
+
+#: ../tool/seahorse-tool.c:75
+msgid "file..."
+msgstr "फाइल..."
+
+#: ../tool/seahorse-tool.c:169
+msgid "Choose Recipients"
+msgstr "श्रोता निवडा"
+
+#: ../tool/seahorse-tool.c:234 ../tool/seahorse-tool.c:347
+msgid "Couldn't load keys"
+msgstr "किल्ली दाखल करू शकले नाही"
+
+#: ../tool/seahorse-tool.c:252
+#, c-format
+msgid "Choose Encrypted File Name for '%s'"
+msgstr "'%s' करीता ऐंक्रीप्टेड फाइल नाव निवडा"
+
+#: ../tool/seahorse-tool.c:325
+msgid "Choose Signer"
+msgstr "स्वाक्षरीकर्ता निवडा"
+
+#: ../tool/seahorse-tool.c:367
+#, c-format
+msgid "Choose Signature File Name for '%s'"
+msgstr "'%s' करीता ऐंक्रीप्टेड फाइल नाव निवडा"
+
+#: ../tool/seahorse-tool.c:407
+msgid "Import is complete"
+msgstr "प्राप्य पूर्ण आहे"
+
+#: ../tool/seahorse-tool.c:440
+msgid "Importing keys ..."
+msgstr "किल्ली प्राप्त करीत आहे ..."
+
+#: ../tool/seahorse-tool.c:470
+msgid "Import Failed"
+msgstr "आयात अपयशी"
+
+#: ../tool/seahorse-tool.c:471
+msgid "Keys were found but not imported."
+msgstr "किल्ली आढळलेत पण प्राप्त करू शकले नाही."
+
+#: ../tool/seahorse-tool.c:494
+#, c-format
+msgid "Imported key"
+msgstr "किल्ली प्राप्त केली"
+
+#: ../tool/seahorse-tool.c:496
+#, c-format
+msgid "Imported %d key"
+msgid_plural "Imported %d keys"
+msgstr[0] "प्राप्य %d किल्ली"
+msgstr[1] "प्राप्य %d किल्ली"
+
+#. File to decrypt to
+#: ../tool/seahorse-tool.c:518
+#, c-format
+msgid "Choose Decrypted File Name for '%s'"
+msgstr "'%s' करीता डीक्रीप्टेड फाइल नाव निवडा"
+
+#: ../tool/seahorse-tool.c:575
+#, c-format
+msgid "Choose Original File for '%s'"
+msgstr "'%s' करीता मूळ फाइल निवडा"
+
+#.
+#. * TODO: What should happen with multiple files at this point.
+#. * The last thing we want to do is cascade a big pile of error
+#. * dialogs at the user.
+#.
+#: ../tool/seahorse-tool.c:648
+#, c-format
+msgid "No valid signatures found"
+msgstr "वैध स्वाक्षरी आढळली नाही"
+
+#: ../tool/seahorse-tool.c:697
+msgid "File Encryption Tool"
+msgstr "फाइल ऐंक्रीप्शन साधन"
+
+#: ../tool/seahorse-tool.c:713
+msgid "Encrypting"
+msgstr "ऐंक्रीप्ट करीत आहे"
+
+#: ../tool/seahorse-tool.c:714
+#, c-format
+msgid "Couldn't encrypt file: %s"
+msgstr "फाइल ऐंक्रीप्ट करू शकले नाही: %s"
+
+#: ../tool/seahorse-tool.c:722
+msgid "Signing"
+msgstr "स्वाक्षरी"
+
+#: ../tool/seahorse-tool.c:723
+#, c-format
+msgid "Couldn't sign file: %s"
+msgstr "फाइल स्वाक्षरी करू शकले नाही: %s"
+
+#: ../tool/seahorse-tool.c:728
+msgid "Importing"
+msgstr "प्राप्त करीत आहे"
+
+#: ../tool/seahorse-tool.c:729
+#, c-format
+msgid "Couldn't import keys from file: %s"
+msgstr "फाइल पासून किल्ली प्राप्त करू शकले नाही: %s"
+
+#: ../tool/seahorse-tool.c:735
+msgid "Decrypting"
+msgstr "डीक्रीप्ट करीत आहे"
+
+#: ../tool/seahorse-tool.c:736
+#, c-format
+msgid "Couldn't decrypt file: %s"
+msgstr "फाइल डीक्रीप्ट करू शकले नाही: %s"
+
+#: ../tool/seahorse-tool.c:741
+msgid "Verifying"
+msgstr "तापस करीत आहे"
+
+#: ../tool/seahorse-tool.c:742
+#, c-format
+msgid "Couldn't verify file: %s"
+msgstr "फाइलचे तपास करू शकले नाही: %s"
+
+#: ../tool/seahorse-tool-files.c:120
+msgid "Ace (.ace)"
+msgstr "Ace (.ace)"
+
+#: ../tool/seahorse-tool-files.c:121
+msgid "Ar (.ar)"
+msgstr "एआर (.एआर)"
+
+#: ../tool/seahorse-tool-files.c:122
+msgid "Arj (.arj)"
+msgstr "एआरजे (.एआरजे)"
+
+#: ../tool/seahorse-tool-files.c:129
+msgid "Ear (.ear)"
+msgstr "ईएआर (.ईएआर)"
+
+#: ../tool/seahorse-tool-files.c:130
+msgid "Self-extracting zip (.exe)"
+msgstr "स्व-प्राप्ती झीप (.exe)"
+
+#: ../tool/seahorse-tool-files.c:132
+msgid "Jar (.jar)"
+msgstr "जेएआर (.जेएआर)"
+
+#: ../tool/seahorse-tool-files.c:133
+msgid "Lha (.lzh)"
+msgstr "एलएचए (.एलएचए)"
+
+#: ../tool/seahorse-tool-files.c:135
+msgid "Rar (.rar)"
+msgstr "आरएआर (.आरएआर)"
+
+#: ../tool/seahorse-tool-files.c:137
+msgid "Tar uncompressed (.tar)"
+msgstr "टार असंक्षिप्त (.टार)"
+
+#: ../tool/seahorse-tool-files.c:138
+msgid "Tar compressed with bzip (.tar.bz)"
+msgstr "टार संक्षिप्त बीझीपद्वारे (.टार.बीझे)"
+
+#: ../tool/seahorse-tool-files.c:139
+msgid "Tar compressed with bzip2 (.tar.bz2)"
+msgstr "bzip2 वापरून आकुंचीत केलेली टार (.tar.bz2)"
+
+#: ../tool/seahorse-tool-files.c:140
+msgid "Tar compressed with gzip (.tar.gz)"
+msgstr "gzip वापरून आकुंचीत केलेली टार (.tar.gz)"
+
+#: ../tool/seahorse-tool-files.c:141
+msgid "Tar compressed with lzop (.tar.lzo)"
+msgstr "lzop वापरून आकुंचीत केलेली टार (.tar.lzo)"
+
+#: ../tool/seahorse-tool-files.c:142
+msgid "Tar compressed with compress (.tar.Z)"
+msgstr "compress वापरून आकुंचीत केलेली टार (.tar.Z)"
+
+#: ../tool/seahorse-tool-files.c:144
+msgid "War (.war)"
+msgstr "वार (.war)"
+
+#: ../tool/seahorse-tool-files.c:145
+msgid "Zip (.zip)"
+msgstr "झिप(.झिप)"
+
+#: ../tool/seahorse-tool-files.c:146
+msgid "Zoo (.zoo)"
+msgstr "झू (.झू)"
+
+#: ../tool/seahorse-tool-files.c:147
+msgid "7-Zip (.7z)"
+msgstr "7-झिप (.7झे)"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:327
+#, c-format
+msgid "You have selected %d file "
+msgid_plural "You have selected %d files "
+msgstr[0] "तुम्ही %d फाइल निवडले आहे"
+msgstr[1] "तुम्ही %d फाइल निवडले आहे"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:332
+#, c-format
+msgid "and %d folder"
+msgid_plural "and %d folders"
+msgstr[0] "व %d संचयीका"
+msgstr[1] "व %d संचयीका"
+
+#. TRANSLATOR: "%s%s" are "You have selected %d files and %d folders"
+#. * Swap order with "%2$s%1$s" if needed
+#: ../tool/seahorse-tool-files.c:337
+#, c-format
+msgid "<b>%s%s</b>"
+msgstr "<b>%s%s</b>"
+
+#: ../tool/seahorse-tool-files.c:345
+#, fuzzy, c-format
+msgid "You have selected %d file"
+msgid_plural "You have selected %d files"
+msgstr[0] "तुम्ही %d फाइल निवडले आहे"
+msgstr[1] "तुम्ही %d फाइल निवडले आहे"
+
+#: ../tool/seahorse-tool-files.c:350
+#, c-format
+msgid "You have selected %d folder"
+msgid_plural "You have selected %d folders"
+msgstr[0] "तुम्ही %d संचयीका निवडले"
+msgstr[1] "तुम्ही %d संचयीका निवडले"
+
+#: ../tool/seahorse-tool-files.c:868
+msgid "Preparing..."
+msgstr "तयार करित आहे..."
+
+#: ../tool/seahorse-tool-files.c:877 ../tool/seahorse-tool-files.c:900
+msgid "Couldn't list files"
+msgstr "फाइल यादी दर्शवू शकले नाही"
+
+#: ../tool/seahorse-tool-files.c:887 ../tool/seahorse-util.c:647
+msgid "Couldn't package files"
+msgstr "फाइलचे संकुल बनवू शकले नाही"
+
+#: ../tool/seahorse-util.c:173
+msgid "Decryption failed. You probably do not have the decryption key."
+msgstr "डीक्रीप्शन अपयशी. तुमच्याकडे सहाजीकच डीक्रीप्शन किल्ली नाही."
+
+#: ../tool/seahorse-util.c:223
+msgid "%Y-%m-%d"
+msgstr "%Y-%m-%d"
+
+#: ../tool/seahorse-util.c:642
+msgid "Couldn't run file-roller"
+msgstr "file-roller चालवू शकले नाही"
+
+#: ../tool/seahorse-util.c:648
+msgid "The file-roller process did not complete successfully"
+msgstr "file-roller पध्दती यशस्वीरित्या पूर्ण झाली"
+
+#. Filter for PGP keys. We also include *.asc, as in many
+#. cases that extension is associated with text/plain
+#: ../tool/seahorse-util.c:708
+msgid "All key files"
+msgstr "सर्व किल्ली फाइल"
+
+#: ../tool/seahorse-util.c:715 ../tool/seahorse-util.c:755
+msgid "All files"
+msgstr "सर्व फाइली"
+
+#: ../tool/seahorse-util.c:748
+msgid "Archive files"
+msgstr "फाइल संचयन"
+
+#: ../tool/seahorse-util.c:777
+msgid ""
+"<b>A file already exists with this name.</b>\n"
+"\n"
+"Do you want to replace it with a new file?"
+msgstr ""
+"<b>फाइल या नावासह अस्तित्वात आहे</b>\n"
+"\n"
+"तुम्हाला यास नविन फाइलने बदलवायचे आहे का?"
+
+#: ../tool/seahorse-util.c:780
+msgid "_Replace"
+msgstr "बदलवा (_R)"
+
+#: ../tool/seahorse-widget.c:365
+#, c-format
+msgid "Could not display help: %s"
+msgstr "मदत प्रदर्शित करू शकत नाही: %s"

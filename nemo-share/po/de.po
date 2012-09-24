@@ -1,0 +1,199 @@
+# German translations for nemo-share package.
+# Copyright (C) 2005 THE nemo-share'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-share package.
+# Michael Kanis <mkanis@gmx.de>, 2005.
+# Andre Klapper <ak-47@gmx.net>, 2008.
+# Mario Blättermann <mariobl@gnome.org>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-share&component=general\n"
+"POT-Creation-Date: 2009-08-09 23:38+0000\n"
+"PO-Revision-Date: 2009-08-22 23:09+0100\n"
+"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
+"Language-Team: German <gnome-de@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+"Nemo muss dem Ordner »%s« zusätzliche Zugriffsrechte verleihen, damit "
+"dieser freigegeben werden kann"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"Der Ordner »%s« benötigt folgende zusätzlichen Zugriffsrechte um freigegeben "
+"zu werden:\n"
+"%s%s%sMöchten Sie, dass Nemo diese Zugriffsrechte für den Ordner "
+"automatisch setzt?"
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr "  - Leserechte durch andere\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr "  - Schreibrechte durch andere\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr "  - Ausführrechte durch andere\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "Die Zugriffsrechte automatisch hinzufügen"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Zugriffsrechte des Ordners »%s« konnten nicht geändert werden"
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "Freigabename ist zu lang"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "Der Freigabename kann nicht leer sein"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Fehler beim Erhalt der Freigabeinformationen: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "Dieser Name wird bereits für eine andere Freigabe verwendet"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "_Freigabe bearbeiten"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "_Freigabe erstellen"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "Beim Erhalt der Freigabeinformationen ist ein Fehler aufgetreten"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "Ordner freigeben"
+
+#: ../src/nemo-share.c:1114
+#| msgid "<big><b>Folder Sharing</b></big>"
+msgid "Folder Sharing"
+msgstr "Ordner freigeben"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "Freigabeoptionen"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "Diesen Ordner freigeben"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s gab das Signal %d zurück"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s ist aus unbekanntem Grund fehlgeschlagen"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "»net usershare« gab den Fehler %d zurück: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "»net usershare« gab den Fehler %d zurück"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "Die Ausgabe von »net usershare« ist kein gültiger UTF-8-Zeichensatz"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "Sambas Testparm gab das Signal %d zurück"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "Sambas Testparm ist aus unbekanntem Grund fehlgeschlagen"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "Sambas Testparm gab den Fehler %d zurück: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "Sambas Testparm gab den Fehler %d zurück"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr ""
+"Freigabe für den Pfad %s kann nicht entfernt werden: Der Pfad ist nicht "
+"freigegeben"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"Der Pfad einer bestehenden Freigabe kann nicht geändert werden. Bitte "
+"entfernen Sie zuerst die alte Freigabe und fügen Sie dann eine neue hinzu"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Ordner freigeben</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "Ko_mmentar:"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "Freigabe_name:"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "Diesen Ordner _freigeben"
+
+#: ../interfaces/share-dialog.ui.h:5
+#| msgid "_Allow other people to write in this folder"
+msgid "_Allow others to create and delete files in this folder"
+msgstr "_Anderen erlauben, Dateien in diesem Ordner zu erstellen und zu löschen"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "_Gastzugriff (für Nutzer ohne Benutzerkonto)"

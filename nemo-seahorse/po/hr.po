@@ -1,0 +1,557 @@
+# Translation of seahorse to Croatiann
+# Copyright (C) Croatiann team
+# Translators: Automatski Prijevod <>,Danijel Studen <dstuden@vuka.hr>,Denis Lackovic <delacko@fly.srk.fer.hr>,Ivan Jankovic <rbrrneck@gmx.net>,pr pr <delacko@192.168.0.1>,
+msgid ""
+msgstr ""
+"Project-Id-Version: seahorse 0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-07 11:29+0200\n"
+"PO-Revision-Date: 2004-03-18 00:11+CET\n"
+"Last-Translator: auto\n"
+"Language-Team: Croatian <lokalizacija@linux.hr>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: TransDict server\n"
+
+#: ../nemo-ext/nemo-seahorse.c:158
+msgid "Encrypt..."
+msgstr "Kriptiraj..."
+
+#: ../nemo-ext/nemo-seahorse.c:159
+#, fuzzy
+msgid "Encrypt (and optionally sign) the selected file"
+msgid_plural "Encrypt the selected files"
+msgstr[0] "Operacije kriptiranja i potpisivanja datoteka"
+msgstr[1] "Operacije kriptiranja i potpisivanja datoteka"
+
+#: ../nemo-ext/nemo-seahorse.c:165
+#, fuzzy
+msgid "Sign"
+msgstr "_Znak"
+
+#: ../nemo-ext/nemo-seahorse.c:166
+msgid "Sign the selected file"
+msgid_plural "Sign the selected files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../tool/seahorse-multi-encrypt.xml.h:1
+msgid "<b>You have selected multiple files or folders</b>"
+msgstr ""
+
+#: ../tool/seahorse-multi-encrypt.xml.h:2
+msgid ""
+"Because the files are located remotely, each file will be encrypted "
+"separately."
+msgstr ""
+
+#: ../tool/seahorse-multi-encrypt.xml.h:3
+#, fuzzy
+msgid "Encrypt Multiple Files"
+msgstr "Kriptirana datoteka je %s"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:4
+#, fuzzy
+msgid "Encrypt each file separately"
+msgstr "Kriptirana datoteka je %s"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:5
+msgid "Encrypt packed together in a package"
+msgstr ""
+
+#: ../tool/seahorse-multi-encrypt.xml.h:6
+msgid "Package Name:"
+msgstr ""
+
+#: ../tool/seahorse-multi-encrypt.xml.h:7
+msgid "Packaging:"
+msgstr ""
+
+#: ../tool/seahorse-multi-encrypt.xml.h:8
+msgid "encrypted-package"
+msgstr ""
+
+#: ../tool/seahorse-notification.c:580 ../tool/seahorse-notification.c:605
+#, fuzzy
+msgid "Key Imported"
+msgid_plural "Keys Imported"
+msgstr[0] "Uvoz ključeva"
+msgstr[1] "Uvoz ključeva"
+
+#: ../tool/seahorse-notification.c:584 ../tool/seahorse-notification.c:604
+#, fuzzy, c-format
+msgid "Imported %i key"
+msgid_plural "Imported %i keys"
+msgstr[0] "Uvezao %d ključeva"
+msgstr[1] "Uvezao %d ključeva"
+
+#: ../tool/seahorse-notification.c:586
+#, fuzzy, c-format
+msgid "Imported a key for"
+msgid_plural "Imported keys for"
+msgstr[0] "Uvoz ključeva"
+msgstr[1] "Uvoz ključeva"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:623
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>expired</b></i> on %s."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:624
+#, fuzzy
+msgid "Invalid Signature"
+msgstr "Višestruki potpisi"
+
+#: ../tool/seahorse-notification.c:630
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s <b>Expired</b>."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:631
+#, fuzzy
+msgid "Expired Signature"
+msgstr "_Potpisi:"
+
+#: ../tool/seahorse-notification.c:637
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>Revoked</b></i> on %s."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:638
+#, fuzzy
+msgid "Revoked Signature"
+msgstr "_Potpisi:"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:644
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:645
+#, fuzzy
+msgid "Good Signature"
+msgstr "_Potpisi:"
+
+#: ../tool/seahorse-notification.c:650
+#, fuzzy
+msgid "Signing key not in keyring."
+msgstr "Ključ za potpis nije u krugu ključeva"
+
+#: ../tool/seahorse-notification.c:651
+#, fuzzy
+msgid "Unknown Signature"
+msgstr "_Potpisi:"
+
+#: ../tool/seahorse-notification.c:655
+msgid "Bad or forged signature. The signed data was modified."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:656
+#, fuzzy
+msgid "Bad Signature"
+msgstr "_Potpisi:"
+
+#: ../tool/seahorse-notification.c:664
+#, fuzzy
+msgid "Couldn't verify signature."
+msgstr "Provjera datoteke potpisa"
+
+#: ../tool/seahorse-notify.xml.h:1
+msgid "Notification Messages"
+msgstr ""
+
+#: ../tool/seahorse-passphrase.c:200
+msgid "Passphrase"
+msgstr ""
+
+#: ../tool/seahorse-passphrase.c:203
+msgid "Password:"
+msgstr ""
+
+#. The second and main entry
+#: ../tool/seahorse-passphrase.c:267
+#, fuzzy
+msgid "Confirm:"
+msgstr "Potvrdi"
+
+#: ../tool/seahorse-passphrase.c:355
+#, fuzzy, c-format
+msgid "Wrong passphrase."
+msgstr "Promijenite pristupnu lozinku"
+
+#: ../tool/seahorse-passphrase.c:359
+#, fuzzy, c-format
+msgid "Enter new passphrase for '%s'"
+msgstr "Unesite lozinku za %s"
+
+#: ../tool/seahorse-passphrase.c:361
+#, fuzzy, c-format
+msgid "Enter passphrase for '%s'"
+msgstr "Unesite lozinku za %s"
+
+#: ../tool/seahorse-passphrase.c:364
+msgid "Enter new passphrase"
+msgstr "Unesite novu lozinku"
+
+#: ../tool/seahorse-passphrase.c:366
+#, fuzzy
+msgid "Enter passphrase"
+msgstr "Unesite PGP lozinku"
+
+#: ../tool/seahorse-pgp-encrypted.desktop.in.in.h:1
+#, fuzzy
+msgid "Decrypt File"
+msgstr "Kriptiraj datoteku"
+
+#: ../tool/seahorse-pgp-keys.desktop.in.in.h:1
+#, fuzzy
+msgid "Import Key"
+msgstr "Uvoz ključeva"
+
+#: ../tool/seahorse-pgp-signature.desktop.in.in.h:1
+#, fuzzy
+msgid "Verify Signature"
+msgstr "Provjera datoteke potpisa"
+
+#: ../tool/seahorse-progress.xml.h:1
+msgid "Progress Title"
+msgstr ""
+
+#: ../tool/seahorse-tool.c:61
+msgid "Import keys from the file"
+msgstr "Uvoz ključeva iz datoteke"
+
+#: ../tool/seahorse-tool.c:63
+msgid "Encrypt file"
+msgstr "Kriptiraj datoteku"
+
+#: ../tool/seahorse-tool.c:65
+msgid "Sign file with default key"
+msgstr "Potpiši datoteku pomoću uobičajenog ključa"
+
+#: ../tool/seahorse-tool.c:67
+msgid "Encrypt and sign file with default key"
+msgstr "Kriptiraj i potpiši datoteku pomoću uobičajenog ključa"
+
+#: ../tool/seahorse-tool.c:69
+msgid "Decrypt encrypted file"
+msgstr "Dekriptiraj kriptiranu datoteku"
+
+#: ../tool/seahorse-tool.c:71
+msgid "Verify signature file"
+msgstr "Provjera datoteke potpisa"
+
+#: ../tool/seahorse-tool.c:73
+msgid "Read list of URIs on standard in"
+msgstr ""
+
+#: ../tool/seahorse-tool.c:75
+msgid "file..."
+msgstr ""
+
+#: ../tool/seahorse-tool.c:169
+#, fuzzy
+msgid "Choose Recipients"
+msgstr "Odaberite ključeve"
+
+#: ../tool/seahorse-tool.c:234 ../tool/seahorse-tool.c:347
+#, fuzzy
+msgid "Couldn't load keys"
+msgstr "Uvoz ključeva"
+
+#: ../tool/seahorse-tool.c:252
+#, c-format
+msgid "Choose Encrypted File Name for '%s'"
+msgstr ""
+
+#: ../tool/seahorse-tool.c:325
+#, fuzzy
+msgid "Choose Signer"
+msgstr "Odaberite ključeve"
+
+#: ../tool/seahorse-tool.c:367
+#, fuzzy, c-format
+msgid "Choose Signature File Name for '%s'"
+msgstr "Datoteka s potpisom je %s"
+
+#: ../tool/seahorse-tool.c:407
+#, fuzzy
+msgid "Import is complete"
+msgstr "Operacija izvršena"
+
+#: ../tool/seahorse-tool.c:440
+#, fuzzy
+msgid "Importing keys ..."
+msgstr "Uvoz ključeva"
+
+#: ../tool/seahorse-tool.c:470
+#, fuzzy
+msgid "Import Failed"
+msgstr "Uvoz iz _datoteke:"
+
+#: ../tool/seahorse-tool.c:471
+msgid "Keys were found but not imported."
+msgstr ""
+
+#: ../tool/seahorse-tool.c:494
+#, fuzzy, c-format
+msgid "Imported key"
+msgstr "Uvoz ključeva"
+
+#: ../tool/seahorse-tool.c:496
+#, fuzzy, c-format
+msgid "Imported %d key"
+msgid_plural "Imported %d keys"
+msgstr[0] "Uvezao %d ključeva"
+msgstr[1] "Uvezao %d ključeva"
+
+#. File to decrypt to
+#: ../tool/seahorse-tool.c:518
+#, c-format
+msgid "Choose Decrypted File Name for '%s'"
+msgstr ""
+
+#: ../tool/seahorse-tool.c:575
+#, c-format
+msgid "Choose Original File for '%s'"
+msgstr ""
+
+#.
+#. * TODO: What should happen with multiple files at this point.
+#. * The last thing we want to do is cascade a big pile of error
+#. * dialogs at the user.
+#.
+#: ../tool/seahorse-tool.c:648
+#, fuzzy, c-format
+msgid "No valid signatures found"
+msgstr "Nije potpis"
+
+#: ../tool/seahorse-tool.c:697
+#, fuzzy
+msgid "File Encryption Tool"
+msgstr "Kriptiraj datoteku"
+
+#: ../tool/seahorse-tool.c:713
+#, fuzzy
+msgid "Encrypting"
+msgstr "Kriptiraj datoteku"
+
+#: ../tool/seahorse-tool.c:714
+#, fuzzy, c-format
+msgid "Couldn't encrypt file: %s"
+msgstr "Obriši ključ"
+
+#: ../tool/seahorse-tool.c:722
+#, fuzzy
+msgid "Signing"
+msgstr "_Znak"
+
+#: ../tool/seahorse-tool.c:723
+#, fuzzy, c-format
+msgid "Couldn't sign file: %s"
+msgstr "Uvoz ključeva"
+
+#: ../tool/seahorse-tool.c:728
+#, fuzzy
+msgid "Importing"
+msgstr "Uvoz"
+
+#: ../tool/seahorse-tool.c:729
+#, fuzzy, c-format
+msgid "Couldn't import keys from file: %s"
+msgstr "Uvoz ključeva iz datoteke"
+
+#: ../tool/seahorse-tool.c:735
+#, fuzzy
+msgid "Decrypting"
+msgstr "Dekriptiraj..."
+
+#: ../tool/seahorse-tool.c:736
+#, fuzzy, c-format
+msgid "Couldn't decrypt file: %s"
+msgstr "Obriši podključ %d"
+
+#: ../tool/seahorse-tool.c:741
+#, fuzzy
+msgid "Verifying"
+msgstr "Provjera"
+
+#: ../tool/seahorse-tool.c:742
+#, fuzzy, c-format
+msgid "Couldn't verify file: %s"
+msgstr "Obriši podključ %d"
+
+#: ../tool/seahorse-tool-files.c:120
+msgid "Ace (.ace)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:121
+msgid "Ar (.ar)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:122
+msgid "Arj (.arj)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:129
+msgid "Ear (.ear)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:130
+msgid "Self-extracting zip (.exe)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:132
+msgid "Jar (.jar)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:133
+msgid "Lha (.lzh)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:135
+msgid "Rar (.rar)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:137
+msgid "Tar uncompressed (.tar)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:138
+msgid "Tar compressed with bzip (.tar.bz)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:139
+msgid "Tar compressed with bzip2 (.tar.bz2)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:140
+msgid "Tar compressed with gzip (.tar.gz)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:141
+msgid "Tar compressed with lzop (.tar.lzo)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:142
+msgid "Tar compressed with compress (.tar.Z)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:144
+msgid "War (.war)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:145
+msgid "Zip (.zip)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:146
+msgid "Zoo (.zoo)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:147
+msgid "7-Zip (.7z)"
+msgstr ""
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:327
+#, c-format
+msgid "You have selected %d file "
+msgid_plural "You have selected %d files "
+msgstr[0] ""
+msgstr[1] ""
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:332
+#, c-format
+msgid "and %d folder"
+msgid_plural "and %d folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#. TRANSLATOR: "%s%s" are "You have selected %d files and %d folders"
+#. * Swap order with "%2$s%1$s" if needed
+#: ../tool/seahorse-tool-files.c:337
+#, c-format
+msgid "<b>%s%s</b>"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:345
+#, c-format
+msgid "You have selected %d file"
+msgid_plural "You have selected %d files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../tool/seahorse-tool-files.c:350
+#, c-format
+msgid "You have selected %d folder"
+msgid_plural "You have selected %d folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../tool/seahorse-tool-files.c:868
+msgid "Preparing..."
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:877 ../tool/seahorse-tool-files.c:900
+#, fuzzy
+msgid "Couldn't list files"
+msgstr "Uvoz ključeva"
+
+#: ../tool/seahorse-tool-files.c:887 ../tool/seahorse-util.c:647
+#, fuzzy
+msgid "Couldn't package files"
+msgstr "Uvoz ključeva"
+
+#: ../tool/seahorse-util.c:173
+msgid "Decryption failed. You probably do not have the decryption key."
+msgstr ""
+
+#: ../tool/seahorse-util.c:223
+msgid "%Y-%m-%d"
+msgstr "%d.%m.%Y"
+
+#: ../tool/seahorse-util.c:642
+msgid "Couldn't run file-roller"
+msgstr ""
+
+#: ../tool/seahorse-util.c:648
+msgid "The file-roller process did not complete successfully"
+msgstr ""
+
+#. Filter for PGP keys. We also include *.asc, as in many
+#. cases that extension is associated with text/plain
+#: ../tool/seahorse-util.c:708
+msgid "All key files"
+msgstr ""
+
+#: ../tool/seahorse-util.c:715 ../tool/seahorse-util.c:755
+msgid "All files"
+msgstr ""
+
+#: ../tool/seahorse-util.c:748
+msgid "Archive files"
+msgstr ""
+
+#: ../tool/seahorse-util.c:777
+msgid ""
+"<b>A file already exists with this name.</b>\n"
+"\n"
+"Do you want to replace it with a new file?"
+msgstr ""
+
+#: ../tool/seahorse-util.c:780
+msgid "_Replace"
+msgstr ""
+
+#: ../tool/seahorse-widget.c:365
+#, c-format
+msgid "Could not display help: %s"
+msgstr ""

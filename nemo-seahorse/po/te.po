@@ -1,0 +1,535 @@
+# translation of seahorse-plugins.master.te.po to Telugu
+# Telugu translation of seahorse.
+# Copyright (C) 2007 Swecha Telugu Localisation Team <localisation@swecha.org>
+# This file is distributed under the same license as the seahorse package.
+#
+# Srinivasa Chary <srinu.kolpur@gmail.com>, 2007.
+# Krishna Babu K <kkrothap@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: seahorse-plugins.master.te\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-07 11:29+0200\n"
+"PO-Revision-Date: 2009-09-11 18:21+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../nemo-ext/nemo-seahorse.c:158
+msgid "Encrypt..."
+msgstr "రహస్యపరచు..."
+
+#: ../nemo-ext/nemo-seahorse.c:159
+msgid "Encrypt (and optionally sign) the selected file"
+msgid_plural "Encrypt the selected files"
+msgstr[0] "ఎంపికచేసిన ఫైలు ఎన్క్రిప్టుచేయి (మరియు ఐచ్చికంగా సంతకంచేయి)"
+msgstr[1] "ఎంపికచేసిన దస్త్రములను ఎన్క్రిప్టుచేయి"
+
+#: ../nemo-ext/nemo-seahorse.c:165
+msgid "Sign"
+msgstr "సంతకం"
+
+#: ../nemo-ext/nemo-seahorse.c:166
+msgid "Sign the selected file"
+msgid_plural "Sign the selected files"
+msgstr[0] "ఎన్నుకొన్న దస్త్రాన్ని సంతకం చేయు"
+msgstr[1] "ఎన్నుకొన్న దస్త్రాలను సంతకం చేయు"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:1
+msgid "<b>You have selected multiple files or folders</b>"
+msgstr "<b>మీరు ఎక్కువ దస్త్రాలను లేదా  సంచయాలను ఎన్నుకొన్నారు</b>"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:2
+msgid ""
+"Because the files are located remotely, each file will be encrypted "
+"separately."
+msgstr "ఎందుకంటే దస్త్రాలు సుదూరంగా ఉన్నయి, ప్రతి దస్త్రం వేరువేరుగా రహస్యపరచబడతాయి."
+
+#: ../tool/seahorse-multi-encrypt.xml.h:3
+msgid "Encrypt Multiple Files"
+msgstr "చాలా దస్త్రాలను రహస్యపరచు"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:4
+msgid "Encrypt each file separately"
+msgstr "ప్రతి దస్త్రాన్ని వేరువేరుగా రహస్యపరచండి"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:5
+msgid "Encrypt packed together in a package"
+msgstr "ప్యాకైనవి కలిపి సంకలనమునందు ఎన్క్రిప్టుచేయుము"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:6
+msgid "Package Name:"
+msgstr "కట్ట పేరు:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:7
+msgid "Packaging:"
+msgstr "కట్ట:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:8
+msgid "encrypted-package"
+msgstr "రహస్యపరచిన-కట్ట"
+
+#: ../tool/seahorse-notification.c:580 ../tool/seahorse-notification.c:605
+msgid "Key Imported"
+msgid_plural "Keys Imported"
+msgstr[0] "మీట దిగుమతి చేయబడింది"
+msgstr[1] "మీటలను దిగుమతి చేయబడినవి"
+
+#: ../tool/seahorse-notification.c:584 ../tool/seahorse-notification.c:604
+#, c-format
+msgid "Imported %i key"
+msgid_plural "Imported %i keys"
+msgstr[0] "%i మీట దిగుమతి చేయబడింది"
+msgstr[1] "%i మీటలు దిగుమతి చేయబడ్డాయి"
+
+#: ../tool/seahorse-notification.c:586
+#, c-format
+msgid "Imported a key for"
+msgid_plural "Imported keys for"
+msgstr[0] "మీట దిగుమతి చేయబడింది"
+msgstr[1] "మీటలు దిగుమతి చేయబడ్డాయి"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:623
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>expired</b></i> on %s."
+msgstr "<i><key id='%s'/>చే సంతకం చేయబడినది %s <b>ముగిసినది</b></i>"
+
+#: ../tool/seahorse-notification.c:624
+msgid "Invalid Signature"
+msgstr "నిస్సారమైన సంతకం"
+
+#: ../tool/seahorse-notification.c:630
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s <b>Expired</b>."
+msgstr "<i><key id='%s'/>చే సంతకం చేయబడినది %s <b>ముగిసినది</b></i>"
+
+#: ../tool/seahorse-notification.c:631
+msgid "Expired Signature"
+msgstr "ముగిసిన సంతకం"
+
+#: ../tool/seahorse-notification.c:637
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>Revoked</b></i> on %s."
+msgstr "<i><key id='%s'/>చే సంతకం చేయబడినది %s <b>కొట్టివేయబడింది</b></i>"
+
+#: ../tool/seahorse-notification.c:638
+msgid "Revoked Signature"
+msgstr "కొట్టివేయబడిన సంతకం"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:644
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s."
+msgstr "%s పై <i><key id='%s'/></i>సంతకం చేయబడింది. "
+
+#: ../tool/seahorse-notification.c:645
+msgid "Good Signature"
+msgstr "మంచి సంతకం"
+
+#: ../tool/seahorse-notification.c:650
+msgid "Signing key not in keyring."
+msgstr "సంతకం చేయబడుతున్న మీట కీలకవలయంలో లేదు."
+
+#: ../tool/seahorse-notification.c:651
+msgid "Unknown Signature"
+msgstr "తెలియని సంతకం"
+
+#: ../tool/seahorse-notification.c:655
+msgid "Bad or forged signature. The signed data was modified."
+msgstr "చెడ్డ లేదా దొంగ సంతకము. సంతకంచేసిన డాటా సవరించబడింది."
+
+#: ../tool/seahorse-notification.c:656
+msgid "Bad Signature"
+msgstr "చెడ్డ సంతకం"
+
+#: ../tool/seahorse-notification.c:664
+msgid "Couldn't verify signature."
+msgstr "సంతకాన్ని పరీక్షించలేకపోయింది."
+
+#: ../tool/seahorse-notify.xml.h:1
+msgid "Notification Messages"
+msgstr "తాఖీదు సందేశాలు"
+
+#: ../tool/seahorse-passphrase.c:200
+msgid "Passphrase"
+msgstr "పాస్ పదసముదాయం"
+
+#: ../tool/seahorse-passphrase.c:203
+msgid "Password:"
+msgstr "రహస్యపదం:"
+
+#. The second and main entry
+#: ../tool/seahorse-passphrase.c:267
+msgid "Confirm:"
+msgstr "ధృఢపరచు:"
+
+#: ../tool/seahorse-passphrase.c:355
+#, c-format
+msgid "Wrong passphrase."
+msgstr "తప్పు పాస్ పదసముదాయం."
+
+#: ../tool/seahorse-passphrase.c:359
+#, c-format
+msgid "Enter new passphrase for '%s'"
+msgstr "'%s' కోసం కొత్త పాస్ పదసముదాయాన్ని ఇవ్వండి"
+
+#: ../tool/seahorse-passphrase.c:361
+#, c-format
+msgid "Enter passphrase for '%s'"
+msgstr "'%s' కోసం పాస్ పదసముదాయాన్ని ఇవ్వండి"
+
+#: ../tool/seahorse-passphrase.c:364
+msgid "Enter new passphrase"
+msgstr "కొత్త పాస్ పదసముదాయాన్ని ఇవ్వండి"
+
+#: ../tool/seahorse-passphrase.c:366
+msgid "Enter passphrase"
+msgstr "పాస్ పదసముదాయాన్ని ఇవ్వండి"
+
+#: ../tool/seahorse-pgp-encrypted.desktop.in.in.h:1
+msgid "Decrypt File"
+msgstr "దస్త్రమును డీక్రిప్టుచేయి"
+
+#: ../tool/seahorse-pgp-keys.desktop.in.in.h:1
+msgid "Import Key"
+msgstr "కీను దిగుమతిచేయి"
+
+#: ../tool/seahorse-pgp-signature.desktop.in.in.h:1
+msgid "Verify Signature"
+msgstr "సంతకాన్ని ధృవీకరించు"
+
+#: ../tool/seahorse-progress.xml.h:1
+msgid "Progress Title"
+msgstr "పురోగమన శీర్షిక"
+
+#: ../tool/seahorse-tool.c:61
+msgid "Import keys from the file"
+msgstr "మీటలను దస్త్రం నుంచి దిగుమతిచేయు"
+
+#: ../tool/seahorse-tool.c:63
+msgid "Encrypt file"
+msgstr "దస్త్రాన్ని రహస్యపరచు"
+
+#: ../tool/seahorse-tool.c:65
+msgid "Sign file with default key"
+msgstr "దస్త్రాన్ని అప్రమేయ మీటతో సంతకం చేయు"
+
+#: ../tool/seahorse-tool.c:67
+msgid "Encrypt and sign file with default key"
+msgstr "దస్త్రాన్ని రహస్యపరచి అప్రమేయ మీటతో సంతకం చేయు"
+
+#: ../tool/seahorse-tool.c:69
+msgid "Decrypt encrypted file"
+msgstr "ఎన్క్రిప్టుచేసిన దస్త్రమును డీక్రిప్టుచేయుము"
+
+#: ../tool/seahorse-tool.c:71
+msgid "Verify signature file"
+msgstr "సంతక దస్త్రాన్ని పరీక్షించు"
+
+#: ../tool/seahorse-tool.c:73
+msgid "Read list of URIs on standard in"
+msgstr "యూ ఆర్ ఐ ల జాబితాను ప్రమాణంలో చదవండి"
+
+#: ../tool/seahorse-tool.c:75
+msgid "file..."
+msgstr "దస్త్రం..."
+
+#: ../tool/seahorse-tool.c:169
+msgid "Choose Recipients"
+msgstr "పుచ్చుకునేవారిని ఎన్నుకోండి"
+
+#: ../tool/seahorse-tool.c:234 ../tool/seahorse-tool.c:347
+msgid "Couldn't load keys"
+msgstr "కీలను లోడుచేయలేక పోయింది"
+
+#: ../tool/seahorse-tool.c:252
+#, c-format
+msgid "Choose Encrypted File Name for '%s'"
+msgstr "'%s' కొరకు రహస్యపరచిన దస్త్రం పేరును ఎన్నుకోండి"
+
+#: ../tool/seahorse-tool.c:325
+msgid "Choose Signer"
+msgstr "సంతకదారిని ఎన్నుకోండి"
+
+#: ../tool/seahorse-tool.c:367
+#, c-format
+msgid "Choose Signature File Name for '%s'"
+msgstr "'%s' కొరకు సంతక దస్త్రం పేరును ఎన్నుకోండి"
+
+#: ../tool/seahorse-tool.c:407
+msgid "Import is complete"
+msgstr "దిగుమతి పూర్తైనది"
+
+#: ../tool/seahorse-tool.c:440
+msgid "Importing keys ..."
+msgstr "కీలను దిగుమతిచేయుచున్నది ..."
+
+#: ../tool/seahorse-tool.c:470
+msgid "Import Failed"
+msgstr "దిగుమతి విఫలమైంది"
+
+#: ../tool/seahorse-tool.c:471
+msgid "Keys were found but not imported."
+msgstr "మీటలు దొరికినవి కానీ దిగుమతి చేయబడలేదు."
+
+#: ../tool/seahorse-tool.c:494
+#, c-format
+msgid "Imported key"
+msgstr "దిగుమతి చేయబడ్డ మీట"
+
+#: ../tool/seahorse-tool.c:496
+#, c-format
+msgid "Imported %d key"
+msgid_plural "Imported %d keys"
+msgstr[0] "%d మీట దిగుమతి చేయబడింది"
+msgstr[1] "%d మీటలు దిగుమతి చేయబడ్డాయి"
+
+#. File to decrypt to
+#: ../tool/seahorse-tool.c:518
+#, c-format
+msgid "Choose Decrypted File Name for '%s'"
+msgstr "'%s' కొరకు డిక్రిప్టుచేసిన దస్త్రము నామమును యెంచుకొనుము"
+
+#: ../tool/seahorse-tool.c:575
+#, c-format
+msgid "Choose Original File for '%s'"
+msgstr "'%s' కొరకు అసలు దస్త్రాన్ని ఎన్నుకోండి"
+
+#.
+#. * TODO: What should happen with multiple files at this point.
+#. * The last thing we want to do is cascade a big pile of error
+#. * dialogs at the user.
+#.
+#: ../tool/seahorse-tool.c:648
+#, c-format
+msgid "No valid signatures found"
+msgstr "సారమైన సంతకాలు కనబడలేదు"
+
+#: ../tool/seahorse-tool.c:697
+msgid "File Encryption Tool"
+msgstr "దస్త్రాన్ని రహస్యపరచే పనిముట్టు"
+
+#: ../tool/seahorse-tool.c:713
+msgid "Encrypting"
+msgstr "రహస్యపరచడం"
+
+#: ../tool/seahorse-tool.c:714
+#, c-format
+msgid "Couldn't encrypt file: %s"
+msgstr "%s ను రహస్యపరచలేకపోయింది"
+
+#: ../tool/seahorse-tool.c:722
+msgid "Signing"
+msgstr "సంతకం చేస్తోంది"
+
+#: ../tool/seahorse-tool.c:723
+#, c-format
+msgid "Couldn't sign file: %s"
+msgstr "%s దస్త్రాన్ని సంతకం చేయలేకపోయింది"
+
+#: ../tool/seahorse-tool.c:728
+msgid "Importing"
+msgstr "దిగుమతి చేస్తోంది"
+
+#: ../tool/seahorse-tool.c:729
+#, c-format
+msgid "Couldn't import keys from file: %s"
+msgstr "%s దస్త్రం నుంచి మీటలను దిగుమతి చేయలేకపోయింది"
+
+#: ../tool/seahorse-tool.c:735
+msgid "Decrypting"
+msgstr "డిక్రిప్టుచేయుచున్నది"
+
+#: ../tool/seahorse-tool.c:736
+#, c-format
+msgid "Couldn't decrypt file: %s"
+msgstr "దస్త్రమును డిక్రిప్టు చేయలేకపోయింది: %s"
+
+#: ../tool/seahorse-tool.c:741
+msgid "Verifying"
+msgstr "పరీక్షిస్తోంది"
+
+#: ../tool/seahorse-tool.c:742
+#, c-format
+msgid "Couldn't verify file: %s"
+msgstr "%s దస్తాన్ని పరీక్షించలేకపోయింది"
+
+#: ../tool/seahorse-tool-files.c:120
+msgid "Ace (.ace)"
+msgstr "ఏస్ (.ace)"
+
+#: ../tool/seahorse-tool-files.c:121
+msgid "Ar (.ar)"
+msgstr "ఆర్(.ar)"
+
+#: ../tool/seahorse-tool-files.c:122
+msgid "Arj (.arj)"
+msgstr "ఆర్జ్(.arj)"
+
+#: ../tool/seahorse-tool-files.c:129
+msgid "Ear (.ear)"
+msgstr "ఇఅర్(.ear)"
+
+#: ../tool/seahorse-tool-files.c:130
+msgid "Self-extracting zip (.exe)"
+msgstr "స్వయంగా-బయల్పడు జిప్ (.exe)"
+
+#: ../tool/seahorse-tool-files.c:132
+msgid "Jar (.jar)"
+msgstr "జార్(.jar)"
+
+#: ../tool/seahorse-tool-files.c:133
+msgid "Lha (.lzh)"
+msgstr "ల్హ(.lzh)"
+
+#: ../tool/seahorse-tool-files.c:135
+msgid "Rar (.rar)"
+msgstr "రార్(.rar)"
+
+#: ../tool/seahorse-tool-files.c:137
+msgid "Tar uncompressed (.tar)"
+msgstr "టార్ సంకుచితము చెందలేదు(.టార్)"
+
+#: ../tool/seahorse-tool-files.c:138
+msgid "Tar compressed with bzip (.tar.bz)"
+msgstr "బీజిప్ తో అణచబడిన టార్(.tar.bz)"
+
+#: ../tool/seahorse-tool-files.c:139
+msgid "Tar compressed with bzip2 (.tar.bz2)"
+msgstr "బీజిప్2 తో అణచబడిన టార్(.tar.bz2)"
+
+#: ../tool/seahorse-tool-files.c:140
+msgid "Tar compressed with gzip (.tar.gz)"
+msgstr "జీజిప్ తో అణచబడిన టార్(.tar.gzip)"
+
+#: ../tool/seahorse-tool-files.c:141
+msgid "Tar compressed with lzop (.tar.lzo)"
+msgstr "ఎల్ జాప్ తో అణచబడిన టార్(.tar.lzo)"
+
+#: ../tool/seahorse-tool-files.c:142
+msgid "Tar compressed with compress (.tar.Z)"
+msgstr "కంప్రెస్ తో అణచబడిన టార్(.tar.Z)"
+
+#: ../tool/seahorse-tool-files.c:144
+msgid "War (.war)"
+msgstr "వార్(.war)"
+
+#: ../tool/seahorse-tool-files.c:145
+msgid "Zip (.zip)"
+msgstr "జిప్(.zip)"
+
+#: ../tool/seahorse-tool-files.c:146
+msgid "Zoo (.zoo)"
+msgstr "జూ (.zoo)"
+
+#: ../tool/seahorse-tool-files.c:147
+msgid "7-Zip (.7z)"
+msgstr "7-జిప్(.7z)"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:327
+#, c-format
+msgid "You have selected %d file "
+msgid_plural "You have selected %d files "
+msgstr[0] "మీరు %d దస్త్రాన్ని ఎన్నుకొన్నారు"
+msgstr[1] "మీరు %d దస్త్రాలను ఎన్నుకొన్నారు"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:332
+#, c-format
+msgid "and %d folder"
+msgid_plural "and %d folders"
+msgstr[0] "మరియు %d సంచయం"
+msgstr[1] "మరియు %d సంచయాలు"
+
+#. TRANSLATOR: "%s%s" are "You have selected %d files and %d folders"
+#. * Swap order with "%2$s%1$s" if needed
+#: ../tool/seahorse-tool-files.c:337
+#, c-format
+msgid "<b>%s%s</b>"
+msgstr "<b>%s%s</b>"
+
+#: ../tool/seahorse-tool-files.c:345
+#, fuzzy, c-format
+msgid "You have selected %d file"
+msgid_plural "You have selected %d files"
+msgstr[0] "మీరు %d దస్త్రాన్ని ఎన్నుకొన్నారు"
+msgstr[1] "మీరు %d దస్త్రాలను ఎన్నుకొన్నారు"
+
+#: ../tool/seahorse-tool-files.c:350
+#, c-format
+msgid "You have selected %d folder"
+msgid_plural "You have selected %d folders"
+msgstr[0] "మీరు %d సంచయాన్ని ఎన్నుకొన్నారు"
+msgstr[1] "మీరు %d సంచయాలను ఎన్నుకొన్నారు"
+
+#: ../tool/seahorse-tool-files.c:868
+msgid "Preparing..."
+msgstr "తయారవుతోంది..."
+
+#: ../tool/seahorse-tool-files.c:877 ../tool/seahorse-tool-files.c:900
+msgid "Couldn't list files"
+msgstr "దస్త్రాలను జాబితా చేయలేకపోయింది"
+
+#: ../tool/seahorse-tool-files.c:887 ../tool/seahorse-util.c:647
+msgid "Couldn't package files"
+msgstr "ఫైళ్ళను సంకలనము చేయలేకపోయింది"
+
+#: ../tool/seahorse-util.c:173
+msgid "Decryption failed. You probably do not have the decryption key."
+msgstr "డిక్రిప్షన్ విఫలమైంది. మీరు బహుశా డిక్రిప్షన్ కీను కలిగిలేరు."
+
+#: ../tool/seahorse-util.c:223
+msgid "%Y-%m-%d"
+msgstr "%Y-%m-%d"
+
+#: ../tool/seahorse-util.c:642
+msgid "Couldn't run file-roller"
+msgstr "ఫైల్-రోలర్‌ను నడుపలేక పోయింది"
+
+#: ../tool/seahorse-util.c:648
+msgid "The file-roller process did not complete successfully"
+msgstr "ఫైల్-రోలర్ కార్యక్రమము సమర్ధవంతంగా పూర్తికాలేదు"
+
+#. Filter for PGP keys. We also include *.asc, as in many
+#. cases that extension is associated with text/plain
+#: ../tool/seahorse-util.c:708
+msgid "All key files"
+msgstr "అన్ని ముఖ్యమైన దస్త్రాలు"
+
+#: ../tool/seahorse-util.c:715 ../tool/seahorse-util.c:755
+msgid "All files"
+msgstr "అన్ని దస్త్రాలు"
+
+#: ../tool/seahorse-util.c:748
+msgid "Archive files"
+msgstr "సంగ్రహమైన దస్త్రాలు"
+
+#: ../tool/seahorse-util.c:777
+msgid ""
+"<b>A file already exists with this name.</b>\n"
+"\n"
+"Do you want to replace it with a new file?"
+msgstr ""
+"<b>ఈ నామముతో వొక ఫైలు యిప్పటికే వుంది.</b>\n"
+"\n"
+"మీరు దీనిని కొత్త ఫైలుతో పునఃస్థాపించాలని అనుకొనుచున్నారా?"
+
+#: ../tool/seahorse-util.c:780
+msgid "_Replace"
+msgstr "_పునఃస్థాపించు"
+
+#: ../tool/seahorse-widget.c:365
+#, c-format
+msgid "Could not display help: %s"
+msgstr "%s సహాయాన్ని ప్రదర్శించలేకపోయింది"

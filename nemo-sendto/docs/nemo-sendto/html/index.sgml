@@ -1,0 +1,15 @@
+<ONLINE href="http://library.gnome.org/devel/nemo-sendto/index.html">
+<ANCHOR id="nemo-sendto-nemo-sendto-plugin" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html">
+<ANCHOR id="nemo-sendto-nemo-sendto-plugin.stability-level" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#nemo-sendto-nemo-sendto-plugin.stability-level">
+<ANCHOR id="nemo-sendto-nemo-sendto-plugin.synopsis" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#nemo-sendto-nemo-sendto-plugin.synopsis">
+<ANCHOR id="NstPluginCapabilities" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#NstPluginCapabilities">
+<ANCHOR id="nemo-sendto-nemo-sendto-plugin.object-hierarchy" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#nemo-sendto-nemo-sendto-plugin.object-hierarchy">
+<ANCHOR id="nemo-sendto-nemo-sendto-plugin.description" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#nemo-sendto-nemo-sendto-plugin.description">
+<ANCHOR id="nemo-sendto-nemo-sendto-plugin.details" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#nemo-sendto-nemo-sendto-plugin.details">
+<ANCHOR id="NST-INIT-PLUGIN:CAPS" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#NST-INIT-PLUGIN:CAPS">
+<ANCHOR id="NstPlugin" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#NstPlugin">
+<ANCHOR id="NstPluginCapabilities-enum" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#NstPluginCapabilities-enum">
+<ANCHOR id="NEMO-CAPS-NONE:CAPS" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#NEMO-CAPS-NONE:CAPS">
+<ANCHOR id="NEMO-CAPS-SEND-DIRECTORIES:CAPS" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#NEMO-CAPS-SEND-DIRECTORIES:CAPS">
+<ANCHOR id="NEMO-CAPS-SEND-IMAGES:CAPS" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#NEMO-CAPS-SEND-IMAGES:CAPS">
+<ANCHOR id="NstPluginInfo" href="nemo-sendto/nemo-sendto-nemo-sendto-plugin.html#NstPluginInfo">

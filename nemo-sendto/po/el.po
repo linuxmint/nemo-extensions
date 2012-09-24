@@ -1,0 +1,301 @@
+# translation of nemo-sendto to Greek
+# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-sendto package.
+#
+#
+# Kostas Papadimas <pkst@gnome.org>, 2004.
+# Athanasios Lefteris <alefteris@gmail.com>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: el\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-28 11:37+0300\n"
+"PO-Revision-Date: 2010-03-28 11:40+0200\n"
+"Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
+"Language-Team: Greek <team@gnome.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Τελευταίο πρόσθετο που χρησιμοποιήθηκε για αποστολή"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Τελευταίος τύπος συμπιεσμένου αρχείου που χρησιμοποιήθηκε"
+
+#: ../nst.schemas.in.h:3
+msgid "Used to store which plugin was used the last time files were sent using nemo-sendto."
+msgstr "Αποθηκεύει το πρόσθετο που χρησιμοποιήθηκε την τελευταία φορά που εστάλησαν αρχεία χρησιμοποιώντας το nemo-sendto."
+
+#: ../nst.schemas.in.h:4
+msgid "Used to store which type of archive was used the last time (0: zip, 1: tar.gz, 2: tar.bz2)."
+msgstr "Αποθηκεύει τον τύπο συμπιεσμένου αρχείου που χρησιμοποιήθηκε την τελευταία φορά (0: zip, 1: tar.gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "Α_ποστολή προς…"
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "Αποστολή των αρχείων σε απομακρυσμένες συσκευές ή σε ανθρώπους"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "Αποστολή προς…"
+
+#: ../src/nemo-nste.c:92
+#: ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.ui.h:3
+msgid "Send To..."
+msgstr "Αποστολή προς…"
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Αποστολή αρχείου μέσω ηλεκτρονικού ταχυδρομείου, άμεσου μηνύματος…"
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Αποστολή αρχείων μέσω ηλεκτρονικού ταχυδρομείου, άμεσου μηνύματος…"
+
+#: ../src/nemo-sendto-command.c:569
+msgid "Files"
+msgstr "Αρχεία"
+
+#: ../src/nemo-sendto-command.c:782
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Αναμένει URIs ή ονόματα αρχείων ως επιλογές\n"
+
+#: ../src/nemo-sendto-command.c:803
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Δεν μπορούν να αναλυθούν οι επιλογές γραμμής εντολών: %s\n"
+
+#: ../src/nemo-sendto-command.c:818
+msgid "Could not load any plugins."
+msgstr "Δεν είναι δυνατή η φόρτωση των προσθέτων."
+
+#: ../src/nemo-sendto-command.c:821
+msgid "Please verify your installation"
+msgstr "Παρακαλώ ελέγξτε την εγκατάσταση σας"
+
+#: ../src/nemo-sendto.ui.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Συμπίεση</b>"
+
+#: ../src/nemo-sendto.ui.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Προορισμός</b>"
+
+#: ../src/nemo-sendto.ui.h:4
+msgid "Send _as:"
+msgstr "Αποστολή _ως:"
+
+#: ../src/nemo-sendto.ui.h:5
+msgid "Send _packed in:"
+msgstr "Αποστολή με _συμπίεση ως:"
+
+#: ../src/nemo-sendto.ui.h:6
+msgid "Send t_o:"
+msgstr "Αποστολή _προς:"
+
+#: ../src/nemo-sendto.ui.h:7
+msgid "_Send"
+msgstr "Απο_στολή"
+
+#: ../src/plugins/bluetooth/bluetooth.c:451
+msgid "Programming error, could not find the device in the list"
+msgstr "Προγραμματιστικό σφάλμα, δεν είναι δυνατή η εύρεση της συσκευής στην λίστα"
+
+#: ../src/plugins/bluetooth/bluetooth.c:526
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Δεν υποστηρίζεται η μεταφορά αρχείων με Obex Push"
+
+#: ../src/plugins/bluetooth/bluetooth.c:550
+msgid "Bluetooth (OBEX Push)"
+msgstr "Bluetooth (OBEX Push)"
+
+#: ../src/plugins/empathy/empathy.c:144
+msgid "The contact selected cannot receive files."
+msgstr "Η επαφή που επιλέχτηκε δεν μπορεί να παραλάβει αρχεία."
+
+#: ../src/plugins/empathy/empathy.c:150
+msgid "The contact selected is offline."
+msgstr "Η επιλεγμένη επαφή είναι εκτός σύνδεσης."
+
+#: ../src/plugins/empathy/empathy.c:205
+msgid "No error message"
+msgstr "Κανένα μήνυμα λάθους"
+
+#: ../src/plugins/empathy/empathy.c:281
+msgid "Instant Message (Empathy)"
+msgstr "Άμεσο μήνυμα (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:369
+msgid "Email"
+msgstr "Ηλεκτρονικό ταχυδρομείο"
+
+#: ../src/plugins/evolution/e-contact-entry.c:153
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Αδύνατη η λήψη της επαφής: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:186
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Αδύνατη η εύρεση της επαφής: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:414
+msgid "Cannot create searchable view."
+msgstr "Αδύνατη η δημιουργία μιας αναζητήσιμης προβολής."
+
+#: ../src/plugins/evolution/e-contact-entry.c:886
+msgid "Success"
+msgstr "Επιτυχία"
+
+#: ../src/plugins/evolution/e-contact-entry.c:888
+msgid "An argument was invalid."
+msgstr "Κάποια παράμετρος ήταν μη έγκυρη."
+
+#: ../src/plugins/evolution/e-contact-entry.c:890
+msgid "The address book is busy."
+msgstr "Το βιβλίο διευθύνσεων είναι απασχολημένο."
+
+#: ../src/plugins/evolution/e-contact-entry.c:892
+msgid "The address book is offline."
+msgstr "Το βιβλίο διευθύνσεων είναι εκτός σύνδεσης."
+
+#: ../src/plugins/evolution/e-contact-entry.c:894
+msgid "The address book does not exist."
+msgstr "Δεν υπάρχει βιβλίο διευθύνσεων."
+
+#: ../src/plugins/evolution/e-contact-entry.c:896
+msgid "The \"Me\" contact does not exist."
+msgstr "Η επαφή \"Εγώ\" δεν υπάρχει."
+
+#: ../src/plugins/evolution/e-contact-entry.c:898
+msgid "The address book is not loaded."
+msgstr "Το βιβλίο διευθύνσεων δεν έχει φορτωθεί."
+
+#: ../src/plugins/evolution/e-contact-entry.c:900
+msgid "The address book is already loaded."
+msgstr "Το βιβλίο διευθύνσεων έχει ήδη φορτωθεί."
+
+#: ../src/plugins/evolution/e-contact-entry.c:902
+msgid "Permission was denied when accessing the address book."
+msgstr "Δεν επιτράπηκε η πρόσβαση στο βιβλίο διευθύνσεων."
+
+#: ../src/plugins/evolution/e-contact-entry.c:904
+msgid "The contact was not found."
+msgstr "Η επαφή δεν βρέθηκε."
+
+#: ../src/plugins/evolution/e-contact-entry.c:906
+msgid "This contact ID already exists."
+msgstr "Αυτή η ταυτότητα επαφής υπάρχει ήδη."
+
+#: ../src/plugins/evolution/e-contact-entry.c:908
+msgid "The protocol is not supported."
+msgstr "Το πρωτόκολλο δεν υποστηρίζεται."
+
+#: ../src/plugins/evolution/e-contact-entry.c:910
+msgid "The operation was cancelled."
+msgstr "Η λειτουργία ακυρώθηκε."
+
+#: ../src/plugins/evolution/e-contact-entry.c:912
+msgid "The operation could not be cancelled."
+msgstr "Η λειτουργία δεν μπόρεσε να ακυρωθεί."
+
+#: ../src/plugins/evolution/e-contact-entry.c:914
+msgid "The address book authentication failed."
+msgstr "Η ταυτοποίηση του βιβλίου διευθύνσεων απέτυχε."
+
+#: ../src/plugins/evolution/e-contact-entry.c:916
+msgid "Authentication is required to access the address book and was not given."
+msgstr "Για την πρόσβαση στο βιβλίο διευθύνσεων απαιτείται ταυτοποίηση, η οποία δεν δόθηκε."
+
+#: ../src/plugins/evolution/e-contact-entry.c:918
+msgid "A secure connection is not available."
+msgstr "Δεν είναι διαθέσιμη μια ασφαλής σύνδεση."
+
+#: ../src/plugins/evolution/e-contact-entry.c:920
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "Παρουσιάστηκε ένα σφάλμα CORBA κατά την πρόσβαση στο βιβλίο διευθύνσεων."
+
+#: ../src/plugins/evolution/e-contact-entry.c:922
+msgid "The address book source does not exist."
+msgstr "Η πηγή του βιβλίου διευθύνσεων δεν υπάρχει."
+
+#: ../src/plugins/evolution/e-contact-entry.c:924
+#: ../src/plugins/evolution/e-contact-entry.c:927
+msgid "An unknown error occurred."
+msgstr "Παρουσιάστηκε ένα άγνωστο σφάλμα."
+
+#: ../src/plugins/gajim/gajim.c:417
+msgid "Unable to send file"
+msgstr "Δεν είναι δυνατή η αποστολή του αρχείου"
+
+#: ../src/plugins/gajim/gajim.c:418
+msgid "There is no connection to gajim remote service."
+msgstr "Δεν υπάρχει σύνδεση με την απομακρυσμένη υπηρεσία gajim."
+
+#: ../src/plugins/gajim/gajim.c:442
+#: ../src/plugins/gajim/gajim.c:482
+msgid "Sending file failed"
+msgstr "Η αποστολή του αρχείου απέτυχε"
+
+#: ../src/plugins/gajim/gajim.c:443
+msgid "Recipient is missing."
+msgstr "Ο παραλήπτης απουσιάζει."
+
+#: ../src/plugins/gajim/gajim.c:482
+msgid "Unknown recipient."
+msgstr "Άγνωστος παραλήπτης."
+
+#: ../src/plugins/gajim/gajim.c:505
+msgid "Instant Message (Gajim)"
+msgstr "Άμεσο μήνυμα (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:92
+msgid "New CD/DVD"
+msgstr "Νέο CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:99
+msgid "Existing CD/DVD"
+msgstr "Υπάρχον CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:178
+msgid "CD/DVD Creator"
+msgstr "Δημιουργός CD/DVD"
+
+#: ../src/plugins/pidgin/pidgin.c:464
+msgid "Instant Message (Pidgin)"
+msgstr "Άμεσο μήνυμα (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "Αφαιρούμενοι δίσκοι και κοινόχρηστοι φάκελοι"
+
+#: ../src/plugins/upnp/upnp.c:309
+msgid "UPnP Media Server"
+msgstr "Εξυπηρετητής πολυμέσων UPnP"
+
+#~ msgid "Nemo Integration"
+#~ msgstr "Ενσωμάτωση Ναυτίλου"
+#~ msgid "Provides integration with Nemo"
+#~ msgstr "Παρέχει ενσωμάτωση με το Ναυτίλο"
+#~ msgid "Default folder to use"
+#~ msgstr "Προεπιλεγμένος φάκελος για χρήση"
+#~ msgid "Nemo Sendto"
+#~ msgstr "Αποστολή αρχείων Ναυτίλου"
+#~ msgid "Email (Balsa)"
+#~ msgstr "Ηλεκτρονικό ταχυδρομείο (Balsa)"
+#~ msgid "Email (Claws Mail)"
+#~ msgstr "Ηλεκτρονικό ταχυδρομείο (Claws Mail)"
+#~ msgid "Email (Thunderbird)"
+#~ msgstr "Ηλεκτρονικό ταχυδρομείο (Thunderbird)"
+

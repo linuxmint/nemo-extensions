@@ -1,0 +1,134 @@
+Description: Use GIO for looking up the default mailer
+Author: Chris Coulson <chris.coulson@canonical.com>
+
+Index: nemo-sendto-3.0.1/src/plugins/evolution/evolution.c
+===================================================================
+--- nemo-sendto-3.0.1.orig/src/plugins/evolution/evolution.c	2011-09-26 10:34:43.000000000 +0100
++++ nemo-sendto-3.0.1/src/plugins/evolution/evolution.c	2012-03-06 00:20:31.370050691 +0000
+@@ -25,12 +25,12 @@
+ 
+ #include <e-contact-entry.h>
+ #include <glib/gi18n-lib.h>
++#include <gio/gio.h>
+ #include <string.h>
+ #include "nemo-sendto-plugin.h"
+ 
+ #define GCONF_COMPLETION "/apps/evolution/addressbook"
+ #define GCONF_COMPLETION_SOURCES GCONF_COMPLETION "/sources"
+-#define DEFAULT_MAILTO "/desktop/gnome/url-handlers/mailto/command"
+ 
+ #define CONTACT_FORMAT "%s <%s>"
+ 
+@@ -47,78 +47,35 @@
+ static char *email = NULL;
+ static char *name = NULL;
+ 
+-static char *
+-get_evo_cmd (void)
+-{
+-	char *tmp = NULL;
+-	char *retval;
+-	char *cmds[] = {"evolution",
+-		"evolution-2.0",
+-		"evolution-2.2",
+-		"evolution-2.4",
+-		"evolution-2.6",
+-		"evolution-2.8", /* for the future */
+-		"evolution-3.0", /* but how far to go ? */
+-		NULL};
+-	guint i;
+-
+-	
+-	for (i = 0; cmds[i] != NULL; i++) {
+-		tmp = g_find_program_in_path (cmds[i]);
+-		if (tmp != NULL)
+-			break;
+-	}
+-
+-	if (tmp == NULL)
+-		return NULL;
+-
+-	retval = g_strdup_printf ("%s --component=mail %%s", tmp);
+-	g_free (tmp);
+-	return retval;
+-}
+-
+ static gboolean
+ init (NstPlugin *plugin)
+ {
+-	GConfClient *client;
++	GAppInfo *app = NULL;
+ 
+ 	g_print ("Init evolution plugin\n");
+ 	
+ 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+ 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+ 
+-	client = gconf_client_get_default ();
+-	mail_cmd = gconf_client_get_string (client, DEFAULT_MAILTO, NULL);
+-	g_object_unref (client);
+-
+-	if (mail_cmd == NULL || *mail_cmd == '\0') {
+-		g_free (mail_cmd);
+-		mail_cmd = get_evo_cmd ();
+-		type = MAILER_EVO;
+-	} else {
+-		/* Find what the default mailer is */
+-		if (strstr (mail_cmd, "balsa"))
+-			type = MAILER_BALSA;
+-		else if (strstr (mail_cmd, "thunder") || strstr (mail_cmd, "seamonkey")) {
+-			char **strv;
+-
+-			type = MAILER_THUNDERBIRD;
+-
+-			/* Thunderbird sucks, see
+-			 * https://bugzilla.gnome.org/show_bug.cgi?id=614222 */
+-			strv = g_strsplit (mail_cmd, " ", -1);
+-			g_free (mail_cmd);
+-			mail_cmd = g_strdup_printf ("%s %%s", strv[0]);
+-			g_strfreev (strv);
+-		} else if (strstr (mail_cmd, "sylpheed") || strstr (mail_cmd, "claws"))
+-			type = MAILER_SYLPHEED;
+-		else if (strstr (mail_cmd, "anjal"))
+-			type = MAILER_EVO;
++	app = g_app_info_get_default_for_uri_scheme ("mailto");
++	if (app) {
++		mail_cmd = g_strdup (g_app_info_get_executable (app));
++		g_object_unref (app);
+ 	}
+ 
+ 	if (mail_cmd == NULL)
+ 		return FALSE;
+ 
++	/* Find what the default mailer is */
++	if (strstr (mail_cmd, "balsa"))
++		type = MAILER_BALSA;
++	else if (strstr (mail_cmd, "thunder") || strstr (mail_cmd, "seamonkey"))
++		type = MAILER_THUNDERBIRD;
++	else if (strstr (mail_cmd, "sylpheed") || strstr (mail_cmd, "claws"))
++		type = MAILER_SYLPHEED;
++	else if (strstr (mail_cmd, "anjal"))
++		type = MAILER_EVO;
++
+ 	return TRUE;
+ }
+ 
+@@ -251,8 +208,7 @@
+ {
+ 	GList *l;
+ 
+-	if (strstr (mail_cmd, " -m ") == NULL && strstr (mail_cmd, " --compose=") == NULL)
+-		g_string_append (mailto, " --compose=");
++	g_string_append (mailto, " --compose=");
+ 	if (email != NULL) {
+ 		if (name != NULL)
+ 			g_string_append_printf (mailto, "\""CONTACT_FORMAT"\"", name, email);
+@@ -348,7 +304,7 @@
+ 		get_evo_mailto (contact_widget, mailto, file_list);
+ 	}
+ 
+-	cmd = g_strdup_printf (mail_cmd, mailto->str);
++	cmd = g_strconcat (mail_cmd, " ", mailto->str, NULL);
+ 	g_string_free (mailto, TRUE);
+ 
+ 	g_message ("Mailer type: %d", type);

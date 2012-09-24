@@ -1,0 +1,327 @@
+# Italian translation of nemo-sendto.
+# Copyright (C) 2004-2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the nemo-sendto package.
+# Paolo Rampino <clickma@gmail.com>, 2004-2005.
+# Gianvito Cavasoli <janvitus@ubuntu-it.org>, 2008, 2009.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto 1.0.1\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2009-03-06 18:15+0000\n"
+"PO-Revision-Date: 2009-03-08 12:51+0100\n"
+"Last-Translator: Gianvito Cavasoli <janvitus@ubuntu-it.org>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "L'ultimo plugin usato per inviare"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "L'ultimo tipo di archivio usato"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"Utilizzato per memorizzare quale plugin è stato utilizzato l'ultima volta "
+"per inviare file usando nemo-sendto."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"Usato per memorizzare quale tipo di archivio è stato utilizzato l'ultima "
+"volta (0: zip, 1: tar.gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "I_nvia a..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "Invia file a dispositivi remoti o persone"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "Invia a..."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../gaim_plugin/nemo-sendto-plugin.c:309
+#: ../pidgin_plugin/nemo-sendto-plugin.c:331
+msgid "Nemo Integration"
+msgstr "Integrazione con Nemo"
+
+#. name
+#. version
+#. summary
+#. name
+#. version
+#. summary
+#: ../gaim_plugin/nemo-sendto-plugin.c:311
+#: ../gaim_plugin/nemo-sendto-plugin.c:312
+#: ../pidgin_plugin/nemo-sendto-plugin.c:333
+#: ../pidgin_plugin/nemo-sendto-plugin.c:334
+msgid "Provides integration with Nemo"
+msgstr "Fornisce l'integrazione con Nemo"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "Invia a..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Invia file via email, messaggio istantaneo..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Invia file via email, messaggio istantaneo..."
+
+#: ../src/nemo-sendto-command.c:533
+msgid "Files"
+msgstr "File"
+
+#: ../src/nemo-sendto-command.c:737
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Attesi degli URI o nomi file da essere passati come opzioni\n"
+
+#: ../src/nemo-sendto-command.c:754
+msgid "Nemo Sendto"
+msgstr "Nemo Invia a"
+
+#: ../src/nemo-sendto-command.c:758
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Impossibile analizzare le opzioni della riga di comando: %s\n"
+
+#: ../src/nemo-sendto-command.c:773
+msgid "Could not load any plugins."
+msgstr "Impossibile caricare alcun plugin."
+
+#: ../src/nemo-sendto-command.c:776
+msgid "Please verify your installation"
+msgstr "Verificare l'installazione"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Compressione</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Destinazione</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "Invia _come:"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "Invia _archiviato in:"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "Invia _a:"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "_Invia"
+
+#: ../src/plugins/bluetooth/bluetooth.c:445
+msgid "Programming error, could not find the device in the list"
+msgstr ""
+"Errore di programmazione, impossibile trovare il dispositivo nell'elenco"
+
+#: ../src/plugins/bluetooth/bluetooth.c:520
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Trasferimento file con OBEX Push non supportato"
+
+#: ../src/plugins/bluetooth/bluetooth.c:544
+msgid "Bluetooth (OBEX Push)"
+msgstr "Bluetooth (OBEX Push)"
+
+#: ../src/plugins/empathy/empathy.c:136
+msgid "The contact selected cannot receive files."
+msgstr "Il contatto selezionato non può ricevere file."
+
+#: ../src/plugins/empathy/empathy.c:142
+msgid "The contact selected is offline."
+msgstr "Il contatto selezionato non è in rete."
+
+#: ../src/plugins/empathy/empathy.c:195 ../src/plugins/empathy/empathy.c:256
+msgid "No error message"
+msgstr "Nessun messaggio di errore"
+
+#: ../src/plugins/empathy/empathy.c:309
+msgid "Instant Message (Empathy)"
+msgstr "Messaggio istantaneo (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:367
+msgid "Email"
+msgstr "Email"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Impossibile recuperare il contatto: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Impossibile trovare il contatto: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "Impossibile creare la vista per la ricerca."
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "Successo"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "Un argomento non era valido."
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "La rubrica è occupata."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "La rubrica non è in rete."
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "La rubrica non esiste."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "Il contatto «Me» è inesistente."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "La rubrica non è caricata."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "La rubrica è già caricata."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "È stato negato il permesso di accedere alla rubrica."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "Il contatto non è stato trovato."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "Questo contatto ID esiste già."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "Il protocollo non è supportato."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "L'operazione è stata annullata."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "L'operazione non può essere annullata."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "Autenticazione della rubrica fallita."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr ""
+"È richiesta l'autenticazione per accedere alla rubrica e non è stata fornita."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "Una connessione sicura non è disponibile."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "Si è verificato un errore di CORBA accedendo alla rubrica."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "La sorgente della rubrica non esiste."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "Si è verificato un errore sconosciuto."
+
+#: ../src/plugins/gaim/gaim.c:228
+msgid "Instant Message (Gaim)"
+msgstr "Messaggio istantaneo (Gaim)"
+
+#: ../src/plugins/gajim/gajim.c:402
+msgid "Unable to send file"
+msgstr "Impossibile inviare file"
+
+#: ../src/plugins/gajim/gajim.c:403
+msgid "There is no connection to gajim remote service."
+msgstr "Nessuna connessione al servizio remoto di gajim."
+
+#: ../src/plugins/gajim/gajim.c:427 ../src/plugins/gajim/gajim.c:466
+msgid "Sending file failed"
+msgstr "Invio del file non riuscito"
+
+#: ../src/plugins/gajim/gajim.c:428
+msgid "Recipient is missing."
+msgstr "Manca Il destinatario."
+
+#: ../src/plugins/gajim/gajim.c:466
+msgid "Unknown recipient."
+msgstr "Destinatario sconosciuto."
+
+#: ../src/plugins/gajim/gajim.c:488
+msgid "Instant Message (Gajim)"
+msgstr "Messaggio istantaneo (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:70
+#: ../src/plugins/nemo-burn/nemo-burn.c:85
+msgid "New CD/DVD"
+msgstr "Nuovo CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:83
+msgid "Existing CD/DVD"
+msgstr "CD/DVD esistente"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:162
+msgid "CD/DVD Creator"
+msgstr "Creazione CD/DVD"
+
+#: ../src/plugins/pidgin/pidgin.c:350
+msgid "Instant Message (Pidgin)"
+msgstr "Messaggio istantaneo (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:219
+msgid "Removable disks and shares"
+msgstr "Condivisioni e dischi rimovibili"
+
+#: ../src/plugins/upnp/upnp.c:298
+msgid "UPnP Media Server"
+msgstr "Server multimediale UPnP"

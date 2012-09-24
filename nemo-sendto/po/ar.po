@@ -1,0 +1,335 @@
+# translation of nemo-sendto.HEAD.ar.po to Arabic
+# Arabic translations for PACKAGE package.
+# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2006.
+# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto.HEAD.ar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-10 00:14+0200\n"
+"PO-Revision-Date: 2009-11-10 00:14+0300\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.4.1\n"
+"X-Poedit-Language: Arabic\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "آخر مُلحق استُخدِم للإرسال"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "آخر نوع أرشيف استُخدِم"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"يُستخدم لتخزين ماهو المُلحق الذي استُخدِم آخر مرة اُرسِلت ملفات باستخدام أرسل إلى-"
+"ناوتلس"
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"يُستخدم لتخزين ما نوع الأرشيف المُستخدم آخر مرة (0: zip, 1: tar.gz, 2: tar."
+"bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "أرسل إ_لى..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "أرسل الملفات إلى أجهزة بعيدة، أو إلى الآخرين"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "أرسل إلى..."
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.ui.h:3
+msgid "Send To..."
+msgstr "أرسل إلى..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "أرسل الملف بالبريد، رسالة فورية..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "أرسل الملفات بالبريد، رسالة فورية..."
+
+#: ../src/nemo-sendto-command.c:547
+msgid "Files"
+msgstr "ملفات"
+
+#: ../src/nemo-sendto-command.c:760
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "يتوقّع أن تمرر المسارات (URI) أو العناوين كخيارات\n"
+
+#: ../src/nemo-sendto-command.c:777
+msgid "Nemo Sendto"
+msgstr "أرسل إلى - نوتلِس"
+
+#: ../src/nemo-sendto-command.c:781
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "تعذّر تحليل خيارات سطر الأوامر: %s\n"
+
+#: ../src/nemo-sendto-command.c:796
+msgid "Could not load any plugins."
+msgstr "تعذّر تحميل أية ملحقات."
+
+#: ../src/nemo-sendto-command.c:799
+msgid "Please verify your installation"
+msgstr "رجاء راجع تثبيتك"
+
+#: ../src/nemo-sendto.ui.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>الضغط</b>"
+
+#: ../src/nemo-sendto.ui.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>الوِجهة</b>"
+
+#: ../src/nemo-sendto.ui.h:4
+msgid "Send _as:"
+msgstr "أرسِل _ك‍:"
+
+#: ../src/nemo-sendto.ui.h:5
+msgid "Send _packed in:"
+msgstr "أرسٍل _محزّما في:"
+
+#: ../src/nemo-sendto.ui.h:6
+msgid "Send t_o:"
+msgstr "أرسِل إ_لى:"
+
+#: ../src/nemo-sendto.ui.h:7
+msgid "_Send"
+msgstr "أر_سل"
+
+#: ../src/plugins/bluetooth/bluetooth.c:448
+msgid "Programming error, could not find the device in the list"
+msgstr "خطأ برمجي، لم أتمكن من العثور على جهاز في القائمة"
+
+#: ../src/plugins/bluetooth/bluetooth.c:523
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "نقل ملفات Obex Push مدعوم"
+
+#: ../src/plugins/bluetooth/bluetooth.c:547
+msgid "Bluetooth (OBEX Push)"
+msgstr "بلوتوث (OBEX Push)"
+
+#: ../src/plugins/empathy/empathy.c:144
+msgid "The contact selected cannot receive files."
+msgstr "المُتراسل المحدد لا يستطيع استقبال ملفات."
+
+#: ../src/plugins/empathy/empathy.c:150
+msgid "The contact selected is offline."
+msgstr "المتراسل المحدد غير متّصل."
+
+#: ../src/plugins/empathy/empathy.c:205
+msgid "No error message"
+msgstr "لا رسالة خطأ"
+
+#: ../src/plugins/empathy/empathy.c:281
+msgid "Instant Message (Empathy)"
+msgstr "رسالة فورية (إمبَثي)"
+
+#: ../src/plugins/evolution/evolution.c:369
+msgid "Email"
+msgstr "بريد"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "تعذّر جلب المتراسل: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "تعذّر العثور على المتراسل: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "تعذّر إنشاء منظور يمكن البحث به."
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "نجح"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "المعطى غير سليم."
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "دفتر العناوين مشغول."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "دفتر العناوين غير متّصل."
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "دفتر العناوين غير موجود."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "المتراسل لا وجود له."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "دفتر العناوين غير مُحمّل."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "دفتر العناوين مُحمّل فعلا."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "مُنِع الإذن أثناء محاولة الوصول إلى دفتر العناوين."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "لم يُعثر على المُتراسل."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "لا وجود لمعرّف المتراسل."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "البروتوكول غير مدعوم."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "أُلغيت العملية."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "تعذّر إلغاء العملية."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "فشل استيثاق دفتر العناوين."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr "الاستيثاق مطلوب للوصل إلى دفتر العناوين لكنه لم يُعطَ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "لا يتوفر اتصال آمن."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "حدث خطأ CORBA أثناء محاولة الوصول إلى دفتر العناوين."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "لا وجود لمصدر دفتر العناوين."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "حدث خطأ مجهول."
+
+#: ../src/plugins/gajim/gajim.c:417
+msgid "Unable to send file"
+msgstr "تعذّر إرسال الملف"
+
+#: ../src/plugins/gajim/gajim.c:418
+msgid "There is no connection to gajim remote service."
+msgstr "لا يوجد اتصال مع خدمة gajim عن بعد."
+
+#: ../src/plugins/gajim/gajim.c:442 ../src/plugins/gajim/gajim.c:482
+msgid "Sending file failed"
+msgstr "فشل إرسال الملف"
+
+#: ../src/plugins/gajim/gajim.c:443
+msgid "Recipient is missing."
+msgstr "المتلقّي مفقود."
+
+#: ../src/plugins/gajim/gajim.c:482
+msgid "Unknown recipient."
+msgstr "متلقّي مجهول."
+
+#: ../src/plugins/gajim/gajim.c:505
+msgid "Instant Message (Gajim)"
+msgstr "رسالة فورية (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:92
+msgid "New CD/DVD"
+msgstr "اسطوانة\\دي‌ڤي‌دي جديد"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:99
+msgid "Existing CD/DVD"
+msgstr "اسطوانة\\دي‌ڤي‌دي موجود"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:178
+msgid "CD/DVD Creator"
+msgstr "منشئ اسطوانات/دي‌ڤي‌دي"
+
+#: ../src/plugins/pidgin/pidgin.c:464
+msgid "Instant Message (Pidgin)"
+msgstr "رسالة فورية (بِدْجِن)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "الأقراص المنفصلة والمشاركات"
+
+#: ../src/plugins/upnp/upnp.c:309
+msgid "UPnP Media Server"
+msgstr "خادوم وسائط UPnP"
+
+#~ msgid "Nemo Integration"
+#~ msgstr "التكامل مع نوتلس"
+
+#~ msgid "Provides integration with Nemo"
+#~ msgstr "توفّر تكامل مع نوتلس"
+
+#~ msgid "Default folder to use"
+#~ msgstr "المجلد الإفتراضي ليستخدم"
+
+#~ msgid "Email (Balsa)"
+#~ msgstr "بريد إلكتروني (Balsa)"
+
+#~ msgid "Device does not support Obex File Transfer"
+#~ msgstr "لا يدعم الجهاز Obex File Transfer"
+
+#~ msgid "Email (Claws Mail)"
+#~ msgstr "بريد إلكتروني (Claws Mail)"
+
+#~ msgid "Email (Thunderbird)"
+#~ msgstr "بريد إلكتروني (ثندربيرد)"
+
+#~ msgid "You don't insert the package name"
+#~ msgstr "لم تدخِل اسم الحزمة"
+
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid ""
+#~ ".zip\n"
+#~ ".tar.gz\n"
+#~ ".tar.bz2"
+#~ msgstr ""
+#~ ".zip\n"
+#~ ".tar.gz\n"
+#~ ".tar.bz2"

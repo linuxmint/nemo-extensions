@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/utils.mk
+include /usr/share/cdbs/1/class/gnome.mk
+include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
+include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
+
+DEB_DH_MAKESHLIBS_ARGS += --no-act
+DEB_DH_SHLIBDEPS_ARGS_ALL += -X/usr/lib/nemo-sendto/plugins	\
+				-X/usr/lib/pidgin		\
+				-X/usr/lib/evolution
+
+binary-post-install/nemo-sendto::
+	# Remove unnecessary libtool library files
+	find debian/nemo-sendto -type f -name "*.la" | xargs rm -fv
+	# Remove the extension, it's been moved to nemo
+	rm -r debian/nemo-sendto/usr/lib/nemo
+

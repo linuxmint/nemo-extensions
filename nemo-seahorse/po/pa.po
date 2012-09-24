@@ -1,0 +1,535 @@
+# translation of seahorse.HEAD.po to Punjabi
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Amanpreet Singh Alam <aalam@redhat.com>, 2004.
+# A S Alam <aalam@users.sf.net>, 2007, 2009, 2010.
+# ASB <aalam@users.sf.net>, 2007.
+# Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: seahorse.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-07 11:29+0200\n"
+"PO-Revision-Date: 2011-09-23 15:52+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+#: ../nemo-ext/nemo-seahorse.c:158
+msgid "Encrypt..."
+msgstr "ਇੰਕ੍ਰਿਪਟ..."
+
+#: ../nemo-ext/nemo-seahorse.c:159
+msgid "Encrypt (and optionally sign) the selected file"
+msgid_plural "Encrypt the selected files"
+msgstr[0] "ਚੁਣੀ ਫਾਇਲ ਇੰਕ੍ਰਿਪਟ ਕਰੋ"
+msgstr[1] "ਚੁਣੀਆਂ ਫਾਇਲਾਂ ਇੰਕ੍ਰਿਪਟ ਕਰੋ"
+
+#: ../nemo-ext/nemo-seahorse.c:165
+msgid "Sign"
+msgstr "ਸਾਇਨ"
+
+#: ../nemo-ext/nemo-seahorse.c:166
+msgid "Sign the selected file"
+msgid_plural "Sign the selected files"
+msgstr[0] "ਚੁਣੀ ਫਾਇਲ ਉੱਤੇ ਸਾਇਨ ਕਰੋ"
+msgstr[1] "ਚੁਣੀਆਂ ਫਾਇਲਾਂ ਉੱਤੇ ਸਾਇਨ ਕਰੋ"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:1
+msgid "<b>You have selected multiple files or folders</b>"
+msgstr "<b>ਤੁਸੀਂ ਕਈ ਫਾਇਲਾਂ ਜਾਂ ਫੋਲਡਰ ਚੁਣੇ ਹਨ</b>"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:2
+msgid ""
+"Because the files are located remotely, each file will be encrypted "
+"separately."
+msgstr "ਕਿਉਂਕਿ ਫਾਇਲ ਰਿਮੋਟ ਟਿਕਾਣੇ ਉੱਤੇ ਹਨ, ਇਸਕਰਕੇ ਹਰੇਕ ਫਾਇਲ ਨੂੰ ਵੱਖ ਵੱਖ ਇੰਕ੍ਰਿਪਟ ਕੀਤਾ ਜਾਵੇਗਾ।"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:3
+msgid "Encrypt Multiple Files"
+msgstr "ਬਹੁਤੀਆਂ ਫਾਇਲਾਂ ਇੰਕ੍ਰਿਪਟ"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:4
+msgid "Encrypt each file separately"
+msgstr "ਹਰੇਕ ਫਾਇਲ ਵੱਖ ਵੱਖ ਇੰਕ੍ਰਿਪਟ"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:5
+msgid "Encrypt packed together in a package"
+msgstr "ਇੱਕ ਪੈਕੇਜ ਵਿੱਚ ਇੱਕਠੇ ਪੈਕ ਨੂੰ ਇੰਕ੍ਰਿਪਟ"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:6
+msgid "Package Name:"
+msgstr "ਪੈਕੇਜ ਨਾਂ:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:7
+msgid "Packaging:"
+msgstr "ਪੈਕੇਜ:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:8
+msgid "encrypted-package"
+msgstr "encrypted-package"
+
+#: ../tool/seahorse-notification.c:580 ../tool/seahorse-notification.c:605
+msgid "Key Imported"
+msgid_plural "Keys Imported"
+msgstr[0] "ਕੁੰਜੀ ਇੰਪੋਰਟ ਕੀਤੀ"
+msgstr[1] "ਕੁੰਜੀਆਂ ਇੰਪੋਰਟ ਕੀਤੀਆਂ"
+
+#: ../tool/seahorse-notification.c:584 ../tool/seahorse-notification.c:604
+#, c-format
+msgid "Imported %i key"
+msgid_plural "Imported %i keys"
+msgstr[0] "ਇੰਪੋਰਟ ਕੀਤੀ %i ਕੁੰਜੀ"
+msgstr[1] "ਇੰਪੋਰਟ ਕੀਤੀਆਂ %i ਕੁੰਜੀਆਂ"
+
+#: ../tool/seahorse-notification.c:586
+#, c-format
+msgid "Imported a key for"
+msgid_plural "Imported keys for"
+msgstr[0] "ਇੱਕ ਕੁੰਜੀ ਇੰਪੋਰਟ ਕੀਤੀ"
+msgstr[1] "ਇੰਪੋਰਟ ਕੀਤੀਆਂ ਕੁੰਜੀਆਂ"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:623
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>expired</b></i> on %s."
+msgstr "<i><key id='%s'/> ਵਲੋਂ ਸਾਇਨ <b>ਮਿਆਦ</b></i> %s ਤੱਕ।"
+
+#: ../tool/seahorse-notification.c:624
+msgid "Invalid Signature"
+msgstr "ਗਲਤ ਦਸਤਖਤ"
+
+#: ../tool/seahorse-notification.c:630
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s <b>Expired</b>."
+msgstr "<i><key id='%s'/> ਵਲੋਂ </i> %s ਉੱਤੇ ਸਾਇਨਾਂ ਦੀ <b>ਮਿਆਦ ਪੁੱਗੀ</b>।"
+
+#: ../tool/seahorse-notification.c:631
+msgid "Expired Signature"
+msgstr "ਦਸਤਖਤਾਂ ਦੀ ਮਿਆਦ ਪੁੱਗੀ"
+
+#: ../tool/seahorse-notification.c:637
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>Revoked</b></i> on %s."
+msgstr "<i><key id='%s'/> ਵਲੋਂ ਸਾਇਨ <b>ਵਾਪਸ ਲਏ</b></i> %s ਉੱਤੇ।"
+
+#: ../tool/seahorse-notification.c:638
+msgid "Revoked Signature"
+msgstr "ਦਸਤਖਤ ਮਨਸੂਖ"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:644
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s."
+msgstr "<i><key id='%s'/>ਰਾਹੀਂ </i> %s ਉੱਤੇ ਸਾਇਨ।"
+
+#: ../tool/seahorse-notification.c:645
+msgid "Good Signature"
+msgstr "ਵਧੀਆ ਦਸਤਖਤ"
+
+#: ../tool/seahorse-notification.c:650
+msgid "Signing key not in keyring."
+msgstr "ਸਾਇਨ ਕੁੰਜੀ ਕੀਰਿੰਗ 'ਚ ਨਹੀਂ ਹੈ।"
+
+#: ../tool/seahorse-notification.c:651
+msgid "Unknown Signature"
+msgstr "ਅਣਜਾਣ ਦਸਤਖਤ"
+
+#: ../tool/seahorse-notification.c:655
+msgid "Bad or forged signature. The signed data was modified."
+msgstr "ਗਲਤ ਜਾਂ ਭੁੱਲੇ ਦਸਤਖਤ ਹਨ। ਸਾਇਨ ਡਾਟਾ ਸੋਧਿਆ ਗਿਆ ਹੈ।"
+
+#: ../tool/seahorse-notification.c:656
+msgid "Bad Signature"
+msgstr "ਗਲਤ ਦਸਤਖਤ"
+
+#: ../tool/seahorse-notification.c:664
+msgid "Couldn't verify signature."
+msgstr "ਦਸਤਖਤਾਂ ਦੀ ਜਾਂਚ ਨਹੀਂ ਹੋ ਸਕਦੀ"
+
+#: ../tool/seahorse-notify.xml.h:1
+msgid "Notification Messages"
+msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ ਸੁਨੇਹੇ"
+
+#: ../tool/seahorse-passphrase.c:200
+msgid "Passphrase"
+msgstr "ਪ੍ਹੈਰਾ"
+
+#: ../tool/seahorse-passphrase.c:203
+msgid "Password:"
+msgstr "ਪਾਸਵਰਡ:"
+
+#. The second and main entry
+#: ../tool/seahorse-passphrase.c:267
+msgid "Confirm:"
+msgstr "ਪੁਸ਼ਟੀ:"
+
+#: ../tool/seahorse-passphrase.c:355
+#, c-format
+msgid "Wrong passphrase."
+msgstr "ਗਲਤ ਪ੍ਹੈਰਾ"
+
+#: ../tool/seahorse-passphrase.c:359
+#, c-format
+msgid "Enter new passphrase for '%s'"
+msgstr "'%s' ਲਈ ਨਵਾਂ ਪ੍ਹੈਰਾ ਦਿਓ"
+
+#: ../tool/seahorse-passphrase.c:361
+#, c-format
+msgid "Enter passphrase for '%s'"
+msgstr "'%s' ਲਈ ਪ੍ਹੈਰਾ ਦਿਓ"
+
+#: ../tool/seahorse-passphrase.c:364
+msgid "Enter new passphrase"
+msgstr "ਨਵਾਂ ਪ੍ਹੈਰਾ ਦਿਓ"
+
+#: ../tool/seahorse-passphrase.c:366
+msgid "Enter passphrase"
+msgstr "ਪ੍ਹੈਰਾ ਦਿਓ"
+
+#: ../tool/seahorse-pgp-encrypted.desktop.in.in.h:1
+msgid "Decrypt File"
+msgstr "ਡਿਕ੍ਰਿਪਟ ਫਾਇਲ"
+
+#: ../tool/seahorse-pgp-keys.desktop.in.in.h:1
+msgid "Import Key"
+msgstr "ਕੁੰਜੀ ਇੰਪੋਰਟ"
+
+#: ../tool/seahorse-pgp-signature.desktop.in.in.h:1
+msgid "Verify Signature"
+msgstr "ਦਸਤਖਤ ਜਾਂਚ"
+
+#: ../tool/seahorse-progress.xml.h:1
+msgid "Progress Title"
+msgstr "ਤਰੱਕੀ ਟਾਈਟਲ"
+
+#: ../tool/seahorse-tool.c:61
+msgid "Import keys from the file"
+msgstr "ਫਾਇਲ ਤੋਂ ਕੁੰਜੀਆਂ ਇੰਪੋਰਟ ਕਰੋ"
+
+#: ../tool/seahorse-tool.c:63
+msgid "Encrypt file"
+msgstr "ਇੰਕ੍ਰਿਪਟ ਫਾਇਲ"
+
+#: ../tool/seahorse-tool.c:65
+msgid "Sign file with default key"
+msgstr "ਫਾਇਲ ਡਿਫਾਲਟ ਕੁੰਜੀ ਨਾਲ ਸਾਇਨ ਕਰੋ"
+
+#: ../tool/seahorse-tool.c:67
+msgid "Encrypt and sign file with default key"
+msgstr "ਡਿਫਾਲਟ ਕੁੰਜੀ ਨਾਲ ਇੰਕ੍ਰਿਪਟ ਅਤੇ ਫਾਇਲ ਦਸਤਖਤ ਕਰੋ"
+
+#: ../tool/seahorse-tool.c:69
+msgid "Decrypt encrypted file"
+msgstr "ਇੰਕ੍ਰਿਪਟਿਡ ਫਾਇਲ ਡਿਕ੍ਰਿਪਟ ਕਰੋ"
+
+#: ../tool/seahorse-tool.c:71
+msgid "Verify signature file"
+msgstr "ਦਸਤਖਤ ਫਾਇਲ ਜਾਂਚ"
+
+#: ../tool/seahorse-tool.c:73
+msgid "Read list of URIs on standard in"
+msgstr "ਸਟੈਂਡਰਡ ਉੱਤੇ URI ਦੀ ਲਿਸਟ ਪੜ੍ਹੋ"
+
+#: ../tool/seahorse-tool.c:75
+msgid "file..."
+msgstr "ਫਾਇਲ..."
+
+#: ../tool/seahorse-tool.c:169
+msgid "Choose Recipients"
+msgstr "ਪ੍ਰਾਪਤ-ਕਰਤਾ ਚੁਣੋ"
+
+#: ../tool/seahorse-tool.c:234 ../tool/seahorse-tool.c:347
+msgid "Couldn't load keys"
+msgstr "ਕੁੰਜੀਆਂ ਲੋਡ ਨਹੀਂ ਕੀਤੀਆਂ ਜਾ ਸਕੀਆਂ"
+
+#: ../tool/seahorse-tool.c:252
+#, c-format
+msgid "Choose Encrypted File Name for '%s'"
+msgstr "'%s' ਲਈ ਇੰਕ੍ਰਿਪਟਡ ਫਾਇਲ ਨਾਂ ਚੁਣੋ"
+
+#: ../tool/seahorse-tool.c:325
+msgid "Choose Signer"
+msgstr "ਸਾਇਨਰ ਚੁਣੋ"
+
+#: ../tool/seahorse-tool.c:367
+#, c-format
+msgid "Choose Signature File Name for '%s'"
+msgstr "'%s' ਲਈ ਦਸਤਖਤ ਫਾਇਲ ਨਾਂ ਚੁਣੋ"
+
+#: ../tool/seahorse-tool.c:407
+msgid "Import is complete"
+msgstr "ਇੰਪੋਰਟ ਪੂਰਾ ਹੋਇਆ"
+
+#: ../tool/seahorse-tool.c:440
+msgid "Importing keys ..."
+msgstr "ਕੁੰਜੀਆਂ ਇੰਪੋਰਟ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ..."
+
+#: ../tool/seahorse-tool.c:470
+msgid "Import Failed"
+msgstr "ਇੰਪੋਰਟ ਫੇਲ੍ਹ"
+
+#: ../tool/seahorse-tool.c:471
+msgid "Keys were found but not imported."
+msgstr "ਕੁੰਜੀਆਂ ਲੱਭੀਆਂ, ਪਰ ਇੰਪੋਰਟ ਨਹੀਂ ਕੀਤੀਆਂ ਗਈਆਂ।"
+
+#: ../tool/seahorse-tool.c:494
+#, c-format
+msgid "Imported key"
+msgstr "ਇੰਪੋਰਟ ਕੀਤੀਆਂ ਕੁੰਜੀਆਂ"
+
+#: ../tool/seahorse-tool.c:496
+#, c-format
+msgid "Imported %d key"
+msgid_plural "Imported %d keys"
+msgstr[0] "%d ਕੁੰਜੀ ਇੰਪੋਰਟ ਕੀਤੀ"
+msgstr[1] "%d ਕੁੰਜੀਆਂ ਇੰਪੋਰਟ ਕੀਤੀਆਂ"
+
+#. File to decrypt to
+#: ../tool/seahorse-tool.c:518
+#, c-format
+msgid "Choose Decrypted File Name for '%s'"
+msgstr "'%s' ਲਈ ਡਿਕ੍ਰਿਪਟਡ ਫਾਇਲ ਨਾਂ ਚੁਣੋ"
+
+#: ../tool/seahorse-tool.c:575
+#, c-format
+msgid "Choose Original File for '%s'"
+msgstr "'%s' ਲਈ ਅਸਲੀ ਫਾਇਲ ਚੁਣੋ"
+
+#.
+#. * TODO: What should happen with multiple files at this point.
+#. * The last thing we want to do is cascade a big pile of error
+#. * dialogs at the user.
+#.
+#: ../tool/seahorse-tool.c:648
+#, c-format
+msgid "No valid signatures found"
+msgstr "ਕੋਈ ਵੈਧ ਦਸਤਖਤ ਨਹੀਂ ਲੱਭੇ"
+
+#: ../tool/seahorse-tool.c:697
+msgid "File Encryption Tool"
+msgstr "ਫਾਇਲ ਇੰਕ੍ਰਿਪਸ਼ਨ ਟੂਲ"
+
+#: ../tool/seahorse-tool.c:713
+msgid "Encrypting"
+msgstr "ਇਕ੍ਰਿਪਟ ਕੀਤੀ ਜਾਂਦੀ ਹੈ"
+
+#: ../tool/seahorse-tool.c:714
+#, c-format
+msgid "Couldn't encrypt file: %s"
+msgstr "ਫਾਇਲ ਇੰਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ: %s"
+
+#: ../tool/seahorse-tool.c:722
+msgid "Signing"
+msgstr "ਸਾਇਨਿੰਗ"
+
+#: ../tool/seahorse-tool.c:723
+#, c-format
+msgid "Couldn't sign file: %s"
+msgstr "ਫਾਇਲ ਸਾਇਨ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ: %s"
+
+#: ../tool/seahorse-tool.c:728
+msgid "Importing"
+msgstr "ਇੰਪੋਰਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: ../tool/seahorse-tool.c:729
+#, c-format
+msgid "Couldn't import keys from file: %s"
+msgstr "ਫਾਇਲ ਤੋਂ ਕੁੰਜੀਆਂ ਇੰਪੋਰਟ ਨਹੀਂ ਕੀਤੀਆਂ ਜਾ ਸਕੀਆਂ: %s"
+
+#: ../tool/seahorse-tool.c:735
+msgid "Decrypting"
+msgstr "ਡਿਕ੍ਰਿਪਸ਼ਨ"
+
+#: ../tool/seahorse-tool.c:736
+#, c-format
+msgid "Couldn't decrypt file: %s"
+msgstr "ਫਾਇਲ ਡਿਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ: %s"
+
+#: ../tool/seahorse-tool.c:741
+msgid "Verifying"
+msgstr "ਜਾਂਚ ਜਾਰੀ ਹੈ"
+
+#: ../tool/seahorse-tool.c:742
+#, c-format
+msgid "Couldn't verify file: %s"
+msgstr "ਫਾਇਲ ਜਾਂਚ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ: %s"
+
+#: ../tool/seahorse-tool-files.c:120
+msgid "Ace (.ace)"
+msgstr "Ace (.ace)"
+
+#: ../tool/seahorse-tool-files.c:121
+msgid "Ar (.ar)"
+msgstr "Ar (.ar)"
+
+#: ../tool/seahorse-tool-files.c:122
+msgid "Arj (.arj)"
+msgstr "Arj (.arj)"
+
+#: ../tool/seahorse-tool-files.c:129
+msgid "Ear (.ear)"
+msgstr "Ear (.ear)"
+
+#: ../tool/seahorse-tool-files.c:130
+msgid "Self-extracting zip (.exe)"
+msgstr "ਖੁਦ-ਖੋਲ੍ਹਣ ਜ਼ਿਪ (.exe)"
+
+#: ../tool/seahorse-tool-files.c:132
+msgid "Jar (.jar)"
+msgstr "ਜ਼ਾਰ (.jar)"
+
+#: ../tool/seahorse-tool-files.c:133
+msgid "Lha (.lzh)"
+msgstr "Lha (.lzh)"
+
+#: ../tool/seahorse-tool-files.c:135
+msgid "Rar (.rar)"
+msgstr "Rar (.rar)"
+
+#: ../tool/seahorse-tool-files.c:137
+msgid "Tar uncompressed (.tar)"
+msgstr "ਟਾਰ ਅਣ-ਕੰਪਰੈੱਸਡ (.tar)"
+
+#: ../tool/seahorse-tool-files.c:138
+msgid "Tar compressed with bzip (.tar.bz)"
+msgstr "ਟਾਰ bzip ਨਾਲ ਕੰਪਰੈੱਸਡ (.tar.bz)"
+
+#: ../tool/seahorse-tool-files.c:139
+msgid "Tar compressed with bzip2 (.tar.bz2)"
+msgstr "ਟਾਰ bzip2 ਨਾਲ ਕੰਪਰੈੱਸਡ (.tar.bz2)"
+
+#: ../tool/seahorse-tool-files.c:140
+msgid "Tar compressed with gzip (.tar.gz)"
+msgstr "ਟਾਰ gzip ਨਾਲ ਕੰਪਰੈੱਸਡ (.tar.gz)"
+
+#: ../tool/seahorse-tool-files.c:141
+msgid "Tar compressed with lzop (.tar.lzo)"
+msgstr "lzop ਨਾਲ ਕੰਪਰੈੱਸਡ ਟਾਰ (.tar.lzo)"
+
+#: ../tool/seahorse-tool-files.c:142
+msgid "Tar compressed with compress (.tar.Z)"
+msgstr "ਕੰਪਰੈੱਸ ਨਾਲ ਕੰਪਰੈੱਸਡ ਟਾਰ (.tar.Z)"
+
+#: ../tool/seahorse-tool-files.c:144
+msgid "War (.war)"
+msgstr "ਵਾਰ (.war)"
+
+#: ../tool/seahorse-tool-files.c:145
+msgid "Zip (.zip)"
+msgstr "ਜ਼ਿਪ (.zip)"
+
+#: ../tool/seahorse-tool-files.c:146
+msgid "Zoo (.zoo)"
+msgstr "ਜ਼ੂ (.zoo)"
+
+#: ../tool/seahorse-tool-files.c:147
+msgid "7-Zip (.7z)"
+msgstr "7-Zip (.7z)"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:327
+#, c-format
+msgid "You have selected %d file "
+msgid_plural "You have selected %d files "
+msgstr[0] "ਤੁਸੀਂ %d ਫਾਇਲ ਚੁਣੀ"
+msgstr[1] "ਤੁਸੀਂ %d ਫਾਇਲਾਂ ਚੁਣੀਆਂ"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:332
+#, c-format
+msgid "and %d folder"
+msgid_plural "and %d folders"
+msgstr[0] "ਅਤੇ %d ਫੋਲਡਰ"
+msgstr[1] "ਅਤੇ %d ਫੋਲਡਰ"
+
+#. TRANSLATOR: "%s%s" are "You have selected %d files and %d folders"
+#. * Swap order with "%2$s%1$s" if needed
+#: ../tool/seahorse-tool-files.c:337
+#, c-format
+msgid "<b>%s%s</b>"
+msgstr "<b>%s%s</b>"
+
+#: ../tool/seahorse-tool-files.c:345
+#, c-format
+msgid "You have selected %d file"
+msgid_plural "You have selected %d files"
+msgstr[0] "ਤੁਸੀਂ %d ਫਾਇਲ ਚੁਣੀ ਹੈ"
+msgstr[1] "ਤੁਸੀਂ %d ਫਾਇਲਾਂ ਚੁਣੀਆਂ ਹਨ"
+
+#: ../tool/seahorse-tool-files.c:350
+#, c-format
+msgid "You have selected %d folder"
+msgid_plural "You have selected %d folders"
+msgstr[0] "ਤੁਸੀਂ %d ਫੋਲਡਰ ਚੁਣਿਆ"
+msgstr[1] "ਤੁਸੀਂ %d ਫੋਲਡਰ ਚੁਣੇ"
+
+#: ../tool/seahorse-tool-files.c:868
+msgid "Preparing..."
+msgstr "ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
+
+#: ../tool/seahorse-tool-files.c:877 ../tool/seahorse-tool-files.c:900
+msgid "Couldn't list files"
+msgstr "ਫਾਇਲਾਂ ਲਿਸਟ ਨਹੀਂ ਕੀਤੀਆਂ ਜਾ ਸਕੀਆਂ"
+
+#: ../tool/seahorse-tool-files.c:887 ../tool/seahorse-util.c:647
+msgid "Couldn't package files"
+msgstr "ਫਾਇਲ ਪੈਕ ਨਹੀਂ ਕੀਤੀਆਂ ਜਾ ਸਕੀਆਂ"
+
+#: ../tool/seahorse-util.c:173
+msgid "Decryption failed. You probably do not have the decryption key."
+msgstr "ਡਿ-ਕ੍ਰਿਪਸ਼ਨ ਫੇਲ੍ਹ ਹੋਈ। ਸ਼ਾਇਦ ਤੁਹਾਡੇ ਕੋਲ ਡਿ-ਕ੍ਰਿਪਟ ਕੁੰਜੀ ਨਹੀਂ ਹੈ।"
+
+#: ../tool/seahorse-util.c:223
+msgid "%Y-%m-%d"
+msgstr "%d-%m-%Y"
+
+#: ../tool/seahorse-util.c:642
+msgid "Couldn't run file-roller"
+msgstr "ਫਾਇਲ ਰੋਲਰ ਨਹੀਂ ਚਲਾਇਆ ਜਾ ਸਕਿਆ"
+
+#: ../tool/seahorse-util.c:648
+msgid "The file-roller process did not complete successfully"
+msgstr "ਫਾਇਲ ਰੋਲਰ ਕਾਰਵਾਈ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਿਰੇ ਨਹੀਂ ਚੜ੍ਹੀ"
+
+#. Filter for PGP keys. We also include *.asc, as in many
+#. cases that extension is associated with text/plain
+#: ../tool/seahorse-util.c:708
+msgid "All key files"
+msgstr "ਸਭ ਕੁੰਜੀ ਫਾਇਲਾਂ"
+
+#: ../tool/seahorse-util.c:715 ../tool/seahorse-util.c:755
+msgid "All files"
+msgstr "ਸਭ ਫਾਇਲਾਂ"
+
+#: ../tool/seahorse-util.c:748
+msgid "Archive files"
+msgstr "ਅਕਾਇਵ ਫਾਇਲਾਂ"
+
+#: ../tool/seahorse-util.c:777
+msgid ""
+"<b>A file already exists with this name.</b>\n"
+"\n"
+"Do you want to replace it with a new file?"
+msgstr ""
+"<b>ਇਸ ਨਾਂ ਨਾਲ ਫਾਇਲ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ।</b>\n"
+"\n"
+"ਕੀ ਤੁਸੀਂ ਇਸ ਨੂੰ ਨਵੀਂ ਫਾਇਲ ਨਾਲ ਬਦਲਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#: ../tool/seahorse-util.c:780
+msgid "_Replace"
+msgstr "ਬਦਲੋ(_R)"
+
+#: ../tool/seahorse-widget.c:365
+#, c-format
+msgid "Could not display help: %s"
+msgstr "ਮੱਦਦ ਵੇਖਾਈ ਨਹੀਂ ਜਾ ਸਕੀ: %s"

@@ -1,0 +1,537 @@
+# Hungarian translation of Seahorse-plugins
+# Copyright (C) 2003, 2005, 2007, 2008, 2010, 2011. Free Software Foundation, Inc.
+# This file is distributed under the same license as the Seahorse-plugins package.
+#
+# Péter Mátó <atya at andrews dot hu>, 2003.
+# Andras Timar <timar at gnome dot hu>, 2003.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2007, 2008, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: seahorse-plugins master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-07 11:29+0200\n"
+"PO-Revision-Date: 2011-09-21 03:41+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../nemo-ext/nemo-seahorse.c:158
+msgid "Encrypt..."
+msgstr "Titkosítás…"
+
+#: ../nemo-ext/nemo-seahorse.c:159
+msgid "Encrypt (and optionally sign) the selected file"
+msgid_plural "Encrypt the selected files"
+msgstr[0] "A kijelölt fájl titkosítása (és aláírása)"
+msgstr[1] "A kijelölt fájlok titkosítása"
+
+#: ../nemo-ext/nemo-seahorse.c:165
+msgid "Sign"
+msgstr "Aláírás"
+
+#: ../nemo-ext/nemo-seahorse.c:166
+msgid "Sign the selected file"
+msgid_plural "Sign the selected files"
+msgstr[0] "A kijelölt fájl aláírása"
+msgstr[1] "A kijelölt fájlok aláírása"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:1
+msgid "<b>You have selected multiple files or folders</b>"
+msgstr "<b>Több fájlt vagy mappát jelölt ki</b>"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:2
+msgid ""
+"Because the files are located remotely, each file will be encrypted "
+"separately."
+msgstr ""
+"Mivel a fájlok távoli helyen vannak, minden fájl külön-külön lesz titkosítva."
+
+#: ../tool/seahorse-multi-encrypt.xml.h:3
+msgid "Encrypt Multiple Files"
+msgstr "Több fájl titkosítása"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:4
+msgid "Encrypt each file separately"
+msgstr "Fájlok titkosítása külön-külön"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:5
+msgid "Encrypt packed together in a package"
+msgstr "Csomagoltak titkosítása egy csomagba"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:6
+msgid "Package Name:"
+msgstr "Csomag neve:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:7
+msgid "Packaging:"
+msgstr "Csomagolás:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:8
+msgid "encrypted-package"
+msgstr "titkosított-csomag"
+
+#: ../tool/seahorse-notification.c:580 ../tool/seahorse-notification.c:605
+msgid "Key Imported"
+msgid_plural "Keys Imported"
+msgstr[0] "Kulcs importálva"
+msgstr[1] "Kulcs importálva"
+
+#: ../tool/seahorse-notification.c:584 ../tool/seahorse-notification.c:604
+#, c-format
+msgid "Imported %i key"
+msgid_plural "Imported %i keys"
+msgstr[0] "%i kulcs importálva"
+msgstr[1] "%i kulcs importálva"
+
+#: ../tool/seahorse-notification.c:586
+#, c-format
+msgid "Imported a key for"
+msgid_plural "Imported keys for"
+msgstr[0] "Kulcs importálva:"
+msgstr[1] "Kulcsok importálva:"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:623
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>expired</b></i> on %s."
+msgstr "Aláírva <i><kulcsazonosító=„%s”/> által, <b>lejárt</b></i> ekkor: %s."
+
+#: ../tool/seahorse-notification.c:624
+msgid "Invalid Signature"
+msgstr "Érvénytelen aláírás"
+
+#: ../tool/seahorse-notification.c:630
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s <b>Expired</b>."
+msgstr "Aláírva <i><kulcsazonosító='%s'/> által</i> ekkor: %s, <b>lejárt</b>."
+
+#: ../tool/seahorse-notification.c:631
+msgid "Expired Signature"
+msgstr "Lejárt aláírás"
+
+#: ../tool/seahorse-notification.c:637
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>Revoked</b></i> on %s."
+msgstr ""
+"Aláírva <i><kulcsazonosító='%s'/> által, <b>visszavonva</b></i> ekkor: %s."
+
+#: ../tool/seahorse-notification.c:638
+msgid "Revoked Signature"
+msgstr "Visszavont aláírás"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:644
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s."
+msgstr "Aláírva <i><kulcsazonosító='%s'/> által</i> ekkor: %s."
+
+#: ../tool/seahorse-notification.c:645
+msgid "Good Signature"
+msgstr "Jó aláírás"
+
+#: ../tool/seahorse-notification.c:650
+msgid "Signing key not in keyring."
+msgstr "Az aláíró kulcs nincs a kulcstartón."
+
+#: ../tool/seahorse-notification.c:651
+msgid "Unknown Signature"
+msgstr "Ismeretlen aláírás"
+
+#: ../tool/seahorse-notification.c:655
+msgid "Bad or forged signature. The signed data was modified."
+msgstr "Rossz vagy hamisított aláírás. Az aláírt adatok módosultak."
+
+#: ../tool/seahorse-notification.c:656
+msgid "Bad Signature"
+msgstr "Rossz aláírás"
+
+#: ../tool/seahorse-notification.c:664
+msgid "Couldn't verify signature."
+msgstr "Nem ellenőrizhető az aláírás."
+
+#: ../tool/seahorse-notify.xml.h:1
+msgid "Notification Messages"
+msgstr "Értesítési üzenetek"
+
+#: ../tool/seahorse-passphrase.c:200
+msgid "Passphrase"
+msgstr "Jelmondat"
+
+#: ../tool/seahorse-passphrase.c:203
+msgid "Password:"
+msgstr "Jelszó:"
+
+#. The second and main entry
+#: ../tool/seahorse-passphrase.c:267
+msgid "Confirm:"
+msgstr "Megerősítés:"
+
+#: ../tool/seahorse-passphrase.c:355
+#, c-format
+msgid "Wrong passphrase."
+msgstr "Rossz jelmondat."
+
+#: ../tool/seahorse-passphrase.c:359
+#, c-format
+msgid "Enter new passphrase for '%s'"
+msgstr "Írja be az új jelmondatot %s számára"
+
+#: ../tool/seahorse-passphrase.c:361
+#, c-format
+msgid "Enter passphrase for '%s'"
+msgstr "Írja be a jelmondatot %s számára"
+
+#: ../tool/seahorse-passphrase.c:364
+msgid "Enter new passphrase"
+msgstr "Írja be az új jelmondatot"
+
+#: ../tool/seahorse-passphrase.c:366
+msgid "Enter passphrase"
+msgstr "Írja be a jelmondatot"
+
+#: ../tool/seahorse-pgp-encrypted.desktop.in.in.h:1
+msgid "Decrypt File"
+msgstr "Fájl visszafejtése"
+
+#: ../tool/seahorse-pgp-keys.desktop.in.in.h:1
+msgid "Import Key"
+msgstr "Kulcs importálása"
+
+#: ../tool/seahorse-pgp-signature.desktop.in.in.h:1
+msgid "Verify Signature"
+msgstr "Aláírás ellenőrzése"
+
+#: ../tool/seahorse-progress.xml.h:1
+msgid "Progress Title"
+msgstr "Folyamat címe"
+
+#: ../tool/seahorse-tool.c:61
+msgid "Import keys from the file"
+msgstr "Kulcsok importálása fájlból"
+
+#: ../tool/seahorse-tool.c:63
+msgid "Encrypt file"
+msgstr "Fájl titkosítása"
+
+#: ../tool/seahorse-tool.c:65
+msgid "Sign file with default key"
+msgstr "Fájl aláírása az alapértelmezett kulccsal"
+
+#: ../tool/seahorse-tool.c:67
+msgid "Encrypt and sign file with default key"
+msgstr "Fájl aláírása és titkosítása az alapértelmezett kulccsal"
+
+#: ../tool/seahorse-tool.c:69
+msgid "Decrypt encrypted file"
+msgstr "Titkosított fájl visszafejtése"
+
+#: ../tool/seahorse-tool.c:71
+msgid "Verify signature file"
+msgstr "Aláírásfájl ellenőrzése"
+
+#: ../tool/seahorse-tool.c:73
+msgid "Read list of URIs on standard in"
+msgstr "URI lista olvasása a szabványos bemenetről"
+
+#: ../tool/seahorse-tool.c:75
+msgid "file..."
+msgstr "fájl…"
+
+#: ../tool/seahorse-tool.c:169
+msgid "Choose Recipients"
+msgstr "Válassza ki a címzetteket"
+
+#: ../tool/seahorse-tool.c:234 ../tool/seahorse-tool.c:347
+msgid "Couldn't load keys"
+msgstr "Nem sikerült betölteni a kulcsokat"
+
+#: ../tool/seahorse-tool.c:252
+#, c-format
+msgid "Choose Encrypted File Name for '%s'"
+msgstr "Válassza ki a titkosított fájl nevét ehhez: „%s”"
+
+#: ../tool/seahorse-tool.c:325
+msgid "Choose Signer"
+msgstr "Válassza ki az aláírót"
+
+#: ../tool/seahorse-tool.c:367
+#, c-format
+msgid "Choose Signature File Name for '%s'"
+msgstr "Válassza ki az aláírásfájl nevét ehhez: „%s”"
+
+#: ../tool/seahorse-tool.c:407
+msgid "Import is complete"
+msgstr "Az importálás kész"
+
+#: ../tool/seahorse-tool.c:440
+msgid "Importing keys ..."
+msgstr "Kulcsok importálása…"
+
+#: ../tool/seahorse-tool.c:470
+msgid "Import Failed"
+msgstr "Az importálás meghiúsult"
+
+#: ../tool/seahorse-tool.c:471
+msgid "Keys were found but not imported."
+msgstr "A talált kulcsok nem lettek importálva."
+
+#: ../tool/seahorse-tool.c:494
+#, c-format
+msgid "Imported key"
+msgstr "Importált kulcs"
+
+#: ../tool/seahorse-tool.c:496
+#, c-format
+msgid "Imported %d key"
+msgid_plural "Imported %d keys"
+msgstr[0] "Importálva %d kulcs"
+msgstr[1] "Importálva %d kulcs"
+
+#. File to decrypt to
+#: ../tool/seahorse-tool.c:518
+#, c-format
+msgid "Choose Decrypted File Name for '%s'"
+msgstr "Válassza ki a visszafejtett fájl nevét ehhez: „%s”"
+
+#: ../tool/seahorse-tool.c:575
+#, c-format
+msgid "Choose Original File for '%s'"
+msgstr "Válassza ki az eredeti fájlt ehhez: „%s”"
+
+#.
+#. * TODO: What should happen with multiple files at this point.
+#. * The last thing we want to do is cascade a big pile of error
+#. * dialogs at the user.
+#.
+#: ../tool/seahorse-tool.c:648
+#, c-format
+msgid "No valid signatures found"
+msgstr "Nem találhatók érvényes aláírások"
+
+#: ../tool/seahorse-tool.c:697
+msgid "File Encryption Tool"
+msgstr "Fájltitkosító eszköz"
+
+#: ../tool/seahorse-tool.c:713
+msgid "Encrypting"
+msgstr "Titkosítás"
+
+#: ../tool/seahorse-tool.c:714
+#, c-format
+msgid "Couldn't encrypt file: %s"
+msgstr "A fájl nem titkosítható: %s"
+
+#: ../tool/seahorse-tool.c:722
+msgid "Signing"
+msgstr "Aláírás"
+
+#: ../tool/seahorse-tool.c:723
+#, c-format
+msgid "Couldn't sign file: %s"
+msgstr "Nem írható alá a fájl: %s"
+
+#: ../tool/seahorse-tool.c:728
+msgid "Importing"
+msgstr "Importálás"
+
+#: ../tool/seahorse-tool.c:729
+#, c-format
+msgid "Couldn't import keys from file: %s"
+msgstr "Nem importálhatók kulcsok a fájlból: %s"
+
+#: ../tool/seahorse-tool.c:735
+msgid "Decrypting"
+msgstr "Visszafejtés"
+
+#: ../tool/seahorse-tool.c:736
+#, c-format
+msgid "Couldn't decrypt file: %s"
+msgstr "Nem fejthető vissza a fájl: %s"
+
+#: ../tool/seahorse-tool.c:741
+msgid "Verifying"
+msgstr "Ellenőrzés"
+
+#: ../tool/seahorse-tool.c:742
+#, c-format
+msgid "Couldn't verify file: %s"
+msgstr "Nem ellenőrizhető a fájl: %s"
+
+#: ../tool/seahorse-tool-files.c:120
+msgid "Ace (.ace)"
+msgstr "Ace (.ace)"
+
+#: ../tool/seahorse-tool-files.c:121
+msgid "Ar (.ar)"
+msgstr "Ar (.ar)"
+
+#: ../tool/seahorse-tool-files.c:122
+msgid "Arj (.arj)"
+msgstr "Arj (.arj)"
+
+#: ../tool/seahorse-tool-files.c:129
+msgid "Ear (.ear)"
+msgstr "Ear (.ear)"
+
+#: ../tool/seahorse-tool-files.c:130
+msgid "Self-extracting zip (.exe)"
+msgstr "Önkibontó zip (exe)"
+
+#: ../tool/seahorse-tool-files.c:132
+msgid "Jar (.jar)"
+msgstr "Jar (.jar)"
+
+#: ../tool/seahorse-tool-files.c:133
+msgid "Lha (.lzh)"
+msgstr "Lha (.lzh)"
+
+#: ../tool/seahorse-tool-files.c:135
+msgid "Rar (.rar)"
+msgstr "Rar (.rar)"
+
+#: ../tool/seahorse-tool-files.c:137
+msgid "Tar uncompressed (.tar)"
+msgstr "Nem tömörített tar (.tar)"
+
+#: ../tool/seahorse-tool-files.c:138
+msgid "Tar compressed with bzip (.tar.bz)"
+msgstr "Bzip-pel tömörített tar (.tar.bz)"
+
+#: ../tool/seahorse-tool-files.c:139
+msgid "Tar compressed with bzip2 (.tar.bz2)"
+msgstr "Bzip2-vel tömörített tar (.tar.bz2)"
+
+#: ../tool/seahorse-tool-files.c:140
+msgid "Tar compressed with gzip (.tar.gz)"
+msgstr "Gzip-pel tömörített tar (.tar.gz)"
+
+#: ../tool/seahorse-tool-files.c:141
+msgid "Tar compressed with lzop (.tar.lzo)"
+msgstr "Lzop-pal tömörített tar (.tar.lzo)"
+
+#: ../tool/seahorse-tool-files.c:142
+msgid "Tar compressed with compress (.tar.Z)"
+msgstr "Compress-szel tömörített tar (.tar.Z)"
+
+#: ../tool/seahorse-tool-files.c:144
+msgid "War (.war)"
+msgstr "War (.war)"
+
+#: ../tool/seahorse-tool-files.c:145
+msgid "Zip (.zip)"
+msgstr "Zip (.zip)"
+
+#: ../tool/seahorse-tool-files.c:146
+msgid "Zoo (.zoo)"
+msgstr "Zoo (.zoo)"
+
+#: ../tool/seahorse-tool-files.c:147
+msgid "7-Zip (.7z)"
+msgstr "7-Zip (.7z)"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:327
+#, c-format
+msgid "You have selected %d file "
+msgid_plural "You have selected %d files "
+msgstr[0] "%d fájlt "
+msgstr[1] "%d fájlt "
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:332
+#, c-format
+msgid "and %d folder"
+msgid_plural "and %d folders"
+msgstr[0] "és %d mappát választott ki"
+msgstr[1] "és %d mappát választott ki"
+
+#. TRANSLATOR: "%s%s" are "You have selected %d files and %d folders"
+#. * Swap order with "%2$s%1$s" if needed
+#: ../tool/seahorse-tool-files.c:337
+#, c-format
+msgid "<b>%s%s</b>"
+msgstr "<b>%s%s</b>"
+
+#: ../tool/seahorse-tool-files.c:345
+#, c-format
+msgid "You have selected %d file"
+msgid_plural "You have selected %d files"
+msgstr[0] "%d fájlt választott ki"
+msgstr[1] "%d fájlt választott ki"
+
+#: ../tool/seahorse-tool-files.c:350
+#, c-format
+msgid "You have selected %d folder"
+msgid_plural "You have selected %d folders"
+msgstr[0] "%d mappát választott ki"
+msgstr[1] "%d mappát választott ki"
+
+#: ../tool/seahorse-tool-files.c:868
+msgid "Preparing..."
+msgstr "Előkészítés…"
+
+#: ../tool/seahorse-tool-files.c:877 ../tool/seahorse-tool-files.c:900
+msgid "Couldn't list files"
+msgstr "A fájlok felsorolása meghiúsult"
+
+#: ../tool/seahorse-tool-files.c:887 ../tool/seahorse-util.c:647
+msgid "Couldn't package files"
+msgstr "Nem sikerült csomagolni a fájlokat"
+
+#: ../tool/seahorse-util.c:173
+msgid "Decryption failed. You probably do not have the decryption key."
+msgstr ""
+"A visszafejtés meghiúsult. Valószínűleg nem rendelkezik a visszafejtési "
+"kulcssal."
+
+#: ../tool/seahorse-util.c:223
+msgid "%Y-%m-%d"
+msgstr "%Y. %m. %d"
+
+#: ../tool/seahorse-util.c:642
+msgid "Couldn't run file-roller"
+msgstr "Nem sikerült futtatni a file-rollert"
+
+#: ../tool/seahorse-util.c:648
+msgid "The file-roller process did not complete successfully"
+msgstr "A file-roller folyamat sikertelenül fejeződött be"
+
+#. Filter for PGP keys. We also include *.asc, as in many
+#. cases that extension is associated with text/plain
+#: ../tool/seahorse-util.c:708
+msgid "All key files"
+msgstr "Minden kulcsfájl"
+
+#: ../tool/seahorse-util.c:715 ../tool/seahorse-util.c:755
+msgid "All files"
+msgstr "Minden fájl"
+
+#: ../tool/seahorse-util.c:748
+msgid "Archive files"
+msgstr "Archív fájlok"
+
+#: ../tool/seahorse-util.c:777
+msgid ""
+"<b>A file already exists with this name.</b>\n"
+"\n"
+"Do you want to replace it with a new file?"
+msgstr ""
+"<b>Már létezik egy ugyanilyen nevű fájl.</b>\n"
+"\n"
+"Le akarja cserélni az új fájllal?"
+
+#: ../tool/seahorse-util.c:780
+msgid "_Replace"
+msgstr "_Csere"
+
+#: ../tool/seahorse-widget.c:365
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Nem lehet megjeleníteni a súgót: %s"

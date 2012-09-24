@@ -1,0 +1,1 @@
+SUBDIRS = nemo-sendto

@@ -15,9 +15,9 @@ Building Dropbox Nemo Extension From Source Tarball
 
 You will need the following packages (or equivalent):
 
-libnautilus-extension-dev
+libnemo-extension-dev
 
-In the nautilus-dropbox dir just do:
+In the nemo-dropbox dir just do:
 $ ./configure
 $ make
 $ sudo make install

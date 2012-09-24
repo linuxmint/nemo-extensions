@@ -1,0 +1,316 @@
+# translation of nemo-sendto.po.master.ta.po to Tamil
+# Tamil translation of nemo-sendto.
+# Copyright (C) 2009 nemo-sendto's COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-sendto package.
+#
+# ifelix <ifelix25@gmail.com>, 2009.
+# I. Felix <ifelix@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto.po.master.ta\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2009-06-25 18:28+0000\n"
+"PO-Revision-Date: 2009-07-02 08:04+0530\n"
+"Last-Translator: I. Felix <ifelix@redhat.com>\n"
+"Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
+"\n"
+"\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "கடைசி கூடுதல் இணைப்பு அனுப்புவதற்கு பயன்படுகிறது"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "கடைசி வகை காப்பு பயன்படுத்தப்பட்டது"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr "nemo-sendtoஐ பயன்படுத்தி அனுப்பப்பட்ட கடைசி முறை கோபுக்கள் கூடுதல் இணைப்புகளை சேமிக்க பயன்படுத்தப்பட்டன."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"கடைசி முறை பயன்படுத்தப்பட்ட காப்பு வகைகளை சேமிக்க பயன்படுத்தப்பட்டது (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "இதற்கு அனுப்பு (_S)..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "கோப்புகளை தொலை சாதனங்களுக்கு, அல்லது மக்களுக்கு அனுப்பவும்"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "இதற்கு அனுப்பு..."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../pidgin_plugin/nemo-sendto-plugin.c:342
+msgid "Nemo Integration"
+msgstr "Nemo ஒருங்கினைத்தல்"
+
+#. name
+#. version
+#. summary
+#: ../pidgin_plugin/nemo-sendto-plugin.c:344
+#: ../pidgin_plugin/nemo-sendto-plugin.c:345
+msgid "Provides integration with Nemo"
+msgstr "Nemo உடன் ஒருங்கினைப்பை தருகிறது "
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "இதற்கு அனுப்பு..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "கோப்பினை மின்னஞ்சலில், துரித செய்தியில் அனுப்பவும்..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "கோப்புகளை மின்னஞ்சலில், துரித செய்தியில் அனுப்பவும்..."
+
+#: ../src/nemo-sendto-command.c:540
+msgid "Files"
+msgstr "கோப்புகள்"
+
+#: ../src/nemo-sendto-command.c:744
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "URIகள் மற்றும் கோப்பு பெயர்கள் தவிர விருப்பங்களாக அனுப்பப்பட வேண்டும்\n"
+
+#: ../src/nemo-sendto-command.c:761
+msgid "Nemo Sendto"
+msgstr "Nemo Sendto"
+
+#: ../src/nemo-sendto-command.c:765
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "கட்டளைவரி வாய்ப்புகளை பகுக்க முடியவில்லை: %s\n"
+
+#: ../src/nemo-sendto-command.c:780
+msgid "Could not load any plugins."
+msgstr "கூடுதல் இணைப்புகள் எதையும் ஏற்ற முடியவில்லை."
+
+#: ../src/nemo-sendto-command.c:783
+msgid "Please verify your installation"
+msgstr "உங்களது நிறுவலை சரிபார்க்கவும்"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Compression</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>இலக்கு</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "இதுவாக அனுப்பு (_a):"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "தொகுப்பிற்குள் அனுப்பு (_p):"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "இதற்கு அனுப்பு (_o):"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "அனுப்பு (_S)"
+
+#: ../src/plugins/bluetooth/bluetooth.c:448
+msgid "Programming error, could not find the device in the list"
+msgstr "நிரலாக்க பிழை, பட்டியலில் சாதனத்தை காண முடியவில்லை"
+
+#: ../src/plugins/bluetooth/bluetooth.c:523
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Obex தள்ளும் கோப்பு இடமாற்றத்துக்கு துணைபுரியவில்லை"
+
+#: ../src/plugins/bluetooth/bluetooth.c:547
+msgid "Bluetooth (OBEX Push)"
+msgstr "ஃப்ளூடூத் (OBEX Push)"
+
+#: ../src/plugins/empathy/empathy.c:130
+msgid "The contact selected cannot receive files."
+msgstr "தேர்ந்தெடுக்கப்பட்ட தொடர்பு கோப்புகளை பெறவில்லை."
+
+#: ../src/plugins/empathy/empathy.c:136
+msgid "The contact selected is offline."
+msgstr "தேர்ந்தெடுக்கப்பட்ட இணைப்பு ஆஃப்லைனில் உள்ளது."
+
+#: ../src/plugins/empathy/empathy.c:193
+msgid "No error message"
+msgstr "பிழை செய்தி இல்லை"
+
+#: ../src/plugins/empathy/empathy.c:269
+msgid "Instant Message (Empathy)"
+msgstr "துரித செய்தி (எம்பதி)"
+
+#: ../src/plugins/evolution/evolution.c:366
+msgid "Email"
+msgstr "மின்னஞ்சல்"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "தொடர்பை பெறவில்லை: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "தொடர்பை தேட முடியவில்லை: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "தேடக்கூடிய பார்வையை உருவாக்க முடியவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "வெற்றி"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "ஒரு தவறான விவாதம்."
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "முகவரி புத்தகம் பிஸியாக உள்ளது."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "முகவரி பித்தகம் ஆஃப் லைனில் உள்ளது."
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "முகவரி புத்தக இருக்கவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "\"Me\" தொடர்பு இருக்கவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "கமுகவரி புத்தகம் ஏற்றப்படவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "முகவரி புத்தகம் ஏற்கனவே ஏற்றப்படவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "முகவரி புத்தகம் அணுகும் போது அனுமதி ரத்து செய்யப்படுகிறது."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "தொடர்பு காணப்படவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "தொடர்பு குறியீடு ஏற்கனவே இருக்கிறது."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "நெறிமுறை துணைபுரியவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "செயல்பாடு ரத்து செய்யப்பட்டது."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "செயல்பாடு ரத்துச்செய்யப்படவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "முகவரி புத்தக அங்கீகாரம் தோல்வியுற்றது."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid "Authentication is required to access the address book and was not given."
+msgstr "முகவரி புத்தகத்தை அணுக அங்கீகாரம் தேவைப்படுகிறது மற்றும் கொடுக்கப்படவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "ஒரு பாதுகாப்பு இணைப்பு கிடைக்கப் பெறவில்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "ஒரு CORBA பிழை முகவரி புத்தகத்தை அணுகும் போது ஏற்பட்டுள்ளது."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "முகவரி புத்தக மூலம் உள்ளே இல்லை."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "ஒரு தெரியாத பிழை ஏற்பட்டது."
+
+#: ../src/plugins/gajim/gajim.c:403
+msgid "Unable to send file"
+msgstr "கோப்பினை அனுப்ப முடியவில்லை"
+
+#: ../src/plugins/gajim/gajim.c:404
+msgid "There is no connection to gajim remote service."
+msgstr "gajim தொலை சேவையுடன் இணைப்பு இல்லை."
+
+#: ../src/plugins/gajim/gajim.c:428 ../src/plugins/gajim/gajim.c:467
+msgid "Sending file failed"
+msgstr "கோப்பை அனுப்புவது தோல்வியுற்றது"
+
+#: ../src/plugins/gajim/gajim.c:429
+msgid "Recipient is missing."
+msgstr "பெறுநர் விடுபட்டுவிட்டார்."
+
+#: ../src/plugins/gajim/gajim.c:467
+msgid "Unknown recipient."
+msgstr "தெரியாத பெறுநர்."
+
+#: ../src/plugins/gajim/gajim.c:489
+msgid "Instant Message (Gajim)"
+msgstr "துரித செய்தி (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:73
+#: ../src/plugins/nemo-burn/nemo-burn.c:88
+msgid "New CD/DVD"
+msgstr "புதிய CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:86
+msgid "Existing CD/DVD"
+msgstr "இருக்கும் CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:165
+msgid "CD/DVD Creator"
+msgstr "குறுவட்டு/DVD உருவாக்கி"
+
+#: ../src/plugins/pidgin/pidgin.c:353
+msgid "Instant Message (Pidgin)"
+msgstr "துரித செய்தி (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "நீக்ககூடிய வட்டுகள்  மற்றும் பகிர்வுகள்"
+
+#: ../src/plugins/upnp/upnp.c:301
+msgid "UPnP Media Server"
+msgstr "UPnP ஊடக சேவையம்"
+

@@ -2,7 +2,7 @@ Description: Use pkexec to execute Dropbox's installation as root
  When the user has to install the missing Dropbox software, we call
  pkexec to try to get the required root rights.
 Author: Raphaël Hertzog <hertzog@debian.org>
-Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/nautilus-dropbox/+bug/821212
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/nemo-dropbox/+bug/821212
 
 --- a/dropbox.in
 +++ b/dropbox.in

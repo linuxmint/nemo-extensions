@@ -1,0 +1,293 @@
+# Norwegian Nynorsk translation for nemo-sendto.
+# Copyright (C) 2010 nemo-sendto's COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-sendto package.
+# Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
+# Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2010-04-02 16:47+0000\n"
+"PO-Revision-Date: 2010-04-03 13:23+0200\n"
+"Last-Translator: Torstein Adolf Winterseth <kvikende@fsfe.org>\n"
+"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Siste programtillegg brukt for å senda"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Siste typen arkiv bruk"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"Brukt til å lagra kva for programtillegg som vart brukt sist gong filer vart "
+"sendt via nemo-sendto."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"Brukt til å lagra kva for arkivtype som vart brukt sist gong (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "_Send til …"
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "Send filer til eksterne einingar eller personar"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "Send til …"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.ui.h:3
+msgid "Send To..."
+msgstr "Send til …"
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "Send fil via e-post, lynmelding …"
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "Send filer via e-post, lynmelding …"
+
+#: ../src/nemo-sendto-command.c:569
+msgid "Files"
+msgstr "Filer"
+
+#: ../src/nemo-sendto-command.c:782
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Vonar adresser eller filnamn til å verta gjevne som val\n"
+
+#: ../src/nemo-sendto-command.c:803
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Klarte ikkje tyda kommandolinjevala : %s\n"
+
+#: ../src/nemo-sendto-command.c:818
+msgid "Could not load any plugins."
+msgstr "Klarte ikkje lasta inn nokre programtillegg."
+
+#: ../src/nemo-sendto-command.c:821
+msgid "Please verify your installation"
+msgstr "Kontroller installasjonen din"
+
+#: ../src/nemo-sendto.ui.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Komprimering</b>"
+
+#: ../src/nemo-sendto.ui.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Mål</b>"
+
+#: ../src/nemo-sendto.ui.h:4
+msgid "Send _as:"
+msgstr "Send s_om:"
+
+#: ../src/nemo-sendto.ui.h:5
+msgid "Send _packed in:"
+msgstr "Send _pakka inn:"
+
+#: ../src/nemo-sendto.ui.h:6
+msgid "Send t_o:"
+msgstr "Send t_il"
+
+#: ../src/nemo-sendto.ui.h:7
+msgid "_Send"
+msgstr "_Send"
+
+#: ../src/plugins/bluetooth/bluetooth.c:451
+msgid "Programming error, could not find the device in the list"
+msgstr "Programmeringsfeil, klarte ikkje finna eininga i lista"
+
+#: ../src/plugins/bluetooth/bluetooth.c:526
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Obex Push-filoverføring ikkje støtta"
+
+#: ../src/plugins/bluetooth/bluetooth.c:550
+msgid "Bluetooth (OBEX Push)"
+msgstr "Blåtann (Obex Push)"
+
+#: ../src/plugins/empathy/empathy.c:144
+msgid "The contact selected cannot receive files."
+msgstr "Den valde kontakten kan ikkje motta filer."
+
+#: ../src/plugins/empathy/empathy.c:150
+msgid "The contact selected is offline."
+msgstr "Den valde kontakten er fråkopla"
+
+#: ../src/plugins/empathy/empathy.c:205
+msgid "No error message"
+msgstr "Inga feilmelding"
+
+#: ../src/plugins/empathy/empathy.c:281
+msgid "Instant Message (Empathy)"
+msgstr "Lynmelding (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:369
+msgid "Email"
+msgstr "E-post"
+
+#: ../src/plugins/evolution/e-contact-entry.c:153
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Klarte ikkje henta kontakt: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:186
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Klarte ikkje finna kontakt: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:414
+msgid "Cannot create searchable view."
+msgstr "Klarte ikkje laga søkbar vising."
+
+#: ../src/plugins/evolution/e-contact-entry.c:886
+msgid "Success"
+msgstr "Vellukka"
+
+#: ../src/plugins/evolution/e-contact-entry.c:888
+msgid "An argument was invalid."
+msgstr "Eit argument var ugyldig."
+
+#: ../src/plugins/evolution/e-contact-entry.c:890
+msgid "The address book is busy."
+msgstr "Adresseboka er oppteken."
+
+#: ../src/plugins/evolution/e-contact-entry.c:892
+msgid "The address book is offline."
+msgstr "Adresseboka er fråkopla."
+
+#: ../src/plugins/evolution/e-contact-entry.c:894
+msgid "The address book does not exist."
+msgstr "Adresseboka finst ikkje."
+
+#: ../src/plugins/evolution/e-contact-entry.c:896
+msgid "The \"Me\" contact does not exist."
+msgstr "«Meg»-kontakten finst ikkje."
+
+#: ../src/plugins/evolution/e-contact-entry.c:898
+msgid "The address book is not loaded."
+msgstr "Adresseboka er ikkje lasta."
+
+#: ../src/plugins/evolution/e-contact-entry.c:900
+msgid "The address book is already loaded."
+msgstr "Adresseboka er alt lasta."
+
+#: ../src/plugins/evolution/e-contact-entry.c:902
+msgid "Permission was denied when accessing the address book."
+msgstr "Nekta tilgang til adresseboka."
+
+#: ../src/plugins/evolution/e-contact-entry.c:904
+msgid "The contact was not found."
+msgstr "Kontakten vart ikkje funne."
+
+#: ../src/plugins/evolution/e-contact-entry.c:906
+msgid "This contact ID already exists."
+msgstr "Denne kontakt-ID-en finst alt."
+
+#: ../src/plugins/evolution/e-contact-entry.c:908
+msgid "The protocol is not supported."
+msgstr "Protokollen er ikkje støtta."
+
+#: ../src/plugins/evolution/e-contact-entry.c:910
+msgid "The operation was cancelled."
+msgstr "Handlinga vart avbroten"
+
+#: ../src/plugins/evolution/e-contact-entry.c:912
+msgid "The operation could not be cancelled."
+msgstr "Handlinga kunne ikkje avbryast."
+
+#: ../src/plugins/evolution/e-contact-entry.c:914
+msgid "The address book authentication failed."
+msgstr "Autentisering til adresseboka feila."
+
+#: ../src/plugins/evolution/e-contact-entry.c:916
+msgid ""
+"Authentication is required to access the address book and was not given."
+msgstr ""
+"Autentisering er påkravt for å få tilgang til andresseboka og inga vart "
+"gjeven."
+
+#: ../src/plugins/evolution/e-contact-entry.c:918
+msgid "A secure connection is not available."
+msgstr "Ei sikker tilkopling er ikkje tilgjengeleg."
+
+#: ../src/plugins/evolution/e-contact-entry.c:920
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "Ein CORBA-feil oppstod medan adresseboka vart opna."
+
+#: ../src/plugins/evolution/e-contact-entry.c:922
+msgid "The address book source does not exist."
+msgstr "Kjelda til adresseboka finst ikkje."
+
+#: ../src/plugins/evolution/e-contact-entry.c:924
+#: ../src/plugins/evolution/e-contact-entry.c:927
+msgid "An unknown error occurred."
+msgstr "Ein ukjend feil oppstod."
+
+#: ../src/plugins/gajim/gajim.c:417
+msgid "Unable to send file"
+msgstr "Klarte ikkje senda fil"
+
+#: ../src/plugins/gajim/gajim.c:418
+msgid "There is no connection to gajim remote service."
+msgstr "Det er inkje samband til den eksterne tenesten gajim."
+
+#: ../src/plugins/gajim/gajim.c:442 ../src/plugins/gajim/gajim.c:482
+msgid "Sending file failed"
+msgstr "Sending av fil feila"
+
+#: ../src/plugins/gajim/gajim.c:443
+msgid "Recipient is missing."
+msgstr "Mottakar manglar."
+
+#: ../src/plugins/gajim/gajim.c:482
+msgid "Unknown recipient."
+msgstr "Ukjend mottakar."
+
+#: ../src/plugins/gajim/gajim.c:505
+msgid "Instant Message (Gajim)"
+msgstr "Lynmelding (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:92
+msgid "New CD/DVD"
+msgstr "Ny CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:99
+msgid "Existing CD/DVD"
+msgstr "Eksisterande CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:178
+msgid "CD/DVD Creator"
+msgstr "CD/DVD-lagar"
+
+#: ../src/plugins/pidgin/pidgin.c:464
+msgid "Instant Message (Pidgin)"
+msgstr "Lynmelding (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "Fjernbare diskar og delte resuarsar"
+
+#: ../src/plugins/upnp/upnp.c:309
+msgid "UPnP Media Server"
+msgstr "UPnP mediatenar"

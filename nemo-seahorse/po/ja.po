@@ -1,0 +1,523 @@
+# Seahorse ja.po.
+# Copyright (C) 1999-2010 Free Software Foundation, Inc.
+# Anthony Mulcahy <anthony@kcn.ne.jp>, 1999, 2000.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2000-2008.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seahorse/seahorse-plugins master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-07 11:29+0200\n"
+"PO-Revision-Date: 2011-09-11 08:24+0900\n"
+"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../nemo-ext/nemo-seahorse.c:158
+msgid "Encrypt..."
+msgstr "暗号化..."
+
+#: ../nemo-ext/nemo-seahorse.c:159
+msgid "Encrypt (and optionally sign) the selected file"
+msgid_plural "Encrypt the selected files"
+msgstr[0] "指定したファイルを暗号化します"
+
+#: ../nemo-ext/nemo-seahorse.c:165
+msgid "Sign"
+msgstr "署名"
+
+#: ../nemo-ext/nemo-seahorse.c:166
+msgid "Sign the selected file"
+msgid_plural "Sign the selected files"
+msgstr[0] "指定したファイルに署名します"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:1
+msgid "<b>You have selected multiple files or folders</b>"
+msgstr "<b>複数のファイルまたはフォルダーを選択しました</b>"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:2
+msgid ""
+"Because the files are located remotely, each file will be encrypted "
+"separately."
+msgstr ""
+"これらのファイルはリモートサイトにあるので、ファイルを別々に暗号化します。"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:3
+msgid "Encrypt Multiple Files"
+msgstr "複数のファイルの暗号化"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:4
+msgid "Encrypt each file separately"
+msgstr "ファイルを別々に暗号化する"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:5
+msgid "Encrypt packed together in a package"
+msgstr "一つのパッケージにまとめてから暗号化する"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:6
+msgid "Package Name:"
+msgstr "パッケージ名:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:7
+msgid "Packaging:"
+msgstr "暗号化の方法:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:8
+msgid "encrypted-package"
+msgstr "暗号化したパッケージ"
+
+#: ../tool/seahorse-notification.c:580 ../tool/seahorse-notification.c:605
+msgid "Key Imported"
+msgid_plural "Keys Imported"
+msgstr[0] "鍵のインポートが完了しました"
+
+#: ../tool/seahorse-notification.c:584 ../tool/seahorse-notification.c:604
+#, c-format
+msgid "Imported %i key"
+msgid_plural "Imported %i keys"
+msgstr[0] " %d個の鍵をインポートしました"
+
+#: ../tool/seahorse-notification.c:586
+#, c-format
+msgid "Imported a key for"
+msgid_plural "Imported keys for"
+msgstr[0] "次の鍵のインポートが完了しました: "
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:623
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>expired</b></i> on %s."
+msgstr "%2$s にある<b>期限切れ</b>の<i><key id='%1$s'/></i>で署名しました"
+
+#: ../tool/seahorse-notification.c:624
+msgid "Invalid Signature"
+msgstr "おかしな署名です"
+
+#: ../tool/seahorse-notification.c:630
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s <b>Expired</b>."
+msgstr "%2$s にある<b>期限切れ</b>の<i><key id='%1$s'/></i>で署名しました"
+
+#: ../tool/seahorse-notification.c:631
+msgid "Expired Signature"
+msgstr "期限切れの署名です"
+
+#: ../tool/seahorse-notification.c:637
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>Revoked</b></i> on %s."
+msgstr "%2$s にある<b>失効した</b><i><key id='%1$s'/>で署名しました"
+
+#: ../tool/seahorse-notification.c:638
+msgid "Revoked Signature"
+msgstr "失効した署名"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:644
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s."
+msgstr "%2$s にある<i><key id='%1$s'/></i>で署名しました"
+
+#: ../tool/seahorse-notification.c:645
+msgid "Good Signature"
+msgstr "良い署名です"
+
+#: ../tool/seahorse-notification.c:650
+msgid "Signing key not in keyring."
+msgstr "署名用の鍵がキーリングの中にありません"
+
+#: ../tool/seahorse-notification.c:651
+msgid "Unknown Signature"
+msgstr "不明な署名です"
+
+#: ../tool/seahorse-notification.c:655
+msgid "Bad or forged signature. The signed data was modified."
+msgstr ""
+"おかしな署名または偽造された署名です (署名したデータは変更されています)"
+
+#: ../tool/seahorse-notification.c:656
+msgid "Bad Signature"
+msgstr "おかしな署名です"
+
+#: ../tool/seahorse-notification.c:664
+msgid "Couldn't verify signature."
+msgstr "署名を解読できませんでした"
+
+#: ../tool/seahorse-notify.xml.h:1
+msgid "Notification Messages"
+msgstr "通知メッセージ"
+
+#: ../tool/seahorse-passphrase.c:200
+msgid "Passphrase"
+msgstr "パスフレーズ"
+
+#: ../tool/seahorse-passphrase.c:203
+msgid "Password:"
+msgstr "パスワード:"
+
+#. The second and main entry
+#: ../tool/seahorse-passphrase.c:267
+msgid "Confirm:"
+msgstr "パスワードの確認:"
+
+#: ../tool/seahorse-passphrase.c:355
+#, c-format
+msgid "Wrong passphrase."
+msgstr "パスフレーズが間違っています"
+
+#: ../tool/seahorse-passphrase.c:359
+#, c-format
+msgid "Enter new passphrase for '%s'"
+msgstr "'%s' の新しいパスフレーズを入力してください"
+
+#: ../tool/seahorse-passphrase.c:361
+#, c-format
+msgid "Enter passphrase for '%s'"
+msgstr "'%s' のパスフレーズを入力してください"
+
+#: ../tool/seahorse-passphrase.c:364
+msgid "Enter new passphrase"
+msgstr "新しいパスフレーズを入力してください"
+
+#: ../tool/seahorse-passphrase.c:366
+msgid "Enter passphrase"
+msgstr "パスフレーズを入力してください"
+
+#: ../tool/seahorse-pgp-encrypted.desktop.in.in.h:1
+msgid "Decrypt File"
+msgstr "ファイルの復号化"
+
+#: ../tool/seahorse-pgp-keys.desktop.in.in.h:1
+msgid "Import Key"
+msgstr "鍵のインポート"
+
+#: ../tool/seahorse-pgp-signature.desktop.in.in.h:1
+msgid "Verify Signature"
+msgstr "シグネチャの検証"
+
+#: ../tool/seahorse-progress.xml.h:1
+msgid "Progress Title"
+msgstr "進行状態のタイトル"
+
+#: ../tool/seahorse-tool.c:61
+msgid "Import keys from the file"
+msgstr "ファイルから鍵をインポートする"
+
+#: ../tool/seahorse-tool.c:63
+msgid "Encrypt file"
+msgstr "ファイルを暗号化する"
+
+#: ../tool/seahorse-tool.c:65
+msgid "Sign file with default key"
+msgstr "デフォルトの鍵を使ってファイルに署名する"
+
+#: ../tool/seahorse-tool.c:67
+msgid "Encrypt and sign file with default key"
+msgstr "デフォルトの鍵でファイルの暗号化と署名を行う"
+
+#: ../tool/seahorse-tool.c:69
+msgid "Decrypt encrypted file"
+msgstr "暗号化したファイルを解読する"
+
+#: ../tool/seahorse-tool.c:71
+msgid "Verify signature file"
+msgstr "署名ファイルを検証する"
+
+#: ../tool/seahorse-tool.c:73
+msgid "Read list of URIs on standard in"
+msgstr "標準入力から URI のリストを読み込む"
+
+#: ../tool/seahorse-tool.c:75
+msgid "file..."
+msgstr "ファイル..."
+
+#: ../tool/seahorse-tool.c:169
+msgid "Choose Recipients"
+msgstr "受取人の選択"
+
+#: ../tool/seahorse-tool.c:234 ../tool/seahorse-tool.c:347
+msgid "Couldn't load keys"
+msgstr "鍵を読み込めませんでした"
+
+#: ../tool/seahorse-tool.c:252
+#, c-format
+msgid "Choose Encrypted File Name for '%s'"
+msgstr "'%s' に対する暗号化したファイルを選択してください"
+
+#: ../tool/seahorse-tool.c:325
+msgid "Choose Signer"
+msgstr "署名者の選択"
+
+#: ../tool/seahorse-tool.c:367
+#, c-format
+msgid "Choose Signature File Name for '%s'"
+msgstr "'%s' に対する署名ファイルを選択してください"
+
+#: ../tool/seahorse-tool.c:407
+msgid "Import is complete"
+msgstr "インポートが完了しました"
+
+#: ../tool/seahorse-tool.c:440
+msgid "Importing keys ..."
+msgstr "鍵のインポート中..."
+
+#: ../tool/seahorse-tool.c:470
+msgid "Import Failed"
+msgstr "インポートに失敗しました"
+
+#: ../tool/seahorse-tool.c:471
+msgid "Keys were found but not imported."
+msgstr "鍵は見つかりましたがインポートしていません。"
+
+#: ../tool/seahorse-tool.c:494
+#, c-format
+msgid "Imported key"
+msgstr "鍵のインポートが完了しました"
+
+#: ../tool/seahorse-tool.c:496
+#, c-format
+msgid "Imported %d key"
+msgid_plural "Imported %d keys"
+msgstr[0] " %d個の鍵をインポートしました"
+
+#. File to decrypt to
+#: ../tool/seahorse-tool.c:518
+#, c-format
+msgid "Choose Decrypted File Name for '%s'"
+msgstr "'%s' に対する復号化したファイルを選択してください"
+
+#: ../tool/seahorse-tool.c:575
+#, c-format
+msgid "Choose Original File for '%s'"
+msgstr "'%s' のオリジナル・ファイルを選択してください"
+
+#.
+#. * TODO: What should happen with multiple files at this point.
+#. * The last thing we want to do is cascade a big pile of error
+#. * dialogs at the user.
+#.
+#: ../tool/seahorse-tool.c:648
+#, c-format
+msgid "No valid signatures found"
+msgstr "妥当な署名が見つかりませんでした"
+
+#: ../tool/seahorse-tool.c:697
+msgid "File Encryption Tool"
+msgstr "ファイルの暗号化ツール"
+
+#: ../tool/seahorse-tool.c:713
+msgid "Encrypting"
+msgstr "暗号化"
+
+#: ../tool/seahorse-tool.c:714
+#, c-format
+msgid "Couldn't encrypt file: %s"
+msgstr "ファイルを暗号化できませんでした: %s"
+
+#: ../tool/seahorse-tool.c:722
+msgid "Signing"
+msgstr "署名"
+
+#: ../tool/seahorse-tool.c:723
+#, c-format
+msgid "Couldn't sign file: %s"
+msgstr "ファイルに署名できませんでした: %s"
+
+#: ../tool/seahorse-tool.c:728
+msgid "Importing"
+msgstr "インポート"
+
+#: ../tool/seahorse-tool.c:729
+#, c-format
+msgid "Couldn't import keys from file: %s"
+msgstr "ファイルから鍵をインポートできませんでした: %s"
+
+#: ../tool/seahorse-tool.c:735
+msgid "Decrypting"
+msgstr "復号化"
+
+#: ../tool/seahorse-tool.c:736
+#, c-format
+msgid "Couldn't decrypt file: %s"
+msgstr "ファイルを復号化できませんでした: %s"
+
+#: ../tool/seahorse-tool.c:741
+msgid "Verifying"
+msgstr "検証"
+
+#: ../tool/seahorse-tool.c:742
+#, c-format
+msgid "Couldn't verify file: %s"
+msgstr "ファイルの妥当性を検証できませんでした: %s"
+
+#: ../tool/seahorse-tool-files.c:120
+msgid "Ace (.ace)"
+msgstr "Ace (.ace)"
+
+#: ../tool/seahorse-tool-files.c:121
+msgid "Ar (.ar)"
+msgstr "Ar (.ar)"
+
+#: ../tool/seahorse-tool-files.c:122
+msgid "Arj (.arj)"
+msgstr "Arj (.arj)"
+
+#: ../tool/seahorse-tool-files.c:129
+msgid "Ear (.ear)"
+msgstr "Ear (.ear)"
+
+#: ../tool/seahorse-tool-files.c:130
+msgid "Self-extracting zip (.exe)"
+msgstr "自己解凍型の書庫 (.exe)"
+
+#: ../tool/seahorse-tool-files.c:132
+msgid "Jar (.jar)"
+msgstr "Jar (.jar)"
+
+#: ../tool/seahorse-tool-files.c:133
+msgid "Lha (.lzh)"
+msgstr "Lha (.lzh)"
+
+#: ../tool/seahorse-tool-files.c:135
+msgid "Rar (.rar)"
+msgstr "Rar (.rar)"
+
+#: ../tool/seahorse-tool-files.c:137
+msgid "Tar uncompressed (.tar)"
+msgstr "未圧縮の Tar (.tar)"
+
+#: ../tool/seahorse-tool-files.c:138
+msgid "Tar compressed with bzip (.tar.bz)"
+msgstr "bzip 圧縮済の Tar (.tar.bz)"
+
+#: ../tool/seahorse-tool-files.c:139
+msgid "Tar compressed with bzip2 (.tar.bz2)"
+msgstr "bzip2 圧縮済の Tar (.tar.bz2)"
+
+#: ../tool/seahorse-tool-files.c:140
+msgid "Tar compressed with gzip (.tar.gz)"
+msgstr "gzip 圧縮済の Tar (.tar.gz)"
+
+#: ../tool/seahorse-tool-files.c:141
+msgid "Tar compressed with lzop (.tar.lzo)"
+msgstr "lzop 圧縮済の Tar (.tar.lzo)"
+
+#: ../tool/seahorse-tool-files.c:142
+msgid "Tar compressed with compress (.tar.Z)"
+msgstr "compress 圧縮済の Tar (.tar.Z)"
+
+#: ../tool/seahorse-tool-files.c:144
+msgid "War (.war)"
+msgstr "War (.war)"
+
+#: ../tool/seahorse-tool-files.c:145
+msgid "Zip (.zip)"
+msgstr "Zip (.zip)"
+
+#: ../tool/seahorse-tool-files.c:146
+msgid "Zoo (.zoo)"
+msgstr "Zoo (.zoo)"
+
+#: ../tool/seahorse-tool-files.c:147
+msgid "7-Zip (.7z)"
+msgstr "7-Zip (.7z)"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:327
+#, c-format
+msgid "You have selected %d file "
+msgid_plural "You have selected %d files "
+msgstr[0] " %d個のファイルと"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:332
+#, c-format
+msgid "and %d folder"
+msgid_plural "and %d folders"
+msgstr[0] " %d個のフォルダーを選択しました"
+
+#. TRANSLATOR: "%s%s" are "You have selected %d files and %d folders"
+#. * Swap order with "%2$s%1$s" if needed
+#: ../tool/seahorse-tool-files.c:337
+#, c-format
+msgid "<b>%s%s</b>"
+msgstr "<b>%s%s</b>"
+
+#: ../tool/seahorse-tool-files.c:345
+#, fuzzy, c-format
+msgid "You have selected %d file"
+msgid_plural "You have selected %d files"
+msgstr[0] " %d個のファイルと"
+
+#: ../tool/seahorse-tool-files.c:350
+#, c-format
+msgid "You have selected %d folder"
+msgid_plural "You have selected %d folders"
+msgstr[0] " %d個のフォルダーを選択しました"
+
+#: ../tool/seahorse-tool-files.c:868
+msgid "Preparing..."
+msgstr "準備中..."
+
+#: ../tool/seahorse-tool-files.c:877 ../tool/seahorse-tool-files.c:900
+msgid "Couldn't list files"
+msgstr "ファイルの一覧を生成できませんでした"
+
+#: ../tool/seahorse-tool-files.c:887 ../tool/seahorse-util.c:647
+msgid "Couldn't package files"
+msgstr "ファイルを書庫に格納できませんでした"
+
+#: ../tool/seahorse-util.c:173
+msgid "Decryption failed. You probably do not have the decryption key."
+msgstr "復号化できませんでした (おそらく復号鍵をお持ちでないようです)"
+
+#: ../tool/seahorse-util.c:223
+msgid "%Y-%m-%d"
+msgstr "%Y-%m-%d"
+
+#: ../tool/seahorse-util.c:642
+msgid "Couldn't run file-roller"
+msgstr "'file-roller' を起動できませんでした"
+
+#: ../tool/seahorse-util.c:648
+msgid "The file-roller process did not complete successfully"
+msgstr "'file-roller' の起動に失敗しました"
+
+#. Filter for PGP keys. We also include *.asc, as in many
+#. cases that extension is associated with text/plain
+#: ../tool/seahorse-util.c:708
+msgid "All key files"
+msgstr "すべての鍵ファイル"
+
+#: ../tool/seahorse-util.c:715 ../tool/seahorse-util.c:755
+msgid "All files"
+msgstr "すべてのファイル"
+
+#: ../tool/seahorse-util.c:748
+msgid "Archive files"
+msgstr "書庫ファイル"
+
+#: ../tool/seahorse-util.c:777
+msgid ""
+"<b>A file already exists with this name.</b>\n"
+"\n"
+"Do you want to replace it with a new file?"
+msgstr ""
+"<b>同名のファイルが既に存在しています。</b>\n"
+"\n"
+"新しいファイルで置き換えてもよろしいですか?"
+
+#: ../tool/seahorse-util.c:780
+msgid "_Replace"
+msgstr "上書きする(_R)"
+
+#: ../tool/seahorse-widget.c:365
+#, c-format
+msgid "Could not display help: %s"
+msgstr "ヘルプを表示できませんでした: %s"

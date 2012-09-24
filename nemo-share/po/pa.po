@@ -1,0 +1,192 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# A S Alam <aalam@users.sf.net>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share.master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=nemo-share&component=general\n"
+"POT-Creation-Date: 2009-08-09 23:38+0000\n"
+"PO-Revision-Date: 2010-09-19 08:30+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr "ਨਟੀਲਸ ਨੂੰ ਤੁਹਾਡੇ \"%s\" ਫੋਲਡਰ ਨੂੰ ਸਾਂਝਾ ਕਰਨ ਲਈ ਇਸ ਉੱਤੇ ਕੁਝ ਅਧਿਕਾਰ ਚਾਹੀਦੇ ਹਨ।"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"ਫੋਲਡਰ \"%s\" ਨੂੰ ਸ਼ੇਅਰ ਦੇ ਕੰਮ ਕਰਨ ਲਈ ਹੋਰ ਵਾਧੂ ਅਧਿਕਾਰ ਚਾਹੀਦੇ ਹਨ:\n"
+"%s%s%sਕੀ ਤੁਸੀਂ ਫੋਲਡਰ ਲਈ ਇਹ ਅਧਿਕਾਰ ਆਟੋਮੈਟਿਕ ਹੀ ਦੇਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr "  - ਹੋਰ ਵਲੋਂ ਪੜ੍ਹਨ ਦਾ ਅਧਿਕਾਰ\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr "  - ਹੋਰਾਂ ਵਲੋਂ ਲਿਖਣ ਦਾ ਅਧਿਕਾਰ\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr "  - ਹੋਰਾਂ ਵਲੋਂ ਚਲਾਉਣ ਦਾ ਅਧਿਕਾਰ\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "ਅਧਿਕਾਰ ਆਟੋਮੈਟਿਕ ਹੀ ਸ਼ਾਮਲ ਕਰੋ"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "ਫੋਲਡਰ \"%s\" ਲਈ ਅਧਿਕਾਰ ਬਦਲੇ ਨਹੀਂ ਜਾ ਸਕੇ"
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "ਸ਼ੇਅਰ ਨਾਂ ਬਹੁਤ ਲੰਮਾ ਹੈ"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "ਸ਼ੇਅਰ ਨਾਂ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ ਹੈ"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "ਸ਼ੇਅਰ ਜਾਣਕਾਰੀ ਲੈਣ ਦੌਰਾਨ ਗਲਤੀ: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "ਹੋਰ ਸ਼ੇਅਰ ਦਾ ਵੀ ਇਹੀ ਨਾਂ ਹੈ"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "ਸ਼ੇਅਰ ਸੋਧ(_S)"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "ਸ਼ੇਅਰ ਬਣਾਓ(_S)"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "ਸ਼ੇਅਰ ਜਾਣਕਾਰੀ ਲੈਣ ਦੌਰਾਨ ਗਲਤੀ ਆਈ ਹੈ"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "ਸ਼ੇਅਰ"
+
+#: ../src/nemo-share.c:1114
+#| msgid "<big><b>Folder Sharing</b></big>"
+msgid "Folder Sharing"
+msgstr "ਫੋਲਡਰ ਸਾਂਝ"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "ਸ਼ੇਅਰ ਚੋਣ"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "ਇਹ ਫੋਲਡਰ ਸਾਂਝਾ (ਸ਼ੇਅਰ) ਕਰੋ"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s ਨੇ %d ਸਿਗਨਲ ਦਿੱਤਾ"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s ਅਣਜਾਣ ਕਾਰਨ ਕਰਕੇ ਫੇਲ੍ਹ ਹੈ"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "'net usershare' ਨੇ %d ਗਲਤੀ ਦਿੱਤੀ: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "'net usershare' ਨੇ %d ਗਲਦੀ ਦਿੱਤੀ"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "'net usershare' ਦੀ ਆਉਟਪੁੱਟ ਢੁੱਕਵੀਂ UTF-8 ਇੰਕੋਡਿੰਗ ਨਹੀਂ ਹੈ"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "ਫੇਲ੍ਹ ਹੈ"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "ਸਾਂਬਾ ਦੇ testparm ਨੇ %d ਸਿਗਨਲ ਦਿੱਤਾ"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "ਸਾਂਬਾ ਦਾ testparm ਅਣਜਾਣ ਕਾਰਨ ਕਰਕੇ ਫੇਲ੍ਹ ਹੋਇਆ"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "ਸਾਂਬਾ ਦੇ testparm ਨੇ %d ਗਲਤੀ ਦਿੱਤੀ: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "ਸਾਂਬਾ ਦੇ testparm ਨੇ %d ਗਲਤੀ ਦਿੱਤੀ"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr "%s ਪਾਥ ਲਈ ਸ਼ੇਅਰ ਹਟਾਇਆ ਨਹੀਂ ਜਾ ਸਕਦਾ: ਉਹ ਪਾਥ ਸ਼ੇਅਰ ਨਹੀਂ ਹੈ"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"ਇੱਕ ਮੌਜੂਦਾ ਸ਼ੇਅਰ ਦਾ ਪਾਥ ਬਦਲਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ ਹੈ; ਪਹਿਲਾਂ ਪੁਰਾਣਾ ਸ਼ੇਅਰ ਹਟਾਉ ਅਤੇ ਫੇਰ ਨਵਾਂ ਸ਼ੇਅਰ ਜੋੜੋ"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>ਫੋਲਡਰ ਸਾਂਝ</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "ਟਿੱਪਣੀ(_m):"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "ਸਾਂਝ ਨਾਂ(_n):"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "ਇਹ ਫੋਲਡਰ ਸਾਂਝਾ ਕਰੋ(_f)"
+
+#: ../interfaces/share-dialog.ui.h:5
+#| msgid "_Allow other people to write in this folder"
+msgid "_Allow others to create and delete files in this folder"
+msgstr "ਹੋਰਾਂ ਨੂੰ ਇਹ ਫੋਲਡਰ ਵਿੱਚ ਫਾਇਲਾਂ ਲਿਖਣ ਤੇ ਹਟਾਉਣ ਦੀ ਮਨਜ਼ੂਰੀ(_A)"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "ਗੈੱਸਟ ਅਸੈੱਸ (ਯੂਜ਼ਰ ਅਕਾਊਂਟ ਤੋਂ ਬਿਨਾਂ ਲੋਕਾਂ ਲਈ)(_G)"
+

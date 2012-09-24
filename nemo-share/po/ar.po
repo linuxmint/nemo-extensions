@@ -1,0 +1,182 @@
+# translation of nemo-share.HEAD.po to Arabic
+# Automatically generated, 2007.
+# Djihed Afifi <djihed@gmail.com>, 2007.
+# Khaled Hosny <khaledhosny@eglug.org>, 2008.
+# Arabic translations for THIS package.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as THIS package.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-10-23 22:49+0100\n"
+"PO-Revision-Date: 2008-08-09 11:25+0300\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: ../src/nemo-share.c:129
+#, c-format
+msgid "Nemo needs to add some permissions to your folder \"%s\" in order to share it"
+msgstr "يحتاج نوتلس لإضافة بعض الصلاحيات للمجلد \"%s\" لكي تتم مشاركته"
+
+#: ../src/nemo-share.c:137
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder automatically?"
+msgstr ""
+"المجلد \"%s\" يحتاج إلى الصلاحيات الإضافية الآتية لتتم مشاركته:\n"
+"%s%s%s ، هل تريد من نوتلس إضافة هذه الصلاحيات للمجلد آليا؟"
+
+#: ../src/nemo-share.c:141
+msgid "  - read permission by others\n"
+msgstr " - صلاحية القراءة من الآخرين\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - write permission by others\n"
+msgstr " - صلاحية الكتابة من الآخرين\n"
+
+#: ../src/nemo-share.c:143
+msgid "  - execute permission by others\n"
+msgstr " - صلاحية التنفيذ من الآخرين\n"
+
+#: ../src/nemo-share.c:147
+msgid "Add the permissions automatically"
+msgstr "أضف الصلاحيات آليا"
+
+#: ../src/nemo-share.c:173
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "تعذّر تغيير صلاحيات المجلد \"%s\""
+
+#: ../src/nemo-share.c:444
+msgid "Share name is too long"
+msgstr "اسم المُشاركة طويل جدا"
+
+#: ../src/nemo-share.c:478
+msgid "The share name cannot be empty"
+msgstr "لا يمكن أن يكون اسم المُشاركة فارغا"
+
+#: ../src/nemo-share.c:491
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "حدث خطأ أثناء جلب معلومات المشاركة: %s"
+
+#: ../src/nemo-share.c:501
+msgid "Another share has the same name"
+msgstr "يوجد مسبقًا مُشاركة بنفس الاسم"
+
+#: ../src/nemo-share.c:669
+msgid "There was an error while getting the sharing information"
+msgstr "حدث خطأ أثناء جلب معلومات المشاركة"
+
+#: ../src/nemo-share.c:769
+msgid "Modify _Share"
+msgstr "_عدّل المُشاركة"
+
+#: ../src/nemo-share.c:771
+msgid "Create _Share"
+msgstr "أنشئ مُشاركة"
+
+#: ../src/nemo-share.c:1029
+msgid "Share"
+msgstr "مُشاركة"
+
+#: ../src/nemo-share.c:1129
+msgid "Sharing Options"
+msgstr "خيارات المُشاركة"
+
+#: ../src/nemo-share.c:1130
+msgid "Share this Folder"
+msgstr "شارك هذا المجلّد"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s رجع بالإشارة %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s فشل لأسباب مجهولة"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "ارجع 'net usershare' خطأ %Id:‏ %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "ارجع 'net usershare' خطأ %Id"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "مخرج 'net usershare' ليس نص UTF-8 صالح"
+
+#: ../src/shares.c:442
+#: ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "فشل"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "أرجع testparm من سامبا الإشارة %Id"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "فشل testparm من سامبا لأسباب مجهولة"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "أرجع testparm من سامبا الخطأ %Id:‏ %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "أرجع testparm من سامبا الخطأ %Id"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr "تعذّر حذف مُشاركة المسار %s: المسار غير مشارك"
+
+#: ../src/shares.c:726
+#, c-format
+msgid "Cannot change the path of an existing share; please remove the old share first and add a new one"
+msgstr "لا يمكن تغيير مسار مشاركة موجودة؛ رجاء احذف المشاركة القديمة وأضِف أخرى جديدة"
+
+#: ../interfaces/share-dialog.glade.in.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>مشاركة المجلدات</b></big>"
+
+#: ../interfaces/share-dialog.glade.in.h:2
+msgid "Co_mment:"
+msgstr "ال_تعليق:"
+
+#: ../interfaces/share-dialog.glade.in.h:3
+msgid "Share _name:"
+msgstr "ا_سم المُشاركة:"
+
+#: ../interfaces/share-dialog.glade.in.h:4
+msgid "Share this _folder"
+msgstr "_شارك هذا المجلّد"
+
+#: ../interfaces/share-dialog.glade.in.h:5
+msgid "_Allow other people to write in this folder"
+msgstr "اسم_ح للآخرين بالكتابة في هذا المجلد"
+
+#: ../interfaces/share-dialog.glade.in.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "نفاذ ال_ضيف (للأشخاص الذين لا يملكون حسابا)"
+

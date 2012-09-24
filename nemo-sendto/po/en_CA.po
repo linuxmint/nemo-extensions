@@ -1,0 +1,206 @@
+# Canadian English translation for nemo-sendto
+# Copyright (C) 2004-2005 Adam Weinberger and the GNOME Foundation
+# This file is distributed under the same licence as nemo-sendto
+# Adam Weinberger <adamw@gnome.org>, 2004, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-16 14:33-0400\n"
+"PO-Revision-Date: 2005-06-23 17:41-0400\n"
+"Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
+"Language-Team: Canadian English <adamw@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Last plugin used to send"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Last type of archive used"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../gaim_plugin/nemo-sendto-plugin.c:308
+#: ../pidgin_plugin/nemo-sendto-plugin.c:308
+msgid "Nemo Integration"
+msgstr "Nemo Integration"
+
+#. name
+#. version
+#. summary
+#. name
+#. version
+#. summary
+#: ../gaim_plugin/nemo-sendto-plugin.c:310
+#: ../gaim_plugin/nemo-sendto-plugin.c:311
+#: ../pidgin_plugin/nemo-sendto-plugin.c:310
+#: ../pidgin_plugin/nemo-sendto-plugin.c:311
+msgid "Provides integration with Nemo"
+msgstr "Provides integration with Nemo"
+
+#: ../src/nemo-nste.c:95 ../src/nemo-nste.c:100
+msgid "Send to..."
+msgstr "Send to..."
+
+#: ../src/nemo-nste.c:96
+msgid "Send file by mail, instant message..."
+msgstr "Send file by mail/instant message..."
+
+#: ../src/nemo-nste.c:101
+msgid "Send files by mail, instant message..."
+msgstr "Send files by mail/instant message..."
+
+#: ../src/nemo-sendto-command.c:73
+msgid "Default folder to use"
+msgstr "Default folder to use"
+
+#: ../src/nemo-sendto-command.c:248
+msgid "You don't insert the package name"
+msgstr "You must specify the package name"
+
+#: ../src/nemo-sendto-command.c:508
+msgid "Files"
+msgstr "Files"
+
+#: ../src/nemo-sendto-command.c:698
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Expects URIs or filenames to be passed as options\n"
+
+#: ../src/nemo-sendto-command.c:715
+msgid "Nemo Sendto"
+msgstr "Nemo Sendto"
+
+#: ../src/nemo-sendto-command.c:719
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Could not parse command-line options: %s\n"
+
+#: ../src/nemo-sendto-command.c:734
+msgid "Could not load any plugins."
+msgstr "Could not load any plugins."
+
+#: ../src/nemo-sendto-command.c:737
+msgid "Please verify your installation"
+msgstr "Please verify your installation"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid ""
+".zip\n"
+".tar.gz\n"
+".tar.bz2"
+msgstr ""
+".zip\n"
+".tar.gz\n"
+".tar.bz2"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "<b>Compression</b>"
+msgstr "<b>Compression</b>"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "<b>Destination</b>"
+msgstr "<b>Destination</b>"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send To..."
+msgstr "Send To..."
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "Send _as:"
+msgstr "Send _as:"
+
+#: ../src/nemo-sendto.glade.h:8
+msgid "Send t_o:"
+msgstr "Send t_o:"
+
+#: ../src/nemo-sendto.glade.h:9
+msgid "_Send"
+msgstr "_Send"
+
+#: ../src/nemo-sendto.glade.h:10
+msgid "_Send packed in:"
+msgstr "_Send packed in:"
+
+#: ../src/plugins/balsa.c:103
+msgid "Email (Balsa)"
+msgstr "Email (Balsa)"
+
+#: ../src/plugins/bluetooth.c:421
+msgid "Programming error, could not find the device in the list"
+msgstr "Programming error: could not find the device in the list"
+
+#: ../src/plugins/bluetooth.c:442
+#, c-format
+msgid "Device does not support Obex File Transfer"
+msgstr "Device does not support OBEX File Transfer"
+
+#: ../src/plugins/bluetooth.c:457
+msgid "Bluetooth (OBEX Push)"
+msgstr "Bluetooth (OBEX Push)"
+
+#: ../src/plugins/evolution.c:273
+msgid "Email"
+msgstr "Email"
+
+#: ../src/plugins/gaim.c:228
+msgid "Instant Message (Gaim)"
+msgstr "Instant Message (Gaim)"
+
+#: ../src/plugins/gajim.c:402
+msgid "Unable to send file"
+msgstr "Unable to send file"
+
+#: ../src/plugins/gajim.c:403
+msgid "There is no connection to gajim remote service."
+msgstr "There is no connection to gajim remote service."
+
+#: ../src/plugins/gajim.c:427 ../src/plugins/gajim.c:466
+msgid "Sending file failed"
+msgstr "Sending file failed"
+
+#: ../src/plugins/gajim.c:428
+msgid "Recipient is missing."
+msgstr "Recipient is missing."
+
+#: ../src/plugins/gajim.c:466
+msgid "Unknown recipient."
+msgstr "Unknown recipient."
+
+#: ../src/plugins/gajim.c:488
+msgid "Instant Message (Gajim)"
+msgstr "Instant Message (Gajim)"
+
+#: ../src/plugins/sylpheed-claws.c:131
+msgid "Email (Claws Mail)"
+msgstr "Email (Claws Mail)"
+
+#: ../src/plugins/thunderbird.c:102
+msgid "Email (Thunderbird)"
+msgstr "Email (Thunderbird)"

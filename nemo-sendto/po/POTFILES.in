@@ -1,0 +1,15 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+src/nemo-nste.c
+src/nemo-nste.h
+src/nemo-sendto-command.c
+src/nemo-sendto-module.c
+src/org.nemo.Sendto.gschema.xml.in
+[type: gettext/glade]src/nemo-sendto.ui
+src/plugins/evolution/evolution.c
+src/plugins/evolution/e-contact-entry.c
+src/plugins/gajim/gajim.c
+src/plugins/nemo-burn/nemo-burn.c
+src/plugins/pidgin/pidgin.c
+src/plugins/removable-devices/removable-devices.c
+src/plugins/upnp/upnp.c

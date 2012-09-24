@@ -1,0 +1,195 @@
+# Romanian translation for nemo-share
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the nemo-share package.
+# Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-share&component=general\n"
+"POT-Creation-Date: 2009-09-19 20:38+0000\n"
+"PO-Revision-Date: 2009-10-11 13:14+0300\n"
+"Last-Translator: Adi Roiban <adi@roiban.ro>\n"
+"Language-Team: Gnome Romanian Team <gnomero-list@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
+"== 0) && (n != 0))) ? 2: 1));\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+"Pentru a partaja dosarul „%s”, Nemo trebuie să îi modifice drepturile"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"Pentru ca partajarea să funcționeze, dosarul „%s” necesită următoarele "
+"drepturi:\n"
+"%s%s%sDoriți ca Nemo să adauge automat aceste drepturi dosarului?"
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr "  - citire pentru alți utilizatori\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr "  - scriere pentru alți utilizatori\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr "  - execuție pentru alți utilizatori\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "Adăugă drepturile automat"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Nu s-au putut modifica drepturile pentru „%s”"
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "Numele pentru partajare este prea lung"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "Numele pentru partajare nu poate să fie gol"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Eroare la obținerea informației de partajare: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "Există deja un dosar partajat cu aceste nume"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "Modificare _partajare"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "Creare _partajare"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "S-a produs o eroare la obținerea informației despre partajare"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "Partajare"
+
+#: ../src/nemo-share.c:1114
+msgid "Folder Sharing"
+msgstr "Partajare dosar"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "Opțiuni de partajare"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "Partajați acest dosar"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s a ieșit cu semnalul %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s a eșuat dintr-un motiv necunoscut"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "„net usershare” a întors eroarea %d: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "„net usershare” a întors eroarea  %d"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "ieșirea lui „net usershare” nu este într-un cod valid UTF-8"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Eșuat"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "testparm de la Samba a ieșit cu semnalul %d"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "testparm de la Samba a eșuat dintr-un motiv necunoscut"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "testparm de la Samba a eșuat cu eroarea %d: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "testparm de la Samba a eșuat cu eroarea %d"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr ""
+"Nu s-a putut șterge partajarea pentru calea %s: calea nu este partajată"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"Nu s-a putut șterge calea pentru o partajare existentă. Ștergeți vechea "
+"partajare și adăugați una nouă"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Partajare dosar</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "Co_mentariu:"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "_Nume partajat:"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "Partajați acest _dosar"
+
+#: ../interfaces/share-dialog.ui.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr "Permiteți _altora să creeze și să șteargă fișiere în acest dosar"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "Acces _oaspeți (pentru cei fără un cont de utilizator)"
+

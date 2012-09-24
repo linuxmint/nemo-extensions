@@ -1,0 +1,195 @@
+# translation of eu.po to Basque
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: eu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-04 12:18+0200\n"
+"PO-Revision-Date: 2009-09-04 12:19+0200\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+"Nemo-ek zenbait baimen gehitu behar dizkio zure \"%s\" karpetari, "
+"karpeta partekatzeko"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"\"%s\" karpetak honako baimen gehigarriak behar ditu partekatu ahal "
+"izateko:\n"
+"%s%s%s Nahi duzu Nemo-ek baimen horiek karpetari automatikoki gehitzea?"
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr "  - besteek irakurtzeko baimena\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr "  - besteek idazteko baimena\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr "  - besteek exekutatzeko baimena\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "Gehitu baimenak automatikoki"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Ezin izan dira \"%s\" karpetaren baimenak aldatu"
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "Partekatze-izena luzeegia da"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "Partekatze-izena ezin da hutsik egon"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Errorea partekatzeko informazioa eskuratzean: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "Beste partekatze-izenak izen berdina du"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "Aldatu p_artekatzea"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "Sortu p_artekatzea"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "Errorea gertatu da partekatzeko informazioa eskuratzean"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "Partekatu"
+
+#: ../src/nemo-share.c:1114
+msgid "Folder Sharing"
+msgstr "Karpeta partekatzea"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "Partekatze-aukerak"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "Partekatu karpeta hau"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s itzuli du honako seinalarekin: %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s huts egin du arrazoi ezezagunagatik"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "'partekatutako sarea'k %d errorea itzuli du: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "'partekatutako sarea'k %d errorea itzuli du"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "'partekatutako sarea'ren irteera ez da baliozko UTF-8 kodeketa"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Huts egin du"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "Samba-ren probako parametroa %d seinalearekin itzuli da"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "Samba-ren probako parametroak huts egin du arrazoi ezezagunagatik"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "Samba-ren probako parametroak %d errorea itzuli du: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "Samba-ren probako parametroak %d errorea itzuli du"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr "Ezin da %s bide-izenetik partekatua kendu: bide-izena ez dago partekatua"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"Ezin da existitzen den partekatuaren bide-izena aldatu. Aurrenik kendu "
+"partekatu zaharra eta gero gehitu berria"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Karpeta partekatzea</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "_Iruzkina:"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "Partekatze-_izena:"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "Partekatu _karpeta hau"
+
+#: ../interfaces/share-dialog.ui.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr "_Baimendu besteek karpeta honetan fitxategiak sortzea eta ezabatzea"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "_Gonbidatuaren sarbidea (konturik gabeko jendea)"
+

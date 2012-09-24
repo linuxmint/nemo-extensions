@@ -1,0 +1,217 @@
+# Brazilian Portuguese translations for nemo-share package.
+# Copyright (C) 2005 THE nemo-share'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-share package.
+# sebastien estienne <sebastien.estienne@gmail.com>, 2005.
+# Og Maciel <ogmaciel@gnome.org>, 2007.
+# Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2008.
+# Djavan Fagundes <dnoway@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share 0.6.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-10 08:39-0300\n"
+"PO-Revision-Date: 2009-10-02 10:23-0300\n"
+"Last-Translator: Djavan Fagundes <dnoway@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <traduc@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Language: Brazilian Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+"É necessário adicionar algumas permissões à sua pasta \"%s\" para "
+"compartilhá-la"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"A pasta \"%s\" precisa das seguintes permissões para ser compartilhada:\n"
+"%s%s%sVocê deseja adicionar estas permissões à pasta automaticamente?"
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr "  - permissões de leituras por outros\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr "  - permissão de escrita por outros\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr "  - permissão de execução por outros\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "Adicionar as permissões automaticamente"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Não foi possível modificar as permissões da pasta \"%s\""
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "Nome do compartilhamento é muito longo"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "O nome do compartilhamento não pode ser vazio"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Erro ao obter informação do compartilhamento: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "Um outro compartilhamento possui o mesmo nome"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "Modificar compar_tilhamento"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "Criar _compartilhamento"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "Houve um erro ao obter a informação do compartilhamento"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "Compartilhar"
+
+#: ../src/nemo-share.c:1114
+msgid "Folder Sharing"
+msgstr "Compartilhamento de pastas"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "Opções de compartilhamento"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "Compartilhar esta pasta"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s retornou com sinal %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s falhou por um motivo desconhecido"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "\"compartilhamento de rede de usuário\" retornou erro %d: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "\"compartilhamento de rede de usuário\" retornou erro %d"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr ""
+"a saída do \"compartilhamento de rede de usuário\" não está em uma "
+"codificação UTF-8 válida"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Falhou"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "O comando testparm do Samba retornou com sinal %d"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "O comando testparm do Samba falhou por um motivo desconhecido"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "O comando testparm do Samba retornou erro %d: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "O comando testparm do Samba retornou erro %d"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr ""
+"Não foi possível remover o compartilhamento do caminho %s: este caminho não "
+"é compartilhado"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"Não é possível modificar o caminho de um compartilhamento atual; por favor, "
+"remova-o primeiro e adicione um novo"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Compartilhamento de pastas</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "Comen_tário:"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "_Nome do compartilhamento:"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "Compartilhar esta _pasta"
+
+#: ../interfaces/share-dialog.ui.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr "Permitir que outras pessoas criem e excluam _arquivos nesta pasta"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "Acesso _anônimo (para pessoas sem conta de usuário)"
+
+#~ msgid "Sharename too long, may not appear on all Os"
+#~ msgstr ""
+#~ "Nome de compartilhamento muito longo, pode não ser indicado em alguns "
+#~ "sistemas"
+
+#~ msgid "Sharename already in use or forbidden!"
+#~ msgstr "Nome de compartilhamento já em uso ou proibido!"
+
+#~ msgid "shared (read only)"
+#~ msgstr "compartilhado (apenas para leitura)"
+
+#~ msgid "shared (read and write)"
+#~ msgstr "compartilhado (leitura e escrita)"
+
+#~ msgid "not shared"
+#~ msgstr "não compartilhado"

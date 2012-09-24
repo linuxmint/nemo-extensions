@@ -1,0 +1,186 @@
+# translation of nemo-share.master.po to Gujarati
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sweta Kothari <swkothar@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share.master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-share&component=general\n"
+"POT-Creation-Date: 2009-04-17 13:24+0000\n"
+"PO-Revision-Date: 2009-04-29 14:27+0530\n"
+"Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
+"Language-Team: Gujarati\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../src/nemo-share.c:129
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr "Nemo ને તેને વહેંચવા માટે ક્રમમાં તમારા ફોલ્ડર \"%s\" માટે અમુક પરવાનગીઓ ઉમેરવાની જરૂર છે"
+
+#: ../src/nemo-share.c:137
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"ફોલ્ડર \"%s\" ને કામ કરવાનું વહેંચવા માટે નીચેની વધારાની પરવાનગીઓની જરૂર છે:\n"
+"%s%s%s શું તમે આપમેળે આ ફોલ્ડરમાં આ પરવાનગીઓને ઉમેરવા માટે Nemo "
+"ની ઇચ્છા રાખો છો?"
+
+#: ../src/nemo-share.c:141
+msgid "  - read permission by others\n"
+msgstr "  - બીજાઓ દ્દારા પરવાનગી વાંચો\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - write permission by others\n"
+msgstr "  - બીજાઓ દ્દારા પરવાનગી લખો\n"
+
+#: ../src/nemo-share.c:143
+msgid "  - execute permission by others\n"
+msgstr "  - બીજાઓ દ્દારા પરવાનગીને ચલાવો\n"
+
+#: ../src/nemo-share.c:147
+msgid "Add the permissions automatically"
+msgstr "આપમેળે પરવાનગીઓને ઉમેરો"
+
+#: ../src/nemo-share.c:173
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "ફોલ્ડર \"%s\" ની પરવાનગીઓને બદલી શકાઇ નહિં"
+
+#: ../src/nemo-share.c:444
+msgid "Share name is too long"
+msgstr "વહેંચવાનું નામ ઘણુ લાંબુ છે"
+
+#: ../src/nemo-share.c:478
+msgid "The share name cannot be empty"
+msgstr "વહેંચવાનું નામ ને ખાલી કરી શકાતુ નથી"
+
+#: ../src/nemo-share.c:491
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "જ્યારે વહેંચાણ જાણકારીને મેળવવા દરમ્યાન ભૂલ: %s"
+
+#: ../src/nemo-share.c:501
+msgid "Another share has the same name"
+msgstr "બીજા વહેંચાણ પાસે પણ એજ નામ છે"
+
+#: ../src/nemo-share.c:669
+msgid "There was an error while getting the sharing information"
+msgstr "જ્યારે વહેંચવાની જાણકારી ને મેળવી રહ્યા હોય ત્યારે ત્યાં ભૂલ હતી"
+
+#: ../src/nemo-share.c:769
+msgid "Modify _Share"
+msgstr "વહેંચાણ ને બદલો (_S)"
+
+#: ../src/nemo-share.c:771
+msgid "Create _Share"
+msgstr "વહેંચણીને બનાવો (_S)"
+
+#: ../src/nemo-share.c:1029
+msgid "Share"
+msgstr "વહેંચણી"
+
+#: ../src/nemo-share.c:1129
+msgid "Sharing Options"
+msgstr "વહેંચણીનાં વિકલ્પો"
+
+#: ../src/nemo-share.c:1130
+msgid "Share this Folder"
+msgstr "આ ફોલ્ડરને વહેંચો"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s એ સંકેત %d સાથે પાછુ મેળવેલ છે"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "અજ્ઞાત કારણ માટે %s %s %s નિષ્ફળ"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "'net usershare' ને ભૂલ %d પાછી મળેલ છે: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "'net usershare' ને ભૂલ %d પાછી મળેલ છે"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "'net usershare' નું આઉટપુટ યોગ્ય UTF-8 એનકોડીંગ માં નથી"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "નિષ્ફળ"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "Samba નું testparm એ સંકેત %d સાથે પાછુ મળેલ છે"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "Samba નું testparm એ અજ્ઞાત કારણ માટે નિષ્ફળ થયેલ છે"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "Samba નું testparm ને ભૂલ %d પાછી મળેલ છે: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "Samba નું testparm ને ભૂલ %d પાછી મળેલ છે"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr "પાથ %s માટે વહેંચવાનું દૂર કરી શકાતુ નથી: જે પાથ વહેંચાયેલ નથી"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr "હાલનાં વહેંચાણનાં પાથને બદલી શકાતુ નથી; મહેરબાની કરીને પહેલા જૂનું વહેંચાણને દૂર કરો અને નવુ એક ને ઉમેરો"
+
+#: ../interfaces/share-dialog.glade.in.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>ફોલ્ડરની વહેંચણી કરી રહ્યા છે</b></big>"
+
+#: ../interfaces/share-dialog.glade.in.h:2
+msgid "Co_mment:"
+msgstr "ટિપ્પણી (_m):"
+
+#: ../interfaces/share-dialog.glade.in.h:3
+msgid "Share _name:"
+msgstr "હિસ્સાનું નામ (_n):"
+
+#: ../interfaces/share-dialog.glade.in.h:4
+msgid "Share this _folder"
+msgstr "આ ફોલ્ડરને વહેંચો (_f)"
+
+#: ../interfaces/share-dialog.glade.in.h:5
+msgid "_Allow other people to write in this folder"
+msgstr "આ ફોલ્ડરમાં લખવા માટે બીજા લોકોને પરવાનગી આપો (_A)"
+
+#: ../interfaces/share-dialog.glade.in.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "મહેમાન પ્રવેશ (_G) (વપરાશકર્તા ખાતા વગર લોકો માટે)"
+

@@ -1,0 +1,315 @@
+# translation of nemo-sendto.po.master.te.po to Telugu
+# Telugu translation of nemo-sendto.
+# Copyright (C) 2009 nemo-sendto's COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-sendto package.
+#
+# Krishna Babu K <kkrothap@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto.po.master.te\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2009-07-02 06:02+0000\n"
+"PO-Revision-Date: 2009-07-02 19:36+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "పంపుటకు చివరిగా వుపయోగించబడిన ప్లగ్‌యిన్"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "ఉపయోగించబడిన ఆర్చివ్ చివరి రకము"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"చివరిసారి nemo-sendto వుపయోగించి దస్త్రములను పంపినప్పుడు ఏ ప్లగ్‌యిన్ వుపయోగించబడిందో "
+"నిల్వవుంచుటకు వుపయోగించబడుతుంది."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"చివరిసారి ఏ రకమైన అర్చివ్ వుపయోగించబడిందో నిల్వవుంచుటకు వుపయోగించబడుతుంది "
+"(0: zip, 1: tar.gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "ఇచటకు పంపు... (_S)"
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "దస్త్రములను దూరస్థ పరికరములకు, లేదా ప్రజలకు పంపుము"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "ఇచటకు పంపుము..."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../pidgin_plugin/nemo-sendto-plugin.c:342
+msgid "Nemo Integration"
+msgstr "Nemo సమ్మేళనం"
+
+#. name
+#. version
+#. summary
+#: ../pidgin_plugin/nemo-sendto-plugin.c:344
+#: ../pidgin_plugin/nemo-sendto-plugin.c:345
+msgid "Provides integration with Nemo"
+msgstr "Nemoతో సమ్మేళనంను అందిస్తుంది"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "ఇచటకు పంపుము..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "దస్త్రమును యిలా పంపుము మెయిల్, సత్వరసందేశము..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "దస్త్రములను యిలా పంపుము మెయిల్, సత్వర సందేశము..."
+
+#: ../src/nemo-sendto-command.c:540
+msgid "Files"
+msgstr "దస్త్రములు"
+
+#: ../src/nemo-sendto-command.c:744
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "URIలు లేదా దస్త్రమునామములు ఐచ్చికాలుగా పంపునట్లు కోరుకొనుచున్నది\n"
+
+#: ../src/nemo-sendto-command.c:761
+msgid "Nemo Sendto"
+msgstr "Nemo ఇచటకుపంపు"
+
+#: ../src/nemo-sendto-command.c:765
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "ఆదేశ-వరుస ఐచ్చికాలను పార్శ్ చేయలేక పోయింది: %s\n"
+
+#: ../src/nemo-sendto-command.c:780
+msgid "Could not load any plugins."
+msgstr "ఎటువంటి ప్లగ్‌యిన్లను లోడు చేయలేక పోయింది."
+
+#: ../src/nemo-sendto-command.c:783
+msgid "Please verify your installation"
+msgstr "దయచేసి మీ సంస్థాపనను నిర్ధారించుము"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>కుదింపు</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b> గమ్యం</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "ఇలా పంపుము (_a):"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "దీనిలో ప్యాక్‌చేసి పంపుము (_p):"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "ఇచటకు పంపుము (_o):"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "పంపుము (_S)"
+
+#: ../src/plugins/bluetooth/bluetooth.c:448
+msgid "Programming error, could not find the device in the list"
+msgstr "ప్రోగ్రామింగ్ దోషం, జాబితా నందు పరికరమును కనుగొనలేక పోయింది"
+
+#: ../src/plugins/bluetooth/bluetooth.c:523
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Obex పుష్ ఫైల్ బదిలీకరణ మద్దతీయదు"
+
+#: ../src/plugins/bluetooth/bluetooth.c:547
+msgid "Bluetooth (OBEX Push)"
+msgstr "బ్లూటూత్ (OBEX పుష్)"
+
+#: ../src/plugins/empathy/empathy.c:130
+msgid "The contact selected cannot receive files."
+msgstr "ఎంపికకాబడిన పరిచయం దస్త్రములను పొందలేదు."
+
+#: ../src/plugins/empathy/empathy.c:136
+msgid "The contact selected is offline."
+msgstr "ఎంపికకాబడిన పరిచయం ఆఫ్‌లైన్."
+
+#: ../src/plugins/empathy/empathy.c:193
+msgid "No error message"
+msgstr "ఎటువంటి దోష సందేశములేదు"
+
+#: ../src/plugins/empathy/empathy.c:269
+msgid "Instant Message (Empathy)"
+msgstr "సత్వర సందేశము (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:366
+msgid "Email"
+msgstr "ఈమెయిల్"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "పరిచయం పొందలేదు: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "పరిచయం కనుగొనలేక పోయింది: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "శోధించదగు దర్శనమును సృష్టించలేదు."
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "సఫలం"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "ఒక ఆర్గుమెంట్ చెల్లనిది."
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "చిరునామా పుస్తకం బ్యుజీగా వుంది."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "చిరునామా పుస్తకం ఆఫ్‌లైన్"
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "చిరునామా పుస్తకం లేదు."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "\"Me\" పరిచయం లేదు."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "చిరునామా పుస్తకం లోడు కాలేదు."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "చిరునామా పుస్తకం యిప్పటికే లోడైంది."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "చిరునామా పుస్తకంను యాక్సిస్ చేస్తున్నప్పుడు అనుమతి నిరాకరించబడింది."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "పరిచయం కనుగొనబడలేదు."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "పరిచయం ID యిప్పటికే వుంది."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "నిబంధన(ప్రోటోకాల్) మద్దతీయబడదు."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "ఆపరేషన్ రద్దుచేయబడింది."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "ఆపరేషన్ రద్దు చేయబడలేకపోయింది."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "చిరునామాపుస్తకం దృవీకరణ విఫలమైంది."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid "Authentication is required to access the address book and was not given."
+msgstr "చిరునామాపుస్తకంను యాక్సిస్ చేయుటకు దృవీకరణ అవసరము అయితే యివ్వబడలేదు."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "సురక్షిత అనుసంధానము అందుబాటులో లేదు."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "చిరునామా పుస్తకంను యాక్సిస్ చేస్తున్నప్పుడు CORBA దోషము యెదురైంది."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "చిరునామా పుస్తకం మూలము లేదు."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "ఒక తెలియని దోషము యెదురైంది."
+
+#: ../src/plugins/gajim/gajim.c:403
+msgid "Unable to send file"
+msgstr "దస్త్రమును పంపలేక పోయింది"
+
+#: ../src/plugins/gajim/gajim.c:404
+msgid "There is no connection to gajim remote service."
+msgstr "గజిమ్ దూరస్థ సేవకు అక్కడ యెటువంటి అనుసంధానము లేదు."
+
+#: ../src/plugins/gajim/gajim.c:428 ../src/plugins/gajim/gajim.c:467
+msgid "Sending file failed"
+msgstr "దస్త్రమును పంపుట విఫలమైంది"
+
+#: ../src/plugins/gajim/gajim.c:429
+msgid "Recipient is missing."
+msgstr "స్వీకరణదారి లేరు."
+
+#: ../src/plugins/gajim/gajim.c:467
+msgid "Unknown recipient."
+msgstr "తెలియని స్వీరకరణదారి."
+
+#: ../src/plugins/gajim/gajim.c:489
+msgid "Instant Message (Gajim)"
+msgstr "సత్వర సందేశము (గజిమ్)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:73
+#: ../src/plugins/nemo-burn/nemo-burn.c:88
+msgid "New CD/DVD"
+msgstr "కొత్త CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:86
+msgid "Existing CD/DVD"
+msgstr "ఉన్న CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:165
+msgid "CD/DVD Creator"
+msgstr "CD/DVD సృష్టీకరణి"
+
+#: ../src/plugins/pidgin/pidgin.c:353
+msgid "Instant Message (Pidgin)"
+msgstr "సత్వర సందేశము (పిడిగ్గిన్)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "తీసివేయదగిన డిస్కులు మరియు భాగస్వామ్యాలు"
+
+#: ../src/plugins/upnp/upnp.c:301
+msgid "UPnP Media Server"
+msgstr "UPnP మాధ్యమ సేవిక"
+

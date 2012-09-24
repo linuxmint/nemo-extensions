@@ -1,0 +1,196 @@
+# Hungarian translation of nemo-share
+# Copyright 2009. Free Software Foundation, Inc.
+# This file is distributed under the same license as the nemo-share package.
+#
+# Keresztes Ákos <xsak at c2 dot hu>, 2006.
+# Kalman Kemenczy <kkemenczy at novell dot com>, 2006, 2007.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2007, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-11 01:54+0200\n"
+"PO-Revision-Date: 2009-08-15 02:24+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <gnome at fsf dot hu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../src/nemo-share.c:128
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+"A megosztáshoz a Nemonak fel kell vennie néhány jogosultságot a "
+"következő mappához: „%s”"
+
+#: ../src/nemo-share.c:136
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"A megosztáshoz a következő jogokat kell felvenni a(z) „%s” mappához:\n"
+"%s%s%s Kívánja, hogy a Nemo automatikusan hozzáadja a szükséges jogokat "
+"a mappához?"
+
+#: ../src/nemo-share.c:140
+msgid "  - read permission by others\n"
+msgstr "  - olvasási jogosultság mások számára\n"
+
+#: ../src/nemo-share.c:141
+msgid "  - write permission by others\n"
+msgstr "  - írási jogosultság mások számára\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - execute permission by others\n"
+msgstr "  - végrehajtási jogosultság mások számára\n"
+
+#: ../src/nemo-share.c:146
+msgid "Add the permissions automatically"
+msgstr "Jogosultságok automatikus felvétele"
+
+#: ../src/nemo-share.c:172
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "A(z) „%s” mappa jogosultságainak megváltoztatása nem sikerült"
+
+#: ../src/nemo-share.c:451
+msgid "Share name is too long"
+msgstr "A megosztás neve túl hosszú"
+
+#: ../src/nemo-share.c:485
+msgid "The share name cannot be empty"
+msgstr "A megosztás neve nem lehet üres"
+
+#: ../src/nemo-share.c:498
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Hiba történt a megosztás információinak lekérdezése közben: %s"
+
+#: ../src/nemo-share.c:508
+msgid "Another share has the same name"
+msgstr "Egy másik megosztásnak ugyanez a neve"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:790
+msgid "Modify _Share"
+msgstr "Mó_dosítás"
+
+#: ../src/nemo-share.c:555 ../src/nemo-share.c:792
+msgid "Create _Share"
+msgstr "_Megosztás"
+
+#: ../src/nemo-share.c:683
+msgid "There was an error while getting the sharing information"
+msgstr "Hiba történt a megosztás információinak lekérdezése közben"
+
+#: ../src/nemo-share.c:1054
+msgid "Share"
+msgstr "Megosztás"
+
+#: ../src/nemo-share.c:1114
+msgid "Folder Sharing"
+msgstr "Mappamegosztás"
+
+#: ../src/nemo-share.c:1155
+msgid "Sharing Options"
+msgstr "Megosztás beállításai"
+
+#: ../src/nemo-share.c:1156
+msgid "Share this Folder"
+msgstr "Könyvtár megosztása"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s a következő szignált adta vissza: %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s ismeretlen okból sikertelen"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "A „net usershare” a következő hibát adta vissza: %d: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "A „net usershare” a következő hibát adta vissza: %d"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "A „net usershare” kimenete nem UTF-8 kódolású"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Sikertelen"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "A Samba testparm parancsa a következő szignállal tért vissza: %d"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "A Samba testparm parancsa ismeretlen okból nem futott le"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "A Samba testparm parancsa a következő hibával tért vissza: %d: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "A Samba testparm parancsa a következő hibával tért vissza: %d"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr ""
+"A megosztás nem vonható vissza a megadott útvonalról (%s), mert az jelenleg "
+"nem megosztott"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"A megosztás útvonala nem változtatható meg, először vonja vissza a megosztást"
+
+#: ../interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Mappa megosztása</b></big>"
+
+#: ../interfaces/share-dialog.ui.h:2
+msgid "Co_mment:"
+msgstr "Meg_jegyzés:"
+
+#: ../interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr "M_egosztás neve:"
+
+#: ../interfaces/share-dialog.ui.h:4
+msgid "Share this _folder"
+msgstr "_Mappa megosztása"
+
+#: ../interfaces/share-dialog.ui.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr "Mások létrehozhatnak fájlokat a m_appában és törölhetnek innen"
+
+#: ../interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "_Vendéghozzáférés (felhasználói fiók nélküli személyeknek)"

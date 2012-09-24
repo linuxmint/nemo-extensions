@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="nemo-sendto Reference Manual" link="index.html" author="" name="nemo-sendto" version="2" language="c">
+  <chapters>
+    <sub name="nemo-sendto documentation" link="ch01.html">
+      <sub name="nemo-sendto-plugin" link="nemo-sendto-nemo-sendto-plugin.html"/>
+    </sub>
+    <sub name="API Index" link="api-index-full.html"/>
+  </chapters>
+  <functions>
+    <keyword type="macro" name="NST_INIT_PLUGIN()" link="nemo-sendto-nemo-sendto-plugin.html#NST-INIT-PLUGIN:CAPS"/>
+    <keyword type="struct" name="struct NstPlugin" link="nemo-sendto-nemo-sendto-plugin.html#NstPlugin"/>
+    <keyword type="enum" name="enum NstPluginCapabilities" link="nemo-sendto-nemo-sendto-plugin.html#NstPluginCapabilities-enum"/>
+    <keyword type="struct" name="struct NstPluginInfo" link="nemo-sendto-nemo-sendto-plugin.html#NstPluginInfo"/>
+    <keyword type="constant" name="NEMO_CAPS_NONE" link="nemo-sendto-nemo-sendto-plugin.html#NEMO-CAPS-NONE:CAPS"/>
+    <keyword type="constant" name="NEMO_CAPS_SEND_DIRECTORIES" link="nemo-sendto-nemo-sendto-plugin.html#NEMO-CAPS-SEND-DIRECTORIES:CAPS"/>
+    <keyword type="constant" name="NEMO_CAPS_SEND_IMAGES" link="nemo-sendto-nemo-sendto-plugin.html#NEMO-CAPS-SEND-IMAGES:CAPS"/>
+  </functions>
+</book>

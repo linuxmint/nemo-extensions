@@ -1,0 +1,42 @@
+# Description: Fix ltmain.sh to allow -Wl,--as-needed to be passed properly to
+# reduce dependencies
+# Origin: vendor
+# Forwarded: not-needed
+---
+
+ ltmain.sh |   14 ++++++++++++++
+ 1 files changed, 14 insertions(+), 0 deletions(-)
+
+
+Index: nemo-share/ltmain.sh
+===================================================================
+--- nemo-share.orig/ltmain.sh	2011-07-08 11:06:58.161049655 +0800
++++ nemo-share/ltmain.sh	2011-07-08 11:10:44.909862117 +0800
+@@ -4716,6 +4716,11 @@
+ 	arg=$func_stripname_result
+ 	;;
+ 
++      -Wl,--as-needed)
++	deplibs="$deplibs $arg"
++	continue
++	;;
++
+       -Wl,*)
+ 	func_stripname '-Wl,' '' "$arg"
+ 	args=$func_stripname_result
+@@ -5070,6 +5075,15 @@
+ 	lib=
+ 	found=no
+ 	case $deplib in
++	-Wl,--as-needed)
++	  if test "$linkmode,$pass" = "prog,link"; then
++	    compile_deplibs="$deplib $compile_deplibs"
++	    finalize_deplibs="$deplib $finalize_deplibs"
++	  else
++	    deplibs="$deplib $deplibs"
++	  fi
++	  continue
++	  ;;
+ 	-mt|-mthreads|-kthread|-Kthread|-pthread|-pthreads|--thread-safe|-threads)
+ 	  if test "$linkmode,$pass" = "prog,link"; then
+ 	    compile_deplibs="$deplib $compile_deplibs"

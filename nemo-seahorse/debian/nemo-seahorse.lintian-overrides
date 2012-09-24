@@ -1,0 +1,4 @@
+nemo-seahorse: pkg-has-shlibs-control-file-but-no-actual-shared-libs
+nemo-seahorse: postinst-has-useless-call-to-ldconfig
+nemo-seahorse: postrm-has-useless-call-to-ldconfig
+

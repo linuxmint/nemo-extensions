@@ -1,0 +1,314 @@
+# translation of nemo-sendto.master.po to Gujarati
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sweta Kothari <swkothar@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-sendto.master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-sendto&component=general\n"
+"POT-Creation-Date: 2009-04-27 13:10+0000\n"
+"PO-Revision-Date: 2009-04-29 15:06+0530\n"
+"Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
+"Language-Team: Gujarati\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "મોકલવા માટે વપરાયેલ છેલ્લુ પ્લગઇન"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "વપરાયેલ આર્કાઇવ્ઝનો છેલ્લો પ્રકાર"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"સંગ્રહ કરવા માટે વપરાયેલ હતુ કે જે છેલ્લે પ્લગઇન વપરાયેલ હતુ ત્યાં ફાઇલોને nemo-sendto "
+"મદદથી મોકલેલ હતી."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"સંગ્રહ કરવા માટે વપરાયેલ છે કે જે આર્કાઇવ્ઝ નો પ્રકાર છેલ્લે વપરાયેલ હતુ (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+
+#: ../evolution/nemo-sendto.c:47
+msgid "_Send to..."
+msgstr "માં મોકલો (_S)..."
+
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:1
+msgid "Send files to remote devices, or people"
+msgstr "દૂરસ્થ ઉપકરણોમાં ફાઇલોને મોકલો, અથવા લોકો"
+
+#. the path to the shared library
+#: ../evolution/org-gnome-evolution-send-attachments-to.eplug.xml.h:3
+msgid "Send to..."
+msgstr "માં મોકલો..."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../pidgin_plugin/nemo-sendto-plugin.c:342
+msgid "Nemo Integration"
+msgstr "Nemo એકત્રિકરણ"
+
+#. name
+#. version
+#. summary
+#: ../pidgin_plugin/nemo-sendto-plugin.c:344
+#: ../pidgin_plugin/nemo-sendto-plugin.c:345
+msgid "Provides integration with Nemo"
+msgstr "Nemo સાથે એકત્રિકરણ પૂરુ પાડે છે"
+
+#: ../src/nemo-nste.c:92 ../src/nemo-nste.c:97
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "માં મોકલો..."
+
+#: ../src/nemo-nste.c:93
+msgid "Send file by mail, instant message..."
+msgstr "મેઇલ દ્રારા ફાઇલને મોકલો, તત્કાલ સંદેશ..."
+
+#: ../src/nemo-nste.c:98
+msgid "Send files by mail, instant message..."
+msgstr "મેઇલ દ્દારા ફાઇલોને મોકલો, તત્કાલ સંદેશ..."
+
+#: ../src/nemo-sendto-command.c:533
+msgid "Files"
+msgstr "ફાઇલો"
+
+#: ../src/nemo-sendto-command.c:737
+#, c-format
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "વિકલ્પો તરીકે પસાર કરવા માટે URIs અથવા ફાઇલનામો આશા રાખે છે\n"
+
+#: ../src/nemo-sendto-command.c:754
+msgid "Nemo Sendto"
+msgstr "Nemo Sendto"
+
+#: ../src/nemo-sendto-command.c:758
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "આદેશ-વાક્ય વિકલ્પોને પદચ્છેદન કરી શકાયુ નહિં: %s\n"
+
+#: ../src/nemo-sendto-command.c:773
+msgid "Could not load any plugins."
+msgstr "કોઇપણ પ્લગઇનોને લોડ કરી શકાયુ નહિં."
+
+#: ../src/nemo-sendto-command.c:776
+msgid "Please verify your installation"
+msgstr "મહેરબાની કરીને તમારા સ્થાપનને ચકાસો"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>સંકોચાવુ</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>લક્ષ્ય</b>"
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "આ તરીકે મોકલો (_a):"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "માં પેક થયેલ ને મોકલો (_p):"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "માં મોકલો (_o):"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "મોકલો (_S)"
+
+#: ../src/plugins/bluetooth/bluetooth.c:448
+msgid "Programming error, could not find the device in the list"
+msgstr "પ્રોગ્રામીંગ ભૂલ, યાદીમાં ઉપકરણને શોધી શકાયુ નહિં"
+
+#: ../src/plugins/bluetooth/bluetooth.c:523
+#, c-format
+msgid "Obex Push file transfer unsupported"
+msgstr "Obex દબાણ ફાઇલ બિનઆધારભૂતને પરિવહન કરે છે"
+
+#: ../src/plugins/bluetooth/bluetooth.c:547
+msgid "Bluetooth (OBEX Push)"
+msgstr "બ્લુટુથ (OBEX દબાણ)"
+
+#: ../src/plugins/empathy/empathy.c:124
+msgid "The contact selected cannot receive files."
+msgstr "પસંદ થયેલ સંપર્કને ફાઇલો મેળવી શકાતી નથી."
+
+#: ../src/plugins/empathy/empathy.c:130
+msgid "The contact selected is offline."
+msgstr "પસંદ થયેલ સંપર્ક ઓફલાઇન છે."
+
+#: ../src/plugins/empathy/empathy.c:183 ../src/plugins/empathy/empathy.c:244
+msgid "No error message"
+msgstr "ભૂલ સંદેશ નથી"
+
+#: ../src/plugins/empathy/empathy.c:294
+msgid "Instant Message (Empathy)"
+msgstr "Instant Message (Empathy)"
+
+#: ../src/plugins/evolution/evolution.c:366
+msgid "Email"
+msgstr "ઇમેઇલ"
+
+#: ../src/plugins/evolution/e-contact-entry.c:152
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "સંપર્કને મેળવી શકાતુ નથી: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:185
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "સંપર્કને શોધી શકાયુ નહિં: %s"
+
+#: ../src/plugins/evolution/e-contact-entry.c:411
+msgid "Cannot create searchable view."
+msgstr "શોધ કરી શકાય તેવા દ્રશ્યને બનાવી શકાતુ નથી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:883
+msgid "Success"
+msgstr "સફળતા"
+
+#: ../src/plugins/evolution/e-contact-entry.c:885
+msgid "An argument was invalid."
+msgstr "દલીલ અયોગ્ય હતી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:887
+msgid "The address book is busy."
+msgstr "સરનામાં ચોપડી એ વ્યસ્ત છે."
+
+#: ../src/plugins/evolution/e-contact-entry.c:889
+msgid "The address book is offline."
+msgstr "સરનામાં ચોપડી એ ઓફલાઇન છે."
+
+#: ../src/plugins/evolution/e-contact-entry.c:891
+msgid "The address book does not exist."
+msgstr "સરનામાં ચોપડી અસ્તિત્વ ધરાવતી નથી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:893
+msgid "The \"Me\" contact does not exist."
+msgstr "\"Me\" સંપર્ક અસ્તિત્વ ધરાવતો નથી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:895
+msgid "The address book is not loaded."
+msgstr "સરનામાં ચોપડી એ લોડ થયેલ નથી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:897
+msgid "The address book is already loaded."
+msgstr "સરનામાં ચોપડી એ પહેલેથી જ લોડ થયેલ છે."
+
+#: ../src/plugins/evolution/e-contact-entry.c:899
+msgid "Permission was denied when accessing the address book."
+msgstr "પરવાનગી રદ કરેલ છે જ્યારે સરનામાંની ચોપડીનો પ્રવેશ કરી રહ્યા હોય ત્યારે."
+
+#: ../src/plugins/evolution/e-contact-entry.c:901
+msgid "The contact was not found."
+msgstr "સંપર્ક શોધાયુ ન હતુ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:903
+msgid "This contact ID already exists."
+msgstr "સંપર્ક ID પહેલેથી જ અસ્તિત્વ ધરાવે છે."
+
+#: ../src/plugins/evolution/e-contact-entry.c:905
+msgid "The protocol is not supported."
+msgstr "પ્રોટોકોલ આધારભૂત નથી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:907
+msgid "The operation was cancelled."
+msgstr "ક્રિયા રદ થયેલ હતી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:909
+msgid "The operation could not be cancelled."
+msgstr "ક્રિયાને રદ કરી શકાઇ નહિં."
+
+#: ../src/plugins/evolution/e-contact-entry.c:911
+msgid "The address book authentication failed."
+msgstr "સરનામાં ચોપડી સત્તાધિકરણ નિષ્ફળ."
+
+#: ../src/plugins/evolution/e-contact-entry.c:913
+msgid "Authentication is required to access the address book and was not given."
+msgstr "સરનામાં ચોપડીનાં પ્રવેશ માટે સત્તાધિરણની જરૂર છે અને આપેલ ન હતી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:915
+msgid "A secure connection is not available."
+msgstr "સુરક્ષા જોડાણ એ ઉપલ્બધ નથી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:917
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "CORBA ભૂલ ઉત્પન્ન થયેલ છે જ્યારે સરનામાંની ચોપડીનો પ્રવેશ કરી રહ્યા હોય ત્યારે."
+
+#: ../src/plugins/evolution/e-contact-entry.c:919
+msgid "The address book source does not exist."
+msgstr "સરનામાં ચોપડી સ્ત્રોત અસ્તિત્વ ધરાવતુ નથી."
+
+#: ../src/plugins/evolution/e-contact-entry.c:921
+#: ../src/plugins/evolution/e-contact-entry.c:924
+msgid "An unknown error occurred."
+msgstr "અજ્ઞાત ભૂલ ઉદ્ભવી."
+
+#: ../src/plugins/gajim/gajim.c:403
+msgid "Unable to send file"
+msgstr "ફાઇલને મોકલવાનું અસમર્થ"
+
+#: ../src/plugins/gajim/gajim.c:404
+msgid "There is no connection to gajim remote service."
+msgstr "gajim દૂરસ્થ સેવાને જોડાણ નથી."
+
+#: ../src/plugins/gajim/gajim.c:428 ../src/plugins/gajim/gajim.c:467
+msgid "Sending file failed"
+msgstr "ફાઇલને મોકલવામાં નિષ્ફળ"
+
+#: ../src/plugins/gajim/gajim.c:429
+msgid "Recipient is missing."
+msgstr "પ્રાપ્તકર્તા ગુમ થયેલ છે."
+
+#: ../src/plugins/gajim/gajim.c:467
+msgid "Unknown recipient."
+msgstr "અજ્ઞાત પ્રાપ્તકર્તા."
+
+#: ../src/plugins/gajim/gajim.c:489
+msgid "Instant Message (Gajim)"
+msgstr "Instant Message (Gajim)"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:73
+#: ../src/plugins/nemo-burn/nemo-burn.c:88
+msgid "New CD/DVD"
+msgstr "નવું CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:86
+msgid "Existing CD/DVD"
+msgstr "હાલની CD/DVD"
+
+#: ../src/plugins/nemo-burn/nemo-burn.c:165
+msgid "CD/DVD Creator"
+msgstr "CD/DVD બનાવનાર"
+
+#: ../src/plugins/pidgin/pidgin.c:353
+msgid "Instant Message (Pidgin)"
+msgstr "Instant Message (Pidgin)"
+
+#: ../src/plugins/removable-devices/removable-devices.c:224
+msgid "Removable disks and shares"
+msgstr "દૂર કરી શકાય તેવી ડિસ્કો અને હિસ્સાઓ"
+
+#: ../src/plugins/upnp/upnp.c:301
+msgid "UPnP Media Server"
+msgstr "UPnP મીડિયા સર્વર"
+

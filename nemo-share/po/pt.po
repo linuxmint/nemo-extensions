@@ -1,0 +1,186 @@
+# nemo-share's Portuguese translation.
+# Copyright © 2007 nemo-share
+# This file is distributed under the same license as the nemo-share package.
+# André Neves <drakferion@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.20\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-23 00:00+0000\n"
+"PO-Revision-Date: 2007-11-22 23:45+0000\n"
+"Last-Translator: André Neves <drakferion@gmail.com>\n"
+"Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nemo-share.c:129
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to "
+"share it"
+msgstr ""
+"O Nemo precisa de adicionar algumas permissões à sua pasta \"%s\" por "
+"forma a poder partilhá-la"
+
+#: ../src/nemo-share.c:137
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder "
+"automatically?"
+msgstr ""
+"A pasta \"%s\" precisa das seguintes permissões adicionais para poder ser "
+"partilhada:\n"
+"%s%s%sDeseja que o Nemo adicione estas permissões à pasta "
+"automaticamente?"
+
+#: ../src/nemo-share.c:141
+msgid "  - read permission by others\n"
+msgstr "  - permissões de leitura por outros\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - write permission by others\n"
+msgstr "  - permissões de escrita por outros\n"
+
+#: ../src/nemo-share.c:143
+msgid "  - execute permission by others\n"
+msgstr "  - permissões de execução por outros\n"
+
+#: ../src/nemo-share.c:147
+msgid "Add the permissions automatically"
+msgstr "Adicionar as permissões automaticamente"
+
+#: ../src/nemo-share.c:173
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "Não foi possível alterar as permissões da sua pasta \"%s\""
+
+#: ../src/nemo-share.c:444
+msgid "Share name is too long"
+msgstr "O nome de partilha é demasiado longo"
+
+#: ../src/nemo-share.c:478
+msgid "The share name cannot be empty"
+msgstr "O nome de partilha não pode estar vazio"
+
+#: ../src/nemo-share.c:491
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Erro ao obter informação de partilha: %s"
+
+#: ../src/nemo-share.c:501
+msgid "Another share has the same name"
+msgstr "Existe outra partilha com o mesmo nome"
+
+#: ../src/nemo-share.c:669
+msgid "There was an error while getting the sharing information"
+msgstr "Ocorreu um erro ao obter a informação de partilha"
+
+#: ../src/nemo-share.c:769
+msgid "Modify _Share"
+msgstr "_Alterar a Partilha"
+
+#: ../src/nemo-share.c:771
+msgid "Create _Share"
+msgstr "_Criar uma Partilha"
+
+#: ../src/nemo-share.c:1029
+msgid "Share"
+msgstr "Partilhar"
+
+# # msgstr "Partilha" ? Ver dois parágrafos mais à frente.
+#: ../src/nemo-share.c:1129
+msgid "Sharing Options"
+msgstr "Opções de Partilha"
+
+#: ../src/nemo-share.c:1130
+msgid "Share this Folder"
+msgstr "Partilhar esta Pasta"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s devolveu o sinal %d"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s falhou por uma razão desconhecida"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "'net usershare' devolveu o erro %d: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "'net usershare' devolveu o erro %d"
+
+#: ../src/shares.c:187
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "o resultado de 'net usershare' não está codificado em UTF-8 válido"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+msgid "Failed"
+msgstr "Falhou"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "testparm do Samba devolveu o sinal %d"
+
+#: ../src/shares.c:556
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "testparm do Samba falhou por um motivo desconhecido"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "testparm do Samba devolveu o erro %d: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "testparm do Samba devolveu o erro %d"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr ""
+"Incapaz de remover a partilha do caminho %s: esse caminho não está partilhado"
+
+#: ../src/shares.c:726
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"Não é possível alterar o caminho de uma partilha existente; remova primeiro "
+"a partilha antiga e depois adicione uma nova"
+
+#: ../interfaces/share-dialog.glade.in.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Partilha de Pastas</b></big>"
+
+#: ../interfaces/share-dialog.glade.in.h:2
+msgid "Co_mment:"
+msgstr "Co_mentário:"
+
+#: ../interfaces/share-dialog.glade.in.h:3
+msgid "Share _name:"
+msgstr "_Nome da partilha:"
+
+#: ../interfaces/share-dialog.glade.in.h:4
+msgid "Share this _folder"
+msgstr "Partil_har esta pasta"
+
+#: ../interfaces/share-dialog.glade.in.h:5
+msgid "_Allow other people to write in this folder"
+msgstr "_Permitir que outras pessoas escrevam nesta pasta"
+
+#: ../interfaces/share-dialog.glade.in.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "Acesso de _visitante (para pessoas sem uma conta de utilizador)"

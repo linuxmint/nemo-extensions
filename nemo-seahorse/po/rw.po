@@ -1,0 +1,579 @@
+# translation of seahorse to Kinyarwanda.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the seahorse package.
+# Steve Murphy <murf@e-tools.com>, 2005
+# Steve performed initial rough translation from compendium built from translations provided by the following translators:
+# Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
+# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+# Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+# Carole Karema <karemacarole@hotmail.com>, 2005.
+# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.
+# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005..
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seahorse HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-07 11:29+0200\n"
+"PO-Revision-Date: 2005-03-31 20:55-0700\n"
+"Last-Translator: Steve Murphy <murf@e-tools.com>\n"
+"Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
+"Language: rw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"ULL NAME <EMAIL@ADDRESS>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../nemo-ext/nemo-seahorse.c:158
+#, fuzzy
+msgid "Encrypt..."
+msgstr "Shyiraho Umutekano"
+
+#: ../nemo-ext/nemo-seahorse.c:159
+#, fuzzy
+msgid "Encrypt (and optionally sign) the selected file"
+msgid_plural "Encrypt the selected files"
+msgstr[0] "i Byahiswemo"
+msgstr[1] "i Byahiswemo"
+
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_PLUS_MINUS.text
+#: ../nemo-ext/nemo-seahorse.c:165
+#, fuzzy
+msgid "Sign"
+msgstr "IKIMENYETSO"
+
+#: ../nemo-ext/nemo-seahorse.c:166
+#, fuzzy
+msgid "Sign the selected file"
+msgid_plural "Sign the selected files"
+msgstr[0] "i Byahiswemo Umwandiko"
+msgstr[1] "i Byahiswemo Umwandiko"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:1
+#, fuzzy
+msgid "<b>You have selected multiple files or folders</b>"
+msgstr "<B Byahiswemo Igikubo Idosiye Cyangwa B"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:2
+#, fuzzy
+msgid ""
+"Because the files are located remotely, each file will be encrypted "
+"separately."
+msgstr "i Idosiye IDOSIYE Bishunzwe:"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:3
+msgid "Encrypt Multiple Files"
+msgstr ""
+
+#: ../tool/seahorse-multi-encrypt.xml.h:4
+#, fuzzy
+msgid "Encrypt each file separately"
+msgstr "IDOSIYE"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:5
+#, fuzzy
+msgid "Encrypt packed together in a package"
+msgstr "in a"
+
+#: ../tool/seahorse-multi-encrypt.xml.h:6
+msgid "Package Name:"
+msgstr ""
+
+#: ../tool/seahorse-multi-encrypt.xml.h:7
+msgid "Packaging:"
+msgstr ""
+
+#: ../tool/seahorse-multi-encrypt.xml.h:8
+#, fuzzy
+msgid "encrypted-package"
+msgstr "Bishunzwe:"
+
+#: ../tool/seahorse-notification.c:580 ../tool/seahorse-notification.c:605
+#, fuzzy
+msgid "Key Imported"
+msgid_plural "Keys Imported"
+msgstr[0] "Urufunguzo"
+msgstr[1] "Urufunguzo"
+
+#: ../tool/seahorse-notification.c:584 ../tool/seahorse-notification.c:604
+#, fuzzy, c-format
+msgid "Imported %i key"
+msgid_plural "Imported %i keys"
+msgstr[0] "Urufunguzo"
+
+#: ../tool/seahorse-notification.c:586
+#, fuzzy, c-format
+msgid "Imported a key for"
+msgid_plural "Imported keys for"
+msgstr[0] "Urufunguzo"
+msgstr[1] "Urufunguzo"
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:623
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>expired</b></i> on %s."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:624
+msgid "Invalid Signature"
+msgstr ""
+
+#: ../tool/seahorse-notification.c:630
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s <b>Expired</b>."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:631
+msgid "Expired Signature"
+msgstr ""
+
+#: ../tool/seahorse-notification.c:637
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>Revoked</b></i> on %s."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:638
+msgid "Revoked Signature"
+msgstr ""
+
+#. TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate.
+#: ../tool/seahorse-notification.c:644
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:645
+#, fuzzy
+msgid "Good Signature"
+msgstr "%s:a Isinya"
+
+#: ../tool/seahorse-notification.c:650
+#, fuzzy
+msgid "Signing key not in keyring."
+msgstr "%s:Urufunguzo OYA in Urufunguzo Kuvuza Inzogera"
+
+#: ../tool/seahorse-notification.c:651
+msgid "Unknown Signature"
+msgstr ""
+
+#: ../tool/seahorse-notification.c:655
+msgid "Bad or forged signature. The signed data was modified."
+msgstr ""
+
+#: ../tool/seahorse-notification.c:656
+#, fuzzy
+msgid "Bad Signature"
+msgstr "%s:<B B Isinya"
+
+#: ../tool/seahorse-notification.c:664
+#, fuzzy
+msgid "Couldn't verify signature."
+msgstr "IKIMENYETSO Umwandiko"
+
+#: ../tool/seahorse-notify.xml.h:1
+msgid "Notification Messages"
+msgstr ""
+
+#: ../tool/seahorse-passphrase.c:200
+msgid "Passphrase"
+msgstr ""
+
+#: ../tool/seahorse-passphrase.c:203
+msgid "Password:"
+msgstr ""
+
+#. The second and main entry
+#: ../tool/seahorse-passphrase.c:267
+#, fuzzy
+msgid "Confirm:"
+msgstr "Emeza"
+
+#: ../tool/seahorse-passphrase.c:355
+#, fuzzy, c-format
+msgid "Wrong passphrase."
+msgstr "Gishya"
+
+#: ../tool/seahorse-passphrase.c:359
+#, fuzzy, c-format
+msgid "Enter new passphrase for '%s'"
+msgstr "Gishya kugirango"
+
+#: ../tool/seahorse-passphrase.c:361
+#, fuzzy, c-format
+msgid "Enter passphrase for '%s'"
+msgstr "kugirango"
+
+#: ../tool/seahorse-passphrase.c:364
+#, fuzzy
+msgid "Enter new passphrase"
+msgstr "Gishya"
+
+#: ../tool/seahorse-passphrase.c:366
+#, fuzzy
+msgid "Enter passphrase"
+msgstr "Gishya"
+
+#: ../tool/seahorse-pgp-encrypted.desktop.in.in.h:1
+#, fuzzy
+msgid "Decrypt File"
+msgstr "Idosiye"
+
+#: ../tool/seahorse-pgp-keys.desktop.in.in.h:1
+msgid "Import Key"
+msgstr ""
+
+#: ../tool/seahorse-pgp-signature.desktop.in.in.h:1
+msgid "Verify Signature"
+msgstr ""
+
+#: ../tool/seahorse-progress.xml.h:1
+msgid "Progress Title"
+msgstr ""
+
+#: ../tool/seahorse-tool.c:61
+#, fuzzy
+msgid "Import keys from the file"
+msgstr "Utubuto Bivuye i IDOSIYE"
+
+#: ../tool/seahorse-tool.c:63
+#, fuzzy
+msgid "Encrypt file"
+msgstr "IDOSIYE"
+
+#: ../tool/seahorse-tool.c:65
+#, fuzzy
+msgid "Sign file with default key"
+msgstr "IDOSIYE Na: Mburabuzi Urufunguzo"
+
+#: ../tool/seahorse-tool.c:67
+#, fuzzy
+msgid "Encrypt and sign file with default key"
+msgstr "Na IKIMENYETSO IDOSIYE Na: Mburabuzi Urufunguzo"
+
+#: ../tool/seahorse-tool.c:69
+#, fuzzy
+msgid "Decrypt encrypted file"
+msgstr "Bishunzwe: IDOSIYE"
+
+#: ../tool/seahorse-tool.c:71
+#, fuzzy
+msgid "Verify signature file"
+msgstr "Isinya IDOSIYE"
+
+#: ../tool/seahorse-tool.c:73
+#, fuzzy
+msgid "Read list of URIs on standard in"
+msgstr "Urutonde Bya ku Bisanzwe in"
+
+#: ../tool/seahorse-tool.c:75
+msgid "file..."
+msgstr ""
+
+#: ../tool/seahorse-tool.c:169
+msgid "Choose Recipients"
+msgstr ""
+
+#: ../tool/seahorse-tool.c:234 ../tool/seahorse-tool.c:347
+#, fuzzy
+msgid "Couldn't load keys"
+msgstr "Kongeramo"
+
+#: ../tool/seahorse-tool.c:252
+#, fuzzy, c-format
+msgid "Choose Encrypted File Name for '%s'"
+msgstr "Idosiye kugirango"
+
+#: ../tool/seahorse-tool.c:325
+msgid "Choose Signer"
+msgstr ""
+
+#: ../tool/seahorse-tool.c:367
+#, fuzzy, c-format
+msgid "Choose Signature File Name for '%s'"
+msgstr "Idosiye kugirango"
+
+#: ../tool/seahorse-tool.c:407
+#, fuzzy
+msgid "Import is complete"
+msgstr "Utubuto Bivuye i IDOSIYE"
+
+#: ../tool/seahorse-tool.c:440
+#, fuzzy
+msgid "Importing keys ..."
+msgstr "Utubuto"
+
+#: ../tool/seahorse-tool.c:470
+#, fuzzy
+msgid "Import Failed"
+msgstr "Utubuto"
+
+#: ../tool/seahorse-tool.c:471
+#, fuzzy
+msgid "Keys were found but not imported."
+msgstr "Byabonetse OYA cyavuye ahandi/ cyatumijwe"
+
+#: ../tool/seahorse-tool.c:494
+#, fuzzy, c-format
+msgid "Imported key"
+msgstr "Urufunguzo"
+
+#: ../tool/seahorse-tool.c:496
+#, fuzzy, c-format
+msgid "Imported %d key"
+msgid_plural "Imported %d keys"
+msgstr[0] "Urufunguzo"
+
+#. File to decrypt to
+#: ../tool/seahorse-tool.c:518
+#, fuzzy, c-format
+msgid "Choose Decrypted File Name for '%s'"
+msgstr "Idosiye kugirango"
+
+#: ../tool/seahorse-tool.c:575
+#, fuzzy, c-format
+msgid "Choose Original File for '%s'"
+msgstr "Idosiye kugirango"
+
+#.
+#. * TODO: What should happen with multiple files at this point.
+#. * The last thing we want to do is cascade a big pile of error
+#. * dialogs at the user.
+#.
+#: ../tool/seahorse-tool.c:648
+#, fuzzy, c-format
+msgid "No valid signatures found"
+msgstr "%s:a Isinya"
+
+#: ../tool/seahorse-tool.c:697
+msgid "File Encryption Tool"
+msgstr ""
+
+#: ../tool/seahorse-tool.c:713
+#, fuzzy
+msgid "Encrypting"
+msgstr "IDOSIYE"
+
+#: ../tool/seahorse-tool.c:714
+#, fuzzy, c-format
+msgid "Couldn't encrypt file: %s"
+msgstr "Shyiraho Umutekano"
+
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_PLUS_MINUS.text
+#: ../tool/seahorse-tool.c:722
+#, fuzzy
+msgid "Signing"
+msgstr "IKIMENYETSO"
+
+#: ../tool/seahorse-tool.c:723
+#, fuzzy, c-format
+msgid "Couldn't sign file: %s"
+msgstr "IKIMENYETSO"
+
+# filter/source\xsltdialog\xmlfiltertestdialog.src:DLG_XML_FILTER_TEST_DIALOG.FL_IMPORT.text
+#: ../tool/seahorse-tool.c:728
+#, fuzzy
+msgid "Importing"
+msgstr "Kuzana"
+
+#: ../tool/seahorse-tool.c:729
+#, fuzzy, c-format
+msgid "Couldn't import keys from file: %s"
+msgstr "Kuzana Utubuto Bivuye"
+
+#: ../tool/seahorse-tool.c:735
+#, fuzzy
+msgid "Decrypting"
+msgstr "Idosiye"
+
+#: ../tool/seahorse-tool.c:736
+#, fuzzy, c-format
+msgid "Couldn't decrypt file: %s"
+msgstr "Umwandiko"
+
+#: ../tool/seahorse-tool.c:741
+msgid "Verifying"
+msgstr ""
+
+#: ../tool/seahorse-tool.c:742
+#, fuzzy, c-format
+msgid "Couldn't verify file: %s"
+msgstr "Shyiraho Umutekano"
+
+#: ../tool/seahorse-tool-files.c:120
+msgid "Ace (.ace)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:121
+msgid "Ar (.ar)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:122
+msgid "Arj (.arj)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:129
+msgid "Ear (.ear)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:130
+msgid "Self-extracting zip (.exe)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:132
+msgid "Jar (.jar)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:133
+msgid "Lha (.lzh)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:135
+msgid "Rar (.rar)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:137
+msgid "Tar uncompressed (.tar)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:138
+msgid "Tar compressed with bzip (.tar.bz)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:139
+msgid "Tar compressed with bzip2 (.tar.bz2)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:140
+msgid "Tar compressed with gzip (.tar.gz)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:141
+msgid "Tar compressed with lzop (.tar.lzo)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:142
+msgid "Tar compressed with compress (.tar.Z)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:144
+msgid "War (.war)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:145
+msgid "Zip (.zip)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:146
+msgid "Zoo (.zoo)"
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:147
+msgid "7-Zip (.7z)"
+msgstr ""
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:327
+#, fuzzy, c-format
+msgid "You have selected %d file "
+msgid_plural "You have selected %d files "
+msgstr[0] "Byahiswemo IDOSIYE"
+
+#. TRANSLATOR: This string will become
+#. * "You have selected %d files and %d folders"
+#: ../tool/seahorse-tool-files.c:332
+#, fuzzy, c-format
+msgid "and %d folder"
+msgid_plural "and %d folders"
+msgstr[0] "Na Ububiko"
+
+#. TRANSLATOR: "%s%s" are "You have selected %d files and %d folders"
+#. * Swap order with "%2$s%1$s" if needed
+#: ../tool/seahorse-tool-files.c:337
+#, fuzzy, c-format
+msgid "<b>%s%s</b>"
+msgstr "<B B"
+
+#: ../tool/seahorse-tool-files.c:345
+#, fuzzy, c-format
+msgid "You have selected %d file"
+msgid_plural "You have selected %d files"
+msgstr[0] "Byahiswemo IDOSIYE"
+
+#: ../tool/seahorse-tool-files.c:350
+#, fuzzy, c-format
+msgid "You have selected %d folder"
+msgid_plural "You have selected %d folders"
+msgstr[0] "Byahiswemo Ububiko"
+
+#: ../tool/seahorse-tool-files.c:868
+msgid "Preparing..."
+msgstr ""
+
+#: ../tool/seahorse-tool-files.c:877 ../tool/seahorse-tool-files.c:900
+#, fuzzy
+msgid "Couldn't list files"
+msgstr "Kuzana Utubuto"
+
+#: ../tool/seahorse-tool-files.c:887 ../tool/seahorse-util.c:647
+#, fuzzy
+msgid "Couldn't package files"
+msgstr "Guhindura>> Itariki"
+
+#: ../tool/seahorse-util.c:173
+msgid "Decryption failed. You probably do not have the decryption key."
+msgstr ""
+
+# desktop/source\app\ssodlg.src:DLG_SSOLOGIN.text
+#: ../tool/seahorse-util.c:223
+#, fuzzy
+msgid "%Y-%m-%d"
+msgstr "%Y-%m-%d"
+
+#: ../tool/seahorse-util.c:642
+#, fuzzy
+msgid "Couldn't run file-roller"
+msgstr "Gukoresha IDOSIYE"
+
+#: ../tool/seahorse-util.c:648
+#, fuzzy
+msgid "The file-roller process did not complete successfully"
+msgstr "IDOSIYE OYA Byuzuye"
+
+#. Filter for PGP keys. We also include *.asc, as in many
+#. cases that extension is associated with text/plain
+#: ../tool/seahorse-util.c:708
+#, fuzzy
+msgid "All key files"
+msgstr "Urufunguzo Idosiye"
+
+# 146
+#: ../tool/seahorse-util.c:715 ../tool/seahorse-util.c:755
+msgid "All files"
+msgstr "amadosiye yose"
+
+#: ../tool/seahorse-util.c:748
+#, fuzzy
+msgid "Archive files"
+msgstr "Idosiye"
+
+#: ../tool/seahorse-util.c:777
+#, fuzzy
+msgid ""
+"<b>A file already exists with this name.</b>\n"
+"\n"
+"Do you want to replace it with a new file?"
+msgstr "<B A IDOSIYE Na: iyi Izina: B Kuri Gusimbura Na: a Gishya IDOSIYE"
+
+# offmgr/source\offapp\dialog\autocdlg.src:RID_OFA_AUTOCORR_DLG.1.RID_OFAPAGE_AUTOCORR_REPLACE.text
+#: ../tool/seahorse-util.c:780
+#, fuzzy
+msgid "_Replace"
+msgstr "Gusimbura"
+
+#: ../tool/seahorse-widget.c:365
+#, fuzzy, c-format
+msgid "Could not display help: %s"
+msgstr "OYA Kugaragaza Ifashayobora"

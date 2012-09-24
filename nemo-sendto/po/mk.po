@@ -1,0 +1,296 @@
+# translation of mk.po to Macedonian
+# translation of nemo-sendto.
+# Copyright (C) 2005 THE nemo-sendto'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-sendto package.
+#
+# <>, 2005.
+#  <>, 2005.
+# Arangel Angov <ufo@linux.net.mk>, 2006, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: mk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-20 14:12+0000\n"
+"PO-Revision-Date: 2008-03-23 21:56+0100\n"
+"Last-Translator: Arangel Angov <ufo@linux.net.mk>\n"
+"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../nst.schemas.in.h:1
+msgid "Last plugin used to send"
+msgstr "Последен додаток користен за испраќање"
+
+#: ../nst.schemas.in.h:2
+msgid "Last type of archive used"
+msgstr "Последен тип на користена архива"
+
+#: ../nst.schemas.in.h:3
+msgid ""
+"Used to store which plugin was used the last time files were sent using "
+"nemo-sendto."
+msgstr ""
+"Се користи за складирање на додатоците користени последен пат кога "
+"се испратени датотеки со помош на nemo-sendto."
+
+#: ../nst.schemas.in.h:4
+msgid ""
+"Used to store which type of archive was used the last time (0: zip, 1: tar."
+"gz, 2: tar.bz2)."
+msgstr ""
+"Се користи за складирање на типовите на архвивите кои што се користени последен пат "
+"(0: zip, 1: tar.gz, 2: tar.bz2)."
+
+#. type
+#. ui requirement
+#. flags
+#. dependencies
+#. priority
+#. id
+#: ../gaim_plugin/nemo-sendto-plugin.c:308
+#: ../pidgin_plugin/nemo-sendto-plugin.c:308
+msgid "Nemo Integration"
+msgstr "Интеграција со Nemo"
+
+#. name
+#. version
+#. summary
+#. name
+#. version
+#. summary
+#: ../gaim_plugin/nemo-sendto-plugin.c:310
+#: ../gaim_plugin/nemo-sendto-plugin.c:311
+#: ../pidgin_plugin/nemo-sendto-plugin.c:310
+#: ../pidgin_plugin/nemo-sendto-plugin.c:311
+msgid "Provides integration with Nemo"
+msgstr "Нуди интеграција со Nemo"
+
+#: ../src/nemo-nste.c:95 ../src/nemo-nste.c:100
+msgid "Send to..."
+msgstr "Испрати на..."
+
+#: ../src/nemo-nste.c:96
+msgid "Send file by mail, instant message..."
+msgstr "Испрати датотека преку пошта, инстант порака..."
+
+#: ../src/nemo-nste.c:101
+msgid "Send files by mail, instant message..."
+msgstr "Испрати датотеки преку пошта, инстант порака..."
+
+#: ../src/nemo-sendto-command.c:75
+msgid "Default folder to use"
+msgstr "Стандардна папка за користење"
+
+#: ../src/nemo-sendto-command.c:250
+msgid "You don't insert the package name"
+msgstr "Не го внесовте името на пакетот"
+
+#: ../src/nemo-sendto-command.c:511
+msgid "Files"
+msgstr "Датотеки"
+
+#: ../src/nemo-sendto-command.c:707
+msgid "Expects URIs or filenames to be passed as options\n"
+msgstr "Очекува адреси или имиња на датотеки да бидат пренесени како опции\n"
+
+#: ../src/nemo-sendto-command.c:724
+msgid "Nemo Sendto"
+msgstr "Nemo „Испрати до“"
+
+#: ../src/nemo-sendto-command.c:728
+#, c-format
+msgid "Could not parse command-line options: %s\n"
+msgstr "Не можам да ги парсирам опциите за командната линија: %s\n"
+
+#: ../src/nemo-sendto-command.c:743
+msgid "Could not load any plugins."
+msgstr "Не можам да вчитам додатоци."
+
+#: ../src/nemo-sendto-command.c:746
+msgid "Please verify your installation"
+msgstr "Ве молам проверете ја Вашата инсталација"
+
+#: ../src/nemo-sendto.glade.h:1
+msgid "<b>Compression</b>"
+msgstr "<b>Компресија</b>"
+
+#: ../src/nemo-sendto.glade.h:2
+msgid "<b>Destination</b>"
+msgstr "<b>Дестинација</b>"
+
+#: ../src/nemo-sendto.glade.h:3
+msgid "Send To..."
+msgstr "Испрати до..."
+
+#: ../src/nemo-sendto.glade.h:4
+msgid "Send _as:"
+msgstr "Испрати _како:"
+
+#: ../src/nemo-sendto.glade.h:5
+msgid "Send _packed in:"
+msgstr "Испрати _спакувано во"
+
+#: ../src/nemo-sendto.glade.h:6
+msgid "Send t_o:"
+msgstr "Испрати н_а:"
+
+#: ../src/nemo-sendto.glade.h:7
+msgid "_Send"
+msgstr "_Испрати"
+
+#: ../src/plugins/balsa.c:103
+msgid "Email (Balsa)"
+msgstr "Е-пошта (Balsa)"
+
+#: ../src/plugins/bluetooth.c:424
+msgid "Programming error, could not find the device in the list"
+msgstr "Програмерска грешка, не можам да го најдам уредот од листата"
+
+#: ../src/plugins/bluetooth.c:445
+msgid "Device does not support Obex File Transfer"
+msgstr "Уредот не поддржува Obex трансфер на датотеки"
+
+#: ../src/plugins/bluetooth.c:460
+msgid "Bluetooth (OBEX Push)"
+msgstr "Bluetooth (OBEX Push)"
+
+#: ../src/plugins/evolution.c:196
+msgid "Email"
+msgstr "Е-пошта"
+
+#: ../src/plugins/e-contact-entry.c:158
+#, c-format
+msgid "Cannot get contact: %s"
+msgstr "Не можам да го соберам контактот: %s"
+
+#: ../src/plugins/e-contact-entry.c:191
+#, c-format
+msgid "Could not find contact: %s"
+msgstr "Не можам да го најдам контактот: %s"
+
+#: ../src/plugins/e-contact-entry.c:417
+msgid "Cannot create searchable view."
+msgstr "Не можам да креирам пребарлив преглед."
+
+#: ../src/plugins/e-contact-entry.c:890
+msgid "Success"
+msgstr "Успешно"
+
+#: ../src/plugins/e-contact-entry.c:892
+msgid "An argument was invalid."
+msgstr "Невалиден аргумент."
+
+#: ../src/plugins/e-contact-entry.c:894
+msgid "The address book is busy."
+msgstr "Адресарот е зафатен."
+
+#: ../src/plugins/e-contact-entry.c:896
+msgid "The address book is offline."
+msgstr "Адресарот е офлајн."
+
+#: ../src/plugins/e-contact-entry.c:898
+msgid "The address book does not exist."
+msgstr "Адресарот не постои."
+
+#: ../src/plugins/e-contact-entry.c:900
+msgid "The \"Me\" contact does not exist."
+msgstr "Контактот „Јас“ не постои."
+
+#: ../src/plugins/e-contact-entry.c:902
+msgid "The address book is not loaded."
+msgstr "Адресарот не е вчитан."
+
+#: ../src/plugins/e-contact-entry.c:904
+msgid "The address book is already loaded."
+msgstr "Адресарот е веќе вчитан."
+
+#: ../src/plugins/e-contact-entry.c:906
+msgid "Permission was denied when accessing the address book."
+msgstr "Пристапот до адресарот е одбиен."
+
+#: ../src/plugins/e-contact-entry.c:908
+msgid "The contact was not found."
+msgstr "Контактот не е пронајден."
+
+#: ../src/plugins/e-contact-entry.c:910
+msgid "This contact ID already exists."
+msgstr "Идентификацијата за контактот веќе постои."
+
+#: ../src/plugins/e-contact-entry.c:912
+msgid "The protocol is not supported."
+msgstr "Протоколот не е поддржан."
+
+#: ../src/plugins/e-contact-entry.c:914
+msgid "The operation was cancelled."
+msgstr "Операцијата е откажана."
+
+#: ../src/plugins/e-contact-entry.c:916
+msgid "The operation could not be cancelled."
+msgstr "Операцијата не може да биде откажана."
+
+#: ../src/plugins/e-contact-entry.c:918
+msgid "The address book authentication failed."
+msgstr "Проверката за адресарот е неуспешна."
+
+#: ../src/plugins/e-contact-entry.c:920
+msgid "Authentication is required to access the address book and was not given."
+msgstr "Потребна е проверка за да му пристапите на адресарот."
+
+#: ../src/plugins/e-contact-entry.c:922
+msgid "A secure connection is not available."
+msgstr "Не е достапна безбедна врска."
+
+#: ../src/plugins/e-contact-entry.c:924
+msgid "A CORBA error occurred whilst accessing the address book."
+msgstr "Се појави CORBA грешка при при пристапувањето до адресарот."
+
+#: ../src/plugins/e-contact-entry.c:926
+msgid "The address book source does not exist."
+msgstr "Изворот на адресарот не постои."
+
+#: ../src/plugins/e-contact-entry.c:928 ../src/plugins/e-contact-entry.c:931
+msgid "An unknown error occurred."
+msgstr "Се појави непозната грешка."
+
+#: ../src/plugins/gaim.c:228
+msgid "Instant Message (Gaim)"
+msgstr "Инстант порака (Gaim)"
+
+#: ../src/plugins/gajim.c:402
+msgid "Unable to send file"
+msgstr "Не успеав да испратам датотека"
+
+#: ../src/plugins/gajim.c:403
+msgid "There is no connection to gajim remote service."
+msgstr "Нема постои врска до gajim."
+
+#: ../src/plugins/gajim.c:427 ../src/plugins/gajim.c:466
+msgid "Sending file failed"
+msgstr "Испраќањето на датотеката не успеа"
+
+#: ../src/plugins/gajim.c:428
+msgid "Recipient is missing."
+msgstr "Внесете го примачот."
+
+#: ../src/plugins/gajim.c:466
+msgid "Unknown recipient."
+msgstr "Непознат примач."
+
+#: ../src/plugins/gajim.c:488
+msgid "Instant Message (Gajim)"
+msgstr "Инстант пораки (Gajim)"
+
+#: ../src/plugins/pidgin.c:239
+msgid "Instant Message (Pidgin)"
+msgstr "Инстант порака (Pidgin)"
+
+#: ../src/plugins/sylpheed-claws.c:131
+msgid "Email (Claws Mail)"
+msgstr "Е-пошта (Claws Mail)"
+
+#: ../src/plugins/thunderbird.c:102
+msgid "Email (Thunderbird)"
+msgstr "Е-пошта (Thunderbird)"
+

@@ -1,0 +1,24 @@
+Source: nemo-share
+Section: gnome
+Priority: optional
+Maintainer: Chow Loong Jin <hyperair@ubuntu.com>
+Build-Depends: debhelper (>= 7.0.50),
+               autotools-dev,
+               intltool (>= 0.29),
+               libnemo-extension-dev (>= 2.10.0)
+Standards-Version: 3.9.1
+Homepage: http://gentoo.ovibes.net/nemo-share/
+
+Package: nemo-share
+Architecture: any
+Depends: nemo (>= 2.10),
+         samba-common (>= 3.0.27a),
+         samba-common-bin | samba-common (<< 2:3.4.0~pre2-1~0),
+         gnome-session-bin,
+         apturl,
+         ${shlibs:Depends}, ${misc:Depends}
+Enhances: nemo
+Suggests: samba (>= 3.0.27a)
+Description: Nemo extension to share folder using Samba
+ Nemo Share allows you to quickly share a folder from
+ the GNOME Nemo file manager without requiring root access.

@@ -1,0 +1,522 @@
+2009-10-11  Mișu Moldovan  <dumol@gnome.ro>
+
+	* configure.in: Added "ro" to ALL_LINGUAS
+
+2009-03-06  Sandeep Shedmake  <sshedmak@redhat.com>
+
+	* configure.in: Added "mr" to ALL_LINGUAS
+
+2009-02-20  Priit Laes <plaes@plaes.org>
+
+	* configure.in: Added "et" to ALL_LINGUAS
+
+2008-12-21  Andre Klapper  <a9016009@gmx.de>
+
+	* configure.in: Added "de" to ALL_LINGUAS (Thanks, Kenneth!)
+
+2008-12-21  Kenneth Nielsen  <k.nielsen81@gmail.com>
+
+	* configure.in: Added "da" to ALL_LINGUAS
+
+2008-10-23  Andre Klapper  <a9016009@gmx.de>
+
+        * configure.in: Added ast to ALL_LINGUAS on behalf of Mikel González.
+
+2008-10-07  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Added 'nb' to ALL_LINGUAS.
+
+2008-05-17  Yair Hershkovitz  <yairhr@gmail.com>
+
+	* configure.in: Added 'he' to ALL_LINGUAS.
+
+2008-04-09  Petr Kovar  <pknbe@volny.cz>
+
+	* configure.in: Added cs to ALL_LINGUAS.
+
+2008-03-14  Andre Klapper  <a9016009@gmx.de>
+
+	* configure.in: Added missing Swedish (sv) to ALL_LINGUAS.
+
+2008-03-09  Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>
+
+        * configure.in: Added "zh_HK" "zh_TW" to ALL_LINGUAS.
+
+2008-03-03  JP Rosevear  <jpr@novell.com>
+
+	* configure.in: Check for nemo extension dir
+
+	* src/Makefile.am: install nemo extension to directory based
+	on package config file
+
+2008-01-11  Changwoo Ryu  <cwryu@debian.org>
+
+	* configure.in: Added 'ko' to ALL_LINGUAS.
+
+2007-11-22  Duarte Loreto <happyguy_pt@hotmail.com>
+
+	* configure.in: Added Portuguese (pt) to ALL_LINGUAS.
+
+2007-11-16  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
+
+	* configure.in: Added 'gl' to ALL_LINGUAS.
+
+2007-10-14  Yannig Marchegay  <yannig@marchegay.org>
+
+	* configure.in: Added 'oc' to ALL_LINGUAS.
+
+2007-09-22  Sebastien Estienne <sebastien.estienne@gmail.com>
+
+	* A patch from Edward Catmur to implements a checkbox and keyfile 
+	entry to set whether guest access is allowed on a particular share
+
+2007-08-13  Jorge Gonzalez <jorgegonz@svn.gnome.org>
+
+        * configure.in: Added 'es' (Spanish) to ALL_LINGUAS.
+
+2007-08-11  Inaki Larranaga Murgoitio  <dooteo@zundan.com>
+
+        * configure.in: Added 'eu' (Basque) to ALL_LINGUAS.
+
+2007-05-21  Jordi Mas <jmas@softcatala.org>
+
+	* configure.in: Added Catalan to ALL_LINGUAS
+
+2007-05-16  David Lodge <dave@cirt.net>
+
+	* configure.in: Added en_GB to ALL_LINGUAS
+
+2007-04-03  Pema Geyleg <pema.geyleg@gmail.com>
+
+	* dz.po: Updated dzongkha translation.
+
+2006-06-14  Federico Mena Quintero  <federico@novell.com>
+
+	Fix https://bugzilla.novell.com/show_bug.cgi?id=183413:
+
+	* src/nemo-share.c (PropertyPage): Add a "was_writable"
+	field.  We'll use this to know if we need to change the folder's
+	permissions once share gets modified:  we want to be able to
+	remove write permission as soon as possible if the share gets
+	modified to be read-only.
+	(create_property_page): Set page->was_writable.
+	(NEED_ALWAYS_MASK, NEED_IF_WRITABLE_MASK, NEED_ALL_MASK): New
+	macros for the sets of permissions that we may need to change in
+	the usershared folder.
+	(remove_from_saved_permissions): New function.  Removes a subset
+	of permissions from the ones we had saved previously.
+	(restore_write_permissions): New helper function.
+	(restore_saved_permissions): Use remove_from_saved_permissions()
+	with NEED_ALL_MASK so that we remove all the permissions that we
+	added previously.
+	(property_page_commit): If the page is no longer writable, restore
+	the write permissions that we added.
+
+2006-06-08  Federico Mena Quintero  <federico@novell.com>
+
+	Fix https://bugzilla.novell.com/show_bug.cgi?id=181811:
+
+	* src/shares.c (samba_configuration_supports_guest_ok): New
+	function.  Calls "testparm -s --parameter-name='usershare allow
+	guests'" to see if Samba is configured to support "guest_ok=y"
+	when calling "net usershare".
+	(add_share): Call samba_configuration_supports_guest_ok(), and
+	then add "guest_ok=y" to the "net usershare" command line if
+	appropriate.
+
+	* src/nemo-share.c (confirm_sharing_permissions): For
+	read-only usershares, we need go+rx permissions on the shared
+	folder.  For writable usershares, we also need go+w.  Check the
+	group permissions instead of just the other ones.
+	(message_confirm_missing_permissions): Check the group permissions
+	as well as the other permissions.
+	(save_changed_permissions): Save the mask of needed permissions in
+	a single key, instead of using three separate keys for r/w/x.
+	(remove_permissions): Use a mask of needed permissions rather than
+	individual flags.
+	(restore_saved_permissions): Likewise.  Also, read the octal
+	string that was saved in save_changed_permissions().
+
+2006-05-03  Federico Mena Quintero  <federico@novell.com>
+
+	Fix https://bugzilla.novell.com/show_bug.cgi?id=170212 - restore
+	the permissions of folders when unsharing them if we had to modify
+	them.
+
+	* src/nemo-share.c (save_changed_permissions): New function;
+	creates a GKeyFile in
+	~/.gnome2/nemo-share-modified-permissions to save a list of
+	the folders for which we had to add permissions.
+	(restore_saved_permissions): New function; the counterpart to
+	restore_saved_permissions().  Restores the permissions of a
+	directory.
+	(confirm_sharing_permissions): Call save_changed_permissions()
+	after chmod() succeeds.  Return an enum rather than a boolean.
+	(property_page_commit): Call restore_saved_permissions() if we are
+	unsharing a folder, or if we failed to share the folder.
+
+2006-02-21  Federico Mena Quintero  <federico@novell.com>
+
+	* configure.in: Remove the requirements for d-bus and libdaemon.
+	Removed the subdirectories we don't need anymore.
+
+	* src/Makefile.am: Remove the smbshared entries; we only need the
+	extension's .so now.
+
+	* Makefile.am (SUBDIRS): Removed the dbus directory; we don't
+	install anything from there anymore.
+
+	* src/nemo-share.h: Removed d-bus includes.
+
+	* src/nemo-share.c (property_page_commit): Oops, fix reversed
+	return value when the user cancels the operation during the
+	permissions check.
+	(message_confirm_missing_permissions): Set the default response to
+	the "accept" button.
+
+2006-02-21  Federico Mena Quintero  <federico@novell.com>
+
+	* src/nemo-share.c (confirm_sharing_permissions): Renamed from
+	check_sharing_permissions().  Now we let the user cancel the operation.
+	(message_confirm_missing_permissions): Renamed from
+	message_missing_permissions().  Now we present a confirmation
+	dialog instead of an information one.
+	(property_page_commit): Don't do anything if the user decides he
+	doesn't want us to change his folder's permissions.
+
+2006-02-20  Federico Mena Quintero  <federico@novell.com>
+
+	* src/nemo-share.c (property_page_commit): Check that the
+	folder we are trying to share has enough "other" permissions.
+	Fixes https://bugzilla.novell.com/show_bug.cgi?id=149615
+	(check_sharing_permissions): New function.
+
+	* src/shares.c (net_usershare_run): Return an error when our
+	spawned command exits with a signal; we were returning success in
+	this case with an empty GKeyFile, which the caller doesn't like.
+
+2006-02-06  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c (net_usershare_run): Oops, fix a printf format.
+	Fixes https://bugzilla.novell.com/show_bug.cgi?id=147065
+
+2006-01-26  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c (net_usershare_run): Oops, don't propagate an error
+	when there wasn't one.
+
+	* interfaces/share-dialog.glade.in: Turn on word wrapping in the
+	label_status widget; make it left-justified, and selectable.
+
+	* src/nemo-share.c (property_page_commit): Return a boolean
+	success code.
+	(button_apply_clicked_cb): Don't close the standalone window if we
+	fail to commit the page.  This lets the user see the error message.
+
+2006-01-19  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c: Add a bunch of debug logging code, enabled with
+	#ifdef VERBOSE.
+
+	* src/nemo-share.c (share_this_folder_callback): Set the
+	page->standalone_window.
+	(PropertyPage): Add a standalone_window field.
+	(button_apply_clicked_cb): Destroy the standalone_window if we
+	have it.
+	(property_page_commit): Oops, pass a NULL ShareInfo to
+	shares_modify_share() if we want to remove a share.
+
+2006-01-19  Federico Mena Quintero  <federico@ximian.com>
+
+	Finish the code for "net usershare add -l".  This makes "net
+	usershare" print back the info for the modified share; we use this
+	possibly-modified info to synchronize our view of the available
+	shares, since it is the canonical info, instead of assuming that
+	what we passed to "net usershare" is the canonical info.
+
+	* src/shares.c (replace_shares_from_key_file): New function; takes
+	a GKeyFile and replaces the corresponding ShareInfo structures in
+	our hashes.
+	(refresh_shares): Simply use replace_shares_from_key_file().  Free
+	the goddamn key_file; we were leaking it.
+	(add_key_group_to_hashes): Remove old ShareInfo structures from
+	the hashes if they have the same share name or path as the ones
+	that come in the key file group.
+	(add_share): Use replace_shares_from_key_file(), since we use "net
+	usershare -l" now to get back the modified share info.
+
+	* src/nemo-share.c (property_page_check_sensitivity): If
+	"share this folder" is enabled, also enable the apply button if
+	the folder was not initially shared (i.e. enable it not only if
+	the rest of the property page is dirty).
+
+2006-01-19  Federico Mena Quintero  <federico@ximian.com>
+
+	Fine-tune the explicit-apply code.
+
+	* src/nemo-share.c (create_property_page): Turn on underlining
+	in the apply button label, and set its image explicitly.
+	(nemo_share_get_file_items): make the context menu item be
+	"Sharing Options" instead of just "Share".
+	(create_property_page): Oops, restore the "toggled" callback for
+	the share/don't whare checkbutton.
+	(on_checkbutton_share_folder_toggled): Simply call
+	property_page_set_sensitivity(); remove the instant-apply code.
+	(left_share_comment_text_entry): Removed unused function.
+	(modify_share_comment_text_entry): Removed unused function.
+	(modify_share_name_text_entry): Removed the instant-apply code.
+	(left_share_name_text_entry): Removed unused function.
+	(on_checkbutton_share_rw_ro_toggled): Removed unused function.
+	(create_property_page): Removed the instant-apply code.
+	(PropertyPage): Add a was_initially_shared field.  We use this to
+	know when to enable/disable the apply button.  Add an is_dirty
+	field to know when the other fields have changed.
+	(create_property_page): Set page->was_initially_shared
+	appropriately.
+	(modify_share_name_text_entry): Turn on page->is_dirty and call
+	property_page_check_sensitivity().
+	(modify_share_comment_text_entry): Likewise.
+	(on_checkbutton_rw_ro_toggled): Likewise; in addition, call
+	property_page_check_sensitivity().
+	(property_page_set_controls_sensitivity): Renamed from
+	property_page_set_sensitivity().
+	(property_page_check_sensitivity): New function; sets the
+	sensitivity of *all* the widgets based on the state of the
+	property page.
+	(on_checkbutton_share_folder_toggled): Simply use
+	property_page_check_sensitivity().
+
+2006-01-19  Federico Mena Quintero  <federico@ximian.com>
+
+	* debug-net-usershare (add_share): Add a want_echo argument.
+	(toplevel): if the user specifies "add -l", pass want_echo=True to
+	add_share().
+	(add_share): Make the sharename lowercase, like "net usershare" does.
+	(delete_share): Likewise.
+
+	* src/nemo-share.c (create_property_page): Set the label of
+	the apply button as appropriate: "Create Share" / "Modify Share".
+
+	* interfaces/share-dialog.glade.in: Oops, show the Cancel dialog
+	by default; we'll hide it in the code as appropriate.  Fix the
+	capitalization of all the labels.
+
+2006-01-18  Federico Mena Quintero  <federico@ximian.com>
+
+	Make the standalone dialog and the property page explicit-apply
+	instead of instant-apply.
+
+	* interfaces/share-dialog.glade.in: Make the bottom separator
+	invisible.  Change the button's label to "Write changes to share";
+	add a Cancel button for use with the standalone dialog.  Add
+	underlined mnemonics.
+
+	* src/shares.c (add_share): Use "net usershare add -l" to have it
+	print back the canonicalized info for the share.
+	(add_key_group_to_hashes): Use add_share_info_to_hashes() instead
+	of adding the ShareInfo by hand.
+
+	* src/nemo-share.c (get_share_info_for_file_info): Do not
+	assert that the share_info we get back exist; there's a race
+	condition in that the share could be removed between the time the
+	caller learns about it and the time we query for it.
+	(PropertyPage): Added fields for button_cancel and button_apply.
+	(create_property_page): Load the "button_cancel" and
+	"button_apply" widgets.
+	(create_property_page): Do not connect to "toggled" on the check
+	buttons; this won't be instant-apply.  Do not connect to "changed"
+	on the comment entry.
+	(on_checkbutton_share_rw_ro_toggled): #if-ed out
+	(on_checkbutton_share_folder_toggled): #if-ed out
+	(nemo_share_get_property_pages): Hide the Cancel button.
+	(button_callback): Removed.
+	(share_this_folder_callback): Connect to the Cancel button so that
+	it destroys the standalone sharing window.
+	(create_property_page): Connect to button_apply.
+	(button_apply_clicked_cb): New callback; just commits the property
+	page.
+
+2006-01-18  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/nemo-share.c (NETWORK_SHARE_PREFIX): Ahem, I missed one
+	slash in "network:///".
+	(get_share_info_for_file_info): New function.  This is intended to
+	be the master "is this NemoFileInfo worthy of consideration" function.
+	(file_get_share_status_file): Simply use
+	get_share_info_for_file_info() and get_share_status_and_free_share_info().
+	(nemo_share_get_property_pages): Use
+	get_share_info_for_file_info() instead of duplicating the code
+	that checks for shareability.
+	(nemo_share_get_file_items): Likewise.
+	(file_get_share_status): Removed.
+
+	* src/nemo-share.h: Removed prototype for file_get_share_status().
+
+2006-01-18  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/nemo-share.c (file_get_share_status_file): Match the
+	file's URI against the "network://share-" prefix from gnome-vfs's
+	network method, and get the info for the corresponding share name.
+	(get_share_status_share_name): New helper function.
+	(get_share_status_and_free_share_info): New helper function.
+	(file_get_share_status): Use get_share_status_and_free_share_info().
+
+2006-01-17  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c (refresh_shares): To list the info for all the
+	shares we need "net usershare info", not "net usershare list".
+	The latter only lists the share names.
+
+	* debug-net-usershare (command): Likewise; use "info" instead of
+	"list" to print the full info for all the shares.
+
+2006-01-16  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c (net_usershare_run): Use different printf
+	formats depending on whether we got an empty error string from
+	"net usershare".
+
+	* src/shares.c (DEBUG_SHARES): #undef this; the code seems to work.
+
+	* src/shares.c (net_usershare_run): Let the ret_key_file be NULL.
+	In that case, this won't attempt to parse the stdout of "net usershare".
+	(add_share): Don't expect a key file from net_usershare_run().
+	(modify_share): Implement in terms of remove_share() and add_share().
+	(remove_share): Implement in terms of "net usershare delete".
+
+2006-01-13  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c (net_usershare_run): Don't use G_SPAWN_FILE_AND_ARGV_ZERO.
+	(refresh_shares): g_message() if net_usershare_run() fails.
+	(add_share): Implement the call to net_usershare_run().
+	(add_share_info_to_hashes): New helper function.
+	(remove_share_info_from_hashes): New helper function.
+
+2006-01-12  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c (shares_get_share_info_for_path): Oops, fix the
+	GError assertion.
+	(shares_get_share_info_for_share_name): Likewise.
+	(add_key_group_to_hashes): Fix the sense of strcmp().
+
+	* src/shares.c (DEBUG_SHARES): Add a debugging flag so that we
+	call a stub program instead of "net usershare".
+
+2006-01-12  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c (add_key_group_to_hashes): New helper function to
+	get the share info out of a key file group.
+	(refresh_shares): Call net_usershare_run() to get a GKeyFile out
+	of "net usershare"; extract the share info groups from it.
+
+2006-01-11  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c (refresh_shares): Return a GError.
+	(refresh_if_needed): Likewise.
+	(shares_get_path_is_shared): Take a GError argument; make the
+	return value be a success condition.
+	(shares_get_share_info_for_path): Likewise.
+	(shares_get_share_name_exists): Likewise.
+	(shares_get_share_info_for_share_name): Likewise.
+	(shares_get_share_info_list): Likewise.
+	(throw_error_on_refresh): New debugging variable.
+	(shares_set_debug): Add an error_on_refresh argument.
+	(refresh_shares): Throw an error if throw_error_on_refresh is set.
+	(net_usershare_run): New function to run "net usershare" and parse
+	its output into a GKeyFile.
+
+	* src/nemo-share.c (property_page_share_name_is_valid): Pass a
+	GError to the shares.h functions.
+	(file_get_share_status): Likewise.
+	(create_property_page): Likewise.  Also, throw an error dialog if
+	we can't get the sharing info.
+
+2006-01-10  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.c (refresh_if_needed): New function; refreshes the
+	share list at a limited rate determined by an update counter and a
+	timestamp.
+	(refresh_shares): Took out of the #ifdef block along with its
+	helper functions.
+	(shares_get_path_is_shared): Call refresh_if_needed().
+	(shares_get_share_info_for_path): Likewise.
+	(shares_get_share_name_exists): Likewise.
+	(shares_get_share_info_for_share_name): Likewise.
+	(shares_modify_share): Likewise.
+	(shares_get_share_info_list): Likewise.
+
+2006-01-09  Federico Mena Quintero  <federico@ximian.com>
+
+	* src/shares.[ch]: New files with small API that maintains a
+	list of current shares and talks to Samba's utilities for
+	modifying user shares.
+
+	* src/nemo-share.h: Removed the prototypes for
+	nautilsu_share_get_type() and nemo_share_register_type(); they
+	are internal to nemo-share.c now.
+
+	* src/nemo-share.c: Removed the d-bus includes.  Removed the
+	global g_dbus.  Made all functions static except for the module
+	API.  Put the unfinished share-editor stuff in an "#if 0".
+	(nemo_module_initialize): Remove the d-bus initialization
+	code.  Pass NEMO_SHARE_LOCALEDIR to bindtextdomain().
+	(nemo_share_get_file_items): Don't copy the file list.
+	Instead, ref the fileinfo; release it when the menu item gets
+	destroyed by using g_object_set_data_full().
+	(get_fullpath_from_fileinfo): Assert that the fileinfo is not
+	NULL.
+	(PropertyPage): New PropertyPage structure, it holds all the
+	fields for a property page (widgets, xml, etc.).
+	(create_property_page): Create a PropertyPage and hook it to the
+	appropriate widgets, so that we can keep track of them easily, and
+	free their memory as appropriate.  Move all the widget fields from
+	here to that structure.
+	(free_property_page_cb): New callback; free the XML and other data
+	when the property page's main widget is destroyed.
+	(xml): Removed.  This should not be global!
+	(g_sharename): Removed.  This should not be global!
+	(create_property_page): Use g_filename_display_basename() to get
+	the fallback name from the path; g_path_get_basename() would give
+	us a string potentially not in UTF-8 encoding.
+	(create_property_page): Pass the PropertyPage to the callbacks,
+	instead of special-casing each one for strings or a file info.
+	Connect to "changed" on the text entries, not "focus-out-event".
+	(create_property_page): Connect the signal handlers *after*
+	setting the initial widget states so that they don't interfere
+	with the settings.
+	(create_property_page): Don't set the ->active field in toggle
+	buttons directly!  Call gtk_toggle_button_set_active().
+	(create_property_page): Compute the string length from the entry
+	with g_utf8_strlen(); not plain strlen().
+	(commit_property_page): New function; take a PropertyPage and
+	commit its properties to the shares_*() functions.
+	(on_checkbutton_share_rw_ro_toggled): Use commit_property_page().
+	(left_share_name_text_entry): Fix the prototype; this was taking
+	the wrong event type.  Now it gets passed a PropertyPage in the
+	user_data.  Use commit_property_page().
+	(property_page_set_sensitivity): New helper function.
+	(on_checkbutton_share_folder_toggled): Use
+	property_page_set_sensitivity().  Use property_page_commit().
+	(property_page_set_error): Renamed from set_error().  Take a
+	PropertyPage rather than a widget.  Take an error message; we'll
+	get this in the GError from the backend.
+	(property_page_set_warning): Renamed from set_warning().  Take a
+	PropertyPage rather than a widget.
+	(property_page_set_normal): Renamed form set_normal().  Take a
+	PropertyPage rather than a widget.
+	(validate_fields): New helper function.
+	(create_property_page): Connect to "changed" on the name entry
+	instead of "key-release-event".
+	(property_page_share_name_is_valid): New helper function.
+	(modify_share_name_text_entry): Use property_page_share_name_is_valid().
+	(left_share_name_text_entry): Likewise.
+	(modify_share_name_text_entry): New callback.
+	(file_get_share_status): Use the shares functions instead of the
+	d-bus backend.
+	(file_get_share_status_file): Remove redundant tests.
+
+	* src/Makefile.am (libnemo_share_la_CFLAGS): Don't define GNOMELOCALEDIR.
+
+	* configure.in: Add "AM_GLIB_DEFINE_LOCALEDIR(NEMO_SHARE_LOCALEDIR)".
+
+	* ChangeLog: Start the ChangeLog.
