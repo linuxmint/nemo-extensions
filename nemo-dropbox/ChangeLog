@@ -1,0 +1,79 @@
+This file isn't a real ChangeLog, we use our code commits for details on technical changes.
+This changelog is a list of logical changes and bug fixes.
+
+Version 0.7.1 (11/11/11):
+------------------------
+	* Use the correct location for the dropbox.desktop file
+	* Cleanup better on uninstall
+	* Support Fedora 16
+
+Version 0.7.0 (10/19/11):
+------------------------
+	* Verify signature of downloaded tarballs
+	* Fix version conflict with rst2man during build
+	* Add lansync CLI command to disable LAN sync (Requires Dropbox version 1.2.45 or later)
+	* Add support for oneiric
+	* Add support for Debian
+
+Version 0.6.9 (08/12/11):
+------------------------
+	* Fix inconsistency in licensing
+
+Version 0.6.8 (09/06/11):
+------------------------
+	* Supports Fedora 15
+	* Added a 256x256 dropbox icon
+
+Version 0.6.7 (11/04/10):
+------------------------
+	* Support Fedora 14
+	* Fix stop command never exiting
+	* Fix help text for autostart command
+	* Fix support for displaying or passing in unicode file/dir names in filestatus command
+
+Version 0.6.6 (10/25/10):
+------------------------
+	* Fix slowdown with certain commands (ls, exclude).
+
+Version 0.6.5 (10/25/10):
+------------------------
+	* Detect older clients in selective sync CLI commands.
+
+Version 0.6.4 (10/25/10):
+------------------------
+	* Support Selective sync in the CLI.  (Requires Dropbox version 0.8.109 or later)
+
+Version 0.6.3 (6/14/10):
+-----------------------
+	* Add support for get_emblems and get_emblems path so client can tell us what to use.
+	* Remove useless notify dependency.
+	* Remove nautilus dependency so that it's easier to install.
+	* Start using dropbox.com instead of getdropbox.com
+
+Version 0.6.2 (3/16/10):
+-----------------------
+	* Fix segfault when cut and pasting files to a network directory.
+	* Fix missing emblems when filenames have quotes.
+	* Fix infinite loop on non decodable filenames.
+	* License for images changed to Creative Commons.
+
+Version 0.3.0 (7/17/08):
+-----------------------
+	* Removed some bugs based on incorrect assertion usage
+	* Notifications when browser or nautilus fails to open
+	* Now affected file opens when you get a notification.
+
+Version 0.2.0 (7/9/08):
+-----------------------
+	* Fixed slow startup time due to handle_shell_touch being O(n) operation
+	it's now an O(1) operation on average.
+	* Fixed issue where auto download of dropbox would "fail" sometimes.
+	* Dragging and dropping now works (no outdated dropbox status).
+	* Tray icon is now more accurate regarding the current state of Dropbox.
+	* Folder tags (Photos/Public/Shared) are now implemented.
+	* Used nautilus workaround to always show dropbox status emblems.
+
+Version 0.1.0 (7/3/08):
+-----------------------
+	* Initial Release!
+

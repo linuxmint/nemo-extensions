@@ -1,0 +1,27 @@
+Hi Friend!
+
+This is *the* Dropbox extension for Nemo!!!
+
+Now you can use your favorite sync, versioning, and backup software with GNU/Linux!
+Yes!! Radical!!! Gnarly!!!!
+
+Check us out at http://www.dropbox.com/
+
+<3,
+Rian Hunter and the rest of the Dropbox Team
+
+Building Dropbox Nemo Extension From Source Tarball
+--------------------------------------------------
+
+You will need the following packages (or equivalent):
+
+libnautilus-extension-dev
+
+In the nautilus-dropbox dir just do:
+$ ./configure
+$ make
+$ sudo make install
+
+After installing the package you must restart Nemo. You can do that by issuing the following command (note: if you're running compiz, doing so may lock up your computer - log out and log back in instead):
+
+$ killall nemo

@@ -1,0 +1,2 @@
+# We have no better way to shut down user processes
+nemo-dropbox: killall-is-dangerous prerm:8

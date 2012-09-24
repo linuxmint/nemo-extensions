@@ -1,0 +1,13 @@
+
+* Find out why the dropbox icon is not properly displayed in gnome-shell.
+  I would expect the issue to affect other menus (the traditional
+  menus in gnome for instance, but I have not verified)
+
+* Update debian/patches/download-via-https.patch to actually validate
+  the HTTPS certificate. The patch description contains a link with some
+  documentation on how this can be done.
+
+* Provide some introductory documentation in README.Debian. It
+  should notably explain that you can do "dropbox autostart" to make it
+  automatically start when you login.
+

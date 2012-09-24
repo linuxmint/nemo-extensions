@@ -1,0 +1,51 @@
+=========
+ dropbox
+=========
+
+-----------------------------------------------
+A command line interface to the Dropbox service
+-----------------------------------------------
+
+:Date:   @DATE@
+:Copyright: Copyright (C) 2008-2011 Evenflow, Inc. Free use of this software is granted under the terms of the GNU General Public License (GPL).
+:Version: @PACKAGE_VERSION@
+:Manual section: 1
+
+SYNOPSIS
+========
+
+@SYNOPSIS@
+
+DESCRIPTION
+===========
+
+The *dropbox* command provides a command line interface to the Dropbox, the easiest online file storage,
+synchronization and sharing service.
+
+COMMANDS
+========
+
+@COMMANDS@
+
+BUGS
+====
+
+There are currently no known bugs. If you think you have found a bug or have a feature request, post in
+the forums, or send us an e-mail (see the **RESOURCES** section below).
+
+In the future there will be full command line support including linking accounts and setting preferences
+from the *dropbox* command.
+
+RESOURCES
+=========
+
+* Dropbox <http://www.dropbox.com/>
+* Dropbox Forums <http://forums.dropbox.com/>
+* Dropbox Support E-mail <support@dropbox.com>
+
+AUTHORS
+=======
+
+@AUTHORS@
+
+

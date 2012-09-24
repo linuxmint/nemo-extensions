@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with=python2,autoreconf
+
+override_dh_autoreconf:
+	dh_autoreconf --as-needed
+
+override_dh_makeshlibs:
+	# Don't generate a shlibs file for the plugin
+	dh_makeshlibs -X/usr/lib/nemo/
+
+override_dh_auto_install:
+	dh_auto_install
+	# Drop useless files
+	rm -f debian/nemo-fileroller/usr/lib/nemo/extensions-*/libnemo-fileroller.a
+	rm -f debian/nemo-fileroller/usr/lib/nemo/extensions-*/libnemo-fileroller.la

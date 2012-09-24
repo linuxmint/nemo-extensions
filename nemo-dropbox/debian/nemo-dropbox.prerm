@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    remove)
+	dropbox stop || true
+	killall dropbox || true
+	rm -f /var/lib/update-notifier/user.d/dropbox-restart-required
+	rm -f /var/lib/update-notifier/user.d/dropbox-start-required
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

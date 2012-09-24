@@ -1,0 +1,55 @@
+Description: Give more info about download failures
+ When you have to diagnose download failures, you need some basic
+ information about the user's configuration. Print those
+ information in the error message.
+Author: Raphaël Hertzog <hertzog@debian.org>
+Origin: vendor
+Forwarded: no
+Last-Update: 2012-08-08
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/dropbox.in
++++ b/dropbox.in
+@@ -222,8 +222,9 @@ def download_file_chunk(socket, buf, siz
+ def download_uri_to_buffer(uri):
+     try:
+         socket = urllib.urlopen(uri)
+-    except IOError:
+-        FatalVisibleError("Trouble connecting to Dropbox servers. Maybe your internet connection is down, or you need to set your http_proxy environment variable.")
++    except IOError as e:
++        debug_info = get_download_debug_info(uri, e)
++        FatalVisibleError("Trouble connecting to Dropbox servers. Maybe your internet connection is down, or you need to set your http_proxy environment variable.\n%s" % debug_info)
+ 
+     fcntl.fcntl(socket, fcntl.F_SETFL, os.O_NONBLOCK)
+     size = int(socket.info()['content-length'])
+@@ -237,6 +238,14 @@ def download_uri_to_buffer(uri):
+     buf.seek(0)
+     return buf
+ 
++def get_download_debug_info(url, e):
++    msg = "\nURL that failed to download: %s\nError: %s\n" % (url, e.strerror)
++    if "http_proxy" in os.environ:
++        msg += "http_proxy = %s" % os.environ["http_proxy"]
++    if "https_proxy" in os.environ:
++        msg += "https_proxy = %s" % os.environ["https_proxy"]
++    return msg
++
+ # This sets a custom User-Agent
+ class DropboxURLopener(urllib.FancyURLopener):
+     version = "DropboxLinuxDownloader/@PACKAGE_VERSION@"
+@@ -244,10 +253,12 @@ urllib._urlopener = DropboxURLopener()
+ 
+ class DownloadState(object):
+     def __init__(self):
++        url = "http://www.dropbox.com/download?plat=%s" % plat()
+         try:
+-            self.socket = urllib.urlopen("http://www.dropbox.com/download?plat=%s" % plat())
+-        except IOError:
+-            FatalVisibleError("Trouble connecting to Dropbox servers. Maybe your internet connection is down, or you need to set your http_proxy environment variable")
++            self.socket = urllib.urlopen(url)
++        except IOError as e:
++            debug_info = get_download_debug_info(url, e)
++            FatalVisibleError("Trouble connecting to Dropbox servers. Maybe your internet connection is down, or you need to set your http_proxy environment variable.\n%s" % debug_info)
+ 
+         fcntl.fcntl(self.socket, fcntl.F_SETFL, os.O_NONBLOCK)
+         self.size = int(self.socket.info()['content-length'])

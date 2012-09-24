@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    purge)
+	rm -rf /var/lib/dropbox
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,30 @@
+Description: Use /var/lib/dropbox instead of $HOME
+ The binary files should be downloaded only once on the system
+ and in a common place for all users.
+ .
+ Furthermore the downloaded files must be owned by the root
+ user. The upstream tarball contains improper owner/group
+ information (corresponding to a "releng" user/group with
+ UID 1000 and GID 1002).
+Author: Raphaël Hertzog <hertzog@debian.org>
+Origin: vendor
+
+--- a/dropbox.in
++++ b/dropbox.in
+@@ -54,7 +54,7 @@ GPG_WARNING = u"Note: python-gpgme is no
+ DOWNLOADING = u"Downloading Dropbox... %d%%"
+ UNPACKING = u"Unpacking Dropbox... %d%%"
+ 
+-PARENT_DIR = os.path.expanduser("~")
++PARENT_DIR = os.path.expanduser("/var/lib/dropbox")
+ DROPBOXD_PATH = "%s/.dropbox-dist/dropboxd" % PARENT_DIR
+ DESKTOP_FILE = u"@DESKTOP_FILE_DIR@/dropbox.desktop"
+ 
+@@ -275,6 +275,7 @@ class DownloadState(object):
+             if os.path.exists(filename) and not os.path.isdir(filename):
+                 os.unlink(filename)
+             archive.extract(member, PARENT_DIR)
++            os.lchown(filename, os.geteuid(), os.getegid())
+             yield member.name, i, total_members
+         archive.close()
+ 

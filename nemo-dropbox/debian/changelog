@@ -1,0 +1,5 @@
+nemo-dropbox (1.0.0-0) unstable; urgency=low
+
+  * Initial port from nautilus-dropbox
+
+ -- Michael Webster <miketwebster@gmail.com>  Fri, 7 Sep 2012 15:40:00 +0200

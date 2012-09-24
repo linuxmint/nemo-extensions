@@ -1,0 +1,11 @@
+unlink-before-extract.patch
+do-not-hardcode-dropboxd-path.patch
+dropbox-update.patch
+display-error-string-when-download-failed.patch
+# Patches above should really be integrated upstream
+add-http-proxy-option.patch
+use-var-lib-dropbox.patch
+use-pkexec-to-get-root-rights.patch
+# Patches below are not really upstreamable
+non-interactive-update.patch
+use-dpkg-to-select-platform.patch

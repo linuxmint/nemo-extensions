@@ -1,0 +1,3 @@
+version=3
+https://linux.dropbox.com/packages/ \
+ nemo-dropbox-([\d\.]+).tar.bz2

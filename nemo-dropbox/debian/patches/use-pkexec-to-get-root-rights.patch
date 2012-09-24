@@ -1,0 +1,26 @@
+Description: Use pkexec to execute Dropbox's installation as root
+ When the user has to install the missing Dropbox software, we call
+ pkexec to try to get the required root rights.
+Author: Raphaël Hertzog <hertzog@debian.org>
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/nautilus-dropbox/+bug/821212
+
+--- a/dropbox.in
++++ b/dropbox.in
+@@ -1239,7 +1239,16 @@ options:
+ 
+         # install dropbox!!!
+         try:
+-            download()
++            args = [ "pkexec", "dropbox" ]
++            if "http_proxy" in os.environ:
++                args.extend(["--http-proxy", os.environ["http_proxy"]])
++            if "https_proxy" in os.environ:
++                args.extend(["--https-proxy", os.environ["https_proxy"]])
++            args.append("update")
++            status = os.spawnvp(os.P_WAIT, "pkexec", args)
++            if status != 0:
++                console_print(u"The installation of Dropbox failed.")
++                return
+         except:
+             pass
+         else:
