@@ -1,8 +1,7 @@
 Source: nemo-sendto
 Section: gnome
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-XSBC-Original-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 8.1.3~),
                cdbs (>= 0.4.94~),
                intltool (>= 0.35.0),
@@ -16,7 +15,6 @@ Build-Depends: debhelper (>= 8.1.3~),
                libdbus-glib-1-dev (>= 0.60),
                libgupnp-1.0-dev (>= 0.13),
                libxml-parser-perl,
-Uploaders: @GNOME_TEAM@
 Vcs-Bzr: https://code.launchpad.net/~ubuntu-desktop/nemo-sendto/ubuntu
 Standards-Version: 3.9.2
 

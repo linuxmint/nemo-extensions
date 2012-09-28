@@ -1,3 +1,9 @@
+nemo-sendto (1.0.0) maya; urgency=low
+
+  * 1.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 28 Sep 2012 13:42:23 +0100
+
 nemo-sendto (3.0.1-2ubuntu2) precise; urgency=low
 
   * Fix LP: #865490 - Don't crash when there isn't a mailer installed

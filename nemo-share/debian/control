@@ -1,7 +1,7 @@
 Source: nemo-share
 Section: gnome
 Priority: optional
-Maintainer: Chow Loong Jin <hyperair@ubuntu.com>
+Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 7.0.50),
                autotools-dev,
                intltool (>= 0.29),

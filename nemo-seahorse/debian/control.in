@@ -1,8 +1,7 @@
 Source: nemo-seahorse
 Section: gnome
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-Uploaders: @GNOME_TEAM@
+Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 8),
                cdbs (>= 0.4.41),
                libgpgme11-dev,
