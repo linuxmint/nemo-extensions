@@ -1,0 +1,105 @@
+# translation of bn_IN.po to Bengali INDIA
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Runa Bhattacharjee <runabh@gmail.com>, 2006.
+# Runa Bhattacharjee <runab@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: bn_IN\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-open-terminal&component=general\n"
+"POT-Creation-Date: 2009-04-17 15:38+0000\n"
+"PO-Revision-Date: 2009-06-22 12:48+0530\n"
+"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
+"Language-Team: Bengali INDIA <discuss@lists.ankur.org.in>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
+
+#: ../src/nemo-open-terminal.c:284
+#| msgid "Open in _Terminal"
+msgid "Open in _Remote Terminal"
+msgstr "দূরবর্তী টার্মিন্যালের মধ্যে খুলুন (_R)"
+
+#: ../src/nemo-open-terminal.c:286
+#| msgid "Open in _Terminal"
+msgid "Open in _Local Terminal"
+msgstr "স্থানীয় টার্মিন্যালের মধ্যে খুলুন (_L)"
+
+#: ../src/nemo-open-terminal.c:290 ../src/nemo-open-terminal.c:301
+msgid "Open the currently selected folder in a terminal"
+msgstr "বর্তমানে নির্বাচিত ফোল্ডারটি টার্মিনালে খুলুন"
+
+#: ../src/nemo-open-terminal.c:292 ../src/nemo-open-terminal.c:303
+#: ../src/nemo-open-terminal.c:313
+msgid "Open the currently open folder in a terminal"
+msgstr "বর্তমানে প্রদর্শিত ফোল্ডারটি একটি টার্মিনালের মধ্যে খুলুন"
+
+#: ../src/nemo-open-terminal.c:298 ../src/nemo-open-terminal.c:312
+#| msgid "Open in _Terminal"
+msgid "Open in T_erminal"
+msgstr "টার্মিন্যালের মধ্যে খুলুন (_e)"
+
+#: ../src/nemo-open-terminal.c:309
+#| msgid "Open _Terminal"
+msgid "Open T_erminal"
+msgstr "টার্মিন্যাল আরম্ভ করুন (_e)"
+
+#: ../src/nemo-open-terminal.c:310
+msgid "Open a terminal"
+msgstr "টার্মিনাল আরম্ভ করুন"
+
+#: ../src/nemo-open-terminal.c:325 ../src/nemo-open-terminal.c:338
+msgid "Open in _Midnight Commander"
+msgstr "Midnight Commander-র মধ্যে খুলুন (_M)"
+
+#: ../src/nemo-open-terminal.c:327
+#| msgid "Open the currently selected folder in a terminal"
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr "Midnight Commander নামক টার্মিন্যাল ফাইল পরিচালনব্যবস্থার মধ্যে বর্তমানে নির্বাচিত ফোল্ডারটি খুলুন"
+
+#: ../src/nemo-open-terminal.c:329 ../src/nemo-open-terminal.c:339
+#| msgid "Open the currently open folder in a terminal"
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr "Midnight Commander নামক টার্মিন্যাল ফাইল পরিচালনব্যবস্থার মধ্যে বর্তমানে খোলা ফোল্ডারটি খুলুন"
+
+#: ../src/nemo-open-terminal.c:335
+msgid "Open _Midnight Commander"
+msgstr "Midnight Commander খুলুন (_M)"
+
+#: ../src/nemo-open-terminal.c:336
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Midnight Commander নামক টার্মিন্যাল ফাইল পরিচালনব্যবস্থার খুলুন"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr "মান true (সত্য) হলে, ও \"Midnight Commander\" নামক টার্মিন্যাল ফাইল পরিচালন ব্যবস্থা ইনস্টল করা থাকলে, প্রাসঙ্গিক মেনুর মধ্যে \"Midnight Commander-র মধ্যে খুলুন\" শীর্ষক একটি মেনুর এনট্রি প্রদর্শিত হবে।"
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr "মান true (সত্য) হলে, ডেস্কটপের মধ্যে টার্মিন্যাল খোলা হলে, ব্যক্তিগত ডিরেক্টরি প্রদর্শন করে টার্মিন্যাল আরম্ভ করা হবে। অন্যথা, টার্মিন্যালটি ডেস্কটপ প্রদর্শন করে খোলা হবে। উল্লেখ্য, ডেস্কটপ ও ব্যক্তিগত ডিরেক্টরিটি একই হলে এই কি-র ব্যবহার অমূলক।"
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Midnight Commander-র জন্য মেনুর মধ্যে এনট্রি প্রদর্শিত হবে কি না"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr "ডেস্কটপের মধ্যে টার্মিন্যাল খোলার ফলে ব্যক্তিগত ডিরেক্টরি প্রদর্শন করে টার্মিন্যাল আরম্ভ করা হবে কি না"
+

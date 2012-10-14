@@ -1,0 +1,31 @@
+# traditional Chinese translation of nemo-open-terminal.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Abel Cheung <maddog@linuxhall.org>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal 0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-05 08:36+0800\n"
+"PO-Revision-Date: 2005-03-05 08:38+0800\n"
+"Last-Translator: Abel Cheung <maddog@linuxhall.org>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nemo-open-terminal.c:203
+msgid "Open _Terminal"
+msgstr "開啟終端機(_T)"
+
+#: ../src/nemo-open-terminal.c:204
+msgid "Open in _Terminal"
+msgstr "在終端機中開啟(_T)"
+
+#: ../src/nemo-open-terminal.c:206
+msgid "Open a terminal"
+msgstr "開啟終端機"
+
+#: ../src/nemo-open-terminal.c:207
+msgid "Open the currently open folder in a terminal"
+msgstr "開啟終端機並進入目前使用中的資料夾"

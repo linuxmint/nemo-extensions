@@ -1,0 +1,112 @@
+# Romanian messages for nemo-open-terminal.
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# Mircea MITU <mmitu@bitdefender.com>, 2006.
+#
+# $Id: ro.po,v 1.1 2006/03/12 21:12:36 mugurelu Exp $
+# Adi Roiban 2009
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-open-terminal&component=general\n"
+"POT-Creation-Date: 2009-09-15 21:12+0000\n"
+"PO-Revision-Date: 2009-10-03 20:12+0300\n"
+"Last-Translator: Adi Roiban <adi@roiban.ro>\n"
+"Language-Team: Română <gnomero-list@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3;plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1))\n"
+
+#: ../src/nemo-open-terminal.c:359
+msgid "Open in _Remote Terminal"
+msgstr "Deschide în te_rminal la distanță"
+
+#: ../src/nemo-open-terminal.c:361
+msgid "Open in _Local Terminal"
+msgstr "Deschide în terminal _local"
+
+#: ../src/nemo-open-terminal.c:365 ../src/nemo-open-terminal.c:376
+msgid "Open the currently selected folder in a terminal"
+msgstr "Deschide dosarul selectat curent într-un terminal"
+
+#: ../src/nemo-open-terminal.c:367 ../src/nemo-open-terminal.c:378
+#: ../src/nemo-open-terminal.c:388
+msgid "Open the currently open folder in a terminal"
+msgstr "Deschide dosarul curent într-un terminal"
+
+#: ../src/nemo-open-terminal.c:373 ../src/nemo-open-terminal.c:387
+msgid "Open in T_erminal"
+msgstr "Deschide în _terminal"
+
+#: ../src/nemo-open-terminal.c:384
+msgid "Open T_erminal"
+msgstr "Deschide t_erminal"
+
+#: ../src/nemo-open-terminal.c:385
+msgid "Open a terminal"
+msgstr "Deschide un terminal"
+
+#: ../src/nemo-open-terminal.c:400 ../src/nemo-open-terminal.c:413
+msgid "Open in _Midnight Commander"
+msgstr "Deschide în _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:402
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Deschide dosarul selectat curent în administratorul de fișiere în mod text "
+"Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:404 ../src/nemo-open-terminal.c:414
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Deschide dosarul curent în administratorul de fișiere în mod text Midnight "
+"Commander"
+
+#: ../src/nemo-open-terminal.c:410
+msgid "Open _Midnight Commander"
+msgstr "Deschide _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:411
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Deschide administratorul de fișiere în mod text Midnight Commander"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"La activare, dacă administratorul de fișiere în mod text „Midnight "
+"Commander” este instalat, se va afișa un element „Deschide în Midnight "
+"Commander” în meniul contextual."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"La activare, deschiderea unui terminal pe desktop va deschide terminalul "
+"în dosarul personal. Altfel, va fi deschis în dosarul Desktop. Această "
+"cheie este irelevantă în cazul în care dosarul personal este același cu "
+"dosarul Desktop."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Dacă să fie afișat un element Midnight Commander în meniu"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr ""
+"Dacă deschiderea unui terminal pe desktop va deschide terminalul în dosarul "
+"personal"
+

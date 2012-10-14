@@ -1,0 +1,106 @@
+# nemo-open-terminal Belarusian translation
+# This file is distributed under the same license as the nemo-open-terminal package.
+# Ales Nyakhaychyk  <nab@mail.by>, 2006.
+# Ihar Hrachyshka <iharh@gnome.org>, 2007.
+# Ladyko Andrey <fylh.if@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-24 13:54+0300\n"
+"PO-Revision-Date: 2009-06-13 19:20+0300\n"
+"Last-Translator: Ladyko Andrey <fylh.if@gmail.com>\n"
+"Language-Team: Belarusian i18n Team <i18n@mova.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../src/nemo-open-terminal.c:359
+msgid "Open in _Remote Terminal"
+msgstr "Адчыніць у _аддаленым тэрмінале"
+
+#: ../src/nemo-open-terminal.c:361
+msgid "Open in _Local Terminal"
+msgstr "Адчыніць у _лякальным тэрмінале"
+
+#: ../src/nemo-open-terminal.c:365 ../src/nemo-open-terminal.c:376
+msgid "Open the currently selected folder in a terminal"
+msgstr "Адчыніць выбраную тэчку ў тэрмінале"
+
+#: ../src/nemo-open-terminal.c:367 ../src/nemo-open-terminal.c:378
+#: ../src/nemo-open-terminal.c:388
+msgid "Open the currently open folder in a terminal"
+msgstr "Адчыніць адчыненую тэчку ў тэрмінале"
+
+#: ../src/nemo-open-terminal.c:373 ../src/nemo-open-terminal.c:387
+msgid "Open in T_erminal"
+msgstr "Адчыніць у _тэрмінале"
+
+#: ../src/nemo-open-terminal.c:384
+msgid "Open T_erminal"
+msgstr "Адчыніць _тэрмінал"
+
+#: ../src/nemo-open-terminal.c:385
+msgid "Open a terminal"
+msgstr "Адчыніць тэрмінал"
+
+#: ../src/nemo-open-terminal.c:400 ../src/nemo-open-terminal.c:413
+msgid "Open in _Midnight Commander"
+msgstr "Адчыніць у _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:402
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Адчыніць выбраную тэчку ў тэрмінальным кіраўніку файлаў Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:404 ../src/nemo-open-terminal.c:414
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Адчыніць адчыненую тэчку ў тэрмінальным кіраўніку файлаў Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:410
+msgid "Open _Midnight Commander"
+msgstr "Адчыніць _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:411
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Адчыніць тэрмінальны кіраўнік файлаў Midnight Commander"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"Калі ўключана і калі ўсталяваны тэрмінальны кіраўнік файлаў \"Midnight "
+"Commander\", тады ў кантэкстным мэню будзе элемэнт \"Адчыніць у Midnight "
+"Commander\"."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"Калі ўключана, тады адчыненьне тэрміналу з працоўнага стала будзе зробленае "
+"ў хатняй тэчцы. Інакш, тэрмінал адчыніцца ў тэчцы працоўнага стала. Зважай, "
+"што гэты ключ ня мае сэнсу, калі тэчка працоўнага стала ёсьць хатняй тэчкаю."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Ці паказваць элемэнт мэню \"Midnight Commander\""
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr ""
+"Ці трэба адчыняць у тэрінале, уключаным з працоўнага стала, хатнюю тэчку"

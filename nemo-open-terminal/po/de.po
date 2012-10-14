@@ -1,0 +1,109 @@
+# German nemo-open-terminal translation.
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the nemo-open-terminal package.
+# Christian Neumair <cneumair@gnome.org>, 2004-2009
+# Mario Blättermann <mariobl@gnome.org>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-open-terminal&component=general\n"
+"POT-Creation-Date: 2009-04-17 15:38+0000\n"
+"PO-Revision-Date: 2011-02-11 23:24+0100\n"
+"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nemo-open-terminal.c:284
+msgid "Open in _Remote Terminal"
+msgstr "In _entferntem Terminal öffnen"
+
+#: ../src/nemo-open-terminal.c:286
+msgid "Open in _Local Terminal"
+msgstr "In _lokalem Terminal öffnen"
+
+#: ../src/nemo-open-terminal.c:290 ../src/nemo-open-terminal.c:301
+msgid "Open the currently selected folder in a terminal"
+msgstr "Den momentan gewählten Ordner in einem Terminal öffnen."
+
+#: ../src/nemo-open-terminal.c:292 ../src/nemo-open-terminal.c:303
+#: ../src/nemo-open-terminal.c:313
+msgid "Open the currently open folder in a terminal"
+msgstr "Den momentan geöffneten Ordner in einem Terminal öffnen."
+
+#: ../src/nemo-open-terminal.c:298 ../src/nemo-open-terminal.c:312
+msgid "Open in T_erminal"
+msgstr "In _Terminal öffnen"
+
+#: ../src/nemo-open-terminal.c:309
+msgid "Open T_erminal"
+msgstr "_Terminal öffnen"
+
+#: ../src/nemo-open-terminal.c:310
+msgid "Open a terminal"
+msgstr "Ein Terminal öffnen"
+
+#: ../src/nemo-open-terminal.c:325 ../src/nemo-open-terminal.c:338
+msgid "Open in _Midnight Commander"
+msgstr "Im _Midnight Commander öffnen"
+
+#: ../src/nemo-open-terminal.c:327
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Den momentan gewählten Ordner im Terminal-Dateimanager Midnight Commander "
+"öffnen."
+
+#: ../src/nemo-open-terminal.c:329 ../src/nemo-open-terminal.c:339
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight Commander"
+msgstr ""
+"Den momentan gewöffneten Ordner im Terminal-Dateimanager Midnight Commander "
+"öffnen."
+
+#: ../src/nemo-open-terminal.c:335
+msgid "Open _Midnight Commander"
+msgstr "_Midnight Commander öffnen"
+
+#: ../src/nemo-open-terminal.c:336
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Den Terminal-Dateimanager Midnight Commander öffnen"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be displayed "
+"in the context menu."
+msgstr ""
+"Falls dieser Schlüssel wahr ist, und falls der Terminal-Dateimanager "
+"»Midnight Commander« installiert ist, wird ein »Im Midnight Commander öffnen«-"
+"Menüeintrag im Kontextmenü angezeigt."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop directory. "
+"Note that this key is irrelevant if the desktop directory is identical to the "
+"home directory."
+msgstr ""
+"Falls dieser Schlüssel wahr ist, führt das Öffnen eines Terminals auf der "
+"Arbeitsfläche dazu, dass ein Terminal im persönlichen Ordner geöffnet wird. "
+"Andernfalls wird es im Arbeitsflächen-Ordner öffnet. Hinweis: Dieser "
+"Schlüssel wird ignoriert, falls der Arbeitsflächenordner mit dem persönlichen "
+"Ordner übereinstimmt."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Legt fest, 0b ein Midnight Commander-Menüeintrag angezeigt werden soll"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr ""
+"Legt fest, ob das Öffnen eines Terminals auf der Arbeitsfläche ein Terminal "
+"im persönlichen Ordner öffnet"

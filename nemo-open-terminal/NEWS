@@ -1,0 +1,367 @@
+nemo-open-terminal 0.19
+===========================
+"Isla de Encanta"
+
+	* Dedicated to the garage rock bad Pixies from Boston, Massachusetts
+
+	Fixes
+	* Depend on gnome-desktop-3.0, for use with newer nemo
+	* Use new GDK 3.0 API to launch the terminal
+	* Make sure to pull in the right DISABLE_DEPRECATED cflags
+
+nemo-open-terminal 0.18
+===========================
+"Calexico"
+
+	* Dedicated to the roots rock band Calexico from Tuscon, Arizona.
+
+	Fixes
+	* Remote SSH terminal: Open login shell with - instead of -l parameter.
+	* Local terminal: Open interactive shell, i.e. drop -l parameter.
+	(both #602141)
+
+	Updated translations
+		Arabic			Khaled Hosny		<khaledhosny@eglug.org>
+		British English		Philip Withnall		<philip@tecnocode.co.uk>
+		Galician		Fran Diéguez		<fran.dieguez@glug.es>
+		Japanese		Takeshi AIHANA		<takeshi.aihana@gmail.com>
+		Lithuanian		Gintautas Miliauskas	<gintautas@miliauskas.lt>
+		Polish			Tomasz Dominikowski	<dominikowski@gmail.com>
+		Romanian		Adi Roiban		<adi@roiban.ro>
+
+nemo-open-terminal 0.17
+===========================
+"Ringsgwandl"
+
+	* Dedicated to Ringsgwandl, the Bavarian King of Pop:
+	http://www.ringsgwandl.com
+
+	Fixes
+	* Remote SSH terminal: Work correctly with non-standard SSH ports.
+
+nemo-open-terminal 0.16
+===========================
+"Sgt. Pepper’s Lonely Hearts Club Band"
+o
+	* Dedicated to the first concept album in pop history
+	http://en.wikipedia.org/wiki/Sgt._Pepper%27s_Lonely_Hearts_Club_Band
+
+	Fixes
+	* Do not always show Midnight Commander item for directories with
+	  local back-mapping, which was the case due to a wrong logical
+	  expression. Thanks to Evangelos Foutras <foutrelis@gmail.com>.
+
+nemo-open-terminal 0.15
+===========================
+"Dark Night of the Soul"
+
+	* Dedicated to the Danger Mouse & Sparklehouse & David Lynch CD production
+	  "Dark Night of the Soul".
+
+	Fixes
+	* Properly append terminal items for desktop and remote non-SSH locations which can be mapped back to ~/.gvfs.
+	* Fffer Midnight Commander item for the desktop, if it is identical to the home directory or n-o-t is configured
+	to open the home directory.
+
+nemo-open-terminal 0.14
+===========================
+"Buffalo '66"
+
+	* Dedicated to an excellent flick I just saw partiatlly on TV
+	http://www.imdb.com/title/tt0118789/
+
+	Fixes
+	* Use exec() to replace the helper sh shell with the actual $SHELL. This should fix the close warning message
+	  people encounter. Requires mainstream testing, since it might cause issues with some shells.
+	* Only add "Open in Local Terminal" item for remote locations if ~/.gvfs back-mapping is actually available.
+	* Properly escape remote SSH paths with g_shell_quote() instead of just nesting "" and '' quotes.
+	  Fixes #583120.
+
+	Build
+	* Various Include fixes.
+	* Actually get rid of eel dependency.
+
+	Added translations
+		Assamese	Amitakhya Phukan	<aphukan@fedoraproject.org>
+		Kannada		Shankar Prasad		<svenkate@redhat.com>
+		Telugu		krishnababu k		<kkrothap@redhat.com>
+
+	Updated translations
+		Bengali India	Runa Bhattacharjee	<runab@redhat.com>
+		Gujarati	Sweta Kothari		<swkothar@redhat.com>
+		Marathi		Sandeep Shedmake	<sshedmak@redhat.com>
+		Tamil		I. Felix		<ifelix@redhat.com>
+
+nemo-open-terminal 0.13
+===========================
+"Land of the Dead"
+
+	* Dedicated to Grim Fandango, one of the most excellent computer games ever produced.
+	  http://www.youtube.com/watch?v=3kVZ1sJZ9lo
+
+	Features
+
+	* Only offer to open a local terminal for remote locations if path back-mapping to ~/.gvfs is possible,
+	  i.e. if GVFS was compiled with FUSE support.
+
+	Fixes / Build
+
+	* Fix double-free when opening terminal on the desktop. Thanks to Arthur Taylor <theycallhimart@gmail.com>.
+	* Use custom SFTP URI parser, and get rid of GnomeVFS dependency, Launchpad #333462. Thanks to Maxim Levitsky
+	  and others.
+
+nemo-open-terminal 0.12
+===========================
+"El Pueblo Unido"
+
+	* Dedicated to Frederic Rzewski, and his excellent variations on the theme "El Pueblo Unido".
+
+	Fixes
+
+	* Remote SSH terminal: Work correctly with non-standard SSH ports manually defined in ~/.ssh/config.
+	  Thanks to Julien Valroff <julien@kirya.net>.
+
+nemo-open-terminal 0.11
+===========================
+"Hullabaloo"
+
+	* Dedicated to Muse, the best live band ever.
+
+	Fixes / Build
+
+	* Do not depend on eel anymore, because it is linked statically into Nemo. Instead, import the required
+	eel terminal launch helpers. Thanks to Julien Valroff <julien@kirya.net>.
+	* Explicitly depend on gconf.
+
+nemo-open-terminal 0.10
+===========================
+"Columbo Likes the Nightlife"
+
+	* Dedicated to Peter Falk, who - due to his recent illness - is probably never going to delight us with
+	  another Columbo episode
+
+	Features
+
+	* Respect terminal lockdown (JP Rosevear)
+
+	Fixes
+
+	* Do not run terminal commands ourselves, but use eel_gnome_open_terminal_on_screen().
+	* Never cwd() to the destination directory, but call cd inside the terminal. Fixes issues where
+	  media was prevented from unmounting.
+	* Do not weak-ref GConf client. Fixes crashes and assertion failures on Nemo shutdown.
+	* Change "Open in Terminal" accelerator to "e", for not conflicting with "New Tab"
+	  (launchpad #304647, Marius Scurtescu)
+	* Lower-case "in" of "Open in Terminal"
+	* Compiler fixes in get_terminal_file_info() (JP Rosevear)
+
+	Build
+
+	* Depend on eel, gio, gnome-vfs and recent glib (Paolo Borelli, Mike Auty)
+	* Use po/LINGUAS for internationalisation (Wouter Bolsterlee)
+
+	Added translations
+		mr	  Sandeep Shedmake		<sandeep.shedmake@gmail.com>
+
+	Updated translations
+		ar	  Khaled Hosny			<khaledhosny@eglug.org>
+		be@latin  Ihar Hrachyshka		<ihar.hrachyshka@gmail.com>
+		ca	  David Planella		<david.planella@gmail.com>
+		cs	  Kamil Paral			<ripper42@gmail.com>
+		en_GB	  Philip Withnall		<pwithnall@svn.gnome.org>
+		et	  Mattias Põldaru		<mahfiaz@gmail.com>
+		eu	  Iñaki Larrañaga Murgoitio	<dooteo@euskalgnu.org>
+		he	  Yair Hershkovitz		<yairhr@gmail.com>
+		hu	  Gabor Kelemen			<kelemeng@gnome.hu>
+		it	  Gianvito Cavasoli		<janvitus@ubuntu-it.org>
+		ja	  Takeshi AIHANA		<aihana@gnome.gr.jp>
+		lt	  Gintautas Miliauskas		<gintas@akl.lt>
+		nl	  Wouter Bolsterlee		<wbolster@gnome.org>
+		oc	  Yannig Marchegay (Kokoyaya)	<yannig@marchegay.org>
+		pl	  Tomasz Dominikowski		<tdominikowski@aviary.pl>
+		th	  Manatsawin Hanmongkolchai	<manatsawin@gmail.com>
+		sl	  Matej Urbančič		<matej.urban@gmail.com>
+
+nemo-open-terminal 0.9
+==========================
+"Freelance Police"
+
+	* Dedicated to Telltale Games, creator of "Sam and Max" episode games, a sequel to the infamous
+	  "Sam and Max - Hit the Road" adventure.
+
+	Features
+
+	* Use GIO instead of GnomeVFS. Thanks to Alex Larsson <alexl@redhat.com>.
+	* Add GConf key for deciding whether right-clicking the desktop opens home directory or desktop directory.
+	  Use g_get_user_special_dir() to determine the desktop directory, and falls back to ~/Desktop (#468955).
+	* Use remote $SHELL instead of /bin/sh for SFTP terminals. Thanks to Wouter Bolsterlee
+	  <wbolster@gnome.org>.
+	* Use Nemo extension directory from libnemo-extension.pc. Thanks to Brian Pepple
+	  <bpepple@fedoraproject.org>.
+
+	Fixes
+
+	* Fix bug where an empty terminal "exec" GConf key wasn't handled properly (launchpad #133837).
+	* Reference file info when creating terminal icon (GNOME #519111).
+
+	Added translations
+		be@latin  Ihar Hrachyshka			<ihar.hrachyshka@gmail.com>
+		oc	  Yannig Marchegay (Kokoyaya)		<yannig@marchegay.org>
+		pt	  André Neves				<drakferion@gmail.com>
+		ta	  தங்கம் அருண்				<thangam.arunx@gmail.com> 
+
+	Updated translations
+		be	  Ihar Hrachyshka			<ihar.hrachyshka@gmail.com>
+		ca	  Francesc Vilches			<francesc.vilches@gmail.com>
+		de	  Christian Neumair			<cneumair@gnome.org>
+		es	  Jorge González			<jorgegonz@svn.gnome.org>
+		eu	  Iñaki Larrañaga Murgoitio		<dooteo@euskalgnu.org>
+		fr	  Stéphane Raimbault			<stephane.raimbault@gmail.com>
+		fi	  Ilkka Tuohela				<hile@iki.fi>
+		ga	  Ignacio Casal Quinteiro		<icq@cvs.gnome.org>
+		hu	  Gabor Kelemen				<kelemeng@gnome.hu>
+		ka	  Vladimer Sichinava ვლადიმერ სიჭინავა  <vsichi@gnome.org>
+		ko	  Namhyung Kim				<namhyung@gmail.com>
+		nb	  Kjartan Maraas			<kmaraas@gnome.org>
+		ne	  Shyam Krishna Bal			<shyamkrishna_bal@yahoo.com>
+		no	  Kjartan Maraas			<kmaraas@gnome.org>
+		pt_BR	  Vladimir Melo				<vladimirmelo@foresightlinux.org>
+		sl	  Matej Urbančič			<matej.urban@gmail.com>
+		sv	  Daniel Nylander			<po@danielnylander.se>
+
+nemo-open-terminal 0.8
+==========================
+"Alive"
+
+	* Dedicated to Klaus Kreuzeder, an excellent Saxophonist. http://www.trick-music.de/klaus_kreuzeder.htm
+
+	* Depend on Nemo 2.17.2
+	* Use activation URI of selected files for determining URI. This allows to use the extension for your Desktop bookmarks.
+	* Also deal with "ssh" URIs and treat them like "sftp" URIs.
+	* Use open() and cwd() to switch directries. Should fix troubles with blocked media ejection.
+
+	* Added translations
+		ar	Khaled Hosny			<khaledhosny@eglug.org>
+		bn_IN	Runa Bhattacharjee		<runabh@gmail.com>
+		be	Ihar Hrachyshka			<ihar.hrachyshka@gmail.com>
+		da	Peter Bach			<bach.peter@gmail.com>
+		dz	sonam pelden
+		et	Ivar Smolin			<okul@linux.ee>
+		gu	Ankit Patel			<ankit@redhat.com>
+		ka	Vladimer Sichinava		<vsichi@gnome.org>
+		ml	Ani Peter			<apeter@redhat.com>
+		sl	Matej Urbančič			<matej.urban@gmail.com>
+
+	* Updated translations
+		ca	Gil Forcada			<gilforcada@guifi.net>
+		en_GB	David Lodge			<dave@cirt.net>
+		ne	Mahesh subedi			<submanesh@hotmail.com>
+		nl	Wouter Bolsterlee		<uws+gnome@xs4all.nl>
+
+nemo-open-terminal 0.7
+==========================
+"Coffee"
+
+	* Dedicated to Burkhof, an excellent coffee producer. http://www.burkhof.com/
+
+	* Add missing include
+	* Remove unused declaration
+	* setenv DISPLAY before spawning child processes, unset it afterwards
+	* Added translations
+		eu	Inaki Larranaga			<dooteo@euskalgnu.org>
+		or	Gora Mohanty			<gmohanty@cvs.gnome.org>
+		ro	Mircea Mitu			<mmitu@bitdefender.com>
+		ru	Paul Chavard
+		th	Theppitak Karoonboonyanan	<thep@linux.thai.net>
+	* Updated translations
+		fr	Stéphane Raimbault		<stephane.raimbault@free.fr>
+		ja	Takeshi AIHANA			<aihana@gnome.gr.jp>
+		sv	Christian Rose			<menthos@menthos.com>
+		zh_CN	Funda Wang			<fundawang@linux.net.cn>
+
+nemo-open-terminal 0.6
+==========================
+"Bar"
+
+	* Dedicated to Foo's brother.
+
+	* Actually add Polish (pl) to ALL_LINGUAS.
+	* Added translations
+		nb	Kjartan Maraas			<kmaraas@gnome.org>
+		no	Kjartan Maraas			<kmaraas@gnome.org>
+
+nemo-open-terminal 0.5
+==========================
+"Ticky Tock"
+
+	* Dedicated to Hans-Eckardt Wenzel and Woody Guthrie. http://www.woodyguthrie.org/merchandise/tickytock.htm
+
+	* Add SFTP support (Guillaume Desmottes <cass@skynet.be>)
+	* Cleanups, plug leak
+	* Added translations
+		he	Yuval Tanai
+		ko	Young-Ho Cha			<ganadist@gmail.com>
+		lt	Žygimantas Beručka		<zygis@gnome.org>
+		ne	Pawan Chitrakar			<pchitrakar@gmail.com>
+		pl	Michał Kastelik			<m.kastelik@wp.pl>
+		tr	Baris Cicek			<baris@teamforce.name.tr>
+		uk	Maxim Dziumanenko		<mvd@mylinux.ua>
+	* Updated translations
+		fi	Ilkka Tuohela			<hile@iki.fi>
+		vi	Clytie Siddall			<clytie@riverland.net.au>
+
+nemo-open-terminal 0.4
+==========================
+"Foo"
+
+	* Dedicated to Bar's brother.
+
+	* Don't use new GnomeDesktopItem API for loading desktop file
+
+nemo-open-terminal 0.3
+==========================
+"Summertime"
+
+	* Dedicated to Janis Joplin and Jimi Hendrix for their excellent Woodstock performance.
+
+	* Fix menuitem tooltip
+	* Use new GnomeDesktopItem API for loading desktop file
+	* Added translations
+		ca	Gil Forcada			<gilforcada@guifi.net>
+			Josep Puigdemont		<josep.puigdemont@gmail.com>
+		en_CA	Adam Weinberger			<adamw@gnome.org>
+		en_GB	Gareth Owen			<gowen@gnome.org>
+		fr	Guillaume Desmottes		<cass@skynet.be>
+		gl	Ignacio Casal Quinteiro		<nacho.resa@gmail.com>
+		hu	Szabolcs Varga
+			Gabor Kelemen			<kelemeng@gnome.hu>
+		it	Daniele Medri			<daniele@medri.org>
+		ja	Takeshi AIHANA			<aihana@gnome.gr.jp>
+		nl	Reinout van Schouwen		<reinout@gmail.com>
+			Tino Meinen			<a.t.meinen@chello.nl>
+		pa	Amanpreet Singh Alam		<amanpreetalam@yahoo.com>
+		rw	Steve Murphy			<murf@e-tools.com>
+		zh_TW	Abel Cheung			<maddog@linuxhall.org>
+	* Updated translations
+		bg	Alexander Shopov		<ash@contact.bg>
+		cs	Miloslav Trmac			<mitr@volny.cz>
+		de	Christian Neumair		<chris@gnome-de.org>
+		es	Francisco Javier F. Serrador	<serrador@cvs.gnome.org>
+		sk	Marcel Telka			<marcel@telka.sk>
+
+nemo-open-terminal 0.2
+==========================
+"Tus Problemas Crecen"
+
+	* Dedicated to Boikot, uno de los mejores conjuntos de Punk en España.
+
+	* Use GnomeDesktopItem/startup-notification if gnome-terminal is used as terminal.
+	* Fix up menuitem creation code
+	* Plug leaks
+	* Updated translations: bg cs da de en_CA es fi pt_BR sk sr sr@Latn sv zh_CN.
+
+nemo-open-terminal 0.1
+==========================
+"Lost Tarball"
+
+	* Initial release.

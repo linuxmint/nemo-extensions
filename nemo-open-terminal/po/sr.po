@@ -1,0 +1,36 @@
+# Serbian translation of nemo-open-terminal
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2005.
+#
+# This file is distributed under the same license as the nemo-open-terminal package.
+#
+# Maintainer: Данило Шеган <danilo@gnome.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal\n"
+"PO-Revision-Date: 2005-02-25 09:06+0100\n"
+"Last-Translator: Данило Шеган <danilo@gnome.org>\n"
+"Language-Team: Serbian (sr) <gnom@prevod.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-open-terminal.c:214
+msgid "Open _Terminal"
+msgstr "Отвори _терминал"
+
+#: src/nemo-open-terminal.c:215 src/nemo-open-terminal.c:244
+msgid "Open in _Terminal"
+msgstr "Отвори у _терминалу"
+
+#: src/nemo-open-terminal.c:217
+msgid "Open a terminal"
+msgstr "Отвори терминал"
+
+#: src/nemo-open-terminal.c:218
+msgid "Open the currently open folder in a terminal"
+msgstr "Отвара текући директоријум у терминалу"
+
+#: src/nemo-open-terminal.c:245
+msgid "Open the selected folder in a terminal"
+msgstr "Отвори изабрани директоријум у терминалу"

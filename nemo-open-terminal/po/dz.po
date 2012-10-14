@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo_open_terminal.head.pot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-04-19 04:15+0200\n"
+"PO-Revision-Date: 2006-04-28 06:52-0500\n"
+"Last-Translator: sonam pelden\n"
+"Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: 2;(n!=1)\n"
+"X-Poedit-Language: Dzongkha\n"
+"X-Poedit-Country: Bhutan\n"
+"X-Poedit-SourceCharset: CHARSET\n"
+
+#: ../src/nemo-open-terminal.c:261
+msgid "Open in _Terminal"
+msgstr "ཊར་མི་ནཱལ་གྱི་ནང་ལུ་ཁ་ཕྱེ།(_T_"
+
+#: ../src/nemo-open-terminal.c:263
+msgid "Open the currently selected folder in a terminal"
+msgstr "ད་ལྟོ་སེལ་འཐུ་འབད་ཡོད་པའི་སྣོད་འཛིན་འདི་ ཊར་མི་ནཱལ་གྱི་ནང་ལུ་  ཁ་ཕྱེ།"
+
+#: ../src/nemo-open-terminal.c:265
+msgid "Open the currently open folder in a terminal"
+msgstr "ད་ལྟོ་ཁ་ཕྱེ་ཡོད་པའི་སྣོད་འཛིན་འདི་ ཊར་མི་ནཱལ་གྱི་ནང་ལུ་ཁ་ཕྱེ།"
+
+#: ../src/nemo-open-terminal.c:270
+msgid "Open _Terminal"
+msgstr "ཊར་མི་ནཱལ་ཁ་ཕྱེ།(_T)"
+
+#: ../src/nemo-open-terminal.c:271
+msgid "Open a terminal"
+msgstr "ཊར་མི་ནཱལ་ཅིག་ཁ་ཕྱེ།"
+

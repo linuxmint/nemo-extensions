@@ -1,0 +1,35 @@
+# Turkish translation of nemo-open-terminal.
+# Copyright (C) 2005
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-09-07 23:30+0200\n"
+"PO-Revision-Date: 2005-09-08 12:12+2\n"
+"Last-Translator: Barış Çiçek <baris@teamforce.name.tr>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nemo-open-terminal.c:263
+msgid "Open in _Terminal"
+msgstr "_Uçbirim İçinde Aç"
+
+#: ../src/nemo-open-terminal.c:265
+msgid "Open the currently selected folder in a terminal"
+msgstr "Şeçilen klasörü bir uçbirim içinde aç"
+
+#: ../src/nemo-open-terminal.c:267
+msgid "Open the currently open folder in a terminal"
+msgstr "Açık olan klasörü bir uçbirim içinde aç"
+
+#: ../src/nemo-open-terminal.c:272
+msgid "Open _Terminal"
+msgstr "_Uçbirim Aç"
+
+#: ../src/nemo-open-terminal.c:273
+msgid "Open a terminal"
+msgstr "Bir uçbirim aç"

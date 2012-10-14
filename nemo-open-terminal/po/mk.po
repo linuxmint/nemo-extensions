@@ -1,0 +1,39 @@
+# English translation of nemo-open-terminal.
+# Copyright (C) 2005 THE nemo-open-terminal'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-open-terminal package.
+# Арангел Ангов <ufo@linux.net.mk>, 2005.
+# , fuzzy
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-07-13 20:11+0000\n"
+"PO-Revision-Date: 2005-07-13 23:57+0200\n"
+"Last-Translator: Арангел Ангов <ufo@linux.net.mk>\n"
+"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../src/nemo-open-terminal.c:204
+msgid "Open _Terminal"
+msgstr "Отвори _терминал"
+
+#: ../src/nemo-open-terminal.c:205
+msgid "Open in _Terminal"
+msgstr "Отвори во _терминал"
+
+#: ../src/nemo-open-terminal.c:207
+msgid "Open a terminal"
+msgstr "Отвори терминал"
+
+#: ../src/nemo-open-terminal.c:209
+msgid "Open the currently selected folder in a terminal"
+msgstr "Отвори ја тековно избраната папка во терминал"
+
+#: ../src/nemo-open-terminal.c:210
+msgid "Open the currently open folder in a terminal"
+msgstr "Отвори ја тековон отворената папка во терминал"
+

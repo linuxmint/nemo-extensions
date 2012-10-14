@@ -1,0 +1,94 @@
+# Finnish translations for nemo-open-terminal package.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the package.
+# Tommi Vainikainen <Tommi.Vainikainen@iki.fi>, 2005.
+# Ilkka Tuohela <hile@iki.fi>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-04-23 07:59+0300\n"
+"PO-Revision-Date: 2008-04-23 07:56+0300\n"
+"Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
+"Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/nemo-open-terminal.c:444 ../src/nemo-open-terminal.c:457
+msgid "Open in _Terminal"
+msgstr "Avaa _päätteessä"
+
+#: ../src/nemo-open-terminal.c:446
+msgid "Open the currently selected folder in a terminal"
+msgstr "Avaa valittu kansio päätteessä"
+
+#: ../src/nemo-open-terminal.c:448 ../src/nemo-open-terminal.c:458
+msgid "Open the currently open folder in a terminal"
+msgstr "Avaa tämänhetkinen avoin kansio päätteessä"
+
+#: ../src/nemo-open-terminal.c:454
+msgid "Open _Terminal"
+msgstr "Avaa _pääte"
+
+#: ../src/nemo-open-terminal.c:455
+msgid "Open a terminal"
+msgstr "Avaa pääte"
+
+#: ../src/nemo-open-terminal.c:489 ../src/nemo-open-terminal.c:502
+msgid "Open in _Midnight Commander"
+msgstr "Avaa _Midnight Commanderissa"
+
+#: ../src/nemo-open-terminal.c:491
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Avaa valittu kansio päätteessä Midnight Commander-tiedostonhallintaohjelmassa"
+
+#: ../src/nemo-open-terminal.c:493 ../src/nemo-open-terminal.c:503
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Avaa avattu kansio päätteessä Midnight Commander-tiedostonhallintaohjelmassa"
+
+#: ../src/nemo-open-terminal.c:499
+msgid "Open _Midnight Commander"
+msgstr "Avaa _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:500
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Avaa Midnight Commander-tiedostonhallinta päätteessä"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"Jos tosi ja jos ohjelma \"Midnight Commander\" on asennettu, lisätään "
+"ponnahdusvalikkoon kohta \"Avaa Midnight Commanderissa\"."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"Jos tosi, päätteen avaaminen työpöydältä avaa päätteen kotikansiossa. Muussa "
+"tapauksessa pääte avataan työpöytäkansiosta. Huomaa, että tämä avain on "
+"merkityksetön, jos kotikansio ja työpöytä ovat sama kansio."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Näytetäänkö valikon kohta Midnight Commanderille"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr "Käynnistetään työpöydältä avattu pääte kotikansioon"

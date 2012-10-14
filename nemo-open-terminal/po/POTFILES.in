@@ -1,0 +1,4 @@
+# List of source files containing translatable strings.
+# Please keep this list in alphabetic order.
+src/nemo-open-terminal.c
+nemo-open-terminal.schemas.in

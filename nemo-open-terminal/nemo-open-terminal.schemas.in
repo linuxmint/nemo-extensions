@@ -1,0 +1,33 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/nemo-open-terminal/desktop_opens_home_dir</key>
+      <applyto>/apps/nemo-open-terminal/desktop_opens_home_dir</applyto>
+      <owner>nemo-open-terminal</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+         <short>Whether opening a terminal on the desktop opens a terminal in the home directory</short>
+         <long>
+          If set to true, then opening a terminal on the desktop will open a terminal in
+	  the home directory. Otherwise, it will be opened in the desktop directory.
+	  Note that this key is irrelevant if the desktop directory is identical to the home directory.
+         </long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/nemo-open-terminal/display_mc_item</key>
+      <applyto>/apps/nemo-open-terminal/display_mc_item</applyto>
+      <owner>nemo-open-terminal</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+         <short>Whether a Midnight Commander menu item should be displayed</short>
+         <long>
+          If set to true, and if the terminal file manager "Midnight Commander" is installed,
+	  then an "Open in Midnight Commander" menu item will be displayed in the context menu.
+         </long>
+      </locale>
+    </schema>
+  </schemalist>  
+</gconfschemafile>
