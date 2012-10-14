@@ -1,0 +1,112 @@
+# Brazilian Portuguese translation of gnome-open-terminal.
+# Copyright (C) 2005-2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-open-terminal package.
+# Raphael Higino <In memoriam>, 2005.
+# Og Maciel <ogmaciel@gnome.org>, 2008.
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
+# Fabrício Godoy <skarllot@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-open-terminal\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-10 22:39-0400\n"
+"PO-Revision-Date: 2009-03-10 23:20-0300\n"
+"Last-Translator: Fabrício Godoy <skarllot@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../src/nemo-open-terminal.c:284
+msgid "Open in _Remote Terminal"
+msgstr "Abrir num terminal _remoto"
+
+#: ../src/nemo-open-terminal.c:286
+msgid "Open in _Local Terminal"
+msgstr "Abrir num terminal _local"
+
+#: ../src/nemo-open-terminal.c:290 ../src/nemo-open-terminal.c:301
+msgid "Open the currently selected folder in a terminal"
+msgstr "Abre a pasta selecionada atualmente num terminal"
+
+#: ../src/nemo-open-terminal.c:292 ../src/nemo-open-terminal.c:303
+#: ../src/nemo-open-terminal.c:313
+msgid "Open the currently open folder in a terminal"
+msgstr "Abre a pasta aberta atualmente num terminal"
+
+#: ../src/nemo-open-terminal.c:298 ../src/nemo-open-terminal.c:312
+msgid "Open in T_erminal"
+msgstr "Abrir num t_erminal"
+
+#: ../src/nemo-open-terminal.c:309
+msgid "Open T_erminal"
+msgstr "Abrir t_erminal"
+
+#: ../src/nemo-open-terminal.c:310
+msgid "Open a terminal"
+msgstr "Abre um terminal"
+
+#: ../src/nemo-open-terminal.c:325 ../src/nemo-open-terminal.c:338
+msgid "Open in _Midnight Commander"
+msgstr "Abrir no _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:327
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Abre a pasta selecionada atualmente no gerenciador de arquivos por terminal "
+"Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:329 ../src/nemo-open-terminal.c:339
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Abre a pasta aberta atualmente no gerenciador de arquivos por terminal "
+"Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:335
+msgid "Open _Midnight Commander"
+msgstr "Abrir _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:336
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Abre o gerenciador de arquivos por terminal Midnight Commander"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"Se o gerenciador de arquivos por terminal \"Midnight Commander\" estiver "
+"instalado, então um item de menu \"Abrir no Midnight Commander\" será "
+"exibido no menu de contexto."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"Abrir um terminal na área de trabalho o abrirá na pasta pessoal. Caso "
+"contrário, será aberto no diretório da área de trabalho. Observe que esta "
+"chave é irrelevante se o diretório da área de trabalho for idêntico ao "
+"diretório da pasta pessoal."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Mostrar um item de menu do Midnight Commander"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr "Abrir um terminal na área de trabalho abre-o na pasta pessoal"
+
+#~ msgid "Open the selected folder in a terminal"
+#~ msgstr "Abre a pasta selecionada num terminal"

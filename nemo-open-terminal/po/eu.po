@@ -1,0 +1,113 @@
+# translation of eu.po to Basque
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Iñaki Larrañaga <dooteo@euskalgnu.org>, 2006.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: eu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-16 13:58+0100\n"
+"PO-Revision-Date: 2009-03-16 13:59+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"\n"
+
+#: ../src/nemo-open-terminal.c:284
+msgid "Open in _Remote Terminal"
+msgstr "Ireki _urruneko terminalean"
+
+#: ../src/nemo-open-terminal.c:286
+msgid "Open in _Local Terminal"
+msgstr "Ireki _lokaleko terminalean"
+
+#: ../src/nemo-open-terminal.c:290 ../src/nemo-open-terminal.c:301
+msgid "Open the currently selected folder in a terminal"
+msgstr "Ireki unean hautatutako karpeta terminal batean"
+
+#: ../src/nemo-open-terminal.c:292 ../src/nemo-open-terminal.c:303
+#: ../src/nemo-open-terminal.c:313
+msgid "Open the currently open folder in a terminal"
+msgstr "Ireki unean irekitako karpeta terminalean"
+
+#: ../src/nemo-open-terminal.c:298 ../src/nemo-open-terminal.c:312
+msgid "Open in T_erminal"
+msgstr "Ireki _terminalean"
+
+#: ../src/nemo-open-terminal.c:309
+msgid "Open T_erminal"
+msgstr "Ireki _terminala"
+
+#: ../src/nemo-open-terminal.c:310
+msgid "Open a terminal"
+msgstr "Ireki terminal bat"
+
+#: ../src/nemo-open-terminal.c:325 ../src/nemo-open-terminal.c:338
+msgid "Open in _Midnight Commander"
+msgstr "Ireki _Midnight Commander-en"
+
+#: ../src/nemo-open-terminal.c:327
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Ireki unean hautatutako karpeta terminaleko Midnight Commander fitxategi-"
+"kudeatzailean"
+
+#: ../src/nemo-open-terminal.c:329 ../src/nemo-open-terminal.c:339
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Ireki unean irekitako karpeta terminaleko Midnight Commander fitxategi-"
+"kudeatzailean"
+
+#: ../src/nemo-open-terminal.c:335
+msgid "Open _Midnight Commander"
+msgstr "Ireki _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:336
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Ireki terminaleko Midnight Commander fitxategi-kudeatzailea"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"True (egia) gisa ezartzen bada eta terminaleko Midnight Commander fitxategi-"
+"kudeatzailea instalatuta badago, orduan \"Ireki Midnight Commander-en\" "
+"menuko elementua bistaratuko da testuinguruko menuan."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"TRUE (Egia) gisa ezartzen bada, mahaigainean terminal bat irekitzean "
+"erabiltzailearen direktorio nagusian irekiko da terminala. Bestela, "
+"erabiltzailearen mahaigaineko direktorioan irekiko da terminala. Jakin ezazu "
+"gako honek ez duela garrantzirik baldin eta mahaigaineko direktorioa "
+"erabiltzailearen direktorio nagusiaren berdina bada."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Midnight Commander menuko elementua bistaratu behar den edo ez"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr ""
+"Mahaigainean terminal bat irekitzean erabiltzailearen direktorio nagusian "
+"terminala irekiko den ala ez adierazten du."
+

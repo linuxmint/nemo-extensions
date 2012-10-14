@@ -1,0 +1,106 @@
+# translation of mr.po to marathi
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: mr\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-open-terminal&component=general\n"
+"POT-Creation-Date: 2009-04-17 15:38+0000\n"
+"PO-Revision-Date: 2009-06-09 17:38+0530\n"
+"Last-Translator: Sandeep Shedmake <sandeep.shedmake@gmail.com>\n"
+"Language-Team: marathi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../src/nemo-open-terminal.c:284
+#| msgid "Open in _Terminal"
+msgid "Open in _Remote Terminal"
+msgstr "दूरस्थ टर्मिनल मध्ये उघडा (_R)"
+
+#: ../src/nemo-open-terminal.c:286
+#| msgid "Open in _Terminal"
+msgid "Open in _Local Terminal"
+msgstr "स्थानीय टर्मिनल मध्ये उघडा (_L)"
+
+#: ../src/nemo-open-terminal.c:290 ../src/nemo-open-terminal.c:301
+msgid "Open the currently selected folder in a terminal"
+msgstr "टर्मिनल अंतर्गत वर्तमानक्षणी निवडलेले फोल्डर उघडा"
+
+#: ../src/nemo-open-terminal.c:292 ../src/nemo-open-terminal.c:303
+#: ../src/nemo-open-terminal.c:313
+msgid "Open the currently open folder in a terminal"
+msgstr "टर्मिनल अंतर्गत वर्तमानक्षणी उघडलेले फोल्डर उघडा"
+
+#: ../src/nemo-open-terminal.c:298 ../src/nemo-open-terminal.c:312
+#| msgid "Open in _Terminal"
+msgid "Open in T_erminal"
+msgstr "टर्मिनल मध्ये उघडा (_e)"
+
+#: ../src/nemo-open-terminal.c:309
+#| msgid "Open _Terminal"
+msgid "Open T_erminal"
+msgstr "टर्मिनल उघडा (_e)"
+
+#: ../src/nemo-open-terminal.c:310
+msgid "Open a terminal"
+msgstr "टर्मिनल उघडा"
+
+#: ../src/nemo-open-terminal.c:325 ../src/nemo-open-terminal.c:338
+msgid "Open in _Midnight Commander"
+msgstr "Midnight Commander अंतर्गत उघडा (_M)"
+
+#: ../src/nemo-open-terminal.c:327
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr "टर्मिनल फाइल व्यवस्थापक Midnight Commander अंतर्गत वर्तमानक्षणी निवडलेले फोल्डर उघडा"
+
+#: ../src/nemo-open-terminal.c:329 ../src/nemo-open-terminal.c:339
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr "टर्मिनल फाइल व्यवस्थापक Midnight Commander अंतर्गत वर्तमानक्षणी उघडलेले फोल्डर उघडा"
+
+#: ../src/nemo-open-terminal.c:335
+msgid "Open _Midnight Commander"
+msgstr "Midnight Commander उघडा (_M)"
+
+#: ../src/nemo-open-terminal.c:336
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "टर्मिनल फाइल व्यवस्थापक Midnight Commander उघडा"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"true निश्चित केल्यास, व टर्मिनल फाइल व्यवस्थापक \"Midnight Commander\" प्रतिष्ठापीत "
+"असल्यास, \"Open in Midnight Commander\" मेन्यू घटक संदर्भ मेन्यू अंतर्गत दर्शविले जाईल."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"true निश्चित केल्यास, व डेस्कटॉपवर टर्मिनल उघडल्यावर मुख्य डिरेक्ट्री अंतर्गत टर्मिनल उघडेल. "
+"नाहीतर, डेस्कटॉप डिरेक्ट्री अंतर्गत उघडले जाईल. लक्षात ठेवा डेस्कटॉप डिरेक्ट्री मुख्य डिरेक्ट्री "
+"नुरूप असल्यास ही कि अनुपयोगी ठरते."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Midnight Commander मेन्यू घटक दर्शवायला हवे का"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr "डेस्कटॉपवर टर्मिनल उघडल्यास मुख्य डिरेक्ट्री अंतर्गत टर्मिनल उघडले जाते का"
+

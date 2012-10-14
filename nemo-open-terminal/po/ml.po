@@ -1,0 +1,39 @@
+# translation of nemo-open-terminal.HEAD.ml.po to Malayalam
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Ani Peter <apeter@redhat.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal.HEAD.ml\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-20 05:14+0100\n"
+"PO-Revision-Date: 2006-11-20 17:20+0530\n"
+"Last-Translator: Ani Peter <apeter@redhat.com>\n"
+"Language-Team: Malayalam\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+
+#: ../src/nemo-open-terminal.c:277
+msgid "Open in _Terminal"
+msgstr "ടെര്‍മിനലില്‍ തുറക്കുക (_T)"
+
+#: ../src/nemo-open-terminal.c:279
+msgid "Open the currently selected folder in a terminal"
+msgstr "ഇപ്പോള്‍ തിരഞ്ഞെടുത്തിരിക്കുന്ന ഫോള്‍ഡര്‍ ഒരു ടെര്‍മിനല്‍ തുറക്കുക"
+
+#: ../src/nemo-open-terminal.c:281
+msgid "Open the currently open folder in a terminal"
+msgstr "ഇപ്പോള്‍ തുറന്നിരിക്കുന്ന ഫോള്‍ഡര്‍ ഒരു ടെര്‍മിനല്‍ തുറക്കുക"
+
+#: ../src/nemo-open-terminal.c:286
+msgid "Open _Terminal"
+msgstr "ടെര്‍മിനല്‍ തുറക്കുക (_T)"
+
+#: ../src/nemo-open-terminal.c:287
+msgid "Open a terminal"
+msgstr "ഒരു ടെര്‍മിനല്‍ തുറക്കുക"
+

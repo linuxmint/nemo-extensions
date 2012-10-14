@@ -1,0 +1,93 @@
+# Nemoe "terminalis avaja" eesti keele tõlge.
+# Estonian translation of Nemo-open-terminal.
+#
+# Copyright (C) 2006, The Gnome Project.
+# This file is distributed under the same license as the nemo-open-terminal
+# package.
+#
+# Ivar Smolin <okul@linux.ee>, 2006.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal HEAD\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=nemo-open-terminal&component=general\n"
+"POT-Creation-Date: 2009-03-09 12:43+0000\n"
+"PO-Revision-Date: 2009-04-10 00:09+0300\n"
+"Last-Translator: Mattias Põldaru <mahfiaz gmail com>\n"
+"Language-Team: Estonian <gnome-et@linux.ee>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#| msgid "Open in _Terminal"
+msgid "Open in _Remote Terminal"
+msgstr "Ava _kaugterminalis"
+
+#| msgid "Open in _Terminal"
+msgid "Open in _Local Terminal"
+msgstr "Ava _kohalikus terminalis"
+
+msgid "Open the currently selected folder in a terminal"
+msgstr "Hetkel valitud kausta avamine terminalis"
+
+msgid "Open the currently open folder in a terminal"
+msgstr "Hetkel avatud kausta avamine terminalis"
+
+#| msgid "Open in _Terminal"
+msgid "Open in T_erminal"
+msgstr "Ava _terminalis"
+
+#| msgid "Open _Terminal"
+msgid "Open T_erminal"
+msgstr "Ava _terminal"
+
+msgid "Open a terminal"
+msgstr "Terminali avamine"
+
+msgid "Open in _Midnight Commander"
+msgstr "Ava _Midnight Commanderis"
+
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Praegu valitud kausta avamine terminali failihalduris Midnight Commander"
+
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr "Avatud kausta avamine terminali failihalduris Midnight Commander"
+
+msgid "Open _Midnight Commander"
+msgstr "Ava _Midnight Commander"
+
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Terminali failihalduri Midnight Commander avamine"
+
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"Kui märgitud ja kui terminali failihaldur \"Midnight Commander\" on "
+"paigaldatud, näidatakse hüpikmenüüs kirjet \"Ava Midnight Commanderis\"."
+
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"Kui tõene, siis töölaual terminali avamine avab selle kodukataloogis. Muul "
+"juhul avatakse see töölaua kataloogis. See valik on tähendusetu, kui töölaud "
+"ja kodukataloogi kattuvad."
+
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Kas Midnight Commanderi menüükirjet näidatakse"
+
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr "Kui terminal avada töölaual, avab see kodukataloogis"

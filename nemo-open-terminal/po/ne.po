@@ -1,0 +1,60 @@
+# translation of nemo-open-terminal.HEAD.ne.po to Nepali
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Pawan Chitrakar <pawan@mpp.org.np>, 2005.
+# Shiva Prasad Pokharel <pokharelshiva@hotmail.com>, 2005.
+# Ganesh Ghimire <gghimire@gmail.com>, 2005.
+# Ishwar Sharma <eesha_kaf@yahoo.com>, 2005.
+# Ishwar Sharma <sharmabeeshwar@gmail.com>, 2005.
+# Jaydeep Bhusal <zaydeep@hotmail.com>, 2005.
+# Mahesh subedi <submanesh@hotmail.com>, 2006.
+# Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal.HEAD.ne\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-23 11:30+0100\n"
+"PO-Revision-Date: 2007-11-14 14:07+0545\n"
+"Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+
+#: ../src/nemo-open-terminal.c:355 ../src/nemo-open-terminal.c:368
+msgid "Open in _Terminal"
+msgstr "टर्मिनलमा खोल्नुहोस्"
+
+#: ../src/nemo-open-terminal.c:357
+msgid "Open the currently selected folder in a terminal"
+msgstr "टर्मिनलमा चयन गरिएको हालको फोल्डर खोल्नुहोस्"
+
+#: ../src/nemo-open-terminal.c:359 ../src/nemo-open-terminal.c:369
+msgid "Open the currently open folder in a terminal"
+msgstr "हालै खोलिएको फोल्डर टर्मिनलमा खोल्नुहोस्"
+
+#: ../src/nemo-open-terminal.c:365
+msgid "Open _Terminal"
+msgstr "टर्मिनल खोल्नुहोस्"
+
+#: ../src/nemo-open-terminal.c:366
+msgid "Open a terminal"
+msgstr "टर्मिनल खोल्नुहोस्"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr "यदि सही सेट भएको छ भने, डेस्कटपमा टर्मिनल खोल्नाले गृह डाइरेक्टरीमा टर्मिनल खुल्नेछ । अन्यथा, यो डेस्कटप डाइरेक्टरीमा खुल्नेछ । याद गर्नुहोस् कि यदि डेस्कटप डाइरेक्टरी गृह डाइरेक्टरीमा पहिचानयोग्य छ भने यो कुञ्जी सान्दर्भिक हुन्छ ।"
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr "डेस्कटपमा टर्मिनल खोल्नाले गृह डाइरेक्टरीमा टर्मिनल खुल्छ या खुल्दैन"
+

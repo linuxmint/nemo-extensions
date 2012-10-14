@@ -1,0 +1,110 @@
+# translation of nemo-open-terminal.master.gu.po to Gujarati
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Ankit Patel <ankit@redhat.com>, 2006.
+# Sweta Kothari <swkothar@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal.master.gu\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-open-terminal&component=general\n"
+"POT-Creation-Date: 2009-04-17 15:38+0000\n"
+"PO-Revision-Date: 2009-06-17 12:00+0530\n"
+"Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
+"Language-Team: Gujarati\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
+
+#: ../src/nemo-open-terminal.c:284
+#| msgid "Open in _Terminal"
+msgid "Open in _Remote Terminal"
+msgstr "દૂરસ્થ ટર્મિનલમાં ખોલો (_R)"
+
+#: ../src/nemo-open-terminal.c:286
+#| msgid "Open in _Terminal"
+msgid "Open in _Local Terminal"
+msgstr "સ્થાનિય ટર્મિનલમાં ખોલો (_L)"
+
+#: ../src/nemo-open-terminal.c:290 ../src/nemo-open-terminal.c:301
+msgid "Open the currently selected folder in a terminal"
+msgstr "વર્તમાનમાં પસંદ કરેલ ફોલ્ડર ટર્મિનલમાં ખોલો"
+
+#: ../src/nemo-open-terminal.c:292 ../src/nemo-open-terminal.c:303
+#: ../src/nemo-open-terminal.c:313
+msgid "Open the currently open folder in a terminal"
+msgstr "વર્તમાનમાં ખોલેલ ફોલ્ડર ટર્મિનલમાં ખોલો"
+
+#: ../src/nemo-open-terminal.c:298 ../src/nemo-open-terminal.c:312
+#| msgid "Open in _Terminal"
+msgid "Open in T_erminal"
+msgstr "ટર્મિનલમાં ખોલો (_T)"
+
+#: ../src/nemo-open-terminal.c:309
+#| msgid "Open _Terminal"
+msgid "Open T_erminal"
+msgstr "ટર્મિનલ ખોલો (_T)"
+
+#: ../src/nemo-open-terminal.c:310
+msgid "Open a terminal"
+msgstr "ટર્મિનલ ખોલો"
+
+#: ../src/nemo-open-terminal.c:325 ../src/nemo-open-terminal.c:338
+msgid "Open in _Midnight Commander"
+msgstr "Midnight Commander માં ખોલો (_M)"
+
+#: ../src/nemo-open-terminal.c:327
+#| msgid "Open the currently selected folder in a terminal"
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr "ટર્મિનલ ફાઇલ વ્યવસ્થાપક Midnight Commander માં વર્તમાનમાં પસંદ કરેલ ફોલ્ડરને ટર્મિનલમાં ખોલો"
+
+#: ../src/nemo-open-terminal.c:329 ../src/nemo-open-terminal.c:339
+#| msgid "Open the currently open folder in a terminal"
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr "ટર્મિનલ ફાઇલ વ્યવસ્થાપક Midnight Commander માં વર્તમાનમાં ખોલેલ ફોલ્ડરને ટર્મિનલમાં ખોલો"
+
+#: ../src/nemo-open-terminal.c:335
+msgid "Open _Midnight Commander"
+msgstr "Midnight Commander ને ખોલો (_M)"
+
+#: ../src/nemo-open-terminal.c:336
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "ટર્મિનલ ફાઇલ વ્યવસ્થાપર Midnight Commander ને ખોલો"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"જો true તરીકે સુયોજિત હોય તો, અને જો ટર્મિનલ ફાઇલ વ્યવસ્થાપક \"Midnight Commander\" એ સ્થાપિત "
+"થયેલ હોય તો, પછી \"Midnight Commander માં ખોલો\" મેનુ વસ્તુ એ સંદર્ભ મેનુમાં દર્શાવેલ હશે."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"જો true તરીકે સુયોજિત હોયતો, પછી ડેસ્કટોપર પર ટર્મિનલને ખોલવા દરમ્યાન ઘર ડિરેક્ટરીમાં ટર્મિનલને ખોલશો. "
+"નહિં તો, તે ડેસ્કટોપ ડિરેક્ટરીમાં ખોલેલ હશે. નોંધો કે જે આ કી એ અસુસંગત છે જો ડેસ્કટોપ ડિરેક્ટરી "
+"એ ઘર ડિરેક્ટરીમાં સરખી હોય તો."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "ક્યાંતો Midnight Commander મેનુ વસ્તુને દર્શાવવી જોઇએ કે નહિં"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr "ક્યાંતો ઘર પાનાંમાં ડેસ્કટોપ ટર્મિનલને ખોલે છે તે પર ટર્મિનલને ખોલી રહ્યા છે"
+

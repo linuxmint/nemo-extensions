@@ -1,0 +1,110 @@
+# translation of lt.po to Lithuanian
+# Lithuanian translation of nemo-open-terminal.
+# Copyright (C) 2005, 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the nemo-open-terminal package.
+#
+#
+# Žygimantas Beručka <zygis@gnome.org>, 2005.
+# Gintautas Miliauskas <gintas@akl.lt>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-15 03:12+0300\n"
+"PO-Revision-Date: 2009-05-16 14:12+0300\n"
+"Last-Translator: Aurimas Fišeras <aurimas@gmail.com>\n"
+"Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
+"100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../src/nemo-open-terminal.c:359
+msgid "Open in _Remote Terminal"
+msgstr "Atverti _nuotoliniame terminale"
+
+#: ../src/nemo-open-terminal.c:361
+msgid "Open in _Local Terminal"
+msgstr "Atverti _vietiniame terminale"
+
+#: ../src/nemo-open-terminal.c:365 ../src/nemo-open-terminal.c:376
+msgid "Open the currently selected folder in a terminal"
+msgstr "Atverti šiuo metu pasirinktą aplanką terminale"
+
+#: ../src/nemo-open-terminal.c:367 ../src/nemo-open-terminal.c:378
+#: ../src/nemo-open-terminal.c:388
+msgid "Open the currently open folder in a terminal"
+msgstr "Atverti šiuo metu atvertą aplanką terminale"
+
+#: ../src/nemo-open-terminal.c:373 ../src/nemo-open-terminal.c:387
+msgid "Open in T_erminal"
+msgstr "Atverti _terminale"
+
+#: ../src/nemo-open-terminal.c:384
+msgid "Open T_erminal"
+msgstr "Atverti _terminalą"
+
+#: ../src/nemo-open-terminal.c:385
+msgid "Open a terminal"
+msgstr "Atverti terminalą"
+
+#: ../src/nemo-open-terminal.c:400 ../src/nemo-open-terminal.c:413
+msgid "Open in _Midnight Commander"
+msgstr "Atverti _Midnight Commanderyje"
+
+#: ../src/nemo-open-terminal.c:402
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Atverti šiuo metu pasirinktą aplanką terminalinėje failų tvarkyklėje "
+"Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:404 ../src/nemo-open-terminal.c:414
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Atverti šiuo metu atvertą aplanką terminalinėje failų tvarkyklėje Midnight "
+"Commander"
+
+#: ../src/nemo-open-terminal.c:410
+msgid "Open _Midnight Commander"
+msgstr "Atverti _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:411
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Atverti terminalinę failų tvarkyklę Midnight Commander"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"Jei pasirinkta ir terminalinė failų tvarkyklė \"Midnight Commander\" yra "
+"įdiegta, meniu punktas \"Atverti Midnight Commanderyje\" bus rodomas "
+"kontekstiniame meniu."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"Jei pasirinkta, terminalo atvėrimas darbastalyje atvers terminalą namų "
+"aplanke. Kitaip terminalas bus atvertas darbastalio aplanke. Šis raktas "
+"nereikšmingas, jei darbastalio aplankas identiškas namų aplankui."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Ar Midnight Commander meniu punktas turėtų būti rodomas"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr "Ar atveriant terminalą darbastalyje atverti terminalą namų aplanke"

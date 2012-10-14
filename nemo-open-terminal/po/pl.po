@@ -1,0 +1,95 @@
+# Translation of nemo-open-terminal to Polish
+# (C) 2004-2009 Free Software Foundation, Inc.
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Aviary.pl
+# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
+# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
+# gnomepl@aviary.pl
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Michał Kastelik <m.kastelik@wp.pl>, 2005
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-14 12:16+0200\n"
+"PO-Revision-Date: 2009-09-14 12:17+0100\n"
+"Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
+"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../src/nemo-open-terminal.c:359
+msgid "Open in _Remote Terminal"
+msgstr "Otwórz w _zdalnym terminalu"
+
+#: ../src/nemo-open-terminal.c:361
+msgid "Open in _Local Terminal"
+msgstr "Otwórz w _lokalnym terminalu"
+
+#: ../src/nemo-open-terminal.c:365
+#: ../src/nemo-open-terminal.c:376
+msgid "Open the currently selected folder in a terminal"
+msgstr "Otwiera obecnie zaznaczony katalog w terminalu"
+
+#: ../src/nemo-open-terminal.c:367
+#: ../src/nemo-open-terminal.c:378
+#: ../src/nemo-open-terminal.c:388
+msgid "Open the currently open folder in a terminal"
+msgstr "Otwiera obecnie otwarty katalog w terminalu"
+
+#: ../src/nemo-open-terminal.c:373
+#: ../src/nemo-open-terminal.c:387
+msgid "Open in T_erminal"
+msgstr "Otwórz w _terminalu"
+
+#: ../src/nemo-open-terminal.c:384
+msgid "Open T_erminal"
+msgstr "Otwórz _terminal"
+
+#: ../src/nemo-open-terminal.c:385
+msgid "Open a terminal"
+msgstr "Otwiera terminal"
+
+#: ../src/nemo-open-terminal.c:400
+#: ../src/nemo-open-terminal.c:413
+msgid "Open in _Midnight Commander"
+msgstr "Otwórz za pomocą _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:402
+msgid "Open the currently selected folder in the terminal file manager Midnight Commander"
+msgstr "Otwiera obecnie zaznaczony katalog za pomocą menedżera plików Midnight Commander w terminalu"
+
+#: ../src/nemo-open-terminal.c:404
+#: ../src/nemo-open-terminal.c:414
+msgid "Open the currently open folder in the terminal file manager Midnight Commander"
+msgstr "Otwiera obecnie otwarty katalog za pomocą menedżera plików Midnight Commander w terminalu"
+
+#: ../src/nemo-open-terminal.c:410
+msgid "Open _Midnight Commander"
+msgstr "Otwórz _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:411
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Otwiera menedżer plików Midnight Commander w terminalu"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid "If set to true, and if the terminal file manager \"Midnight Commander\" is installed, then an \"Open in Midnight Commander\" menu item will be displayed in the context menu."
+msgstr "Gdy ustawione na \"true\" i terminalowy menedżer plików \"Midnight Commander\" jest zainstalowany, pozycja menu \"Otwórz za pomocą Midnight Commander\" będzie wyświetlona w menu podręcznym."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid "If set to true, then opening a terminal on the desktop will open a terminal in the home directory. Otherwise, it will be opened in the desktop directory. Note that this key is irrelevant if the desktop directory is identical to the home directory."
+msgstr "Gdy ustawione na \"true\", otwieranie terminalu na pulpicie spowoduje otwarcie terminalu w katalogu domowym. W przeciwnym razie zostanie otwarty katalog pulpitu. Uwaga - ten klucz jest bezużyteczny, gdy katalog pulpitu jest identyczny jak katalog domowy."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Określa, czy wyświetlać pozycję menu Midnight Commander"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid "Whether opening a terminal on the desktop opens a terminal in the home directory"
+msgstr "Określa, czy otwieranie terminalu na pulpicie otwiera terminal w katalogu domowym"
+

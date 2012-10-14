@@ -1,0 +1,7 @@
+General
+=======
+- Get Proper Startup Notification. Currently, imported libeel helpers
+  are used to launch the terminal. The GAppInfo created with
+  g_desktop_app_info_new() which could be used for launching the GNOME Terminal
+  can not handle any extra argvs.
+- Figure Out Remote SFTP Filename Encoding (Possible At All?)

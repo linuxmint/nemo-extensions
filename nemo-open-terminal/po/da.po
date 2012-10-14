@@ -1,0 +1,107 @@
+# Danish translation of nemo-open-terminal.
+# Copyright (C) 2009 Christian Neumair & nedenstående oversættere.
+# This file is distributed under the same license as the nemo-open-terminal package.
+# Martin Willemoes Hansen <mwh@sysrq.dk>, 2005.
+# Peter Bach <bach.peter@gmail.com>, 2007.
+# Joe Hansen (joedalton2@yahoo.dk), 2009, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-30 23:04+0100\n"
+"PO-Revision-Date: 2010-01-29 15:00+0200\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nemo-open-terminal.c:361
+msgid "Open in _Remote Terminal"
+msgstr "Åbn i _fjern terminal"
+
+#: ../src/nemo-open-terminal.c:363
+msgid "Open in _Local Terminal"
+msgstr "Åbn i _lokal terminal"
+
+#: ../src/nemo-open-terminal.c:367 ../src/nemo-open-terminal.c:378
+msgid "Open the currently selected folder in a terminal"
+msgstr "Åbn den nuværende valgte mappe i en terminal"
+
+#: ../src/nemo-open-terminal.c:369 ../src/nemo-open-terminal.c:380
+#: ../src/nemo-open-terminal.c:390
+msgid "Open the currently open folder in a terminal"
+msgstr "Åbn den nuværende åbnede mappe i en terminal"
+
+#: ../src/nemo-open-terminal.c:375 ../src/nemo-open-terminal.c:389
+msgid "Open in T_erminal"
+msgstr "Åbn i t_erminal"
+
+#: ../src/nemo-open-terminal.c:386
+msgid "Open T_erminal"
+msgstr "Åbn _terminal"
+
+#: ../src/nemo-open-terminal.c:387
+msgid "Open a terminal"
+msgstr "Åbn en terminal"
+
+#: ../src/nemo-open-terminal.c:402 ../src/nemo-open-terminal.c:415
+msgid "Open in _Midnight Commander"
+msgstr "Åbn i _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:404
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Åbn den nuværende valgte mappe i terminalfilhåndteringen Mignight Commander"
+
+#: ../src/nemo-open-terminal.c:406 ../src/nemo-open-terminal.c:416
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Åbn den nuværende åbnede mappe i terminalfilhåndteringen Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:412
+msgid "Open _Midnight Commander"
+msgstr "Åbn _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:413
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Åbn terminalfilhåndteringen Midnight Commander"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"Hvis angivet som sand, og hvis terminalfilhåndteringen \"Midnight Commander"
+"\" er installeret, så vil menupunktet \"Åbn i Midnight Commander\" blive "
+"vist i kontekstmenuen."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"Hvis angivet som sand, så vil åbning af en terminal på skrivebordet åbne en "
+"terminal i hjemmemappen. Ellers vil den blive åbnet i skrivebordsmappen. "
+"Bemærk at denne indstilling er irrelevant hvis skrivebordsmappen er identisk "
+"med hjemmemappen."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Hvorvidt et menupunkt fra Midnight Commander skal vises"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr ""
+"Hvorvidt åbning af en terminal på skrivebordet åbner en terminal i "
+"hjemmemappen"

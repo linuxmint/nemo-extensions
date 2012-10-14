@@ -1,0 +1,109 @@
+# translation of gl.po to Galego
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005.
+# Ignacio Casal Quinteiro <icq@cvs.gnome.org>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: gl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-15 23:11+0200\n"
+"PO-Revision-Date: 2009-09-07 14:37+0100\n"
+"Last-Translator: Fran Diéguez <fran.dieguez@glug.es>\n"
+"Language-Team: Galego <proxecto@trasno.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../src/nemo-open-terminal.c:359
+msgid "Open in _Remote Terminal"
+msgstr "Abrir nunha _terminal remota"
+
+#: ../src/nemo-open-terminal.c:361
+msgid "Open in _Local Terminal"
+msgstr "Abrir nunha _terminal local"
+
+#: ../src/nemo-open-terminal.c:365 ../src/nemo-open-terminal.c:376
+msgid "Open the currently selected folder in a terminal"
+msgstr "Abre o cartafol actualmente seleccionado nunha terminal"
+
+#: ../src/nemo-open-terminal.c:367 ../src/nemo-open-terminal.c:378
+#: ../src/nemo-open-terminal.c:388
+msgid "Open the currently open folder in a terminal"
+msgstr "Abre o cartafol actualmente aberto nunha terminal"
+
+#: ../src/nemo-open-terminal.c:373 ../src/nemo-open-terminal.c:387
+msgid "Open in T_erminal"
+msgstr "Abrir nunha _terminal"
+
+#: ../src/nemo-open-terminal.c:384
+msgid "Open T_erminal"
+msgstr "Abrir _terminal"
+
+#: ../src/nemo-open-terminal.c:385
+msgid "Open a terminal"
+msgstr "Abrir unha terminal"
+
+#: ../src/nemo-open-terminal.c:400 ../src/nemo-open-terminal.c:413
+msgid "Open in _Midnight Commander"
+msgstr "Abrir con _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:402
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Abre o cartafol actualmente seleccionado nun xestor de ficheiros de terminal "
+"Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:404 ../src/nemo-open-terminal.c:414
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"Abre o cartafol actualmente aberto nun xestor de ficheiros de terminal "
+"Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:410
+msgid "Open _Midnight Commander"
+msgstr "Abrir _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:411
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Abrir o xestor de ficheiros de terminal Midnight Commander"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"Se está definido a verdadeiro, e o xestor de ficheiros de terminal "
+"\"Midnight Commander\" está instalado mostrarase un elemento do menú \"Abrir "
+"en Midnight Commander\" no menú contextual."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"Se é verdadeiro, ao abrir unha terminal no escritorio abrirase no directorio "
+"persoal. Doutra maneira abrirase no directorio do escritorio. Note que esta "
+"clave é irrelevante se o directorio do escritorio é o mesmo que o cartafol "
+"persoal."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Indica se o elemento de menú Midnight Commander mostrarase"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr ""
+"Indica se ao abrir unha terminal no escritorio abre unha terminal no "
+"cartafol persoal"

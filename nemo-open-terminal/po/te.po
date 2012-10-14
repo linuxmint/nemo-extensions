@@ -1,0 +1,108 @@
+# translation of nemo-open-terminal.po.master.te.po to Telugu
+# Telugu translation of nemo-open-terminal.
+# Copyright (C) 2009 nemo-open-terminal's COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-open-terminal package.
+#
+# Krishna Babu K <kkrothap@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal.po.master.te\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nemo-open-terminal&component=general\n"
+"POT-Creation-Date: 2009-06-24 10:59+0000\n"
+"PO-Revision-Date: 2009-07-02 18:55+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+
+#: ../src/nemo-open-terminal.c:359
+msgid "Open in _Remote Terminal"
+msgstr "దూరస్థ టెర్మినల్ నందు తెరువుము (_R)"
+
+#: ../src/nemo-open-terminal.c:361
+msgid "Open in _Local Terminal"
+msgstr "స్థానిక టెర్మినల్ నందు తెరువుము (_L)"
+
+#: ../src/nemo-open-terminal.c:365 ../src/nemo-open-terminal.c:376
+msgid "Open the currently selected folder in a terminal"
+msgstr "ప్రస్తుతం యెంపికకాబడిన సంచయాన్ని టెర్మినల్‌నందు తెరువుము"
+
+#: ../src/nemo-open-terminal.c:367 ../src/nemo-open-terminal.c:378
+#: ../src/nemo-open-terminal.c:388
+msgid "Open the currently open folder in a terminal"
+msgstr "ప్రస్తుతం తెరువబడిన ఫోల్డర్‌ను టెర్మినల్ నందు తెరువుము"
+
+#: ../src/nemo-open-terminal.c:373 ../src/nemo-open-terminal.c:387
+msgid "Open in T_erminal"
+msgstr "టెర్మినల్ నందు తెరువుము (_e)"
+
+#: ../src/nemo-open-terminal.c:384
+msgid "Open T_erminal"
+msgstr "టెర్మినల్ తెరువుము (_e)"
+
+#: ../src/nemo-open-terminal.c:385
+msgid "Open a terminal"
+msgstr "టెర్మినల్ తెరువుము"
+
+#: ../src/nemo-open-terminal.c:400 ../src/nemo-open-terminal.c:413
+msgid "Open in _Midnight Commander"
+msgstr "మిడ్‌నైట్ కమాండర్‌ నందు తెరువుము"
+
+#: ../src/nemo-open-terminal.c:402
+msgid ""
+"Open the currently selected folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"ప్రస్తుతం యెంపికకాబడివున్న ఫోల్డర్‌ను టెర్మినల్ దస్త్ర నిర్వాహిక మిడ్‌నైట్ కమాండర్ నందు "
+"తెరువుము"
+
+#: ../src/nemo-open-terminal.c:404 ../src/nemo-open-terminal.c:414
+msgid ""
+"Open the currently open folder in the terminal file manager Midnight "
+"Commander"
+msgstr ""
+"ప్రస్తుతం తెరువబడివున్న ఫోల్డర్‌ను టెర్మినల్ దస్త్ర నిర్వాహిక మిడ్‌నైట్ కమాండర్ నందు "
+"తెరువుము"
+
+#: ../src/nemo-open-terminal.c:410
+msgid "Open _Midnight Commander"
+msgstr "మిడ్‌నైట్ కమాండర్ తెరువుము (_M)"
+
+#: ../src/nemo-open-terminal.c:411
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "టెర్మినల్ దస్త్ర నిర్వాహిక మిడ్‌నైట్ కమాండర్ తెరువుము"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid ""
+"If set to true, and if the terminal file manager \"Midnight Commander\" is "
+"installed, then an \"Open in Midnight Commander\" menu item will be "
+"displayed in the context menu."
+msgstr ""
+"సత్యానికి అమర్చబడివుంటే, మరియు టెర్మినల్ దస్త్ర నిర్వాహిక \"మిడ్‌నైట్ కమాండర్\" "
+"సంస్థాపించబడివుంటే, అప్పుడు \"మిడ్‌నైట్ కమాండర్ నందు తెరువుము\" మెనూ "
+"అంశము కాంటెస్టు మెనూనందు ప్రదర్శించబడుతుంది."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid ""
+"If set to true, then opening a terminal on the desktop will open a terminal "
+"in the home directory. Otherwise, it will be opened in the desktop "
+"directory. Note that this key is irrelevant if the desktop directory is "
+"identical to the home directory."
+msgstr ""
+"సత్యానికి అమర్చితే, డెస్కుటాపునందు టెర్మినల్‌ను తెరిస్తే టెర్మినల్‌ను నివాస సంచయంనందు "
+"తెరుస్తుంది. లేకపోతే, అది డెస్కటాపు సంచయంనందు తెరుస్తుంది. డెస్కుటాపు డెరెక్టరీ "
+"అనునది నివాస సంచయంకు సారూప్యంగా వుంటే ఈ కీ అసంభర్దమౌతుంది."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "మిడ్‌నైట్ కమాండర్ మెనూ అంశము ప్రదర్శించబడాలా"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid ""
+"Whether opening a terminal on the desktop opens a terminal in the home "
+"directory"
+msgstr "డెస్కుటాపు నందు టెర్మినల్ తెరిస్తే టెర్మినల్ నివాస సంచయంనందు తెరువబడాలా."
+

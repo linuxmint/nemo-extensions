@@ -1,0 +1,119 @@
+# Swedish messages for nemo-open-terminal.
+# Copyright (C) 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Christian Rose <menthos@menthos.com>, 2005, 2006.
+# Daniel Nylander <po@danielnylander.se>, 2007, 2008, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-open-terminal\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 22:11+0100\n"
+"PO-Revision-Date: 2009-03-09 22:12+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/nemo-open-terminal.c:284
+msgid "Open in _Remote Terminal"
+msgstr "Öppna i _fjärrterminal"
+
+#: ../src/nemo-open-terminal.c:286
+msgid "Open in _Local Terminal"
+msgstr "Öppna i _lokal terminal"
+
+#: ../src/nemo-open-terminal.c:290
+#: ../src/nemo-open-terminal.c:301
+msgid "Open the currently selected folder in a terminal"
+msgstr "Öppna den för tillfället markerade mappen i en terminal"
+
+#: ../src/nemo-open-terminal.c:292
+#: ../src/nemo-open-terminal.c:303
+#: ../src/nemo-open-terminal.c:313
+msgid "Open the currently open folder in a terminal"
+msgstr "Öppna den för tillfället öppna mappen i en terminal"
+
+#: ../src/nemo-open-terminal.c:298
+#: ../src/nemo-open-terminal.c:312
+msgid "Open in T_erminal"
+msgstr "Öppna i t_erminal"
+
+#: ../src/nemo-open-terminal.c:309
+msgid "Open T_erminal"
+msgstr "Öppna t_erminal"
+
+#: ../src/nemo-open-terminal.c:310
+msgid "Open a terminal"
+msgstr "Öppna en terminal"
+
+#: ../src/nemo-open-terminal.c:325
+#: ../src/nemo-open-terminal.c:338
+msgid "Open in _Midnight Commander"
+msgstr "Öppna i _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:327
+msgid "Open the currently selected folder in the terminal file manager Midnight Commander"
+msgstr "Öppna den för tillfället markerade mappen i terminalfilhanteraren Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:329
+#: ../src/nemo-open-terminal.c:339
+msgid "Open the currently open folder in the terminal file manager Midnight Commander"
+msgstr "Öppna den för tillfället öppna mappen i terminalfilhanteraren Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:335
+msgid "Open _Midnight Commander"
+msgstr "Öppna _Midnight Commander"
+
+#: ../src/nemo-open-terminal.c:336
+msgid "Open the terminal file manager Midnight Commander"
+msgstr "Öppna terminalfilhanteraren Midnight Commander"
+
+#: ../nemo-open-terminal.schemas.in.h:1
+msgid "If set to true, and if the terminal file manager \"Midnight Commander\" is installed, then an \"Open in Midnight Commander\" menu item will be displayed in the context menu."
+msgstr "Om inställd till sant, och om terminalfilhanteraren \"Midnight Commander\" är installerad, kommer ett menyobjekt för \"Öppna i Midnight Commander\" att visas i sammanhangsmenyn."
+
+#: ../nemo-open-terminal.schemas.in.h:2
+msgid "If set to true, then opening a terminal on the desktop will open a terminal in the home directory. Otherwise, it will be opened in the desktop directory. Note that this key is irrelevant if the desktop directory is identical to the home directory."
+msgstr "Om inställd till sant kommer öppnandet av en terminal på skrivbordet att öppna en terminal i hemkatalogen. Om inte kommer det att öppnas i skrivbordskatalogen. Observera att den här nyckeln är irrelevant om skrivbordskatalogen är identisk med hemkatalogen."
+
+#: ../nemo-open-terminal.schemas.in.h:3
+msgid "Whether a Midnight Commander menu item should be displayed"
+msgstr "Huruvida ett menyobjekt för Midnight Commander ska visas"
+
+#: ../nemo-open-terminal.schemas.in.h:4
+msgid "Whether opening a terminal on the desktop opens a terminal in the home directory"
+msgstr "Huruvida öppnandet av en terminal på skrivbordet öppnar en terminal i hemkatalogen"
+
+#~ msgid "Open _Terminal"
+#~ msgstr "Öppna _terminalfönster"
+#~ msgid "Open the selected folder in a terminal"
+#~ msgstr "Öppna den markerade mappen i ett terminalfönster"
+#~ msgid "Open _terminal"
+#~ msgstr "Öppna _terminalfönster"
+#~ msgid "Open terminal"
+#~ msgstr "Öppna terminalfönster"
+#~ msgid "Open a new GNOME terminal window"
+#~ msgstr "Öppna ett nytt GNOME-terminalfönster"
+#~ msgid "Run in _Terminal"
+#~ msgstr "Kör i _terminalfönster"
+#~ msgid "Run in _terminal"
+#~ msgstr "Kör i _terminalfönster"
+#~ msgid "Terminal"
+#~ msgstr "Terminalfönster"
+#~ msgid "_Terminal"
+#~ msgstr "_Terminalfönster"
+#~ msgid "_Display"
+#~ msgstr "_Visa"
+#~ msgid "_Run"
+#~ msgstr "_Kör"
+#~ msgid "Cannot open %s"
+#~ msgstr "Kan inte öppna %s"
+#~ msgid "New T_erminal"
+#~ msgstr "Nytt _terminalfönster"
+#~ msgid "Open New Window"
+#~ msgstr "Öppna nytt fönster"
+#~ msgid "New _Window"
+#~ msgstr "Nytt _fönster"
+
