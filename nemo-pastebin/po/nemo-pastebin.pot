@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-01 18:04+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../nemo-pastebin.py:73
+msgid ""
+"The file will be sent to the selected pastebin: are you sure to continue?"
+msgstr ""
+
+#. if not pasteurl or not re.match("^http://.*$", pasteurl):
+#: ../nemo-pastebin.py:116
+msgid "Unable to read or parse the result page."
+msgstr ""
+
+#: ../nemo-pastebin.py:117
+msgid "It could be a server timeout or a change server side. Try later."
+msgstr ""
+
+#: ../nemo-pastebin.py:170
+#, python-format
+msgid "Pastebin to %s"
+msgstr ""
+
+#: ../nemo-pastebin.py:171
+#, python-format
+msgid "Send this file to %s"
+msgstr ""
+
+#: ../nemo-pastebin-configurator.py:45
+#, python-format
+msgid "Can't find %s in any known prefix!"
+msgstr ""

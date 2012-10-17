@@ -1,0 +1,35 @@
+<schemalist>
+    <schema id="apps.nemo-pastebin" path="/apps/nemo-pastebin/" >
+        <key type="b" name="shownotification">
+            <default>false</default>
+            <summary>Show a bubble</summary>
+            <description>Show a notification to inform the user about whether the operation has been completed successfully or not.</description>
+        </key>
+        <key type="b" name="openbrowser">
+            <default>false</default>
+            <summary>Open a browser window</summary>
+            <description>Open a browser and point it to the pasted document's URL.</description>
+        </key>
+        <key type="s" name="pastebin">
+            <default>"paste.debian.net"</default>
+            <summary>Selected pastebin service</summary>
+            <description>The pastebin which the file will be sent to.</description>
+        </key>
+        <key type="s" name="author">
+            <default>''</default>
+            <summary>Author (if not set, the login name will be used)</summary>
+            <description>The name to use as author of the document.</description>
+        </key>
+        <key type="s" name="username">
+            <default>''</default>
+            <summary>Username</summary>
+            <description>Most services don't need this.</description>
+        </key>
+        <key type="s" name="password">
+            <default>''</default>
+            <summary>Password (if needed)</summary>
+            <description>Most services don't need this.</description>
+        </key>
+
+    </schema>      
+</schemalist>
