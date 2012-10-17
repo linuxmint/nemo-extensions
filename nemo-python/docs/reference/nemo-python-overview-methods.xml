@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<chapter id="nemo-python-overview-methods"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Explanation of Passive/Active Methods</title>
+
+    <para>Because nemo-python is an interface to a Nemo' extension interface rather than a true library, it is
+    rather quirky in how it works.  One example of this is that several providers have additional public methods
+    that an extension actively calls, rather than the extension defining and the method in their class that is called by
+    Nemo.  You can see this with the <link linkend="method-nemo--menu-provider-emit-items-updated-signal">Nemo.menu_provider_emit_items_updated_signal</link>
+    and <link linkend="method-nemo--info-provider-update-complete-invoke">Nemo.info_provider_update_complete_invoke</link> methods, which
+    the extension actively calls, passing the provider instance as a parameter.
+    </para>
+    
+    <para>Due to this confusion, I have termed these actively-called methods <emphasis>Active Methods</emphasis> and the methods
+    called by Nemo are termed <emphasis>Passive Methods</emphasis>.</para>
+</chapter>

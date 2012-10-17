@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<chapter id="nemo-python-class-reference"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Available Classes</title>
+    <xi:include href="nemo-python-column.xml"/>
+    <xi:include href="nemo-python-file-info.xml"/>
+    <xi:include href="nemo-python-menu.xml"/>
+    <xi:include href="nemo-python-menu-item.xml"/>
+    <xi:include href="nemo-python-property-page.xml"/>
+</chapter>
+

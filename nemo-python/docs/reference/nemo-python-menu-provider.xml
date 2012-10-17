@@ -1,0 +1,340 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-nemo-python-menu-provider">
+  <refnamediv>
+    <refname>Nemo.MenuProvider</refname>
+    <refpurpose>Nemo.MenuProvider Reference</refpurpose>
+  </refnamediv>
+
+<!-- ******************************* -->
+<!-- BEGIN OF SYNOPSIS -->
+<!-- ******************************* -->
+
+  <refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+      <ooclass><classname>Nemo.MenuProvider</classname></ooclass>
+
+      <methodsynopsis language="python">
+        <methodname><link linkend="method-nemo-python-menu-provider--get-file-items">get_file_items</link></methodname>
+        <methodparam><parameter role="keyword">window</parameter></methodparam>
+        <methodparam><parameter role="keyword">files</parameter></methodparam>
+      </methodsynopsis>
+
+      <methodsynopsis language="python">
+        <methodname><link linkend="method-nemo-python-menu-provider--get-file-items-full">get_file_items_full</link></methodname>
+        <methodparam><parameter role="keyword">provider</parameter></methodparam>
+        <methodparam><parameter role="keyword">window</parameter></methodparam>
+        <methodparam><parameter role="keyword">files</parameter></methodparam>
+      </methodsynopsis>
+
+      <methodsynopsis language="python">
+        <methodname><link linkend="method-nemo-python-menu-provider--get-background-items">get_background_items</link></methodname>
+        <methodparam><parameter role="keyword">window</parameter></methodparam>
+        <methodparam><parameter role="keyword">folder</parameter></methodparam>
+      </methodsynopsis>
+
+      <methodsynopsis language="python">
+        <methodname><link linkend="method-nemo-python-menu-provider--get-background-items-full">get_background_items_full</link></methodname>
+        <methodparam><parameter role="keyword">provider</parameter></methodparam>
+        <methodparam><parameter role="keyword">window</parameter></methodparam>
+        <methodparam><parameter role="keyword">folder</parameter></methodparam>
+      </methodsynopsis>
+
+      <methodsynopsis language="python">
+        <methodname><link linkend="method-nemo-python-menu-provider--emit-items-updated-signal">Nemo.menu_provider_emit_items_updated_signal</link></methodname>
+        <methodparam><parameter role="keyword">provider</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+  </refsect1>
+
+<!-- ********************************** -->
+<!-- BEGIN OF DESCRIPTION -->
+<!-- ********************************** -->
+
+  <refsect1 id="description-menu-provider">
+    <title>Description</title>
+
+      <para>
+        If subclassed, Nemo will request a list of <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> objects, 
+        which are then attached to various menus.  Nemo expects at least one of
+        the following methods to be defined (or their *_full variants): get_file_items or
+        get_background_items.</para>
+        
+        <para>The get_toolbar_items methods were removed in nemo-python 1.0 because they were removed from Nemo 3.  Technically, you should still be 
+        able to call those methods with nemo-python 1.0 if you are running Nemo 2.x with annotations.
+        </para>
+
+<example>
+    <title>Nemo.MenuProvider Example</title>
+    <programlisting>
+from gi.repository import Nemo, GObject
+
+class ColumnExtension(GObject.GObject, Nemo.MenuProvider):
+    def __init__(self):
+        pass
+        
+    def get_file_items(self, window, files):
+        top_menuitem = Nemo.MenuItem(name='ExampleMenuProvider::Foo', 
+                                         label='Foo', 
+                                         tip='',
+                                         icon='')
+
+        submenu = Nemo.Menu()
+        top_menuitem.set_submenu(submenu)
+
+        sub_menuitem = Nemo.MenuItem(name='ExampleMenuProvider::Bar', 
+                                         label='Bar', 
+                                         tip='',
+                                         icon='')
+        submenu.append_item(sub_menuitem)
+
+        return top_menuitem,
+
+    def get_background_items(self, window, file):
+        submenu = Nemo.Menu()
+        submenu.append_item(Nemo.MenuItem(name='ExampleMenuProvider::Bar2', 
+                                         label='Bar2', 
+                                         tip='',
+                                         icon=''))
+
+        menuitem = Nemo.MenuItem(name='ExampleMenuProvider::Foo2', 
+                                         label='Foo2', 
+                                         tip='',
+                                         icon='')
+        menuitem.set_submenu(submenu)
+
+        return menuitem,
+
+    </programlisting>
+</example>
+        
+        
+<!-- ****************************************** -->
+<!-- BEGIN OF SIGNAL PROTOTYPES -->
+<!-- ****************************************** -->
+
+<refsect1>
+    <title>Signals</title>
+    <variablelist>
+      <varlistentry>
+        <term><link linkend="signal-nemo-python-menu-provider--items-updated">"items-updated"</link></term>
+        <listitem>
+          <methodsynopsis language="python"><methodname>callback</methodname>
+          </methodsynopsis>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+</refsect1>
+        
+        
+  </refsect1>
+
+<!-- ****************************** -->
+<!-- BEGIN OF METHODS -->
+<!-- ****************************** -->
+
+  <refsect1>
+        <title>Passive Methods</title>
+
+        <refsect2 id="method-nemo-python-menu-provider--get-file-items">
+          <title>Nemo.MenuProvider.get_file_items</title>
+
+          <programlisting><methodsynopsis language="python">
+            <methodname>get_file_items</methodname>
+            <methodparam><parameter role="keyword">window</parameter></methodparam>
+            <methodparam><parameter role="keyword">files</parameter></methodparam>
+          </methodsynopsis></programlisting>
+
+          <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">window</parameter>&nbsp;:</term>
+                <listitem><simpara>the current <link linkend="class-gtkwindow"><classname>gtk.Window</classname></link> instance</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">menu</parameter>&nbsp;:</term>
+                <listitem><simpara>a list of <link linkend="class-nemo-python-file-info"><classname>Nemo.FileInfo</classname></link> objects.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>a list of <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> objects</simpara></listitem>
+            </varlistentry>
+          </variablelist>
+
+          <para>
+            The <methodname>get_file_items</methodname>() method returns a list of
+            <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> objects.
+          </para>
+        </refsect2>
+
+        <refsect2 id="method-nemo-python-menu-provider--get-file-items-full">
+          <title>Nemo.MenuProvider.get_file_items_full</title>
+
+          <programlisting><methodsynopsis language="python">
+            <methodname>get_file_items_full</methodname>
+            <methodparam><parameter role="keyword">provider</parameter></methodparam>
+            <methodparam><parameter role="keyword">window</parameter></methodparam>
+            <methodparam><parameter role="keyword">files</parameter></methodparam>
+          </methodsynopsis></programlisting>
+
+          <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">provider</parameter>&nbsp;:</term>
+                <listitem><simpara>the current <link linkend="class-nemo-python-menu-provider"><classname>Nemo.MenuProvider</classname></link> instance</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">window</parameter>&nbsp;:</term>
+                <listitem><simpara>the current <link linkend="class-gtkwindow"><classname>gtk.Window</classname></link> instance</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">files</parameter>&nbsp;:</term>
+                <listitem><simpara>a list of <link linkend="class-nemo-python-file-info"><classname>Nemo.FileInfo</classname></link> objects.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>a list of <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> objects</simpara></listitem>
+            </varlistentry>
+          </variablelist>
+
+          <para>
+            The <methodname>get_file_items_full</methodname>() method returns a list of
+            <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname> objects</link>.
+          </para>
+          <para>
+            This method was created in order to allow extension writers to call the 
+            <link linkend="method-nemo-menu-provider--emit_items_updated_signal">Nemo.menu_provider_emit_items_updated_signal</link>, which must
+            be passed the current provider instance.
+          </para>
+          <note>
+            This method was introduced in nemo-python 0.7.0.
+          </note>
+        </refsect2>
+
+
+        <refsect2 id="method-nemo-python-menu-provider--get-background-items">
+          <title>Nemo.MenuProvider.get_background_items</title>
+
+          <programlisting><methodsynopsis language="python">
+            <methodname>get_background_items</methodname>
+            <methodparam><parameter role="keyword">window</parameter></methodparam>
+            <methodparam><parameter role="keyword">folder</parameter></methodparam>
+          </methodsynopsis></programlisting>
+
+          <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">window</parameter>&nbsp;:</term>
+                <listitem><simpara>the current <link linkend="class-gtkwindow"><classname>gtk.Window</classname></link> instance</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">folder</parameter>&nbsp;:</term>
+                <listitem><simpara>the current folder, as a <link linkend="class-nemo-python-file-info"><classname>Nemo.FileInfo</classname></link> object.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>a list of <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> objects</simpara></listitem>
+            </varlistentry>
+          </variablelist>
+
+          <para>
+            The <methodname>get_background_items</methodname>() method returns a list of
+            <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname> objects</link>.
+          </para>
+        </refsect2>
+
+        <refsect2 id="method-nemo-python-menu-provider--get-background-items-full">
+          <title>Nemo.MenuProvider.get_background_items_full</title>
+
+          <programlisting><methodsynopsis language="python">
+            <methodname>get_background_items_full</methodname>
+            <methodparam><parameter role="keyword">provider</parameter></methodparam>
+            <methodparam><parameter role="keyword">window</parameter></methodparam>
+            <methodparam><parameter role="keyword">folder</parameter></methodparam>
+          </methodsynopsis></programlisting>
+
+          <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">provider</parameter>&nbsp;:</term>
+                <listitem><simpara>the current <link linkend="class-nemo-python-menu-provider"><classname>Nemo.MenuProvider</classname></link> instance</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">window</parameter>&nbsp;:</term>
+                <listitem><simpara>the current <link linkend="class-gtkwindow"><classname>gtk.Window</classname></link> instance</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">folder</parameter>&nbsp;:</term>
+                <listitem><simpara>the current folder, as a <link linkend="class-nemo-python-file-info"><classname>Nemo.FileInfo</classname></link> object.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>a list of <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> objects</simpara></listitem>
+            </varlistentry>
+          </variablelist>
+
+          <para>
+            The <methodname>get_background_items_full</methodname>() method returns a list of
+            <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname> objects</link>.
+          </para>
+          <para>
+            This method was created in order to allow extension writers to call the 
+            <link linkend="method-nemo-menu-provider--emit_items_updated_signal">Nemo.menu_provider_emit_items_updated_signal</link>, which must
+            be passed the current provider instance.
+          </para>
+          <note>
+            This method was introduced in nemo-python 0.7.0.
+          </note>
+        </refsect2>
+
+    </refsect1>
+
+    <refsect1>
+        <title>Active Methods</title>
+
+        <refsect2 id="method-nemo-python-menu-provider--emit-items-updated-signal">
+          <title>Nemo.menu_provider_emit_items_updated_signal</title>
+
+          <programlisting><methodsynopsis language="python">
+            <methodname>menu_provider_emit_items_updated_signal</methodname>
+            <methodparam><parameter role="keyword">provider</parameter></methodparam>
+          </methodsynopsis></programlisting>
+
+          <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">provider</parameter>&nbsp;:</term>
+                <listitem><simpara>the current <link linkend="class-nemo-python-menu-provider"><classname>Nemo.MenuProvider</classname></link> instance</simpara></listitem>
+            </varlistentry>
+          </variablelist>
+
+          <para>
+            Emits the "<link linkend="signal-nemo-python-menu-provider--items-updated">items-updated</link>" signal.
+          </para>
+          <note>
+            This method was introduced in nemo-python 0.7.0.
+          </note>
+        </refsect2>        
+    </refsect1>
+
+
+
+<!-- ******************************** -->
+<!-- BEGIN OF SIGNAL DETAILS -->
+<!-- ******************************** --> 
+ 
+<refsect1>
+    <title>Signal Details</title>
+
+  <refsect2 id="signal-nemo-python-menu-provider--items-updated">
+    <title>The "items-updated" Nemo.MenuProvider Signal</title>
+
+    <para>
+      Emits the "<link linkend="signal-nemo-python-menu-provider--items-updated">items-updated</link>" signal.
+    </para>
+
+  </refsect2>
+</refsect1>
+
+
+</refentry>
+

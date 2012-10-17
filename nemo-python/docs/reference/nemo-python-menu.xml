@@ -1,0 +1,123 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-nemo-python-menu">
+  <refnamediv>
+    <refname>Nemo.Menu</refname>
+    <refpurpose>Nemo.Menu Reference</refpurpose>
+  </refnamediv>
+
+<!-- ******************************* -->
+<!-- BEGIN OF NEMO-PYTHON SYNOPSIS -->
+<!-- ******************************* -->
+
+  <refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>Nemo.Menu</classname></ooclass>
+        <ooclass><classname><link linkend="class-gobject">gobject.GObject</link></classname></ooclass>
+
+        <constructorsynopsis language="python">
+            <methodname><link linkend="constructor-nemo-menu">Nemo.Menu</link></methodname>
+        </constructorsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-menu--append_item">append_item</link></methodname>
+            <methodparam><parameter role="keyword">item</parameter></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-menu--get_items">get_items</link></methodname>
+        </methodsynopsis>
+
+    </classsynopsis>
+  </refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF ANCESTRY -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-nemo-python-menu">Nemo.Menu</link>
+</synopsis>
+</refsect1>
+
+
+<!-- ********************************** -->
+<!-- BEGIN OF DESCRIPTION -->
+<!-- ********************************** -->
+
+  <refsect1 id="description-menu">
+    <title>Description</title>
+
+      <para>
+      A Nemo.Menu object allows an extension to create sub-menus.
+      </para>
+
+  </refsect1>
+
+
+
+<!-- ************************************ -->
+<!-- BEGIN OF CONSTRUCTOR -->
+<!-- ************************************ -->
+
+<refsect1 id="constructor-nemo-menu">
+  <title>Constructor</title>
+
+  <programlisting><constructorsynopsis language="python">
+        <methodname>Nemo.Menu</methodname>
+  </constructorsynopsis></programlisting>
+    
+  <para>
+    Creates a new <link linkend="class-nemo-python-menu"><classname>Nemo.Menu</classname></link> object.
+  </para>
+</refsect1>
+
+
+
+<!-- ******************************** -->
+<!-- BEGIN OF METHODS -->
+<!-- ******************************** -->
+
+<refsect1>
+    <title>Public Methods</title>
+
+  <refsect2 id="method-nemo-python-menu--append_item">
+    <title>Nemo.Menu.append_item</title>
+    <programlisting><methodsynopsis language="python">
+	  <methodname>append_item</methodname>
+      <methodparam><parameter role="keyword">item</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword">item</parameter>&nbsp;:</term>
+        <listitem><simpara>a <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link></simpara></listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>
+      Append a <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> to a <link linkend="class-nemo-python-menu"><classname>Nemo.Menu</classname></link>.
+    </para>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-menu--get_items">
+    <title>Nemo.Menu.get_items</title>
+    <programlisting><methodsynopsis language="python">
+	  <methodname>get_items</methodname>
+    </methodsynopsis></programlisting>
+    <para>
+      Returns a list of <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> objects attached to the <link linkend="class-nemo-python-menu"><classname>Nemo.Menu</classname></link>.
+    </para>
+  </refsect2>
+</refsect1>
+
+
+
+</refentry>
+

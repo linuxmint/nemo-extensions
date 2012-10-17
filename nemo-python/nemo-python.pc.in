@@ -1,0 +1,7 @@
+Name: Nemo-Python
+Description: Nemo-Python Components
+Version: @VERSION@
+
+prefix=@prefix@
+libdir=${prefix}/lib
+pythondir=@datadir@/nemo-python/extensions
