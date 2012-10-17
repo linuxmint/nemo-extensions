@@ -1,17 +1,16 @@
 STATUS
 ------
 
+nemo-wallpaper: (built in to Nemo)
 nemo-dropbox: functional
 nemo-fileroller: functional
-
-nemo-sendto: compiles
-nemo-seahorse: compiles
-nemo-share: compiles
+nemo-sendto: (built in to Nemo)
+nemo-seahorse: functional
+nemo-share: functional
 
 NOT YET INCLUDED:
 ----------------
 
-nemo-wallpaper: used gconf instead of gsettings, should be part of nemo itself
 nemo-bzr: part of bzr-gtk, needs to be isolated from it
 nemo-rabbitcvs: part of rabbitcvs, needs to be isolated from it
 
