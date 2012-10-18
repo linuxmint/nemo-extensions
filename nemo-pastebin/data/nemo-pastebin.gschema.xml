@@ -1,17 +1,17 @@
 <schemalist>
     <schema id="apps.nemo-pastebin" path="/apps/nemo-pastebin/" >
         <key type="b" name="shownotification">
-            <default>false</default>
+            <default>true</default>
             <summary>Show a bubble</summary>
             <description>Show a notification to inform the user about whether the operation has been completed successfully or not.</description>
         </key>
         <key type="b" name="openbrowser">
-            <default>false</default>
+            <default>true</default>
             <summary>Open a browser window</summary>
             <description>Open a browser and point it to the pasted document's URL.</description>
         </key>
         <key type="s" name="pastebin">
-            <default>"paste.debian.net"</default>
+            <default>"pastebin.com"</default>
             <summary>Selected pastebin service</summary>
             <description>The pastebin which the file will be sent to.</description>
         </key>
