@@ -4,7 +4,7 @@ STATUS
 nemo-wallpaper: (built in to Nemo)
 nemo-dropbox: functional
 nemo-fileroller: functional
-nemo-sendto: (built in to Nemo)
+nemo-sendto: functional
 nemo-seahorse: functional
 nemo-share: functional
 nemo-pastebin: functional
