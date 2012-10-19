@@ -7,4 +7,3 @@ Icon=nemo-pastebin
 Categories=Settings;
 X-Ubuntu-Gettext-Domain=nemo-pastebin
 Exec=nemo-pastebin-configurator
-Name[en_US]=nemo-pastebin-configurator.desktop
