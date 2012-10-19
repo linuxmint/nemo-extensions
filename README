@@ -7,6 +7,9 @@ nemo-fileroller: functional
 nemo-sendto: (built in to Nemo)
 nemo-seahorse: functional
 nemo-share: functional
+nemo-pastebin: functional
+
+nemo-python (python bindings for Nemo): functional
 
 NOT YET INCLUDED:
 ----------------
@@ -33,5 +36,4 @@ nautilus-script-purrr           -
 nautilus-scripts-manager        - simple tool for nautilus scripts managemen
 nautilus-sendto-empathy         - GNOME multi-protocol chat and call client 
 nautilus-wipe                   - Secure deletion extension for Nautilus    
-nautilus-pastebin               - Nautilus extension to send files to a past
 nautilus-gtkhash                - nautilus extension for computing checksums
