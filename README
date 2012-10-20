@@ -8,6 +8,7 @@ nemo-sendto: functional
 nemo-seahorse: functional
 nemo-share: functional
 nemo-pastebin: functional
+nemo-compare: functional
 
 nemo-python (python bindings for Nemo): functional
 
@@ -23,7 +24,6 @@ NAUTILUS EXTENSIONS MISSING IN NEMO:
 arkose-nautilus                 - Desktop application sandboxing - nautilus 
 nautilus-actions                - nautilus extension to configure programs t
 nautilus-clamscan               - Antivirus scanning for Nautilus           
-nautilus-compare                - Context menu comparison extension for Naut
 nautilus-filename-repairer      - Nautilus extension for filename encoding r
 nautilus-ideviceinfo            - utility showing information of idevices on
 nautilus-image-converter        - nautilus extension to mass resize or rotat
