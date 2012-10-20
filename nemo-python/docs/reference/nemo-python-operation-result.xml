@@ -1,0 +1,56 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="enum-nemo-python-operation-result">
+  <refnamediv>
+    <refname>Nemo.OperationResult</refname>
+    <refpurpose>Nemo.OperationResult Reference</refpurpose>
+  </refnamediv>
+
+
+
+<!-- ********************************** -->
+<!-- BEGIN OF DESCRIPTION -->
+<!-- ********************************** -->
+
+  <refsect1 id="description-operation-result">
+    <title>Description</title>
+
+      <para>
+        The <link linkend="enum-nemo-python-operation-result"><classname>Nemo.OperationResult</classname></link> constants are
+        used by the <link linkend="class-nemo-python-info-provider"><classname>Nemo.InfoProvider</classname></link> provider to
+        notify Nemo what the extension intends to do when Nemo calls the extension's <link linkend="method-nemo-python-info-provider--update-file-info-full">update_file_info_full</link>
+        method.  The possible values are as follows:
+      </para>
+
+
+      <variablelist>
+	    <varlistentry>
+	      <term><literal>Nemo.OperationResult.COMPLETE</literal></term>
+	      <listitem>
+	        <simpara>The operation is complete and Nemo can move on to the next <link linkend="method-nemo-python-info-provider--update-file-info-full">update_file_info_full</link> call.</simpara>
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><literal>Nemo.OperationResult.IN_PROGRESS</literal></term>
+	      <listitem>
+	        <simpara>The operation is in progress and running asynchronously and Nemo should wait until the <link linkend="method-nemo-python-info-provider--update-complete-invoke">Nemo.info_provider_update_complete_invoke</link> method
+	        is called before moving on to the next <link linkend="method-nemo-python-info-provider--update-file-info-full">update_file_info_full</link> call.</simpara>
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><literal>Nemo.OperationResult.FAILED</literal></term>
+	      <listitem>
+	        <simpara>The operation has failed.</simpara>
+	      </listitem>
+	    </varlistentry>
+	    </variablelist>
+  </refsect1>
+
+
+
+
+
+</refentry>
+

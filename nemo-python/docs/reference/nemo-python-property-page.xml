@@ -1,0 +1,135 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-nemo-python-property-page">
+  <refnamediv>
+    <refname>Nemo.PropertyPage</refname>
+    <refpurpose>Nemo.PropertyPage Reference</refpurpose>
+  </refnamediv>
+
+<!-- ******************************* -->
+<!-- BEGIN OF NEMO-PYTHON SYNOPSIS -->
+<!-- ******************************* -->
+
+  <refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>Nemo.PropertyPage</classname></ooclass>
+        <ooclass><classname><link linkend="class-gobject">gobject.GObject</link></classname></ooclass>
+
+        <constructorsynopsis language="python">
+            <methodname><link linkend="constructor-nemo-property-page">Nemo.PropertyPage</link></methodname>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
+            <methodparam><parameter role="keyword">label</parameter></methodparam>
+            <methodparam><parameter role="keyword">page</parameter></methodparam>
+        </constructorsynopsis>
+    </classsynopsis>
+  </refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF ANCESTRY -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-nemo-python-property-page">Nemo.PropertyPage</link>
+</synopsis>
+</refsect1>
+
+
+<!-- ********************************** -->
+<!-- BEGIN OF DESCRIPTION -->
+<!-- ********************************** -->
+
+  <refsect1 id="description-property-page">
+    <title>Description</title>
+
+      <para>
+        A <link linkend="class-nemo-python-property-page"><classname>Nemo.PropertyPage</classname></link> object is returned by <link linkend="class-nemo-python-property-page-provider"><classname>Nemo.PropertyPageProvider</classname></link> extensions.
+      </para>
+
+  </refsect1>
+
+
+<!-- *********************************** -->
+<!-- BEGIN OF PROPERTIES -->
+<!-- *********************************** -->
+
+<refsect1>
+    <title>Properties</title>
+
+    <blockquote role="properties">
+      <informaltable pgwide="1" frame="none">
+      <tgroup cols="3">
+        <colspec column="1" colwidth="1in"/>
+        <colspec column="2" colwidth="1in"/>
+        <colspec column="3" colwidth="4in"/>
+          <tbody>
+      
+            <row valign="top">
+              <entry>"label"</entry>
+              <entry>The label widget displayed in the notebook tab.</entry>
+              <entry>Read-Write</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"name"</entry>
+              <entry>The name of the page.  Default value: None</entry>
+              <entry>Read-Write-ConstructOnly</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"page"</entry>
+              <entry>The property page widget</entry>
+              <entry>Read-Write</entry>
+            </row>
+
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </blockquote>
+</refsect1>
+
+
+<!-- ************************************ -->
+<!-- BEGIN OF CONSTRUCTOR -->
+<!-- ************************************ -->
+
+<refsect1 id="constructor-nemo-property-page">
+  <title>Constructor</title>
+
+  <programlisting><constructorsynopsis language="python">
+        <methodname>Nemo.PropertyPage</methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+        <methodparam><parameter role="keyword">label</parameter></methodparam>
+        <methodparam><parameter role="keyword">page</parameter></methodparam>
+  </constructorsynopsis></programlisting>
+    
+  <variablelist>
+    <varlistentry>
+	    <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+	    <listitem><simpara>identifier of the property page</simpara></listitem>
+    </varlistentry>
+    <varlistentry>
+	    <term><parameter role="keyword">label</parameter>&nbsp;:</term>
+	    <listitem><simpara>the user-visible label for the property page</simpara></listitem>
+    </varlistentry>
+    <varlistentry>
+	    <term><parameter role="keyword">page</parameter>&nbsp;:</term>
+	    <listitem><simpara>the property page widget</simpara></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para>
+    Creates a new <link linkend="class-nemo-python-property-page"><classname>Nemo.PropertyPage</classname></link> object.
+  </para>
+</refsect1>
+
+
+
+</refentry>
+

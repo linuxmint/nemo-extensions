@@ -1,0 +1,39 @@
+What is this?
+--------------------
+nemo-pastebin is an extension for the Nemo file manager, which allows
+users to send files to pastebins just a right-click away.
+
+How does it work?
+--------------------
+Simply: right-click on a file, select «Pastebin» and, if the Internet
+connection is active, after few seconds the application will show a
+notification and copy the paste URL to your clipboard, allowing you to paste
+it in a browser tab, IRC channel or wherever you want.
+
+Where can I download it? And how can install it?
+--------------------
+After uncompressing this tarball, you can:
+
+ 1) Use the setup.py script.
+ 2) Copy:
+     scripts/nemo-pastebin.py to /usr/lib/nemo/extensions-2.0/python/
+     data/nemo-pastebin.png to /usr/share/pixmaps/
+
+
+After the installation, you may need to restart Nemo by typing:
+
+killall nemo
+
+At the moment, some pastebins of the preconfigured ones don’t work well and I
+need some time to improve and extend the support for other websites.
+
+If you wanted to contribute to the development by sending me patches,
+configurations or suggestions I would be very happy!
+
+            Alessio Treglia <quadrispro@ubuntu.com>
+
+Credits
+--------------------
+Author: Alessio Treglia <quadrispro@ubuntu.com>
+Copyright © 2009, Alessio Treglia <quadrispro@ubuntu.com>
+License: GPL-2

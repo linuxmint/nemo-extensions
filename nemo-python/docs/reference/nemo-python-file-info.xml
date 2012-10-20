@@ -1,0 +1,420 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-nemo-python-file-info">
+  <refnamediv>
+    <refname>Nemo.FileInfo</refname>
+    <refpurpose>Nemo.FileInfo Reference</refpurpose>
+  </refnamediv>
+
+<!-- ******************************* -->
+<!-- BEGIN OF NEMO-PYTHON SYNOPSIS -->
+<!-- ******************************* -->
+
+  <refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>Nemo.FileInfo</classname></ooclass>
+        <ooclass><classname><link linkend="class-ginterface">gobject.GInterface</link></classname></ooclass>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--is-gone">is_gone</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-file-type">get_file_type</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-location">get_location</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-name">get_name</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-uri">get_uri</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-activation-uri">get_activation_uri</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-parent-info">get_parent_info</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-parent-location">get_parent_location</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-parent-uri">get_parent_uri</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-mount">get_mount</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-uri-scheme">get_uri_scheme</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-mime-type">get_mime_type</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--is-mime-type">is_mime_type</link></methodname>
+            <methodparam><parameter role="keyword">mime_type</parameter></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--is-directory">is_directory</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--can-write">can_write</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--add-emblem">add_emblem</link></methodname>
+            <methodparam><parameter role="keyword">emblem_name</parameter></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--get-string-attribute">get_string_attribute</link></methodname>
+            <methodparam><parameter role="keyword">attribute_name</parameter></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--add-string-attribute">add_string_attribute</link></methodname>
+            <methodparam><parameter role="keyword">attribute_name</parameter></methodparam>
+            <methodparam><parameter role="keyword">value</parameter></methodparam>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-file-info--invalidate-extension-info">invalidate_extension_info</link></methodname>
+            <methodparam></methodparam>
+        </methodsynopsis>
+
+    </classsynopsis>
+  </refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF ANCESTRY -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-ginterface">gobject.GInterface</link>
+    +-- <link linkend="class-nemo-python-file-info">Nemo.FileInfo</link>
+</synopsis>
+</refsect1>
+
+
+<!-- ********************************** -->
+<!-- BEGIN OF DESCRIPTION -->
+<!-- ********************************** -->
+
+  <refsect1 id="description-file-info">
+    <title>Description</title>
+
+      <para>
+        <link linkend="class-nemo-python-file-info"><classname>Nemo.FileInfo</classname></link> objects are passed
+        to extensions by the <link linkend="class-nemo-python-info-provider"><classname>Nemo.InfoProvider</classname></link>.
+      </para>
+
+  </refsect1>
+
+
+<!-- ******************************** -->
+<!-- BEGIN OF METHODS -->
+<!-- ******************************** -->
+
+<refsect1>
+    <title>Public Methods</title>
+
+  <refsect2 id="method-nemo-python-file-info--is-gone">
+    <title>Nemo.FileInfo.is_gone</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>is_gone</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>whether the file still exists</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-file-type">
+    <title>Nemo.FileInfo.get_file_type</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_file_type</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the <classname>gio.FileType</classname> associated with the file</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-location">
+    <title>Nemo.FileInfo.get_location</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_location</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the <classname>gio.File</classname> associated with the file</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-name">
+    <title>Nemo.FileInfo.get_name</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_name</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the basename of the file</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-uri">
+    <title>Nemo.FileInfo.get_uri</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_uri</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the uri of the file</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-activation-uri">
+    <title>Nemo.FileInfo.get_activation_uri</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_activation_uri</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the activation uri of the file</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-parent-info">
+    <title>Nemo.FileInfo.get_parent_info</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_parent_info</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the <link linkend="class-nemo-python-file-info"><classname>Nemo.FileInfo</classname></link> object associated with the file's parent</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-parent-location">
+    <title>Nemo.FileInfo.get_parent_location</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_parent_location</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the <classname>gio.File</classname> associated with the file's parent location</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-parent-uri">
+    <title>Nemo.FileInfo.get_parent_uri</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_parent_uri</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the uri of the file's parent</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-mount">
+    <title>Nemo.FileInfo.get_mount</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_mount</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the <classname>gio.GMount</classname> associated with the file, if it exists</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-uri-scheme">
+    <title>Nemo.FileInfo.get_uri_scheme</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_uri_scheme</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the uri scheme of the file</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-mime-type">
+    <title>Nemo.FileInfo.get_mime_type</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_mime_type</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the mimetype of the file</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--is-mime-type">
+    <title>Nemo.FileInfo.is_mime_type</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>is_mime_type</methodname>
+        <methodparam><parameter role="keyword">mimetype</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+	        <term><parameter role="keyword">mimetype</parameter>&nbsp;:</term>
+	        <listitem><simpara>a mimetype string (i.e. "text/plain")</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>whether the file's mimetype string matches the provided mimetype string</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--is-directory">
+    <title>Nemo.FileInfo.is_directory</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>is_directory</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>whether the item is a directory</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--can-write">
+    <title>Nemo.FileInfo.can_write</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>can_write</methodname>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>whether the file is writeable</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--add-emblem">
+    <title>Nemo.FileInfo.add_emblem</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>add_emblem</methodname>
+        <methodparam><parameter role="keyword">emblem_name</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+	        <term><parameter role="keyword">emblem_name</parameter>&nbsp;:</term>
+	        <listitem><simpara>the name of an emblem to add</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--get-string-attribute">
+    <title>Nemo.FileInfo.get_string_attribute</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_string_attribute</methodname>
+        <methodparam><parameter role="keyword">attribute_name</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+	        <term><parameter role="keyword">attribute_name</parameter>&nbsp;:</term>
+	        <listitem><simpara>a string attribute name</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+          <listitem><simpara>the value associated with the file attribute</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--add-string-attribute">
+    <title>Nemo.FileInfo.add_string_attribute</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>add_string_attribute</methodname>
+        <methodparam><parameter role="keyword">attribute_name</parameter></methodparam>
+        <methodparam><parameter role="keyword">value</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    <variablelist>
+        <varlistentry>
+	        <term><parameter role="keyword">attribute_name</parameter>&nbsp;:</term>
+	        <listitem><simpara>a string attribute name</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+	        <term><parameter role="keyword">value</parameter>&nbsp;:</term>
+	        <listitem><simpara>an attribute value</simpara></listitem>
+        </varlistentry>
+      </variablelist>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-file-info--invalidate-extension-info">
+    <title>Nemo.FileInfo.invalidate_extension_info</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>invalidate_extension_info</methodname>
+    </methodsynopsis></programlisting>
+    <para>Invalidates the information Nemo has about this file, which causes it to request new information
+    from its <link linkend="class-nemo-python-info-provider"><classname>Nemo.InfoProvider</classname></link> providers.</para>
+  </refsect2>
+
+</refsect1>
+
+
+</refentry>
+

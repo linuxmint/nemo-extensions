@@ -1,0 +1,70 @@
+From 110eda85d650a6bb9ac10a39e36f7489d243962f Mon Sep 17 00:00:00 2001
+From: Martin Pitt <martin.pitt@ubuntu.com>
+Date: Fri, 2 Dec 2011 07:24:21 +0100
+Subject: [PATCH 2/2] Port remaining examples to GI bindings/GSettings
+
+With current pygobject versions you cannot mix static and GI bindings for the
+same library any more. Port the examples to only use GI, and port
+background-image.py from gconf to gsettings to actually work with GNOME 3.0.
+
+Bug: https://bugzilla.gnome.org/show_bug.cgi?id=665362
+Bug-Debian: http://bugs.debian.org/649910
+Bug-Ubuntu: https://launchpad.net/bugs/898959
+---
+ examples/background-image.py  |   15 +++++----------
+ examples/block-size-column.py |    5 ++---
+ 2 files changed, 7 insertions(+), 13 deletions(-)
+
+diff --git a/examples/background-image.py b/examples/background-image.py
+index f23c2a6..535ec8d 100644
+--- a/examples/background-image.py
++++ b/examples/background-image.py
+@@ -1,23 +1,18 @@
+-import urllib
+-
+-import gconf
+-
+-from gi.repository import Nemo, GObject
++from gi.repository import Nemo, GObject, Gio
+ 
+ SUPPORTED_FORMATS = 'image/jpeg', 'image/png'
+-BACKGROUND_KEY = '/desktop/gnome/background/picture_filename'
++BACKGROUND_SCHEMA = 'org.gnome.desktop.background'
++BACKGROUND_KEY = 'picture-uri'
+ 
+ class BackgroundImageExtension(GObject.GObject, Nemo.MenuProvider):
+     def __init__(self):
+-        self.gconf = gconf.client_get_default()
++        self.bgsettings = Gio.Settings.new(BACKGROUND_SCHEMA)
+     
+     def menu_activate_cb(self, menu, file):
+         if file.is_gone():
+             return
+         
+-        # Strip leading file://
+-        filename = urllib.unquote(file.get_uri()[7:])
+-        self.gconf.set_string(BACKGROUND_KEY, filename)
++        self.bgsettings[BACKGROUND_KEY] = file.get_uri()
+         
+     def get_file_items(self, window, files):
+         if len(files) != 1:
+diff --git a/examples/block-size-column.py b/examples/block-size-column.py
+index a197539..fda87a9 100644
+--- a/examples/block-size-column.py
++++ b/examples/block-size-column.py
+@@ -1,10 +1,9 @@
+ import os
+ import urllib
+ 
+-import gobject
+-from gi.repository import Nemo
++from gi.repository import GObject, Nemo
+ 
+-class ColumnExtension(gobject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
++class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
+     def __init__(self):
+         pass
+     
+-- 
+1.7.7.3
+

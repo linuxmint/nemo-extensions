@@ -1,0 +1,2 @@
+# System-wide directory where extensions must be added
+python-nemo: package-contains-empty-directory usr/share/nemo-python/extensions/

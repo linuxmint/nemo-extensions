@@ -1,0 +1,53 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<chapter id="nemo-python-overview-example"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>A Simple Extension</title>
+
+    <para>Create an empty file with the following code:</para>
+    
+    <example>
+        <title>A Simple Extension</title>
+        <programlisting>
+from gi.repository import Nemo, GObject
+
+class ColumnExtension(GObject.GObject, Nemo.MenuProvider):
+    def __init__(self):
+        pass
+
+    def menu_activate_cb(self, menu, file):
+        print "menu_activate_cb",file
+
+    def get_file_items(self, window, files):
+        if len(files) != 1:
+            return
+        
+        file = files[0]
+
+        item = Nemo.MenuItem(
+            name="SimpleMenuExtension::Show_File_Name",
+            label="Showing %s" % file.get_name(),
+            tip="Showing %s" % file.get_name()
+        )
+        item.connect('activate', self.menu_activate_cb, file)
+        
+        return [item]</programlisting>
+    </example>
+    
+    <para>Save this file as TestExtension.py in the ~/.local/share/nemo-python/extensions folder. 
+    You may need to create this folder. To run, simply restart Nemo.</para>
+
+    <para>Once Nemo restarts, right-click on a file and you should see a new menu item, 
+    "Showing #filename#". It is as simple as that!</para>
+    
+    <para>As mentioned above, in order to 
+    get loaded by Nemo, a python extension must import the Nemo module from gi.repository, 
+    create a class derived from a nemo *Provider and a gobject.GObject, and create the methods that 
+    will be called by Nemo when it requests information from its providers. 
+    In this case, when someone right-clicks on a file, Nemo will ask all of its 
+    MenuProviders for additional menu items to show the user. When folders or files are clicked, 
+    the get_file_items method is called and a list of Nemo.MenuItems is expected.</para>
+
+</chapter>
