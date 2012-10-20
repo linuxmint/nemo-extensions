@@ -1,8 +1,7 @@
 Source: nemo-compare
 Section: gnome
 Priority: extra
-Maintainer: Guido Tabbernuk <boamaod@gmail.com>
-Uploaders: Andrea Veri <and@debian.org>
+Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.2
 Homepage: https://launchpad.net/nemo-compare
