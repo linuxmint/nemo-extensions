@@ -11,7 +11,7 @@ Vcs-Browser: https://code.launchpad.net/~nemo-compare/nemo-compare/trunk
 
 Package: nemo-compare
 Architecture: all
-Depends: ${misc:Depends}, nemo (>= 3), python-nemo (>= 1.0), python-xdg, python, meld
+Depends: ${misc:Depends}, nemo (>= 1), python-nemo (>= 1.0), python-xdg, python, meld
 Suggests: kdiff3 | kdiff3-qt, diffuse, kompare, fldiff, tkdiff
 Description: Context menu comparison extension for Nemo file manager
  Simple context menu file comparison extension for Nemo 3 and above,

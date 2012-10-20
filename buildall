@@ -10,6 +10,6 @@ for i in `find ./ -maxdepth 1 -mindepth 1 -type d`; do
    echo     ........................................... BUILDING: $i
    echo     ....
    echo     ....
-  # dpkg-buildpackage -j$((    $(cat /proc/cpuinfo | grep processor | wc -l)+1    ))
+   dpkg-buildpackage -j$((    $(cat /proc/cpuinfo | grep processor | wc -l)+1    ))
    cd ..
 done
