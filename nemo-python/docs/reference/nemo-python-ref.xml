@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" 
+[
+<!ENTITY % entities SYSTEM "entities.docbook">
+%entities;
+<!ENTITY builddate SYSTEM "builddate.xml">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<book id="nemo-python-reference" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <bookinfo>
+    <pubdate>&builddate;</pubdate>
+    <title>nemo-python Reference Manual</title>
+    <edition>Reference Manual for nemo-python &version;</edition>
+    <releaseinfo>For nemo-python version &version;</releaseinfo>
+    <authorgroup>
+      <author>
+        <firstname>Adam</firstname>
+        <surname>Plumb</surname>
+      </author>
+    </authorgroup>
+    <abstract>
+      <para>This reference describes the classes of the nemo-python module.</para>
+    </abstract>
+  </bookinfo>
+  <toc>
+  </toc>
+
+<!-- the reference page chapters for the nemo-python classes -->
+
+    <xi:include href="nemo-python-overview.xml"/>
+    <xi:include href="nemo-python-class-reference.xml"/>
+    <xi:include href="nemo-python-provider-reference.xml"/>
+    <xi:include href="nemo-python-enum-reference.xml"/>
+</book>
+

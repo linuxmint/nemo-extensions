@@ -1,0 +1,14 @@
+#! /usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/utils.mk
+include /usr/share/cdbs/1/class/gnome.mk
+include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
+-include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
+
+DEB_INSTALL_EXAMPLES_python-nemo := $(wildcard examples/*.py) examples/README
+DEB_DH_MAKESHLIBS_ARGS_python-nemo += --no-act
+
+binary-post-install/python-nemo::
+	rm -rf debian/python-nemo/usr/share/doc/nemo-python/
+	rm -f debian/python-nemo/usr/lib/nemo/extensions-3.0/*.la

@@ -1,0 +1,275 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-nemo-python-menu-item">
+  <refnamediv>
+    <refname>Nemo.MenuItem</refname>
+    <refpurpose>Nemo.MenuItem Reference</refpurpose>
+  </refnamediv>
+
+<!-- ******************************* -->
+<!-- BEGIN OF NEMO-PYTHON SYNOPSIS -->
+<!-- ******************************* -->
+
+  <refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>Nemo.MenuItem</classname></ooclass>
+        <ooclass><classname><link linkend="class-gobject">gobject.GObject</link></classname></ooclass>
+
+        <constructorsynopsis language="python">
+            <methodname><link linkend="constructor-nemo-menu-item">Nemo.MenuItem</link></methodname>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
+            <methodparam><parameter role="keyword">label</parameter></methodparam>
+            <methodparam><parameter role="keyword">tooltip</parameter></methodparam>
+            <methodparam><parameter role="keyword">icon</parameter></methodparam>
+        </constructorsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-menu-item--activate">activate</link></methodname>
+        </methodsynopsis>
+
+        <methodsynopsis language="python">
+            <methodname><link linkend="method-nemo-python-menu-item--set_submenu">set_submenu</link></methodname>
+            <methodparam><parameter role="keyword">menu</parameter></methodparam>
+        </methodsynopsis>
+
+    </classsynopsis>
+  </refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF ANCESTRY -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-nemo-python-menu-item">Nemo.MenuItem</link>
+</synopsis>
+</refsect1>
+
+
+<!-- ********************************** -->
+<!-- BEGIN OF DESCRIPTION -->
+<!-- ********************************** -->
+
+  <refsect1 id="description-menu-item">
+    <title>Description</title>
+
+      <para>
+        <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> objects are appended to lists to create menus and submenus.
+      </para>
+
+  </refsect1>
+
+
+<!-- *********************************** -->
+<!-- BEGIN OF PROPERTIES -->
+<!-- *********************************** -->
+
+<refsect1>
+    <title>Properties</title>
+
+    <blockquote role="properties">
+      <informaltable pgwide="1" frame="none">
+      <tgroup cols="3">
+        <colspec column="1" colwidth="1in"/>
+        <colspec column="2" colwidth="1in"/>
+        <colspec column="3" colwidth="4in"/>
+          <tbody>
+      
+            <row valign="top">
+              <entry>"<link linkend="property-nemo-python-menu-item--icon">icon</link>"</entry>
+              <entry>Name of the icon to display in the menu item.  Default value: None</entry>
+              <entry>Read-Write</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"<link linkend="property-nemo-python-menu-item--label">label</link>"</entry>
+              <entry>The label to display to the user.  Default value: None</entry>
+              <entry>Read-Write</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"<link linkend="property-nemo-python-menu-item--menu">menu</link>"</entry>
+              <entry>The <link linkend="class-nemo-python-menu">Nemo.Menu</link> menu object belonging to this item.  May be None.</entry>
+              <entry>Read-Write</entry>
+            </row>
+
+            <row valign="top">
+              <entry>"<link linkend="property-nemo-python-menu-item--name">name</link>"</entry>
+              <entry>The name of the item.  Default value: None</entry>
+              <entry>Read-Write-ConstructOnly</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"<link linkend="property-nemo-python-menu-item--priority">priority</link>"</entry>
+              <entry>Whether or not to show priority text in toolbars.  Default value: True</entry>
+              <entry>Read-Write</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"<link linkend="property-nemo-python-menu-item--sensitive">sensitive</link>"</entry>
+              <entry>Whether or not the menu item is sensitive.  Default value: True</entry>
+              <entry>Read-Write</entry>
+            </row>
+
+            <row valign="top">
+              <entry>"<link linkend="property-nemo-python-menu-item--tip">tip</link>"</entry>
+              <entry>The tooltip for the menu item.  Default value: None</entry>
+              <entry>Read-Write</entry>
+            </row>
+
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </blockquote>
+</refsect1>
+
+
+<!-- ****************************************** -->
+<!-- BEGIN OF SIGNAL PROTOTYPES -->
+<!-- ****************************************** -->
+
+<refsect1>
+    <title>Signals</title>
+    <variablelist>
+      <varlistentry>
+        <term><link linkend="signal-nemo-python-menu-item--activate">"activate"</link></term>
+        <listitem>
+          <methodsynopsis language="python"><methodname>callback</methodname>
+            <methodparam><parameter>item</parameter></methodparam>
+            <methodparam><parameter>user_param1</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+          </methodsynopsis>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+</refsect1>
+
+
+
+
+<!-- ************************************ -->
+<!-- BEGIN OF CONSTRUCTOR -->
+<!-- ************************************ -->
+
+<refsect1 id="constructor-nemo-menu-item">
+  <title>Constructor</title>
+
+  <programlisting><constructorsynopsis language="python">
+        <methodname>Nemo.MenuItem</methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+        <methodparam><parameter role="keyword">label</parameter></methodparam>
+        <methodparam><parameter role="keyword">tooltip</parameter></methodparam>
+        <methodparam><parameter role="keyword">icon</parameter></methodparam>
+  </constructorsynopsis></programlisting>
+    
+  <variablelist>
+    <varlistentry>
+	    <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+	    <listitem><simpara>identifier of the item</simpara></listitem>
+    </varlistentry>
+    <varlistentry>
+	    <term><parameter role="keyword">label</parameter>&nbsp;:</term>
+	    <listitem><simpara>the user-visible label for the item</simpara></listitem>
+    </varlistentry>
+    <varlistentry>
+	    <term><parameter role="keyword">tooltip</parameter>&nbsp;:</term>
+	    <listitem><simpara>the user-visible tooltip for the item</simpara></listitem>
+    </varlistentry>
+    <varlistentry>
+	    <term><parameter role="keyword">icon</parameter>&nbsp;:</term>
+	    <listitem><simpara>Name of the icon to display in the item</simpara></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para>
+    Creates a new <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> object.
+  </para>
+</refsect1>
+
+
+<!-- ******************************** -->
+<!-- BEGIN OF METHODS -->
+<!-- ******************************** -->
+
+<refsect1>
+    <title>Public Methods</title>
+
+  <refsect2 id="method-nemo-python-menu-item--activate">
+    <title>Nemo.MenuItem.activate</title>
+    <programlisting><methodsynopsis language="python">
+	  <methodname>activate</methodname>
+    </methodsynopsis></programlisting>
+
+    <para>
+     Generates the "<link linkend="signal-nemo-python-menu-item--activate">activate</link>" signal for this <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link>.
+    </para>
+  </refsect2>
+
+  <refsect2 id="method-nemo-python-menu-item--set_submenu">
+    <title>Nemo.MenuItem.set_submenu</title>
+    <programlisting><methodsynopsis language="python">
+	  <methodname>set_submenu</methodname>
+      <methodparam><parameter role="keyword">menu</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword">menu</parameter>&nbsp;:</term>
+        <listitem><simpara>a <link linkend="class-nemo-python-menu"><classname>Nemo.Menu</classname></link></simpara></listitem>
+      </varlistentry>
+    </variablelist>
+    <para>
+        Attaches a <link linkend="class-nemo-python-menu"><classname>Nemo.Menu</classname></link> as the submenu for this <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link>.
+    </para>
+  </refsect2>
+</refsect1>
+
+
+<!-- ******************************** -->
+<!-- BEGIN OF SIGNAL DETAILS -->
+<!-- ******************************** --> 
+ 
+<refsect1>
+    <title>Signal Details</title>
+
+  <refsect2 id="signal-nemo-python-menu-item--activate">
+    <title>The "activate" Nemo.MenuItem Signal</title>
+
+    <programlisting><methodsynopsis language="python">
+	  <methodname>callback</methodname>
+	  <methodparam><parameter>item</parameter></methodparam>
+        <methodparam><parameter>user_param1</parameter></methodparam>
+	  <methodparam><parameter>...</parameter></methodparam>
+	  </methodsynopsis></programlisting>
+
+    <variablelist>
+	    <varlistentry>
+	      <term><parameter>item</parameter>&nbsp;:</term>
+	      <listitem><simpara>the <link linkend="class-nemo-python-menu-item"><classname>Nemo.MenuItem</classname></link> being activated</simpara></listitem>
+	    </varlistentry>
+      <varlistentry>
+	      <term><parameter>user_param1</parameter>&nbsp;:</term>
+          <listitem><simpara>User-defined parameter the user attaches to the signal connector</simpara></listitem>
+	    </varlistentry>
+      <varlistentry>
+	      <term><parameter>...</parameter>&nbsp;:</term>
+          <listitem><simpara>Additional parameter(s) the user attaches to the signal connector</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      Emits the "<link linkend="signal-nemo-python-menu-item--activate">activate</link>" signal.
+    </para>
+
+  </refsect2>
+</refsect1>
+
+
+
+</refentry>
+

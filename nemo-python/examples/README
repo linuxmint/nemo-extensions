@@ -1,0 +1,15 @@
+To try any of the examples, copy them over to:
+
+    $XDG_DATA_DIR/share/nemo-python/extensions/
+or:
+    ~/.local/share/nemo-python/extensions/
+
+FYI, it is still possible to load plugins from the old locations.
+
+Then restart nemo.
+
+Hint: if you're testing an extension that you're developing, it may
+be useful to start a 'private' instance of nemo, like this:
+ $ mkdir /tmp/testing
+ $ export TMPDIR=/tmp/testing
+ $ nemo --no-desktop

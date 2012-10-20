@@ -1,0 +1,2 @@
+usr/share/nemo-compare/nemo-compare.py /usr/share/nemo-python/extensions/nemo-compare.py
+usr/share/nemo-compare/nemo-compare-preferences.py usr/bin/nemo-compare-preferences

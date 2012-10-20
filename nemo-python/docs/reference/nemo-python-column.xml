@@ -1,0 +1,159 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-nemo-python-column">
+  <refnamediv>
+    <refname>Nemo.Column</refname>
+    <refpurpose>Nemo.Column Reference</refpurpose>
+  </refnamediv>
+
+<!-- ******************************* -->
+<!-- BEGIN OF NEMO-PYTHON SYNOPSIS -->
+<!-- ******************************* -->
+
+  <refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>Nemo.Column</classname></ooclass>
+        <ooclass><classname><link linkend="class-gobject">gobject.GObject</link></classname></ooclass>
+
+        <constructorsynopsis language="python">
+            <methodname><link linkend="constructor-nemo-column">Nemo.Column</link></methodname>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
+            <methodparam><parameter role="keyword">attribute</parameter></methodparam>
+            <methodparam><parameter role="keyword">label</parameter></methodparam>
+            <methodparam><parameter role="keyword">description</parameter></methodparam>
+        </constructorsynopsis>
+    </classsynopsis>
+  </refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF ANCESTRY -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-nemo-python-column">Nemo.Column</link>
+</synopsis>
+</refsect1>
+
+
+<!-- ********************************** -->
+<!-- BEGIN OF DESCRIPTION -->
+<!-- ********************************** -->
+
+  <refsect1 id="description-column">
+    <title>Description</title>
+
+      <para>
+        A list of <link linkend="class-nemo-python-column"><classname>Nemo.Column</classname></link> objects is returned by <link linkend="class-nemo-python-column-provider"><classname>Nemo.ColumnProvider</classname></link> extensions.
+      </para>
+
+  </refsect1>
+
+
+<!-- *********************************** -->
+<!-- BEGIN OF PROPERTIES -->
+<!-- *********************************** -->
+
+<refsect1>
+    <title>Properties</title>
+
+    <blockquote role="properties">
+      <informaltable pgwide="1" frame="none">
+      <tgroup cols="3">
+        <colspec column="1" colwidth="1in"/>
+        <colspec column="2" colwidth="1in"/>
+        <colspec column="3" colwidth="4in"/>
+          <tbody>
+      
+            <row valign="top">
+              <entry>"attribute"</entry>
+              <entry>The attribute name to display.  Default value: None</entry>
+              <entry>Read-Write</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"attribute-q"</entry>
+              <entry>The attribute name to display, in quark form.  Default value: 0</entry>
+              <entry>Read</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"description"</entry>
+              <entry>The user-visible description of the column.  Default value: None</entry>
+              <entry>Read-Write</entry>
+            </row>
+
+            <row valign="top">
+              <entry>"label"</entry>
+              <entry>The label to display in the column.  Default value: None</entry>
+              <entry>Read-Write</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"name"</entry>
+              <entry>The name of the column.  Default value: None</entry>
+              <entry>Read-Write-ConstructOnly</entry>
+            </row>
+      
+            <row valign="top">
+              <entry>"xalign"</entry>
+              <entry>The x-alignment of the column.  Allowed values: [0,1].  Default value: 0</entry>
+              <entry>Read-Write</entry>
+            </row>
+
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </blockquote>
+</refsect1>
+
+
+<!-- ************************************ -->
+<!-- BEGIN OF CONSTRUCTOR -->
+<!-- ************************************ -->
+
+<refsect1 id="constructor-nemo-column">
+  <title>Constructor</title>
+
+  <programlisting><constructorsynopsis language="python">
+        <methodname>Nemo.Column</methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+        <methodparam><parameter role="keyword">attribute</parameter></methodparam>
+        <methodparam><parameter role="keyword">label</parameter></methodparam>
+        <methodparam><parameter role="keyword">description</parameter></methodparam>
+  </constructorsynopsis></programlisting>
+    
+  <variablelist>
+    <varlistentry>
+	    <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+	    <listitem><simpara>identifier of the column</simpara></listitem>
+    </varlistentry>
+    <varlistentry>
+	    <term><parameter role="keyword">attribute</parameter>&nbsp;:</term>
+	    <listitem><simpara>the file attribute to be displayed in the column</simpara></listitem>
+    </varlistentry>
+    <varlistentry>
+	    <term><parameter role="keyword">label</parameter>&nbsp;:</term>
+	    <listitem><simpara>the user-visible label for the column</simpara></listitem>
+    </varlistentry>
+    <varlistentry>
+	    <term><parameter role="keyword">description</parameter>&nbsp;:</term>
+	    <listitem><simpara>a user-visible description of the column</simpara></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para>
+    Creates a new <link linkend="class-nemo-python-column"><classname>Nemo.Column</classname></link> object.
+  </para>
+</refsect1>
+
+
+
+</refentry>
+

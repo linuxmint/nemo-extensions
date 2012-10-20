@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_install:
+	for file in $$(cd po; ls *.po; cd ..); do echo debian/tmp/usr/share/locale/$${file%.po}/LC_MESSAGES; mkdir -p debian/tmp/usr/share/locale/$${file%.po}/LC_MESSAGES; msgfmt -f -o debian/tmp/usr/share/locale/$${file%.po}/LC_MESSAGES/nemo-compare.mo po/$$file; done
+	dh_install
+

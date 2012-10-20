@@ -1,0 +1,36 @@
+From 0d1192b0b600d27a25ebdae045f7ad3e8145529e Mon Sep 17 00:00:00 2001
+From: Adam Plumb <adamplumb@gmail.com>
+Date: Mon, 17 Oct 2011 14:39:08 -0500
+Subject: [PATCH 1/2] Fixed the open terminal example to use the dynamic GConf
+ bindings
+
+---
+ examples/open-terminal.py |    8 +++-----
+ 1 files changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/examples/open-terminal.py b/examples/open-terminal.py
+index 1a12f01..7c70844 100644
+--- a/examples/open-terminal.py
++++ b/examples/open-terminal.py
+@@ -2,15 +2,13 @@
+ import os
+ import urllib
+ 
+-import gconf
+-
+-from gi.repository import Nemo, GObject
++from gi.repository import Nemo, GObject, GConf
+ 
+ TERMINAL_KEY = '/desktop/gnome/applications/terminal/exec'
+ 
+-class OpenTerminalExtension(GObject.GObject, Nemo.MenuProvider):
++class OpenTerminalExtension(Nemo.MenuProvider, GObject.GObject):
+     def __init__(self):
+-        self.client = gconf.client_get_default()
++        self.client = GConf.Client.get_default()
+         
+     def _open_terminal(self, file):
+         filename = urllib.unquote(file.get_uri()[7:])
+-- 
+1.7.7.3
+

@@ -1,0 +1,249 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-nemo-python-info-provider">
+  <refnamediv>
+    <refname>Nemo.InfoProvider</refname>
+    <refpurpose>Nemo.InfoProvider Reference</refpurpose>
+  </refnamediv>
+
+<!-- ******************************* -->
+<!-- BEGIN OF SYNOPSIS -->
+<!-- ******************************* -->
+
+  <refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+      <ooclass><classname>Nemo.InfoProvider</classname></ooclass>
+
+      <methodsynopsis language="python">
+        <methodname><link linkend="method-nemo-python-info-provider--update-file-info">update_file_info</link></methodname>
+        <methodparam><parameter role="keyword">file</parameter></methodparam>
+      </methodsynopsis>
+
+      <methodsynopsis language="python">
+        <methodname><link linkend="method-nemo-python-info-provider--update-file-info-full">update_file_info_full</link></methodname>
+        <methodparam><parameter role="keyword">provider</parameter></methodparam>
+        <methodparam><parameter role="keyword">handle</parameter></methodparam>
+        <methodparam><parameter role="keyword">closure</parameter></methodparam>
+        <methodparam><parameter role="keyword">file</parameter></methodparam>
+      </methodsynopsis>
+
+      <methodsynopsis language="python">
+        <methodname><link linkend="method-nemo-python-info-provider--cancel-update">cancel_update</link></methodname>
+        <methodparam><parameter role="keyword">provider</parameter></methodparam>
+        <methodparam><parameter role="keyword">handle</parameter></methodparam>
+      </methodsynopsis>
+
+      <methodsynopsis language="python">
+        <methodname><link linkend="method-nemo-python-info-provider--update-complete-invoke">Nemo.info_provider_update_complete_invoke</link></methodname>
+        <methodparam><parameter role="keyword">provider</parameter></methodparam>
+        <methodparam><parameter role="keyword">handle</parameter></methodparam>
+        <methodparam><parameter role="keyword">closure</parameter></methodparam>
+        <methodparam><parameter role="keyword">result</parameter><initializer>Nemo.OperationResult.COMPLETE</initializer></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+  </refsect1>
+
+<!-- ********************************** -->
+<!-- BEGIN OF DESCRIPTION -->
+<!-- ********************************** -->
+
+  <refsect1 id="description-info-provider">
+    <title>Description</title>
+
+      <para>
+      If subclassed, Nemo will call update_file_info(_full) to notify extensions of which
+      files are being viewed by the user.  This gives extensions an opportunity to invoke actions on the files,
+      or to add emblems or attributes.
+      </para>
+
+<example>
+    <title>Nemo.InfoProvider Example</title>
+    <programlisting>
+from gi.repository import Nemo, GObject
+
+class ColumnExtension(GObject.GObject, Nemo.InfoProvider):
+    def __init__(self):
+        pass
+    
+    def update_file_info_full(self, provider, handle, closure, file):
+        gobject.timeout_add_seconds(3, self.update_cb, provider, handle, closure)
+        return Nemo.OperationResult.IN_PROGRESS
+        
+    def update_cb(self, provider, handle, closure):
+        Nemo.info_provider_update_complete_invoke(closure, provider, handle, Nemo.OperationResult.FAILED)
+    </programlisting>
+</example>
+        
+  </refsect1>
+
+<!-- ****************************** -->
+<!-- BEGIN OF METHODS -->
+<!-- ****************************** -->
+
+  <refsect1>
+        <title>Passive Methods</title>
+
+        <refsect2 id="method-nemo-python-info-provider--update-file-info">
+          <title>Nemo.InfoProvider.update_file_info</title>
+
+          <programlisting><methodsynopsis language="python">
+            <methodname>update_file_info</methodname>
+            <methodparam><parameter role="keyword">file</parameter></methodparam>
+          </methodsynopsis></programlisting>
+
+          <variablelist>
+            <varlistentry>
+	            <term><parameter role="keyword">file</parameter>&nbsp;:</term>
+	            <listitem><simpara>a <link linkend="class-nemo-python-file-info"><classname>Nemo.FileInfo</classname></link> object</simpara></listitem>
+            </varlistentry>
+          </variablelist>
+
+          <para>
+                This method is called by Nemo for each file or folder that exists under the
+                current directory listing.  There is no return value.
+          </para>
+        </refsect2>
+
+
+        <refsect2 id="method-nemo-python-info-provider--update-file-info-full">
+          <title>Nemo.InfoProvider.update_file_info_full</title>
+
+          <programlisting><methodsynopsis language="python">
+            <methodname>update_file_info_full</methodname>
+            <methodparam><parameter role="keyword">provider</parameter></methodparam>
+            <methodparam><parameter role="keyword">handle</parameter></methodparam>
+            <methodparam><parameter role="keyword">closure</parameter></methodparam>
+            <methodparam><parameter role="keyword">file</parameter></methodparam>
+          </methodsynopsis></programlisting>
+
+          <variablelist>
+            <varlistentry>
+	            <term><parameter role="keyword">provider</parameter>&nbsp;:</term>
+	            <listitem><simpara>the current <link linkend="class-nemo-python-info-provider"><classname>Nemo.InfoProvider</classname></link> instance</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+	            <term><parameter role="keyword">handle</parameter>&nbsp;:</term>
+	            <listitem><simpara>a <classname>gobject.gpointer</classname> generated solely to track this call</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+	            <term><parameter role="keyword">closure</parameter>&nbsp;:</term>
+	            <listitem><simpara>a C Closure that must be passed to <link linkend="method-nemo-python-info-provider--update-complete-invoke">Nemo.info_provider_update_complete_invoke</link> if that method is called</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+	            <term><parameter role="keyword">file</parameter>&nbsp;:</term>
+	            <listitem><simpara>a <link linkend="class-nemo-python-file-info"><classname>Nemo.FileInfo</classname></link> object</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>None or a <link linkend="enum-nemo-python-operation-result"><classname>Nemo.OperationResult</classname></link> enum</simpara></listitem>
+            </varlistentry>
+          </variablelist>
+
+          <para>
+                This method is called by Nemo for each file or folder that exists under the
+                current directory listing.  Originally, <link linkend="class-nemo-python-info-provider"><classname>Nemo.InfoProvider</classname></link>
+                only provided the update_file_info
+                method, which blocked Nemo when the method required a lot of computation time.  This method was 
+                created to allow an extension to tell Nemo that it will be spending time on an operation and that
+                Nemo should not block itself during that time.
+          </para>
+          <para>
+                In order to notify Nemo of your extension's intentions, you must return a 
+                <link linkend="enum-nemo-python-operation-result"><classname>Nemo.OperationResult</classname></link> enum.  
+                Then, when the operation has completed, call the Nemo.info_provider_update_complete_invoke method, passing the provider, 
+                handle and closure variables as parameters.
+          </para>
+          <para>
+                This method was created for backwards compatibility reasons.  If your
+                extension used the <link linkend="method-nemo-python-info-provider--update-file-info"><function>update_file_info</function></link> method and you want non-blocking 
+                usage, you should switch to this method.
+          </para>
+          <note>
+            This method was introduced in nemo-python 0.7.0.
+          </note>
+        </refsect2>
+
+
+        <refsect2 id="method-nemo-python-info-provider--cancel-update">
+          <title>Nemo.InfoProvider.cancel_update</title>
+
+          <programlisting><methodsynopsis language="python">
+            <methodname>cancel_update</methodname>
+            <methodparam><parameter role="keyword">provider</parameter></methodparam>
+            <methodparam><parameter role="keyword">handle</parameter></methodparam>
+          </methodsynopsis></programlisting>
+
+          <variablelist>
+            <varlistentry>
+	            <term><parameter role="keyword">provider</parameter>&nbsp;:</term>
+	            <listitem><simpara>the current <link linkend="class-nemo-python-info-provider"><classname>Nemo.InfoProvider</classname></link> instance</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+	            <term><parameter role="keyword">handle</parameter>&nbsp;:</term>
+	            <listitem><simpara>a <classname>gobject.gpointer</classname> generated by a specific update_file_info_full call</simpara></listitem>
+            </varlistentry>
+          </variablelist>
+
+          <para>
+            This method is called by Nemo when an update_file_info_full call is in progress
+            but is no longer required.  This may happen because the user is moving directories or a file
+            has been deleted, etc.  You may use the handle parameter here to match the
+            handle parameter passed in <link linkend="method-nemo-python-info-provider--update-file-info-full"><function>update_file_info_full</function></link>.
+          </para>
+          <note>
+            This method was introduced in nemo-python 0.7.0.
+          </note>
+        </refsect2>
+    </refsect1>
+
+    <refsect1>
+        <title>Active Methods</title>
+
+        <refsect2 id="method-nemo-python-info-provider--update-complete-invoke">
+          <title>Nemo.info_provider_update_complete_invoke</title>
+
+          <programlisting><methodsynopsis language="python">
+            <methodname>info_provider_update_complete_invoke</methodname>
+            <methodparam><parameter role="keyword">provider</parameter></methodparam>
+            <methodparam><parameter role="keyword">handle</parameter></methodparam>
+            <methodparam><parameter role="keyword">closure</parameter></methodparam>
+            <methodparam><parameter role="keyword">result</parameter><initializer>Nemo.OperationResult.COMPLETE</initializer></methodparam>
+          </methodsynopsis></programlisting>
+
+          <variablelist>
+            <varlistentry>
+	            <term><parameter role="keyword">provider</parameter>&nbsp;:</term>
+	            <listitem><simpara>the current <link linkend="class-nemo-python-info-provider"><classname>Nemo.InfoProvider</classname></link> instance</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+	            <term><parameter role="keyword">handle</parameter>&nbsp;:</term>
+	            <listitem><simpara>a <classname>gobject.gpointer</classname> generated by a specific update_file_info_full call</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+	            <term><parameter role="keyword">closure</parameter>&nbsp;:</term>
+	            <listitem><simpara>a C Closure that must be passed to <link linkend="method-nemo-python-info-provider--update-complete-invoke">Nemo.info_provider_update_complete_invoke</link> if that method is called</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+	            <term><parameter role="keyword">result</parameter>&nbsp;:</term>
+	            <listitem><simpara>an optional parameter.  If left out, <link linkend="enum-nemo-python-operation-result--OPERATION_COMPLETE"><classname>Nemo.OperationResult.COMPLETE</classname></link> is assumed.  
+	            Otherwise, you may pass any any of the <link linkend="enum-nemo-python-operation-result"><classname>Nemo.OperationResult</classname></link> enums.</simpara></listitem>
+            </varlistentry>
+          </variablelist>
+
+          <para>
+            An extension must call this method for each update_file_info_full method that
+            returns the <link linkend="enum-nemo-python-operation-result--OPERATION_IN_PROGRESS"><classname>Nemo.OperationResult.IN_PROGRESS</classname></link> enum.  
+            The method must be called with the provider, handle, and closure parameters which were passed to the earlier <link linkend="method-nemo-python-info-provider--update-file-info-full"><function>update_file_info_full</function></link> method.
+          </para>
+          <note>
+            This method was introduced in nemo-python 0.7.0.
+          </note>
+        </refsect2>
+    </refsect1>
+
+</refentry>
+

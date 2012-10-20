@@ -1,0 +1,9 @@
+
+[Desktop Entry]
+Name=Nemo Compare Extension Preferences
+Type=Application
+GenericName=Preferences for Nemo Compare Extension
+Icon=gtk-preferences
+Categories=Settings;
+X-Ubuntu-Gettext-Domain=nemo-compare
+Exec=nemo-compare-preferences

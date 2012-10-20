@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<chapter id="nemo-python-overview"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Overview</title>
+
+    <para>Writing a Nemo-Python extension is a fairly straight-forward process.
+    One simply imports the Nemo module from the gobject introspection repository and creates a class which is derived from a gobject.GObject and 
+    one of the Nemo module's classes. When an extension derives a class, it becomes a "provider", 
+    telling Nemo to ask it for information. There are several types of providers 
+    available for extensions to use: there is MenuProvider, LocationWidgetProvider, 
+    ColumnProvider, PropertyPageProvider, and InfoProvider, all of which will be explained 
+    in more detail below. Your class can be derived from multiple providers.</para>
+    
+    <para>Here are the basic steps:</para>
+    
+    <para>1. A script is written and installed to the standard nemo-python extension install path</para>
+    <para>2. Nemo is (re)started and loads the nemo-python C extension, which in turn loads all python extensions it can find</para>
+    <para>3. Any python script in the standard nemo-python extension install path that imports the Nemo module from the gobject introspection repository and derives 
+    the main class from a Nemo module class will be loaded</para>
+    
+    <note>
+<title>A note about the standard python extensions install path</title>
+
+<para>As of nemo-python 0.7.0 (and continued in 1.0+), nemo-python looks in ~/.local/share/nemo-python/extensions 
+for local extensions and $PREFIX/share/nemo-python/extensions for global extensions.</para>
+    </note>
+    
+    <note>
+<title>A note about compatibility issues for nemo-python 1.0</title>
+    <para>1. We no longer support the "import nemo" command that previous versions used.  This is because
+    nemo-python now directly uses Nemo's annotations, which must be imported by the "from gi.repository import Nemo" command.</para>
+    <para>2. The extension class must now derive itself from a gobject.GObject in addition to the standard Nemo classes.</para>
+    <para>3. For now, some Nemo class constructors require passing named arguments instead of a standard argument list.  This requirement may go away at some point.</para>
+    </note>
+
+    <xi:include href="nemo-python-overview-example.xml"/>
+    <xi:include href="nemo-python-overview-methods.xml"/>
+
+</chapter>
+

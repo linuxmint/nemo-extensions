@@ -1,0 +1,12 @@
+nemo-python for Debian
+--------------------------
+
+Plugins are loaded by default from two locations:
+
+ /usr/share/nemo-python/extensions - all-user plugin directory
+ ~/.local/share/nemo-python/extensions - per-user plugin directory
+
+Sample plugins can be found in /usr/share/doc/python-nemo/examples. To use
+them, copy them to one of the locations above and restart nemo--this can
+be done gracefully by running 'nemo --quit'.
+
