@@ -1,8 +1,7 @@
 Source: nemo-python
 Section: python
 Priority: optional
-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: @GNOME_TEAM@
+Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 8),
                cdbs,
                gnome-pkg-tools,
@@ -10,8 +9,6 @@ Build-Depends: debhelper (>= 8),
                python-gi-dev,
                libnemo-extension-dev (>= 1.0.3)
 Standards-Version: 3.9.2
-Vcs-Svn: svn://anonscm.debian.org/svn/pkg-gnome/packages/unstable/nemo-python
-Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-gnome/packages/unstable/nemo-python/
 
 Package: python-nemo
 Architecture: any
