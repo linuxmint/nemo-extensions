@@ -1,9 +1,8 @@
 Source: nemo-pastebin
 Section: gnome
 Priority: optional
-Maintainer: Alessio Treglia <alessio@debian.org>
+Maintainer: Clement Lefebvre <root@linuxmint.com>
 Uploaders:
- Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Build-Depends:
  debhelper (>= 7.0.50~),
  python-all (>= 2.5)
