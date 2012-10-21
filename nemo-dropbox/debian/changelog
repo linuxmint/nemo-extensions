@@ -1,3 +1,9 @@
+nemo-dropbox (1.0.1) nadia; urgency=low
+
+  * Provides dropbox, conflicts with caja-dropbox
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 21 Oct 2012 23:34:19 +0100
+
 nemo-dropbox (1.0.0) maya; urgency=low
 
   * Initial port from nemo-dropbox
