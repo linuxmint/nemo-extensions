@@ -76,7 +76,7 @@ AC_MSG_NOTICE([installing nemo plugin in ${ac_with_nemodir}])
 AC_SUBST([NEMO_EXTENSION_DIR],[${ac_with_nemodir}])
 
 # The full list of plugins
-allowed_plugins="evolution gajim nemo-burn pidgin removable-devices upnp"
+allowed_plugins="gajim nemo-burn pidgin removable-devices upnp thunderbird"
 
 plugin_error_or_ignore()
 {
@@ -127,19 +127,6 @@ for plugin in ${used_plugins}; do
 	add_plugin="1"
 
 	case ${plugin} in
-		evolution)
-			PKG_CHECK_MODULES(NST_EBOOK, libebook-1.2 >= $EBOOK_REQUIRED,
-					   enable_evolution=yes, enable_evolution=no)
-			if test "${enable_evolution}" != "yes" ; then
-				plugin_error_or_ignore "you need libebook from evolution-data-server to build the Evolution plugin"
-				add_plugin="0"
-			else
-				saved_CPPFLAGS="$CPPFLAGS"
-				CPPFLAGS="$CPPFLAGS $NST_EBOOK_CFLAGS"
-				AC_CHECK_TYPES([EContactPhotoType], , , [#include <libebook/e-contact.h>])
-				CPPFLAGS="$saved_CPPFLAGS"
-			fi
-		;;
 		gajim)
 			AC_ARG_WITH(gajim,
 				    [AS_HELP_STRING(--with-gajim,[Path to Gajim install prefix])],
@@ -243,12 +230,12 @@ Makefile
 src/Makefile
 src/nemo-sendto.pc
 src/plugins/Makefile
-src/plugins/evolution/Makefile
 src/plugins/gajim/Makefile
 src/plugins/nemo-burn/Makefile
 src/plugins/pidgin/Makefile
 src/plugins/removable-devices/Makefile
 src/plugins/upnp/Makefile
+src/plugins/thunderbird/Makefile
 docs/Makefile
 docs/nemo-sendto/Makefile
 docs/nemo-sendto/version.xml

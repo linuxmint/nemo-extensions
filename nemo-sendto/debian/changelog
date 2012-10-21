@@ -1,3 +1,10 @@
+nemo-sendto (1.0.1) nadia; urgency=low
+
+  * 1.0.1
+  * Remove evolution plugin, add basic Thunderbird plugin
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 21 Oct 2012 13:42:23 +0100
+
 nemo-sendto (1.0.0) maya; urgency=low
 
   * 1.0.0
