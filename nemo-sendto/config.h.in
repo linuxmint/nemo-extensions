@@ -21,9 +21,6 @@
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #undef HAVE_DLFCN_H
 
-/* Define to 1 if the system has the type `EContactPhotoType'. */
-#undef HAVE_ECONTACTPHOTOTYPE
-
 /* Define if the GNU gettext() function is already present or preinstalled. */
 #undef HAVE_GETTEXT
 
