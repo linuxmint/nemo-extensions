@@ -11,12 +11,12 @@ nemo-pastebin: functional
 nemo-compare: functional
 
 nemo-python (python bindings for Nemo): functional
+nemo-rabbitvcs: functional (forked from rabbitvcs-0.15.2)
 
 NOT YET INCLUDED:
 ----------------
 
 nemo-bzr: part of bzr-gtk, needs to be isolated from it
-nemo-rabbitcvs: part of rabbitcvs, needs to be isolated from it
 
 NAUTILUS EXTENSIONS MISSING IN NEMO:
 ---------------------------------
