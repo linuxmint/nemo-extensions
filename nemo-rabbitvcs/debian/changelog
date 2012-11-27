@@ -1,0 +1,5 @@
+nemo-rabbitvcs (1.0) precise; urgency=low
+
+  * Initial port of rabbitvcs-nautilus3 to nemo.
+
+ -- Will Rouesnel <w.rouesnel@gmail.com>  Tue, 27 Nov 2012 10:48:55 +1100
