@@ -1,5 +1,5 @@
 Source: nemo-rabbitvcs
-Maintainer: Will Rouesnel <w.rouesnel@gmail.com>
+Maintainer: Clement Lefebvre <root@linuxmint.com>
 Section: devel
 Priority: optional
 Build-Depends: debhelper (>= 7),
