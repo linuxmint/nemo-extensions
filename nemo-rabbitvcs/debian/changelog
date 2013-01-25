@@ -1,0 +1,11 @@
+nemo-rabbitvcs (1.0.1) UNRELEASED; urgency=low
+
+  * Removed use of deprecated get_data() and set_data() functions.
+
+ -- Will Rouesnel <w.rouesnel@gmail.com>  Mon, 03 Dec 2012 17:33:03 +1100
+
+nemo-rabbitvcs (1.0) precise; urgency=low
+
+  * Initial port of rabbitvcs-nautilus3 to nemo.
+
+ -- Will Rouesnel <w.rouesnel@gmail.com>  Tue, 27 Nov 2012 10:48:55 +1100
