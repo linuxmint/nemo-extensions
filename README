@@ -34,6 +34,8 @@ nautilus-script-collection-svn  - Nautilus subversion management scripts
 nautilus-script-manager         - A simple management tool for nautilus scri
 nautilus-script-purrr           -                                           
 nautilus-scripts-manager        - simple tool for nautilus scripts managemen
+nautilus-search                 - Add gnome-search-tool to context menu
 nautilus-sendto-empathy         - GNOME multi-protocol chat and call client 
 nautilus-wipe                   - Secure deletion extension for Nautilus    
 nautilus-gtkhash                - nautilus extension for computing checksums
+
