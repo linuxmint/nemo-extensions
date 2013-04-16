@@ -1,8 +1,12 @@
-nemo-rabbitvcs (1.0.1) UNRELEASED; urgency=low
+nemo-rabbitvcs (1.8.0) olivia; urgency=low
 
+  [ Will Rouesnel ]
   * Removed use of deprecated get_data() and set_data() functions.
 
- -- Will Rouesnel <w.rouesnel@gmail.com>  Mon, 03 Dec 2012 17:33:03 +1100
+  [ Clement Lefebvre ]
+  * 1.8.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 16 Apr 2013 10:44:24 +0100
 
 nemo-rabbitvcs (1.0) precise; urgency=low
 
