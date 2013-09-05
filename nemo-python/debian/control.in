@@ -3,7 +3,8 @@ Section: python
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 8),
-               cdbs,
+               autotools-dev,
+               dh_autoreconf,
                gnome-pkg-tools,
                python-dev,
                python-gi-dev,

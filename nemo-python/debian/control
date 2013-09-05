@@ -8,7 +8,8 @@ Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Uploaders: 
 Build-Depends: debhelper (>= 8),
-               cdbs,
+               autotools-dev,
+	       dh-autoreconf,
                gnome-pkg-tools,
                python-dev,
                python-gi-dev,
