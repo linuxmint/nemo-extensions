@@ -1,0 +1,22 @@
+This is NemoPreview, a quick previewer for Nautilus, the GNOME desktop file manager.
+------------------------------------------------------------------------------
+
+NemoPreview is a DBus-activated service. For NemoPreview to popup, applications will have
+to call the ShowFile method on the org.nemo.Preview interface.
+If you want to or debug NemoPreview without a calling application, you can use
+gdbus(1) to call the ShowFile method manually on the bus.
+
+=======
+Methods
+=======
+
+ShowFile(s: FileUri, i: ParentXid, b: CloseIfShown)
+
+Activates NemoPreview previewing the file at the provided URI.
+If a XID is specified, the NemoPreview window is made transient to that window.
+If the CloseIfShown parameter is TRUE, NemoPreview will close if it's already
+running.
+
+Close()
+
+Explicitly closes NemoPreview.

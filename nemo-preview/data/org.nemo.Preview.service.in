@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.nemo.Preview
+Exec=@bindir@/nemo-preview

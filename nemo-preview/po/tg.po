@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Tajik Gnome\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=sushi&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-01-14 16:27+0000\n"
+"PO-Revision-Date: 2013-01-21 18:06+0500\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: \n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr ""
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr ""
+
+#: ../src/js/ui/fallbackRenderer.js:120
+msgid "Type"
+msgstr "Намуд"
+
+#: ../src/js/ui/fallbackRenderer.js:121 ../src/js/ui/fallbackRenderer.js:130
+#: ../src/js/ui/fallbackRenderer.js:136 ../src/js/ui/spinnerBox.js:57
+msgid "Loading..."
+msgstr "Бор шуда истодааст..."
+
+#: ../src/js/ui/fallbackRenderer.js:129
+msgid "Size"
+msgstr "Андоза"
+
+#: ../src/js/ui/fallbackRenderer.js:135
+msgid "Modified"
+msgstr "Тағйирёфта"
+
+#: ../src/js/viewers/audio.js:172
+msgid "from"
+msgstr "аз"
+
+#: ../src/js/viewers/audio.js:174
+msgid "by"
+msgstr "бо"
+
+#: ../src/js/viewers/evince.js:78
+#, c-format
+msgid "%d of %d"
+msgstr "%d аз %d"
+
+#: ../src/libsushi/sushi-file-loader.c:639
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d объект"
+
+#: ../src/libsushi/sushi-file-loader.c:651
+msgid "Empty Folder"
+msgstr "Ҷузвдони холӣ"

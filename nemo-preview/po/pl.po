@@ -1,0 +1,74 @@
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Aviary.pl
+# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
+# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
+# gnomepl@aviary.pl
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Piotr Drąg <piotrdrag@gmail.com>, 2011-2012.
+# Aviary.pl <gnomepl@aviary.pl>, 2011-2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: sushi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-04 20:56+0200\n"
+"PO-Revision-Date: 2012-09-04 20:57+0200\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: Poland\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "Dekoracja po stronie klienta"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "Określa, czy okno ma samo wyświetlać dekoracje menedżera okien"
+
+#: ../src/js/ui/fallbackRenderer.js:120
+msgid "Type"
+msgstr "Typ"
+
+#: ../src/js/ui/fallbackRenderer.js:121 ../src/js/ui/fallbackRenderer.js:130
+#: ../src/js/ui/fallbackRenderer.js:136 ../src/js/ui/spinnerBox.js:57
+msgid "Loading..."
+msgstr "Wczytywanie..."
+
+#: ../src/js/ui/fallbackRenderer.js:129
+msgid "Size"
+msgstr "Rozmiar"
+
+#: ../src/js/ui/fallbackRenderer.js:135
+msgid "Modified"
+msgstr "Zmodyfikowano"
+
+#: ../src/js/viewers/audio.js:172
+msgid "from"
+msgstr "z"
+
+#: ../src/js/viewers/audio.js:174
+msgid "by"
+msgstr " "
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d z %d"
+
+#: ../src/libsushi/sushi-file-loader.c:639
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d element"
+msgstr[1] "%d elementy"
+msgstr[2] "%d elementów"
+
+#: ../src/libsushi/sushi-file-loader.c:651
+msgid "Empty Folder"
+msgstr "Pusty katalog"

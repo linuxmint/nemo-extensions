@@ -1,0 +1,74 @@
+# Finnish translation for sushi.
+# Copyright (C) 2012 sushi's COPYRIGHT HOLDER
+# This file is distributed under the same license as the sushi package.
+#
+# Gnome 2012-03 Finnish translation sprint participants:
+# Niklas Laxström
+# artnay <jiri.gronroos@iki.fi>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: sushi master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=sushi&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-04-12 19:27+0000\n"
+"PO-Revision-Date: 2012-09-08 13:10+0300\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+"X-POT-Import-Date: 2012-02-19 15:25:28+0000\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "Ikkunan reunukset"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "Piirtääkö ikkuna ikkunanhallinan reunukset itse"
+
+#: ../src/js/ui/fallbackRenderer.js:117
+msgid "Type"
+msgstr "Tyyppi"
+
+#: ../src/js/ui/fallbackRenderer.js:118 ../src/js/ui/fallbackRenderer.js:123
+#: ../src/js/ui/fallbackRenderer.js:128 ../src/js/ui/spinnerBox.js:57
+#: ../src/js/viewers/folder.js:124 ../src/js/viewers/folder.js:129
+msgid "Loading..."
+msgstr "Ladataan..."
+
+#: ../src/js/ui/fallbackRenderer.js:122 ../src/js/viewers/folder.js:123
+msgid "Size"
+msgstr "Koko"
+
+#: ../src/js/ui/fallbackRenderer.js:127 ../src/js/viewers/folder.js:128
+msgid "Modified"
+msgstr "Muokattu"
+
+#: ../src/js/viewers/audio.js:171
+msgid "from"
+msgstr "albumilta"
+
+#: ../src/js/viewers/audio.js:173
+msgid "by"
+msgstr "esittää"
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d/%d"
+
+#: ../src/libsushi/sushi-file-loader.c:640
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d kohde"
+msgstr[1] "%d kohdetta"
+
+#: ../src/libsushi/sushi-file-loader.c:652
+msgid "Empty Folder"
+msgstr "Tyhjä kansio"
+

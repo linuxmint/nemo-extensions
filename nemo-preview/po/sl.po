@@ -1,0 +1,80 @@
+# Slovenian translation for sushi.
+# Copyright (C) 2011 sushi's COPYRIGHT HOLDER
+# This file is distributed under the same license as the sushi package.
+#
+# Mira Metljak <miraov@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sushi master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=sushi&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-04-20 00:40+0000\n"
+"PO-Revision-Date: 2012-04-21 13:07+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: Slovenian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "Oblikovanje odjemalca"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "Ali naj okno izriše oblikovanje WM"
+
+#: ../src/js/ui/fallbackRenderer.js:117
+msgid "Type"
+msgstr "Vrsta"
+
+#: ../src/js/ui/fallbackRenderer.js:118
+#: ../src/js/ui/fallbackRenderer.js:123
+#: ../src/js/ui/fallbackRenderer.js:128
+#: ../src/js/ui/spinnerBox.js:57
+#: ../src/js/viewers/folder.js:124
+#: ../src/js/viewers/folder.js:129
+msgid "Loading..."
+msgstr "Nalaganje ..."
+
+#: ../src/js/ui/fallbackRenderer.js:122
+#: ../src/js/viewers/folder.js:123
+msgid "Size"
+msgstr "Velikost"
+
+#: ../src/js/ui/fallbackRenderer.js:127
+#: ../src/js/viewers/folder.js:128
+msgid "Modified"
+msgstr "Spremenjeno"
+
+#: ../src/js/viewers/audio.js:172
+msgid "from"
+msgstr "od"
+
+#: ../src/js/viewers/audio.js:174
+msgid "by"
+msgstr "od"
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d od %d"
+
+#: ../src/libsushi/sushi-file-loader.c:640
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d predmetov"
+msgstr[1] "%d predmet"
+msgstr[2] "%d predmeta"
+msgstr[3] "%d predmeti"
+
+#: ../src/libsushi/sushi-file-loader.c:652
+msgid "Empty Folder"
+msgstr "Prazna mapa"
+

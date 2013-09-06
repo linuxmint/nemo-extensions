@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Korostil Daniel <ted.korostiled@gmail.com>, 2011.
+# Re. <ted.korostiled@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-20 22:51+0300\n"
+"PO-Revision-Date: 2012-09-20 22:53+0300\n"
+"Last-Translator: Re. <ted.korostiled@gmail.com>\n"
+"Language-Team: linux.org.ua\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "Клієнт декорацій"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "Чи вікно вимальовує декорації самого віконного менеджера"
+
+#: ../src/js/ui/fallbackRenderer.js:120
+msgid "Type"
+msgstr "Тип"
+
+#: ../src/js/ui/fallbackRenderer.js:121 ../src/js/ui/fallbackRenderer.js:130
+#: ../src/js/ui/fallbackRenderer.js:136 ../src/js/ui/spinnerBox.js:57
+msgid "Loading..."
+msgstr "Завантаження…"
+
+#: ../src/js/ui/fallbackRenderer.js:129
+msgid "Size"
+msgstr "Розмір"
+
+#: ../src/js/ui/fallbackRenderer.js:135
+msgid "Modified"
+msgstr "Змінено"
+
+#: ../src/js/viewers/audio.js:172
+msgid "from"
+msgstr "з"
+
+#: ../src/js/viewers/audio.js:174
+msgid "by"
+msgstr " "
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d з %d"
+
+#: ../src/libsushi/sushi-file-loader.c:639
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d об'єкт"
+msgstr[1] "%d об'єкти"
+msgstr[2] "%d об'єктів"
+
+#: ../src/libsushi/sushi-file-loader.c:651
+msgid "Empty Folder"
+msgstr "Порожня тека"

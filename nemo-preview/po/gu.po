@@ -1,0 +1,70 @@
+# Gujarati translation for sushi.
+# Copyright (C) 2012 sushi's COPYRIGHT HOLDER
+# This file is distributed under the same license as the sushi package.
+#
+# , 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: sushi master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=sushi&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-07-19 02:30+0000\n"
+"PO-Revision-Date: 2012-07-27 14:44+0530\n"
+"Last-Translator: \n"
+"Language-Team: gu_IN <kde-i18n-doc@kde.org>\n"
+"Language: gu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "ક્લાયન્ટ સજાવટ"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "શું વિન્ડો પોતાની જાતે WM સજાવટને દોરે છે"
+
+#: ../src/js/ui/fallbackRenderer.js:120
+msgid "Type"
+msgstr "પ્રકાર"
+
+#: ../src/js/ui/fallbackRenderer.js:121 ../src/js/ui/fallbackRenderer.js:130
+#: ../src/js/ui/fallbackRenderer.js:136 ../src/js/ui/spinnerBox.js:57
+msgid "Loading..."
+msgstr "લાવી રહ્યા છે..."
+
+#: ../src/js/ui/fallbackRenderer.js:129
+msgid "Size"
+msgstr "માપ"
+
+#: ../src/js/ui/fallbackRenderer.js:135
+msgid "Modified"
+msgstr "ફેરફાર કરેલું"
+
+#: ../src/js/viewers/audio.js:172
+msgid "from"
+msgstr "માંથી"
+
+#: ../src/js/viewers/audio.js:174
+msgid "by"
+msgstr "દ્દારા"
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d નું %d"
+
+#: ../src/libsushi/sushi-file-loader.c:639
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "૧ વસ્તુ"
+msgstr[1] "%d વસ્તુઓ"
+
+#: ../src/libsushi/sushi-file-loader.c:651
+msgid "Empty Folder"
+msgstr "ખાલી ફોલ્ડર"
+

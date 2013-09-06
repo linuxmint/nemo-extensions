@@ -1,0 +1,68 @@
+# Greek translation for sushi.
+# Copyright (C) 2012 sushi's COPYRIGHT HOLDER
+# This file is distributed under the same license as the sushi package.
+# apo <apo.apostolakis.apo@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sushi master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=sushi&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-09-25 23:14+0000\n"
+"PO-Revision-Date: 2012-10-23 16:20+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
+"Language-Team: Greek <team@lists.gnome.gr>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "Διακόσμηση πελάτη"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "Αν το παράθυρο θα σχεδιάζει διακοσμήσεις του διαχειριστή παραθύρων"
+
+#: ../src/js/ui/fallbackRenderer.js:120
+msgid "Type"
+msgstr "Τύπος"
+
+#: ../src/js/ui/fallbackRenderer.js:121 ../src/js/ui/fallbackRenderer.js:130
+#: ../src/js/ui/fallbackRenderer.js:136 ../src/js/ui/spinnerBox.js:57
+msgid "Loading..."
+msgstr "Φορτώνει..."
+
+#: ../src/js/ui/fallbackRenderer.js:129
+msgid "Size"
+msgstr "Μέγεθος"
+
+#: ../src/js/ui/fallbackRenderer.js:135
+msgid "Modified"
+msgstr "Τροποποιήθηκε"
+
+#: ../src/js/viewers/audio.js:172
+msgid "from"
+msgstr "του"
+
+#: ../src/js/viewers/audio.js:174
+msgid "by"
+msgstr "από"
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d από %d"
+
+#: ../src/libsushi/sushi-file-loader.c:639
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d αντικείμενο"
+msgstr[1] "%d αντικείμενα"
+
+#: ../src/libsushi/sushi-file-loader.c:651
+msgid "Empty Folder"
+msgstr "Άδειασμα του φακέλου"

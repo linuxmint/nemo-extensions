@@ -1,0 +1,67 @@
+# Thai translation for sushi.
+# Copyright (C) 2011-2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the sushi package.
+# Unticha Pramgoed <unticha@gmail.com>, 2011-2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sushi master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=sushi&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-09-22 06:54+0000\n"
+"PO-Revision-Date: 2012-09-22 15:12+0700\n"
+"Last-Translator: Unticha Pramgoed <unticha@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "ตกแต่งโปรแกรมลูกข่าย"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "กำหนดว่าหน้าต่างจะวาดตกแต่งด้วยโปรแกรมจัดการหน้าต่างหรือไม่"
+
+#: ../src/js/ui/fallbackRenderer.js:120
+msgid "Type"
+msgstr "ชนิด"
+
+#: ../src/js/ui/fallbackRenderer.js:121 ../src/js/ui/fallbackRenderer.js:130
+#: ../src/js/ui/fallbackRenderer.js:136 ../src/js/ui/spinnerBox.js:57
+msgid "Loading..."
+msgstr "กำลังโหลด..."
+
+#: ../src/js/ui/fallbackRenderer.js:129
+msgid "Size"
+msgstr "ขนาด"
+
+#: ../src/js/ui/fallbackRenderer.js:135
+msgid "Modified"
+msgstr "แก้ไขเมื่อ"
+
+#: ../src/js/viewers/audio.js:172
+msgid "from"
+msgstr "จาก"
+
+#: ../src/js/viewers/audio.js:174
+msgid "by"
+msgstr "โดย"
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d จาก %d"
+
+#: ../src/libsushi/sushi-file-loader.c:639
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d รายการ"
+
+#: ../src/libsushi/sushi-file-loader.c:651
+msgid "Empty Folder"
+msgstr "โฟลเดอร์ว่างเปล่า"

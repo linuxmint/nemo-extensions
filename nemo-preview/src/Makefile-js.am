@@ -1,0 +1,43 @@
+jsuidir = $(pkgdatadir)/js/ui
+dist_jsui_DATA = \
+    js/ui/main.js \
+    js/ui/tweener.js \
+    js/ui/application.js \
+    js/ui/fallbackRenderer.js \
+    js/ui/mainWindow.js \
+    js/ui/mimeHandler.js \
+    js/ui/spinnerBox.js \
+    js/ui/utils.js
+
+jsviewersdir = $(pkgdatadir)/js/viewers
+dist_jsviewers_DATA = \
+    js/viewers/image.js \
+    js/viewers/gst.js \
+    js/viewers/audio.js \
+    js/viewers/evince.js \
+    js/viewers/font.js \
+    js/viewers/html.js \
+    js/viewers/text.js
+
+jsutildir = $(pkgdatadir)/js/util
+dist_jsutil_DATA = \
+    js/util/constants.js \
+    js/util/format.js \
+    js/util/totemMimeTypes.js
+
+jsutil_built_sources = \
+    $(srcdir)/js/util/path.js
+
+BUILT_SOURCES += $(jsutil_built_sources)
+
+js/util/path.js: Makefile js/util/path.js.in
+	$(AM_V_GEN) $(do_subst) $(srcdir)/js/util/path.js.in > $@
+
+nodist_jsutil_DATA = \
+    $(jsutil_built_sources)
+
+CLEANFILES += \
+    $(BUILT_SOURCES)
+
+EXTRA_DIST += \
+    js/util/path.js.in

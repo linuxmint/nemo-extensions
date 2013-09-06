@@ -1,0 +1,112 @@
+nemo_preview_cflags = \
+    -I$(top_srcdir)/src \
+    -DPREFIX=\"$(prefix)\" \
+    -DLIBDIR=\"$(libdir)\" \
+    -DG_LOG_DOMAIN=\"Nemo-preview\" \
+    -DG_DISABLE_DEPRECATED \
+    -DGST_USE_UNSTABLE_API \
+    $(NEMO_PREVIEW_CFLAGS)
+
+nemo_preview_built_sources = \
+    nemo-preview-enum-types.h \
+    nemo-preview-enum-types.c
+
+BUILT_SOURCES += $(nemo_preview_built_sources)
+NEMO_PREVIEW_STAMP_FILES = stamp-nemo-preview-enum-types.h
+
+nemo_preview_source_h = \
+    libnemo-preview/nemo-preview-cover-art.h \
+    libnemo-preview/nemo-preview-pdf-loader.h \
+    libnemo-preview/nemo-preview-sound-player.h \
+    libnemo-preview/nemo-preview-file-loader.h \
+    libnemo-preview/nemo-preview-font-loader.h \
+    libnemo-preview/nemo-preview-font-widget.h \
+    libnemo-preview/nemo-preview-text-loader.h \
+    libnemo-preview/nemo-preview-utils.h
+
+nemo_preview_source_c = \
+    libnemo-preview/nemo-preview-cover-art.c \
+    libnemo-preview/nemo-preview-pdf-loader.c \
+    libnemo-preview/nemo-preview-sound-player.c \
+    libnemo-preview/nemo-preview-file-loader.c \
+    libnemo-preview/nemo-preview-font-loader.c \
+    libnemo-preview/nemo-preview-font-widget.c \
+    libnemo-preview/nemo-preview-text-loader.c \
+    libnemo-preview/nemo-preview-utils.c
+
+nemo-preview-enum-types.h: stamp-nemo-preview-enum-types.h Makefile
+	@true
+
+stamp-nemo-preview-enum-types.h: $(nemo_preview_source_h) libnemo-preview/nemo-preview-enum-types.h.in
+	$(AM_V_GEN) ( cd $(srcdir) && \
+	$(GLIB_MKENUMS) \
+	  --template $(srcdir)/libnemo-preview/nemo-preview-enum-types.h.in \
+	  $(nemo_preview_source_h) ) >> xgen-beth && \
+	(cmp -s xgen-beth nemo-preview-enum-types.h || cp xgen-beth nemo-preview-enum-types.h) && \
+	rm -f xgen-beth && \
+	echo timestamp > $(@F)
+
+nemo-preview-enum-types.c: stamp-nemo-preview-enum-types.h libnemo-preview/nemo-preview-enum-types.c.in
+	$(AM_V_GEN) ( cd $(srcdir) && \
+	$(GLIB_MKENUMS) \
+	  --template $(srcdir)/libnemo-preview/nemo-preview-enum-types.c.in \
+	  $(nemo_preview_source_h) ) >> xgen-betc && \
+	cp xgen-betc nemo-preview-enum-types.c && \
+	rm -f xgen-betc
+
+pkglib_LTLIBRARIES += libnemo-preview-1.0.la
+
+libnemo_preview_1_0_la_LIBADD = \
+    $(NEMO_PREVIEW_LIBS)
+
+libnemo_preview_1_0_la_LDFLAGS = \
+    -avoid-version
+
+libnemo_preview_1_0_la_CPPFLAGS = \
+    $(nemo_preview_cflags)
+
+libnemo_preview_1_0_la_SOURCES = \
+    $(nemo_preview_source_h) \
+    $(nemo_preview_source_c) \
+    $(nemo_preview_built_sources)
+
+CLEANFILES += $(NEMO_PREVIEW_STAMP_FILES) $(BUILT_SOURCES)
+
+EXTRA_DIST += \
+    libnemo-preview/nemo-preview-enum-types.h.in \
+    libnemo-preview/nemo-preview-enum-types.c.in
+
+INTROSPECTION_GIRS += NemoPreview-1.0.gir
+
+# These find the gir and typelib files in an uninstalled GStreamer setup
+# or if GStreamer is installed in a different prefix than most other things
+INTROSPECTION_SCANNER_ARGS = \
+    --add-include-path=`$(PKG_CONFIG) --variable=girdir gstreamer-1.0` \
+    --add-include-path=`$(PKG_CONFIG) --variable=girdir gstreamer-base-1.0` \
+    --add-include-path=`$(PKG_CONFIG) --variable=girdir gstreamer-pbutils-1.0` \
+    --add-include-path=`$(PKG_CONFIG) --variable=girdir gstreamer-tag-1.0`
+INTROSPECTION_COMPILER_ARGS = \
+    --includedir=`$(PKG_CONFIG) --variable=girdir gstreamer-1.0` \
+    --includedir=`$(PKG_CONFIG) --variable=girdir gstreamer-base-1.0` \
+    --includedir=`$(PKG_CONFIG) --variable=girdir gstreamer-pbutils-1.0` \
+    --includedir=`$(PKG_CONFIG) --variable=girdir gstreamer-tag-1.0`
+
+NemoPreview-1.0.gir: libnemo-preview-1.0.la Makefile
+NemoPreview_1_0_gir_NAMESPACE = NemoPreview
+NemoPreview_1_0_gir_VERSION = 1.0
+NemoPreview_1_0_gir_LIBS = libnemo-preview-1.0.la
+NemoPreview_1_0_gir_CFLAGS = $(AM_CPPFLAGS) $(nemo_preview_cflags)
+NemoPreview_1_0_gir_SCANNERFLAGS = --warn-all --symbol-prefix=nemo_preview --identifier-prefix=NemoPreview
+NemoPreview_1_0_gir_INCLUDES = \
+    Clutter-1.0 \
+    GstPbutils-1.0 \
+    GstTag-1.0 \
+    GdkPixbuf-2.0 \
+    Gtk-3.0 \
+    EvinceDocument-3.0 \
+    GtkSource-3.0
+
+NemoPreview_1_0_gir_FILES = \
+    $(addprefix $(srcdir)/,$(nemo_preview_source_h)) \
+    $(addprefix $(srcdir)/,$(nemo_preview_source_c)) \
+    $(srcdir)/nemo-preview-enum-types.h

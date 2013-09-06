@@ -1,0 +1,6 @@
+[encoding: UTF-8]
+src/js/ui/fallbackRenderer.js
+src/js/ui/spinnerBox.js
+src/js/viewers/audio.js
+src/js/viewers/evince.js
+src/libnemo-preview/nemo-preview-file-loader.c

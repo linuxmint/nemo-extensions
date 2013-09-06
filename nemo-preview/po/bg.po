@@ -1,0 +1,68 @@
+# Bulgarian translation of sushi po-file.
+# Copyright (C) 2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the sushi package.
+# Ivaylo Valkov <ivaylo@e-valkov.org>, 2011.
+# Alexander Shopov <ash@kambanaria.org>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sushi master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-04 07:26+0300\n"
+"PO-Revision-Date: 2012-07-04 07:26+0300\n"
+"Last-Translator: Ivaylo Valkov <ivaylo@e-valkov.org>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "Украса от клиента"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "Дали програмата сама изчертава украсата за мениджъра за прозорци."
+
+#: ../src/js/ui/fallbackRenderer.js:120
+msgid "Type"
+msgstr "Вид"
+
+#: ../src/js/ui/fallbackRenderer.js:121 ../src/js/ui/fallbackRenderer.js:130
+#: ../src/js/ui/fallbackRenderer.js:136 ../src/js/ui/spinnerBox.js:57
+msgid "Loading..."
+msgstr "Зареждане…"
+
+#: ../src/js/ui/fallbackRenderer.js:129
+msgid "Size"
+msgstr "Размер"
+
+#: ../src/js/ui/fallbackRenderer.js:135
+msgid "Modified"
+msgstr "Променен"
+
+#: ../src/js/viewers/audio.js:172
+msgid "from"
+msgstr "от"
+
+#: ../src/js/viewers/audio.js:174
+msgid "by"
+msgstr "на"
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d от %d"
+
+#: ../src/libsushi/sushi-file-loader.c:639
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d обект"
+msgstr[1] "%d обекта"
+
+#: ../src/libsushi/sushi-file-loader.c:651
+msgid "Empty Folder"
+msgstr "Празна папка"

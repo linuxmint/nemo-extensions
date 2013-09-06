@@ -1,0 +1,68 @@
+# Korean translation for sushi.
+# This file is distributed under the same license as the sushi package.
+#
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2011.
+# Changwoo Ryu <cwryu@debian.org>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sushi master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=sushi&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-04-12 19:27+0000\n"
+"PO-Revision-Date: 2012-09-16 17:31+0900\n"
+"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
+"Language-Team: Korean <gnome-kr@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "클라이언트 장식"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "창에서 창관리자 장식을 직접 그릴지 여부"
+
+#: ../src/js/ui/fallbackRenderer.js:117
+msgid "Type"
+msgstr "유형"
+
+#: ../src/js/ui/fallbackRenderer.js:118 ../src/js/ui/fallbackRenderer.js:123
+#: ../src/js/ui/fallbackRenderer.js:128 ../src/js/ui/spinnerBox.js:57
+#: ../src/js/viewers/folder.js:124 ../src/js/viewers/folder.js:129
+msgid "Loading..."
+msgstr "불러오는 중..."
+
+#: ../src/js/ui/fallbackRenderer.js:122 ../src/js/viewers/folder.js:123
+msgid "Size"
+msgstr "크기"
+
+#: ../src/js/ui/fallbackRenderer.js:127 ../src/js/viewers/folder.js:128
+msgid "Modified"
+msgstr "수정됨"
+
+#: ../src/js/viewers/audio.js:171
+msgid "from"
+msgstr "앨범"
+
+#: ../src/js/viewers/audio.js:173
+msgid "by"
+msgstr "만든 이"
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d (전체 %d)"
+
+#: ../src/libsushi/sushi-file-loader.c:640
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "항목 %d개"
+
+#: ../src/libsushi/sushi-file-loader.c:652
+msgid "Empty Folder"
+msgstr "빈 폴더"

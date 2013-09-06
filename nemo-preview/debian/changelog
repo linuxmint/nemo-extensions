@@ -1,0 +1,6 @@
+nemo-preview (1.0.0) olivia; urgency=low
+
+  * Initial packaging based on 3.8.1-1ubuntu1
+
+ -- Michael Webster <miketwebster@gmail.com>  Thu, 05 Sep 2013 22:06:14 -0400
+

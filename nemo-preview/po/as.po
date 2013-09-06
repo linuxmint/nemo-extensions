@@ -1,0 +1,71 @@
+# Assamese translation for sushi.
+# Copyright (C) 2011 sushi's COPYRIGHT HOLDER
+# This file is distributed under the same license as the sushi package.
+#
+# ngoswami <ngoswami@redhat.com>, 2011.
+# Nilamdyuti Goswami <ngoswami@redhat.com>, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: sushi master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=sushi&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-04-12 19:27+0000\n"
+"PO-Revision-Date: 2012-08-13 21:21+0530\n"
+"Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
+"Language-Team: as_IN <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:1
+msgid "Client decoration"
+msgstr "ক্লাএন্ট সাজ্-সজ্জা"
+
+#: ../data/org.gnome.sushi.gschema.xml.in.h:2
+msgid "Whether the window draws WM decorations itself"
+msgstr "উইন্ডোয় WM সাজ্-সজ্জাসমূহ নিজে কৰে নে"
+
+#: ../src/js/ui/fallbackRenderer.js:117
+msgid "Type"
+msgstr "ধৰণ"
+
+#: ../src/js/ui/fallbackRenderer.js:118 ../src/js/ui/fallbackRenderer.js:123
+#: ../src/js/ui/fallbackRenderer.js:128 ../src/js/ui/spinnerBox.js:57
+#: ../src/js/viewers/folder.js:124 ../src/js/viewers/folder.js:129
+msgid "Loading..."
+msgstr "ল'ড কৰা হৈছে..."
+
+#: ../src/js/ui/fallbackRenderer.js:122 ../src/js/viewers/folder.js:123
+msgid "Size"
+msgstr "আকাৰ"
+
+#: ../src/js/ui/fallbackRenderer.js:127 ../src/js/viewers/folder.js:128
+msgid "Modified"
+msgstr "পৰিবৰ্তিত"
+
+#: ../src/js/viewers/audio.js:171
+msgid "from"
+msgstr "পৰা"
+
+#: ../src/js/viewers/audio.js:173
+msgid "by"
+msgstr "দ্বাৰা"
+
+#: ../src/js/viewers/evince.js:79
+#, c-format
+msgid "%d of %d"
+msgstr "%d ৰ %d"
+
+#: ../src/libsushi/sushi-file-loader.c:640
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d বস্তু"
+msgstr[1] "%d বস্তুবোৰ"
+
+#: ../src/libsushi/sushi-file-loader.c:652
+msgid "Empty Folder"
+msgstr "ফোল্ডাৰ খালি কৰক"
+
