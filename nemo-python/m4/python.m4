@@ -98,6 +98,13 @@ AC_DEFUN([AC_MULTILIB],
                */lib64 ) libdirsuffix=64 ;;
              esac ;;
         esac
+        case "$searchdir" in
+          /lib/x86_64-linux-gnu/ | /lib/x86_64-linux-gnu ) libdirsuffix=/x86_64-linux-gnu ;;
+          *) searchdir=`cd "$searchdir" && pwd`
+             case "$searchdir" in
+               /lib/x86_64-linux-gnu ) libdirsuffix=/x86_64-linux-gnu ;;
+             esac ;;
+        esac
       fi
     done
     IFS="$save_IFS"
