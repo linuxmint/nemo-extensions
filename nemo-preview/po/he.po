@@ -64,14 +64,14 @@ msgstr "על ידי"
 msgid "%d of %d"
 msgstr "%d מתוך %d"
 
-#: ../src/libsushi/sushi-file-loader.c:640
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:640
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "פריט אחד"
 msgstr[1] "%d פריטים"
 
-#: ../src/libsushi/sushi-file-loader.c:652
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:652
 msgid "Empty Folder"
 msgstr "תיקייה ריקה"
 

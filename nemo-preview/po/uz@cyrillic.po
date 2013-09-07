@@ -57,12 +57,12 @@ msgstr "билан"
 msgid "%d of %d"
 msgstr "%dдан %dтаси"
 
-#: ../src/libsushi/sushi-file-loader.c:639
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:639
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%dта элемент"
 
-#: ../src/libsushi/sushi-file-loader.c:651
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:651
 msgid "Empty Folder"
 msgstr "Бўш жилд"

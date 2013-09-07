@@ -58,7 +58,7 @@ msgstr "од"
 msgid "%d of %d"
 msgstr "%d од %d"
 
-#: ../src/libsushi/sushi-file-loader.c:640
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:640
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -67,6 +67,6 @@ msgstr[1] "%d ставке"
 msgstr[2] "%d ставки"
 msgstr[3] "Једна ставка"
 
-#: ../src/libsushi/sushi-file-loader.c:652
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:652
 msgid "Empty Folder"
 msgstr "Празна фасцикла"

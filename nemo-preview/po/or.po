@@ -57,14 +57,14 @@ msgstr "ଦ୍ବାରା"
 msgid "%d of %d"
 msgstr "%d ର %d"
 
-#: ../src/libsushi/sushi-file-loader.c:639
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:639
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d ବସ୍ତୁ"
 msgstr[1] "%d ବସ୍ତୁଗୁଡ଼ିକ"
 
-#: ../src/libsushi/sushi-file-loader.c:651
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:651
 msgid "Empty Folder"
 msgstr "ଖାଲି ଫୋଲଡର"
 

@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Virtaal 0.7.0\n"
 "X-Project-Style: gnome\n"
 
-#: ../src/libsushi/sushi-file-loader.c:641
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:641
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -31,7 +31,7 @@ msgstr[3] "%d عناصر"
 msgstr[4] "%d عنصراً"
 msgstr[5] "%d عنصر"
 
-#: ../src/libsushi/sushi-file-loader.c:653
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:653
 msgid "Empty Folder"
 msgstr "مجلد فارغ"
 

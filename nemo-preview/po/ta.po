@@ -56,14 +56,14 @@ msgstr "ஆல்"
 msgid "%d of %d"
 msgstr "%d  %d இல் "
 
-#: ../src/libsushi/sushi-file-loader.c:639
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:639
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d உருப்படி"
 msgstr[1] "%d உருப்படிகள்"
 
-#: ../src/libsushi/sushi-file-loader.c:651
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:651
 msgid "Empty Folder"
 msgstr "காலி அடைவு"
 

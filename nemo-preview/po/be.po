@@ -54,7 +54,7 @@ msgstr "выканаўца: "
 msgid "%d of %d"
 msgstr "%d з %d"
 
-#: ../src/libsushi/sushi-file-loader.c:640
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:640
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -62,6 +62,6 @@ msgstr[0] "%d элемент"
 msgstr[1] "%d элементы"
 msgstr[2] "%d элементаў"
 
-#: ../src/libsushi/sushi-file-loader.c:652
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:652
 msgid "Empty Folder"
 msgstr "Пустая папка"

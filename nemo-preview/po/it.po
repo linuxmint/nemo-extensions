@@ -56,13 +56,13 @@ msgstr "di"
 msgid "%d of %d"
 msgstr "%d di %d"
 
-#: ../src/libsushi/sushi-file-loader.c:639
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:639
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d oggetto"
 msgstr[1] "%d oggetti"
 
-#: ../src/libsushi/sushi-file-loader.c:651
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:651
 msgid "Empty Folder"
 msgstr "Cartella vuota"

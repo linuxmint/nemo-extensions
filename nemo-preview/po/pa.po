@@ -58,14 +58,14 @@ msgstr "ਵਲੋਂ"
 msgid "%d of %d"
 msgstr "%2$d ਵਿੱਚੋਂ %1$d"
 
-#: ../src/libsushi/sushi-file-loader.c:640
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:640
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d ਆਈਟਮ"
 msgstr[1] "%d ਆਈਟਮਾਂ"
 
-#: ../src/libsushi/sushi-file-loader.c:652
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:652
 msgid "Empty Folder"
 msgstr "ਖਾਲੀ ਫੋਲਡਰ"
 

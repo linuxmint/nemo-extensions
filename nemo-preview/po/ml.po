@@ -58,13 +58,13 @@ msgstr "പാടിയത്"
 msgid "%d of %d"
 msgstr "താള്‍ %d/%d"
 
-#: ../src/libsushi/sushi-file-loader.c:639
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:639
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d വസ്തു"
 msgstr[1] "%d വസ്തുക്കള്‍"
 
-#: ../src/libsushi/sushi-file-loader.c:651
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:651
 msgid "Empty Folder"
 msgstr "ഒഴിഞ്ഞ അറ"

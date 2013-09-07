@@ -20,14 +20,14 @@ msgstr ""
 "X-Poedit-Language: Asturian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../src/libsushi/sushi-file-loader.c:641
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:641
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d elementu"
 msgstr[1] "%d elementos"
 
-#: ../src/libsushi/sushi-file-loader.c:653
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:653
 msgid "Empty Folder"
 msgstr "Vaciar carpeta"
 

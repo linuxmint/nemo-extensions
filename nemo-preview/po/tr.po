@@ -19,13 +19,13 @@ msgstr ""
 "Language: tr\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: ../src/libsushi/sushi-file-loader.c:641
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:641
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d öge"
 
-#: ../src/libsushi/sushi-file-loader.c:653
+#: ../src/libnemo-preview/nemo-preview-file-loader.c:653
 msgid "Empty Folder"
 msgstr "Boş Klasör"
 
