@@ -153,3 +153,5 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
 
 		return items
 
+	def get_background_items(self, window, item):
+		return []
