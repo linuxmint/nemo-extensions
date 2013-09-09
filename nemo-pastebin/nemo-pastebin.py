@@ -100,7 +100,6 @@ class PastebinThread(Thread):
         except CalledProcessError as error:
             # error.cmd and error.returncode, pasteurl has strerr
             summary = error.message
-            message = pasteurl
             icon = helper.render_icon(Gtk.STOCK_DIALOG_ERROR, Gtk.IconSize.DIALOG, None)
         except:
 #        if not pasteurl or not re.match("^http://.*$", pasteurl):
@@ -168,6 +167,9 @@ class PastebinitExtension(GObject.GObject, Nemo.MenuProvider):
         item.connect("activate", self.menu_activate_cb, files)
         items.append(item)
         return items
+
+    def get_background_items(self, window, item):
+        return []
 
     def menu_activate_cb(self, menu, files):
         if len(files) != 1:

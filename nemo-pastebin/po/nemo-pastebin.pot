@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-01 18:04+0100\n"
+"POT-Creation-Date: 2013-09-08 20:29-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../nemo-pastebin.py:73
-msgid ""
-"The file will be sent to the selected pastebin: are you sure to continue?"
-msgstr ""
-
 #. if not pasteurl or not re.match("^http://.*$", pasteurl):
-#: ../nemo-pastebin.py:116
+#: ../nemo-pastebin.py:108
 msgid "Unable to read or parse the result page."
 msgstr ""
 
-#: ../nemo-pastebin.py:117
+#: ../nemo-pastebin.py:109
 msgid "It could be a server timeout or a change server side. Try later."
 msgstr ""
 
-#: ../nemo-pastebin.py:170
+#: ../nemo-pastebin.py:166
 #, python-format
 msgid "Pastebin to %s"
 msgstr ""
 
-#: ../nemo-pastebin.py:171
+#: ../nemo-pastebin.py:167
 #, python-format
 msgid "Send this file to %s"
 msgstr ""
@@ -44,4 +39,50 @@ msgstr ""
 #: ../nemo-pastebin-configurator.py:45
 #, python-format
 msgid "Can't find %s in any known prefix!"
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:1
+msgid "Show a bubble"
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:2
+msgid ""
+"Show a notification to inform the user about whether the operation has been "
+"completed successfully or not."
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:3
+msgid "Open a browser window"
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:4
+msgid "Open a browser and point it to the pasted document's URL."
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:5
+msgid "Selected pastebin service"
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:6
+msgid "The pastebin which the file will be sent to."
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:7
+msgid "Author (if not set, the login name will be used)"
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:8
+msgid "The name to use as author of the document."
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:9
+msgid "Username"
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:10
+msgid "Most services don't need this."
+msgstr ""
+
+#: ../data/nemo-pastebin.gschema.xml.h:11
+msgid "Password (if needed)"
 msgstr ""
