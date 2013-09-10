@@ -1,3 +1,9 @@
+nemo-media-columns (1.8.0) olivia; urgency=low
+
+  * Port from nautilus-columns
+
+ -- Michael Webster <miketwebster@gmail.com>  Mon, 09 Sep 2013 22:53:17 -0400
+
 nautilus-columns (0.3.3-1~webupd8~0) precise; urgency=medium
 
   * fix bug caused by missing Exif.Image.Software key (thanks to Julien Blanc for the patch!)

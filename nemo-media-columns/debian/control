@@ -1,7 +1,7 @@
 Source: nemo-media-columns
 Section: gnome
 Priority: extra
-Maintainer: 
+Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 7.0.50~)
 Standards-Version: 3.9.0
 
