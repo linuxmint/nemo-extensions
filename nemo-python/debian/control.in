@@ -9,7 +9,8 @@ Build-Depends: debhelper (>= 8),
                python-dev,
                python-gi-dev,
                libnemo-extension-dev (>= 1.0.3),
-               gnome-common
+               gnome-common,
+               gnome-doc-utils
 Standards-Version: 3.9.2
 
 Package: python-nemo
