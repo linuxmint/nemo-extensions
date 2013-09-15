@@ -7,7 +7,7 @@ Standards-Version: 3.9.3
 
 Package: nemo-fileroller
 Architecture: i386 amd64
-Depends: nemo, procps, python-gtk2 (>= 2.12), ${shlibs:Depends}, ${python:Depends}, ${misc:Depends}
+Depends: nemo, procps, file-roller, python-gtk2 (>= 2.12), ${shlibs:Depends}, ${python:Depends}, ${misc:Depends}
 Description: File Roller integration for Nemo
  Nemo File Roller is an extension that integrates the File Roller service with
  your Cinnamon Desktop.
