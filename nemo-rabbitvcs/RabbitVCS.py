@@ -470,7 +470,7 @@ class RabbitVCS(Nemo.InfoProvider, Nemo.MenuProvider,
                 menu = NemoMainContextMenu(self, path, [path], conditions).get_menu()                
                 return menu
 
-        setattr(window, "base_dir", path)
+        window.base_dir = path
 
         if conditions_dict != "in-progress":
             self.status_checker.generate_menu_conditions_async(provider, path, [path], self.update_background_items)
@@ -485,7 +485,7 @@ class RabbitVCS(Nemo.InfoProvider, Nemo.MenuProvider,
 
         # log.debug("get_background_items() called")
         
-        setattr(window, "base_dir", path)
+        window.base_dir = path
         
         return NemoMainContextMenu(self, path, [path]).get_menu()
 
