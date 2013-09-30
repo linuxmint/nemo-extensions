@@ -2,7 +2,6 @@ Source: nemo-pastebin
 Section: gnome
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
-Uploaders:
 Build-Depends:
  debhelper (>= 7.0.50~),
  python-all (>= 2.5)

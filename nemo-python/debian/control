@@ -6,7 +6,6 @@ Source: nemo-python
 Section: python
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
-Uploaders: 
 Build-Depends: debhelper (>= 8),
                autotools-dev,
 	       dh-autoreconf,
