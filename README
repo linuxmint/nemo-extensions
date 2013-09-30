@@ -11,7 +11,7 @@ nemo-pastebin: functional
 nemo-compare: functional
 
 nemo-python (python bindings for Nemo): functional
-nemo-rabbitvcs: functional (forked from rabbitvcs-0.15.2)
+nemo-rabbitvcs: functional (forked from rabbitvcs-0.15.3)
 
 NOT YET INCLUDED:
 ----------------
