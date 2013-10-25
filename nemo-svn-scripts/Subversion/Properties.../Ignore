@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# Distributed under the terms of GNU GPL version 2
+#
+# http://marius.scurtescu.com/?p=102
+# http://gnomefiles.org/app.php?soft_id=1059
+
+LOGFILE=`mktemp -t svn_ignore.XXXXXX`
+
+IGNORES=`svn propget svn:ignore .`
+
+if [ -z $IGNORES ] ; then
+	IGNORES=$*
+else
+    IGNORES="$IGNORES
+$*"
+fi
+
+svn propset svn:ignore "$IGNORES" . > $LOGFILE
+zenity --text-info --title="Subversion: Ignore Property" --filename=$LOGFILE --width=600 --height=400 --window-icon="`dirname $0`/svn.xpm"
+rm -f $LOGFILE

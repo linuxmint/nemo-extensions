@@ -1,0 +1,14 @@
+Version 0.9.3
+- Added support form looking up listing svn external modules
+- Direct copy/port from nautilus to nemo
+
+Version 0.9.2
+- packaging script to eliminate backup files (pointed out by Trond Andersen)
+- using mktemp to create temporary log files (suggested by Miek Gieben)
+- added 3 new commands: Checkout, Diff and Rename (created by Alexandre Rocha Lima e Marcondes)
+- added the CHANGES and AUTHORS files
+- updated the comments at the top of each script
+
+Version 0.9
+- initial public release
+

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+zenity --list \
+	--title="Nemo Scripts Environment Variables" \
+	--width=800 --height=600 \
+	--column="Name" --column="Value" \
+	"NEMO_SCRIPT_SELECTED_FILE_PATHS" "$NEMO_SCRIPT_SELECTED_FILE_PATHS" \
+	"NEMO_SCRIPT_SELECTED_URIS" "$NEMO_SCRIPT_SELECTED_URIS" \
+	"NEMO_SCRIPT_CURRENT_URI" "$NEMO_SCRIPT_CURRENT_URI" \
+	"NEMO_SCRIPT_WINDOW_GEOMETRY" "$NEMO_SCRIPT_WINDOW_GEOMETRY" \
+	"pwd" "`pwd`" \
+	"\$\$" "$$" \
+	"\$0" "$0" \
+	"\$1" "$1" \
+	"\$_" "$_" \
+	"\$#" "$#" \
+	"\$*" "$*"
+
+zenity --list \
+	--title="Nemo Scripts \$@ Variable" \
+	--width=600 --height=400 \
+	--column="\$@" \
+	"$@"
+
