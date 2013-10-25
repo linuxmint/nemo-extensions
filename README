@@ -12,8 +12,8 @@ nemo-compare: functional
 
 nemo-python (python bindings for Nemo): functional
 nemo-rabbitvcs: functional (forked from rabbitvcs-0.15.3)
-nautilus-svn-scripts: functional (forked from [nautilus-svn-scripts-0.9.2](http://packages.ubuntu.com/lucid/nautilus-script-collection-svn))
-nautilus-git-scripts: functional (forked from [nautilus-git-scripts](https://github.com/tapio/nautilus-git-scripts))
+nautilus-svn-scripts: functional (forked from (nautilus-svn-scripts-0.9.2)[http://packages.ubuntu.com/lucid/nautilus-script-collection-svn])
+nautilus-git-scripts: functional (forked from [https://github.com/tapio/nautilus-git-scripts](nautilus-git-scripts))
 
 NOT YET INCLUDED:
 ----------------
