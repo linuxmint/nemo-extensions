@@ -1,0 +1,24 @@
+Source: nemo-terminal
+Section: gnome
+Priority: optional
+Maintainer: Clement Lefebvre <root@linuxmint.com>
+Build-Depends: debhelper (>= 9),
+Standards-Version: 3.9.4
+XS-Python-Version: >= 2.6
+Homepage: https://github.com/linuxmint/nemo-extensions
+
+Package: nemo-terminal
+Architecture: i386 amd64
+Depends: ${misc:Depends},
+		 nemo ( >= 2.0.2),
+		 python-nemo (>= 1.0),
+		 python-gi (>= 3.2.2~),
+		 gir1.2-vte-2.90 (>= 1:0.34.6~),
+		 gir1.2-gtk-3.0 (>= 3.8.4~),
+		 gir1.2-gdkpixbuf-2.0 (>= 2.28.1~),
+		 gir1.2-glib-2.0 (>= 1.38.0~)
+Description: A terminal embedded in the Nemo file browser
+ Nemo Terminal is a terminal embedded in Nemo, the Cinnamon file browser. 
+ It is always open in the current folder, and follows the navigation (the "cd" 
+ command is automatically  executed when you move to an other folder).
+
