@@ -1,0 +1,3 @@
+src/nemo_terminal.py usr/share/nemo-python/extensions
+src/org.nemo.extensions.nemo-terminal.gschema.xml usr/share/glib-2.0/schemas
+pixmap/logo_120x120.png usr/share/nemo-terminal
