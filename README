@@ -13,6 +13,8 @@ nemo-compare: functional
 nemo-python (python bindings for Nemo): functional
 nemo-rabbitvcs: functional (forked from rabbitvcs-0.15.3)
 
+nemo-terminal: functional (forked from nautilus-terminal-1.0.0)
+
 NOT YET INCLUDED:
 ----------------
 
