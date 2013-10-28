@@ -29,82 +29,40 @@
 """A terminal embedded in Nemo."""
 
 __author__ = "Fabien LOISON <flo at flogisoft dot com>"
+__maintainer__ = "Will Rouesnel <w.rouesnel@gmail.com>"
 __version__ = "1.0"
-__appname__ = "Nemo-terminal"
+__appname__ = "nemo-terminal"
 __app_disp_name__ = "Nemo Terminal"
-__website__ = "http://projects.flogisoft.com/Nemo-terminal/"
+__website__ = "http://projects.flogisoft.com/Nautilus-terminal/"
 
 
 import os
 import sys
 from signal import SIGTERM, SIGKILL
-#Specific imports for Python 2 and 3
-if sys.version_info < (3, 0):
-    from urllib import url2pathname
-    from ConfigParser import RawConfigParser
-else:
-    from urllib.request import url2pathname
-    from configparser import RawConfigParser
 
-from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib
+import gettext
+gettext.bindtextdomain('nemo-terminal', '@prefix@/share/locale')
+gettext.textdomain('nemo-terminal')
+_ = gettext.gettext
 
+from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio
 
-DEFAULT_CONF = {
-        'general/def_term_height': 5, #lines
-        'general/def_visible': True,
-        'general/term_on_top': True,
-        'terminal/shell': Vte.get_user_shell(),
-        }
+# DEFAULT_CONF = {
+#         'general/def_term_height': 5, #lines
+#         'general/def_visible': False,
+#         'general/term_on_top': True,
+#         'terminal/shell': Vte.get_user_shell(),
+#         }
 
+BASE_KEY = "org.nemo.extensions.nemo-terminal"
+settings = Gio.Settings.new(BASE_KEY)
 
-class Config(object):
-    """Handles the configuration of Nemo Terminal."""
-
-    def __init__(self):
-        """The constructor."""
-        self._default = DEFAULT_CONF
-        self._confp = RawConfigParser()
-        self.read()
-
-    def read(self):
-        """Read the configuration from a file."""
-        #Determine where is stored the configuration
-        config_file = os.path.join(os.environ.get("HOME"), ".%s" % __appname__)
-        if not os.path.isfile(config_file):
-            try:
-                from xdg import BaseDirectory
-            except ImportError:
-                pass
-            else:
-                config_file = os.path.join(
-                    BaseDirectory.save_config_path(__appname__), "config.ini")
-        if os.path.isfile(config_file):
-            self._confp.read([config_file])
-
-    def get(self, key, cast=str):
-        """Get the value of a key.
-
-        Returns the value of the given key in the configuration file or the
-        default value.
-
-        A key is composed of a section and an option name and looks like that:
-
-            section/optionname
-
-        Args:
-            key -- The key (e.g. foo/bar)
-            cast -- The type of the value (string by default)
-        """
-        if cast == bool:
-            cast = lambda b: bool(int(b))
-        section, option = key.split("/")
-        if self._confp.has_option(section, option):
-            return cast(self._confp.get(section, option))
-        elif key in self._default:
-            return cast(self._default[key])
-        else:
-            raise KeyError
-
+def terminal_or_default():
+    """Enforce a default value for terminal from GSettings"""
+    terminalcmd = settings.get_string("terminal-shell")
+    if (terminalcmd == "") or (terminalcmd is None):
+        terminalcmd = Vte.get_user_shell()
+    return terminalcmd
 
 class NemoTerminal(object):
     """Nemo Terminal itself.
@@ -113,7 +71,7 @@ class NemoTerminal(object):
         uri -- The URI of the folder where the terminal will be created.
         window -- The parent window.
     """
-
+    
     def __init__(self, uri, window):
         """The constructor."""
         self._window = window
@@ -121,9 +79,14 @@ class NemoTerminal(object):
         #Term
         self.shell_pid = -1
         self.term = Vte.Terminal()
+
         self.shell_pid = self.term.fork_command_full(Vte.PtyFlags.DEFAULT,
-                self._path, [CONF.get("terminal/shell")], None,
+                self._path, [terminal_or_default()], None,
                 GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
+        # Make vte.sh active
+        #vte_current_dir_script = ". /etc/profile.d/vte.sh ; clear"
+        #self.term.feed_child(vte_current_dir_script, len(vte_current_dir_script))     
+        
         self.term.connect_after("child-exited", self._on_term_child_exited)
         self.term.connect_after("popup-menu", self._on_term_popup_menu)
         self.term.connect("button-release-event", self._on_term_popup_menu)
@@ -167,11 +130,27 @@ class NemoTerminal(object):
         menu_item.connect_after("activate",
                 lambda w: self.term.paste_clipboard())
         self.menu.add(menu_item)
+        #MenuItem => paste filenames (only added if URI types on clipboard)
+        menu_item_pastefilenames = \
+            Gtk.ImageMenuItem.new_from_stock("gtk-paste", None)
+        menu_item_pastefilenames.connect_after("activate",
+                lambda w: self._paste_filenames_clipboard())
+        menu_item_pastefilenames.set_label(_("Paste Filenames"))
+        self.menu_item_pastefilenames = menu_item_pastefilenames
+        self.menu.add(menu_item_pastefilenames)
         #MenuItem => separator #TODO: Implement the preferences window
         #menu_item = Gtk.SeparatorMenuItem()
         #self.menu.add(menu_item)
         #MenuItem => preferences
         #menu_item = Gtk.ImageMenuItem.new_from_stock("gtk-preferences", None)
+        #self.menu.add(menu_item)
+        #MenuItem => separator
+        menu_item = Gtk.SeparatorMenuItem()
+        self.menu.add(menu_item)
+        #MenuItem => Goto current terminal directory
+        menu_item = Gtk.MenuItem.new_with_label(_("Goto current terminal directory"))
+        menu_item.connect_after("activate",
+                lambda w: self._goto_current_terminal_directory())
         #self.menu.add(menu_item)
         #MenuItem => separator
         menu_item = Gtk.SeparatorMenuItem()
@@ -184,13 +163,58 @@ class NemoTerminal(object):
         #
         self.menu.show_all()
         #Conf
-        self._set_term_height(CONF.get("general/def_term_height", int))
+        self._set_term_height( \
+            settings.get_value("default-terminal-height").get_byte())
         self._visible = True
         #Lock
         self._respawn_lock = False
         #Register the callback for show/hide
         if hasattr(window, "toggle_hide_cb"):
             window.toggle_hide_cb.append(self.set_visible)
+
+    def _goto_current_terminal_directory(self):
+        """Navigate the active Nemo pane to the current working directory
+        of the VTE
+        
+        This won't be able to keep a watch on the child process if the shell
+        is somehow replaced at the moment.
+        
+        Nemo doesn't expose an API to do this, so instead we get the Nemo
+        window from the VTE window parent and send a message on d-bus to
+        make it happen.
+        """
+        # Well behaved shells will be updating VTE for us but it doesn't always
+        # work.
+        workingDir = self.term.get_current_directory_uri()
+        if workingDir is None:
+            # Find the current foreground process in terminal
+            pty = self.term.get_pty_object()
+            ptyfd = pty.get_fd()
+            pgroup = os.tcgetpgrp(ptyfd)
+            workingDir = os.readlink('/proc/%s/cwd' % pgroup)
+        gfile = Gio.file_parse_name(workingDir)
+        workingDirUri = gfile.get_uri()
+        print workingDirUri
+        #import pydevd
+        #pydevd.settrace()
+        # Like, change the current window directory here.
+        return
+
+    def _paste_filenames_clipboard(self):
+        """Paste to the VTE clipboard, converting URIs to literal filenames
+        first.
+        """
+        gtkClipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+        if gtkClipboard.wait_is_uris_available():
+            uris = gtkClipboard.wait_for_uris()
+            concatfilenames = ""
+            for idx, uri in enumerate(uris):
+                path = Gio.file_parse_name(uri).get_path()
+                quoted = GLib.shell_quote(path)
+                self.term.feed_child(quoted, len(quoted))
+                if idx != (len(uris)-1):
+                    self.term.feed_child(' ', 1)    
+        return
 
     def change_directory(self, uri):
         """Change the current directory in the shell if it is not busy.
@@ -200,8 +224,7 @@ class NemoTerminal(object):
         """
         self._path = self._uri_to_path(uri)
         if not self._shell_is_busy():
-            cdcmd = " cd '%s'\n" % self._path.replace("'", r"'\''")
-            #self.term.feed("\033[8m", len("\033[8m"))
+            cdcmd = " cd %s\n" % GLib.shell_quote(self._path)
             self.term.feed_child(cdcmd, len(cdcmd))
 
     def get_widget(self):
@@ -235,7 +258,7 @@ class NemoTerminal(object):
         about_dlg.set_website(__website__)
         about_dlg.set_copyright("Copyright (c) 2011  %s" % __author__)
         logo = Gtk.Image.new_from_file(
-                "/usr/share/Nemo-terminal/logo_120x120.png")
+                "/usr/share/nemo-terminal/logo_120x120.png")
         about_dlg.set_logo(logo.get_pixbuf())
         #Signal
         about_dlg.connect("response", lambda w, r: w.destroy())
@@ -282,7 +305,8 @@ class NemoTerminal(object):
 
         Args:
             uri -- The URI to convert."""
-        return url2pathname(uri[7:])
+        gfile = Gio.file_parse_name(uri)
+        return gfile.get_path()
 
     def _set_term_height(self, height):
         """Change the terminal height.
@@ -299,6 +323,12 @@ class NemoTerminal(object):
             if event.type == Gdk.EventType.BUTTON_RELEASE \
             and event.button != 3:
                 return
+        # Should the Paste Filenames option be displayed?
+        gtkClipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+        if gtkClipboard.wait_is_uris_available():
+            self.menu_item_pastefilenames.show()
+        else:
+            self.menu_item_pastefilenames.hide()
         self.menu.popup(None, None, None, None, 3, 0)
 
     def _on_term_child_exited(self, term):
@@ -309,7 +339,7 @@ class NemoTerminal(object):
         """
         if not self._respawn_lock:
             self.shell_pid = self.term.fork_command_full(Vte.PtyFlags.DEFAULT,
-                self._path, [CONF.get("terminal/shell")], None,
+                self._path, [terminal_or_default()], None,
                 GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
 
     def _on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
@@ -358,7 +388,7 @@ class Crowbar(object):
         crowbar_pp = crowbar_p.get_parent()
         crowbar_ppp = crowbar_pp.get_parent()
         crowbar_pp.connect_after("parent-set", self._on_crowbar_pp_parent_set)
-        #Get the childen of crowbar_pp
+        #Get the children of crowbar_pp
         crowbar_pp_children = crowbar_pp.get_children()
         #Check if our vpan is already there
         if type(crowbar_ppp) == Gtk.VPaned:
@@ -369,7 +399,7 @@ class Crowbar(object):
                     if hasattr(crowbar_ppp_child, "nt"):
                         nterm = crowbar_ppp_child.nt
                     break
-            #Update the temrinal (cd,...)
+            #Update the terminal (cd,...)
             if nterm:
                 nterm.change_directory(self._uri)
         #New tab/window/split
@@ -379,7 +409,7 @@ class Crowbar(object):
             vpan.show()
             vbox = Gtk.VBox()
             vbox.show()
-            if CONF.get("general/term_on_top", bool):
+            if settings.get_enum("terminal-position") == 0:
                 vpan.add2(vbox)
             else:
                 vpan.add1(vbox)
@@ -394,7 +424,7 @@ class Crowbar(object):
             nterm = NemoTerminal(self._uri, self._window)
             if hasattr(self._window, "term_visible"):
                 nterm.set_visible(self._window.term_visible)
-            if CONF.get("general/term_on_top", bool):
+            if settings.get_enum("terminal-position") == 0:
                 vpan.add1(nterm.get_widget())
             else:
                 vpan.add2(nterm.get_widget())
@@ -447,12 +477,10 @@ class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider):
         if not hasattr(window, "toggle_hide_cb"):
             window.toggle_hide_cb = []
         if not hasattr(window, "term_visible"):
-            window.term_visible = CONF.get("general/def_visible", bool)
-        #URI specific stuff
+            window.term_visible = settings.get_boolean("default-visible")
+        # don't add terminals to the desktop
         if uri.startswith("x-nemo-desktop:///"):
             return
-        elif not uri.startswith("file:///"):
-            uri = "file://%s" % os.environ["HOME"]
         #Event
         window.connect_after("key-release-event", self._toggle_visible)
         #Return the crowbar
@@ -468,18 +496,17 @@ class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider):
             window -- The Nemo' window.
             event -- The detail of the event.
         """
-        if event.keyval == 65473: #F4
+        if event.keyval == \
+            Gdk.keyval_from_name(settings.get_string("terminal-hotkey")):
             window.term_visible = not window.term_visible
             for callback in window.toggle_hide_cb:
                 callback(window.term_visible)
             return True #Stop the event propagation
 
-
-CONF = Config()
-
 if __name__ == "__main__":
     #Code for testing Nemo Terminal outside of Nemo
-    print("%s %s\nBy %s" % (__app_disp_name__, __version__, __author__))
+    print("%s %s\nOriginally By %s\nPorted for Nemo by: %s" 
+          % (__app_disp_name__, __version__, __author__, __maintainer__))
     win = Gtk.Window()
     win.set_title("%s %s" % (__app_disp_name__, __version__))
     nterm = NemoTerminal("file://%s" % os.environ["HOME"], win)

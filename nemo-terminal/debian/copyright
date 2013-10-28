@@ -1,3 +1,10 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: nautilus-terminal
+Source: http://projects.flogisoft.com/nautilus-terminal/download/
+
+Files: *
+Copyright: Copyright (C) 2011  Fabien LOISON <flo at flogisoft dot com>
+License: GPL-3+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation; either version 3 of the License, or

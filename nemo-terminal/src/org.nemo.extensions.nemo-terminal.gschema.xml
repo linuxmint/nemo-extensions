@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+	<enum id="org.nemo.extensions.nemo-terminal.TerminalPosition">
+	    <value value="0" nick="top"/>
+	    <value value="1" nick="bottom"/>
+	</enum>
+	
+	<schema path="/org/nemo/extensions/nemo-terminal/" 
+	    id="org.nemo.extensions.nemo-terminal" 
+	    gettext-domain="nemo-terminal">
+	    <key name="default-terminal-height" type="y">    
+	        <default>5</default>
+	        <summary>Set the default number of lines for the terminal.</summary>
+	        <description>Set the default number of lines for the terminal when it is first opened.</description>
+	    </key>
+	    
+	    <key name="default-visible" type="b">
+	        <default>true</default>
+	        <summary>Default visibility of terminal</summary>
+	        <description>When a new Nemo window is opened, this setting determines whether Nemo terminal is visible by default.</description>
+	    </key>
+	    
+	    <key name="terminal-position" 
+	        enum="org.nemo.extensions.nemo-terminal.TerminalPosition">
+	        <default>"top"</default>
+	        <summary>Terminal pane position</summary>
+	        <description>Determines whether the terminal pane will be at the top or bottom of the Nemo file pane. It is currently recommended to leave it at the top.</description>    
+	    </key>
+	    
+	    <key name="terminal-shell" type="s">
+	       <default>""</default>
+	        <summary>Shell executable</summary>
+	        <description>Path to the shell executable nemo-terminal should use.</description>
+	    </key>
+	    
+	    <key name="terminal-hotkey" type="s">
+	       <default><![CDATA['F4']]></default>
+	       <summary>Terminal hotkey</summary>
+	       <description>Key to toggle the terminal in the current Nemo window.</description>
+	    </key>
+	</schema>
+</schemalist>
