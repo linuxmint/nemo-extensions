@@ -1,3 +1,11 @@
+nemo-terminal (1.0.1) petra; urgency=low
+
+  * Added pre-chdir and post-chdir safety commands to avoid unintentional
+    command-line execution.
+  * Added all terminal commands to GSettings as configurable elements.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 31 Oct 2013 13:57:13 +1100
+
 nemo-terminal (1.0.0) petra; urgency=low
 
   * Initial release

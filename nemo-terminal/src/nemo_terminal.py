@@ -145,12 +145,12 @@ class NemoTerminal(object):
         #menu_item = Gtk.ImageMenuItem.new_from_stock("gtk-preferences", None)
         #self.menu.add(menu_item)
         #MenuItem => separator
-        menu_item = Gtk.SeparatorMenuItem()
-        self.menu.add(menu_item)
+        #menu_item = Gtk.SeparatorMenuItem()
+        #self.menu.add(menu_item)
         #MenuItem => Goto current terminal directory
-        menu_item = Gtk.MenuItem.new_with_label(_("Goto current terminal directory"))
-        menu_item.connect_after("activate",
-                lambda w: self._goto_current_terminal_directory())
+        #menu_item = Gtk.MenuItem.new_with_label(_("Goto current terminal directory"))
+        #menu_item.connect_after("activate",
+        #        lambda w: self._goto_current_terminal_directory())
         #self.menu.add(menu_item)
         #MenuItem => separator
         menu_item = Gtk.SeparatorMenuItem()
@@ -176,12 +176,8 @@ class NemoTerminal(object):
         """Navigate the active Nemo pane to the current working directory
         of the VTE
         
-        This won't be able to keep a watch on the child process if the shell
-        is somehow replaced at the moment.
-        
-        Nemo doesn't expose an API to do this, so instead we get the Nemo
-        window from the VTE window parent and send a message on d-bus to
-        make it happen.
+        This functionality depends on some changes to Nemo's extension
+        interface.
         """
         # Well behaved shells will be updating VTE for us but it doesn't always
         # work.
@@ -224,8 +220,19 @@ class NemoTerminal(object):
         """
         self._path = self._uri_to_path(uri)
         if not self._shell_is_busy():
-            cdcmd = " cd %s\n" % GLib.shell_quote(self._path)
+            # Clear any input
+            eraselinekeys = settings.get_string("terminal-erase-line").decode('string_escape')
+            self.term.feed_child(eraselinekeys, len(eraselinekeys))
+            
+            # Change directory
+            cdcmd_nonewline = settings.get_string("terminal-change-directory-command") \
+                % GLib.shell_quote(self._path)
+            cdcmd = "%s\n" % cdcmd_nonewline
             self.term.feed_child(cdcmd, len(cdcmd))
+            
+            # Restore user input
+            restorelinekeys = settings.get_string("terminal-restore-line").decode('string_escape')
+            self.term.feed_child(restorelinekeys, len(restorelinekeys))
 
     def get_widget(self):
         """Return the top-level widget of Nemo Terminal."""

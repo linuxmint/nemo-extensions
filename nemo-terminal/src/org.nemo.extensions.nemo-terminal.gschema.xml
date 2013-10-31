@@ -5,6 +5,13 @@
 	    <value value="1" nick="bottom"/>
 	</enum>
 	
+	<enum id="org.nemo.extensions.nemo-terminal.FollowMode">
+        <value value="0" nick="None"/>
+        <value value="1" nick="Terminal follows Nemo"/>
+        <value value="2" nick="Nemo follows Terminal"/>
+        <value value="3" nick="Nemo and Terminal Synchronized"/>
+    </enum>
+	
 	<schema path="/org/nemo/extensions/nemo-terminal/" 
 	    id="org.nemo.extensions.nemo-terminal" 
 	    gettext-domain="nemo-terminal">
@@ -15,10 +22,16 @@
 	    </key>
 	    
 	    <key name="default-visible" type="b">
-	        <default>true</default>
+	        <default>false</default>
 	        <summary>Default visibility of terminal</summary>
 	        <description>When a new Nemo window is opened, this setting determines whether Nemo terminal is visible by default.</description>
 	    </key>
+	    
+	    <key name="default-follow-mode" enum="org.nemo.extensions.nemo-terminal.FollowMode">
+            <default>"Terminal follows Nemo"</default>
+            <summary>Current directory follow behavior</summary>
+            <description>Controls the default way the terminal and Nemo's current directory relate to each other. (not yet functional)</description>
+        </key>
 	    
 	    <key name="terminal-position" 
 	        enum="org.nemo.extensions.nemo-terminal.TerminalPosition">
@@ -28,9 +41,9 @@
 	    </key>
 	    
 	    <key name="terminal-shell" type="s">
-	       <default>""</default>
+	       <default>"/bin/bash"</default>
 	        <summary>Shell executable</summary>
-	        <description>Path to the shell executable nemo-terminal should use.</description>
+	        <description>Path to the shell executable nemo-terminal should use. Blank indicates shell will be user's default. Note that all other default parameters assume a bash-like shell.</description>
 	    </key>
 	    
 	    <key name="terminal-hotkey" type="s">
@@ -38,5 +51,23 @@
 	       <summary>Terminal hotkey</summary>
 	       <description>Key to toggle the terminal in the current Nemo window.</description>
 	    </key>
+	    
+	    <key name="terminal-erase-line" type="s">
+           <default>"\\x05\\x15"</default>
+           <summary>Erase line key sequence</summary>
+           <description>Key sequence to safely erase the current line in the terminal. Should be escaped according to Python rules. Use \xhh for non-printing characters, where hh is the hex value (including any leading zeroes) of the ASCII character. Default values are valid for Bash.</description>
+        </key>
+        
+        <key name="terminal-restore-line" type="s">
+           <default>"\\x19"</default>
+           <summary>Restore line key sequence</summary>
+           <description>Key sequence to restore the line erased by the erase line sequence. Use \xhh for non-printing characters, where hh is the hex value (including any leading zeroes) of the ASCII character. Default values are valid for Bash.</description>
+        </key>
+        
+        <key name="terminal-change-directory-command" type="s">
+           <default>" cd %s"</default>
+           <summary>Change directory command</summary>
+           <description>The command used by the terminal to change directory. %s is replaced by the shell-quoted directory name in the shell. This command will have a new line appended.</description>
+        </key>
 	</schema>
 </schemalist>
