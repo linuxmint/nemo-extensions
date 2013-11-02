@@ -1,10 +1,14 @@
 nemo-terminal (1.0.1) petra; urgency=low
 
+  * Added all terminal commands to GSettings as configurable elements.
   * Added pre-chdir and post-chdir safety commands to avoid unintentional
     command-line execution.
-  * Added all terminal commands to GSettings as configurable elements.
+  * Fixed terminal window clipping outside of pane when resized.
+  * Updated about dialog to point to the nemo-extensions sources.
+  * Changed terminal to default hidden until a proper dconf interface can be
+    added.
 
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 31 Oct 2013 13:57:13 +1100
+ -- Will Rouesnel <w.rouesnel@gmail.com>  Thu, 31 Oct 2013 13:57:13 +1100
 
 nemo-terminal (1.0.0) petra; urgency=low
 
