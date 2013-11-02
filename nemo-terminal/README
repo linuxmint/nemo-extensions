@@ -1,28 +1,39 @@
 ==============================================================================
-=    Nemo Terminal - A terminal embedded in the Nemo file browser    =
+=        Nemo Terminal - Embedded terminal for the Nemo file browser         =
 ==============================================================================
 
-Nemo Terminal is a terminal embedded in Nemo, the Cinnamon file
-browser. It is always open in the current folder, and follows the navigation
-(the "cd" command is automatically executed when you move to an other folder).
-Nemo Terminal have a lot of functionalities:
+Nemo Terminal is an embedded terminal for Nemo, the Cinnamon file manager.
 
-    * It always follows your navigation in your folders.
-    * It supports Copy/Paste (Ctrl+Shift+C / *Ctrl+Shift+V).
-    * It supports drag & drop of files and folders.
-    * It can be hidden/shown when you want (with the F4 key).
-    * It is resizeable.
+Nemo Terminal follows your navigation in a shell accessible by hotkey (F4, by
+default) in a resizeable pane in Nemo. It eliminates the grunt work of
+navigating multiple folder levels just to run a single shell command and cuts
+down on window clutter from multiple terminals and file managers.
 
-This package is the port of the Nautilus Terminal project to support the Nemo
-file browser fork. All credit for the original work goes to the Nautilus 
-Terminal authors (listed in AUTHORS).
+Features include:
+    * Automatically follows folder navigation.
+        * Even onto GVFS mounted volumes.
+    * Copy/Paste and Paste Filename support.
+    * Drag/Drop acquisition of filenames from Nemo.
 
-NAUTILUS TERMINAL WEB SITE: http://projects.flogisoft.com/Nautilus-terminal/
+Features in development:
+    * Two-way folder navigation - Nemo will follow the current directory in the
+      terminal.
 
+This package is a fork of the Nautilus Terminal project to support the Nemo
+file browser and includes various improvements and bugfixes.
+
+Credit for the original work goes to the Nautilus Terminal authors
+(see AUTHORS for more detail).
+
+Source code may be obtained for nemo-terminal and nautilus-terminal from their
+websites:
+
+Nemo Terminal Web Site: http://github.com/linuxmint/nemo-extensions/
+
+Nautilus Terminal Web Site: http://projects.flogisoft.com/Nautilus-terminal/
 
 Dependencies:
 -------------
-
     * Python (>= 2.6) <http://python.org/>
     * GObject Introspection <http://live.gnome.org/GObjectIntrospection>
     * VTE <http://live.gnome.org/VTE>

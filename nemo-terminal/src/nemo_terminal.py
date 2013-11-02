@@ -3,9 +3,11 @@
 
 ############################################################################
 ##                                                                        ##
-## Nemo Terminal - A terminal embedded in Nemo                    ##
+## Nemo Terminal - A terminal embedded in Nemo                            ##
 ##                                                                        ##
+## Nemo Terminal is based heavily on Nautilus Terminal:                   ##
 ## Copyright (C) 2011  Fabien LOISON <flo at flogisoft dot com>           ##
+## (http://projects.flogisoft.com/nautilus-terminal/)                     ##
 ##                                                                        ##
 ## This program is free software: you can redistribute it and/or modify   ##
 ## it under the terms of the GNU General Public License as published by   ##
@@ -20,8 +22,8 @@
 ## You should have received a copy of the GNU General Public License      ##
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.  ##
 ##                                                                        ##
-##                                                                        ##
-## WEB SITE: http://projects.flogisoft.com/Nemo-terminal/             ##
+## Nemo Terminal : http://github.com/linuxmint/nemo-extensions/           ##
+## Nautilus Terminal: http://projects.flogisoft.com/Nemo-terminal/        ##
 ##                                                                        ##
 ############################################################################
 
@@ -33,7 +35,7 @@ __maintainer__ = "Will Rouesnel <w.rouesnel@gmail.com>"
 __version__ = "1.0"
 __appname__ = "nemo-terminal"
 __app_disp_name__ = "Nemo Terminal"
-__website__ = "http://projects.flogisoft.com/Nautilus-terminal/"
+__website__ = "http://github.com/linuxmint/nemo-extensions"
 
 
 import os
@@ -292,7 +294,8 @@ class NemoTerminal(object):
         about_dlg.set_version(__version__)
         about_dlg.set_comments(__doc__)
         about_dlg.set_website(__website__)
-        about_dlg.set_copyright("Copyright (c) 2011  %s" % __author__)
+        about_dlg.set_copyright("Nemo Terminal is based heavily on Nautilus Terminal by %s Copyright (c) 2011" % __author__)
+        about_dlg.set_authors([__author__, __maintainer__])
         logo = Gtk.Image.new_from_file(
                 "/usr/share/nemo-terminal/logo_120x120.png")
         about_dlg.set_logo(logo.get_pixbuf())
