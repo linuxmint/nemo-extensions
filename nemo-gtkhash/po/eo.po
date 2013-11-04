@@ -1,0 +1,216 @@
+# Esperanto translation for gtkhash
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the gtkhash package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gtkhash\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-06-28 20:28+0100\n"
+"PO-Revision-Date: 2011-04-09 09:57+0000\n"
+"Last-Translator: Kristjan SCHMIDT <Unknown>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-06-30 05:10+0000\n"
+"X-Generator: Launchpad (build 15520)\n"
+
+#: ../data/gtkhash.xml.h:1
+msgid "GtkHash Preferences"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:2
+msgid "Hash Functions:"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:3
+msgid "Digest Format:"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:4
+msgid "Lowercase Hexadecimal"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:5
+msgid "Uppercase Hexadecimal"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:6
+msgid "Copy _Digest"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:7
+msgid "Show _Toolbar"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:8
+msgid "_File"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:9
+msgid "_Edit"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:10
+msgid "_View"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:11
+msgid "_Text"
+msgstr "_Teksto"
+
+#: ../data/gtkhash.xml.h:12
+msgid "File _List"
+msgstr "_Listo de dosieroj"
+
+#: ../data/gtkhash.xml.h:13
+msgid "_Help"
+msgstr "_Helpo"
+
+#: ../data/gtkhash.xml.h:14
+msgid "File:"
+msgstr "Dosiero:"
+
+#: ../data/gtkhash.xml.h:15
+msgid "Text:"
+msgstr "Teksto:"
+
+#: ../data/gtkhash.xml.h:16 ../data/nautilus/gtkhash-properties.xml.h:5
+msgid "Check:"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:17
+msgid "File"
+msgstr ""
+
+#: ../data/gtkhash.xml.h:18
+msgid "Ha_sh"
+msgstr ""
+
+#: ../src/callbacks.c:47
+msgid "Save Digests"
+msgstr ""
+
+#: ../src/callbacks.c:236
+msgid "A GTK+ utility for computing message digests or checksums."
+msgstr ""
+
+#: ../src/callbacks.c:240
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Kristjan SCHMIDT https://launchpad.net/~kristjan-eo\n"
+"  Lucas Larson https://launchpad.net/~lucaslarson"
+
+#: ../src/callbacks.c:262
+msgid "Select Files"
+msgstr "Elekti dosierojn"
+
+#: ../src/gui.c:293
+#, c-format
+msgid "Failed to read \"%s\""
+msgstr ""
+
+#: ../src/gui.c:310
+#, c-format
+msgid ""
+"Failed to read \"%s\":\n"
+"%s"
+msgstr ""
+
+#: ../src/gui.c:359
+msgid "Not a regular file"
+msgstr ""
+
+#: ../src/gui.c:381
+msgid "Unknown error"
+msgstr ""
+
+#: ../src/gui.c:383
+#, c-format
+msgid ""
+"Failed to add \"%s\":\n"
+"%s"
+msgstr ""
+
+#: ../src/hash.c:82 ../src/nautilus/properties-hash.c:69
+#, c-format
+msgid "%s of %s - 1 minute left (%s/sec)"
+msgstr ""
+
+#: ../src/hash.c:85 ../src/nautilus/properties-hash.c:72
+#, c-format
+msgid "%s of %s - %u minutes left (%s/sec)"
+msgstr ""
+
+#: ../src/hash.c:89 ../src/nautilus/properties-hash.c:76
+#, c-format
+msgid "%s of %s - 1 second left (%s/sec)"
+msgstr ""
+
+#: ../src/hash.c:92 ../src/nautilus/properties-hash.c:79
+#, c-format
+msgid "%s of %s - %u seconds left (%s/sec)"
+msgstr ""
+
+#: ../src/main.c:86
+msgid "Check against the specified digest or checksum"
+msgstr ""
+
+#: ../src/main.c:86
+msgid "DIGEST"
+msgstr ""
+
+#: ../src/main.c:90
+msgid "Read program data from the specified directory"
+msgstr ""
+
+#: ../src/main.c:90
+msgid "DIRECTORY"
+msgstr ""
+
+#: ../src/main.c:94
+msgid "Hash the specified text"
+msgstr ""
+
+#: ../src/main.c:94
+msgid "TEXT"
+msgstr ""
+
+#: ../src/main.c:98
+msgid "Show version information"
+msgstr ""
+
+#: ../src/main.c:102
+msgid "[FILE|URI...]"
+msgstr ""
+
+#: ../src/prefs.c:76
+msgid "Failed to enable any supported hash functions."
+msgstr ""
+
+#: ../data/nautilus/gtkhash-properties.xml.h:1
+msgid "_Copy Digest"
+msgstr ""
+
+#: ../data/nautilus/gtkhash-properties.xml.h:2
+msgid "Show _Disabled Hash Functions"
+msgstr ""
+
+#: ../data/nautilus/gtkhash-properties.xml.h:3
+msgid "Hash Function"
+msgstr ""
+
+#: ../data/nautilus/gtkhash-properties.xml.h:4
+msgid "Digest"
+msgstr ""
+
+#: ../data/nautilus/gtkhash-properties.xml.h:6
+msgid "H_ash"
+msgstr ""
+
+#: ../src/nautilus/properties.c:427 ../src/nautilus/properties.c:429
+msgid "Digests"
+msgstr ""

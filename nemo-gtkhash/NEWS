@@ -1,0 +1,43 @@
+Summary of changes for each release:
+
+0.7.0 - 2013-10-30
+	* Added optional Nemo (Cinnamon file manager) extension
+	* Added more commandline options
+	* Added support for PolarSSL
+	* Added support for Nettle
+	* UI bug fixes
+
+0.6.0 - 2011-12-14
+	* Added "Check" feature for comparing digests
+	* Added HMAC support
+	* Added MD6 hash function
+	* Switched from GConf to GSettings
+
+0.5.0 - 2011-10-31
+	* Improved hashing speed on SMP systems
+	* Added support for libcrypto
+
+0.4.0 - 2011-10-26
+	* Added support for hashing non-local files using GIO
+	* Made mhash an optional dependency
+	* Added optional support for other hash libraries/interfaces
+	* Added Digest Format option
+	* Added optional Thunar (Xfce file manager) plugin
+	* Added support for GTK+ 3
+	* General usability improvements
+
+0.3.0 - 2009-11-22
+	* Added optional Nautilus (GNOME file manager) extension
+
+0.2.1 - 2008-12-31
+	* Fixed progress bar display for large files
+	* Removed dependency on libglade
+
+0.2.0 - 2007-08-14
+	* Added file list mode for hashing multiple files
+
+0.1.1 - 2007-07-21
+	* Added gettext support
+
+0.1.0 - 2007-06-29
+	* Initial release
