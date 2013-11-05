@@ -19,7 +19,7 @@ Depends: ${misc:Depends},
 		 gir1.2-gdkpixbuf-2.0 (>= 2.28.1~),
 		 gir1.2-glib-2.0 (>= 1.38.0~)
 Description: Nemo extension to enable an embedded terminal
- Nemo Terminal is a terminal embedded in Nemo, the Cinnamon file browser. 
- It is always open in the current folder, and follows the navigation (the "cd" 
- command is automatically executed when you move to another folder).
+ Nemo Terminal is an embedded terminal for Nemo, the Cinnamon file manager.
+ It embeds a terminal pane into Nemo that is accessible by hotkey (default F4)
+ and automatically follows the currently active directory in Nemo.
 

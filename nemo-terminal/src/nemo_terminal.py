@@ -3,9 +3,11 @@
 
 ############################################################################
 ##                                                                        ##
-## Nemo Terminal - A terminal embedded in Nemo                    ##
+## Nemo Terminal - A terminal embedded in Nemo                            ##
 ##                                                                        ##
+## Nemo Terminal is based heavily on Nautilus Terminal:                   ##
 ## Copyright (C) 2011  Fabien LOISON <flo at flogisoft dot com>           ##
+## (http://projects.flogisoft.com/nautilus-terminal/)                     ##
 ##                                                                        ##
 ## This program is free software: you can redistribute it and/or modify   ##
 ## it under the terms of the GNU General Public License as published by   ##
@@ -20,8 +22,8 @@
 ## You should have received a copy of the GNU General Public License      ##
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.  ##
 ##                                                                        ##
-##                                                                        ##
-## WEB SITE: http://projects.flogisoft.com/Nemo-terminal/             ##
+## Nemo Terminal : http://github.com/linuxmint/nemo-extensions/           ##
+## Nautilus Terminal: http://projects.flogisoft.com/Nemo-terminal/        ##
 ##                                                                        ##
 ############################################################################
 
@@ -33,7 +35,7 @@ __maintainer__ = "Will Rouesnel <w.rouesnel@gmail.com>"
 __version__ = "1.0"
 __appname__ = "nemo-terminal"
 __app_disp_name__ = "Nemo Terminal"
-__website__ = "http://projects.flogisoft.com/Nautilus-terminal/"
+__website__ = "http://github.com/linuxmint/nemo-extensions"
 
 
 import os
@@ -90,6 +92,7 @@ class NemoTerminal(object):
         self.term.connect_after("child-exited", self._on_term_child_exited)
         self.term.connect_after("popup-menu", self._on_term_popup_menu)
         self.term.connect("button-release-event", self._on_term_popup_menu)
+        
         #Accelerators
         accel_group = Gtk.AccelGroup()
         self._window.add_accel_group(accel_group)
@@ -115,9 +118,16 @@ class NemoTerminal(object):
                 )
         self.term.drag_dest_add_uri_targets()
         self.term.connect("drag_data_received", self._on_drag_data_received)
-        #Swin
-        self.swin = Gtk.ScrolledWindow()
-        self.swin.nt = self
+        
+        # Container
+        self.vscrollbar = Gtk.VScrollbar.new(self.term.adjustment)
+        
+        self.hbox = Gtk.HBox()
+        self.hbox.pack_start(self.term, True, True, 0)
+        self.hbox.pack_end(self.vscrollbar, False, False, 0)
+        
+        self.hbox.nt = self # store a reference to this obj
+        
         #Popup Menu
         self.menu = Gtk.Menu()
         #MenuItem => copy
@@ -145,12 +155,12 @@ class NemoTerminal(object):
         #menu_item = Gtk.ImageMenuItem.new_from_stock("gtk-preferences", None)
         #self.menu.add(menu_item)
         #MenuItem => separator
-        menu_item = Gtk.SeparatorMenuItem()
-        self.menu.add(menu_item)
+        #menu_item = Gtk.SeparatorMenuItem()
+        #self.menu.add(menu_item)
         #MenuItem => Goto current terminal directory
-        menu_item = Gtk.MenuItem.new_with_label(_("Goto current terminal directory"))
-        menu_item.connect_after("activate",
-                lambda w: self._goto_current_terminal_directory())
+        #menu_item = Gtk.MenuItem.new_with_label(_("Goto current terminal directory"))
+        #menu_item.connect_after("activate",
+        #        lambda w: self._goto_current_terminal_directory())
         #self.menu.add(menu_item)
         #MenuItem => separator
         menu_item = Gtk.SeparatorMenuItem()
@@ -176,12 +186,8 @@ class NemoTerminal(object):
         """Navigate the active Nemo pane to the current working directory
         of the VTE
         
-        This won't be able to keep a watch on the child process if the shell
-        is somehow replaced at the moment.
-        
-        Nemo doesn't expose an API to do this, so instead we get the Nemo
-        window from the VTE window parent and send a message on d-bus to
-        make it happen.
+        This functionality depends on some changes to Nemo's extension
+        interface.
         """
         # Well behaved shells will be updating VTE for us but it doesn't always
         # work.
@@ -195,9 +201,7 @@ class NemoTerminal(object):
         gfile = Gio.file_parse_name(workingDir)
         workingDirUri = gfile.get_uri()
         print workingDirUri
-        #import pydevd
-        #pydevd.settrace()
-        # Like, change the current window directory here.
+        # TODO: something useful (like changing the working dir)
         return
 
     def _paste_filenames_clipboard(self):
@@ -224,16 +228,50 @@ class NemoTerminal(object):
         """
         self._path = self._uri_to_path(uri)
         if not self._shell_is_busy():
-            cdcmd = " cd %s\n" % GLib.shell_quote(self._path)
+            # Clear any input
+            eraselinekeys = settings.get_string("terminal-erase-line").decode('string_escape')
+            self.term.feed_child(eraselinekeys, len(eraselinekeys))
+            
+            # Change directory
+            cdcmd_nonewline = settings.get_string("terminal-change-directory-command") \
+                % GLib.shell_quote(self._path)
+            cdcmd = "%s\n" % cdcmd_nonewline
             self.term.feed_child(cdcmd, len(cdcmd))
+            
+            # Restore user input
+            restorelinekeys = settings.get_string("terminal-restore-line").decode('string_escape')
+            self.term.feed_child(restorelinekeys, len(restorelinekeys))
 
     def get_widget(self):
         """Return the top-level widget of Nemo Terminal."""
-        if not self.term.get_parent():
-            self.swin.add(self.term)
+        #if not self.term.get_parent():
+        #    self.hbox.add(self.term)
         if self._visible:
-            self.swin.show_all()
-        return self.swin
+            self.hbox.show_all()
+        return self.hbox
+
+#     def resize_term(self):
+#         """Correctly update the size of VTE terminal view"""
+#         print "resize term"
+#         height = self.swin.get_allocated_height()
+#         width = self.swin.get_allocated_width()
+#         
+#         # bail if nothing to do
+#         if self.term.get_allocated_height() == height and \
+#             self.term.get_allocated_width() == width:
+#             return
+#         
+#         char_width = self.term.get_char_width()
+#         char_height = self.term.get_char_height()
+#         
+#         inner_border = self.term.get_style().get_property("inner-border")
+#         new_grid_width = width - (inner_border.left + inner_border.right) / char_width 
+#         new_grid_height = height - (inner_border.top + inner_border.bottom) / char_height
+#         
+#         grid_width = new_grid_width if new_grid_width > 0 else 0
+#         grid_height = new_grid_height if new_grid_height > 0 else 0
+# 
+#         self.term.set_size(grid_width, grid_height)
 
     def set_visible(self, visible):
         """Change the visibility of Nemo Terminal.
@@ -243,10 +281,10 @@ class NemoTerminal(object):
         """
         self._visible = visible
         if visible:
-            self.swin.show_all()
+            self.hbox.show_all()
             self._window.set_focus(self.term)
         else:
-            self.swin.hide()
+            self.hbox.hide()
 
     def show_about_dialog(self):
         """Display the about dialog."""
@@ -256,7 +294,8 @@ class NemoTerminal(object):
         about_dlg.set_version(__version__)
         about_dlg.set_comments(__doc__)
         about_dlg.set_website(__website__)
-        about_dlg.set_copyright("Copyright (c) 2011  %s" % __author__)
+        about_dlg.set_copyright("Nemo Terminal is based heavily on Nautilus Terminal by %s Copyright (c) 2011" % __author__)
+        about_dlg.set_authors([__author__, __maintainer__])
         logo = Gtk.Image.new_from_file(
                 "/usr/share/nemo-terminal/logo_120x120.png")
         about_dlg.set_logo(logo.get_pixbuf())
@@ -275,8 +314,9 @@ class NemoTerminal(object):
         except OSError:
             pass
         #Remove some widgets
+        self.vscrollbar.destroy()
         self.term.destroy()
-        self.swin.destroy()
+        self.hbox.destroy()
         #Remove callback
         if hasattr(self._window, "toggle_hide_cb"):
             self._window.toggle_hide_cb.remove(self.set_visible)
@@ -314,7 +354,7 @@ class NemoTerminal(object):
         Args:
             height -- The new height (in lines).
         """
-        self.swin.set_size_request(-1,
+        self.hbox.set_size_request(-1,
                 height * self.term.get_char_height() + 2)
 
     def _on_term_popup_menu(self, widget, event=None):
@@ -395,7 +435,7 @@ class Crowbar(object):
             #Find the Nemo Terminal
             nterm = None
             for crowbar_ppp_child in crowbar_ppp.get_children():
-                if type(crowbar_ppp_child) == Gtk.ScrolledWindow:
+                if type(crowbar_ppp_child) == Gtk.HBox:
                     if hasattr(crowbar_ppp_child, "nt"):
                         nterm = crowbar_ppp_child.nt
                     break
@@ -422,6 +462,7 @@ class Crowbar(object):
                 vbox.pack_start(crowbar_pp_children[1], True, True, 0)
             #Create the terminal
             nterm = NemoTerminal(self._uri, self._window)
+
             if hasattr(self._window, "term_visible"):
                 nterm.set_visible(self._window.term_visible)
             if settings.get_enum("terminal-position") == 0:
@@ -445,18 +486,18 @@ class Crowbar(object):
             if not vpan:
                 print("[%s] W: Can't find the VPaned..." % __app_disp_name__)
                 return
-            swin = None
+            hbox = None
             for child in vpan.get_children():
-                if type(child) == Gtk.ScrolledWindow:
-                    swin = child
-            if not swin:
-                print("[%s] W: Can't find the ScrolledWindow..."
+                if type(child) == Gtk.HBox:
+                    hbox = child
+            if not hbox:
+                print("[%s] W: Can't find the GtkHBox..."
                         % __app_disp_name__)
                 return
-            if not hasattr(swin, "nt"):
+            if not hasattr(hbox, "nt"):
                 print("[%s] W: Can't find the Nemo Terminal instance..."
                         % __app_disp_name__)
-            swin.nt.destroy()
+            hbox.nt.destroy()
 
 
 class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider):
