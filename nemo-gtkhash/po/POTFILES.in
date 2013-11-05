@@ -1,0 +1,17 @@
+[encoding: UTF-8]
+
+# gtkhash
+[type: gettext/glade]data/gtkhash.xml
+src/callbacks.c
+src/gui.c
+src/hash.c
+src/list.c
+src/main.c
+src/prefs.c
+
+# gtkhash-properties
+[type: gettext/glade]data/nautilus/gtkhash-properties.xml
+src/nautilus/properties.c
+src/nautilus/properties-hash.c
+src/nautilus/properties-list.c
+src/nautilus/properties-prefs.c

@@ -1,0 +1,29 @@
+Source: nemo-gtkhash
+Section: utils
+Priority: optional
+Maintainer: Mònica Ramírez Arceda <monica@debian.org> 
+Build-Depends: debhelper (>= 9),
+ autotools-dev,
+ libmhash-dev,
+ libgtk-3-dev (>= 3.0.0),
+ libnautilus-extension-dev (>= 3.0),
+ libnemo-extension-dev (>= 2.0.4),
+ libthunarx-2-dev,
+ libgconf2-dev(>= 2.32.0),
+ intltool (>= 0.40.6)
+Homepage: http://gtkhash.sourceforge.net
+Standards-Version: 3.9.3
+Vcs-Git: git://github.com/linuxmint/nemo-extensions.git
+Vcs-Browser: http://github.com/linuxmint/nemo-extensions
+ 
+Package: nemo-gtkhash
+Architecture: any
+Depends: ${shlibs:Depends},
+ ${misc:Depends}
+Replaces: gtkhash (<< 0.6.0)
+Breaks: gtkhash (<< 0.6.0)
+Description: nemo extension for computing checksums and more using gtkhash
+ The GtkHash extension for nemo which allows users to compute
+ message digests or checksums using the mhash library.
+ Currently supported hash functions include MD5, MD6, SHA1, 
+ SHA256, SHA512, RIPEMD, TIGER and WHIRLPOOL.

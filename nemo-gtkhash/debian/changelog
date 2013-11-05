@@ -1,0 +1,113 @@
+nemo-gtkhash (0.7.0~1) petra; urgency=low
+
+  * New upstream version (0.7.0)
+  * Modified build to produce a standalone nemo-gtkhash package.
+  * Package name change.
+
+ -- Will Rouesnel <w.rouesnel@gmail.com>  Mon, 04 Nov 2013 06:41:09 +1100
+
+gtkhash (0.6.0-4) unstable; urgency=low
+
+  * debian/compat: update to 9.
+  * debian/control: 
+    - Update Maintainer field with Debian email.
+    - Update to debhelper 9. 
+    - Bump to Standards-Version 3.9.3. No changes required. 
+  * Remove fix-mhash-segmentation-fault.patch: #653072 is fixed, therefore 
+    this patch is not needed anymore.
+  * debian/rules: enable security hardening build flags.
+  * debian/copyright: update Format field.
+
+ -- Mònica Ramírez Arceda <monica@debian.org>  Sat, 23 Jun 2012 22:43:29 +0200
+
+gtkhash (0.6.0-3) unstable; urgency=low
+
+  * Force gtkhash-common to break with gtkhash (<< 0.6.0):
+    they have files in common. (Closes: #656842)
+  * Add Replaces: field in conjunction with Breaks:
+
+ -- Mònica Ramírez Arceda <monica@probeta.net>  Mon, 23 Jan 2012 01:20:23 +0100
+
+gtkhash (0.6.0-2) unstable; urgency=low
+
+  * Force nautilus-gtkhash to break with gtkhash (<< 0.6.0): 
+    they have a file in common.
+  * Move translations to gtkhash-common package and force gtkhash 
+    to depends on it.
+
+ -- Mònica Ramírez Arceda <monica@probeta.net>  Sat, 21 Jan 2012 16:06:40 +0100
+
+gtkhash (0.6.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove add.gtk3.support.patch: new upstream release supports GTK3.
+  * Remove ignore.pc.translations.patch: as add.gtk3.support.patch is removed,
+    this patch is no longer needed.
+  * Add fix-mhash-segmentation-fault.patch to avoid mhash bug #653072.
+  * debian/rules: 
+    - Remove dh_auto_clean override: it is no longer needed.
+    - Enable the mhash library.
+    - Add --list-missing option to dh_install.
+  * Split the package in four binary packages to separate nautilus and thunar
+    extensions from the standalone program:
+    - debian/control: add libthunarx-2-dev dependency, add gtkhash-common, 
+      nautilus-gtkhash and thunar-gtkhash paragraphs.
+    - debian/rules: enable nautilus and thunar extensions..
+    - debian/gtkhash.install, debian/nautilus-gtkhash.install, 
+      debian/thunar-gtkhash.install: where to install each file.
+  * debian/gtkhash.1: change reference to mhash manpage, it is in section 3 
+    instead of section 1.
+
+ -- Mònica Ramírez Arceda <monica@probeta.net>  Wed, 21 Dec 2011 11:28:33 +0100
+
+gtkhash (0.3.0-6) unstable; urgency=low
+
+  * Team upload.
+  * Upload to unstable.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 14 Oct 2011 06:40:40 +0200
+
+gtkhash (0.3.0-5) experimental; urgency=low
+
+  * Update to gtk-3 and nautilus-3 (Closes: #637329).
+    - debian/contol: update dependencies.
+    - debian/rules: force to use GTK-3.   
+    - add.gtk3.support.patch: add needed changes to use GTK-3.
+  * ignore.pc.translations.patch: Add POTFILES.skip file to avoid 
+    POTFILE error for files in .pc directory. 
+  * debian/rules: Make sure there will be no *.la files.
+
+ -- Mònica Ramírez Arceda <monica@probeta.net>  Mon, 22 Aug 2011 16:16:59 +0200
+
+gtkhash (0.3.0-4) unstable; urgency=low
+
+  * Adopt the package. (Closes: #611693)
+  * Switch to 3.0 (quilt) format.
+  * Bump to Standards-Version 3.9.2. No changes required.
+  * Add Debian menu item and reduce gtkhash.xpm to 32x32 pixels.
+  * Update debian/copyright to DEP5 revision 174.
+
+ -- Mònica Ramírez Arceda <monica@probeta.net>  Wed, 08 Jun 2011 21:07:57 +0200
+
+gtkhash (0.3.0-3) unstable; urgency=low
+
+  * QA upload.
+  * Orphaning this.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 30 Mar 2011 12:23:59 +0200
+
+gtkhash (0.3.0-2) unstable; urgency=low
+
+  * debian/control:
+    - Add Vcs-* tags.
+    - Improve runtime description (Closes: #563486).
+    - Adjust debhelper build-dependency to make backporters' life easy.
+    - Set DM-Upload-Allowed to yes.
+
+ -- Alessio Treglia <quadrispro@ubuntu.com>  Mon, 25 Jan 2010 18:49:07 +0100
+
+gtkhash (0.3.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #560213).
+
+ -- Alessio Treglia <quadrispro@ubuntu.com>  Wed, 09 Dec 2009 19:20:54 +0100

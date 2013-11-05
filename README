@@ -15,6 +15,8 @@ nemo-rabbitvcs: functional (forked from rabbitvcs-0.15.3)
 
 nemo-terminal: functional (forked from nautilus-terminal-1.0.0)
 
+nemo-gtkhash: functional (forked from gtkhash-0.7.0)
+
 NOT YET INCLUDED:
 ----------------
 
@@ -39,5 +41,4 @@ nautilus-scripts-manager        - simple tool for nautilus scripts managemen
 nautilus-search                 - Add gnome-search-tool to context menu
 nautilus-sendto-empathy         - GNOME multi-protocol chat and call client 
 nautilus-wipe                   - Secure deletion extension for Nautilus    
-nautilus-gtkhash                - nautilus extension for computing checksums
 

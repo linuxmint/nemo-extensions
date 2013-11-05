@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="apps.gtkhash" path="/apps/gtkhash/">
+    <key name="digest-format" type="s">
+      <choices>
+        <choice value='hex-lower' />
+        <choice value='hex-upper' />
+        <choice value='base64' />
+      </choices>
+      <default>'hex-lower'</default>
+    </key>
+    <key name="hash-functions" type="as">
+      <default>[ 'MD5', 'SHA1', 'SHA256' ]</default>
+    </key>
+    <key name="show-toolbar" type="b">
+      <default>true</default>
+    </key>
+    <key name="view" type="s">
+      <choices>
+        <choice value='file' />
+        <choice value='text' />
+        <choice value='file-list' />
+      </choices>
+      <default>'file'</default>
+    </key>
+    <key name="window-height" type="i">
+      <default>0</default>
+    </key>
+    <key name="window-max" type="b">
+      <default>false</default>
+    </key>
+    <key name="window-width" type="i">
+      <default>0</default>
+    </key>
+    </schema>
+</schemalist>
