@@ -54,7 +54,7 @@ GPG_WARNING = u"Note: python-gpgme is not installed, we will not be able to veri
 DOWNLOADING = u"Downloading Dropbox... %d%%"
 UNPACKING = u"Unpacking Dropbox... %d%%"
 
-PARENT_DIR = os.path.expanduser("~")
+PARENT_DIR = os.path.expanduser("/var/lib/dropbox")
 DROPBOXD_PATH = "%s/.dropbox-dist/dropboxd" % PARENT_DIR
 DESKTOP_FILE = u"@DESKTOP_FILE_DIR@/dropbox.desktop"
 
@@ -139,13 +139,13 @@ def yes_no_question(question):
 
 def plat():
     if sys.platform.lower().startswith('linux'):
-        arch = platform.machine()
-        if (arch[0] == 'i' and
-            arch[1].isdigit() and
-            arch[2:4] == '86'):
+        arch = subprocess.Popen(["dpkg", "--print-architecture"],
+                                stdout=subprocess.PIPE).communicate()[0]
+        arch = arch.rstrip("\n")
+        if arch == "i386":
             plat = "x86"
-        elif arch == 'x86_64':
-            plat = arch
+        elif arch == "amd64":
+            plat = "x86_64"
         else:
             FatalVisibleError("Platform not supported")
         return "lnx.%s" % plat
@@ -206,7 +206,7 @@ def download_file_chunk(socket, buf, size):
     with closing(socket) as f:
         while True:
             try:
-                chunk = os.read(f.fileno(), 4096)
+                chunk = f.read(4096)
                 progress += len(chunk)
                 buf.write(chunk)
                 yield (progress, True)
@@ -222,8 +222,9 @@ def download_file_chunk(socket, buf, size):
 def download_uri_to_buffer(uri):
     try:
         socket = urllib.urlopen(uri)
-    except IOError:
-        FatalVisibleError("Trouble connecting to Dropbox servers. Maybe your internet connection is down, or you need to set your http_proxy environment variable.")
+    except IOError as e:
+        debug_info = get_download_debug_info(uri, e)
+        FatalVisibleError("Trouble connecting to Dropbox servers. Maybe your internet connection is down, or you need to set your http_proxy environment variable.\n%s" % debug_info)
 
     fcntl.fcntl(socket, fcntl.F_SETFL, os.O_NONBLOCK)
     size = int(socket.info()['content-length'])
@@ -237,6 +238,14 @@ def download_uri_to_buffer(uri):
     buf.seek(0)
     return buf
 
+def get_download_debug_info(url, e):
+    msg = "\nURL that failed to download: %s\nError: %s\n" % (url, e.strerror)
+    if "http_proxy" in os.environ:
+        msg += "http_proxy = %s" % os.environ["http_proxy"]
+    if "https_proxy" in os.environ:
+        msg += "https_proxy = %s" % os.environ["https_proxy"]
+    return msg
+
 # This sets a custom User-Agent
 class DropboxURLopener(urllib.FancyURLopener):
     version = "DropboxLinuxDownloader/@PACKAGE_VERSION@"
@@ -244,10 +253,12 @@ urllib._urlopener = DropboxURLopener()
 
 class DownloadState(object):
     def __init__(self):
+        url = "http://www.dropbox.com/download?plat=%s" % plat()
         try:
-            self.socket = urllib.urlopen("http://www.dropbox.com/download?plat=%s" % plat())
-        except IOError:
-            FatalVisibleError("Trouble connecting to Dropbox servers. Maybe your internet connection is down, or you need to set your http_proxy environment variable")
+            self.socket = urllib.urlopen(url)
+        except IOError as e:
+            debug_info = get_download_debug_info(url, e)
+            FatalVisibleError("Trouble connecting to Dropbox servers. Maybe your internet connection is down, or you need to set your http_proxy environment variable.\n%s" % debug_info)
 
         fcntl.fcntl(self.socket, fcntl.F_SETFL, os.O_NONBLOCK)
         self.size = int(self.socket.info()['content-length'])
@@ -271,7 +282,11 @@ class DownloadState(object):
         archive = tarfile.open(fileobj=self.local_file, mode='r:gz')
         total_members = len(archive.getmembers())
         for i, member in enumerate(archive.getmembers()):
+            filename = os.path.join(PARENT_DIR, member.name)
+            if os.path.exists(filename) and not os.path.isdir(filename):
+                os.unlink(filename)
             archive.extract(member, PARENT_DIR)
+            os.lchown(filename, os.geteuid(), os.getegid())
             yield member.name, i, total_members
         archive.close()
 
@@ -522,9 +537,6 @@ else:
         console_print(u"%s %s\n" % (INFO, LINK))
         GPG_WARNING_MSG = (u"\n%s" % GPG_WARNING) if not gpgme else u""
 
-        if not yes_no_question("%s%s" % (WARNING, GPG_WARNING_MSG)):
-            return
-
         download = DownloadState()
         one_chunk = download.copy_data()
 
@@ -699,7 +711,7 @@ def requires_dropbox_running(meth):
     return newmeth
 
 def start_dropbox():
-    db_path = os.path.expanduser(u"~/.dropbox-dist/dropboxd").encode(sys.getfilesystemencoding())
+    db_path = os.path.expanduser(DROPBOXD_PATH).encode(sys.getfilesystemencoding())
     if os.access(db_path, os.X_OK):
         f = open("/dev/null", "w")
         # we don't reap the child because we're gonna die anyway, let init do it
@@ -794,6 +806,15 @@ def columnize(list, display_list=None, display_width=None):
         lines.append(line)
     for line in lines:
         console_print(line)
+
+@command
+def update(args):
+    u"""download latest version of dropbox
+dropbox update
+
+Downloads the latest version of dropbox.
+"""
+    download()
 
 @command
 @requires_dropbox_running
@@ -1226,7 +1247,16 @@ options:
 
         # install dropbox!!!
         try:
-            download()
+            args = [ "pkexec", "dropbox" ]
+            if "http_proxy" in os.environ:
+                args.extend(["--http-proxy", os.environ["http_proxy"]])
+            if "https_proxy" in os.environ:
+                args.extend(["--https-proxy", os.environ["https_proxy"]])
+            args.append("update")
+            status = os.spawnvp(os.P_WAIT, "pkexec", args)
+            if status != 0:
+                console_print(u"The installation of Dropbox failed.")
+                return
         except:
             pass
         else:
@@ -1339,8 +1369,22 @@ def main(argv):
         os._exit(0)
         return
 
-    # lol no options for now
+    # option parsing code
+    def set_http_proxy(option, opt_str, value, parser):
+        os.environ["http_proxy"] = value
+        # Need to reset _urlopener to take the new value into account
+        urllib._urlopener = DropboxURLopener()
+
+    def set_https_proxy(option, opt_str, value, parser):
+        os.environ["https_proxy"] = value
+        # Need to reset _urlopener to take the new value into account
+        urllib._urlopener = DropboxURLopener()
+
     globaloptionparser = optparse.OptionParser()
+    globaloptionparser.add_option("--http-proxy", action="callback",
+        type="string", callback=set_http_proxy)
+    globaloptionparser.add_option("--https-proxy", action="callback",
+        type="string", callback=set_https_proxy)
     globaloptionparser.parse_args(argv[0:i])
 
     # now dispatch and run
