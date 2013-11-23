@@ -33,7 +33,8 @@ Depends: ${shlibs:Depends},
          nemo (>= 1.8.5),
          gir1.2-clutter-gst-2.0,
          gir1.2-gtkclutter-1.0,
-         gstreamer1.0-plugins-good
+         gstreamer1.0-plugins-good,
+	 gir1.2-evince-3.0
 Suggests: gstreamer1.0-libav
 Description: nemo-preview is a quick previewer for nemo
  Nemo-preview is a GtkClutter and Javascript-based quick previewer
