@@ -93,6 +93,7 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
 		# for paths with remembered items
 		new_paths = list(paths)
 		
+        for_later_relative = None
 		if self.for_later is not None:
 			if len(paths) >= 1:	
 				for_later_relative = os.path.relpath(self.for_later, os.path.dirname(paths[0]))
