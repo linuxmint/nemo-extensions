@@ -22,7 +22,7 @@
 	    </key>
 	    
 	    <key name="default-visible" type="b">
-	        <default>false</default>
+	        <default>true</default>
 	        <summary>Default visibility of terminal</summary>
 	        <description>When a new Nemo window is opened, this setting determines whether Nemo terminal is visible by default.</description>
 	    </key>

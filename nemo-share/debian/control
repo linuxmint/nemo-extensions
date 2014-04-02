@@ -7,14 +7,13 @@ Build-Depends: debhelper (>= 7.0.50),
                intltool (>= 0.29),
                libnemo-extension-dev
 Standards-Version: 3.9.1
-Homepage: http://gentoo.ovibes.net/nemo-share/
 
 Package: nemo-share
 Architecture: any
 Depends: nemo,
          samba-common (>= 3.0.27a),
          samba-common-bin | samba-common (<< 2:3.4.0~pre2-1~0),
-         gnome-session-bin,
+         cinnamon-session,
          apturl,
          ${shlibs:Depends}, ${misc:Depends}
 Enhances: nemo

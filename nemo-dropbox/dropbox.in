@@ -139,13 +139,13 @@ def yes_no_question(question):
 
 def plat():
     if sys.platform.lower().startswith('linux'):
-        arch = subprocess.Popen(["dpkg", "--print-architecture"],
-                                stdout=subprocess.PIPE).communicate()[0]
-        arch = arch.rstrip("\n")
-        if arch == "i386":
+        arch = platform.machine()
+        if (arch[0] == 'i' and
+            arch[1].isdigit() and
+            arch[2:4] == '86'):
             plat = "x86"
-        elif arch == "amd64":
-            plat = "x86_64"
+        elif arch == 'x86_64':
+            plat = arch
         else:
             FatalVisibleError("Platform not supported")
         return "lnx.%s" % plat

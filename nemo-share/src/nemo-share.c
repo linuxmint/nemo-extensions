@@ -632,7 +632,7 @@ finish_samba_installation (gboolean success)
   gtk_widget_destroy (dialog_ask_restart);
 
   if (response == GTK_RESPONSE_OK) {
-    g_spawn_command_line_async ("gnome-session-save --logout", NULL);
+    g_spawn_command_line_async ("cinnamon-session-quit --logout", NULL);
   }
 }
 
