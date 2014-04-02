@@ -390,12 +390,13 @@ class RabbitVCS(Nemo.InfoProvider, Nemo.MenuProvider,
         conditions_dict = None
         if paths_str in self.items_cache:
             conditions_dict = self.items_cache[paths_str]
-            if conditions_dict and conditions_dict != "in-progress":
+            if conditions_dict and conditions_dict != "in-progress" \
+            and hasattr(window, 'base_dir'):
                 conditions = NemoMenuConditions(conditions_dict)
                 menu = NemoMainContextMenu(self, window.base_dir, paths, conditions).get_menu()
                 return menu
         
-        if conditions_dict != "in-progress":
+        if conditions_dict != "in-progress" and hasattr(window, 'base_dir'):
             self.status_checker.generate_menu_conditions_async(provider, window.base_dir, paths, self.update_file_items)        
             self.items_cache[path] = "in-progress"
             
