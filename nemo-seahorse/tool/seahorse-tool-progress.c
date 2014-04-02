@@ -217,7 +217,7 @@ seahorse_tool_progress_start (const gchar *title)
     argv[2] = (gchar *)title;
     argv[3] = NULL;
 
-    ret = g_spawn_async_with_pipes (NULL, argv, NULL, G_SPAWN_STDOUT_TO_DEV_NULL | G_SPAWN_SEARCH_PATH,
+    ret = g_spawn_async_with_pipes (NULL, argv, NULL, G_SPAWN_STDOUT_TO_DEV_NULL | G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD,
                                     NULL, NULL, &progress_pid, &progress_fd, NULL, NULL, &err);
 
     if (!ret) {
