@@ -92,6 +92,13 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
 
 		# for paths with remembered items
 		new_paths = list(paths)
+		
+		for_later_relative = None
+		if self.for_later is not None:
+			if len(paths) >= 1:	
+				for_later_relative = os.path.relpath(self.for_later, os.path.dirname(paths[0]))
+			else: 
+				for_later_relative = self.for_later
 
 		# exactly one file selected
 		if len(paths) == 1:
@@ -103,7 +110,7 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
 				if self.for_later not in paths:
 					item1 = Nemo.MenuItem(
 						name="NemoCompareExtension::CompareTo",
-						label=_('Compare to ') + self.for_later,
+						label=_('Compare to: ') + for_later_relative,
 						tip=_("Compare to the file remembered before")
 					)
 
@@ -126,7 +133,7 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
 					if len(self.config.diff_engine_multi.strip()) > 0 or (len(paths) == 2 and len(self.config.diff_engine_3way.strip()) > 0):
 						item1 = Nemo.MenuItem(
 							name="NemoCompareExtension::MultiCompare",
-							label=_('Compare to ') + self.for_later,
+							label=_('Compare to: ') + for_later_relative,
 							tip=_("Compare selected files to the file remembered before")
 						)
 						# compare the one saved for later to the ones selected now
