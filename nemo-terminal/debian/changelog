@@ -1,3 +1,9 @@
+nemo-terminal (2.2.0) qiana; urgency=medium
+
+  * 2.2.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 12 Apr 2014 16:24:10 +0100
+
 nemo-terminal (1.0.1) petra; urgency=low
 
   * Fixed terminal window clipping outside of pane when resized.

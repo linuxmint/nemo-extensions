@@ -1,3 +1,9 @@
+nemo-fileroller (2.2.0) qiana; urgency=medium
+
+  * 2.2.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 12 Apr 2014 16:19:07 +0100
+
 nemo-fileroller (2.0.0) petra; urgency=low
 
   * 2.0.0
