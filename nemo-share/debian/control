@@ -20,4 +20,4 @@ Enhances: nemo
 Suggests: samba (>= 3.0.27a)
 Description: Nemo extension to share folder using Samba
  Nemo Share allows you to quickly share a folder from
- the GNOME Nemo file manager without requiring root access.
+ the Nemo file manager without requiring root access.

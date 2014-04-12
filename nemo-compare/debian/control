@@ -4,9 +4,6 @@ Priority: extra
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.2
-Homepage: https://launchpad.net/nemo-compare
-Vcs-Bzr: https://code.launchpad.net/~nemo-compare/nemo-compare/trunk
-Vcs-Browser: https://code.launchpad.net/~nemo-compare/nemo-compare/trunk
 
 Package: nemo-compare
 Architecture: all

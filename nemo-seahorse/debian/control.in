@@ -15,7 +15,6 @@ Build-Depends: debhelper (>= 8),
                gnome-pkg-tools,
                libnemo-extension-dev
 Standards-Version: 3.9.2
-Homepage: http://live.gnome.org/Seahorse
 
 Package: nemo-seahorse
 Architecture: any
@@ -24,7 +23,7 @@ Depends: ${shlibs:Depends},
          seahorse-daemon (>= 3.2.2)
 Recommends: seahorse
 Replaces: seahorse-plugins
-Description: seahorse plugins and utilities for encryption in GNOME
+Description: seahorse plugins and utilities for encryption
  Seahorse nemo is an extension for nemo which allows encryption
  and decryption of OpenPGP files using GnuPG - the Gnu Privacy Guard
  program.

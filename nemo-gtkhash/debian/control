@@ -1,20 +1,16 @@
 Source: nemo-gtkhash
 Section: utils
 Priority: optional
-Maintainer: Mònica Ramírez Arceda <monica@debian.org> 
+Maintainer: Linux Mint <root@linuxmint.com> 
 Build-Depends: debhelper (>= 9),
  autotools-dev,
  libmhash-dev,
- libgtk-3-dev (>= 3.0.0),
- libnautilus-extension-dev (>= 3.0),
+ libgtk-3-dev (>= 3.0.0), 
  libnemo-extension-dev (>= 2.0.4),
  libthunarx-2-dev,
  libgconf2-dev(>= 2.32.0),
  intltool (>= 0.40.6)
-Homepage: http://gtkhash.sourceforge.net
 Standards-Version: 3.9.3
-Vcs-Git: git://github.com/linuxmint/nemo-extensions.git
-Vcs-Browser: http://github.com/linuxmint/nemo-extensions
  
 Package: nemo-gtkhash
 Architecture: any
