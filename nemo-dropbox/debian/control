@@ -9,13 +9,8 @@ Homepage: http://www.dropbox.com/
 
 Package: nemo-dropbox
 Architecture: i386 amd64
-Depends: nemo, procps, python-gtk2 (>= 2.12), python-gpgme, policykit-1, ${shlibs:Depends}, ${python:Depends}, ${misc:Depends}
-Conflicts: nautilus-dropbox, caja-dropbox, dropbox
-Provides: dropbox
-Replaces: dropbox
+Depends: nemo, procps, python-gtk2 (>= 2.12), python-gpgme, policykit-1, ${shlibs:Depends}, ${python:Depends}, ${misc:Depends}, dropbox
 Description: Dropbox integration for Nemo
  Nemo Dropbox is an extension that integrates the Dropbox web service with
  your Cinnamon Desktop.
- .
- Installing this package will download the proprietary dropbox binary
- from dropbox.com.
+ 
