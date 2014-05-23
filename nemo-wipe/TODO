@@ -1,0 +1,19 @@
+* Adapt the default wipe algorithm and the manual to the latest papers
+  suggestions (a few random passes are enought on modern hard drives).
+  cf. http://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html and
+  http://csrc.nist.gov/publications/nistpubs/800-88/NISTSP800-88_rev1.pdf
+  This is partially done by commits 787a5d6..7677362, but proposing more random
+  passes would be nice. However, this would require to use an other backend,
+  e.g. scrub (cf. http://code.google.com/p/diskscrub/) instead of secure-delete.
+
+* Use a secure fill algorithm that works on vfat (i.e. use multiples files < 4G)
+
+* Perhaps cleanup a bit progress dialog, it is currently overkill
+
+* Add our entries in the same section on the context's menu that
+  the "Delete" and the "Move to trash" entry
+  -> I don't think it's possible
+
+* When one try to remove a single file on a flash device, explain that it's not
+  useful at all rather than doing it, giving the user a false impression of
+  security.

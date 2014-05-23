@@ -1,0 +1,5 @@
+# List of source files which contain translatable strings.
+nemo-wipe/nw-delete-operation.c
+nemo-wipe/nw-fill-operation.c
+nemo-wipe/nw-extension.c
+nemo-wipe/nw-operation-manager.c

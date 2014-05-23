@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_HARDENING=1
+
+PACKAGE = nemo-wipe
+DESTDIR = $(CURDIR)/debian/$(PACKAGE)
+
+%:
+	dh $@ --with autoreconf
+
+override_dh_auto_configure:
+	dh_auto_configure -- --with-gtk3
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f "$(DESTDIR)/usr/lib/nemo/extensions-2.0/libnemo-wipe.la"
+	rm -f "$(DESTDIR)/usr/lib/nemo/extensions-3.0/libnemo-wipe.la"
+
+# nemo-wipe does not include any shared libraries
+# => let's avoid building a shlibs control file.
+override_dh_makeshlibs:

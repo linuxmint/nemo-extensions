@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY appversion "0.1">
+  <!ENTITY manrevision "0.1">
+  <!ENTITY date "April 2011">
+  <!ENTITY appname "Nemo Wipe">
+  <!ENTITY app "<application>&appname;</application>">
+  <!-- Information about the entities
+       The legal.xml file contains legal information, there is no need to edit the file.
+       Use the appversion entity to specify the version of the application.
+       Use the manrevision entity to specify the revision number of this manual.
+       Use the date entity to specify the release date of this manual.
+       Use the app entity to specify the name of the application. -->
+]>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="en">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo>
+    <title>&app; Manual V&manrevision;</title>
+
+    <abstract role="description">
+      <para>&app; allows you to wipe files or available diskspace from
+      <application>Nemo</application></para>
+    </abstract>
+
+    <copyright>
+      <year>2010</year>
+      <holder>The Nemo Wipe Team</holder>
+    </copyright>
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2002</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+<!-- An address can be added to the publisher information.  If a role is
+     not specified, the publisher/author is the same for all versions of the
+     document.  -->
+    <publisher>
+      <publishername> GNOME Documentation Project </publishername>
+    </publisher>
+
+   &legal;
+   <!-- This file  contains link to license for the documentation (GNU FDL), and
+        other legal stuff such as "NO WARRANTY" statement. Please do not change
+    any of this. -->
+
+    <authorgroup>
+      <!-- XXX -->
+      <author role="maintainer">
+        <firstname>The Nemo Wipe Team</firstname>
+        <!--
+        <surname>Writer 2</surname>
+        <affiliation>
+              <orgname>GNOME Documentation Project</orgname>
+              <address> <email>doc-writer2@gnome.org</email> </address>
+        </affiliation>
+        -->
+      </author>
+      <!--
+      <author>
+        <firstname>Documentation</firstname>
+        <surname>Writer 1</surname>
+        <affiliation>
+              <orgname>GNOME Documentation Project</orgname>
+              <address> <email>doc-writer1@gnome.org</email> </address>
+        </affiliation>
+      </author>
+      -->
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+
+      <othercredit role="translator">
+        <firstname>Latin</firstname>
+        <surname>Translator 1</surname>
+        <affiliation>
+              <orgname>Latin Translation Team</orgname>
+              <address> <email>translator@gnome.org</email> </address>
+        </affiliation>
+        <contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+
+<!-- According to GNU FDL, revision history is mandatory if you are -->
+<!-- modifying/reusing someone else's document.  If not, you can omit it. -->
+<!-- Remember to remove the &manrevision; entity from the revision entries other
+-->
+<!-- than the current revision. -->
+<!-- The revision numbering system for GNOME manuals is as follows: -->
+<!-- * the revision number consists of two components -->
+<!-- * the first component of the revision number reflects the release version of the GNOME desktop. -->
+<!-- * the second component of the revision number is a decimal unit that is incremented with each revision of the manual. -->
+<!-- For example, if the GNOME desktop release is V2.x, the first version of the manual that -->
+<!-- is written in that desktop timeframe is V2.0, the second version of the manual is V2.1, etc. -->
+<!-- When the desktop release version changes to V3.x, the revision number of the manual changes -->
+<!-- to V3.0, and so on. -->
+<!-- XXX
+    <revhistory>
+      <revision>
+        <revnumber>MY-GNOME-APPLICATION Manual V&manrevision;</revnumber>
+        <date>&date;</date>
+        <revdescription>
+              <para role="author">Documentation Writer 2
+            <email>docwriter2@gnome.org</email>
+              </para>
+              <para role="publisher">GNOME Documentation Project</para>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>Full title of previous manual.</revnumber>
+        <date>Release date of previous manual.</date>
+        <revdescription>
+              <para role="author">Documentation Writer 1
+            <email>docwriter1@gnome.org</email>
+              </para>
+              <para role="publisher">GNOME Documentation Project</para>
+        </revdescription>
+      </revision>
+    </revhistory>
+-->
+    <revhistory>
+      <revision>
+        <revnumber>&appname; Manual V&manrevision;</revnumber>
+        <date>&date;</date>
+      </revision>
+    </revhistory>
+
+    <releaseinfo>This manual describes version &appversion; of Nemo Wipe
+    </releaseinfo>
+    <legalnotice>
+      <title>Feedback</title>
+      <!-- XXX: FIXME -->
+      <para>To report a bug or make a suggestion regarding the &app; application or
+      this manual, follow the directions in the <ulink url="ghelp:gnome-feedback"
+      type="help">GNOME Feedback Page</ulink>.
+      </para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice>
+  </articleinfo>
+
+  <indexterm zone="index">
+    <primary>Nemo Wipe</primary>
+  </indexterm>
+  <indexterm zone="index">
+    <primary>nemo-wipe</primary>
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <sect1 id="nemo-wipe-overview">
+    <title>Overview</title>
+    <para>
+      &app; allows you to wipe files or
+      available diskspace from <application>Nemo</application>.
+    </para>
+    <para>
+      Usually when you delete a file, even when bypassing the trash, it is
+      not accessible anymore, but its content still exists on the medium
+      that contained it until a new file is written over it.
+      Consequently, it can be quite easy to recover it.
+    </para>
+    <para>
+      &app; enables you to wipe files
+      and available disk space from <application>Nemo</application> using the
+      <application>secure-delete</application> program written by van Hauser /
+      THC
+        <footnote>
+          <para>
+            [1]. Secure-delete, van Hauser / THC <email>vh@thc.org</email>,
+            1997-2003
+            <ulink url="http://www.thc.org">
+              <literal>http://www.thc.org</literal>
+            </ulink>
+          </para>
+        </footnote>.
+    </para>
+  </sect1>
+
+  <sect1 id="nemo-wipe-data-deletion-intro">
+    <title>An introduction to data deletion</title>
+    <sect2 id="nemo-wipe-not-the-data">
+      <title>Deletion doesn't affect data</title>
+      <para>
+        When you delete a file, even when bypassing or emptying the trash,
+        you only tell your computer that you don't care anymore about the
+        file. The file's entry is removed from the list of existing files
+        but the content of the file remains on the storage medium. The data
+        will remain there until the operating system reuses the space for
+        new data.
+      </para>
+      <para>
+        It could take weeks, months or years before this space get used for
+        new data, actually overwriting the content of the deleted file.
+        Until then, it is possible to recover the data by reading directly
+        on the storage medium. That's a quite simple operation, automated by
+        numerous software.
+      </para>
+    </sect2>
+    <sect2 id="nemo-wipe-an-answer">
+      <title>An answer: overwriting data several times</title>
+      <para>
+        If you want to make the content of a file really hard to recover,
+        you have to overwrite it with other data. But that's not enough. On
+        a magnetic hard disk, it is known
+        <footnote>
+          <para>
+            [2]. Peter Gutmann: Secure Deletion of Data from Magnetic and
+            Solid-State Memory, 6th Usenix Security Symposium, 1996
+            <ulink url="http://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html">
+              <literal>http://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html</literal>
+            </ulink>
+          </para>
+        </footnote>
+        that the content can still be
+        recovered by doing magnetic analysis of the hard disk surface. To
+        address this issue, it is possible to overwrite the content to be
+        deleted several times. That process is called &quot;wiping&quot;.
+      </para>
+      <para>
+        If some sensible files have been already deleted without paying
+        attention to this issue, some of their data probably remains on the
+        storage medium. It is thus also useful to wipe all the available
+        free space of a storage medium.
+      </para>
+    </sect2>
+    <sect2 id="nemo-wipe-limitations">
+      <title>Limitations</title>
+      <para>
+        This section is quite technical. In a nutshell, there's a lot of
+        limitations, so using this tool without setting up a complete
+        security policy will probably be useless.
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            Temporary files and disks: lots of programs writes temporary and
+            backup files. This means that the sensitive data you want do delete
+            probably exists in an other form somewhere on your computer;
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            swap space: most operating systems could save data they are working
+            on on a part of the hard disk called swap space. Your sensitive
+            data could exist there;
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            storage media features: modern storage media often reorganize
+            their content, e.g. to spread the writings over the medium or to
+            hide defective places to the operating system. Consequently, you
+            can't be sure that the actual place occupied by your sensitive data
+            was wiped;
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <!-- XXX: formatting -->
+            journalized file systems: modern file systems log modifications of
+            the files to ease recovering after a crash. This could make wiping
+            inefficient. The same kind of problem exists with redundant file
+            systems (e.g. RAID), file systems that make snapshots or that
+            caches data (e.g. NFS). However, only the names of the files are
+            logged if you use the default parameters of the standard Linux file
+            system (ext3/ext4);
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            old algorithms: the wipe algorithms are old, and they are not
+            guaranteed to work as expected on new storage media.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    <sect2>
+      <title>The wipe algorithm</title>
+      <para>
+        nemo-wipe enables you to wipe files and free disk
+        space from <application>Nemo</application> using the
+        <application>secure-delete</application> program written by van Hauser /
+        THC
+        <footnote>
+          <para>
+            Secure-delete, van Hauser / THC <email>vh@thc.org</email>,
+            1997-2003
+            <ulink url="http://www.thc.org">
+              <literal>http://www.thc.org</literal>
+            </ulink>
+          </para>
+        </footnote>
+      </para>
+      <blockquote>
+        <attribution><application>secure-delete</application> documentation</attribution>
+        <para>The deletion process is as follows:</para>
+        <orderedlist>
+          <listitem>
+            <para>
+              the default overwriting procedure does a 2 times
+              overwriting. After each pass, the disk cache is flushed.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              truncating the file, so that an attacker don't know which
+              disk blocks belonged to the file.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              renaming of the file, so that an attacker can't draw any conclusion
+              from the filename on the contents of the deleted file.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              finally deleting the file (unlink).
+            </para>
+          </listitem>
+        </orderedlist>
+      </blockquote>
+    </sect2>
+  </sect1>
+
+  <sect1 id="nemo-wipe-usage">
+    <title>Using &app;</title>
+    <sect2 id="nemo-wipe-start">
+      <title>Launching &app;</title>
+      <sect3 id="nemo-wipe-wipe">
+        <title>Wiping file(s) or directory(es)</title>
+        <para>
+          Select the file(s) you want to wipe, and right-click on them. If
+          &app; is able to wipe them,
+          there will be a <guimenuitem>Wipe</guimenuitem> entry in the context menu.
+        </para>
+      </sect3>
+      <sect3 id="nemo-wipe-fill">
+        <title>Wiping available diskspace on storage media</title>
+        <para>
+          Select a file or a directory which is on the partition on which you
+          want to wipe the available diskspace, and right-click on it. If
+          &app; is able to wipe it, there
+          will be a <guimenuitem>Wipe available diskspace</guimenuitem> entry in the context
+          menu.
+        </para>
+      </sect3>
+    </sect2>
+    <sect2 id="nemo-wipe-confirmation-dialog">
+      <title>The confirmation dialog</title>
+      <para>
+        Once you click a menu item, a confirmation dialog will appear,
+        where you can confirm or abort the wipe, and choose options (see
+        <xref linkend="nemo-wipe-config" />).
+      </para>
+    </sect2>
+    <sect2 id="nemo-wipe-progress-dialog">
+      <title>The progress dialog</title>
+      <para>
+        If you confirm the wipe, a dialog will appear to let you see the
+        progression of the deletion. For big files or partitions with a lot
+        of available diskspace, wiping can take hours.
+      </para>
+      <para>
+        It's possible, but discouraged, to cancel the wipe process. This
+        would kill the underlaying <application>secure-delete</application> program
+        and could lead to strange things like files partially overwritten
+        but not deleted or big junk files.
+      </para>
+      <para>
+        When the wipe is finished, a dialog should inform you of the
+        success of the deletion.
+      </para>
+    </sect2>
+  </sect1>
+  <sect1 id="nemo-wipe-config">
+    <title>Configuring &app;</title>
+    <para>
+      In the confirmation dialog, you can click on the arrow left to the
+      <guilabel>Options</guilabel> word to display options. To understand these
+      options, you must have a good overview of the wipe process. If it's
+      not already the case, please read <xref linkend="nemo-wipe-data-deletion-intro" />.
+    </para>
+    <sect2 id="nemo-wipe-passes">
+      <title>Number of passes</title>
+      <para>
+        You can configure the number of times that the data to be wiped is
+        overwritten by new data.
+      </para>
+
+      <variablelist>
+        <title>Number of passes</title>
+        <varlistentry>
+          <term>38</term>
+          <listitem>
+            <para>
+              Overwriting the data 38 times was the algorithm advised by
+              Gutmann. It was designed to prevent data recovery
+              through magnetic analysis of the hard drive surface, but relied
+              on discontinued hardware technologies. It is thus not advised
+              anymore.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>2</term>
+          <listitem>
+            <para>
+              Two passes are written: one mode with 0xff and a final mode random
+              values. This seems to be enough on modern hard drives and is thus
+              the default behaviour.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>1</term>
+          <listitem>
+            <para>
+              Only one random pass is written. It should prevent software-only
+              data recovery performed by analyzing raw data stored on the
+              storage medium. However it is probably not sufficient against
+              magnetic analysis of the hard drive surface.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+    <sect2 id="nemo-wipe-fast-mode">
+      <title>Fast and insecure mode (no /dev/urandom, no synchronize mode)</title>
+      <para>
+        Fastens the wipe at the expense of security:
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            use a more predictable but faster pseudo-random number generator;
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            do not ensure that overwriting data is actually written on the
+            storage medium.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    <sect2 id="nemo-wipe-zeros">
+      <title>Last pass with zeros instead of random data</title>
+      <para>
+        Use zeros for the last overwrite, which is the data that will be
+        actually easy to read. The default is to use pseudo random data.
+      </para>
+    </sect2>
+  </sect1>
+<!-- ============= Bugs ================================== -->
+<!-- This section is optional and is commented out by default.
+     You can use it to describe known bugs and limitations of the
+      program if there are any - please be frank and list all
+     problems you know of.
+
+  <sect1 id="mayapp-bugs">
+  <title>Known Bugs and Limitations</title>
+  <para> </para>
+ </sect1>
+-->
+<!-- ============= About ================================== -->
+<!-- This section contains info about the program (not docs), such as
+      author's name(s), web page, license, feedback address. This
+      section is optional: primary place for this info is "About.." box of
+      the program. However, if you do wish to include this info in the
+      manual, this is the place to put it. Alternatively, you can put this
+      information in the title page.-->
+  <sect1 id="nemo-wipe-about">
+    <title>About &app;</title>
+    <para> &app; was written by The Nemo Wipe Team
+      <!-- XXX
+      (<email>hacker@gnome.org</email>). To find more information about
+      &app;, please visit the
+      <ulink url="http://www.my-gnome-app.org" type="http">MY-GNOME-APP Web
+      page</ulink>.
+      -->
+    </para>
+    <!--
+    <para>
+      To report a bug or make a suggestion regarding this application or
+      this manual, follow the directions in this
+      <ulink url="ghelp:gnome-feedback"   type="help">document</ulink>.
+    </para>
+    -->
+    <para>
+      This program is distributed under the terms of the GNU
+      General Public license as published by the Free Software
+      Foundation; either version 3 of the License, or (at your option)
+      any later version. A copy of this license can be found at this
+      <ulink url="ghelp:gpl" type="help">link</ulink>, or in the file
+      COPYING included with the source code of this program.
+    </para>
+  </sect1>
+</article>

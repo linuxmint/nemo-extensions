@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="no"?>
+<omf>
+  <resource>
+    <subject category="Applications|Security|Other"/>
+    <type>manual</type>
+    <relation seriesid="0c46eaf2-c138-e4a7-7a95-5390a14b545190"/>
+    <rights type="GNU FDL" license.version="1.1" holder="Colomban Wendling"/>
+  </resource>
+</omf>
