@@ -1,0 +1,29 @@
+0.2.1 (2014-01-23):
+
+  Minor maintenance release.
+
+  * Build system fixes
+  * No functional changes
+
+
+0.2 (2013-05-28):
+
+  Minor improvements release with major code changes.
+
+  * Code refactoring and cleanup
+  * Build for Nemo 3.x by default
+  * Drop GConf dependency for Nemo 3.x
+  * New translations: de, ru
+
+
+0.1.1 (2011-08-18):
+
+  Minor improvements of 0.1 release.
+
+  * Support for GTK 3.x (and thus Nemo 3.x)
+  * Minor UI cleanup of the progress dialog
+
+
+0.1 (2011-05-15):
+
+  Initial release.
