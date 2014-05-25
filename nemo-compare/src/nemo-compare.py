@@ -21,6 +21,8 @@ import os
 import urllib
 import gettext
 import locale
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 from gi.repository import Nemo, GObject, Gio
 

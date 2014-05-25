@@ -40,6 +40,9 @@ try:
 except:
 	pass
 
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
 class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
 	def __init__(self):
 		pass

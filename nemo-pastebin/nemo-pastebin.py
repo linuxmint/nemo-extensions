@@ -29,6 +29,8 @@ import urllib
 import webbrowser
 from subprocess import check_output, CalledProcessError
 from threading import Thread
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 from gi.repository import GObject, Gdk, Gio, Gtk
 from gi.repository import Nemo

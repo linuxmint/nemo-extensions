@@ -29,6 +29,9 @@ Our module for everything related to the Nemo extension.
 
 from __future__ import with_statement
 
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
 def log_all_exceptions(type, value, tb):
     import sys, traceback
     from rabbitvcs.util.log import Log

@@ -41,6 +41,8 @@ __website__ = "http://github.com/linuxmint/nemo-extensions"
 import os
 import sys
 from signal import SIGTERM, SIGKILL
+import signal
+signal.signal(SIGINT, SIG_DFL)
 
 import gettext
 gettext.bindtextdomain('nemo-terminal', '@prefix@/share/locale')
