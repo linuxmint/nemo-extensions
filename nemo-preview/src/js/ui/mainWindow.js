@@ -631,12 +631,23 @@ MainWindow.prototype = {
         Tweener.addTween(this._mainGroup,
                          { opacity: 255,
                            time: 0.3,
-                           transition: 'easeOutQuad' });
+                           transition: 'easeOutQuad',
+                           onComplete: function() {
+                               this._onMotionEvent();
+                               this._mainGroup.queue_relayout();
+                           },
+                           onCompleteScope: this
+                         });
         Tweener.addTween(this._titleGroup,
                          { opacity: 255,
                            time: 0.3,
-                           transition: 'easeOutQuad' });
-        this._onMotionEvent();
+                           transition: 'easeOutQuad',
+                           onComplete: function() {
+                               this._onMotionEvent()
+                               this._titleGroup.queue_relayout();
+                           },
+                           onCompleteScope: this
+                         });
     },
 
     _fadeOutWindow : function() {
