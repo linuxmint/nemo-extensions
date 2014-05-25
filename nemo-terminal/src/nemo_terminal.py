@@ -42,7 +42,7 @@ import os
 import sys
 from signal import SIGTERM, SIGKILL
 import signal
-signal.signal(SIGINT, SIG_DFL)
+signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 import gettext
 gettext.bindtextdomain('nemo-terminal', '@prefix@/share/locale')
