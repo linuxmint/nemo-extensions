@@ -25,9 +25,19 @@
  *
  */
 
-const GLib = imports.gi.GLib;
-const GObject = imports.gi.GObject;
 const Gdk = imports.gi.Gdk;
+const GLib = imports.gi.GLib;
+
+screen = Gdk.Screen.get_default()
+mon = screen.get_primary_monitor()
+s = screen.get_monitor_scale_factor(mon)
+
+// TODO: This is the only way to tell clutter what scale to use until
+// our next clutter version
+GLib.setenv("CLUTTER_SCALE", Math.max(s, 1).toString(), true);
+
+const Gio = imports.gi.Gio;
+const GObject = imports.gi.GObject;
 const GdkX11 = imports.gi.GdkX11;
 const GdkPixbuf = imports.gi.GdkPixbuf;
 const Gtk = imports.gi.Gtk;
@@ -102,6 +112,8 @@ MainWindow.prototype = {
     },
 
     _createClutterEmbed : function() {
+        let scale = this._gtkWindow.get_scale_factor();
+
         this._clutterEmbed = new GtkClutter.Embed();
         this._gtkWindow.add(this._clutterEmbed);
 
@@ -624,6 +636,7 @@ MainWindow.prototype = {
                          { opacity: 255,
                            time: 0.3,
                            transition: 'easeOutQuad' });
+        this._onMotionEvent();
     },
 
     _fadeOutWindow : function() {
