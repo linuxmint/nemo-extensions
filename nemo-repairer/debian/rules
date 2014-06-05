@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/gnome.mk
+
+# prevent useless call to ldconfig in postinst/postrm
+DEB_DH_MAKESHLIBS_ARGS_nemo-filename-repairer := -Xlibnemo-filename-repairer.so
+
+# *.la file is not required for a nemo extension
+install/nemo-filename-repairer::
+	find $(CURDIR)/debian/nemo-filename-repairer/ -name *.la -exec rm \{} \;

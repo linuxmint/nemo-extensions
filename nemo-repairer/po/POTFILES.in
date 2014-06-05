@@ -1,0 +1,8 @@
+[encoding: UTF-8]
+src/filename-repairer.c
+src/nemo-filename-repairer.c
+src/repair-dialog.c
+[type: gettext/glade]src/repair-dialog.ui
+src/encoding-dialog.c
+[type: gettext/glade]src/encoding-dialog.ui
+src/repairer.c

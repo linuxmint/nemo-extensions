@@ -1,0 +1,28 @@
+Filename Repairer 0.1.1
+ * add recursive rename feature using repair dialog
+ * add multiple rename feature using repair dialog
+ * support Mac OS X filename that is in Unicode NFD
+ * detect misconverted filename
+ * add Ukrainian translation by Serhij Dubyk / Сергій Дубик <dubyk * library.lviv.ua>
+
+Filename Repairer 0.0.6
+ * migrate to GIO
+
+Filename Repairer 0.0.5
+ * add French translation by Christophe Benz <christophe.benz gmail.com>
+
+Filename Repairer 0.0.4
+ * add some old DOS codepages to filename list
+ * add Spanish translation by Francisco Javier Cuadrado <fcocuadrado gmail.com>
+
+Filename Repairer 0.0.3
+ * small bug fix
+ * auto detecting nemo extension directory
+
+Filename Repairer 0.0.2
+ * update supported locales
+ * add URL decoding feature
+ * add Italian translation by Gabriele Monti <psicus78@gmail.com>
+
+Filename Repairer 0.0.1
+ * first release

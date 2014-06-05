@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-27 22:58+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nemo-filename-repairer.c:119
+#, c-format
+msgid ""
+"<span size=\"larger\" weight=\"bold\">There was an error renaming the file "
+"to \"%s\"</span>"
+msgstr ""
+
+#: ../src/nemo-filename-repairer.c:156
+#, c-format
+msgid ""
+"<span size=\"larger\" weight=\"bold\">A file named \"%s\" already exists.</"
+"span>"
+msgstr ""
+
+#: ../src/nemo-filename-repairer.c:159
+#, c-format
+msgid ""
+"If you want to rename the selected file, please move or rename \"%s\" first."
+msgstr ""
+
+#: ../src/nemo-filename-repairer.c:216
+msgid "Repair filename ..."
+msgstr ""
+
+#: ../src/nemo-filename-repairer.c:217
+msgid "Repair filename"
+msgstr ""
+
+#: ../src/nemo-filename-repairer.c:264
+#, c-format
+msgid "Re_name as \"%s\""
+msgstr ""
+
+#: ../src/nemo-filename-repairer.c:265
+#, c-format
+msgid "Rename as \"%s\"."
+msgstr ""
+
+#: ../src/nemo-filename-repairer.c:409
+msgid "Select a filename"
+msgstr ""
+
+#: ../src/nemo-filename-repairer.c:410
+msgid "Select a filename from sub menu items."
+msgstr ""
+
+#: ../src/repair-dialog.c:82
+msgid "Arabic - CP1256"
+msgstr ""
+
+#: ../src/repair-dialog.c:83
+msgid "Baltic - CP1257"
+msgstr ""
+
+#: ../src/repair-dialog.c:84
+msgid "Central European latin - CP1250"
+msgstr ""
+
+#: ../src/repair-dialog.c:85
+msgid "Chinese simplified - CP936"
+msgstr ""
+
+#: ../src/repair-dialog.c:86
+msgid "Chinese traditional - CP950"
+msgstr ""
+
+#: ../src/repair-dialog.c:87
+msgid "Cyrillic - CP1251"
+msgstr ""
+
+#: ../src/repair-dialog.c:88
+msgid "Greek - CP1253"
+msgstr ""
+
+#: ../src/repair-dialog.c:89
+msgid "Hebrew - CP1255"
+msgstr ""
+
+#: ../src/repair-dialog.c:90
+msgid "Japanese - CP932"
+msgstr ""
+
+#: ../src/repair-dialog.c:91
+msgid "Korean - CP949"
+msgstr ""
+
+#: ../src/repair-dialog.c:92
+msgid "Thai - CP874"
+msgstr ""
+
+#: ../src/repair-dialog.c:93
+msgid "Turkish - CP1254"
+msgstr ""
+
+#: ../src/repair-dialog.c:94
+msgid "Vietnamese - CP1258"
+msgstr ""
+
+#: ../src/repair-dialog.c:95
+msgid "Western European latin - CP1252"
+msgstr ""
+
+#: ../src/repair-dialog.c:96
+msgid "IBM PC (MS-DOS) - CP437"
+msgstr ""
+
+#: ../src/repair-dialog.c:211
+#, c-format
+msgid ""
+"<span size=\"larger\" weight=\"bold\">There was an error renaming \"%s\" to "
+"\"%s\"</span>"
+msgstr ""
+
+#: ../src/repair-dialog.c:316
+msgid "Other ..."
+msgstr ""
+
+#: ../src/repair-dialog.c:722
+msgid "As is"
+msgstr ""
+
+#: ../src/repair-dialog.c:729
+msgid "To be"
+msgstr ""
+
+#: ../src/repair-dialog.ui.h:1
+msgid "Include _subdirectories"
+msgstr ""
+
+#: ../src/repair-dialog.ui.h:2
+msgid "Nemo Filename Repairer"
+msgstr ""
+
+#: ../src/repair-dialog.ui.h:3
+msgid "Select _encoding:"
+msgstr ""
+
+#: ../src/encoding-dialog.c:201
+#, c-format
+msgid ""
+"<span size=\"larger\">The selected \"%s\" is invalid encoding.</span>\n"
+"<span size=\"larger\">Please choose another one.</span>"
+msgstr ""
+
+#: ../src/encoding-dialog.ui.h:1
+msgid "Select an encoding name to use"
+msgstr ""
+
+#: ../src/encoding-dialog.ui.h:2
+msgid "_Encoding name to add: "
+msgstr ""
+
+#: ../src/repairer.c:50
+msgid "Nemo Filename Repairer: Select Files To Rename"
+msgstr ""
