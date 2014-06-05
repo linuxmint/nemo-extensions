@@ -1,0 +1,85 @@
+# Khmer translation for folder-color
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the folder-color package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: folder-color\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-04-30 17:41+0200\n"
+"PO-Revision-Date: 2014-04-28 10:12+0000\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <km@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-05-01 08:04+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
+
+#: ../nautilus-extension/folder-color.py:31
+msgid "Black"
+msgstr "​ខ្មៅ"
+
+#: ../nautilus-extension/folder-color.py:32
+msgid "Brown"
+msgstr ""
+
+#: ../nautilus-extension/folder-color.py:33
+msgid "Cyan"
+msgstr ""
+
+#: ../nautilus-extension/folder-color.py:34
+msgid "Blue"
+msgstr "ខៀវ"
+
+#: ../nautilus-extension/folder-color.py:35
+msgid "Green"
+msgstr "​​បៃតង"
+
+#: ../nautilus-extension/folder-color.py:36
+msgid "Grey"
+msgstr "ប្រផេះ"
+
+#: ../nautilus-extension/folder-color.py:37
+msgid "Orange"
+msgstr "ទឹកក្រូច"
+
+#: ../nautilus-extension/folder-color.py:38
+msgid "Pink"
+msgstr "ផ្កាឈូក"
+
+#: ../nautilus-extension/folder-color.py:39
+msgid "Red"
+msgstr "ក្រហម​"
+
+#: ../nautilus-extension/folder-color.py:40
+msgid "Purple"
+msgstr "ស្វាយ"
+
+#: ../nautilus-extension/folder-color.py:41
+msgid "Yellow"
+msgstr "លឿង"
+
+#: ../nautilus-extension/folder-color.py:131
+msgid "Folders Color"
+msgstr "ពណ៌​ថត"
+
+#: ../nautilus-extension/folder-color.py:133
+msgid "Folder Color"
+msgstr "ពណ៌​ថត"
+
+#. Restore
+#: ../nautilus-extension/folder-color.py:151
+msgid "Default"
+msgstr "​លំនាំដើម"
+
+#. Donation
+#: ../nautilus-extension/folder-color.py:161
+msgid "Donate?"
+msgstr "ឧបត្ថម្ភ?"
+
+#. Hide donation
+#: ../nautilus-extension/folder-color.py:165
+msgid "Hide donation"
+msgstr "លាក់​ការ​ឧបត្ថម្ភ"
