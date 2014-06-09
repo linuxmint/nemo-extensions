@@ -75,19 +75,6 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
                   'keydown Control_L' 'key R' 'keyup Control_L'")
     
     def menu_activate_cb(self, menu, color, folders):
-        # Donation
-        if color == 'donate':
-            webbrowser.open_new("http://gufw.org/donate_foldercolor")
-            return
-        # Hide donation
-        if color == 'hideDonate':
-            try:
-                os.makedirs(self.HIDE_PATH)
-            except OSError as exception:
-                pass
-            except:
-                pass
-            return
         
         for each_folder in folders:
             
@@ -151,19 +138,5 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
         item_restore = Nemo.MenuItem(name='ChangeFolderColorMenu::Restore', label=_("Default"))
         item_restore.connect('activate', self.menu_activate_cb, 'restore', items_selected)
         submenu.append_item(item_restore)
-        
-        #  & Hide Donation
-        if not os.path.exists(self.HIDE_PATH):
-            # Separator
-            item_sep = Nemo.MenuItem(name='ChangeFolderColorMenu::Sep2', label=self.SEPARATOR, sensitive=False)
-            submenu.append_item(item_sep)
-            # Donation
-            item = Nemo.MenuItem(name=''.join(['ChangeFolderColorMenu::"donate"']), label=_("Donate?"))
-            item.connect('activate', self.menu_activate_cb, 'donate', items_selected)
-            submenu.append_item(item)
-            # Hide donation
-            item = Nemo.MenuItem(name=''.join(['ChangeFolderColorMenu::"hideDonate"']), label=_("Hide donation"))
-            item.connect('activate', self.menu_activate_cb, 'hideDonate', items_selected)
-            submenu.append_item(item)
-        
+
         return top_menuitem,
