@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-05 19:38+0200\n"
+"POT-Creation-Date: 2014-06-10 13:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,69 +17,59 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../nemo-extension/folder-color.py:31
+#: ../nemo-extension/nemo-folder-color.py:31
 msgid "Black"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:32
+#: ../nemo-extension/nemo-folder-color.py:32
 msgid "Brown"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:33
+#: ../nemo-extension/nemo-folder-color.py:33
 msgid "Cyan"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:34
+#: ../nemo-extension/nemo-folder-color.py:34
 msgid "Blue"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:35
+#: ../nemo-extension/nemo-folder-color.py:35
 msgid "Green"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:36
+#: ../nemo-extension/nemo-folder-color.py:36
 msgid "Grey"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:37
+#: ../nemo-extension/nemo-folder-color.py:37
 msgid "Orange"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:38
+#: ../nemo-extension/nemo-folder-color.py:38
 msgid "Pink"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:39
+#: ../nemo-extension/nemo-folder-color.py:39
 msgid "Red"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:40
+#: ../nemo-extension/nemo-folder-color.py:40
 msgid "Purple"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:41
+#: ../nemo-extension/nemo-folder-color.py:41
 msgid "Yellow"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:131
+#: ../nemo-extension/nemo-folder-color.py:118
 msgid "Folders Color"
 msgstr ""
 
-#: ../nemo-extension/folder-color.py:133
+#: ../nemo-extension/nemo-folder-color.py:120
 msgid "Folder Color"
 msgstr ""
 
 #. Restore
-#: ../nemo-extension/folder-color.py:151
+#: ../nemo-extension/nemo-folder-color.py:138
 msgid "Default"
-msgstr ""
-
-#. Donation
-#: ../nemo-extension/folder-color.py:161
-msgid "Donate?"
-msgstr ""
-
-#. Hide donation
-#: ../nemo-extension/folder-color.py:165
-msgid "Hide donation"
 msgstr ""

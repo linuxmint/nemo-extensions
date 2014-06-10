@@ -12,7 +12,7 @@ nemo-folder-color (0.0.9) qiana; urgency=high
 
 nemo-folder-color (0.0.7) petra; urgency=high
 
-  * Updated PPA
+  * Initial release
 
  -- Goran Vidovic (gogo) <trebelnik2@gmail.com>  Sun, 13 Apr 2014 16:07:05 +0100
 

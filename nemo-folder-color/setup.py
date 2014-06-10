@@ -24,11 +24,11 @@ import sys
 import DistUtilsExtra.auto
 
 # Create data files
-data = [ ('/usr/share/nemo-python/extensions', ['nemo-extension/folder-color.py']) ]
+data = [ ('/usr/share/nemo-python/extensions', ['nemo-extension/nemo-folder-color.py']) ]
 
 # Setup stage
 DistUtilsExtra.auto.setup(
-    name         = "folder-color",
+    name         = "nemo-folder-color",
     version      = "0.0.9",
     description  = "Change your folder color with just a click",
     author       = "Marcos Alvarez Costales https://launchpad.net/~costales",
