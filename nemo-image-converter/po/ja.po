@@ -1,0 +1,170 @@
+# nemo-image-converter ja.po.
+# Copyright (C) 2005 THE nemo-image-converter'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-image-converter package.
+# Kazutaka HARADA <kazutaka802@yahoo.co.jp>, 2006.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-image-converter trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-12-22 11:37+0900\n"
+"PO-Revision-Date: 2007-12-22 11:36+0900\n"
+"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+"Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nemo-image-converter.c:118
+msgid "_Resize Images..."
+msgstr "画像サイズの変更(_R)..."
+
+#: ../src/nemo-image-converter.c:119
+msgid "Resize each selected image"
+msgstr "選択した画像の大きさを変更します"
+
+#: ../src/nemo-image-converter.c:128
+msgid "Ro_tate Images..."
+msgstr "画像の回転(_T)..."
+
+#: ../src/nemo-image-converter.c:129
+msgid "Rotate each selected image"
+msgstr "選択した画像を回転します"
+
+#: ../src/nemo-image-resizer.c:224 ../src/nemo-image-rotator.c:221
+msgid "_Skip"
+msgstr "スキップ(_S)"
+
+#: ../src/nemo-image-resizer.c:226 ../src/nemo-image-rotator.c:223
+msgid "_Retry"
+msgstr "再試行(_R)"
+
+#: ../src/nemo-image-resizer.c:343
+#, c-format
+msgid "Resizing image: %d of %d"
+msgstr "画像の大きさの変更中: %d / %d"
+
+#: ../src/nemo-image-resizer.c:348
+#, c-format
+msgid "<i>Resizing \"%s\"</i>"
+msgstr "<i>\"%s\" の大きさを変更中</i>"
+
+#: ../src/nemo-image-resizer.c:366 ../src/nemo-image-rotator.c:365
+msgid "Please enter a valid filename suffix!"
+msgstr "妥当な拡張子を指定して下さい！"
+
+#: ../src/nemo-image-resize.glade.h:1
+msgid ".resized"
+msgstr ".resized"
+
+#: ../src/nemo-image-resize.glade.h:2
+#: ../src/nemo-image-rotate.glade.h:5
+msgid "<b>Filename</b>"
+msgstr "<b>ファイル名</b>"
+
+#: ../src/nemo-image-resize.glade.h:3
+msgid "<b>Image Size</b>"
+msgstr "<b>画像の大きさ</b>"
+
+#: ../src/nemo-image-resize.glade.h:4
+#: ../src/nemo-image-rotate.glade.h:7
+msgid "Append"
+msgstr "ファイル名に"
+
+#: ../src/nemo-image-resize.glade.h:5
+msgid "Custom size:"
+msgstr "指定する:"
+
+#: ../src/nemo-image-resize.glade.h:6
+msgid "Height:"
+msgstr "高さ:"
+
+#: ../src/nemo-image-resize.glade.h:7
+msgid "Resize Images"
+msgstr "画像の大きさの変更"
+
+#: ../src/nemo-image-resize.glade.h:8
+msgid "Resize in place"
+msgstr "ファイル名を変更しない"
+
+#: ../src/nemo-image-resize.glade.h:9
+msgid "Scale:"
+msgstr "比率:"
+
+#: ../src/nemo-image-resize.glade.h:10
+msgid "Select a size:"
+msgstr "選択する:"
+
+#: ../src/nemo-image-resize.glade.h:11
+msgid "Width:"
+msgstr "幅:"
+
+#: ../src/nemo-image-resize.glade.h:12
+msgid "_Resize"
+msgstr "変更する(_R)"
+
+#: ../src/nemo-image-resize.glade.h:13
+msgid "percent"
+msgstr "パーセント"
+
+#: ../src/nemo-image-resize.glade.h:14
+msgid "pixels"
+msgstr "ピクセル"
+
+#: ../src/nemo-image-resize.glade.h:15
+#: ../src/nemo-image-rotate.glade.h:14
+msgid "to file title"
+msgstr "を追加する"
+
+#: ../src/nemo-image-rotator.c:342
+#, c-format
+msgid "Rotating image: %d of %d"
+msgstr "画像の回転中: %d / %d"
+
+#: ../src/nemo-image-rotator.c:347
+#, c-format
+msgid "<i>Rotating \"%s\"</i>"
+msgstr "<i>\"%s\" の回転中</i>"
+
+#: ../src/nemo-image-rotate.glade.h:1
+msgid ".rotated"
+msgstr ".rotated"
+
+#: ../src/nemo-image-rotate.glade.h:2
+msgid ""
+"90° clockwise\n"
+"90° counter-clockwise\n"
+"180°"
+msgstr ""
+"90°右へ回転する\n"
+"90°左へ回転する\n"
+"180°回転する"
+
+#: ../src/nemo-image-rotate.glade.h:6
+msgid "<b>Image Rotation</b>"
+msgstr "<b>画像の回転</b>"
+
+#: ../src/nemo-image-rotate.glade.h:8
+msgid "Custom angle:"
+msgstr "指定する:"
+
+#: ../src/nemo-image-rotate.glade.h:9
+msgid "Rotate Images"
+msgstr "画像の回転"
+
+#: ../src/nemo-image-rotate.glade.h:10
+msgid "Rotate in place"
+msgstr "ファイル名を変更しない"
+
+#: ../src/nemo-image-rotate.glade.h:11
+msgid "Select an angle:"
+msgstr "選択する:"
+
+#: ../src/nemo-image-rotate.glade.h:12
+msgid "_Rotate"
+msgstr "回転する(_R)"
+
+#: ../src/nemo-image-rotate.glade.h:13
+msgid "degrees clockwise"
+msgstr "°(右回り)"

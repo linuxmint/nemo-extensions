@@ -1,0 +1,191 @@
+Description: Romanian translation.
+Forwarded: Yes (by mail to Jürg Billeter)
+Author: Peter Severin <petru.severin@gmail.com>
+Last-Update: 2011-09-11
+
+Index: nemo-image-converter/po/LINGUAS
+===================================================================
+--- nemo-image-converter.orig/po/LINGUAS	2010-04-18 22:43:31.000000000 +0200
++++ nemo-image-converter/po/LINGUAS	2010-04-18 22:43:46.000000000 +0200
+@@ -14,6 +14,7 @@
+ nl
+ pl
+ pt_BR
++ro
+ ru
+ sv
+ 
+Index: nemo-image-converter/po/ro.po
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ nemo-image-converter/po/ro.po	2010-04-18 22:25:58.000000000 +0200
+@@ -0,0 +1,169 @@
++msgid ""
++msgstr ""
++"Project-Id-Version: nemo-image-converter\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-01-06 19:10+0200\n"
++"PO-Revision-Date: \n"
++"Last-Translator: Peter Severin <petru.severin@gmail.com>\n"
++"Language-Team: \n"
++"MIME-Version: 1.0\n"
++"Content-Type: text/plain; charset=UTF-8\n"
++"Content-Transfer-Encoding: 8bit\n"
++"X-Poedit-Language: Romanian\n"
++
++#: ../src/nemo-image-converter.c:118
++msgid "_Resize Images..."
++msgstr "_Redimensionează imaginile..."
++
++#: ../src/nemo-image-converter.c:119
++msgid "Resize each selected image"
++msgstr "Redimensionează fiecare imagine selectată"
++
++#: ../src/nemo-image-converter.c:128
++msgid "Ro_tate Images..."
++msgstr "Ro_tește Imaginile..."
++
++#: ../src/nemo-image-converter.c:129
++msgid "Rotate each selected image"
++msgstr "Rotește fiecare imagine selectata"
++
++#: ../src/nemo-image-resizer.c:214
++#: ../src/nemo-image-rotator.c:211
++msgid "_Skip"
++msgstr "_Saltă"
++
++#: ../src/nemo-image-resizer.c:216
++#: ../src/nemo-image-rotator.c:213
++msgid "_Retry"
++msgstr "_Repetă"
++
++#: ../src/nemo-image-resizer.c:335
++#, c-format
++msgid "Resizing image: %d of %d"
++msgstr "Redimensionarea imaginii: %d din %d"
++
++#: ../src/nemo-image-resizer.c:340
++#, c-format
++msgid "<i>Resizing \"%s\"</i>"
++msgstr "<i>Redimensionarea \"%s\"</i>"
++
++#: ../src/nemo-image-resizer.c:358
++#: ../src/nemo-image-rotator.c:357
++msgid "Please enter a valid filename suffix!"
++msgstr "Introduceți un nume de fișier valid!"
++
++#: ../src/nemo-image-resize.glade.h:1
++msgid ".resized"
++msgstr ".resized"
++
++#: ../src/nemo-image-resize.glade.h:2
++#: ../src/nemo-image-rotate.glade.h:5
++msgid "<b>Filename</b>"
++msgstr "<b>Numele Fișierului</b>"
++
++#: ../src/nemo-image-resize.glade.h:3
++msgid "<b>Image Size</b>"
++msgstr "<b>Dimensiunea Imaginii</b>"
++
++#: ../src/nemo-image-resize.glade.h:4
++#: ../src/nemo-image-rotate.glade.h:7
++msgid "Append"
++msgstr "Adaugă"
++
++#: ../src/nemo-image-resize.glade.h:5
++msgid "Custom size:"
++msgstr "Mărime diferită:"
++
++#: ../src/nemo-image-resize.glade.h:6
++msgid "Height:"
++msgstr "Ȋnalțime:"
++
++#: ../src/nemo-image-resize.glade.h:7
++msgid "Resize Images"
++msgstr "Redimensionează Imaginile"
++
++#: ../src/nemo-image-resize.glade.h:8
++msgid "Resize in place"
++msgstr "Nu schimba numele"
++
++#: ../src/nemo-image-resize.glade.h:9
++msgid "Scale:"
++msgstr "Scara:"
++
++#: ../src/nemo-image-resize.glade.h:10
++msgid "Select a size:"
++msgstr "Alege o marime:"
++
++#: ../src/nemo-image-resize.glade.h:11
++msgid "Width:"
++msgstr "Lățime:"
++
++#: ../src/nemo-image-resize.glade.h:12
++msgid "_Resize"
++msgstr "_Rotește"
++
++#: ../src/nemo-image-resize.glade.h:13
++msgid "percent"
++msgstr "procente"
++
++#: ../src/nemo-image-resize.glade.h:14
++msgid "pixels"
++msgstr "pixeli"
++
++#: ../src/nemo-image-resize.glade.h:15
++#: ../src/nemo-image-rotate.glade.h:14
++msgid "to file title"
++msgstr "la numele fișierului"
++
++#: ../src/nemo-image-rotator.c:334
++#, c-format
++msgid "Rotating image: %d of %d"
++msgstr "Rotirea imaginii: %d din %d"
++
++#: ../src/nemo-image-rotator.c:339
++#, c-format
++msgid "<i>Rotating \"%s\"</i>"
++msgstr "<i>Rotirea \"%s\"</i>"
++
++#: ../src/nemo-image-rotate.glade.h:1
++msgid ".rotated"
++msgstr ".rotated"
++
++#: ../src/nemo-image-rotate.glade.h:2
++msgid ""
++"90° clockwise\n"
++"90° counter-clockwise\n"
++"180°"
++msgstr ""
++"90° în sensul acelor de ceasornic\n"
++"90° în sensul invers acelor de ceasornic\n"
++"180°"
++
++#: ../src/nemo-image-rotate.glade.h:6
++msgid "<b>Image Rotation</b>"
++msgstr "<b>Rotația Imaginii</b>"
++
++#: ../src/nemo-image-rotate.glade.h:8
++msgid "Custom angle:"
++msgstr "Unghi diferit"
++
++#: ../src/nemo-image-rotate.glade.h:9
++msgid "Rotate Images"
++msgstr "Rotește Imaginile"
++
++#: ../src/nemo-image-rotate.glade.h:10
++msgid "Rotate in place"
++msgstr "Nu schimba numele"
++
++#: ../src/nemo-image-rotate.glade.h:11
++msgid "Select an angle:"
++msgstr "Selectează un unghi:"
++
++#: ../src/nemo-image-rotate.glade.h:12
++msgid "_Rotate"
++msgstr "_Rotește"
++
++#: ../src/nemo-image-rotate.glade.h:13
++msgid "degrees clockwise"
++msgstr "° (în sensul acelor de ceasornic)"
++

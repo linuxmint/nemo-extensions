@@ -1,0 +1,33 @@
+# Add -Wl,--as-needed possibility for LDFLAGS
+Index: nemo-image-converter-0.3.1/ltmain.sh
+===================================================================
+--- nemo-image-converter-0.3.1.orig/ltmain.sh	2011-09-08 22:08:47.000000000 +0200
++++ nemo-image-converter-0.3.1/ltmain.sh	2011-09-08 22:24:49.000000000 +0200
+@@ -5787,6 +5787,11 @@
+ 	arg=$func_stripname_result
+ 	;;
+ 
++      -Wl,--as-needed)
++    deplibs="$deplibs $arg"
++    continue
++    ;;
++
+       -Wl,*)
+ 	func_stripname '-Wl,' '' "$arg"
+ 	args=$func_stripname_result
+@@ -6150,6 +6155,15 @@
+ 	lib=
+ 	found=no
+ 	case $deplib in
++	-Wl,--as-needed)
++	  if test "$linkmode,$pass" = "prog,link"; then
++	    compile_deplibs="$deplib $compile_deplibs"
++	    finalize_deplibs="$deplib $finalize_deplibs"
++	  else
++	    deplibs="$deplib $deplibs"
++	  fi
++	  continue
++	  ;;
+ 	-mt|-mthreads|-kthread|-Kthread|-pthread|-pthreads|--thread-safe|-threads)
+ 	  if test "$linkmode,$pass" = "prog,link"; then
+ 	    compile_deplibs="$deplib $compile_deplibs"

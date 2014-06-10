@@ -1,0 +1,13 @@
+Nemo-Image-Converter
+========================
+
+The Nemo-Image-Converter extension allows you to resize/rotate images from Nemo.
+
+Hacking:
+========
+
+n-i-c can be check out with the following command:
+
+git clone git://git.gnome.org/nemo-image-converter
+
+Patches welcomed!

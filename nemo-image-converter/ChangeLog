@@ -1,0 +1,215 @@
+2008-09-25  Jürg Billeter  <j@bitron.ch>
+
+	* po/LINGUAS, po/ca.po: Added Catalan translation by
+	  Siegfried-Angel Gevatter Pujals <rainct@ubuntu.com>
+
+2008-03-28  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-rotate.glade:
+	* src/nemo-image-resize.glade: Files removed.
+
+	* data/nemo-image-resize.xml:
+	* data/nemo-image-rotate.xml:
+	* data/Makefile.am: New files.
+	
+	* configure.ac:
+	* Makefile.am:
+	* src/nemo-image-resizer.c:
+	* src/nemo-image-rotator.c:
+	* src/Makefile.am:
+	* po/POTFILES.in: Port project over to gtkbuilder,
+	and remove dep on libglade.
+
+	Patch by Brian Pepple
+
+2008-04-28  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-resizer.c:
+	(nemo_image_resizer_transform_filename):
+	* src/nemo-image-rotator.c:
+	(nemo_image_rotator_transform_filename):
+
+	Remove unused variables, patch by Brian Pepple
+
+2008-03-04  Jürg Billeter  <j@bitron.ch>
+
+	* src/Makefile.am: disable -Werror
+
+2008-02-01  Jürg Billeter  <j@bitron.ch>
+
+	* configure.ac: Post-release version bump
+
+2008-02-01  Jürg Billeter  <j@bitron.ch>
+
+	* NEWS: update for 0.3.0 release
+
+2008-01-26  Jürg Billeter  <j@bitron.ch>
+
+	* configure.ac, src/nemo-image-resizer.c,
+	  src/nemo-image-rotator.c: port to GIO, requires glib 2.15 and
+	  nemo 2.21, based on patch by Andrew Walton
+
+2008-01-26  Jürg Billeter  <j@bitron.ch>
+
+	* configure.ac: Bump version to 0.3.0
+
+2007-12-24  Brian Pepple  <bpepple@fedoraproject.org>
+
+	* configure.ac (NEMO_LIBS): 
+	* src/Makefile.am (nemo_extensiondir): 
+
+	Get nemo extension dir from nemo-extension.pc
+
+2007-12-22  Jürg Billeter  <j@bitron.ch>
+
+	* po/LINGUAS, po/pt_BR.po: Added Brazilian Portuguese translation by
+	  Washington Lins <washington-lins@uol.com.br>
+
+2007-12-21  Jürg Billeter  <j@bitron.ch>
+
+	* configure.ac: Post-release version bump
+
+2007-12-21  Jürg Billeter  <j@bitron.ch>
+
+	* NEWS: update for 0.2.1 release
+
+2007-12-21  Jürg Billeter  <j@bitron.ch>
+
+	* po/LINGUAS, po/fi.po: Added Finnish translation by
+	  Antti Sokero <antti.sokero@opinsys.fi>
+
+2007-12-21  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-rotator.c: (run_op): reset exif orientation to
+	  avoid double image rotation
+
+2007-09-26  Jürg Billeter  <j@bitron.ch>
+
+	* configure.ac: Post-release version bump
+
+2007-09-26  Jürg Billeter  <j@bitron.ch>
+
+	* po/POTFILES.in: use UTF-8 encoding
+
+	* configure.ac: Bump version to 0.2.0
+
+2007-09-26  Jürg Billeter  <j@bitron.ch>
+
+	* po/LINGUAS, po/sv.po: Added Swedish translation by
+	  Daniel Nylander <info@danielnylander.se>
+
+2007-09-26  Jürg Billeter  <j@bitron.ch>
+
+	* po/LINGUAS, po/es.po: Added Spanish translation by
+	  Stephen Denham <stephen.denham@gmail.com>
+
+2007-09-09  Jürg Billeter  <j@bitron.ch>
+
+	* po/LINGUAS, po/nl.po: Added Dutch translation by
+	  Eddy Pronk <epronk@muftor.com>
+
+2007-09-09  Jürg Billeter  <j@bitron.ch>
+
+	* po/LINGUAS, po/pl.po: Added Polish translation by
+	  Piotr Szotkowski <shot@hot.pl>
+
+2007-06-07  Jürg Billeter  <j@bitron.ch>
+
+	* po/cs.po: Updated Czech translation by
+	  Pavel Chovancik <pchovancik@foxinus.cz>
+
+2007-05-13  Jürg Billeter  <j@bitron.ch>
+
+	* po/fr.po: Updated French translation by
+	  Julien Valroff <julien@kirya.net>
+
+2007-04-11  Jürg Billeter  <j@bitron.ch>
+
+	* po/LINGUAS, po/cs.po: Added Czech translation by
+	  Pavel Chovancik <pchovancik@foxinus.cz>
+
+2006-12-17  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-resize.glade, src/nemo-image-rotate.glade: mark
+	  additional labels as translatable
+	* po/POTFILES.in: update list of translatable files
+	* po/LINGUAS, po/ja.po: Added Japanese translation by
+	  Kazutaka Harada <kazutaka802@yahoo.co.jp>
+	
+	* configure.ac: Bump version to 0.0.9
+
+2006-12-07  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-rotator.c: Fix typo in assert macro.
+	
+	* configure.ac: Bump version to 0.0.8
+
+2006-12-07  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-converter.c
+	* src/nemo-image-rotator.c
+	* src/nemo-image-rotator.h
+	* src/nemo-image-rotate.glade
+	* src/Makefile.am
+	
+	Support image rotation.
+	
+	* configure.ac: Bump version to 0.0.7
+
+2006-12-06  Jürg Billeter  <j@bitron.ch>
+
+	* configure.ac: use new IT_PROG_INTLTOOL macro
+	* src/nemo-image-resizer.c: specify gettext domain in glade_xml_new
+	  to translate text in dialog
+	* po/LINGUAS: replaces ALL_LINGUAS variable
+	* po/fr.po: Added French translation by
+	  Sylvain Archenault <sylvain.archenault@laposte.net>
+
+2006-12-06  Jürg Billeter  <j@bitron.ch>
+
+	* configure.ac: Bump version to 0.0.6, disable static library
+
+2006-12-06  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-resizer.c: Support scaling by percentage.
+	  Patch by Paul W. Frields <stickster@gmail.com>
+
+2006-01-19  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-resizer.c: Remove unnecessary -size argument.
+	  Patch by Paul W. Frields <stickster@gmail.com>
+
+2006-01-19  Jürg Billeter  <j@bitron.ch>
+
+	* po/ru.po: Updated Russian translation by
+	Tchak <polo@tchak.net>
+
+2005-10-17  Jürg Billeter  <j@bitron.ch>
+
+	* configure.ac: Added "ru" to ALL_LINGUAS.
+	* po/POTFILES.in: Added dialog to list of translatable files.
+	* po/ru.po: Added Russian translation by
+	Tchak <polo@tchak.net>
+	* configure.ac: Bump version to 0.0.5
+
+2005-10-10  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-resizer.c: unescape new file name
+	* configure.ac: Bump version to 0.0.4
+
+2005-10-10  Jürg Billeter  <j@bitron.ch>
+
+	* configure.ac: Added "it" to ALL_LINGUAS.
+	* po/it.po: Added Italian translation by
+	Stefano Fabri <bluefuture@email.it>
+
+2005-08-29  Jürg Billeter  <j@bitron.ch>
+
+	* Makefile.am: dist intltool files
+	* configure.ac: Bump version to 0.0.3
+
+2005-08-28  Jürg Billeter  <j@bitron.ch>
+
+	* src/nemo-image-resizer.c: fix glade file path
+	* src/Makefile.am: dist and install glade file
+	* configure.ac: Bump version to 0.0.2
