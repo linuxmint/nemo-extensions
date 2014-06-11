@@ -19,7 +19,9 @@ nemo-gtkhash: functional (forked from gtkhash-0.7.0)
 
 nemo-filename-repairer forked from (nautilus-filename-repairer-0.0.6) 
 
-nemo-folder-color forked from (folder-color-0.0.9)
+nemo-image-converter forked from (nautilus-image-converter-0.3.1)
+
+
 
 NOT YET INCLUDED:
 ----------------
@@ -33,7 +35,6 @@ arkose-nautilus                 - Desktop application sandboxing - nautilus
 nautilus-actions                - nautilus extension to configure programs t
 nautilus-clamscan               - Antivirus scanning for Nautilus           
 nautilus-ideviceinfo            - utility showing information of idevices on
-nautilus-image-converter        - nautilus extension to mass resize or rotat
 nautilus-image-manipulator      - Resize and send images from Nautilus      
 nautilus-qdigidoc       		    - Nautilus file manager support for QDigiDoc
 nautilus-script-audio-convert   - A nautilus audio converter script         
