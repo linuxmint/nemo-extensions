@@ -1,85 +1,89 @@
-# Asturian translation for folder-color
+# Asturian translation for nemo-folder-color
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the folder-color package.
+# This file is distributed under the same license as the nemo-folder-color package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: folder-color\n"
+"Project-Id-Version: nemo-folder-color\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-04-30 17:41+0200\n"
-"PO-Revision-Date: 2014-04-30 14:14+0000\n"
+"POT-Creation-Date: 2014-05-01 04:18-0400\n"
+"PO-Revision-Date: 2014-07-06 08:26+0000\n"
 "Last-Translator: costales <Unknown>\n"
 "Language-Team: Asturian <ast@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-05-01 08:04+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
+"X-Launchpad-Export-Date: 2014-07-07 06:02+0000\n"
+"X-Generator: Launchpad (build 17086)\n"
 
-#: ../nautilus-extension/folder-color.py:31
+#: ../nemo-extension/nemo-folder-color.py:31
 msgid "Black"
 msgstr "Prietu"
 
-#: ../nautilus-extension/folder-color.py:32
+#: ../nemo-extension/nemo-folder-color.py:32
 msgid "Brown"
 msgstr "Marrón"
 
-#: ../nautilus-extension/folder-color.py:33
+#: ../nemo-extension/nemo-folder-color.py:33
 msgid "Cyan"
 msgstr "Cyan"
 
-#: ../nautilus-extension/folder-color.py:34
+#: ../nemo-extension/nemo-folder-color.py:34
 msgid "Blue"
 msgstr "Azul"
 
-#: ../nautilus-extension/folder-color.py:35
+#: ../nemo-extension/nemo-folder-color.py:35
 msgid "Green"
 msgstr "Verde"
 
-#: ../nautilus-extension/folder-color.py:36
+#: ../nemo-extension/nemo-folder-color.py:36
 msgid "Grey"
 msgstr "Gris"
 
-#: ../nautilus-extension/folder-color.py:37
+#: ../nemo-extension/nemo-folder-color.py:37
 msgid "Orange"
 msgstr "Naranxa"
 
-#: ../nautilus-extension/folder-color.py:38
+#: ../nemo-extension/nemo-folder-color.py:38
 msgid "Pink"
 msgstr "Rosa"
 
-#: ../nautilus-extension/folder-color.py:39
+#: ../nemo-extension/nemo-folder-color.py:39
 msgid "Red"
 msgstr "Bermeyu"
 
-#: ../nautilus-extension/folder-color.py:40
+#: ../nemo-extension/nemo-folder-color.py:40
 msgid "Purple"
 msgstr "Púrpura"
 
-#: ../nautilus-extension/folder-color.py:41
+#: ../nemo-extension/nemo-folder-color.py:41
 msgid "Yellow"
 msgstr "Mariellu"
 
-#: ../nautilus-extension/folder-color.py:131
+#: ../nemo-extension/nemo-folder-color.py:42
+msgid "White"
+msgstr "Blancu"
+
+#: ../nemo-extension/nemo-folder-color.py:131
 msgid "Folders Color"
 msgstr "Color de les carpetes"
 
-#: ../nautilus-extension/folder-color.py:133
+#: ../nemo-extension/nemo-folder-color.py:133
 msgid "Folder Color"
 msgstr "Color de la carpeta"
 
 #. Restore
-#: ../nautilus-extension/folder-color.py:151
+#: ../nemo-extension/nemo-folder-color.py:151
 msgid "Default"
 msgstr "Predetermináu"
 
 #. Donation
-#: ../nautilus-extension/folder-color.py:161
+#: ../nemo-extension/nemo-folder-color.py:161
 msgid "Donate?"
 msgstr "¿Facer una donación?"
 
 #. Hide donation
-#: ../nautilus-extension/folder-color.py:165
+#: ../nemo-extension/nemo-folder-color.py:165
 msgid "Hide donation"
 msgstr "Anubrir donación"

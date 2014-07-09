@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-10 13:02+0200\n"
+"POT-Creation-Date: 2014-07-09 12:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,15 +61,19 @@ msgstr ""
 msgid "Yellow"
 msgstr ""
 
-#: ../nemo-extension/nemo-folder-color.py:118
+#: ../nemo-extension/nemo-folder-color.py:42
+msgid "White"
+msgstr ""
+
+#: ../nemo-extension/nemo-folder-color.py:119
 msgid "Folders Color"
 msgstr ""
 
-#: ../nemo-extension/nemo-folder-color.py:120
+#: ../nemo-extension/nemo-folder-color.py:121
 msgid "Folder Color"
 msgstr ""
 
 #. Restore
-#: ../nemo-extension/nemo-folder-color.py:138
+#: ../nemo-extension/nemo-folder-color.py:139
 msgid "Default"
 msgstr ""

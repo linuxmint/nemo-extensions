@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Folder Color 0.0.9 - http://launchpad.net/folder-color
+# Folder Color 0.0.11 - http://launchpad.net/folder-color
 # Copyright (C) 2012-2014 Marcos Alvarez Costales https://launchpad.net/~costales
 #
 # folder-color is free software; you can redistribute it and/or modify
@@ -29,7 +29,7 @@ data = [ ('/usr/share/nemo-python/extensions', ['nemo-extension/nemo-folder-colo
 # Setup stage
 DistUtilsExtra.auto.setup(
     name         = "nemo-folder-color",
-    version      = "0.0.9",
+    version      = "0.0.11",
     description  = "Change your folder color with just a click",
     author       = "Marcos Alvarez Costales https://launchpad.net/~costales",
     author_email = "https://launchpad.net/~costales",
