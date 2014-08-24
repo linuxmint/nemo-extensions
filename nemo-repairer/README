@@ -1,0 +1,22 @@
+Nemo Extension For Filename Encoding Repair
+
+About
+nemo-filename-repairer is a nemo extension which repairs filename
+which uses wrong encoding in nemo.
+This extension provides the context menu for any file whose filename uses wrong encoding, so that you cannot read the filename in nemo.
+You can find a candidate for filename in context menu or submenu.
+This extension also provides a decoded name for URL encoded filename, ex 
+%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.
+
+Project page:
+http://code.google.com/p/repairer/
+
+Bug Tracker
+http://code.google.com/p/repairer/issues/list
+
+Install
+$ ./configure
+$ make
+# make install
+
+Please read INSTALL, for detailed installation instructions.

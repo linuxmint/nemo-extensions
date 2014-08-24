@@ -1,0 +1,95 @@
+# Polish translation of nemo-image-converter.
+# Copyright (C) 2006 THE nemo-image-converter'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nemo-image-converter package.
+# Sylvain Archenault <sylvain.archenault@laposte.net>, 2006.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-image-converter 0.0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-25 15:39+0200\n"
+"PO-Revision-Date: 2007-07-11 20:07+0200\n"
+"Last-Translator: Piotr Szotkowski <shot@hot.pl>\n"
+"Language-Team: Polish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../src/nemo-image-converter.c:109
+msgid "_Resize Images..."
+msgstr "_Zmień rozmiar obrazków…"
+
+#: ../src/nemo-image-converter.c:110
+msgid "Resize each selected image"
+msgstr "Zmień rozmiar każdego z wybranych obrazków"
+
+#: ../src/nemo-image-resizer.c:222
+msgid "_Skip"
+msgstr "_Pomiń"
+
+#: ../src/nemo-image-resizer.c:224
+msgid "_Retry"
+msgstr "P_onów próbę"
+
+#: ../src/nemo-image-resizer.c:343
+#, c-format
+msgid "Resizing image: %d of %d"
+msgstr "Zmienianie rozmiaru: %d z %d"
+
+#: ../src/nemo-image-resizer.c:348
+#, c-format
+msgid "<i>Resizing \"%s\"</i>"
+msgstr "<i>Zmiana rozmiaru \"%s\"</i>"
+
+#: ../src/nemo-image-resizer.c:366
+msgid "Please enter a valid filename suffix!"
+msgstr "Wprowadź poprawne rozszerzenie pliku!"
+
+#: ../src/nemo-image-resize.glade.h:1
+msgid ".resized"
+msgstr ".resized"
+
+#: ../src/nemo-image-resize.glade.h:2
+msgid "<b>Filename</b>"
+msgstr "<b>Nazwa pliku</b>"
+
+#: ../src/nemo-image-resize.glade.h:3
+msgid "<b>Image Size</b>"
+msgstr "<b>Wielkość obrazka</b>"
+
+#: ../src/nemo-image-resize.glade.h:4
+msgid "Append"
+msgstr "Dołącz"
+
+#: ../src/nemo-image-resize.glade.h:5
+msgid "Custom size:"
+msgstr "Własna wielkość:"
+
+#: ../src/nemo-image-resize.glade.h:6
+msgid "Height:"
+msgstr "Wysokość:"
+
+#: ../src/nemo-image-resize.glade.h:7
+msgid "Resize Images"
+msgstr "Zmień rozmiar obrazków"
+
+#: ../src/nemo-image-resize.glade.h:8
+msgid "Resize in place"
+msgstr "Zmień rozmiar oryginału"
+
+#: ../src/nemo-image-resize.glade.h:9
+msgid "Select a size:"
+msgstr "Wybierz wielkość:"
+
+#: ../src/nemo-image-resize.glade.h:10
+msgid "Width:"
+msgstr "Szerokość:"
+
+#: ../src/nemo-image-resize.glade.h:11
+msgid "pixels"
+msgstr "pikseli"
+
+#: ../src/nemo-image-resize.glade.h:12
+msgid "to file title"
+msgstr "do nazwy pliku"

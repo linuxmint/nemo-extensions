@@ -1,0 +1,15 @@
+Source: nemo-folder-color
+Section: utils
+Priority: extra
+Standards-Version: 0.0.11
+Maintainer: gogo <trebelnik2@gmail.com>
+Build-Depends: python-distutils-extra, debhelper (>=7)
+Homepage: https://code.launchpad.net/folder-color
+
+Package: nemo-folder-color
+Architecture: all
+Section: utils
+Priority: extra
+Depends: python-nemo, nemo, xautomation, ${python:Depends}
+Description: Change a folder color
+ Change a folder color used in Nemo, then get better visual layout

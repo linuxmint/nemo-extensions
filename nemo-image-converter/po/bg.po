@@ -1,0 +1,97 @@
+# Russian translation.
+# Copyright (C) 2005 THE nautilus-image-converter'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nautilus-image-converter package.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-image-converter VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-10-17 20:27+0200\n"
+"PO-Revision-Date: 2008-02-20 01:05+0200\n"
+"Last-Translator: lfu project <lfu.prohect@gmail.com>\n"
+"Language-Team: Svetoslav Stefanov <lfu.project@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+
+#: ../src/nautilus-image-converter.c:109
+msgid "_Resize Images..."
+msgstr "Мащабиране на изображенията..."
+
+#: ../src/nautilus-image-converter.c:110
+msgid "Resize each selected image"
+msgstr "Мащабиране на избраните изображения"
+
+#: ../src/nautilus-image-resizer.c:222
+msgid "_Skip"
+msgstr "Пропускане"
+
+#: ../src/nautilus-image-resizer.c:224
+msgid "_Retry"
+msgstr "Повторен опит"
+
+#: ../src/nautilus-image-resizer.c:343
+#, c-format
+msgid "Resizing image: %d of %d"
+msgstr "Мащабира се изображението: %d из %d"
+
+#: ../src/nautilus-image-resizer.c:348
+#, c-format
+msgid "<i>Resizing \"%s\"</i>"
+msgstr "<i>Мащабиране \"%s\"</i>"
+
+#: ../src/nautilus-image-resizer.c:366
+msgid "Please enter a valid filename suffix!"
+msgstr "Моля въведете валиден тип файл!"
+
+#: ../src/nautilus-image-resize.glade.h:1
+msgid ".resized"
+msgstr ".мащабирано"
+
+#: ../src/nautilus-image-resize.glade.h:2
+msgid "<b>Filename</b>"
+msgstr "<b>Име на файла</b>"
+
+#: ../src/nautilus-image-resize.glade.h:3
+msgid "<b>Image Size</b>"
+msgstr "<b>Размер на изображението</b>"
+
+#: ../src/nautilus-image-resize.glade.h:4
+msgid "Append"
+msgstr "Добавяне на"
+
+#: ../src/nautilus-image-resize.glade.h:5
+msgid "Custom size:"
+msgstr "Потребителски размер:"
+
+#: ../src/nautilus-image-resize.glade.h:6
+msgid "Height:"
+msgstr "Височина:"
+
+#: ../src/nautilus-image-resize.glade.h:7
+msgid "Resize Images"
+msgstr "Мащабиране на изображенията"
+
+#: ../src/nautilus-image-resize.glade.h:8
+msgid "Resize in place"
+msgstr "Мащабиране със замяна"
+
+#: ../src/nautilus-image-resize.glade.h:9
+msgid "Select a size:"
+msgstr "Изберете размер:"
+
+#: ../src/nautilus-image-resize.glade.h:10
+msgid "Width:"
+msgstr "Ширина:"
+
+#: ../src/nautilus-image-resize.glade.h:11
+msgid "pixels"
+msgstr "пиксели"
+
+#: ../src/nautilus-image-resize.glade.h:12
+msgid "to file title"
+msgstr "към името на файла"
+

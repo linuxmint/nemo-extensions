@@ -1,0 +1,30 @@
+nemo-folder-color (0.0.11) qiana; urgency=high
+
+  * New white color
+
+ -- Goran Vidovic (gogo) <trebelnik2@gmail.com>  Wed, 9 Jul 2014 12:33:51 +0100
+
+nemo-folder-color (0.0.9.3) qiana; urgency=high
+
+  * Fixes
+
+ -- Goran Vidovic (gogo) <trebelnik2@gmail.com>  Tue, 10 Jun 2014 14:08:05 +0100
+
+nemo-folder-color (0.0.9.2) qiana; urgency=high
+
+  * Scalable icons from RAVEfinity Project
+  * Removed light blue color
+  * Added brown and cyan colors
+  * Emblems for default folders
+  * Sorted colors in submenu
+  * New reload icons with xautomation
+  * New translations
+
+ -- Goran Vidovic (gogo) <trebelnik2@gmail.com>  Thu, 5 Jun 2014 19:55:05 +0100
+
+nemo-folder-color (0.0.7) qiana; urgency=high
+
+  * Updated PPA
+
+ -- Goran Vidovic (gogo) <trebelnik2@gmail.com>  Sun, 13 Apr 2014 16:07:05 +0100
+

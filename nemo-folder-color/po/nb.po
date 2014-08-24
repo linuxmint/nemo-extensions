@@ -1,0 +1,89 @@
+# Norwegian Bokmal translation for nemo-folder-color
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the nemo-folder-color package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-05-01 04:18-0400\n"
+"PO-Revision-Date: 2014-05-04 17:32+0000\n"
+"Last-Translator: Åka Sikrom <Unknown>\n"
+"Language-Team: Norwegian Bokmal <nb@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-07-07 06:02+0000\n"
+"X-Generator: Launchpad (build 17086)\n"
+
+#: ../nemo-extension/nemo-folder-color.py:31
+msgid "Black"
+msgstr "Svart"
+
+#: ../nemo-extension/nemo-folder-color.py:32
+msgid "Brown"
+msgstr "Brun"
+
+#: ../nemo-extension/nemo-folder-color.py:33
+msgid "Cyan"
+msgstr "Cyan"
+
+#: ../nemo-extension/nemo-folder-color.py:34
+msgid "Blue"
+msgstr "Blå"
+
+#: ../nemo-extension/nemo-folder-color.py:35
+msgid "Green"
+msgstr "Grønn"
+
+#: ../nemo-extension/nemo-folder-color.py:36
+msgid "Grey"
+msgstr "Grå"
+
+#: ../nemo-extension/nemo-folder-color.py:37
+msgid "Orange"
+msgstr "Oransje"
+
+#: ../nemo-extension/nemo-folder-color.py:38
+msgid "Pink"
+msgstr "Rosa"
+
+#: ../nemo-extension/nemo-folder-color.py:39
+msgid "Red"
+msgstr "Rød"
+
+#: ../nemo-extension/nemo-folder-color.py:40
+msgid "Purple"
+msgstr "Lilla"
+
+#: ../nemo-extension/nemo-folder-color.py:41
+msgid "Yellow"
+msgstr "Gul"
+
+#: ../nemo-extension/nemo-folder-color.py:42
+msgid "White"
+msgstr ""
+
+#: ../nemo-extension/nemo-folder-color.py:131
+msgid "Folders Color"
+msgstr "Mappefarge"
+
+#: ../nemo-extension/nemo-folder-color.py:133
+msgid "Folder Color"
+msgstr "Mappefarge"
+
+#. Restore
+#: ../nemo-extension/nemo-folder-color.py:151
+msgid "Default"
+msgstr "Standard"
+
+#. Donation
+#: ../nemo-extension/nemo-folder-color.py:161
+msgid "Donate?"
+msgstr "Donere?"
+
+#. Hide donation
+#: ../nemo-extension/nemo-folder-color.py:165
+msgid "Hide donation"
+msgstr "Skjul donasjon"

@@ -17,6 +17,12 @@ nemo-terminal: functional (forked from nautilus-terminal-1.0.0)
 
 nemo-gtkhash: functional (forked from gtkhash-0.7.0)
 
+nemo-filename-repairer forked from (nautilus-filename-repairer-0.0.6) 
+nemo-folder-color forked from (folder-color-0.0.9)
+nemo-image-converter forked from (nautilus-image-converter-0.3.1)
+
+
+
 NOT YET INCLUDED:
 ----------------
 
@@ -28,15 +34,13 @@ NAUTILUS EXTENSIONS MISSING IN NEMO:
 arkose-nautilus                 - Desktop application sandboxing - nautilus 
 nautilus-actions                - nautilus extension to configure programs t
 nautilus-clamscan               - Antivirus scanning for Nautilus           
-nautilus-filename-repairer      - Nautilus extension for filename encoding r
 nautilus-ideviceinfo            - utility showing information of idevices on
-nautilus-image-converter        - nautilus extension to mass resize or rotat
 nautilus-image-manipulator      - Resize and send images from Nautilus      
-nautilus-qdigidoc  		    - Nautilus file manager support for QDigiDoc
+nautilus-qdigidoc       		    - Nautilus file manager support for QDigiDoc
 nautilus-script-audio-convert   - A nautilus audio converter script         
 nautilus-script-collection-svn  - Nautilus subversion management scripts    
 nautilus-script-manager         - A simple management tool for nautilus scri
-nautilus-script-purrr           -                                           
+nautilus-script-purrr           -                                        
 nautilus-scripts-manager        - simple tool for nautilus scripts managemen
 nautilus-search                 - Add gnome-search-tool to context menu
 nautilus-sendto-empathy         - GNOME multi-protocol chat and call client 

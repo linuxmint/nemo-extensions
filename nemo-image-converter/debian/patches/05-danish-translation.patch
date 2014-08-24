@@ -1,0 +1,198 @@
+Description: Danish translation.
+Forwarded: Yes (by mail to Jürg Billeter)
+Author: Anders Jenbo <anders@jenbo.dk>
+Last-Update: 2011-09-11
+
+Index: nemo-image-converter/po/da.po
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ nemo-image-converter/po/da.po	2010-04-18 22:26:33.000000000 +0200
+@@ -0,0 +1,176 @@
++# Danish translation of nemo-image-converter.
++# Copyright (C) 2004 - 2006 Jürg Billeter <j@bitron.ch>
++# This file is distributed under the same license as the nemo-image-converter package.
++# Anders Jenbo <anders@jenbo.dk>, 2010
++#
++#
++msgid ""
++msgstr ""
++"Project-Id-Version: nemo-image-converter 0.0.9\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2007-05-12 17:13+0200\n"
++"PO-Revision-Date: 2010-04-14 18:11+0100\n"
++"Last-Translator: Anders Jenbo <anders@jenbo.dk>\n"
++"Language-Team: \n"
++"MIME-Version: 1.0\n"
++"Content-Type: text/plain; charset=utf-8\n"
++"Content-Transfer-Encoding: 8bit\n"
++"X-Poedit-Language: Danish\n"
++"X-Poedit-Country: DENMARK\n"
++
++#: ../src/nemo-image-converter.c:118
++msgid "_Resize Images..."
++msgstr "Ænd_r størrelse på billeder..."
++
++#: ../src/nemo-image-converter.c:119
++msgid "Resize each selected image"
++msgstr "Ændr størrelse på hver markeret billede"
++
++#: ../src/nemo-image-converter.c:128
++msgid "Ro_tate Images..."
++msgstr "Ro_ter billeder..."
++
++#: ../src/nemo-image-converter.c:129
++msgid "Rotate each selected image"
++msgstr "Roter hvert markeret billede"
++
++#: ../src/nemo-image-resizer.c:224
++#: ../src/nemo-image-rotator.c:221
++msgid "_Skip"
++msgstr "_Spring over"
++
++#: ../src/nemo-image-resizer.c:226
++#: ../src/nemo-image-rotator.c:223
++msgid "_Retry"
++msgstr "P_røv igen"
++
++#: ../src/nemo-image-resizer.c:343
++#, c-format
++msgid "Resizing image: %d of %d"
++msgstr "Ændr størrelse på billede: %d af %d"
++
++#: ../src/nemo-image-resizer.c:348
++#, c-format
++msgid "<i>Resizing \"%s\"</i>"
++msgstr "<i>Ændr størrelsen på \"%s\"</i>"
++
++#: ../src/nemo-image-resizer.c:366
++#: ../src/nemo-image-rotator.c:363
++msgid "Please enter a valid filename suffix!"
++msgstr "Indtast en gyldig filnavnsendelse!"
++
++#: ../src/nemo-image-resize.glade.h:1
++msgid ".resized"
++msgstr ".ændret"
++
++#: ../src/nemo-image-resize.glade.h:2
++#: ../src/nemo-image-rotate.glade.h:5
++msgid "<b>Filename</b>"
++msgstr "<b>Filnavn</b>"
++
++#: ../src/nemo-image-resize.glade.h:3
++msgid "<b>Image Size</b>"
++msgstr "<b>Billedstørrelse</b>"
++
++#: ../src/nemo-image-resize.glade.h:4
++#: ../src/nemo-image-rotate.glade.h:7
++msgid "Append"
++msgstr "Tilføj"
++
++#: ../src/nemo-image-resize.glade.h:5
++msgid "Custom size:"
++msgstr "Brugerdefineret størrelse:"
++
++#: ../src/nemo-image-resize.glade.h:6
++msgid "Height:"
++msgstr "Højde:"
++
++#: ../src/nemo-image-resize.glade.h:7
++msgid "Resize Images"
++msgstr "Ændr størrelse på billeder"
++
++#: ../src/nemo-image-resize.glade.h:8
++msgid "Resize in place"
++msgstr "Ændr original"
++
++#: ../src/nemo-image-resize.glade.h:9
++msgid "Scale:"
++msgstr "Skala:"
++
++#: ../src/nemo-image-resize.glade.h:10
++msgid "Select a size:"
++msgstr "Vælg en størrelse:"
++
++#: ../src/nemo-image-resize.glade.h:11
++msgid "Width:"
++msgstr "Bredde:"
++
++#: ../src/nemo-image-resize.glade.h:12
++msgid "_Resize"
++msgstr "Ænd_r størrelse"
++
++#: ../src/nemo-image-resize.glade.h:13
++msgid "percent"
++msgstr "procent"
++
++#: ../src/nemo-image-resize.glade.h:14
++msgid "pixels"
++msgstr "billedpunkter"
++
++#: ../src/nemo-image-resize.glade.h:15
++#: ../src/nemo-image-rotate.glade.h:14
++msgid "to file title"
++msgstr "til filnavn"
++
++#: ../src/nemo-image-rotator.c:340
++#, c-format
++msgid "Rotating image: %d of %d"
++msgstr "Rotere billede: %d af %d"
++
++#: ../src/nemo-image-rotator.c:345
++#, c-format
++msgid "<i>Rotating \"%s\"</i>"
++msgstr "<i>Rotere \"%s\"</i>"
++
++#: ../src/nemo-image-rotate.glade.h:1
++msgid ".rotated"
++msgstr ".roteret"
++
++#: ../src/nemo-image-rotate.glade.h:2
++msgid ""
++"90° clockwise\n"
++"90° counter-clockwise\n"
++"180°"
++msgstr ""
++"90° med uret\n"
++"90° mod uret\n"
++"180°"
++
++#: ../src/nemo-image-rotate.glade.h:6
++msgid "<b>Image Rotation</b>"
++msgstr "<b>Billedrotation</b>"
++
++#: ../src/nemo-image-rotate.glade.h:8
++msgid "Custom angle:"
++msgstr "Brugerdefineret vinkel:"
++
++#: ../src/nemo-image-rotate.glade.h:9
++msgid "Rotate Images"
++msgstr "Roter billeder"
++
++#: ../src/nemo-image-rotate.glade.h:10
++msgid "Rotate in place"
++msgstr "Roter original"
++
++#: ../src/nemo-image-rotate.glade.h:11
++msgid "Select an angle:"
++msgstr "Vælg en vinkel:"
++
++#: ../src/nemo-image-rotate.glade.h:12
++msgid "_Rotate"
++msgstr "_Roter"
++
++#: ../src/nemo-image-rotate.glade.h:13
++msgid "degrees clockwise"
++msgstr "grader med uret"
++
+Index: nemo-image-converter/po/LINGUAS
+===================================================================
+--- nemo-image-converter.orig/po/LINGUAS	2010-04-18 22:31:53.000000000 +0200
++++ nemo-image-converter/po/LINGUAS	2010-04-18 22:32:08.000000000 +0200
+@@ -3,6 +3,7 @@
+ bg
+ ca
+ cs
++da
+ de
+ es
+ fi
