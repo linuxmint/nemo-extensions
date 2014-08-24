@@ -1,5 +1,5 @@
 import urllib
-import locale, gettext
+import locale, gettext, os
 
 from gi.repository import GObject
 from gi.repository import Gio
@@ -68,8 +68,8 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
         if file.get_uri_scheme() != 'file':
             return
         
-        filename = urllib.unquote(file.get_uri()[7:])
-        self.gio_file = Gio.File.new_for_path(filename)
+        self.filename = urllib.unquote(file.get_uri()[7:])
+        self.gio_file = Gio.File.new_for_path(self.filename)
         self.file_info = self.gio_file.query_info(METADATA_EMBLEMS, 0, None)
         self.file_emblem_names = self.file_info.get_attribute_stringv(METADATA_EMBLEMS)
         
@@ -129,4 +129,4 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
         
         self.file_info.set_attribute_stringv(METADATA_EMBLEMS, emblems)
         self.gio_file.set_attributes_from_info(self.file_info, 0, None)
-
+        os.system("touch \"%s\"" % self.filename) # touch the file (to force Nemo to re-render its icon)
