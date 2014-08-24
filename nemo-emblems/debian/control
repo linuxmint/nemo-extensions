@@ -1,0 +1,15 @@
+Source: nemo-emblems
+Section: utils
+Priority: extra
+Standards-Version: 0.0.11
+Maintainer: Linux Mint <root@linuxmint.com>
+Build-Depends: python-distutils-extra, debhelper (>=7)
+Homepage: https://github.com/linuxmint/nemo-extensions
+
+Package: nemo-emblems
+Architecture: all
+Section: utils
+Priority: extra
+Depends: python-nemo, nemo, ${python:Depends}
+Description: Change a folder or file emblem
+ Change a folder or file emblem in Nemo
