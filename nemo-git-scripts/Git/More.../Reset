@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# Distributed under the terms of GNU GPL version 2
+#
+
+if [ -r "`dirname "$0"`/git.conf" ]; then
+  . "`dirname "$0"`/git.conf"
+elif [ -r "`dirname "$0"`/../git.conf" ]; then
+  . "`dirname "$0"`/../git.conf"
+else
+  exit 1
+fi
+
+OBJECT_NAME=$(_zenity_entry_text "Enter object to reset :")
+if [ "$?" -eq 0 ]; then
+  $GIT $GIT_OPTS reset "$OBJECT_NAME" 1>> "$OUTPUT" 2>> "$OUTPUT"
+  _zenity_info "$?" "Unknown" "Unknown error (more information can be found at ~/.xsession-errors)"
+fi
+

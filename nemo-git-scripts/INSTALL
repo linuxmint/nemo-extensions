@@ -1,0 +1,9 @@
+INSTALL
+=======
+
+Just run install.sh.
+
+In case of failure, try manually copying the Git folder into either ~/.gnome2/nemo-scripts
+
+The scripts are using zenity for user interaction.
+

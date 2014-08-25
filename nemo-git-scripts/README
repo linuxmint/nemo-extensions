@@ -1,0 +1,14 @@
+README
+======
+
+Nemo Git Scripts v0.3
+
+This is a collection of shell scripts designed for use with Nautilus that allow
+for point-and-click manipulation of a Git repository.
+
+See the INSTALL file for installation instructions.
+
+These scripts are based on the SVN Nautilus Scripts 0.9 written by Marius Scurtescu
+(http://marius.scurtescu.com/?p=102). They, in turn, are based on the CVS Nautilus
+Scripts written by Gavin Brown (http://jodrell.net/projects/nautilus-cvs-scripts)
+

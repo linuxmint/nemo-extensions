@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Distributed under the terms of GNU GPL version 2
+#
+
+if [ -r "`dirname "$0"`/git.conf" ]; then
+  . "`dirname "$0"`/git.conf"
+elif [ -r "`dirname "$0"`/../git.conf" ]; then
+  . "`dirname "$0"`/../git.conf"
+else
+  exit 1
+fi
+
+$GIT $GIT_OPTS branch -v 1>> "$OUTPUT" 2>> "$OUTPUT"
+_zenity_info "$?" "Unknown" "Unknown error (more information can be found at ~/.xsession-errors)"
+

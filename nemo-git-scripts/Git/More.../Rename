@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# Distributed under the terms of GNU GPL version 2
+#
+
+if [ -r "`dirname "$0"`/git.conf" ]; then
+  . "`dirname "$0"`/git.conf"
+elif [ -r "`dirname "$0"`/../git.conf" ]; then
+  . "`dirname "$0"`/../git.conf"
+else
+  exit 1
+fi
+
+if [ "$#" -eq 1 ]; then
+  OBJECT_NEW_NAME=$(_zenity_entry_text "Enter a new name for '$1' :")
+  if [ "$?" -eq 0 ]; then
+    $GIT $GIT_OPTS mv "$1" "$OBJECT_NEW_NAME" 1>> "$OUTPUT" 2>> "$OUTPUT"
+    _zenity_info "$?" "$1 successfully renamed" "Unknown error (more information can be found at ~/.xsession-errors)"
+  fi
+else
+  _zenity_error_text "Please select a single directory or file and try again ..."
+fi
+

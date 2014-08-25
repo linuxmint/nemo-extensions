@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Distributed under the terms of GNU GPL version 2
+#
+# http://marius.scurtescu.com/?p=102
+# http://gnomefiles.org/app.php?soft_id=1059
+
+LOGFILE=`mktemp -t svn_revert.XXXXXX`
+
+if [ -z $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS ] ; then
+    svn revert . > $LOGFILE
+else
+    svn revert "$@" > $LOGFILE
+fi
+
+zenity --text-info --title="Subversion: Revert" --filename=$LOGFILE --width=600 --height=400 --window-icon="`dirname $0`/svn.xpm"
+rm -f $LOGFILE

@@ -1,0 +1,6 @@
+INSTALL
+=======
+
+Just copy the Subversion folder into either ~/.gnome2/nemo-scripts
+
+The scripts are using zenity for user interaction.

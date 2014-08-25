@@ -12,6 +12,8 @@ nemo-compare: functional
 
 nemo-python (python bindings for Nemo): functional
 nemo-rabbitvcs: functional (forked from rabbitvcs-0.15.3)
+nemo-svn-scripts: functional (forked from http://packages.ubuntu.com/lucid/nautilus-script-collection-svn)
+nemo-git-scripts: functional (forked from https://github.com/tapio/nautilus-git-scripts))
 
 nemo-terminal: functional (forked from nautilus-terminal-1.0.0)
 
@@ -38,7 +40,6 @@ nautilus-ideviceinfo            - utility showing information of idevices on
 nautilus-image-manipulator      - Resize and send images from Nautilus      
 nautilus-qdigidoc       		    - Nautilus file manager support for QDigiDoc
 nautilus-script-audio-convert   - A nautilus audio converter script         
-nautilus-script-collection-svn  - Nautilus subversion management scripts    
 nautilus-script-manager         - A simple management tool for nautilus scri
 nautilus-script-purrr           -                                        
 nautilus-scripts-manager        - simple tool for nautilus scripts managemen

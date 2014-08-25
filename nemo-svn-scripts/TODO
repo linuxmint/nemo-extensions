@@ -1,0 +1,16 @@
+For version 1.0 no more features will be added. Only bug fixes.
+
+Things to do in future versions:
+
+- add a waiting/progress dialog box while a command is executing
+
+- check the return value of the Subversion commands and show an
+error message if appropriate
+
+- implement a wrapper script for the diff command and invoke meld
+or similar (see http://subversion.tigris.org/faq.html#diff-cmd)
+
+- use a proper scripting language like Python instead of bash
+
+- show the return from some of the commands in a list box
+(for example the return from info or status)
