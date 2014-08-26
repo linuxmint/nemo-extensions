@@ -1,0 +1,5 @@
+# intltool-update -p -g folder-color
+# also done automatically with setup.py build or install
+[encoding: UTF-8]
+folder-color/folder-color.py
+

@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+%:		
+	mkdir -p $(CURDIR)/nemo-extensions/
+	mkdir -p $(CURDIR)/caja-extensions/
+	cp $(CURDIR)/folder-color/folder-color.py $(CURDIR)/nemo-extensions/nemo-folder-color.py
+	sed s/Nemo/Caja/ $(CURDIR)/folder-color/folder-color.py | sed s/org.cinnamon.desktop.interface/org.mate.interface/ > $(CURDIR)/caja-extensions/caja-folder-color.py
+	dh $@
