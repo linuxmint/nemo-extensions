@@ -24,8 +24,7 @@ import sys
 import DistUtilsExtra.auto
 
 # Create data files
-data = [ 
-	('/usr/share/folder-color', ['folder-color/folder-color.py']),
+data = [ 	
 	('/usr/share/nemo-python/extensions', ['nemo-extensions/nemo-folder-color.py']),
 	('/usr/share/caja-python/extensions', ['caja-extensions/caja-folder-color.py']) ]
 
