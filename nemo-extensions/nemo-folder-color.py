@@ -16,7 +16,7 @@
 # along with Folder Color; if not, see http://www.gnu.org/licenses
 # for more information.
 
-import os, urllib, gettext, locale
+import os, urllib, gettext, locale, collections
 from gi.repository import Nemo, GObject, Gio, GLib, Gtk, Gdk, GdkPixbuf, cairo
 _ = gettext.gettext
 P_ = gettext.ngettext
@@ -35,21 +35,23 @@ KNOWN_COLORS = {'Mint-X': 'Green',
                 'oxygen': 'Blue'
                 }
 
-COLORS = [ 'Aqua',
-           'Beige',
-           'Black',
-           'Blue',
-           'Brown',
-           'Cyan',
-           'Green',
-           'Grey',
-           'Orange',
-           'Pink',
-           'Purple',
-           'Red',
-           'Teal',
-           'White',
-           'Yellow' ]
+COLORS = [ 
+            'Beige',
+            'Yellow',
+            'Orange',
+            'Brown',
+            'Red',
+            'Purple', 
+            'Pink', 
+            'Blue',            
+            'Cyan',
+            'Aqua',
+            'Teal',
+            'Green',
+            'White',
+            'Grey',            
+            'Black'
+           ]
 
 css_colors = """
 .folder-color-button {
@@ -160,6 +162,29 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
 
     # Nemo invoke this function in its startup > Then, create menu entry
     def get_file_items(self, window, items_selected):
+
+        locale.setlocale(locale.LC_ALL, '')
+        gettext.bindtextdomain('folder-color')
+        gettext.textdomain('folder-color')
+
+        self.COLORS = collections.OrderedDict ([
+            ('Beige', _('Beige')),
+            ('Yellow', _('Yellow')),
+            ('Orange', _('Orange')),
+            ('Brown', _('Brown')),
+            ('Red', _('Red')),
+            ('Purple', _('Purple')),
+            ('Pink', _('Pink')), 
+            ('Blue', _('Blue')),            
+            ('Cyan', _('Cyan')),
+            ('Aqua', _('Aqua')),
+            ('Teal', _('Teal')),
+            ('Green', _('Green')),
+            ('White', _('White')),
+            ('Grey', _('Grey')),   
+            ('Black', _('Black'))
+           ])
+
         # No items selected
         if len(items_selected) == 0:
             return
@@ -174,14 +199,16 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
         found_colors = False
         to_generate = []
 
-        for color in COLORS:
-            if not self.base_theme and self.base_color is not None and self.base_color == color:
+        for color in self.COLORS.items():
+            color_code = color[0]
+            color_name = color[1]
+            if not self.base_theme and self.base_color is not None and self.base_color == color_code:
                 path = os.path.join("/usr/share/icons/%s/places/48/folder.svg" % self.theme)
             else:
-                path = os.path.join("/usr/share/icons/%s-%s/places/48/folder.svg" % (self.theme, color))
-            if os.path.exists(path) and (self.color is None or color != self.color):
+                path = os.path.join("/usr/share/icons/%s-%s/places/48/folder.svg" % (self.theme, color_code))
+            if os.path.exists(path) and (self.color is None or color_code != self.color):
                 found_colors = True
-                to_generate.append((color, items_selected))
+                to_generate.append((color_code, color_name, items_selected))
 
         if (found_colors):
             item = Nemo.MenuItem(name='ChangeFolderColorMenu::Top')
@@ -195,21 +222,24 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
 
     def generate_widget(self, to_generate):
         widget = Gtk.Box.new(Gtk.Orientation.HORIZONTAL, 1)
-
         button = FolderColorButton("restore")
-        button.connect('clicked', self.menu_activate_cb, 'restore', to_generate[0][1])
-        button.set_tooltip_text (P_("Restore the selected folder to its default color",
-                                    "Restore the selected folders to their default color",
-                                    len(to_generate[0][1])))
+        button.connect('clicked', self.menu_activate_cb, 'restore', to_generate[0][2])
+        if (len(to_generate[0][2]) > 1):
+            button.set_tooltip_text (_("Restores the color of the selected folders"))
+        else:
+            button.set_tooltip_text (_("Restores the color of the selected folder"))
+
         widget.pack_start(button, False, False, 1)
 
         for i in range(0, len(to_generate)):
-            color, items_selected = to_generate[i]
-            button = FolderColorButton(color)
-            button.connect('clicked', self.menu_activate_cb, color, items_selected)
-            button.set_tooltip_markup (P_("Color the selected folder <i>%s</i>" % color.lower(),
-                                          "Color the selected folders <i>%s</i>" % color.lower(),
-                                          len(items_selected)))
+            color_code, color_name, items_selected = to_generate[i]
+            button = FolderColorButton(color_code)
+            button.connect('clicked', self.menu_activate_cb, color_code, items_selected)
+            if (len(items_selected) > 1):
+                button.set_tooltip_markup (_("Changes the color of the selected folders to %s") % color_name.lower())
+            else:
+                button.set_tooltip_markup (_("Changes the color of the selected folder to %s") % color_name.lower())
+                
             widget.pack_start(button, False, False, 1)
 
         widget.show_all()

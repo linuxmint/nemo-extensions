@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-08 12:54+0200\n"
+"POT-Creation-Date: 2014-09-08 14:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,90 +17,106 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Main menu [1 or +1 folder(s)]
-#: ../nemo-extensions/nemo-folder-color.py:129
-#: ../caja-extensions/caja-folder-color.py:129
-msgid "Change color"
-msgstr ""
-
-#. Colors submenu
-#: ../nemo-extensions/nemo-folder-color.py:134
-#: ../caja-extensions/caja-folder-color.py:134
-msgid "Aqua"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:135
+#: ../nemo-extensions/nemo-folder-color.py:171
 #: ../caja-extensions/caja-folder-color.py:135
 msgid "Beige"
 msgstr ""
 
-#: ../nemo-extensions/nemo-folder-color.py:136
-#: ../caja-extensions/caja-folder-color.py:136
-msgid "Black"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:137
-#: ../caja-extensions/caja-folder-color.py:137
-msgid "Blue"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:138
-#: ../caja-extensions/caja-folder-color.py:138
-msgid "Brown"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:139
-#: ../caja-extensions/caja-folder-color.py:139
-msgid "Cyan"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:140
-#: ../caja-extensions/caja-folder-color.py:140
-msgid "Green"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:141
-#: ../caja-extensions/caja-folder-color.py:141
-msgid "Grey"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:142
-#: ../caja-extensions/caja-folder-color.py:142
-msgid "Orange"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:143
-#: ../caja-extensions/caja-folder-color.py:143
-msgid "Pink"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:144
-#: ../caja-extensions/caja-folder-color.py:144
-msgid "Purple"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:145
-#: ../caja-extensions/caja-folder-color.py:145
-msgid "Red"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:146
-#: ../caja-extensions/caja-folder-color.py:146
-msgid "Teal"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:147
-#: ../caja-extensions/caja-folder-color.py:147
-msgid "White"
-msgstr ""
-
-#: ../nemo-extensions/nemo-folder-color.py:148
+#: ../nemo-extensions/nemo-folder-color.py:172
 #: ../caja-extensions/caja-folder-color.py:148
 msgid "Yellow"
 msgstr ""
 
+#: ../nemo-extensions/nemo-folder-color.py:173
+#: ../caja-extensions/caja-folder-color.py:142
+msgid "Orange"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:174
+#: ../caja-extensions/caja-folder-color.py:138
+msgid "Brown"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:175
+#: ../caja-extensions/caja-folder-color.py:145
+msgid "Red"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:176
+#: ../caja-extensions/caja-folder-color.py:144
+msgid "Purple"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:177
+#: ../caja-extensions/caja-folder-color.py:143
+msgid "Pink"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:178
+#: ../caja-extensions/caja-folder-color.py:137
+msgid "Blue"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:179
+#: ../caja-extensions/caja-folder-color.py:139
+msgid "Cyan"
+msgstr ""
+
+#. Colors submenu
+#: ../nemo-extensions/nemo-folder-color.py:180
+#: ../caja-extensions/caja-folder-color.py:134
+msgid "Aqua"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:181
+#: ../caja-extensions/caja-folder-color.py:146
+msgid "Teal"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:182
+#: ../caja-extensions/caja-folder-color.py:140
+msgid "Green"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:183
+#: ../caja-extensions/caja-folder-color.py:147
+msgid "White"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:184
+#: ../caja-extensions/caja-folder-color.py:141
+msgid "Grey"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:185
+#: ../caja-extensions/caja-folder-color.py:136
+msgid "Black"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:228
+msgid "Restores the color of the selected folders"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:230
+msgid "Restores the color of the selected folder"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:239
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr ""
+
+#: ../nemo-extensions/nemo-folder-color.py:241
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr ""
+
+#. Main menu [1 or +1 folder(s)]
+#: ../caja-extensions/caja-folder-color.py:129
+msgid "Change color"
+msgstr ""
+
 #. Restore
-#: ../nemo-extensions/nemo-folder-color.py:172
 #: ../caja-extensions/caja-folder-color.py:172
 msgid "Default"
 msgstr ""
