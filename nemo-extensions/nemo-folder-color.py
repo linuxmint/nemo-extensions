@@ -17,8 +17,12 @@
 # for more information.
 
 import os, urllib, gettext, locale
-from gi.repository import Nemo, GObject, Gio, GLib
+from gi.repository import Nemo, GObject, Gio, GLib, Gtk, Gdk, GdkPixbuf, cairo
 _ = gettext.gettext
+P_ = gettext.ngettext
+
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 KNOWN_COLORS = {'Mint-X': 'Green',
                 'Mint-X-Dark': 'Green',
@@ -31,8 +35,53 @@ KNOWN_COLORS = {'Mint-X': 'Green',
                 'oxygen': 'Blue'
                 }
 
+COLORS = [ 'Aqua',
+           'Beige',
+           'Black',
+           'Blue',
+           'Brown',
+           'Cyan',
+           'Green',
+           'Grey',
+           'Orange',
+           'Pink',
+           'Purple',
+           'Red',
+           'Teal',
+           'White',
+           'Yellow' ]
+
+css_colors = """
+.folder-color-button {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: transparent;
+}
+
+.folder-colors-restore {
+    background-color: transparent;
+}
+
+.folder-colors-restore:hover {
+    background-color: rgba(255,255,255,0);
+}
+"""
+
+for i in range(0, len(COLORS)):
+    css_colors += """
+.folder-colors-%s        { background-color: %s; }
+.folder-colors-%s:hover  { border-color:     %s; }
+""" % (COLORS[i].lower(), COLORS[i], COLORS[i].lower(), COLORS[i])
+
+provider = Gtk.CssProvider()
+provider.load_from_data(css_colors)
+screen = Gdk.Screen.get_default();
+Gtk.StyleContext.add_provider_for_screen (screen, provider, 600) # GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
+
 class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
-    def __init__(self):                
+    def __init__(self):
+        print "Initializing folder-color extension..."
         self.SEPARATOR = u'\u2015' * 4
         self.DEFAULT_FOLDERS = self.get_default_folders()   
         self.settings = Gio.Settings.new("org.cinnamon.desktop.interface")
@@ -44,8 +93,8 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
         self.theme =  self.settings.get_string("icon-theme")
         self.color = None
         self.base_theme = True
-        self.base_color = None      
-        for color in ['Aqua', 'Beige', 'Black', 'Blue', 'Brown', 'Cyan', 'Green', 'Grey', 'Orange', 'Pink', 'Purple', 'Red', 'Teal', 'White', 'Yellow']:
+        self.base_color = None
+        for color in COLORS:
             if self.theme.endswith("-%s" % color):
                 self.theme = self.theme[:-len("-%s" % color)]
                 self.color = color
@@ -108,6 +157,9 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
             # Touch the directory to make Nemo re-render its icons
             os.system("touch \"%s\"" % path)
     
+    def get_background_items(self, window, current_folder):
+        return
+
     # Nemo invoke this function in its startup > Then, create menu entry
     def get_file_items(self, window, items_selected):
         # No items selected
@@ -121,60 +173,118 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
             if not each_item.is_directory():
                 return
 
-        locale.setlocale(locale.LC_ALL, '')
-        gettext.bindtextdomain('folder-color')
-        gettext.textdomain('folder-color')
-        
-        # Main menu [1 or +1 folder(s)]        
-        top_menuitem = Nemo.MenuItem(name='ChangeFolderColorMenu::Top', label=_("Change color"), tip='', icon='')        
-        submenu = Nemo.Menu()
-        top_menuitem.set_submenu(submenu)
-        
-        # Colors submenu
-        self.COLORS = { 'Aqua':       _("Aqua"),
-                        'Beige':      _("Beige"),
-                        'Black':      _("Black"),
-                        'Blue':       _("Blue"),                        
-                        'Brown':      _("Brown"),
-                        'Cyan':       _("Cyan"),
-                        'Green':      _("Green"),
-                        'Grey':       _("Grey"),
-                        'Orange':     _("Orange"),
-                        'Pink':       _("Pink"),
-                        'Purple':     _("Purple"),
-                        'Red':        _("Red"),
-                        'Teal':       _("Teal"),
-                        'White':      _("White"),
-                        'Yellow':     _("Yellow")}
+        found_colors = False
+        to_generate = []
 
-        sorted_colors = sorted(self.COLORS.items(), key=lambda x:x[1])
-
-        found_colors = False        
-        for color in sorted_colors:
-            if not self.base_theme and self.base_color is not None and self.base_color == color[0]:
+        for color in COLORS:
+            if not self.base_theme and self.base_color is not None and self.base_color == color:
                 path = os.path.join("/usr/share/icons/%s/places/48/folder.svg" % self.theme)
             else:
-                path = os.path.join("/usr/share/icons/%s-%s/places/48/folder.svg" % (self.theme, color[0]))
-            if os.path.exists(path) and (self.color is None or color[0] != self.color):
+                path = os.path.join("/usr/share/icons/%s-%s/places/48/folder.svg" % (self.theme, color))
+            if os.path.exists(path) and (self.color is None or color != self.color):
                 found_colors = True
-                name = ''.join(['ChangeFolderColorMenu::"', color[0], '"'])
-                label = color[1]
-                item = Nemo.MenuItem(name=name, label=label, icon='folder-color-%s' % color[0].lower())
-                item.connect('activate', self.menu_activate_cb, color[0], items_selected)
-                submenu.append_item(item)            
-        
-        if (found_colors):        
-            # Separator
-            item_sep = Nemo.MenuItem(name='ChangeFolderColorMenu::Sep1', label=self.SEPARATOR, sensitive=False)
-            submenu.append_item(item_sep)
-            
-            # Restore
-            item_restore = Nemo.MenuItem(name='ChangeFolderColorMenu::Restore', label=_("Default"))
-            item_restore.connect('activate', self.menu_activate_cb, 'restore', items_selected)
-            submenu.append_item(item_restore)
-            
-            return top_menuitem,
+                to_generate.append((color, items_selected))
 
+        if (found_colors):
+            item = Nemo.MenuItem(name='ChangeFolderColorMenu::Top')
+            item.set_widget_a(self.generate_widget(to_generate))
+            item.set_widget_b(self.generate_widget(to_generate))
+            return Nemo.MenuItem.new_separator('ChangeFolderColorMenu::TopSep'),   \
+                   item,                                                           \
+                   Nemo.MenuItem.new_separator('ChangeFolderColorMenu::BotSep')
         else:
             return
-            
+
+    def generate_widget(self, to_generate):
+        widget = Gtk.Box.new(Gtk.Orientation.HORIZONTAL, 1)
+
+        button = FolderColorButton("restore")
+        button.connect('clicked', self.menu_activate_cb, 'restore', to_generate[0][1])
+        button.set_tooltip_text (P_("Restore the selected folder to its default color",
+                                    "Restore the selected folders to their default color",
+                                    len(to_generate[0][1])))
+        widget.pack_start(button, False, False, 1)
+
+        for i in range(0, len(to_generate)):
+            color, items_selected = to_generate[i]
+            button = FolderColorButton(color)
+            button.connect('clicked', self.menu_activate_cb, color, items_selected)
+            button.set_tooltip_markup (P_("Color the selected folder <i>%s</i>" % color.lower(),
+                                          "Color the selected folders <i>%s</i>" % color.lower(),
+                                          len(items_selected)))
+            widget.pack_start(button, False, False, 1)
+
+        widget.show_all()
+
+        return widget
+
+class FolderColorButton(Nemo.SimpleButton):
+    def __init__(self, color):
+        super(FolderColorButton, self).__init__()
+
+        c = self.get_style_context()
+
+        if color != "restore":
+            c.add_class("folder-color-button")
+        c.add_class("folder-colors-%s" % color.lower())
+
+        self.color = color
+
+        self.da = Gtk.DrawingArea.new()
+        self.da.set_size_request(12, 10)
+
+        self.set_image(self.da)
+        self.da.connect("draw", self.on_draw)
+
+    def on_draw(self, widget, cr):
+        if self.color == "restore":
+            return self.draw_restore(widget, cr)
+        else:
+            return self.draw_color(widget, cr)
+
+    def draw_restore(self, widget, cr):
+        width = widget.get_allocated_width ();
+        height = widget.get_allocated_height ();
+
+        grow = 0
+        line_width = 2.0
+
+        c = self.get_style_context()
+
+        if c.get_state() == Gtk.StateFlags.PRELIGHT:
+            grow = 1
+            line_width = 2.5
+
+        cr.save()
+
+        cr.set_source_rgb(0, 0, 0)
+        cr.set_line_width(line_width)
+        cr.set_line_cap(1)
+
+        cr.move_to(3 - grow, 2 - grow)
+        cr.line_to(width - 3 + grow, height - 2 + grow)
+        cr.move_to(3 - grow, height - 2 + grow)
+        cr.line_to(width - 3 + grow, 2 - grow)
+
+        cr.stroke()
+
+        cr.restore()
+
+        return False
+
+    def draw_color(self, widget, cr):
+        c = self.get_style_context()
+
+        width = widget.get_allocated_width ();
+        height = widget.get_allocated_height ();
+
+        cr.save()
+
+        cr.set_source_rgba(0,0,0,0)
+        cr.rectangle(0, 0, width, height)
+        cr.fill()
+
+        cr.restore()
+
+        return False
+
