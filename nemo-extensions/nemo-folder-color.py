@@ -36,6 +36,7 @@ KNOWN_COLORS = {'Mint-X': 'Green',
                 }
 
 COLORS = [ 
+            'Sand',
             'Beige',
             'Yellow',
             'Orange',
@@ -168,6 +169,7 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
         gettext.textdomain('folder-color')
 
         self.COLORS = collections.OrderedDict ([
+            ('Sand', _('Sand')),
             ('Beige', _('Beige')),
             ('Yellow', _('Yellow')),
             ('Orange', _('Orange')),

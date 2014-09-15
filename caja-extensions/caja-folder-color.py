@@ -45,7 +45,7 @@ class ChangeColorFolder(GObject.GObject, Caja.MenuProvider):
         self.color = None
         self.base_theme = True
         self.base_color = None      
-        for color in ['Aqua', 'Beige', 'Black', 'Blue', 'Brown', 'Cyan', 'Green', 'Grey', 'Orange', 'Pink', 'Purple', 'Red', 'Teal', 'White', 'Yellow']:
+        for color in ['Aqua', 'Beige', 'Sand', 'Black', 'Blue', 'Brown', 'Cyan', 'Green', 'Grey', 'Orange', 'Pink', 'Purple', 'Red', 'Teal', 'White', 'Yellow']:
             if self.theme.endswith("-%s" % color):
                 self.theme = self.theme[:-len("-%s" % color)]
                 self.color = color
@@ -133,6 +133,7 @@ class ChangeColorFolder(GObject.GObject, Caja.MenuProvider):
         # Colors submenu
         self.COLORS = { 'Aqua':       _("Aqua"),
                         'Beige':      _("Beige"),
+                        'Sand':       _("Sand"),
                         'Black':      _("Black"),
                         'Blue':       _("Blue"),                        
                         'Brown':      _("Brown"),
