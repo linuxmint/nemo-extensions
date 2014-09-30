@@ -1,3 +1,9 @@
+folder-color (0.0.2) rebecca; urgency=medium
+
+  * Multiple fixes
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 30 Sep 2014 12:55:38 +0200
+
 folder-color (0.0.1) qiana; urgency=high
 
   * Initial release
