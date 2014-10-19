@@ -25,8 +25,10 @@
  *
  */
 
-const Gdk = imports.gi.Gdk;
+const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
+const GObject = imports.gi.GObject;
+const Gdk = imports.gi.Gdk;
 
 screen = Gdk.Screen.get_default()
 mon = screen.get_primary_monitor()
@@ -36,8 +38,6 @@ s = screen.get_monitor_scale_factor(mon)
 // our next clutter version
 GLib.setenv("CLUTTER_SCALE", Math.max(s, 1).toString(), true);
 
-const Gio = imports.gi.Gio;
-const GObject = imports.gi.GObject;
 const GdkX11 = imports.gi.GdkX11;
 const GdkPixbuf = imports.gi.GdkPixbuf;
 const Gtk = imports.gi.Gtk;
