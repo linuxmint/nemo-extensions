@@ -328,6 +328,7 @@ MainWindow.prototype = {
                             this._pendingRenderer.prepare(file, this, Lang.bind(this, this._onRendererPrepared));
                         } catch(e) {
                             /* FIXME: report the error */
+                            logError(e, 'Error calling prepare() on viewer');
                         }}));
     },
 
@@ -683,7 +684,8 @@ MainWindow.prototype = {
     setParent : function(xid) {
         this._parent = NemoPreview.create_foreign_window(xid);
         this._gtkWindow.realize();
-        this._gtkWindow.get_window().set_transient_for(this._parent);
+        if (this._parent)
+            this._gtkWindow.get_window().set_transient_for(this._parent);
         this._gtkWindow.show_all();
 
         this._gtkWindow.get_window().move_to_current_desktop();

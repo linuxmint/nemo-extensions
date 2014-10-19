@@ -27,7 +27,7 @@
 
 const FallbackRenderer = imports.ui.fallbackRenderer;
 
-let Gio = imports.gi.Gio;
+const Gio = imports.gi.Gio;
 
 let _mimeHandler = null;
 

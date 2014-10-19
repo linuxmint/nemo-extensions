@@ -41,15 +41,17 @@ const MainWindow = imports.ui.mainWindow;
 const NEMO_PREVIEW_DBUS_PATH = '/org/nemo/Preview';
 const NEMO_PREVIEW_DBUS_NAME = 'org.nemo.Preview';
 
-const NemoPreviewIface = <interface name={NEMO_PREVIEW_DBUS_NAME}>
-<method name="ShowFile">
-    <arg type="s" direction="in" name="uri" />
-    <arg type="i" direction="in" name="xid" />
-    <arg type="b" direction="in" name="closeIfAlreadyShown" />
-</method>
-<method name="Close">
-</method>
-</interface>;
+const NemoPreviewIface = '<node> \
+<interface name="org.nemo.Preview"> \
+<method name="ShowFile"> \
+    <arg type="s" direction="in" name="uri" /> \
+    <arg type="i" direction="in" name="xid" /> \
+    <arg type="b" direction="in" name="closeIfAlreadyShown" /> \
+</method> \
+<method name="Close"> \
+</method> \
+</interface> \
+</node>';
 
 const Application = new Lang.Class({
     Name: 'Application',

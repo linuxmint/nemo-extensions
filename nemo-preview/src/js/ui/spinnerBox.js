@@ -25,11 +25,14 @@
  *
  */
 
-let Clutter = imports.gi.Clutter;
-let Gtk = imports.gi.Gtk;
+const Gettext = imports.gettext.domain('nemo-preview');
+const _ = Gettext.gettext;
+const Gtk = imports.gi.Gtk;
+const GtkClutter = imports.gi.GtkClutter;
 
-let Tweener = imports.ui.tweener;
-let Mainloop = imports.mainloop;
+const Tweener = imports.ui.tweener;
+const Lang = imports.lang;
+const Mainloop = imports.mainloop;
 
 let SPINNER_SIZE = 48;
 let TIMEOUT = 500;

@@ -25,12 +25,15 @@
  *
  */
 
-let MimeHandler = imports.ui.mimeHandler;
-let GtkClutter = imports.gi.GtkClutter;
-let Gtk = imports.gi.Gtk;
-let GLib = imports.gi.GLib;
+const MimeHandler = imports.ui.mimeHandler;
+const Utils = imports.ui.utils;
 
-let NemoPreview = imports.gi.NemoPreview;
+const Lang = imports.lang;
+
+const GtkClutter = imports.gi.GtkClutter;
+const Gtk = imports.gi.Gtk;
+const GLib = imports.gi.GLib;
+const NemoPreview = imports.gi.NemoPreview;
 
 function FontRenderer(args) {
     this._init(args);

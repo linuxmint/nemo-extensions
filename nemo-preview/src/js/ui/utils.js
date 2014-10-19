@@ -25,7 +25,12 @@
  *
  */
 
-let Constants = imports.util.constants;
+const Gdk = imports.gi.Gdk;
+const Gtk = imports.gi.Gtk;
+
+const Lang = imports.lang;
+
+const Constants = imports.util.constants;
 
 let slowDownFactor = 0;
 
