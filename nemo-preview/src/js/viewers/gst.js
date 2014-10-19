@@ -26,18 +26,19 @@
  */
 
 imports.gi.versions.ClutterGst = '2.0';
-let ClutterGst = imports.gi.ClutterGst;
+const ClutterGst = imports.gi.ClutterGst;
+const Clutter = imports.gi.Clutter;
+const Gdk = imports.gi.Gdk;
+const GObject = imports.gi.GObject;
+const Gtk = imports.gi.Gtk;
+const GtkClutter = imports.gi.GtkClutter;
 
-let MimeHandler = imports.ui.mimeHandler;
-let Clutter = imports.gi.Clutter;
-let Gdk = imports.gi.Gdk;
-let GObject = imports.gi.GObject;
+const Lang = imports.lang;
 
-let Lang = imports.lang;
-
-let Utils = imports.ui.utils;
-let Constants = imports.util.constants;
-let TotemMimeTypes = imports.util.totemMimeTypes;
+const Constants = imports.util.constants;
+const MimeHandler = imports.ui.mimeHandler;
+const TotemMimeTypes = imports.util.totemMimeTypes;
+const Utils = imports.ui.utils;
 
 function GstRenderer(args) {
     this._init(args);

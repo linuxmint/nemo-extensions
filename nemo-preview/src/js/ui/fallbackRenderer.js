@@ -25,14 +25,17 @@
  *
  */
 
-let Gtk = imports.gi.Gtk;
-let NemoPreview = imports.gi.NemoPreview;
+const Gio = imports.gi.Gio;
+const Gtk = imports.gi.Gtk;
+const GtkClutter = imports.gi.GtkClutter;
+const NemoPreview = imports.gi.NemoPreview;
 
-let Gettext = imports.gettext.domain('nemo-preview');
-let _ = Gettext.gettext;
+const Gettext = imports.gettext.domain('nemo-preview');
+const _ = Gettext.gettext;
+const Lang = imports.lang;
 
-let Constants = imports.util.constants;
-let Utils = imports.ui.utils;
+const Constants = imports.util.constants;
+const Utils = imports.ui.utils;
 
 function FallbackRenderer(args) {
     this._init(args);

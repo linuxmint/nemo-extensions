@@ -25,8 +25,10 @@
  *
  */
 
-const Gdk = imports.gi.Gdk;
+const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
+const GObject = imports.gi.GObject;
+const Gdk = imports.gi.Gdk;
 
 screen = Gdk.Screen.get_default()
 mon = screen.get_primary_monitor()
@@ -36,8 +38,6 @@ s = screen.get_monitor_scale_factor(mon)
 // our next clutter version
 GLib.setenv("CLUTTER_SCALE", Math.max(s, 1).toString(), true);
 
-const Gio = imports.gi.Gio;
-const GObject = imports.gi.GObject;
 const GdkX11 = imports.gi.GdkX11;
 const GdkPixbuf = imports.gi.GdkPixbuf;
 const Gtk = imports.gi.Gtk;
@@ -328,6 +328,7 @@ MainWindow.prototype = {
                             this._pendingRenderer.prepare(file, this, Lang.bind(this, this._onRendererPrepared));
                         } catch(e) {
                             /* FIXME: report the error */
+                            logError(e, 'Error calling prepare() on viewer');
                         }}));
     },
 
@@ -683,7 +684,8 @@ MainWindow.prototype = {
     setParent : function(xid) {
         this._parent = NemoPreview.create_foreign_window(xid);
         this._gtkWindow.realize();
-        this._gtkWindow.get_window().set_transient_for(this._parent);
+        if (this._parent)
+            this._gtkWindow.get_window().set_transient_for(this._parent);
         this._gtkWindow.show_all();
 
         this._gtkWindow.get_window().move_to_current_desktop();

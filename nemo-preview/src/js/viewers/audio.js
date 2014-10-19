@@ -25,17 +25,20 @@
  *
  */
 
-let MimeHandler = imports.ui.mimeHandler;
-let Gst = imports.gi.Gst;
-let Gio = imports.gi.Gio;
+const Gio = imports.gi.Gio;
+const Gst = imports.gi.Gst;
+const Gtk = imports.gi.Gtk;
+const GtkClutter = imports.gi.GtkClutter;
+const NemoPreview = imports.gi.NemoPreview;
 
-let Gettext = imports.gettext.domain('nemo-preview');
-let _ = Gettext.gettext;
+const Gettext = imports.gettext.domain('nemo-preview');
+const _ = Gettext.gettext;
+const Lang = imports.lang;
 
-let Constants = imports.util.constants;
-let TotemMimeTypes = imports.util.totemMimeTypes;
-
-let Utils = imports.ui.utils;
+const Constants = imports.util.constants;
+const MimeHandler = imports.ui.mimeHandler;
+const TotemMimeTypes = imports.util.totemMimeTypes;
+const Utils = imports.ui.utils;
 
 function AudioRenderer(args) {
     this._init(args);
