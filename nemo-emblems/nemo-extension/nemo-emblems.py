@@ -47,7 +47,7 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
     def __init__(self):
         self.default_icon_theme = Gtk.IconTheme.get_default()
         self.display_names = {}
-        icon_names = self.default_icon_theme.list_icons()
+        icon_names = self.default_icon_theme.list_icons(None)
         for icon_name in icon_names:
             if not icon_name in HIDE_EMBLEMS and icon_name.startswith('emblem-') and not icon_name.endswith('-symbolic'):
                 # icon_name is emblem
