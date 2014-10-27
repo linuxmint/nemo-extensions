@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-# Folder Color 0.0.11 - http://launchpad.net/folder-color
+# Folder Color 0.0.11 - http://launchpad.net/folder-color-switcher
 # Copyright (C) 2012-2014 Marcos Alvarez Costales https://launchpad.net/~costales
 #
-# folder-color is free software; you can redistribute it and/or modify
+# folder-color-switcher is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
@@ -25,17 +25,17 @@ import DistUtilsExtra.auto
 
 # Create data files
 data = [ 	
-	('/usr/share/nemo-python/extensions', ['nemo-extensions/nemo-folder-color.py']),
-	('/usr/share/caja-python/extensions', ['caja-extensions/caja-folder-color.py']) ]
+	('/usr/share/nemo-python/extensions', ['nemo-extensions/nemo-folder-color-switcher.py']),
+	('/usr/share/caja-python/extensions', ['caja-extensions/caja-folder-color-switcher.py']) ]
 
 # Setup stage
 DistUtilsExtra.auto.setup(
-    name         = "folder-color",
+    name         = "folder-color-switcher",
     version      = "0.0.1",
     description  = "Change the color of your folders",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",
-    url          = "https://github.com/linuxmint/folder-color",
+    url          = "https://github.com/linuxmint/folder-color-switcher",
     license      = "GPL3",
     data_files   = data
     )

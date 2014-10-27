@@ -122,8 +122,8 @@ class ChangeColorFolder(GObject.GObject, Caja.MenuProvider):
                 return
 
         locale.setlocale(locale.LC_ALL, '')
-        gettext.bindtextdomain('folder-color')
-        gettext.textdomain('folder-color')
+        gettext.bindtextdomain('folder-color-switcher')
+        gettext.textdomain('folder-color-switcher')
         
         # Main menu [1 or +1 folder(s)]        
         top_menuitem = Caja.MenuItem(name='ChangeFolderColorMenu::Top', label=_("Change color"), tip='', icon='')        
@@ -160,7 +160,7 @@ class ChangeColorFolder(GObject.GObject, Caja.MenuProvider):
                 found_colors = True
                 name = ''.join(['ChangeFolderColorMenu::"', color[0], '"'])
                 label = color[1]
-                item = Caja.MenuItem(name=name, label=label, icon='folder-color-%s' % color[0].lower())
+                item = Caja.MenuItem(name=name, label=label, icon='folder-color-switcher-%s' % color[0].lower())
                 item.connect('activate', self.menu_activate_cb, color[0], items_selected)
                 submenu.append_item(item)            
         

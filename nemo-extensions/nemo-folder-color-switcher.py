@@ -55,22 +55,22 @@ COLORS = [
            ]
 
 css_colors = """
-.folder-color-button {
+.folder-color-switcher-button {
     border-style: solid;
     border-width: 1px;
     border-radius: 1px;
     border-color: transparent;
 }
 
-.folder-color-button:hover {    
+.folder-color-switcher-button:hover {    
     border-color: #9c9c9c;
 }
 
-.folder-colors-restore {
+.folder-color-switcher-restore {
     background-color: transparent;
 }
 
-.folder-colors-restore:hover {
+.folder-color-switcher-restore:hover {
     background-color: rgba(255,255,255,0);
 }
 """
@@ -82,7 +82,7 @@ Gtk.StyleContext.add_provider_for_screen (screen, provider, 600) # GTK_STYLE_PRO
 
 class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
     def __init__(self):
-        print "Initializing folder-color extension..."
+        print "Initializing folder-color-switcher extension..."
         self.SEPARATOR = u'\u2015' * 4
         self.DEFAULT_FOLDERS = self.get_default_folders()   
         self.settings = Gio.Settings.new("org.cinnamon.desktop.interface")
@@ -165,8 +165,8 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
     def get_file_items(self, window, items_selected):
 
         locale.setlocale(locale.LC_ALL, '')
-        gettext.bindtextdomain('folder-color')
-        gettext.textdomain('folder-color')
+        gettext.bindtextdomain('folder-color-switcher')
+        gettext.textdomain('folder-color-switcher')
 
         self.COLORS = collections.OrderedDict ([
             ('Sand', _('Sand')),
@@ -255,15 +255,15 @@ class FolderColorButton(Nemo.SimpleButton):
         c = self.get_style_context()
 
         if color == "restore":
-            c.add_class("folder-colors-restore")
+            c.add_class("folder-color-switcher-restore")
             self.da = Gtk.DrawingArea.new()
             self.da.set_size_request(12, 10)
             self.set_image(self.da)
             self.da.connect("draw", self.on_draw)
         else:
-            c.add_class("folder-color-button")
+            c.add_class("folder-color-switcher-button")
             image = Gtk.Image()
-            image.set_from_file("/usr/share/icons/hicolor/22x22/apps/folder-color-%s.png" % color.lower())   
+            image.set_from_file("/usr/share/icons/hicolor/22x22/apps/folder-color-switcher-%s.png" % color.lower())   
             self.set_image(image)               
 
     def on_draw(self, widget, cr):        

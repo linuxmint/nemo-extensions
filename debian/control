@@ -1,10 +1,10 @@
-Source: folder-color
+Source: folder-color-switcher
 Section: gnome
 Priority: extra
 Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends: python-distutils-extra, debhelper (>=7)
 
-Package: nemo-folder-color
+Package: nemo-folder-color-switcher
 Architecture: all
 Section: utils
 Priority: extra
@@ -12,7 +12,7 @@ Depends: python-nemo, nemo, ${python:Depends}
 Description: Change a folder color
  Change folder colors in Nemo
 
-Package: caja-folder-color
+Package: caja-folder-color-switcher
 Architecture: all
 Section: utils
 Priority: extra
@@ -20,7 +20,7 @@ Depends: python-caja, caja, ${python:Depends}
 Description: Change a folder color
  Change folder colors in Caja
 
-Package: folder-color
+Package: folder-color-switcher
 Architecture: all
 Section: utils
 Priority: extra
