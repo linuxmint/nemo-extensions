@@ -1,4 +1,4 @@
-# French translation for linuxmint
+# German translation for linuxmint
 # Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-09-15 21:45+0200\n"
-"PO-Revision-Date: 2014-09-19 08:27+0000\n"
-"Last-Translator: Dupo <Unknown>\n"
-"Language-Team: French <fr@li.org>\n"
+"PO-Revision-Date: 2014-09-17 14:10+0000\n"
+"Last-Translator: Tobias Bannert <Unknown>\n"
+"Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: ../nemo-extensions/nemo-folder-color.py:172
 #: ../caja-extensions/caja-folder-color.py:136
 msgid "Sand"
-msgstr "Beige clair"
+msgstr "Sand"
 
 #: ../nemo-extensions/nemo-folder-color.py:173
 #: ../caja-extensions/caja-folder-color.py:135
@@ -30,7 +30,7 @@ msgstr "Beige"
 #: ../nemo-extensions/nemo-folder-color.py:174
 #: ../caja-extensions/caja-folder-color.py:149
 msgid "Yellow"
-msgstr "Jaune"
+msgstr "Gelb"
 
 #: ../nemo-extensions/nemo-folder-color.py:175
 #: ../caja-extensions/caja-folder-color.py:143
@@ -40,27 +40,27 @@ msgstr "Orange"
 #: ../nemo-extensions/nemo-folder-color.py:176
 #: ../caja-extensions/caja-folder-color.py:139
 msgid "Brown"
-msgstr "Marron"
+msgstr "Braun"
 
 #: ../nemo-extensions/nemo-folder-color.py:177
 #: ../caja-extensions/caja-folder-color.py:146
 msgid "Red"
-msgstr "Rouge"
+msgstr "Rot"
 
 #: ../nemo-extensions/nemo-folder-color.py:178
 #: ../caja-extensions/caja-folder-color.py:145
 msgid "Purple"
-msgstr "Violet"
+msgstr "Purpur"
 
 #: ../nemo-extensions/nemo-folder-color.py:179
 #: ../caja-extensions/caja-folder-color.py:144
 msgid "Pink"
-msgstr "Rose"
+msgstr "Rosa"
 
 #: ../nemo-extensions/nemo-folder-color.py:180
 #: ../caja-extensions/caja-folder-color.py:138
 msgid "Blue"
-msgstr "Bleu"
+msgstr "Blau"
 
 #: ../nemo-extensions/nemo-folder-color.py:181
 #: ../caja-extensions/caja-folder-color.py:140
@@ -71,57 +71,57 @@ msgstr "Cyan"
 #: ../nemo-extensions/nemo-folder-color.py:182
 #: ../caja-extensions/caja-folder-color.py:134
 msgid "Aqua"
-msgstr "Aqua"
+msgstr "Grünblau"
 
 #: ../nemo-extensions/nemo-folder-color.py:183
 #: ../caja-extensions/caja-folder-color.py:147
 msgid "Teal"
-msgstr "Turquoise"
+msgstr "Blaugrün"
 
 #: ../nemo-extensions/nemo-folder-color.py:184
 #: ../caja-extensions/caja-folder-color.py:141
 msgid "Green"
-msgstr "Vert"
+msgstr "Grün"
 
 #: ../nemo-extensions/nemo-folder-color.py:185
 #: ../caja-extensions/caja-folder-color.py:148
 msgid "White"
-msgstr "Blanc"
+msgstr "Weiß"
 
 #: ../nemo-extensions/nemo-folder-color.py:186
 #: ../caja-extensions/caja-folder-color.py:142
 msgid "Grey"
-msgstr "Gris"
+msgstr "Grau"
 
 #: ../nemo-extensions/nemo-folder-color.py:187
 #: ../caja-extensions/caja-folder-color.py:137
 msgid "Black"
-msgstr "Noir"
+msgstr "Schwarz"
 
 #: ../nemo-extensions/nemo-folder-color.py:230
 msgid "Restores the color of the selected folders"
-msgstr "Restaure la couleur des dossiers sélectionnés"
+msgstr "Stellt die Farbe der ausgewählten Ordner wieder hier"
 
 #: ../nemo-extensions/nemo-folder-color.py:232
 msgid "Restores the color of the selected folder"
-msgstr "Restaure la couleur du dossier sélectionné"
+msgstr "Stellt die Farbe des ausgewählten Ordners wieder hier"
 
 #: ../nemo-extensions/nemo-folder-color.py:241
 #, python-format
 msgid "Changes the color of the selected folders to %s"
-msgstr "Modifie la couleur des dossiers sélectionnés en %s"
+msgstr "Die Farbe der ausgewählten Ordner zu %s ändern"
 
 #: ../nemo-extensions/nemo-folder-color.py:243
 #, python-format
 msgid "Changes the color of the selected folder to %s"
-msgstr "Modifie la couleur du dossier sélectionné en %s"
+msgstr "Die Farbe des ausgewählten Ordners zu %s ändern"
 
 #. Main menu [1 or +1 folder(s)]
 #: ../caja-extensions/caja-folder-color.py:129
 msgid "Change color"
-msgstr "Changer la couleur"
+msgstr "Farbe ändern"
 
 #. Restore
 #: ../caja-extensions/caja-folder-color.py:173
 msgid "Default"
-msgstr "Par défaut"
+msgstr "Vorgabe"
