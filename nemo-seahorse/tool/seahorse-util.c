@@ -120,6 +120,7 @@ seahorse_util_handle_error (GError* err, const char* desc, ...)
     /* Never show an error for 'cancelled' */
     if (err->code == DBUS_GERROR_REMOTE_EXCEPTION && err->domain == DBUS_GERROR &&
         strstr (dbus_g_error_get_name (err), "Cancelled"))
+        g_free(t);
 	    return;
 
     seahorse_util_show_error (NULL, t, err->message ? err->message : "");
@@ -199,6 +200,8 @@ seahorse_util_get_display_date_string (const time_t time)
 	g_date_set_time_t (created_date, time);
 	created_string = g_new (gchar, 11);
 	g_date_strftime (created_string, 11, _("%Y-%m-%d"), created_date);
+	g_date_free (created_date);
+
 	return created_string;
 }
 

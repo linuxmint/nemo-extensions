@@ -169,7 +169,7 @@ load_openoffice (NemoPreviewPdfLoader *self)
   GPid pid;
   gchar **argv = NULL;
   GError *error = NULL;
-  const gchar *unoconv_path;
+  gchar *unoconv_path;
 
   unoconv_path = g_find_program_in_path ("unoconv");
   if (unoconv_path == NULL) {
@@ -203,6 +203,7 @@ load_openoffice (NemoPreviewPdfLoader *self)
     g_warning ("Error while parsing the unoconv command line: %s",
                error->message);
     g_error_free (error);
+    g_free (unoconv_path);
 
     return;
   }
@@ -219,12 +220,15 @@ load_openoffice (NemoPreviewPdfLoader *self)
     g_warning ("Error while spawning unoconv: %s",
                error->message);
     g_error_free (error);
+    g_free (unoconv_path);
 
     return;
   }
 
   g_child_watch_add (pid, unoconv_child_watch_cb, self);
   self->priv->unoconv_pid = pid;
+
+  g_free (unoconv_path);
 }
 
 static gboolean

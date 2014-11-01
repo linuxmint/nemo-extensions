@@ -701,6 +701,7 @@ main (int argc, char **argv)
 
     if(!uris || !uris[0]) {
         fprintf (stderr, "seahorse-tool: must specify files\n");
+        g_option_context_free (octx);
         return 2;
     }
 
@@ -745,6 +746,7 @@ main (int argc, char **argv)
 
     } else {
         fprintf (stderr, "seahorse-tool: must specify an operation");
+        g_option_context_free (octx);
         return 2;
     }
 
@@ -771,6 +773,7 @@ main (int argc, char **argv)
         gpgme_key_unref (mode.signer);
 
     g_strfreev (uris);
+    g_option_context_free (octx);
 
     return ret;
 }
