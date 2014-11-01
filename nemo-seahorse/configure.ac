@@ -1,5 +1,5 @@
 AC_PREREQ([2.63])
-AC_INIT([nemo-seahorse], [2.2.0],
+AC_INIT([nemo-seahorse], [2.4.0],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=seahorse-plugins&component=Nemo],
         [nemo-seahorse])
 
