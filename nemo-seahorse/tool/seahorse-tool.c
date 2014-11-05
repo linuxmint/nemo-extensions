@@ -155,7 +155,7 @@ prompt_recipients (gpgme_key_t *signkey)
     CryptUIKeyset *keyset;
     gpgme_ctx_t ctx;
     gpgme_key_t key;
-    GArray *keys;
+    GArray *keys = NULL;
     gchar **recips;
     gchar *signer;
 
