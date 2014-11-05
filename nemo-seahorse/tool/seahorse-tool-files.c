@@ -254,17 +254,18 @@ step_check_uris (FilesCtx *ctx,
     g_free (t);
 
     for (k = uris; *k; k++) {
-
         if (!seahorse_tool_progress_check ()) {
             ret = FALSE;
             break;
         }
 
-	t = g_uri_parse_scheme (*k);
-	if (t)
-		file = g_file_new_for_uri (*k);
-	else
+        t = g_uri_parse_scheme (*k);
+        if (t)
+            file = g_file_new_for_uri (*k);
+        else
 	        file = g_file_resolve_relative_path (base, *k);
+        g_free (t);
+
         g_return_val_if_fail (file != NULL, FALSE);
 
         /* Find out if file can be accessed locally? */
@@ -277,9 +278,9 @@ step_check_uris (FilesCtx *ctx,
                                   G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL, err);
 
         if (!info) {
-        	ret = FALSE;
-                g_object_unref (file);
-        	break;
+            ret = FALSE;
+            g_object_unref (file);
+            break;
         }
 
         type = g_file_info_get_file_type (info);
