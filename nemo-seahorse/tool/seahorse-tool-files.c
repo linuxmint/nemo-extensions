@@ -634,7 +634,7 @@ visit_enumerator (FilesCtx *ctx, GFile *parent, GFileEnumerator *enumerator, GEr
     gboolean ret = TRUE;
     GFileInfo *info;
     FileInfo *finfo;
-    GFile *file;
+    GFile *file = NULL;
 
     for (;;) {
 	if (!seahorse_tool_progress_check ()) {
