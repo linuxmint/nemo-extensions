@@ -1,3 +1,9 @@
+folder-color-switcher (1.0.2) rebecca; urgency=medium
+
+  * caja and nemo extension depend on folder-color-switcher
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 12 Nov 2014 01:20:46 +0100
+
 folder-color-switcher (1.0.1) rebecca; urgency=medium
 
   * Updated translations
