@@ -85,7 +85,7 @@ AC_DEFUN([AC_MULTILIB],
   dnl pathname ends in /lib64, we assume a 64-bit ABI. Otherwise we use the
   dnl default, namely "lib".
   enable_lib64="$1"
-  libdirsuffix=""
+  libdirsuffix="/i386-linux-gnu/"
   searchpath=`(LC_ALL=C $CC -print-search-dirs) 2>/dev/null | sed -n -e 's,^libraries: ,,p' | sed -e 's,^=,,'`
   if test "$enable_lib64" = "yes" -a -n "$searchpath"; then
     save_IFS="${IFS=    }"; IFS=":"

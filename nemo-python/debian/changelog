@@ -1,3 +1,9 @@
+nemo-python (2.4.1) rebecca; urgency=medium
+
+  * Fix libdirsuffix for i386
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 12 Nov 2014 01:16:32 +0100
+
 nemo-python (2.4.0) rebecca; urgency=medium
 
   * 2.4.0
