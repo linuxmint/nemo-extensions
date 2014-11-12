@@ -1,3 +1,9 @@
+folder-color-switcher (1.0.3) rebecca; urgency=medium
+
+  * Added dependencies on gir packages for nemo and caja
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 12 Nov 2014 10:22:27 +0100
+
 folder-color-switcher (1.0.2) rebecca; urgency=medium
 
   * caja and nemo extension depend on folder-color-switcher
