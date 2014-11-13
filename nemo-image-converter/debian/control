@@ -7,12 +7,12 @@ Vcs-Svn: svn://svn.debian.org/svn/collab-maint/deb-maint/nemo-image-converter/tr
 Vcs-Browser: http://svn.debian.org/wsvn/collab-maint/deb-maint/nemo-image-converter/trunk/
 Build-Depends: 	debhelper (>= 7.0.50~), 
 		autotools-dev, 
-                intltool,
+		intltool,
 		libxml-parser-perl, 
 		pkg-config, 
 		libnemo-extension-dev (>= 2.0.8),
  		libgtk-3-dev (>= 3.0.0), 
-		libglib2.0-dev (>= 2.28.0)
+		libglib2.0-dev (>= 2.37.3)
 Standards-Version: 3.9.2
 
 Package: nemo-image-converter
