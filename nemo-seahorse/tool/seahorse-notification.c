@@ -633,8 +633,13 @@ seahorse_notify_signatures (const gchar* data, gpgme_verify_result_t status)
         break;
     case GPG_ERR_NO_ERROR:
 	/* TRANSLATORS: <key id='xxx'> is a custom markup tag, do not translate. */
-        body = _("Signed by <i><key id='%s'/></i> on %s.");
-        title = _("Good Signature");
+        if (status->signatures->validity >= GPGME_VALIDITY_FULL) {
+            title = _("Good Signature");
+            body = _("Signed by <i><key id='%s'/></i> on %s.");
+        } else {
+            title = _("Untrusted Valid Signature");
+            body = _("Valid but <b>untrusted</b> signature by <i><key id='%s'/></i> on %s.");
+        }
         icon = ICON_PREFIX "seahorse-sign-ok.png";
         sig = TRUE;
         break;
