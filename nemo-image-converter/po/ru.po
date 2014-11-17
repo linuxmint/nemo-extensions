@@ -71,7 +71,7 @@ msgstr "Высота:"
 
 #: ../src/nemo-image-resize.glade.h:7
 msgid "Resize Images"
-msgstr "Мас_штабировать изображения"
+msgstr "Масштабировать изображения"
 
 #: ../src/nemo-image-resize.glade.h:8
 msgid "Resize in place"
