@@ -45,4 +45,6 @@ void            seahorse_notification_display       (const gchar *summary,
 
 gboolean        seahorse_notification_have          (void);
 
+void            seahorse_notification_cleanup       (void);
+
 #endif /* __SEAHORSE_LIBDIALOGS_H__ */

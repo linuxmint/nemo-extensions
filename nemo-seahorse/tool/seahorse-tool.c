@@ -772,6 +772,8 @@ main (int argc, char **argv)
     if (mode.signer)
         gpgme_key_unref (mode.signer);
 
+    seahorse_notification_cleanup ();
+
     g_strfreev (uris);
     g_option_context_free (octx);
 

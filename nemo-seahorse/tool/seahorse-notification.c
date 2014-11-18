@@ -411,14 +411,6 @@ keys_start_element (GMarkupParseContext *ctx, const gchar *element_name,
 
 }
 
-static void
-free_keyset (void)
-{
-    if (keyset)
-        g_object_unref (keyset);
-    keyset = NULL;
-}
-
 /* -----------------------------------------------------------------------------
  * OBJECT
  */
@@ -429,7 +421,6 @@ seahorse_notification_init (SeahorseNotification *snotif)
     if (!keyset) {
         keyset = cryptui_keyset_new ("openpgp", TRUE);
         g_return_if_fail (keyset);
-        g_atexit (free_keyset);
     }
 
     g_signal_connect (keyset, "changed", G_CALLBACK (key_changed), snotif);
@@ -692,3 +683,12 @@ seahorse_notify_signatures (const gchar* data, gpgme_verify_result_t status)
     g_free (title);
     g_free (body);
 }
+
+void
+seahorse_notification_cleanup (void)
+{
+	if (keyset)
+		g_object_unref (keyset);
+	keyset = NULL;
+}
+
