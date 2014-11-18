@@ -1,8 +1,7 @@
 libautilus-extension Python bindings
 ====================================
 
-These are unstable bindings for the nemo extension library
-introduced in Gnome 2.6.
+These are unstable bindings for the Nemo extension library.
 
 For examples and documentation check the examples sub directory.
 
@@ -15,7 +14,7 @@ Try to copy test.py to that directory for an example
 Requirements
 ============
 
-Nemo  2.32.0
+Nemo      1.0.3
 Python    2.3
 PyGObject 2.28.0
 
