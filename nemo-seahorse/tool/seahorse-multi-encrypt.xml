@@ -55,7 +55,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkComboBox" id="package-extension">
+                      <object class="GtkComboBoxText" id="package-extension">
                         <property name="visible">True</property>
                       </object>
                       <packing>

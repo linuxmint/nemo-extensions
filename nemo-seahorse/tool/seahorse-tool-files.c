@@ -433,11 +433,7 @@ prepare_dialog (FilesCtx *ctx, guint nfolders, guint nfiles, GFileInfo *info, gc
         save_type_list = save_type;
 
         for (i = 0; save_type_list[i] != FR_FILE_TYPE_NULL; i++) {
-#if GTK_CHECK_VERSION(2,23,0)
 		gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (combo),
-#else
-		gtk_combo_box_append_text (GTK_COMBO_BOX (combo),
-#endif
 		                                file_type_desc[save_type_list[i]].ext);
 		    if (strcmp(ext, file_type_desc[save_type_list[i]].ext) == 0)
 		        gtk_combo_box_set_active (GTK_COMBO_BOX (combo), i);
@@ -478,11 +474,7 @@ get_results (SeahorseWidget *swidget)
         name = gtk_entry_get_text (GTK_ENTRY (w));
 
         w = GTK_WIDGET (seahorse_widget_get_widget (swidget, "package-extension"));
-#if GTK_CHECK_VERSION(2,23,0)
         ext = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (w));
-#else
-        ext = gtk_combo_box_get_active_text (GTK_COMBO_BOX (w));
-#endif
 
         /* No paths */
         t = strrchr(name, '/');
