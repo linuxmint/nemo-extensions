@@ -294,7 +294,7 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 		return NULL;
 
 	if (unsupported_scheme ((NemoFileInfo *) files->data))
-			return NULL;
+		return NULL;
 
 	for (scan = files; scan; scan = scan->next) {
 		NemoFileInfo *file = scan->data;
