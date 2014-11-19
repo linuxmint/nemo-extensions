@@ -8,7 +8,8 @@ INCLUDES = -I$(top_builddir) \
 	-DLOCALEDIR=\"$(localedir)\" \
 	-DDATA_DIR=\""$(datadir)"\" \
 	-DSEAHORSE_UIDIR=\""$(uidir)"\" \
-	-DLIBCRYPTUI_API_SUBJECT_TO_CHANGE
+	-DLIBCRYPTUI_API_SUBJECT_TO_CHANGE \
+	-DGCR_API_SUBJECT_TO_CHANGE
 
 bin_PROGRAMS = seahorse-tool
 
@@ -22,8 +23,6 @@ seahorse_tool_SOURCES = \
 	seahorse-passphrase.c seahorse-passphrase.h \
 	seahorse-pgp-operation.c seahorse-pgp-operation.h \
 	seahorse-progress.c seahorse-progress.h \
-	seahorse-secure-buffer.c seahorse-secure-buffer.h \
-	seahorse-secure-memory.c seahorse-secure-memory.h \
 	seahorse-tool.c seahorse-tool.h \
 	seahorse-tool-files.c \
 	seahorse-tool-progress.c \

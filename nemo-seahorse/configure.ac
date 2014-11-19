@@ -178,6 +178,13 @@ SEAHORSE_CFLAGS="$SEAHORSE_CFLAGS $LIBCRYPTUI_CFLAGS"
 SEAHORSE_LIBS="$SEAHORSE_LIBS $LIBCRYPTUI_LIBS"
 
 # -----------------------------------------------------------------------------
+# Gcr
+
+PKG_CHECK_MODULES(GCR, gcr-3 >= 3.4.0)
+SEAHORSE_CFLAGS="$SEAHORSE_CFLAGS $GCR_CFLAGS"
+SEAHORSE_LIBS="$SEAHORSE_LIBS $GCR_LIBS"
+
+# -----------------------------------------------------------------------------
 # Libnotify
 
 LIBNOTIFY_REQUIRED=0.3

@@ -33,7 +33,6 @@
 #include "cryptui.h"
 #include "cryptui-key-store.h"
 
-#include "seahorse-secure-memory.h"
 #include "seahorse-tool.h"
 #include "seahorse-util.h"
 #include "seahorse-vfs-data.h"
@@ -676,8 +675,6 @@ main (int argc, char **argv)
     SeahorseToolMode mode;
     gchar **uris = NULL;
     int ret = 0;
-
-    seahorse_secure_memory_init ();
 
 #ifdef ENABLE_NLS
     bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);

@@ -18,7 +18,8 @@ Build-Depends: debhelper (>= 8),
                libglib2.0-dev (>= 2.16),
                libgtk-3-dev,
                gnome-pkg-tools,
-               libnemo-extension-dev
+               libnemo-extension-dev,
+               libgcr-3-dev (>= 3.4.0)
 Standards-Version: 3.9.2
 
 Package: nemo-seahorse

@@ -106,11 +106,10 @@ am__objects_1 = seahorse-marshal.$(OBJEXT)
 am_seahorse_tool_OBJECTS = seahorse-notification.$(OBJEXT) \
 	seahorse-operation.$(OBJEXT) seahorse-passphrase.$(OBJEXT) \
 	seahorse-pgp-operation.$(OBJEXT) seahorse-progress.$(OBJEXT) \
-	seahorse-secure-buffer.$(OBJEXT) \
-	seahorse-secure-memory.$(OBJEXT) seahorse-tool.$(OBJEXT) \
-	seahorse-tool-files.$(OBJEXT) seahorse-tool-progress.$(OBJEXT) \
-	seahorse-util.$(OBJEXT) seahorse-vfs-data.$(OBJEXT) \
-	seahorse-widget.$(OBJEXT) $(am__objects_1)
+	seahorse-tool.$(OBJEXT) seahorse-tool-files.$(OBJEXT) \
+	seahorse-tool-progress.$(OBJEXT) seahorse-util.$(OBJEXT) \
+	seahorse-vfs-data.$(OBJEXT) seahorse-widget.$(OBJEXT) \
+	$(am__objects_1)
 seahorse_tool_OBJECTS = $(am_seahorse_tool_OBJECTS)
 am__DEPENDENCIES_1 =
 seahorse_tool_DEPENDENCIES = $(am__DEPENDENCIES_1) \
@@ -242,6 +241,8 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
+GCR_CFLAGS = @GCR_CFLAGS@
+GCR_LIBS = @GCR_LIBS@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GLIB_COMPILE_SCHEMAS = @GLIB_COMPILE_SCHEMAS@
 GLIB_GENMARSHAL = @GLIB_GENMARSHAL@
@@ -387,7 +388,8 @@ INCLUDES = -I$(top_builddir) \
 	-DLOCALEDIR=\"$(localedir)\" \
 	-DDATA_DIR=\""$(datadir)"\" \
 	-DSEAHORSE_UIDIR=\""$(uidir)"\" \
-	-DLIBCRYPTUI_API_SUBJECT_TO_CHANGE
+	-DLIBCRYPTUI_API_SUBJECT_TO_CHANGE \
+	-DGCR_API_SUBJECT_TO_CHANGE
 
 BUILT_SOURCES = \
 	seahorse-marshal.c seahorse-marshal.h
@@ -399,8 +401,6 @@ seahorse_tool_SOURCES = \
 	seahorse-passphrase.c seahorse-passphrase.h \
 	seahorse-pgp-operation.c seahorse-pgp-operation.h \
 	seahorse-progress.c seahorse-progress.h \
-	seahorse-secure-buffer.c seahorse-secure-buffer.h \
-	seahorse-secure-memory.c seahorse-secure-memory.h \
 	seahorse-tool.c seahorse-tool.h \
 	seahorse-tool-files.c \
 	seahorse-tool-progress.c \
@@ -550,8 +550,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/seahorse-passphrase.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/seahorse-pgp-operation.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/seahorse-progress.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/seahorse-secure-buffer.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/seahorse-secure-memory.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/seahorse-tool-files.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/seahorse-tool-progress.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/seahorse-tool.Po@am__quote@
