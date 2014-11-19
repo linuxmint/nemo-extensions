@@ -1,4 +1,4 @@
-uidir = $(datadir)/nemo-seahorse/ui
+uidir = $(datadir)/nemo-seahorse/ui/
 localedir = $(datadir)/locale
 
 INCLUDES = -I$(top_builddir) \
@@ -16,7 +16,6 @@ BUILT_SOURCES = \
 	seahorse-marshal.c seahorse-marshal.h
 
 seahorse_tool_SOURCES = \
-	seahorse-gconf.c seahorse-gconf.h \
 	seahorse-libdialogs.h \
 	seahorse-notification.c \
 	seahorse-operation.c seahorse-operation.h \

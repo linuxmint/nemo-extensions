@@ -44,7 +44,6 @@
 #include <dbus/dbus-glib-bindings.h>
 
 #include "seahorse-util.h"
-#include "seahorse-gconf.h"
 #include "seahorse-vfs-data.h"
 
 #include <gpgme.h>

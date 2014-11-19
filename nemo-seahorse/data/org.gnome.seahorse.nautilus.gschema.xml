@@ -1,0 +1,19 @@
+<schemalist>
+	<schema id="org.gnome.seahorse.nautilus" path="/org/gnome/seahorse/nautilus/">
+		<key name="package-extension" type="s">
+			<default>'.zip'</default>
+			<summary>File extension for packages</summary>
+			<description>File extension for packages when handling multiple files.</description>
+		</key>
+		<key name="separate-files" type="b">
+			<default>false</default>
+			<summary>Handle multiple files separately</summary>
+			<description>When handling multiple files, don't package them but process separately.</description>
+		</key>
+		<key name="armor-mode" type="b">
+			<default>false</default>
+			<summary>Use armor mode when encrypting</summary>
+			<description>Use PGP ASCII armor mode when encrypting or signing files.</description>
+		</key>
+	</schema>
+</schemalist>

@@ -2,13 +2,14 @@
 # 
 # Modifications should be made to debian/control.in instead.
 # This file is regenerated automatically in the clean target.
-
 Source: nemo-seahorse
 Section: gnome
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 8),
                cdbs (>= 0.4.41),
+               autotools-dev,
+               intltool,
                libgpgme11-dev,
                libnotify-dev,
                libdbus-glib-1-dev,
@@ -16,7 +17,6 @@ Build-Depends: debhelper (>= 8),
                libcryptui-dev,
                libglib2.0-dev (>= 2.16),
                libgtk-3-dev,
-               libgconf2-dev,
                gnome-pkg-tools,
                libnemo-extension-dev
 Standards-Version: 3.9.2
@@ -29,7 +29,7 @@ Depends: ${shlibs:Depends},
 Recommends: seahorse
 Replaces: seahorse-plugins
 Description: seahorse plugins and utilities for encryption
- Seahorse nemo is an extension for nemo which allows encryption
- and decryption of OpenPGP files using GnuPG - the Gnu Privacy Guard
- program.
+ Nemo-Seahorse is an extension for Nemo which allows encryption
+ and decryption of OpenPGP files using GnuPG - the GNU Privacy
+ Guard program.
 

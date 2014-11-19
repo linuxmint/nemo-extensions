@@ -7,8 +7,6 @@ include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
 
 LDFLAGS += -Wl,-O1 -Wl,--as-needed
 
-DEB_CONFIGURE_EXTRA_FLAGS += --disable-schemas-install
-
 binary-post-install/nemo-seahorse::
 	find debian/nemo-seahorse -name '*.a' -exec rm -f {} \;
 	find debian/nemo-seahorse -name '*.la' -exec rm -f {} \;
