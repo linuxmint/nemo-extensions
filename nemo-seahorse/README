@@ -1,4 +1,5 @@
-Seahorse nemo is an extension for nemo which allows encryption
+nemo-seahorse is an extension for Nemo which allows encryption
 and decryption of OpenPGP files using GnuPG.
 
-Homepage: http://www.gnome.org/projects/seahorse/
+nemo-seahorse is a fork of seahorse-nautilus 3.3.1.
+

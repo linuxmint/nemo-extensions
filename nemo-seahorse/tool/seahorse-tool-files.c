@@ -254,17 +254,18 @@ step_check_uris (FilesCtx *ctx,
     g_free (t);
 
     for (k = uris; *k; k++) {
-
         if (!seahorse_tool_progress_check ()) {
             ret = FALSE;
             break;
         }
 
-	t = g_uri_parse_scheme (*k);
-	if (t)
-		file = g_file_new_for_uri (*k);
-	else
+        t = g_uri_parse_scheme (*k);
+        if (t)
+            file = g_file_new_for_uri (*k);
+        else
 	        file = g_file_resolve_relative_path (base, *k);
+        g_free (t);
+
         g_return_val_if_fail (file != NULL, FALSE);
 
         /* Find out if file can be accessed locally? */
@@ -277,9 +278,9 @@ step_check_uris (FilesCtx *ctx,
                                   G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL, err);
 
         if (!info) {
-        	ret = FALSE;
-                g_object_unref (file);
-        	break;
+            ret = FALSE;
+            g_object_unref (file);
+            break;
         }
 
         type = g_file_info_get_file_type (info);
@@ -433,11 +434,7 @@ prepare_dialog (FilesCtx *ctx, guint nfolders, guint nfiles, GFileInfo *info, gc
         save_type_list = save_type;
 
         for (i = 0; save_type_list[i] != FR_FILE_TYPE_NULL; i++) {
-#if GTK_CHECK_VERSION(2,23,0)
 		gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (combo),
-#else
-		gtk_combo_box_append_text (GTK_COMBO_BOX (combo),
-#endif
 		                                file_type_desc[save_type_list[i]].ext);
 		    if (strcmp(ext, file_type_desc[save_type_list[i]].ext) == 0)
 		        gtk_combo_box_set_active (GTK_COMBO_BOX (combo), i);
@@ -478,11 +475,7 @@ get_results (SeahorseWidget *swidget)
         name = gtk_entry_get_text (GTK_ENTRY (w));
 
         w = GTK_WIDGET (seahorse_widget_get_widget (swidget, "package-extension"));
-#if GTK_CHECK_VERSION(2,23,0)
         ext = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (w));
-#else
-        ext = gtk_combo_box_get_active_text (GTK_COMBO_BOX (w));
-#endif
 
         /* No paths */
         t = strrchr(name, '/');
@@ -633,7 +626,7 @@ visit_enumerator (FilesCtx *ctx, GFile *parent, GFileEnumerator *enumerator, GEr
     gboolean ret = TRUE;
     GFileInfo *info;
     FileInfo *finfo;
-    GFile *file;
+    GFile *file = NULL;
 
     for (;;) {
 	if (!seahorse_tool_progress_check ()) {

@@ -155,7 +155,7 @@ prompt_recipients (gpgme_key_t *signkey)
     CryptUIKeyset *keyset;
     gpgme_ctx_t ctx;
     gpgme_key_t key;
-    GArray *keys;
+    GArray *keys = NULL;
     gchar **recips;
     gchar *signer;
 
@@ -771,6 +771,8 @@ main (int argc, char **argv)
         seahorse_util_free_keys (mode.recipients);
     if (mode.signer)
         gpgme_key_unref (mode.signer);
+
+    seahorse_notification_cleanup ();
 
     g_strfreev (uris);
     g_option_context_free (octx);
