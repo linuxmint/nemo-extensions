@@ -34,7 +34,6 @@
 #include "seahorse-tool.h"
 #include "seahorse-util.h"
 #include "seahorse-widget.h"
-#include "seahorse-gconf.h"
 #include "seahorse-vfs-data.h"
 
 #define ONE_GIGABYTE 1024 * 1024 * 1024
@@ -407,7 +406,7 @@ prepare_dialog (FilesCtx *ctx, guint nfolders, guint nfiles, GFileInfo *info, gc
     /* The local stuff */
     } else {
 
-        sep = seahorse_gconf_get_boolean (MULTI_SEPERATE_KEY);
+        sep = g_settings_get_boolean (seahorse_tool_settings, "separate-files");
 
         /* Setup the package */
         w = GTK_WIDGET (seahorse_widget_get_widget (swidget, "package-name"));
@@ -466,7 +465,7 @@ get_results (SeahorseWidget *swidget)
 
     w = GTK_WIDGET (seahorse_widget_get_widget (swidget, "do-separate"));
     sep = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
-    seahorse_gconf_set_boolean (MULTI_SEPERATE_KEY, sep);
+    g_settings_set_boolean (seahorse_tool_settings, "separate-files", sep);
 
     /* no packaging */
     if(!sep) {
@@ -489,7 +488,7 @@ get_results (SeahorseWidget *swidget)
         full_name = g_strdup_printf("%s%s", name, ext);
 
         /* Save the extension */
-        seahorse_gconf_set_string (MULTI_EXTENSION_KEY, ext);
+        g_settings_set_string (seahorse_tool_settings, "package-extension", ext);
 
         return full_name;
     }
@@ -530,7 +529,7 @@ step_process_multiple (FilesCtx *ctx,
         return TRUE;
 
     /* The package extension */
-    if ((ext = seahorse_gconf_get_string (MULTI_EXTENSION_KEY)) == NULL)
+    if ((ext = g_settings_get_string (seahorse_tool_settings, "package-extension")) == NULL)
         ext = g_strdup (".zip"); /* Yes this happens when the schema isn't installed */
 
     /* Figure out a good URI for our package */
