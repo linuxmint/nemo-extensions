@@ -49,7 +49,7 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
         self.display_names = {}
         icon_names = self.default_icon_theme.list_icons(None)
         for icon_name in icon_names:
-            if not icon_name in HIDE_EMBLEMS and icon_name.startswith('emblem-') and not icon_name.endswith('-symbolic'):
+            if not icon_name in HIDE_EMBLEMS and icon_name.startswith('emblem-') and not icon_name.endswith('-symbolic') and not icon_name.startswith('emblem-dropbox') and not icon_name.startswith('emblem-ubuntu'):
                 # icon_name is emblem
                 icon_info = self.default_icon_theme.lookup_icon(icon_name, 32, 0)
                 display_name = icon_info.get_display_name()
