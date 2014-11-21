@@ -1,3 +1,9 @@
+nemo-emblems (2.4.2) rebecca; urgency=medium
+
+  * Don't show dropbox/ubuntuone emblems
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 21 Nov 2014 14:29:08 +0100
+
 nemo-emblems (2.4.1) rebecca; urgency=medium
 
   * Updated translations
