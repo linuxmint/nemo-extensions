@@ -1,5 +1,5 @@
 /*
- * Nautilus Filename Repairer Extension
+ * Nemo Filename Repairer Extension
  *
  * Copyright (C) 2008 Choe Hwanjin
  *

@@ -9,10 +9,10 @@ This extension also provides a decoded name for URL encoded filename, ex
 %EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.
 
 Project page:
-http://code.google.com/p/repairer/
+https://github.com/linuxmint/nemo-extensions/
 
 Bug Tracker
-http://code.google.com/p/repairer/issues/list
+https://github.com/linuxmint/nemo-extensions/issues/
 
 Install
 $ ./configure
