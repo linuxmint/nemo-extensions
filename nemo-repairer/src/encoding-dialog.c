@@ -31,12 +31,6 @@
 
 #define ENCODINGS_DIALOG_UI PKGDATADIR "/encoding-dialog.ui"
 
-#if GTK_CHECK_VERSION(3,0,0)
-#define HAVE_GTK_COMBO_BOX_ENTRY 0
-#else
-#define HAVE_GTK_COMBO_BOX_ENTRY 1
-#endif
-
 enum {
     ENCODING_COLUMN_ENCODING,
     ENCODING_NUM_COLUMNS
