@@ -39,8 +39,6 @@ void gtkhash_hash_string_finish_cb(G_GNUC_UNUSED const enum hash_func_e id,
 void gtkhash_hash_file_report_cb(void *data, goffset file_size,
 	goffset total_read, GTimer *timer)
 {
-	gdk_threads_enter();
-
 	struct page_s *page = data;
 
 	gtk_progress_bar_set_fraction(page->progressbar,
@@ -49,7 +47,7 @@ void gtkhash_hash_file_report_cb(void *data, goffset file_size,
 
 	double elapsed = g_timer_elapsed(timer, NULL);
 	if (elapsed <= 1)
-		goto out;
+		return;
 
 	// Update progressbar text...
 	unsigned int s = elapsed / total_read * (file_size - total_read);
@@ -78,31 +76,20 @@ void gtkhash_hash_file_report_cb(void *data, goffset file_size,
 	g_free(speed_str);
 	g_free(file_size_str);
 	g_free(total_read_str);
-
-out:
-	gdk_threads_leave();
 }
 
 void gtkhash_hash_file_finish_cb(void *data)
 {
-	gdk_threads_enter();
-
 	struct page_s *page = data;
 
 	gtkhash_properties_list_update_digests(page);
 	gtkhash_properties_idle(page);
-
-	gdk_threads_leave();
 }
 
 void gtkhash_hash_file_stop_cb(void *data)
 {
-	gdk_threads_enter();
-
 	struct page_s *page = data;
 	gtkhash_properties_idle(page);
-
-	gdk_threads_leave();
 }
 
 void gtkhash_properties_hash_start(struct page_s *page, const uint8_t *hmac_key,

@@ -54,15 +54,13 @@ void gtkhash_hash_string_finish_cb(const enum hash_func_e id,
 void gtkhash_hash_file_report_cb(G_GNUC_UNUSED void *data, goffset file_size,
 	goffset total_read, GTimer *timer)
 {
-	gdk_threads_enter();
-
 	gtk_progress_bar_set_fraction(gui.progressbar,
 		(double)total_read /
 		(double)file_size);
 
 	double elapsed = g_timer_elapsed(timer, NULL);
 	if (elapsed <= 1)
-		goto out;
+		return;
 
 	// Update progressbar text...
 	unsigned int s = elapsed / total_read * (file_size - total_read);
@@ -91,15 +89,10 @@ void gtkhash_hash_file_report_cb(G_GNUC_UNUSED void *data, goffset file_size,
 	g_free(speed_str);
 	g_free(file_size_str);
 	g_free(total_read_str);
-
-out:
-	gdk_threads_leave();
 }
 
 void gtkhash_hash_file_finish_cb(G_GNUC_UNUSED void *data)
 {
-	gdk_threads_enter();
-
 	switch (gui_get_view()) {
 		case GUI_VIEW_FILE: {
 			for (int i = 0; i < HASH_FUNCS_N; i++) {
@@ -124,7 +117,7 @@ void gtkhash_hash_file_finish_cb(G_GNUC_UNUSED void *data)
 			hash_priv.uris = g_slist_delete_link(hash_priv.uris, hash_priv.uris);
 			if (hash_priv.uris) {
 				hash_file_start(hash_priv.uris->data);
-				goto out;
+				return;
 			}
 
 			break;
@@ -135,23 +128,16 @@ void gtkhash_hash_file_finish_cb(G_GNUC_UNUSED void *data)
 
 	gui_set_state(GUI_STATE_IDLE);
 	gui_check_digests();
-
-out:
-	gdk_threads_leave();
 }
 
 void gtkhash_hash_file_stop_cb(G_GNUC_UNUSED void *data)
 {
-	gdk_threads_enter();
-
 	if (hash_priv.uris) {
 		g_slist_free_full(hash_priv.uris, g_free);
 		hash_priv.uris = NULL;
 	}
 
 	gui_set_state(GUI_STATE_IDLE);
-
-	gdk_threads_leave();
 }
 
 void hash_file_start(const char *uri)
