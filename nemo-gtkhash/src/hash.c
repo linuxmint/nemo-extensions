@@ -66,15 +66,9 @@ void gtkhash_hash_file_report_cb(G_GNUC_UNUSED void *data, goffset file_size,
 
 	// Update progressbar text...
 	unsigned int s = elapsed / total_read * (file_size - total_read);
-#if ((GLIB_MAJOR_VERSION == 2) && (GLIB_MINOR_VERSION < 30))
-	char *total_read_str = g_format_size_for_display(total_read);
-	char *file_size_str = g_format_size_for_display(file_size);
-	char *speed_str = g_format_size_for_display(total_read / elapsed);
-#else
 	char *total_read_str = g_format_size(total_read);
 	char *file_size_str = g_format_size(file_size);
 	char *speed_str = g_format_size(total_read / elapsed);
-#endif
 	char *text;
 	if (s > 60) {
 		unsigned int m = s / 60;
