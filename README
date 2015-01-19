@@ -29,7 +29,7 @@ nautilus-actions                - nautilus extension to configure programs t
 nautilus-clamscan               - Antivirus scanning for Nautilus           
 nautilus-ideviceinfo            - utility showing information of idevices on
 nautilus-image-manipulator      - Resize and send images from Nautilus      
-nautilus-qdigidoc       		    - Nautilus file manager support for QDigiDoc
+nautilus-qdigidoc               - Nautilus file manager support for QDigiDoc
 nautilus-script-audio-convert   - A nautilus audio converter script         
 nautilus-script-collection-svn  - Nautilus subversion management scripts    
 nautilus-script-manager         - A simple management tool for nautilus scri
