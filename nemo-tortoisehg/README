@@ -1,0 +1,21 @@
+TortoiseHg Nemo Extension (based on tortoisehg-nautilus 2.10-1)
+
+This extension is meant to be used with the Nemo File Manager,
+
+Requirements:
+    * nemo
+    * nemo-python
+    * tortoisehg
+
+To install:
+    To install for all users, copy nemo-thg.py to:
+        /usr/share/nemo-python/extensions
+    
+    To install for a single user, copy nemo-thg.py to:
+        ~/.local/share/nemo-python-extensions
+    
+    In both cases, you may need to create the python/python-extensions folder.
+    
+    Restart nemo with the following commands:
+        $ nemo -q
+
