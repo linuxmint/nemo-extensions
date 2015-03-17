@@ -1,14 +1,28 @@
-Source: nemo-tortoisehg
-Section: vcs
-Priority: optional
+Package: nemo-tortoisehg
+Source: tortoisehg
+Version: 2.4-2
+Installed-Size: 67
 Maintainer: Sven Witterstein <sven.witterstein@gmail.com>
-Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.9.0
-
-Package: nemo-tortoishg
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
          python-nemo,
-	 tortoisehg
+	 tortoisehg (>= 2.4-2),
+	 python-nautilus (>= 1.1-2),
+ 	 python-gi
+Build-Depends: debhelper (>= 7.0.50~)
+Recommends: ssh-askpass-gnome | ssh-askpass
+Homepage: https://github.com/linuxmint/nemo-extensions
+Description-md5: #TODO
+Tag: devel::rcs, implemented-in::python, interface::x11, role::plugin,
+ uitoolkit::gtk, use::synchronizing, use::viewing, works-with::vcs
+Section: vcs
+Priority: optional
+Filename: #TODO
+Size: #TODO
+MD5sum:
+SHA1:
+SHA256:
+Standards-Version: 3.9.0
 Description: Nemo Extension
  A Nemo extension to display mercurial context menu and icon overlay
+ Based on the original nautilus-tortoishg
