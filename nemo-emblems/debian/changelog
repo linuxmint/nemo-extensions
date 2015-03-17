@@ -1,0 +1,30 @@
+nemo-emblems (2.4.3) rebecca; urgency=medium
+
+  * Don't show rabbitvcs emblems
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 22 Nov 2014 17:10:24 +0100
+
+nemo-emblems (2.4.2) rebecca; urgency=medium
+
+  * Don't show dropbox/ubuntuone emblems
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 21 Nov 2014 14:29:08 +0100
+
+nemo-emblems (2.4.1) rebecca; urgency=medium
+
+  * Updated translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Nov 2014 12:25:16 +0100
+
+nemo-emblems (2.4.0) rebecca; urgency=medium
+
+  * 2.4.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 01 Nov 2014 11:37:12 +0100
+
+nemo-emblems (0.0.1) qiana; urgency=high
+
+  * Initial release
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Aug 2014 10:32:00 +0100
+

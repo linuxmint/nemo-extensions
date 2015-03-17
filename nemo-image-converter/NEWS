@@ -1,0 +1,99 @@
+Version x.x.x
+=============
+General
+        * Port to Gtk3/GNOME3
+        * Fix distcheck so that it works without root privileges
+        * Enable silent build
+
+Translators
+
+        * Yaron Shahrabani (he)
+        * Siegfried-Angel Gevatter Pujals (ca)
+        * Jens Wiesser (de)
+        * Svetoslav Stefanov (bg)
+
+Version 0.3.0
+=============
+
+General
+
+	* Port to Nemo 2.21 / GIO (Andrew Walton)
+
+Translators
+
+	* Washington Lins (pt_BR)
+
+Version 0.2.1
+=============
+
+Image Rotator
+
+	* Reset EXIF orientation after image rotation
+
+Translators
+
+	* Antti Sokero (fi)
+
+Version 0.2.0
+=============
+
+Translators
+
+	* Daniel Nylander (sv)
+	* Eddy Pronk (nl)
+	* Julien Valroff (fr)
+	* Pavel Chovancik (cs)
+	* Piotr Szotkowski (pl)
+	* Stephen Denham (es)
+
+Version 0.0.9
+=============
+
+Translators
+
+	* Kazutaka Harada (ja)
+
+Version 0.0.8
+=============
+
+Image Rotator
+
+	* Build fix
+
+Version 0.0.7
+=============
+
+General
+
+	* Add support for image rotation
+
+Version 0.0.6
+=============
+
+Image Resizer
+
+	* Support scaling images by percentage (Paul W. Frields)
+
+Translators
+
+	* Sylvain Archenault (fr)
+	* Tchak (ru)
+
+Version 0.0.5
+=============
+
+Translators
+
+	* Tchak (ru)
+
+Version 0.0.4
+=============
+
+General
+
+	* Fix filename escaping
+
+Translators
+
+	* Stefano Fabri (it)
+

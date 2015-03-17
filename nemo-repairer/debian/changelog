@@ -1,0 +1,11 @@
+nemo-filename-repairer (2.4.0) rebecca; urgency=medium
+
+  * 2.4.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 01 Nov 2014 11:40:52 +0100
+
+nemo-filename-repairer (0.0.7) qiana; urgency=high
+
+  * Initial release
+
+ -- Goran Vidovic (gogo) <trebelnik2@gmail.com>  Thu, 5 Jun 2014 22:14:05 +0100

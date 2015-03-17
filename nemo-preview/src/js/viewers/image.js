@@ -25,16 +25,17 @@
  *
  */
 
-let MimeHandler = imports.ui.mimeHandler;
-let GdkPixbuf = imports.gi.GdkPixbuf;
-let GtkClutter = imports.gi.GtkClutter;
-let Gtk = imports.gi.Gtk;
-let GLib = imports.gi.GLib;
+const GdkPixbuf = imports.gi.GdkPixbuf;
+const GtkClutter = imports.gi.GtkClutter;
+const Gtk = imports.gi.Gtk;
+const GLib = imports.gi.GLib;
 
-let Gettext = imports.gettext.domain('nemo-preview');
-let _ = Gettext.gettext;
+const Gettext = imports.gettext.domain('nemo-preview');
+const _ = Gettext.gettext;
+const Lang = imports.lang;
 
-let Utils = imports.ui.utils;
+const MimeHandler = imports.ui.mimeHandler;
+const Utils = imports.ui.utils;
 
 function ImageRenderer(args) {
     this._init(args);

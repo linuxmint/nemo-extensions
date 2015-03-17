@@ -49,6 +49,8 @@ gettext.bindtextdomain('nemo-terminal', '@prefix@/share/locale')
 gettext.textdomain('nemo-terminal')
 _ = gettext.gettext
 
+import gi
+gi.require_version('Vte', '2.90')
 from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio
 
 # DEFAULT_CONF = {

@@ -33,13 +33,13 @@
 #include "cryptui.h"
 #include "cryptui-key-store.h"
 
-#include "seahorse-secure-memory.h"
 #include "seahorse-tool.h"
 #include "seahorse-util.h"
 #include "seahorse-vfs-data.h"
 #include "seahorse-libdialogs.h"
-#include "seahorse-gconf.h"
 #include "seahorse-util.h"
+
+GSettings *seahorse_tool_settings = NULL;
 
 #define IMPORT_BUFFER_SIZE 50*1<<10 /* 50 kB */
 
@@ -155,7 +155,7 @@ prompt_recipients (gpgme_key_t *signkey)
     CryptUIKeyset *keyset;
     gpgme_ctx_t ctx;
     gpgme_key_t key;
-    GArray *keys;
+    GArray *keys = NULL;
     gchar **recips;
     gchar *signer;
 
@@ -261,7 +261,7 @@ encrypt_sign_start (SeahorseToolMode *mode, const gchar *uri, gpgme_data_t urida
     g_object_set_data_full (G_OBJECT (pop), "cipher-data", cipher,
                             (GDestroyNotify)gpgme_data_release);
 
-    gpgme_set_armor (pop->gctx, seahorse_gconf_get_boolean (ARMOR_KEY));
+    gpgme_set_armor (pop->gctx, g_settings_get_boolean (seahorse_tool_settings, "armor-mode"));
     gpgme_set_textmode (pop->gctx, FALSE);
 
     /* Start actual encryption */
@@ -376,7 +376,7 @@ sign_start (SeahorseToolMode *mode, const gchar *uri, gpgme_data_t uridata,
     g_object_set_data_full (G_OBJECT (pop), "cipher-data", cipher,
                             (GDestroyNotify)gpgme_data_release);
 
-    gpgme_set_armor (pop->gctx, seahorse_gconf_get_boolean (ARMOR_KEY));
+    gpgme_set_armor (pop->gctx, g_settings_get_boolean (seahorse_tool_settings, "armor-mode"));
     gpgme_set_textmode (pop->gctx, FALSE);
 
     /* Start actual signage */
@@ -676,8 +676,6 @@ main (int argc, char **argv)
     gchar **uris = NULL;
     int ret = 0;
 
-    seahorse_secure_memory_init ();
-
 #ifdef ENABLE_NLS
     bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
     bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -701,8 +699,11 @@ main (int argc, char **argv)
 
     if(!uris || !uris[0]) {
         fprintf (stderr, "seahorse-tool: must specify files\n");
+        g_option_context_free (octx);
         return 2;
     }
+
+    seahorse_tool_settings = g_settings_new ("org.gnome.seahorse.nautilus");
 
     /* The basic settings for the operation */
     memset (&mode, 0, sizeof (mode));
@@ -745,6 +746,7 @@ main (int argc, char **argv)
 
     } else {
         fprintf (stderr, "seahorse-tool: must specify an operation");
+        g_option_context_free (octx);
         return 2;
     }
 
@@ -770,7 +772,13 @@ main (int argc, char **argv)
     if (mode.signer)
         gpgme_key_unref (mode.signer);
 
+    seahorse_notification_cleanup ();
+
+    g_object_unref (seahorse_tool_settings);
+    seahorse_tool_settings = NULL;
+
     g_strfreev (uris);
+    g_option_context_free (octx);
 
     return ret;
 }

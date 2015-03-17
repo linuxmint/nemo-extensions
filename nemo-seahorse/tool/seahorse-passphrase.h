@@ -34,10 +34,6 @@ GtkDialog*      seahorse_passphrase_prompt_show     (const gchar *title,
                                                      const gchar *check,
                                                      gboolean confirm);
 
-const gchar*    seahorse_passphrase_prompt_get      (GtkDialog *dialog);
-
-gboolean        seahorse_passphrase_prompt_checked  (GtkDialog *dialog);
-
 gpgme_error_t   seahorse_passphrase_get             (gconstpointer dummy,
                                                      const gchar *passphrase_hint,
                                                      const char* passphrase_info,

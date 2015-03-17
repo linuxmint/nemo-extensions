@@ -1,6 +1,6 @@
 AC_PREREQ([2.63])
-AC_INIT([nemo-seahorse], [2.2.0],
-        [http://bugzilla.gnome.org/enter_bug.cgi?product=seahorse-plugins&component=Nemo],
+AC_INIT([nemo-seahorse], [2.4.0],
+        [https://github.com/linuxmint/nemo-extensions/issues],
         [nemo-seahorse])
 
 # -----------------------------------------------------------------------------
@@ -39,16 +39,15 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Name of the gettext dom
 # -----------------------------------------------------------------------------
 # GLib and GTK+ stuff
 
-AM_GCONF_SOURCE_2
+GLIB_GSETTINGS
 AM_GLIB_GNU_GETTEXT
 
-PKG_CHECK_MODULES(GCONF, gconf-2.0)
 PKG_CHECK_MODULES(GTK, gtk+-3.0 >= 3.0 gio-2.0)
 
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
-SEAHORSE_CFLAGS="$SEAHORSE_CFLAGS $GCONF_CFLAGS $GTK_CFLAGS"
-SEAHORSE_LIBS="$SEAHORSE_LIBS $GCONF_LIBS $GTK_LIBS"
+SEAHORSE_CFLAGS="$SEAHORSE_CFLAGS $GTK_CFLAGS"
+SEAHORSE_LIBS="$SEAHORSE_LIBS $GTK_LIBS"
 
 # -----------------------------------------------------------------------------
 # GnuPG and GPGME
@@ -179,6 +178,13 @@ SEAHORSE_CFLAGS="$SEAHORSE_CFLAGS $LIBCRYPTUI_CFLAGS"
 SEAHORSE_LIBS="$SEAHORSE_LIBS $LIBCRYPTUI_LIBS"
 
 # -----------------------------------------------------------------------------
+# Gcr
+
+PKG_CHECK_MODULES(GCR, gcr-3 >= 3.4.0)
+SEAHORSE_CFLAGS="$SEAHORSE_CFLAGS $GCR_CFLAGS"
+SEAHORSE_LIBS="$SEAHORSE_LIBS $GCR_LIBS"
+
+# -----------------------------------------------------------------------------
 # Libnotify
 
 LIBNOTIFY_REQUIRED=0.3
@@ -288,6 +294,7 @@ AC_SUBST(SEAHORSE_LIBS)
 
 AC_OUTPUT([
 Makefile
+data/Makefile
 po/Makefile.in
 tool/Makefile
 tool/seahorse-pgp-encrypted.desktop.in

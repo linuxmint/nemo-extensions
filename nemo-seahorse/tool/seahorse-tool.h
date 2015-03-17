@@ -31,6 +31,8 @@ extern gboolean mode_encrypt_sign;
 extern gboolean mode_decrypt;
 extern gboolean mode_verify;
 
+extern GSettings *seahorse_tool_settings;
+
 struct _SeahorseToolMode;
 typedef gboolean (*SeahorseToolCallback) (struct _SeahorseToolMode *mode, const gchar *uri,
                                           gpgme_data_t uridata, SeahorsePGPOperation *pop,

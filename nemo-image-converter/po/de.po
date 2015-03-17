@@ -1,0 +1,134 @@
+# German translation of PACKAGE.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Jens Wießer <info@carbon4.de>, 2008.
+# , fuzzy
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-17 00:16+0200\n"
+"PO-Revision-Date: 2008-05-17 10:42+0200\n"
+"Last-Translator:Jens Wießer <info@carbon4.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../src/nemo-image-converter.c:109
+msgid "_Resize Images..."
+msgstr "Bildgröße anpassen..."
+
+#: ../src/nemo-image-converter.c:110
+msgid "Resize each selected image"
+msgstr "Jedes ausgewählte Bild anpassen"
+
+#: ../src/nemo-image-resizer.c:219
+msgid "_Skip"
+msgstr "Überspringen"
+
+#: ../src/nemo-image-resizer.c:221
+msgid "_Retry"
+msgstr "Wiederholen"
+
+#: ../src/nemo-image-resizer.c:340
+#, c-format
+msgid "Resizing image: %d of %d"
+msgstr "Bildgröße anpassen: %d von %d"
+
+#: ../src/nemo-image-resizer.c:345
+#, c-format
+msgid "<i>Resizing \"%s\"</i>"
+msgstr "<i>Bildgröße anpassen \"%s\"</i>"
+
+#: ../src/nemo-image-resizer.c:363
+msgid "Please enter a valid filename suffix!"
+msgstr "Bitte geben Sie eine gültige Dateiendung an!"
+
+#: ../src/nemo-image-resize.glade.h:1
+msgid ".resized"
+msgstr ".geaendert"
+
+#: ../src/nemo-image-resize.glade.h:2
+msgid "<b>Filename</b>"
+msgstr "<b>Dateiname</b>"
+
+#: ../src/nemo-image-resize.glade.h:3
+msgid "<b>Image Size</b>"
+msgstr "<b>Bildgröße</b>"
+
+#: ../src/nemo-image-resize.glade.h:4
+msgid "Append"
+msgstr "Anhängen"
+
+#: ../src/nemo-image-resize.glade.h:5
+msgid "Custom size:"
+msgstr "Eigene Größe:"
+
+#: ../src/nemo-image-resize.glade.h:6
+msgid "Height:"
+msgstr "Höhe:"
+
+#: ../src/nemo-image-resize.glade.h:7
+msgid "Resize Images"
+msgstr "Bildgröße anpassen"
+
+#: ../src/nemo-image-resize.glade.h:8
+msgid "Resize in place"
+msgstr "Bilder überschreiben"
+
+#: ../src/nemo-image-resize.glade.h:9
+msgid "Select a size:"
+msgstr "Eine Größe wählen:"
+
+#: ../src/nemo-image-resize.glade.h:10
+msgid "Width:"
+msgstr "Breite:"
+
+#: ../src/nemo-image-resize.glade.h:11
+msgid "pixels"
+msgstr "Pixel"
+
+#: ../src/nemo-image-resize.glade.h:12
+msgid "to file title"
+msgstr "zum Dateinamen"
+
+msgid "Scale:"
+msgstr "Skalieren:"
+
+msgid "_Resize"
+msgstr "Größe anpassen"
+
+msgid "percent"
+msgstr "Prozent"
+
+msgid "Ro_tate Images..."
+msgstr "Bilder drehen..."
+
+msgid "Rotate Images"
+msgstr "Bilder drehen"
+
+msgid "Select an angle:"
+msgstr "Wählen Sie einen Winkel:"
+
+msgid "Custom angle:"
+msgstr "Eigener Winkel:"
+
+msgid "degrees clockwise"
+msgstr "Grad im Uhrzeigersinn"
+
+msgid "clockwise"
+msgstr "im Uhrzeigersinn"
+
+msgid "Rotate in place"
+msgstr "Bilder überschreiben"
+
+msgid "<b>Image Rotation</b>"
+msgstr "<b>Bilder drehen</b>"
+
+msgid "_Rotate"
+msgstr "_Drehen"
+
+msgid ".rotated"
+msgstr ".gedreht"

@@ -25,16 +25,17 @@
  *
  */
 
-let MimeHandler = imports.ui.mimeHandler;
-let GtkClutter = imports.gi.GtkClutter;
-let Gtk = imports.gi.Gtk;
-let GLib = imports.gi.GLib;
-let GtkSource = imports.gi.GtkSource;
-let Gio = imports.gi.Gio;
+const GtkClutter = imports.gi.GtkClutter;
+const Gtk = imports.gi.Gtk;
+const GLib = imports.gi.GLib;
+const GtkSource = imports.gi.GtkSource;
+const Gio = imports.gi.Gio;
+const NemoPreview = imports.gi.NemoPreview;
 
-let NemoPreview = imports.gi.NemoPreview;
+const MimeHandler = imports.ui.mimeHandler;
+const Utils = imports.ui.utils;
 
-let Utils = imports.ui.utils;
+const Lang = imports.lang;
 
 function TextRenderer(args) {
     this._init(args);

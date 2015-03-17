@@ -1,0 +1,8 @@
+[encoding: UTF-8]
+# List of source files which contain translatable strings.
+[type: gettext/glade]data/nemo-image-resize.ui
+[type: gettext/glade]data/nemo-image-rotate.ui
+
+src/nemo-image-converter.c
+src/nemo-image-resizer.c
+src/nemo-image-rotator.c

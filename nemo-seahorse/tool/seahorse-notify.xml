@@ -7,7 +7,6 @@
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Notification Messages</property>
     <property name="type_hint">dialog</property>
-    <property name="has_separator">False</property>
     <signal name="delete_event" handler="delete_event"/>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox1">
