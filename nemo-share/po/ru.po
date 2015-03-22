@@ -89,7 +89,7 @@ msgstr "При получении сведений о ресурсе возни�
 
 #: ../src/nemo-share.c:1055
 msgid "Share"
-msgstr "Общий до_ступ"
+msgstr "Общий доступ"
 
 #: ../src/nemo-share.c:1115
 msgid "Folder Sharing"
