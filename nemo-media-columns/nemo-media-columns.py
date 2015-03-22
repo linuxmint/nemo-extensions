@@ -62,6 +62,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
 			Nemo.Column(name="NemoPython::exif_software_column",attribute="exif_software",label="EXIF Software",description="EXIF - software used to save image"),
 			Nemo.Column(name="NemoPython::exif_flash_column",attribute="exif_flash",label="EXIF flash",description="EXIF - flash mode"),
 			Nemo.Column(name="NemoPython::exif_pixeldimensions_column",attribute="exif_pixeldimensions",label="EXIF Image Size",description="Image size - pixel dimensions as reported by EXIF data"),
+			Nemo.Column(name="NemoPython::exif_rating",attribute="exif_rating",label="EXIF Rating",description="Rating of the Image as reported by EXIF data"),
 			Nemo.Column(name="NemoPython::pixeldimensions_column",attribute="pixeldimensions",label="Image Size",description="Image/video size - actual pixel dimensions"),
 		)
 
@@ -80,6 +81,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
 		file.add_string_attribute('exif_software', '')
 		file.add_string_attribute('exif_flash', '')
 		file.add_string_attribute('exif_pixeldimensions', '')
+		file.add_string_attribute('exif_rating','')
 		file.add_string_attribute('pixeldimensions', '')
 
 		if file.get_uri_scheme() != 'file':
@@ -157,17 +159,22 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
 				except:
 					file.add_string_attribute('exif_flash',"")
 				try:
-					exif_pixelydimension = metadata['Exif.Photo.PixelYDimension']
 					exif_pixelxdimension = metadata['Exif.Photo.PixelXDimension']
 					file.add_string_attribute('exif_pixeldimensions',str(exif_pixelydimension.raw_value)+'x'+str(exif_pixelxdimension.raw_value))
 				except:
 					file.add_string_attribute('exif_pixeldimensions',"")
+				try:
+					exif_rating = metadata['Xmp.xmp.Rating']
+					file.add_string_attribute('exif_rating',str(exif_rating.raw_value))
+				except:
+					file.add_string_attribute('exif_rating',"")
 			except:
 				# no exif data?
 				file.add_string_attribute('exif_datetime_original',"")
 				file.add_string_attribute('exif_software',"")
 				file.add_string_attribute('exif_flash',"")
 				file.add_string_attribute('exif_pixeldimensions',"")
+				file.add_string_attribute('exif_rating',"")
 			# try read image info directly
 			try:
 				im = Image.open(filename)
