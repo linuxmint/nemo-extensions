@@ -159,6 +159,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
 				except:
 					file.add_string_attribute('exif_flash',"")
 				try:
+					exif_pixelydimension = metadata['Exif.Photo.PixelYDimension']
 					exif_pixelxdimension = metadata['Exif.Photo.PixelXDimension']
 					file.add_string_attribute('exif_pixeldimensions',str(exif_pixelydimension.raw_value)+'x'+str(exif_pixelxdimension.raw_value))
 				except:
