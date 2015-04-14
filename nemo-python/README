@@ -1,4 +1,4 @@
-libautilus-extension Python bindings
+libnemo-extension Python bindings
 ====================================
 
 These are unstable bindings for the Nemo extension library.
