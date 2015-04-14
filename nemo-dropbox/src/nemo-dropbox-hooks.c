@@ -158,7 +158,7 @@ try_to_connect(NemoDropboxHookserv *hookserv) {
   
   /* set native non-blocking, for connect timeout */
   {
-    unsigned int flags;
+    int flags;
 
     if ((flags = fcntl(hookserv->socket, F_GETFL, 0)) < 0) {
       goto FAIL_CLEANUP;
