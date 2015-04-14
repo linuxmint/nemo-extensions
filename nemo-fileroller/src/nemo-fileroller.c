@@ -78,11 +78,9 @@ extract_here_callback (NemoMenuItem *item,
 		       gpointer          user_data)
 {
 	GList            *files, *scan;
-	NemoFileInfo *file;
 	GString          *cmd;
 
 	files = g_object_get_data (G_OBJECT (item), "files");
-	file = files->data;
 
 	cmd = g_string_new ("file-roller --extract-here");
 
