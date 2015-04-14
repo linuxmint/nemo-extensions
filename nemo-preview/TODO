@@ -1,5 +1,5 @@
 Bugs:
-- shouldn't probably steal focus from the nautilus window when open ?
+- shouldn't probably steal focus from the nemo window when open ?
 - error handling from plugins should be catched and a fail-whale of
   some sort be displayed
 - album arts not square should be canvased into a square shape

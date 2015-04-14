@@ -35,9 +35,8 @@ Nautilus Terminal Web Site: http://projects.flogisoft.com/nautilus-terminal/
 Dependencies:
 -------------
     * Python (>= 2.6) <http://python.org/>
-    * GObject Introspection <http://live.gnome.org/GObjectIntrospection>
-    * VTE <http://live.gnome.org/VTE>
-    * Nemo (>= 3.0) <http://live.gnome.org/Nemo>
-    * Nemo Python (>= 1.0) <http://projects.gnome.org/Nemo-python/>
+    * GObject Introspection <https://wiki.gnome.org/GObjectIntrospection>
+    * VTE <https://wiki.gnome.org/Apps/Terminal/VTE>
+    * Nemo <https://github.com/linuxmint/nemo>
+    * Nemo Python <https://github.com/linuxmint/nemo-extensions/tree/master/nemo-python>
     * PyXDG (optional) <http://www.freedesktop.org/wiki/Software/pyxdg>
-
