@@ -1,2 +1,0 @@
-version=3
-https://github.com/<user>/<project>/releases .*/v?(\d\S*)\.tar\.gz
