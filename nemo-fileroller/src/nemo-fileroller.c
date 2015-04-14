@@ -294,7 +294,7 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 		return NULL;
 
 	if (unsupported_scheme ((NemoFileInfo *) files->data))
-			return NULL;
+		return NULL;
 
 	for (scan = files; scan; scan = scan->next) {
 		NemoFileInfo *file = scan->data;
@@ -315,7 +315,8 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 			NemoFileInfo *parent;
 
 			parent = nemo_file_info_get_parent_info (file);
- 			can_write = nemo_file_info_can_write (parent);
+			can_write = nemo_file_info_can_write (parent);
+			g_object_unref (parent);
 		}
 	}
 
