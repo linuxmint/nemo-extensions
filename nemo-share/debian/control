@@ -5,6 +5,7 @@ Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 7.0.50),
                autotools-dev,
                intltool (>= 0.29),
+               dh-autoreconf,
                libnemo-extension-dev
 Standards-Version: 3.9.1
 
