@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-gtkhash\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-25 13:17+0200\n"
+"PO-Revision-Date: 2015-04-25 17:41+0100\n"
+"Last-Translator: \n"
+"Language-Team: hr <hr@li.org>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../data/gtkhash.xml.h:1
+msgid "GtkHash Preferences"
+msgstr "GtkHash osobitosti"
+
+#: ../data/gtkhash.xml.h:2
+msgid "Hash Functions:"
+msgstr "Hash funkcije:"
+
+#: ../data/gtkhash.xml.h:3
+msgid "Digest Format:"
+msgstr "Format provjere:"
+
+#: ../data/gtkhash.xml.h:4
+msgid "Lowercase Hexadecimal"
+msgstr "Mala slova heksadecimalana"
+
+#: ../data/gtkhash.xml.h:5
+msgid "Uppercase Hexadecimal"
+msgstr "Velika slova heksadecimalna"
+
+#: ../data/gtkhash.xml.h:6
+msgid "Copy _Digest"
+msgstr "Kopiraj _provjeru"
+
+#: ../data/gtkhash.xml.h:7
+msgid "Show _Toolbar"
+msgstr "Prikaži _alatnu traku"
+
+#: ../data/gtkhash.xml.h:8
+msgid "_File"
+msgstr "_Datoteka"
+
+#: ../data/gtkhash.xml.h:9
+msgid "_Edit"
+msgstr "_Uredi"
+
+#: ../data/gtkhash.xml.h:10
+msgid "_View"
+msgstr "_Pogled"
+
+#: ../data/gtkhash.xml.h:11
+msgid "_Text"
+msgstr "_Tekst"
+
+#: ../data/gtkhash.xml.h:12
+msgid "File _List"
+msgstr "Popis _datoteka"
+
+#: ../data/gtkhash.xml.h:13
+msgid "_Help"
+msgstr "_Pomoć"
+
+#: ../data/gtkhash.xml.h:14
+msgid "File:"
+msgstr "Datoteka:"
+
+#: ../data/gtkhash.xml.h:15
+msgid "Text:"
+msgstr "Tekst:"
+
+#: ../data/gtkhash.xml.h:16 ../data/nautilus/gtkhash-properties.xml.h:5
+msgid "Check:"
+msgstr "Provjera:"
+
+#: ../data/gtkhash.xml.h:17
+msgid "File"
+msgstr "Datoteka"
+
+#: ../data/gtkhash.xml.h:18
+msgid "Ha_sh"
+msgstr "Jedinstvena _vrijednost"
+
+#: ../src/callbacks.c:47
+msgid "Save Digests"
+msgstr "Spremi provjeru"
+
+#: ../src/callbacks.c:236
+msgid "A GTK+ utility for computing message digests or checksums."
+msgstr "GTK+ alat za izračunavanje provjera poruka i zbroja provjera."
+
+#: ../src/callbacks.c:240
+msgid "translator-credits"
+msgstr "zasluge-prevoditelja"
+
+#: ../src/callbacks.c:262
+msgid "Select Files"
+msgstr "Odaberi datoteke"
+
+#: ../src/gui.c:293
+#, c-format
+msgid "Failed to read \"%s\""
+msgstr "Neuspjelo čitanje \"%s\""
+
+#: ../src/gui.c:310
+#, c-format
+msgid ""
+"Failed to read \"%s\":\n"
+"%s"
+msgstr ""
+"Neuspjelo čitanje \"%s\":\n"
+"%s"
+
+#: ../src/gui.c:359
+msgid "Not a regular file"
+msgstr "Nije uobičajena datoteka"
+
+#: ../src/gui.c:381
+msgid "Unknown error"
+msgstr "Nepoznata datoteka"
+
+#: ../src/gui.c:383
+#, c-format
+msgid ""
+"Failed to add \"%s\":\n"
+"%s"
+msgstr ""
+"Neuspjelo dodavanje \"%s\":\n"
+"%s"
+
+#: ../src/hash.c:82 ../src/nautilus/properties-hash.c:69
+#, c-format
+msgid "%s of %s - 1 minute left (%s/sec)"
+msgstr "%s od %s - 1 minuta preostala (%s/sek)"
+
+#: ../src/hash.c:85 ../src/nautilus/properties-hash.c:72
+#, c-format
+msgid "%s of %s - %u minutes left (%s/sec)"
+msgstr "%s od %s - %u minuta preostalo (%s/sek)"
+
+#: ../src/hash.c:89 ../src/nautilus/properties-hash.c:76
+#, c-format
+msgid "%s of %s - 1 second left (%s/sec)"
+msgstr "%s od %s - 1 sekunda preostala (%s/sek)"
+
+#: ../src/hash.c:92 ../src/nautilus/properties-hash.c:79
+#, c-format
+msgid "%s of %s - %u seconds left (%s/sec)"
+msgstr "%s od %s - %u sekundi preostalo(%s/sek)"
+
+#: ../src/main.c:86
+msgid "Check against the specified digest or checksum"
+msgstr "Provjera protiv određene provjere ili zbroja provjera"
+
+#: ../src/main.c:86
+msgid "DIGEST"
+msgstr "PROVJERA"
+
+#: ../src/main.c:90
+msgid "Read program data from the specified directory"
+msgstr "Čitaj podatke programa iz određenog direktorija"
+
+#: ../src/main.c:90
+msgid "DIRECTORY"
+msgstr "DIREKTORIJ"
+
+#: ../src/main.c:94
+msgid "Hash the specified text"
+msgstr "Stvori jedinstvenu vrijednost određenog teksta"
+
+#: ../src/main.c:94
+msgid "TEXT"
+msgstr "TEKST"
+
+#: ../src/main.c:98
+msgid "Show version information"
+msgstr "Prikaži informaciju inačice"
+
+#: ../src/main.c:102
+msgid "[FILE|URI...]"
+msgstr "[DATOTEKA|URI...]"
+
+#: ../src/prefs.c:76
+msgid "Failed to enable any supported hash functions."
+msgstr ""
+"Neuspjelo omogućavanje bilo koje podržane funkcije jedinstvene vrijednosti"
+
+#: ../data/nautilus/gtkhash-properties.xml.h:1
+msgid "_Copy Digest"
+msgstr "_Kopiraj provjeru"
+
+#: ../data/nautilus/gtkhash-properties.xml.h:2
+msgid "Show _Disabled Hash Functions"
+msgstr "Prikaži _onemogućene funkcije jedinstvene vrijednosti"
+
+#: ../data/nautilus/gtkhash-properties.xml.h:3
+msgid "Hash Function"
+msgstr "Vrsta jedinstvene vrijednosti"
+
+#: ../data/nautilus/gtkhash-properties.xml.h:4
+msgid "Digest"
+msgstr "Provjera"
+
+#: ../data/nautilus/gtkhash-properties.xml.h:6
+msgid "H_ash"
+msgstr "Jedinstven_a vrijednost"
+
+#: ../src/nautilus/properties.c:436 ../src/nautilus/properties.c:439
+#: ../src/nautilus/properties.c:441
+msgid "Digests"
+msgstr "Provjere"

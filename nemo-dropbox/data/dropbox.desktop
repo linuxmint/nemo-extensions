@@ -1,7 +1,9 @@
 [Desktop Entry]
 Name=Dropbox
 GenericName=File Synchronizer
+GenericName[hr]=Uskladitelj datoteka
 Comment=Sync your files across computers and to the web
+Comment[hr]=Usklađujte svoje datoteke diljem računala i Interneta
 Exec=dropbox start -i
 Terminal=false
 Type=Application
