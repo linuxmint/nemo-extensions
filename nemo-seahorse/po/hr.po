@@ -496,7 +496,7 @@ msgstr "Nemoguće pakiranje datoteka"
 
 #: ../tool/seahorse-util.c:174
 msgid "Decryption failed. You probably do not have the decryption key."
-msgstr "Neuspjelo dešifriranje. Zacijelo nemate ključ dešifriranja."
+msgstr "Neuspjelo dešifriranje. Najvjerojatnije nemate ključ dešifriranja."
 
 #: ../tool/seahorse-util.c:201
 msgid "%Y-%m-%d"
