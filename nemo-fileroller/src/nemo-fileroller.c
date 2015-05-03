@@ -28,6 +28,7 @@
 #include <libnemo-extension/nemo-extension-types.h>
 #include <libnemo-extension/nemo-file-info.h>
 #include <libnemo-extension/nemo-menu-provider.h>
+#include <libnemo-extension/nemo-name-and-desc-provider.h>
 #include "nemo-fileroller.h"
 
 
@@ -386,6 +387,15 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 	return items;
 }
 
+static GList *
+nemo_fr_get_name_and_desc (NemoNameAndDescProvider *provider)
+{
+    GList *ret = NULL;
+
+    ret = g_list_append (ret, _("Nemo Fileroller:::Allows managing of archives from the context menu"));
+
+    return ret;
+}
 
 static void
 nemo_fr_menu_provider_iface_init (NemoMenuProviderIface *iface)
@@ -393,6 +403,11 @@ nemo_fr_menu_provider_iface_init (NemoMenuProviderIface *iface)
 	iface->get_file_items = nemo_fr_get_file_items;
 }
 
+static void
+nemo_fr_nd_provider_iface_init (NemoNameAndDescProviderIface *iface)
+{
+    iface->get_name_and_desc = nemo_fr_get_name_and_desc;
+}
 
 static void
 nemo_fr_instance_init (NemoFr *fr)
@@ -438,6 +453,12 @@ nemo_fr_register_type (GTypeModule *module)
 		NULL
 	};
 
+    static const GInterfaceInfo nd_provider_iface_info = {
+        (GInterfaceInitFunc) nemo_fr_nd_provider_iface_init,
+        NULL,
+        NULL
+    };
+
 	fr_type = g_type_module_register_type (module,
 					       G_TYPE_OBJECT,
 					       "NemoFileRoller",
@@ -447,4 +468,9 @@ nemo_fr_register_type (GTypeModule *module)
 				     fr_type,
 				     NEMO_TYPE_MENU_PROVIDER,
 				     &menu_provider_iface_info);
+
+    g_type_module_add_interface (module,
+                     fr_type,
+                     NEMO_TYPE_NAME_AND_DESC_PROVIDER,
+                     &nd_provider_iface_info);
 }
