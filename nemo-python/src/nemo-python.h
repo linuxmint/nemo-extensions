@@ -58,6 +58,9 @@ PyTypeObject *_PyNemoInfoProvider_Type;
 PyTypeObject *_PyNemoLocationWidgetProvider_Type;
 #define PyNemoLocationWidgetProvider_Type (*_PyNemoLocationWidgetProvider_Type)
 
+PyTypeObject *_PyNemoNameAndDescProvider_Type;
+#define PyNemoNameAndDescProvider_Type (*_PyNemoNameAndDescProvider_Type)
+
 PyTypeObject *_PyNemoMenu_Type;
 #define PyNemoMenu_Type (*_PyNemoMenu_Type)
 

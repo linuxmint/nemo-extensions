@@ -34,6 +34,7 @@
 #include <libnemo-extension/nemo-menu-item.h>
 #include <libnemo-extension/nemo-menu-provider.h>
 #include <libnemo-extension/nemo-property-page-provider.h>
+#include <libnemo-extension/nemo-name-and-desc-provider.h>
 
 #include <string.h>
 
@@ -134,6 +135,51 @@ nemo_python_boxed_new (PyTypeObject *type, gpointer boxed, gboolean free_on_deal
 	self->free_on_dealloc = free_on_dealloc;
 	
 	return (PyObject *) self;
+}
+
+#define METHOD_NAME "get_name_and_desc"
+static GList *
+nemo_python_object_get_name_and_desc (NemoNameAndDescProvider *provider)
+{
+    NemoPythonObject *object = (NemoPythonObject*)provider;
+    PyObject *py_ret = NULL;
+    GList *ret = NULL;
+    PyGILState_STATE state = pyg_gil_state_ensure();
+    
+    debug_enter();
+
+    CHECK_OBJECT(object);
+    CHECK_METHOD_NAME(object->instance);
+
+    py_ret = PyObject_CallMethod(object->instance, METHOD_PREFIX METHOD_NAME, NULL);
+    HANDLE_RETVAL(py_ret);
+
+    int i;
+    for (i = 0; i < PySequence_Size (py_ret); i++)
+        {
+            PyObject *py_item;
+            py_item = PySequence_GetItem (py_ret, i);
+            if (!PyString_Check(py_item))
+            {
+                PyErr_SetString(PyExc_TypeError,
+                                METHOD_NAME
+                                " must return a sequence of strings");
+                goto beach;
+            }
+            ret = g_list_append (ret, (gchar *) PyString_AsString(py_item));
+            Py_DECREF(py_item);
+        }
+ beach:
+    Py_XDECREF(py_ret);
+    pyg_gil_state_release(state);
+    return ret;
+}
+#undef METHOD_NAME
+
+static void
+nemo_python_object_name_and_desc_provider_iface_init (NemoNameAndDescProviderIface *iface)
+{
+    iface->get_name_and_desc = nemo_python_object_get_name_and_desc;
 }
 
 #define METHOD_NAME "get_property_pages"
@@ -519,6 +565,12 @@ nemo_python_object_get_type (GTypeModule *module,
 		NULL
 	};
 
+    static const GInterfaceInfo nd_provider_iface_info = {
+        (GInterfaceInitFunc) nemo_python_object_name_and_desc_provider_iface_init,
+        NULL,
+        NULL
+    };
+
 	debug_enter_args("type=%s", PyString_AsString(PyObject_GetAttrString(type, "__name__")));
 	info = g_new0 (GTypeInfo, 1);
 	
@@ -565,13 +617,20 @@ nemo_python_object_get_type (GTypeModule *module,
 									 NEMO_TYPE_COLUMN_PROVIDER,
 									 &column_provider_iface_info);
 	}
-	
+
 	if (PyObject_IsSubclass(type, (PyObject*)&PyNemoInfoProvider_Type))
 	{
 		g_type_module_add_interface (module, gtype, 
 									 NEMO_TYPE_INFO_PROVIDER,
 									 &info_provider_iface_info);
 	}
-	
-	return gtype;
+
+    if (PyObject_IsSubclass(type, (PyObject*)&PyNemoNameAndDescProvider_Type))
+    {
+        g_type_module_add_interface (module, gtype, 
+                                     NEMO_TYPE_NAME_AND_DESC_PROVIDER,
+                                     &nd_provider_iface_info);
+    }
+
+    return gtype;
 }

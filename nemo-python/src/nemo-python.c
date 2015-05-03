@@ -227,6 +227,7 @@ nemo_python_init_python (void)
 	IMPORT(MenuProvider, "MenuProvider");
 	IMPORT(PropertyPage, "PropertyPage");
 	IMPORT(PropertyPageProvider, "PropertyPageProvider");
+    IMPORT(NameAndDescProvider, "NameAndDescProvider");
 	IMPORT(OperationHandle, "OperationHandle");
 
 #undef IMPORT
