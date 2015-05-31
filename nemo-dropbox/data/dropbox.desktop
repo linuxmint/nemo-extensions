@@ -8,3 +8,4 @@ Type=Application
 Icon=dropbox
 Categories=Network;FileTransfer;
 StartupNotify=false
+X-GNOME-Autostart-Delay=10
