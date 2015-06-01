@@ -2,25 +2,22 @@ Source: nemo-pastebin
 Section: gnome
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
-Build-Depends:
- debhelper (>= 7.0.50~),
- python-all (>= 2.5)
-Build-Depends-Indep:
- python-distutils-extra
-Standards-Version: 3.9.2
-X-Python-Version: >= 2.5
+Build-Depends: debhelper (>= 9),
+               python-all (>= 2.7),
+               dh-python
+Build-Depends-Indep: python-distutils-extra
+Standards-Version: 3.9.6
+X-Python-Version: >= 2.7
 
 Package: nemo-pastebin
 Architecture: all
-Depends:
- nemo,
- pastebinit,
- python-gi,
- python-nemo,
- ${misc:Depends},
- ${python:Depends}
-Recommends:
- gir1.2-notify-0.7
+Depends: nemo,
+         pastebinit,
+         python-gi,
+         python-nemo,
+         ${misc:Depends},
+         ${python:Depends}
+Recommends: gir1.2-notify-0.7
 Description: Nemo extension to send files to a pastebin
  nemo-pastebin is a Nemo extension written in Python, which
  allows users to upload text-only files to a pastebin service just
