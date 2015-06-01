@@ -2,9 +2,11 @@ Source: nemo-rabbitvcs
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Section: devel
 Priority: optional
-Build-Depends: debhelper (>= 7),
-Standards-Version: 3.9.2.0
-XS-Python-Version: >= 2.5
+Build-Depends: debhelper (>= 9),
+               python-all,
+               dh-python
+Standards-Version: 3.9.6
+XS-Python-Version: >= 2.7
 Homepage: https://github.com/linuxmint/nemo-extensions
 
 Package: nemo-rabbitvcs
@@ -18,4 +20,3 @@ Description: Nemo extension for RabbitVCS
  RabbitVCS is a set of graphical tools written to provide simple and
  straightforward access to the version control systems SVN (Subversion) and Git.
  This is the extension for the Nemo file manager (v1.1.2 or greater).
- 
