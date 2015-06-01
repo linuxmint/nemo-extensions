@@ -16,7 +16,10 @@ else
 endif
 
 %:
-	dh $@
+	dh $@ --with=autoreconf
+
+override_dh_autoreconf:
+	dh_autoreconf --as-needed
 
 override_dh_install:
 	rm `find $(CURDIR)/debian -name '*.la'`
