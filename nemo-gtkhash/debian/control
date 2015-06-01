@@ -3,20 +3,19 @@ Section: utils
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com> 
 Build-Depends: debhelper (>= 9),
- autotools-dev,
- libmhash-dev,
- libglib2.0-dev (>= 2.36),
- libgtk-3-dev (>= 3.0.0), 
- libnemo-extension-dev (>= 2.0.4),
- libthunarx-2-dev,
- libgconf2-dev(>= 2.32.0),
- intltool (>= 0.40.6)
-Standards-Version: 3.9.3
+               autotools-dev,
+               libmhash-dev,
+               libglib2.0-dev (>= 2.36),
+               libgtk-3-dev (>= 3.0.0),
+               libnemo-extension-dev (>= 2.0.4),
+               libgcrypt20-dev (>= 1.6.1),
+               intltool (>= 0.40.6)
+Standards-Version: 3.9.6
  
 Package: nemo-gtkhash
 Architecture: any
 Depends: ${shlibs:Depends},
- ${misc:Depends}
+         ${misc:Depends}
 Replaces: gtkhash (<< 0.6.0)
 Breaks: gtkhash (<< 0.6.0)
 Description: nemo extension for computing checksums and more using gtkhash
