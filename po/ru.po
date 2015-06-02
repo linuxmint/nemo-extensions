@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-09-15 21:45+0200\n"
-"PO-Revision-Date: 2014-10-29 06:52+0000\n"
-"Last-Translator: segray <segray@tut.by>\n"
+"PO-Revision-Date: 2015-01-13 13:18+0000\n"
+"Last-Translator: CyberTailor <Vyalkov.02@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-11-11 10:33+0000\n"
-"X-Generator: Launchpad (build 17241)\n"
+"X-Launchpad-Export-Date: 2015-06-02 10:14+0000\n"
+"X-Generator: Launchpad (build 17532)\n"
 
 #: ../nemo-extensions/nemo-folder-color.py:172
 #: ../caja-extensions/caja-folder-color.py:136
@@ -71,7 +71,7 @@ msgstr "Сине-зелёный"
 #: ../nemo-extensions/nemo-folder-color.py:182
 #: ../caja-extensions/caja-folder-color.py:134
 msgid "Aqua"
-msgstr "Вода"
+msgstr "Водяной"
 
 #: ../nemo-extensions/nemo-folder-color.py:183
 #: ../caja-extensions/caja-folder-color.py:147

@@ -1,6 +1,0 @@
-# intltool-update -p -g folder-color-switcher
-# also done automatically with setup.py build or install
-[encoding: UTF-8]
-nemo-extensions/nemo-folder-color-switcher.py
-caja-extensions/caja-folder-color-switcher.py
-
