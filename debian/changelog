@@ -1,3 +1,9 @@
+folder-color-switcher (1.0.4) rafaela; urgency=medium
+
+  * Updated translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 02 Jun 2015 13:21:19 +0200
+
 folder-color-switcher (1.0.3) rebecca; urgency=medium
 
   * Added dependencies on gir packages for nemo and caja
