@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
                autotools-dev,
+               gnome-common,
                intltool (>= 0.29),
                dh-autoreconf,
                libglib2.0-dev (>= 2.35.9),
