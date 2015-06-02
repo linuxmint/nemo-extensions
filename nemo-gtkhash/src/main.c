@@ -165,10 +165,6 @@ int main(int argc, char **argv)
 	textdomain(GETTEXT_PACKAGE);
 #endif
 
-	gdk_threads_init();
-	gdk_threads_enter();
-	atexit(gdk_threads_leave);
-
 	read_opts_preinit(&argc, &argv);
 
 	hash_init();
