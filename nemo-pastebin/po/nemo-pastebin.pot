@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-08 20:29-0400\n"
+"POT-Creation-Date: 2015-06-01 11:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,9 +36,25 @@ msgstr ""
 msgid "Send this file to %s"
 msgstr ""
 
+#: ../nemo-pastebin.py:193
+msgid "Nemo Pastebin:::Send files to a paste service via the context menu"
+msgstr ""
+
 #: ../nemo-pastebin-configurator.py:45
 #, python-format
 msgid "Can't find %s in any known prefix!"
+msgstr ""
+
+#: ../data/nemo-pastebin-configurator.desktop:4
+msgid "Nemo Pastebin Configurator"
+msgstr ""
+
+#: ../data/nemo-pastebin-configurator.desktop:6
+msgid "Nemo Pastebin configuration panel"
+msgstr ""
+
+#: ../data/nemo-pastebin-configurator.desktop:7
+msgid "nemo-pastebin"
 msgstr ""
 
 #: ../data/nemo-pastebin.gschema.xml.h:1

@@ -1,14 +1,21 @@
 Source: nemo-filename-repairer
 Section: gnome
 Priority: optional
-Maintainer: gogo <trebelnik2@gmail.com>
-Homepage: http://code.google.com/p/repairer/
-Standards-Version: 3.8.3
-Build-Depends: cdbs, debhelper (>= 5), autotools-dev, libnemo-extension-dev (>= 2.2.0), intltool, libgnome2-dev
+Maintainer: Clement Lefebvre <root@linuxmint.com>
+Homepage: https://github.com/linuxmint/nemo-extensions
+Build-Depends: cdbs,
+               debhelper (>= 9),
+               autotools-dev,
+               libnemo-extension-dev (>= 2.2.0),
+               intltool,
+               libglib2.0-dev (>= 2.24.0),
+               libgtk-3-dev (>= 3.0.0)
+Standards-Version: 3.9.6
 
 Package: nemo-filename-repairer
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Description: Nemo extension for filename encoding repair
  This is a Nemo extension which repairs filename which uses wrong
  encoding in Nemo. This extension provides the context menu for any
