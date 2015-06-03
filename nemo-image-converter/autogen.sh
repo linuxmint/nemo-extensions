@@ -4,7 +4,6 @@ srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
 [ ! -d m4 ] && mkdir m4
-[ ! -d build-aux ] && mkdir build-aux
 
 PKG_NAME="nemo"
 

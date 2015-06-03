@@ -6,6 +6,7 @@ Homepage: https://github.com/linuxmint/nemo-extensions
 Build-Depends: cdbs,
                debhelper (>= 9),
                autotools-dev,
+               gnome-common,
                libnemo-extension-dev (>= 2.2.0),
                intltool,
                libglib2.0-dev (>= 2.24.0),
