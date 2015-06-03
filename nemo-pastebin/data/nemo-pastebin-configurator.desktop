@@ -3,7 +3,7 @@
 Name=Nemo Pastebin Configurator
 Name[hr]=Nemo pastebin podešavanje
 Type=Application
-GenericName=Nemo pastebin configuration panel
+GenericName=Nemo Pastebin configuration panel
 GenericName[hr]=Nemo pastebin dijalog podešavanja
 Icon=nemo-pastebin
 Categories=Settings;
