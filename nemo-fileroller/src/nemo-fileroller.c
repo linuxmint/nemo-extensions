@@ -33,7 +33,7 @@
 
 
 static GObjectClass *parent_class;
-
+static gboolean always_show_extract_to = FALSE;
 
 static void
 extract_to_callback (NemoMenuItem *item,
@@ -345,7 +345,8 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 
 		items = g_list_append (items, item);
 	}
-	if (all_archives) {
+	if (all_archives &&
+        (!can_write || always_show_extract_to)) {
 		NemoMenuItem *item;
 
 		item = nemo_menu_item_new ("NemoFr::extract_to",
@@ -412,6 +413,19 @@ nemo_fr_nd_provider_iface_init (NemoNameAndDescProviderIface *iface)
 static void
 nemo_fr_instance_init (NemoFr *fr)
 {
+    GSettings *settings = g_settings_new ("org.nemo.preferences");
+
+    gchar **keys = g_settings_list_keys (settings);
+    int i;
+
+    for (i = 0; i < g_strv_length (keys); i++) {
+        if (g_strcmp0 (keys[i], "context-menus-show-all-actions")) {
+            always_show_extract_to = g_settings_get_boolean (settings, "context-menus-show-all-actions");
+            break;
+        }
+    }
+    g_strfreev (keys);
+    g_object_unref (settings);
 }
 
 
