@@ -345,7 +345,7 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 
 		items = g_list_append (items, item);
 	}
-	else if (all_archives && ! can_write) {
+	if (all_archives) {
 		NemoMenuItem *item;
 
 		item = nemo_menu_item_new ("NemoFr::extract_to",
