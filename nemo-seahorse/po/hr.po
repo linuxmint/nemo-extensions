@@ -35,8 +35,8 @@ msgstr "_Potpis"
 msgid "Sign the selected file"
 msgid_plural "Sign the selected files"
 msgstr[0] "Potpiši odabranu datoteku"
-msgstr[1] "Prijavi odabranu datoteke"
-msgstr[2] "Prijavi odabranu datoteke"
+msgstr[1] "Potpiši odabrane datoteke"
+msgstr[2] "Potpiši odabrane datoteke"
 
 #: ../tool/seahorse-multi-encrypt.xml.h:1
 msgid "Encrypt Multiple Files"
@@ -180,7 +180,7 @@ msgstr "Upišite lozinku za '%s'"
 
 #: ../tool/seahorse-passphrase.c:123
 msgid "Enter new passphrase"
-msgstr "Unesite novu lozinku"
+msgstr "Upišite novu lozinku"
 
 #: ../tool/seahorse-passphrase.c:125
 msgid "Enter passphrase"
