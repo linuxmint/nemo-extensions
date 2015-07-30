@@ -22,7 +22,7 @@ Build-Depends: debhelper (>= 9),
                libgtksourceview-3.0-dev,
                libmusicbrainz5-dev,
                libneon27-gnutls-dev,
-               libwebkitgtk-3.0-dev,
+               libwebkit2gtk-3.0-dev,
                gnome-common
 Standards-Version: 3.9.6
 
