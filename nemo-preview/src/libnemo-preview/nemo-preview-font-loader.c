@@ -37,7 +37,6 @@ typedef struct {
   FT_Library library;
   FT_Long face_index;
   GFile *file;
-  GSimpleAsyncResult *result;
 
   gchar *face_contents;
   gsize face_length;
@@ -54,11 +53,6 @@ font_load_job_new (FT_Library library,
   job->library = library;
   job->face_index = 0;
   job->file = g_file_new_for_uri (uri);
-  job->result = g_simple_async_result_new
-    (NULL, callback, user_data,
-     nemo_preview_new_ft_face_from_uri_async);
-
-  g_simple_async_result_set_op_res_gpointer (job->result, job, NULL);
 
   return job;
 }
@@ -66,7 +60,6 @@ font_load_job_new (FT_Library library,
 static void
 font_load_job_free (FontLoadJob *job)
 {
-  g_clear_object (&job->result);
   g_clear_object (&job->file);
 
   g_slice_free (FontLoadJob, job);
@@ -101,17 +94,6 @@ create_face_from_contents (FontLoadJob *job,
   return retval;
 }
 
-static gboolean
-font_load_job_callback (gpointer user_data)
-{
-  FontLoadJob *job = user_data;
-
-  g_simple_async_result_complete (job->result);
-  font_load_job_free (job);
-
-  return FALSE;
-}
-
 static void
 font_load_job_do_load (FontLoadJob *job,
                        GError **error)
@@ -128,10 +110,11 @@ font_load_job_do_load (FontLoadJob *job,
   }
 }
 
-static gboolean
-font_load_job (GIOSchedulerJob *sched_job,
-               GCancellable *cancellable,
-               gpointer user_data)
+static void
+font_load_job (GTask *task,
+	       gpointer source_object,
+	       gpointer user_data,
+               GCancellable *cancellable)
 {
   FontLoadJob *job = user_data;
   GError *error = NULL;
@@ -139,13 +122,9 @@ font_load_job (GIOSchedulerJob *sched_job,
   font_load_job_do_load (job, &error);
 
   if (error != NULL)
-    g_simple_async_result_take_error (job->result, error);
-
-  g_io_scheduler_job_send_to_mainloop_async (sched_job,
-                                             font_load_job_callback,
-                                             job, NULL);
-
-  return FALSE;
+    g_task_return_error (task, error);
+  else
+    g_task_return_boolean (task, TRUE);
 }
 
 /**
@@ -186,10 +165,12 @@ nemo_preview_new_ft_face_from_uri_async (FT_Library library,
                                   gpointer user_data)
 {
   FontLoadJob *job = font_load_job_new (library, uri, callback, user_data);
-  g_io_scheduler_push_job (font_load_job,
-                           job, NULL,
-                           G_PRIORITY_DEFAULT,
-                           NULL);
+  GTask *task;
+
+  task = g_task_new (NULL, NULL, callback, user_data);
+  g_task_set_task_data (task, job, (GDestroyNotify) font_load_job_free);
+  g_task_run_in_thread (task, font_load_job);
+  g_object_unref (task);
 }
 
 /**
@@ -203,11 +184,10 @@ nemo_preview_new_ft_face_from_uri_finish (GAsyncResult *result,
 {
   FontLoadJob *job;
 
-  if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result),
-                                             error))
+  if (!g_task_propagate_boolean (G_TASK (result), error))
     return NULL;
 
-  job = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (result));
+  job = g_task_get_task_data (G_TASK (result));
 
   return create_face_from_contents (job, contents, error);
 }
