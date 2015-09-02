@@ -175,7 +175,6 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
         self.builder.get_object("bitrate_number").set_label(file.get_string_attribute('bitrate'))
         self.builder.get_object("encoded_by_text").set_label(file.get_string_attribute('encodedby'))
         self.builder.get_object("copyright_text").set_label(file.get_string_attribute('copyright'))
-        self.builder.get_object("album_art_button").add(image)
 
         if file.is_mime_type('audio/mpeg') or file.is_mime_type('audio/flac'):
             return Nemo.PropertyPage(name="NemoPython::audio", label=self.property_label, page=self.mainWindow),
