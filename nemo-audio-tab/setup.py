@@ -7,7 +7,7 @@ import sys
 import DistUtilsExtra.auto
 
 # Create data files
-data = [ ('/usr/share/nemo-python/extensions', ['nemo-extension/nemo-audio-tab.py'], ['nemo-extension/nemo-audio-tab.glade']) ]
+data = [ ('/usr/share/nemo-python/extensions', ['nemo-extension/nemo-audio-tab.py', 'nemo-extension/nemo-audio-tab.glade']) ]
 
 # Setup stage
 DistUtilsExtra.auto.setup(
