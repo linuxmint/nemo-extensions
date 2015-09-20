@@ -17,6 +17,7 @@
 # for more information.
 
 import os, urllib, gettext, locale, collections
+import subprocess
 from gi.repository import Nemo, GObject, Gio, GLib, Gtk, Gdk, GdkPixbuf, cairo
 _ = gettext.gettext
 P_ = gettext.ngettext
@@ -156,7 +157,7 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
             folder.set_attributes_from_info(info, 0, None)
 
             # Touch the directory to make Nemo re-render its icons
-            os.system("touch \"%s\"" % path)
+            subprocess.call(["touch", path])
     
     def get_background_items(self, window, current_folder):
         return
