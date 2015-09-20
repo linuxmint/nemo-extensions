@@ -1,5 +1,6 @@
 import urllib
 import locale, gettext, os
+import subprocess
 
 from gi.repository import GObject
 from gi.repository import Gio
@@ -129,4 +130,8 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
         
         self.file_info.set_attribute_stringv(METADATA_EMBLEMS, emblems)
         self.gio_file.set_attributes_from_info(self.file_info, 0, None)
-        os.system("touch \"%s\"" % self.filename) # touch the file (to force Nemo to re-render its icon)
+
+        # touch the file (to force Nemo to re-render its icon)
+        subprocess.call(["touch", self.filename])
+
+
