@@ -17,6 +17,7 @@
 # for more information.
 
 import os, urllib, gettext, locale
+import subprocess
 from gi.repository import Caja, GObject, Gio, GLib
 _ = gettext.gettext
 
@@ -106,8 +107,8 @@ class ChangeColorFolder(GObject.GObject, Caja.MenuProvider):
             folder.set_attributes_from_info(info, 0, None)
 
             # Touch the directory to make Caja re-render its icons
-            os.system("touch \"%s\"" % path)
-    
+            subprocess.call(["touch", path])
+
     # Caja invoke this function in its startup > Then, create menu entry
     def get_file_items(self, window, items_selected):
         # No items selected
