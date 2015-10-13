@@ -1,10 +1,8 @@
 
 [Desktop Entry]
 Name=Nemo Compare Extension Preferences
-Name[hr]=Nemo Compare osobitosti
 Type=Application
 GenericName=Preferences for Nemo Compare Extension
-GenericName[hr]=Osobitosti za Nemo Compare proširenje
 Icon=gtk-preferences
 Categories=Settings;
 X-Ubuntu-Gettext-Domain=nemo-compare
