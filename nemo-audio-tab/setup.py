@@ -12,7 +12,7 @@ data = [ ('/usr/share/nemo-python/extensions', ['nemo-extension/nemo-audio-tab.p
 # Setup stage
 DistUtilsExtra.auto.setup(
     name         = "nemo-audio-tab",
-    version      = "0.0.1",
+    version      = "2.8.0",
     description  = "View audio tag information from the file manager's properties tab",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",

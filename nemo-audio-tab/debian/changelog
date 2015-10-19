@@ -1,3 +1,9 @@
+nemo-audio-tab (2.8.0) rosa; urgency=medium
+
+  * 2.8.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Oct 2015 23:16:32 +0100
+
 nemo-audio-tab (0.0.1) rafaela; urgency=high
 
   * Initial release

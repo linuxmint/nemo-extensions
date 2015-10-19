@@ -1,6 +1,6 @@
 # Initialization
 
-AC_INIT([nemo-fileroller],2.6.1)
+AC_INIT([nemo-fileroller],2.8.0)
 
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 
