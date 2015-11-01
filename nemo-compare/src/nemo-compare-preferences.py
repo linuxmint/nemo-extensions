@@ -23,38 +23,39 @@ import locale
 import utils
 
 def combo_add_and_select(combo, text):
-    '''Convenience function to add/selct item in ComboBoxEntry'''
+    """Convenience function to add/select item in ComboBoxEntry."""
     combo.append_text(text)
-    model=combo.get_model()
-    iter=model.get_iter_first()
+    model = combo.get_model()
+    iter = model.get_iter_first()
     while model.iter_next(iter):
-        iter=model.iter_next(iter)
+        iter = model.iter_next(iter)
     combo.set_active_iter(iter)
 
+
 class NemoCompareExtensionPreferences:
-    '''The main class for preferences dialog using PyGTK'''
+    """The main class for a preferences dialog using PyGTK."""
 
     combo = None
     combo_3way = None
     combo_multi = None
 
-    def cancel_event(self, widget, event, data = None):
-        '''This callback quits the program'''
+    def cancel_event(self, widget, event, data=None):
+        """Quit the program."""
         gtk.main_quit()
         return False
 
     def changed_cb(self, combo):
-        '''Any of the comboboxes has changed, change the data accordingly'''
+        """Any of the comboboxes has changed, change the data accordingly."""
         model = combo.get_model()
         index = combo.get_active()
         entry = combo.get_child().get_text()
 
-        selection=""
+        selection = ""
 
-        if len(entry)>0:
-            selection=entry
+        if len(entry) > 0:
+            selection = entry
         elif index:
-            selection=model[index][0]
+            selection = model[index][0]
 
         if combo is self.combo:
             self.config.diff_engine = selection
@@ -65,14 +66,14 @@ class NemoCompareExtensionPreferences:
 
         return
 
-    def save_event(self, widget, event, data = None):
-        '''This callback saves the settings and quits the program.'''
+    def save_event(self, widget, event, data=None):
+        """Save settings and quit program."""
         self.config.save()
         gtk.main_quit()
         return False
 
     def __init__(self):
-        '''Load config and create UI'''
+        """Load config and create UI."""
 
         self.config = utils.NemoCompareConfig()
         self.config.load()
@@ -81,18 +82,19 @@ class NemoCompareExtensionPreferences:
         self.config.add_missing_predefined_engines()
 
         # initialize i18n
-        locale.setlocale(locale.LC_ALL, '')
+        locale.setlocale(locale.LC_ALL, "")
         gettext.bindtextdomain(utils.APP)
         gettext.textdomain(utils.APP)
         _ = gettext.gettext
 
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
         #self.window.set_position(gtk.WIN_POS_CENTER)
-        icon=self.window.render_icon(gtk.STOCK_PREFERENCES, gtk.ICON_SIZE_DIALOG)
+        icon = self.window.render_icon(gtk.STOCK_PREFERENCES,
+                                       gtk.ICON_SIZE_DIALOG)
         self.window.set_icon(icon)
         self.window.set_resizable(False)
         self.window.set_title(_("Nemo Compare Extension Preferences"))
-        self.window.connect("delete_event",self.cancel_event)
+        self.window.connect("delete_event", self.cancel_event)
         self.window.set_border_width(15)
 
         main_vbox = gtk.VBox(False, 0)
@@ -106,7 +108,7 @@ class NemoCompareExtensionPreferences:
                 combo_add_and_select(self.combo, text)
             else:
                 self.combo.append_text(text)
-        self.combo.connect('changed', self.changed_cb)
+        self.combo.connect("changed", self.changed_cb)
         frame.add(self.combo)
         main_vbox.pack_start(frame, True, True, 0)
 
@@ -118,7 +120,7 @@ class NemoCompareExtensionPreferences:
                 combo_add_and_select(self.combo_3way, text)
             else:
                 self.combo_3way.append_text(text)
-        self.combo_3way.connect('changed', self.changed_cb)
+        self.combo_3way.connect("changed", self.changed_cb)
         frame_3way.add(self.combo_3way)
         main_vbox.pack_start(frame_3way, True, True, 0)
 
@@ -130,32 +132,36 @@ class NemoCompareExtensionPreferences:
                 combo_add_and_select(self.combo_multi, text)
             else:
                 self.combo_multi.append_text(text)
-        self.combo_multi.connect('changed', self.changed_cb)
+        self.combo_multi.connect("changed", self.changed_cb)
         frame_multi.add(self.combo_multi)
         main_vbox.pack_start(frame_multi, True, True, 0)
 
-        separator = gtk.HBox(False,5)
+        separator = gtk.HBox(False, 5)
         main_vbox.pack_start(separator, False, True, 5)
 
         # cancel / ok
-        confirm_hbox = gtk.HBox(False,0)
+        confirm_hbox = gtk.HBox(False, 0)
         main_vbox.pack_start(confirm_hbox, False, False, 0)
-        
+
         cancel_button = gtk.Button(stock=gtk.STOCK_CANCEL)
-        cancel_button.connect_object("clicked", self.cancel_event, self.window, None)  
+        cancel_button.connect_object("clicked",
+                                     self.cancel_event,
+                                     self.window, None)
         confirm_hbox.pack_start(cancel_button, True, True, 5)
 
         ok_button = gtk.Button(stock=gtk.STOCK_OK)
-        ok_button.connect_object("clicked", self.save_event, self.window, None)  
+        ok_button.connect_object("clicked",
+                                 self.save_event,
+                                 self.window, None)
         confirm_hbox.pack_start(ok_button, True, True, 5)
 
         self.window.show_all()
 
     def main(self):
-        '''GTK main method'''
+        """GTK main method."""
         gtk.main()
+
 
 if __name__ == "__main__":
     prefs = NemoCompareExtensionPreferences()
     prefs.main()
-
