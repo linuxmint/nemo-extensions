@@ -16,20 +16,20 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import sys
-import os
-import urllib
 import gettext
 import locale
+import os
 import signal
-from gi.repository import GLib
-signal.signal(signal.SIGINT, signal.SIG_DFL)
+import sys
+import urllib
 
-from gi.repository import Nemo, GObject, Gio
+from gi.repository import GLib, GObject, Gio, Nemo
 
 sys.path.append("/usr/share/nemo-compare")
-
 import utils
+
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
 
 class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
 	'''Class for the extension itself'''
