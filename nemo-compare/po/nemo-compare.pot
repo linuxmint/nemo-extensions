@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/nemo-compare.py:112
 #: src/nemo-compare.py:135
-msgid "Compare to: "
+msgid "Compare to: %s"
 msgstr ""
 
 #: src/nemo-compare.py:113

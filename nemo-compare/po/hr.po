@@ -15,8 +15,8 @@ msgstr ""
 
 #: src/nemo-compare.py:112
 #: src/nemo-compare.py:135
-msgid "Compare to: "
-msgstr "Usporedi s: "
+msgid "Compare to: %s"
+msgstr "Usporedi s: %s"
 
 #: src/nemo-compare.py:113
 msgid "Compare to the file remembered before"
