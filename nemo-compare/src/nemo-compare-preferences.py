@@ -36,7 +36,7 @@ def combo_add_and_select(combo, text):
 class NemoCompareExtensionPreferences:
     """The main class for a preferences dialog using GTK+ through PyGObject."""
 
-    combo = None
+    combo_normal = None
     combo_3way = None
     combo_multi = None
 
@@ -46,26 +46,15 @@ class NemoCompareExtensionPreferences:
         return False
 
     def changed_cb(self, combo):
-        """Any of the comboboxes has changed, change the data accordingly."""
-        model = combo.get_model()
-        index = combo.get_active()
-        entry = combo.get_active_text()
+        """On ComboBox change, change data accordingly."""
+        selection = combo.get_active_text()
 
-        selection = ""
-
-        if len(entry) > 0:
-            selection = entry
-        elif index:
-            selection = model[index][0]
-
-        if combo is self.combo:
+        if combo is self.combo_normal:
             self.config.diff_engine = selection
         elif combo is self.combo_3way:
             self.config.diff_engine_3way = selection
         elif combo is self.combo_multi:
             self.config.diff_engine_multi = selection
-
-        return
 
     def save_event(self, widget, event, data=None):
         """Save settings and quit program."""
@@ -75,11 +64,8 @@ class NemoCompareExtensionPreferences:
 
     def __init__(self):
         """Load config and create UI."""
-
         self.config = utils.NemoCompareConfig()
         self.config.load()
-
-        # find out if some new engines have been installed
         self.config.add_missing_predefined_engines()
 
         # initialize i18n
@@ -102,14 +88,14 @@ class NemoCompareExtensionPreferences:
 
         # normal diff
         frame = Gtk.Frame(label=_("Normal Diff"))
-        self.combo = Gtk.ComboBoxText()
+        self.combo_normal = Gtk.ComboBoxText()
         for text in self.config.engines:
             if text == self.config.diff_engine:
-                combo_add_and_select(self.combo, text)
+                combo_add_and_select(self.combo_normal, text)
             else:
-                self.combo.append_text(text)
-        self.combo.connect("changed", self.changed_cb)
-        frame.add(self.combo)
+                self.combo_normal.append_text(text)
+        self.combo_normal.connect("changed", self.changed_cb)
+        frame.add(self.combo_normal)
         main_vbox.pack_start(frame, True, True, 0)
 
         # 3-way diff
