@@ -18,136 +18,107 @@
 
 import gettext
 import locale
+from collections import OrderedDict
 
 from gi.repository import Gtk
 
 import utils
 
-def combo_add_and_select(combo, text):
-    """Convenience function to add/select item in ComboBoxEntry."""
-    combo.append_text(text)
-    model = combo.get_model()
-    iter = model.get_iter_first()
-    while model.iter_next(iter):
-        iter = model.iter_next(iter)
-    combo.set_active_iter(iter)
+# internationalization
+locale.setlocale(locale.LC_ALL, "")
+gettext.bindtextdomain(utils.APP)
+gettext.textdomain(utils.APP)
+_ = gettext.gettext
 
 
-class NemoCompareExtensionPreferences:
-    """The main class for a preferences dialog using GTK+ through PyGObject."""
+class NemoCompareExtensionPreferences(Gtk.Window):
+    """Main class for a preferences dialog using GTK+ through PyGObject."""
 
-    combo_normal = None
-    combo_3way = None
-    combo_multi = None
+    def __init__(self):
+        """Load config and create UI."""
+        # configuration
+        self.config = utils.NemoCompareConfig()
+        self.config.load()
+        self.config.add_missing_predefined_engines()
+        # combo boxes
+        self.combo_boxes = OrderedDict()
+        self.combo_boxes["Normal Diff"] = None
+        self.combo_boxes["Three-Way Diff"] = None
+        self.combo_boxes["N-Way Diff"] = None
 
-    def cancel_event(self, widget, event, data=None):
-        """Quit the program."""
-        Gtk.main_quit()
-        return False
+        Gtk.Window.__init__(self)
+        self._build_gui()
+        self._insert_config_data()
 
-    def changed_cb(self, combo):
-        """On ComboBox change, change data accordingly."""
-        selection = combo.get_active_text()
+    def _build_gui(self):
+        """Create GUI."""
 
-        if combo is self.combo_normal:
-            self.config.diff_engine = selection
-        elif combo is self.combo_3way:
-            self.config.diff_engine_3way = selection
-        elif combo is self.combo_multi:
-            self.config.diff_engine_multi = selection
+        icon = self.render_icon(Gtk.STOCK_PREFERENCES, Gtk.IconSize.DIALOG)
+        self.set_icon(icon)
+        self.set_resizable(False)
+        self.set_title(_("Nemo Compare Extension Preferences"))
+        self.set_border_width(15)
+
+        grid = Gtk.Grid(
+            orientation=Gtk.Orientation.VERTICAL,
+            column_homogeneous=True,
+            column_spacing=10,
+            row_spacing=10)
+        self.add(grid)
+
+        for name in self.combo_boxes:
+            label = Gtk.Label(label=_(name), halign=Gtk.Align.START)
+            grid.add(label)
+            self.combo_boxes[name] = Gtk.ComboBoxText()
+            grid.attach_next_to(self.combo_boxes[name], label,
+                                Gtk.PositionType.RIGHT, 1, 1)
+
+        btn_cancel = Gtk.Button(stock=Gtk.STOCK_CANCEL)
+        btn_cancel.connect_object("clicked", Gtk.main_quit, self, None)
+        grid.attach(btn_cancel, 0, 3, 1, 1)
+        btn_ok = Gtk.Button(stock=Gtk.STOCK_OK)
+        btn_ok.connect_object("clicked", self.save_event, self, None)
+        grid.attach_next_to(btn_ok, btn_cancel, Gtk.PositionType.RIGHT, 1, 1)
+
+    def _insert_config_data(self):
+        """Insert engines from config into combo boxes and preselect the
+        active ones."""
+        # remember currently active engines in lists
+        engine_lists = {
+            "normal" : [self.config.diff_engine],
+            "3way" : [self.config.diff_engine_3way],
+            "multi" : [self.config.diff_engine_multi]
+        }
+        # add all other engines
+        for engine_list in engine_lists.values():
+            engine_list.extend(
+                [engine for engine in self.config.engines
+                 if engine not in engine_list])
+        # write lists in combo boxes
+        for engine in engine_lists["normal"]:
+            self.combo_boxes["Normal Diff"].append_text(engine)
+        for engine in engine_lists["3way"]:
+            self.combo_boxes["Three-Way Diff"].append_text(engine)
+        for engine in engine_lists["multi"]:
+            self.combo_boxes["N-Way Diff"].append_text(engine)
+        # select first entry (=currently active engine)
+        for box in self.combo_boxes.values():
+            box.set_active(0)
 
     def save_event(self, widget, event, data=None):
         """Save settings and quit program."""
+        selections = [box.get_active_text()
+                      for box in self.combo_boxes.values()]
+        self.config.diff_engine = selections[0]
+        self.config.diff_engine_3way = selections[1]
+        self.config.diff_engine_multi = selections[2]
         self.config.save()
         Gtk.main_quit()
         return False
 
-    def __init__(self):
-        """Load config and create UI."""
-        self.config = utils.NemoCompareConfig()
-        self.config.load()
-        self.config.add_missing_predefined_engines()
-
-        # initialize i18n
-        locale.setlocale(locale.LC_ALL, "")
-        gettext.bindtextdomain(utils.APP)
-        gettext.textdomain(utils.APP)
-        _ = gettext.gettext
-
-        self.window = Gtk.Window()
-        icon = self.window.render_icon(Gtk.STOCK_PREFERENCES,
-                                       Gtk.IconSize.DIALOG)
-        self.window.set_icon(icon)
-        self.window.set_resizable(False)
-        self.window.set_title(_("Nemo Compare Extension Preferences"))
-        self.window.connect("delete_event", self.cancel_event)
-        self.window.set_border_width(15)
-
-        main_vbox = Gtk.VBox(False, 0)
-        self.window.add(main_vbox)
-
-        # normal diff
-        frame = Gtk.Frame(label=_("Normal Diff"))
-        self.combo_normal = Gtk.ComboBoxText()
-        for text in self.config.engines:
-            if text == self.config.diff_engine:
-                combo_add_and_select(self.combo_normal, text)
-            else:
-                self.combo_normal.append_text(text)
-        self.combo_normal.connect("changed", self.changed_cb)
-        frame.add(self.combo_normal)
-        main_vbox.pack_start(frame, True, True, 0)
-
-        # 3-way diff
-        frame_3way = Gtk.Frame(label=_("Three-Way Diff"))
-        self.combo_3way = Gtk.ComboBoxText()
-        for text in self.config.engines:
-            if text == self.config.diff_engine_3way:
-                combo_add_and_select(self.combo_3way, text)
-            else:
-                self.combo_3way.append_text(text)
-        self.combo_3way.connect("changed", self.changed_cb)
-        frame_3way.add(self.combo_3way)
-        main_vbox.pack_start(frame_3way, True, True, 0)
-
-        # n-way diff
-        frame_multi = Gtk.Frame(label=_("N-Way Diff"))
-        self.combo_multi = Gtk.ComboBoxText()
-        for text in self.config.engines:
-            if text == self.config.diff_engine_multi:
-                combo_add_and_select(self.combo_multi, text)
-            else:
-                self.combo_multi.append_text(text)
-        self.combo_multi.connect("changed", self.changed_cb)
-        frame_multi.add(self.combo_multi)
-        main_vbox.pack_start(frame_multi, True, True, 0)
-
-        separator = Gtk.HBox(False, 5)
-        main_vbox.pack_start(separator, False, True, 5)
-
-        # cancel / ok
-        confirm_hbox = Gtk.HBox(False, 0)
-        main_vbox.pack_start(confirm_hbox, False, False, 0)
-
-        cancel_button = Gtk.Button(stock=Gtk.STOCK_CANCEL)
-        cancel_button.connect_object("clicked",
-                                     self.cancel_event,
-                                     self.window, None)
-        confirm_hbox.pack_start(cancel_button, True, True, 5)
-
-        ok_button = Gtk.Button(stock=Gtk.STOCK_OK)
-        ok_button.connect_object("clicked",
-                                 self.save_event,
-                                 self.window, None)
-        confirm_hbox.pack_start(ok_button, True, True, 5)
-
-        self.window.show_all()
-
-    def main(self):
-        """GTK main method."""
-        Gtk.main()
-
 
 if __name__ == "__main__":
-    prefs = NemoCompareExtensionPreferences()
-    prefs.main()
+    preferences = NemoCompareExtensionPreferences()
+    preferences.connect("delete-event", Gtk.main_quit)
+    preferences.show_all()
+    Gtk.main()
