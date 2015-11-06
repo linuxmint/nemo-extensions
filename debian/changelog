@@ -1,3 +1,13 @@
+folder-color-switcher (1.0.5) rosa; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Updated translations
+
+  [ Michael Webster ]
+  * Replace os.system with subprocess.call
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 06 Nov 2015 14:37:29 +0000
+
 folder-color-switcher (1.0.4) rafaela; urgency=medium
 
   * Updated translations
