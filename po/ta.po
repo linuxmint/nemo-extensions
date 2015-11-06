@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-09-15 21:45+0200\n"
-"PO-Revision-Date: 2014-12-03 07:08+0000\n"
-"Last-Translator: Prakash <NGPRAKASAM@GMAIL.COM>\n"
+"PO-Revision-Date: 2015-08-23 16:43+0000\n"
+"Last-Translator: Kamala Kannan <Unknown>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-06-26 13:21+0000\n"
-"X-Generator: Launchpad (build 17578)\n"
+"X-Launchpad-Export-Date: 2015-11-06 14:10+0000\n"
+"X-Generator: Launchpad (build 17838)\n"
 
 #: ../nemo-extensions/nemo-folder-color.py:172
 #: ../caja-extensions/caja-folder-color.py:136
 msgid "Sand"
-msgstr ""
+msgstr "மணல்"
 
 #: ../nemo-extensions/nemo-folder-color.py:173
 #: ../caja-extensions/caja-folder-color.py:135
@@ -30,42 +30,42 @@ msgstr "பழுப்பு"
 #: ../nemo-extensions/nemo-folder-color.py:174
 #: ../caja-extensions/caja-folder-color.py:149
 msgid "Yellow"
-msgstr ""
+msgstr "மஞ்சள்"
 
 #: ../nemo-extensions/nemo-folder-color.py:175
 #: ../caja-extensions/caja-folder-color.py:143
 msgid "Orange"
-msgstr ""
+msgstr "ஆரஞ்சு"
 
 #: ../nemo-extensions/nemo-folder-color.py:176
 #: ../caja-extensions/caja-folder-color.py:139
 msgid "Brown"
-msgstr ""
+msgstr "பழுப்பு"
 
 #: ../nemo-extensions/nemo-folder-color.py:177
 #: ../caja-extensions/caja-folder-color.py:146
 msgid "Red"
-msgstr ""
+msgstr "சிவப்பு"
 
 #: ../nemo-extensions/nemo-folder-color.py:178
 #: ../caja-extensions/caja-folder-color.py:145
 msgid "Purple"
-msgstr ""
+msgstr "ஊதா"
 
 #: ../nemo-extensions/nemo-folder-color.py:179
 #: ../caja-extensions/caja-folder-color.py:144
 msgid "Pink"
-msgstr ""
+msgstr "இளஞ்சிவப்பு"
 
 #: ../nemo-extensions/nemo-folder-color.py:180
 #: ../caja-extensions/caja-folder-color.py:138
 msgid "Blue"
-msgstr ""
+msgstr "நீலம்"
 
 #: ../nemo-extensions/nemo-folder-color.py:181
 #: ../caja-extensions/caja-folder-color.py:140
 msgid "Cyan"
-msgstr ""
+msgstr "மயில் நீலம்"
 
 #. Colors submenu
 #: ../nemo-extensions/nemo-folder-color.py:182
