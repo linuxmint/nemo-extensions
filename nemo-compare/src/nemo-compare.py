@@ -21,7 +21,10 @@ import locale
 import os
 import signal
 import sys
-import urllib
+try:
+    from urllib.parse import unquote
+except ImportError:
+    from urllib import unquote
 
 from gi.repository import GLib, GObject, Gio, Nemo
 
@@ -77,7 +80,7 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
         paths = []
         for file in files:
             if self.valid_file(file):
-                path = urllib.unquote(file.get_uri()[7:])
+                path = unquote(file.get_uri()[7:])
                 paths.append(path)
 
         # no files selected
