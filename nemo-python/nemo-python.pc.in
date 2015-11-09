@@ -3,5 +3,6 @@ Description: Nemo-Python Components
 Version: @VERSION@
 
 prefix=@prefix@
-libdir=${prefix}/lib
+libdir=@libdir@
+datarootdir=@datarootdir@
 pythondir=@datadir@/nemo-python/extensions

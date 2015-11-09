@@ -1,29 +1,37 @@
-STATUS
-------
+Nemo Extensions
+===============
 
-nemo-wallpaper: (built in to Nemo)
-nemo-dropbox: functional
-nemo-fileroller: functional
-nemo-sendto: functional
-nemo-seahorse: functional
-nemo-share: functional
-nemo-pastebin: functional
-nemo-compare: functional
-nemo-python (python bindings for Nemo): functional
-nemo-rabbitvcs: functional (forked from rabbitvcs-0.15.3)
-nemo-terminal: functional (forked from nautilus-terminal-1.0.0)
-nemo-gtkhash: functional (forked from gtkhash-0.7.0)
-nemo-filename-repairer forked from (nautilus-filename-repairer-0.0.6) 
-nemo-image-converter forked from (nautilus-image-converter-0.3.1)
-nemo-audio-tab forked from nemo-media-columns and nemo-emblems
+Extensions for the file browser Nemo.
+Python scripts are currently being ported to Python 3.
 
-NOT YET INCLUDED:
-----------------
+| Component             | Current Status   |
+|-----------------------+------------------|
+| nemo-audio-tab        | TODO             |
+| nemo-compare          | functional (Py3) |
+| nemo-dropbox          | TODO             |
+| nemo-emblems          | TODO             |
+| nemo-fileroller       | functional (C)   |
+| nemo-gtkhash          | functional (C)   |
+| nemo-image-converter  | functional (C)   |
+| nemo-media-columns    | TODO             |
+| nemo-pastebin         | TODO             |
+| nemo-preview          | functional (C)   |
+| nemo-python           | functional (C)   |
+| nemo-rabbitvcs        | TODO             |
+| nemo-repairer         | functional (C)   |
+| nemo-seahorse         | functional (C)   |
+| nemo-share            | functional (C)   |
+| nemo-terminal         | TODO             |
+
+
+Not yet included:
+-----------------
 
 nemo-bzr: part of bzr-gtk, needs to be isolated from it
 
-NAUTILUS EXTENSIONS MISSING IN NEMO:
----------------------------------
+
+Nautilus Extensions missing in Nemo:
+------------------------------------
 
 nautilus-actions                - nautilus extension to configure programs t
 nautilus-clamscan               - Antivirus scanning for Nautilus           
@@ -38,4 +46,3 @@ nautilus-scripts-manager        - simple tool for nautilus scripts managemen
 nautilus-search                 - Add gnome-search-tool to context menu
 nautilus-sendto-empathy         - GNOME multi-protocol chat and call client 
 nautilus-wipe                   - Secure deletion extension for Nautilus    
-

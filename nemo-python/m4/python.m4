@@ -2,7 +2,7 @@
 dnl AM_CHECK_PYMOD(MODNAME [,SYMBOL [,ACTION-IF-FOUND [,ACTION-IF-NOT-FOUND]]])
 dnl Check if a module containing a given symbol is visible to python.
 AC_DEFUN([AM_CHECK_PYMOD],
-[AC_REQUIRE([AM_PATH_PYTHON])
+[AC_REQUIRE([AM_PATH_PYTHON([3.3])])
 py_mod_var=`echo $1['_']$2 | sed 'y%./+-%__p_%'`
 AC_MSG_CHECKING(for ifelse([$2],[],,[$2 in ])python module $1)
 AC_CACHE_VAL(py_cv_mod_$py_mod_var, [
@@ -40,7 +40,7 @@ dnl a macro to check for ability to create python extensions
 dnl  AM_CHECK_PYTHON_HEADERS([ACTION-IF-POSSIBLE], [ACTION-IF-NOT-POSSIBLE])
 dnl function also defines PYTHON_INCLUDES
 AC_DEFUN([AM_CHECK_PYTHON_HEADERS],
-[AC_REQUIRE([AM_PATH_PYTHON])
+[AC_REQUIRE([AM_PATH_PYTHON([3.3])])
 AC_MSG_CHECKING(for headers required to compile python extensions)
 dnl deduce PYTHON_INCLUDES
 py_prefix=`$PYTHON -c "import sys; print(sys.prefix)"`

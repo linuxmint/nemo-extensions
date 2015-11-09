@@ -142,7 +142,7 @@ nemo_python_load_dir (GTypeModule *module,
 				
 				/* sys.path.insert(0, dirname) */
 				sys_path = PySys_GetObject("path");
-				py_path = PyString_FromString(dirname);
+				py_path = PyUnicode_FromString(dirname);
 				PyList_Insert(sys_path, 0, py_path);
 				Py_DECREF(py_path);
 			}
@@ -156,7 +156,7 @@ nemo_python_init_python (void)
 {
 	PyObject *nemo;
 	GModule *libpython;
-	char *argv[] = { "nemo", NULL };
+	wchar_t *argv[] = { L"nemo", NULL };
 
 	if (Py_IsInitialized())
 		return TRUE;
@@ -182,13 +182,14 @@ nemo_python_init_python (void)
 		return FALSE;
 	}
 	
-	debug("Sanitize the python search path");
-	PyRun_SimpleString("import sys; sys.path = filter(None, sys.path)");
-	if (PyErr_Occurred())
-	{
-		PyErr_Print();
-		return FALSE;
-	}
+	// Commenting out: May lead to imports being impossible in Python3
+	// debug("Sanitize the python search path");
+	// PyRun_SimpleString("import sys; sys.path = filter(None, sys.path)");
+	// if (PyErr_Occurred())
+	// {
+	// 	PyErr_Print();
+	// 	return FALSE;
+	// }
 
 	/* import gobject */
   	debug("init_pygobject");
