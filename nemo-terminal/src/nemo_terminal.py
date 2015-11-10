@@ -204,7 +204,7 @@ class NemoTerminal(object):
             workingDir = os.readlink('/proc/%s/cwd' % pgroup)
         gfile = Gio.file_parse_name(workingDir)
         workingDirUri = gfile.get_uri()
-        print workingDirUri
+        print(workingDirUri)
         # TODO: something useful (like changing the working dir)
         return
 
@@ -233,7 +233,7 @@ class NemoTerminal(object):
         self._path = self._uri_to_path(uri)
         if not self._shell_is_busy():
             # Clear any input
-            eraselinekeys = settings.get_string("terminal-erase-line").decode('string_escape')
+            eraselinekeys = settings.get_string("terminal-erase-line").encode().decode('unicode_escape')
             self.term.feed_child(eraselinekeys, len(eraselinekeys))
             
             # Change directory
@@ -243,7 +243,7 @@ class NemoTerminal(object):
             self.term.feed_child(cdcmd, len(cdcmd))
             
             # Restore user input
-            restorelinekeys = settings.get_string("terminal-restore-line").decode('string_escape')
+            restorelinekeys = settings.get_string("terminal-restore-line").encode().decode('unicode_escape')
             self.term.feed_child(restorelinekeys, len(restorelinekeys))
 
     def get_widget(self):

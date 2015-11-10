@@ -21,7 +21,7 @@ Python scripts are currently being ported to Python 3.
 | nemo-repairer         | functional (C)   |
 | nemo-seahorse         | functional (C)   |
 | nemo-share            | functional (C)   |
-| nemo-terminal         | TODO             |
+| nemo-terminal         | functional (Py3) |
 
 
 Not yet included:
