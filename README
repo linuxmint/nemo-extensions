@@ -9,7 +9,7 @@ Python scripts are currently being ported to Python 3.
 | nemo-audio-tab        | TODO             |
 | nemo-compare          | functional (Py3) |
 | nemo-dropbox          | TODO             |
-| nemo-emblems          | TODO             |
+| nemo-emblems          | functional (Py3) |
 | nemo-fileroller       | functional (C)   |
 | nemo-gtkhash          | functional (C)   |
 | nemo-image-converter  | functional (C)   |
