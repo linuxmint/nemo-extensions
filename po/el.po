@@ -1,0 +1,127 @@
+# Greek translation for linuxmint
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-09-15 21:45+0200\n"
+"PO-Revision-Date: 2014-12-30 13:12+0000\n"
+"Last-Translator: StratosJL <stratos@laspas.gr>\n"
+"Language-Team: Greek <el@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-11-06 14:10+0000\n"
+"X-Generator: Launchpad (build 17838)\n"
+
+#: ../nemo-extensions/nemo-folder-color.py:172
+#: ../caja-extensions/caja-folder-color.py:136
+msgid "Sand"
+msgstr "Άμμος"
+
+#: ../nemo-extensions/nemo-folder-color.py:173
+#: ../caja-extensions/caja-folder-color.py:135
+msgid "Beige"
+msgstr "Μπεζ"
+
+#: ../nemo-extensions/nemo-folder-color.py:174
+#: ../caja-extensions/caja-folder-color.py:149
+msgid "Yellow"
+msgstr "Κίτρινο"
+
+#: ../nemo-extensions/nemo-folder-color.py:175
+#: ../caja-extensions/caja-folder-color.py:143
+msgid "Orange"
+msgstr "Πορτοκαλί"
+
+#: ../nemo-extensions/nemo-folder-color.py:176
+#: ../caja-extensions/caja-folder-color.py:139
+msgid "Brown"
+msgstr "Καφέ"
+
+#: ../nemo-extensions/nemo-folder-color.py:177
+#: ../caja-extensions/caja-folder-color.py:146
+msgid "Red"
+msgstr "Κόκκινο"
+
+#: ../nemo-extensions/nemo-folder-color.py:178
+#: ../caja-extensions/caja-folder-color.py:145
+msgid "Purple"
+msgstr "Μωβ"
+
+#: ../nemo-extensions/nemo-folder-color.py:179
+#: ../caja-extensions/caja-folder-color.py:144
+msgid "Pink"
+msgstr "Ροζ"
+
+#: ../nemo-extensions/nemo-folder-color.py:180
+#: ../caja-extensions/caja-folder-color.py:138
+msgid "Blue"
+msgstr "Μπλε"
+
+#: ../nemo-extensions/nemo-folder-color.py:181
+#: ../caja-extensions/caja-folder-color.py:140
+msgid "Cyan"
+msgstr "Κυανό"
+
+#. Colors submenu
+#: ../nemo-extensions/nemo-folder-color.py:182
+#: ../caja-extensions/caja-folder-color.py:134
+msgid "Aqua"
+msgstr "Θαλασσί"
+
+#: ../nemo-extensions/nemo-folder-color.py:183
+#: ../caja-extensions/caja-folder-color.py:147
+msgid "Teal"
+msgstr "Γαλαζοπράσινο"
+
+#: ../nemo-extensions/nemo-folder-color.py:184
+#: ../caja-extensions/caja-folder-color.py:141
+msgid "Green"
+msgstr "Πράσινο"
+
+#: ../nemo-extensions/nemo-folder-color.py:185
+#: ../caja-extensions/caja-folder-color.py:148
+msgid "White"
+msgstr "Λευκό"
+
+#: ../nemo-extensions/nemo-folder-color.py:186
+#: ../caja-extensions/caja-folder-color.py:142
+msgid "Grey"
+msgstr "Γκρι"
+
+#: ../nemo-extensions/nemo-folder-color.py:187
+#: ../caja-extensions/caja-folder-color.py:137
+msgid "Black"
+msgstr "Μαύρο"
+
+#: ../nemo-extensions/nemo-folder-color.py:230
+msgid "Restores the color of the selected folders"
+msgstr "Επαναφέρει το χρώμα των επιλεγμένων φακέλων"
+
+#: ../nemo-extensions/nemo-folder-color.py:232
+msgid "Restores the color of the selected folder"
+msgstr "Επαναφέρει το χρώμα του επιλεγμένου φακέλου"
+
+#: ../nemo-extensions/nemo-folder-color.py:241
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "Αλλάζει το χρώμα των επιλεγμένων φακέλων σε %s"
+
+#: ../nemo-extensions/nemo-folder-color.py:243
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "Αλλάζει το χρώμα του επιλεγμένου φακέλου σε %s"
+
+#. Main menu [1 or +1 folder(s)]
+#: ../caja-extensions/caja-folder-color.py:129
+msgid "Change color"
+msgstr "Αλλαγή χρώματος"
+
+#. Restore
+#: ../caja-extensions/caja-folder-color.py:173
+msgid "Default"
+msgstr "Προεπιλογή"

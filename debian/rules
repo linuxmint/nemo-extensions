@@ -1,0 +1,6 @@
+#!/usr/bin/make -f
+
+%:		
+	mkdir -p $(CURDIR)/nemo-extensions/
+	mkdir -p $(CURDIR)/caja-extensions/	
+	dh $@
