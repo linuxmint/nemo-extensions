@@ -16,7 +16,8 @@
 # along with Folder Color; if not, see http://www.gnu.org/licenses
 # for more information.
 
-import os, urllib, gettext, locale, collections
+import os, gettext, locale, collections
+from urllib.parse import unquote
 import subprocess
 from gi.repository import Nemo, GObject, Gio, GLib, Gtk, Gdk, GdkPixbuf, cairo
 _ = gettext.gettext
@@ -77,14 +78,14 @@ css_colors = """
 """
 
 provider = Gtk.CssProvider()
-provider.load_from_data(css_colors)
+provider.load_from_data(css_colors.encode())
 screen = Gdk.Screen.get_default();
 Gtk.StyleContext.add_provider_for_screen (screen, provider, 600) # GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
 
 class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
     def __init__(self):
-        print "Initializing folder-color-switcher extension..."
-        self.SEPARATOR = u'\u2015' * 4
+        print("Initializing folder-color-switcher extension...")
+        self.SEPARATOR = '\u2015' * 4
         self.DEFAULT_FOLDERS = self.get_default_folders()   
         self.settings = Gio.Settings.new("org.cinnamon.desktop.interface")
         self.get_theme()
@@ -101,7 +102,7 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
                 self.theme = self.theme[:-len("-%s" % color)]
                 self.color = color
                 self.base_theme = False
-        if not self.base_theme and KNOWN_COLORS.has_key(self.theme):
+        if not self.base_theme and self.theme in KNOWN_COLORS:
             self.base_color = KNOWN_COLORS[self.theme]
 
     def on_theme_changed(self, settings, key):
@@ -140,7 +141,7 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
                 continue
             
             # Get object
-            path = urllib.unquote(each_folder.get_uri()[7:])
+            path = unquote(each_folder.get_uri()[7:])
             folder = Gio.File.new_for_path(path)
             info = folder.query_info('metadata::custom-icon', 0, None)
             

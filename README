@@ -4,24 +4,25 @@ Nemo Extensions
 Extensions for the file browser Nemo.
 Python scripts are currently being ported to Python 3.
 
-| Component             | Current Status   |
-|-----------------------+------------------|
-| nemo-audio-tab        | TODO             |
-| nemo-compare          | functional (Py3) |
-| nemo-dropbox          | TODO             |
-| nemo-emblems          | functional (Py3) |
-| nemo-fileroller       | functional (C)   |
-| nemo-gtkhash          | functional (C)   |
-| nemo-image-converter  | functional (C)   |
-| nemo-media-columns    | TODO             |
-| nemo-pastebin         | TODO             |
-| nemo-preview          | functional (C)   |
-| nemo-python           | functional (C)   |
-| nemo-rabbitvcs        | TODO             |
-| nemo-repairer         | functional (C)   |
-| nemo-seahorse         | functional (C)   |
-| nemo-share            | functional (C)   |
-| nemo-terminal         | functional (Py3) |
+| Component                  | Current Status   |
+|----------------------------+------------------|
+| nemo-audio-tab             | TODO             |
+| nemo-compare               | functional (Py3) |
+| nemo-dropbox               | TODO             |
+| nemo-emblems               | functional (Py3) |
+| nemo-fileroller            | functional (C)   |
+| nemo-folder-color-switcher | functional (Py3) |
+| nemo-gtkhash               | functional (C)   |
+| nemo-image-converter       | functional (C)   |
+| nemo-media-columns         | TODO             |
+| nemo-pastebin              | TODO             |
+| nemo-preview               | functional (C)   |
+| nemo-python                | functional (C)   |
+| nemo-rabbitvcs             | TODO             |
+| nemo-repairer              | functional (C)   |
+| nemo-seahorse              | functional (C)   |
+| nemo-share                 | functional (C)   |
+| nemo-terminal              | functional (Py3) |
 
 
 Not yet included:
