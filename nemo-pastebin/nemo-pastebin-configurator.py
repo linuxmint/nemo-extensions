@@ -90,7 +90,7 @@ class Controller(object):
 
         # Set combobox up
         self.presets = presets = get_presets()
-        print presets
+        print(presets)
         pastebin = builder.get_object("combobox_pastebin")
         pastebin.set_entry_text_column(0)
         curr_selected = settings.get_string("pastebin")
@@ -121,7 +121,7 @@ class Controller(object):
         pass
         #combo_box.set_active(self.presets.index(settings.get_string("pastebin")))
     def on_pastebin_combo_changed(self, combo_box, settings):
-        print "Selected ", combo_box.get_active_text()
+        print("Selected ", combo_box.get_active_text())
         settings.set_string("pastebin", combo_box.get_active_text())
 
     def _save_remaining_settings(self):

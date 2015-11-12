@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # nemo-pastebin - Nemo extension to paste a file to a pastebin service
 # Written by:
@@ -25,7 +25,7 @@ import sys
 import time
 import gettext
 import re
-import urllib
+from urllib.parse import unquote
 import webbrowser
 from subprocess import check_output, CalledProcessError
 from threading import Thread
@@ -98,7 +98,7 @@ class PastebinThread(Thread):
         helper = Gtk.Button()
 
         try:
-            pasteurl = check_output(cmdline).strip()
+            pasteurl = check_output(cmdline).strip().decode()
         except CalledProcessError as error:
             # error.cmd and error.returncode, pasteurl has strerr
             summary = error.message
@@ -131,7 +131,7 @@ class PastebinThread(Thread):
                 n.set_image_from_pixbuf(icon)
                 n.show()
             else:
-                print "libnotify is not installed"
+                print("libnotify is not installed")
 
 class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescProvider):
     BASE_KEY = "apps.nemo-pastebin"
@@ -180,7 +180,7 @@ class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescPr
 
         # TODO: MIME check
 
-        filename = urllib.unquote(filename.get_uri()[7:])
+        filename = unquote(filename.get_uri()[7:])
         
         thread = PastebinThread(self.settings, filename)
         thread.start()

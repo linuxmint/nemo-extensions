@@ -15,7 +15,7 @@ Python scripts are currently being ported to Python 3.
 | nemo-gtkhash               | functional (C)   |
 | nemo-image-converter       | functional (C)   |
 | nemo-media-columns         | TODO             |
-| nemo-pastebin              | TODO             |
+| nemo-pastebin              | functional (Py3) |
 | nemo-preview               | functional (C)   |
 | nemo-python                | functional (C)   |
 | nemo-rabbitvcs             | TODO             |
