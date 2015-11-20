@@ -52,7 +52,7 @@ msgstr "  - execuție pentru alți utilizatori\n"
 
 #: ../src/nemo-share.c:146
 msgid "Add the permissions automatically"
-msgstr "Adăugă drepturile automat"
+msgstr "Adaugă drepturile automat"
 
 #: ../src/nemo-share.c:172
 #, c-format
@@ -98,11 +98,11 @@ msgstr "Partajare dosar"
 
 #: ../src/nemo-share.c:1155
 msgid "Sharing Options"
-msgstr "Opțiuni de partajare"
+msgstr "Opțiuni partajare"
 
 #: ../src/nemo-share.c:1156
 msgid "Share this Folder"
-msgstr "Partajați acest dosar"
+msgstr "Partajează acest dosar"
 
 #: ../src/shares.c:125
 #, c-format
@@ -179,17 +179,17 @@ msgstr "Co_mentariu:"
 
 #: ../interfaces/share-dialog.ui.h:3
 msgid "Share _name:"
-msgstr "_Nume partajat:"
+msgstr "_Nume partajare:"
 
 #: ../interfaces/share-dialog.ui.h:4
 msgid "Share this _folder"
-msgstr "Partajați acest _dosar"
+msgstr "Partajează acest _dosar"
 
 #: ../interfaces/share-dialog.ui.h:5
 msgid "_Allow others to create and delete files in this folder"
-msgstr "Permiteți _altora să creeze și să șteargă fișiere în acest dosar"
+msgstr "Permite _altora să creeze și să șteargă fișiere în acest dosar"
 
 #: ../interfaces/share-dialog.ui.h:6
 msgid "_Guest access (for people without a user account)"
-msgstr "Acces _oaspeți (pentru cei fără un cont de utilizator)"
+msgstr "Acces _oaspete (pentru cei fără un cont de utilizator)"
 
