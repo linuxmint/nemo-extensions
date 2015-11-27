@@ -4,25 +4,27 @@ Nemo Extensions
 Extensions for the file browser Nemo.
 Python scripts are currently being ported to Python 3.
 
-| Component                  | Current Status   |
-|----------------------------+------------------|
-| nemo-audio-tab             | TODO             |
-| nemo-compare               | functional (Py3) |
-| nemo-dropbox               | TODO             |
-| nemo-emblems               | functional (Py3) |
-| nemo-fileroller            | functional (C)   |
-| nemo-folder-color-switcher | functional (Py3) |
-| nemo-gtkhash               | functional (C)   |
-| nemo-image-converter       | functional (C)   |
-| nemo-media-columns         | TODO             |
-| nemo-pastebin              | functional (Py3) |
-| nemo-preview               | functional (C)   |
-| nemo-python                | functional (C)   |
-| nemo-rabbitvcs             | TODO             |
-| nemo-repairer              | functional (C)   |
-| nemo-seahorse              | functional (C)   |
-| nemo-share                 | functional (C)   |
-| nemo-terminal              | functional (Py3) |
+| Component                     | Current Status       | Refactored |
+|-------------------------------+----------------------|------------|
+| nemo-audio-tab (replaced)     | see metadata-tab     | obsolete   |
+| nemo-compare                  | functional (Py3)     | WIP        |
+| nemo-dropbox                  | TODO                 | TODO       |
+| nemo-emblems                  | functional (Py3)     | TODO       |
+| nemo-fileroller               | functional (C)       | (C)        |
+| nemo-folder-color-switcher    | functional (Py3)     | TODO       |
+| nemo-gtkhash                  | functional (C)       | (C)        |
+| nemo-image-converter          | functional (C)       | (C)        |
+| nemo-media-columns (replaced) | see metadata-columns | obsolete   |
+| nemo-metadata-columns         | NEW (Py3)            | yes        |
+| nemo-metadata-tab             | NEW (Py3)            | yes        |
+| nemo-pastebin                 | functional (Py3)     | TODO       |
+| nemo-preview                  | functional (C)       | (C)        |
+| nemo-python                   | functional (C)       | (C)        |
+| nemo-rabbitvcs                | TODO                 | TODO       |
+| nemo-repairer                 | functional (C)       | (C)        |
+| nemo-seahorse                 | functional (C)       | (C)        |
+| nemo-share                    | functional (C)       | (C)        |
+| nemo-terminal                 | functional (Py3)     | TODO       |
 
 
 Not yet included:
