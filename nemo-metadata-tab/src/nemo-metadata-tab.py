@@ -328,7 +328,7 @@ class NemoMetadataTab(GObject.GObject,
 
     """Display metadata of media files in Nemo's property page.
 
-    The current implementation displays metadata of audio, video
+    The current implementation displays metadata of audio, video, image
     and PDF files.
     """
 
