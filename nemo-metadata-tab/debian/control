@@ -1,0 +1,24 @@
+Source: nemo-metadata-tab
+Section: gnome
+Priority: extra
+Maintainer: Eduard Dopler <kontakt@eduard-dopler.de>
+Build-Depends: debhelper (>= 9),
+               python-all (>= 3.2) | python3-all (>= 3.2),
+               python3-distutils-extra,
+               dh-python
+Standards-Version: 3.9.6
+Homepage: https://github.com/EduardDopler/nemo-extensions
+XS-Python-Version: >= 3.2
+
+Package: nemo-metadata-tab
+Architecture: all
+Section: utils
+Priority: extra
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         nemo,
+         python-nemo,
+         python3-taglib,
+         python3-mediainfodll,
+         poppler-utils
+Description: Nemo extension, adding a property page for media files
