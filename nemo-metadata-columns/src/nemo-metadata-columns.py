@@ -472,7 +472,8 @@ def read_pdf_data(filename):
     dates are translated.)
     """
     try:
-        pdfinfo = subprocess.check_output(["pdfinfo", filename])
+        pdfinfo = subprocess.check_output(["pdfinfo", filename],
+                                          stderr=subprocess.DEVNULL)
         pdfinfo = pdfinfo.decode()
     except (subprocess.CalledProcessError, UnicodeError):
         return
