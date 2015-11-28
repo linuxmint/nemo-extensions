@@ -75,6 +75,9 @@ def _(message):
     return gettext.gettext(message)
 
 
+# extension's name and short description
+NAME_DESC = "Nemo Metadata Tab:::" + _("Show property page for media files")
+
 # tab labels by mime type
 TAB_LABEL_AUDIO = _("Audio")
 TAB_LABEL_VIDEO = _("Video")
@@ -338,8 +341,7 @@ class NemoMetadataTab(GObject.GObject,
 
     def get_name_and_desc(self):
         """Return the name and a short description for the module overview."""
-        return ["Nemo Metadata Tab:::" +
-                _("Show property page for media files")]
+        return [NAME_DESC]
 
     def get_property_pages(self, files):
         """Construct a Nemo property page and return it."""

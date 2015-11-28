@@ -67,6 +67,9 @@ def _(message):
     return gettext.gettext(message)
 
 
+# extension's name and short description
+NAME_DESC = "Nemo Metadata Column:::" + _("Show media metadata in columns")
+
 # tags to be shown in columns and their translations
 TAGS_AUDIO_VIDEO = {
     "GENERAL DURATION": _("Length"),
@@ -232,8 +235,7 @@ class NemoMetadataColumns(GObject.GObject,
 
     def get_name_and_desc(self):
         """Return the name and a short description for the module overview."""
-        return [("Nemo Metadata Column:::" +
-                 _("Show media metadata in columns"))]
+        return [NAME_DESC]
 
     def get_columns(self):
         """Return NemoColumns for media metadata."""
