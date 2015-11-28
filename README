@@ -8,7 +8,7 @@ Python scripts are currently being ported to Python 3.
 |-------------------------------+----------------------|------------|
 | nemo-audio-tab (replaced)     | see metadata-tab     | obsolete   |
 | nemo-compare                  | functional (Py3)     | WIP        |
-| nemo-dropbox                  | TODO                 | TODO       |
+| nemo-dropbox                  | functional (Py3+C)   | (C)        |
 | nemo-emblems                  | functional (Py3)     | TODO       |
 | nemo-fileroller               | functional (C)       | (C)        |
 | nemo-folder-color-switcher    | functional (Py3)     | TODO       |
