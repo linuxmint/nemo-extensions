@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #    nemo-compare --- Context menu extension for Nemo file manager
 #    Copyright (C) 2011  Guido Tabbernuk <boamaod@gmail.com>
@@ -18,10 +18,7 @@
 
 import os
 import xdg.BaseDirectory
-try:
-    import configparser
-except ImportError:
-    import ConfigParser as configparser
+import configparser
 
 APP = "nemo-compare"
 
@@ -55,7 +52,7 @@ COMPARATOR_PATHS = [
     "/usr/local/bin"
 ]
 
-class NemoCompareConfig(object):
+class NemoCompareConfig():
 
     diff_engine = DEFAULT_DIFF_ENGINE
     diff_engine_3way = DEFAULT_DIFF_ENGINE

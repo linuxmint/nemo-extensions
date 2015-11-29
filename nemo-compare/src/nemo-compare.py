@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #    nemo-compare --- Context menu extension for Nemo file manager
 #    Copyright (C) 2011  Guido Tabbernuk <boamaod@gmail.com>
@@ -21,10 +21,7 @@ import locale
 import os
 import signal
 import sys
-try:
-    from urllib.parse import unquote
-except ImportError:
-    from urllib import unquote
+from urllib.parse import unquote
 
 from gi.repository import GLib, GObject, Gio, Nemo
 
