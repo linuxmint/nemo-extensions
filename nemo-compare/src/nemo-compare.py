@@ -1,20 +1,22 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-#    nemo-compare --- Context menu extension for Nemo file manager
-#    Copyright (C) 2011  Guido Tabbernuk <boamaod@gmail.com>
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"""nemo-compare -- Nemo extension for file comparison via context menu.
+
+Copyright (C) 2011  Guido Tabbernuk <boamaod@gmail.com>
+Copyright (C) 2015  Eduard Dopler <kontakt@eduard-dopler.de>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"""
 
 import gettext
 import locale
@@ -31,7 +33,9 @@ import utils
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
-class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
+class NemoCompareExtension(GObject.GObject,
+                           Nemo.MenuProvider):
+
     """Class for the extension itself."""
 
     # to hold an item for later comparison
@@ -39,7 +43,6 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
 
     def __init__(self):
         """Load config."""
-
         self.config = utils.NemoCompareConfig()
         self.config.load()
 
