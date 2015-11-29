@@ -511,11 +511,6 @@ class Crowbar(object):
 class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider):
     """Provides Nemo Terminal in Nemo."""
 
-    def __init__(self):
-        """The constructor."""
-        print("[%s] I: Initializing the Nemo extension"
-                % __app_disp_name__)
-
     def get_widget(self, uri, window):
         """Returns a "crowbar" that will add a terminal in Nemo.
 

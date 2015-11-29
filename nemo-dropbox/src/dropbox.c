@@ -36,8 +36,6 @@ static GType type_list[1];
 
 void
 nemo_module_initialize (GTypeModule *module) {
-  g_print ("Initializing %s\n", PACKAGE_STRING);
-
   nemo_dropbox_register_type (module);
   type_list[0] = NEMO_TYPE_DROPBOX;
 
@@ -49,7 +47,7 @@ nemo_module_initialize (GTypeModule *module) {
 
 void
 nemo_module_shutdown (void) {
-  g_print ("Shutting down dropbox extension\n");
+  /* g_print ("Shutting down dropbox extension\n"); */
 }
 
 void

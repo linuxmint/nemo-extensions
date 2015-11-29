@@ -84,7 +84,6 @@ Gtk.StyleContext.add_provider_for_screen (screen, provider, 600) # GTK_STYLE_PRO
 
 class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
     def __init__(self):
-        print("Initializing folder-color-switcher extension...")
         self.SEPARATOR = '\u2015' * 4
         self.DEFAULT_FOLDERS = self.get_default_folders()   
         self.settings = Gio.Settings.new("org.cinnamon.desktop.interface")
