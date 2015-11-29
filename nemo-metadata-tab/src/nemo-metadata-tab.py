@@ -448,7 +448,7 @@ class NemoMetadataTab(GObject.GObject,
                 grid = grid_default_tags
                 n_rows += 1
             else:
-                nice_tagname = tagname + ":"
+                nice_tagname = _(tagname) + ":"
                 grid = grid_details
             label_name = Gtk.Label(label=nice_tagname,
                                    halign=Gtk.Align.START,
