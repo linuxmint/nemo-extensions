@@ -19,132 +19,209 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import os
-import xdg.BaseDirectory
 import configparser
+import signal
+from collections import OrderedDict
+from itertools import product
+
+from xdg import BaseDirectory
+
+
+# react on default SIGINT
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
 
 APP = "nemo-compare"
 
-# settings
-CONFIG_FILES = [
-    os.path.join(xdg.BaseDirectory.xdg_config_home, APP + ".conf"),
-    os.path.join("/etc", APP + ".conf")
-]
-CONFIG_FILE = CONFIG_FILES[0]
-SETTINGS_MAIN = "Settings"
+# configuration settings
+CONFIG_FORMAT = 2
+CONFIG_FILE_USER = os.path.join(BaseDirectory.xdg_config_home,
+                                "nemo-compare.conf")
+CONFIG_FILE_SYSTEM = "/etc/nemo-compare.conf"
+SECTION_GENERAL = "DEFAULT"
+KEY_FORMAT = "format"
+SECTION_ENGINES = "Engines"
+KEY_2WAY = "2way"
+KEY_3WAY = "3way"
+KEY_NWAY = "nway"
 
-DIFF_PATH = "diff_engine_path"
-DIFF_PATH_3WAY = "diff_engine_path_3way"
-DIFF_PATH_MULTI = "diff_engine_path_multi"
-
-COMPARATORS = "defined_comparators"
-# ordered by preference
-PREDEFINED_ENGINES = [
-    "meld",
-    "kdiff3",
-    "diffuse",
-    "kompare",
-    "fldiff",
-    "tkdiff"
-]
-DEFAULT_DIFF_ENGINE = "meld"
-
-# where comparator engines are sought
-COMPARATOR_PATHS = [
+# engines and their capabilites for comparison
+ENGINES_KNOWN = OrderedDict(
+    (
+        ("meld", KEY_3WAY),
+        ("diffuse", KEY_NWAY),
+        ("kdiff3", KEY_3WAY),
+        ("kompare", KEY_2WAY),
+        ("fldiff", KEY_2WAY),
+        ("tkdiff", KEY_2WAY)
+    )
+)
+# search path for engines
+ENGINE_PATHS = (
     "/usr/bin",
     "/usr/local/bin"
-]
+)
 
 
 class NemoCompareConfig():
 
     """Utils class for nemo-compare responsible for config loading."""
 
-    diff_engine = DEFAULT_DIFF_ENGINE
-    diff_engine_3way = DEFAULT_DIFF_ENGINE
-    diff_engine_multi = ""
-    engines = []
+    def __init__(self):
+        """Trigger loading config file and assure correct format.
 
-    config = None
+        If the format version of the config file is older than
+        CONFIG_FORMAT, reset settings.
+        """
+        self.config = None
+        self.load()
+        self.update_engines()
+        # if old config format, reset settings
+        config_format = self.config.getint(section=SECTION_GENERAL,
+                                           option=KEY_FORMAT,
+                                           fallback=1)
+        if config_format < CONFIG_FORMAT:
+            self.reset()
+
+    def __getitem__(self, key):
+        """Return section or option value for key from configuration.
+
+        If key is one of KEY_2WAY, KEY_3WAY or KEY_NWAY, assume section is
+        "Engines", hence return their option values. On any other key,
+        return section for that key.
+        """
+        if key in (KEY_2WAY, KEY_3WAY, KEY_NWAY):
+            return self.config.get(section=SECTION_ENGINES,
+                                   option=key,
+                                   fallback=None)
+        else:
+            return (self.config[key]
+                    if self.config.has_section(key)
+                    else None)
+
+    def __setitem__(self, key, value=None):
+        """Store option value for key in the config's engines section.
+
+        If key is not one of KEY_2WAY, KEY_3WAY or KEY_NWAY, create a new
+        empty section.
+        """
+        if key in (KEY_2WAY, KEY_3WAY, KEY_NWAY):
+            self.config[SECTION_ENGINES][key] = value
+        else:
+            self.config[key] = {}
 
     def load(self):
-        """Load config options if available.
-        If not, create them using the best heuristics availabe.
+        """Load configuration from user or system-wide config file.
+
+        If no file is found, reset settings.
         """
         self.config = configparser.ConfigParser()
 
-        # allow system-wide default settings from /etc/*
-        if os.path.isfile(CONFIG_FILES[0]):
-            self.config.read(CONFIG_FILES[0])
+        # prefer user settings over system-wide ones
+        if os.path.isfile(CONFIG_FILE_USER):
+            return self.config.read(CONFIG_FILE_USER)
+        elif os.path.isfile(CONFIG_FILE_SYSTEM):
+            return self.config.read(CONFIG_FILE_SYSTEM)
+        # if no settings found, load default settings
         else:
-            self.config.read(CONFIG_FILES[1])
+            return self.reset()
 
-        # read from start or flush from the point where cancelled
-        try:
-            self.diff_engine = self.config.get(SETTINGS_MAIN, DIFF_PATH)
-            self.diff_engine_3way = self.config.get(SETTINGS_MAIN, DIFF_PATH_3WAY)
-            self.diff_engine_multi = self.config.get(SETTINGS_MAIN, DIFF_PATH_MULTI)
-            self.engines = eval(self.config.get(SETTINGS_MAIN, COMPARATORS))
-        except (configparser.NoOptionError, configparser.NoSectionError):
+    def update_engines(self):
+        """TODO."""
+        if not self.config:
+            self.load()
 
-            # maybe settings were half loaded when exception was thrown
-            try:
-                self.config.add_section(SETTINGS_MAIN)
-            except configparser.DuplicateSectionError:
-                pass
+        # remove all engines from config which aren't installed anymore
+        installed = get_installed_engines()
+        config_engines = self.config[SECTION_ENGINES]
+        changed = False
+        for engine_type, engines in installed.items():
+            if config_engines[engine_type] not in installed[engine_type]:
+                config_engines[engine_type] = (engines[0]
+                                               if engines
+                                               else None)
+                changed = True
+        if changed:
+            self.save()
 
-            self.add_missing_predefined_engines()
+    def reset(self):
+        """Reset configuration to defaults and save it.
 
-            # add choice for "engine not enabled"
-            # (always needed, because at least self.engines cannot be loaded)
-            self.engines.insert(0, "")
+        All engines are set to the first installed engine with the
+        appropriate capabilities. If none, the value will be empty.
+        If no config file was opened, it will be.
+        """
+        if not self.config:
+            self.load()
 
-            # if default engine is not installed,
-            # replace with preferred installed engine
-            if len(self.engines) > 0:
-                if self.diff_engine not in self.engines:
-                    self.diff_engine = self.engines[0]
-                if self.diff_engine_3way not in self.engines:
-                    self.diff_engine_3way = self.engines[0]
-                if self.diff_engine_multi not in self.engines:
-                    self.diff_engine_multi = self.engines[0]
+        self.config.clear()
+        # write format version of this config file
+        self.config[SECTION_GENERAL][KEY_FORMAT] = "2"
+        # get installed engines, grouped by capabilities
+        engines_installed = get_installed_engines()
+        # store first engine found for every capability
+        self.config[SECTION_ENGINES] = {}
+        config_engines = self.config[SECTION_ENGINES]
+        config_engines[KEY_2WAY] = engines_installed[KEY_2WAY][0]
+        config_engines[KEY_3WAY] = engines_installed[KEY_3WAY][0]
+        config_engines[KEY_NWAY] = engines_installed[KEY_NWAY][0]
 
-            self.engines.sort()
-
-            self.config.set(SETTINGS_MAIN, DIFF_PATH, self.diff_engine)
-            self.config.set(SETTINGS_MAIN, DIFF_PATH_3WAY, self.diff_engine_3way)
-            self.config.set(SETTINGS_MAIN, DIFF_PATH_MULTI, self.diff_engine_multi)
-            self.config.set(SETTINGS_MAIN, COMPARATORS, str(self.engines))
-
-            with open(CONFIG_FILE, "w") as f:
-                self.config.write(f)
-
-    def add_missing_predefined_engines(self):
-        """Add predefined engines being installed but not in engines list."""
-        system_utils = []
-        for path in COMPARATOR_PATHS:
-            system_utils += os.listdir(path)
-        for engine in PREDEFINED_ENGINES:
-            if engine not in self.engines and engine in system_utils:
-                self.engines.append(engine)
+        return self.save()
 
     def save(self):
-        """Save config options."""
-        try:
-            self.config.add_section(SETTINGS_MAIN)
-        except configparser.DuplicateSectionError:
-            pass
+        """Save current configuration in the per-user configuration file.
 
-        self.config.set(SETTINGS_MAIN, DIFF_PATH, self.diff_engine)
-        self.config.set(SETTINGS_MAIN, DIFF_PATH_3WAY, self.diff_engine_3way)
-        self.config.set(SETTINGS_MAIN, DIFF_PATH_MULTI, self.diff_engine_multi)
+        Return the file written to.
 
-        if self.diff_engine not in self.engines:
-            self.engines.append(self.diff_engine)
-        if self.diff_engine_3way not in self.engines:
-            self.engines.append(self.diff_engine_3way)
-        if self.diff_engine_multi not in self.engines:
-            self.engines.append(self.diff_engine_multi)
+        If no configuration is opened, open it. No need for saving then
+        though.
+        """
+        if not self.config:
+            return self.load()
 
-        self.config.set(SETTINGS_MAIN, COMPARATORS, str(self.engines))
-        with open(CONFIG_FILE, "w") as f:
+        with open(CONFIG_FILE_USER, "w") as f:
             self.config.write(f)
+            return CONFIG_FILE_USER
+
+    def can_compare(self, amount):
+        """TODO."""
+        return bool(get_engine_for_amount(self.config, amount))
+
+
+def get_installed_engines():
+    """Return a dict of installed engines grouped by capabilities.
+
+    "Capabilities" means either KEY_2WAY, KEY_3WAY or KEY_NWAY.
+    We search for ENGINES_KNOWN in ENGINE_PATHS, first-in-first-out,
+    no caching.
+    """
+    installed = {
+        KEY_2WAY: [],
+        KEY_3WAY: [],
+        KEY_NWAY: []
+    }
+    for path, engine in product(ENGINE_PATHS, ENGINES_KNOWN.keys()):
+        filepath = os.path.join(path, engine)
+        if os.path.isfile(filepath):
+            engine_type = ENGINES_KNOWN[engine]
+            installed[KEY_2WAY].append(engine)
+            if engine_type == KEY_3WAY:
+                installed[KEY_3WAY].append(engine)
+            elif engine_type == KEY_NWAY:
+                installed[KEY_NWAY].append(engine)
+                installed[KEY_3WAY].append(engine)
+    return installed
+
+
+def get_engine_for_amount(config, amount):
+    """TODO."""
+    config_engines = config[SECTION_ENGINES]
+    if ((amount == 2 and
+         config_engines[KEY_2WAY])):
+        return config_engines[KEY_2WAY]
+    elif ((amount == 3 and
+           config_engines[KEY_3WAY])):
+        return config_engines[KEY_3WAY]
+    elif ((amount > 3 and
+           config_engines[KEY_NWAY])):
+        return config_engines[KEY_NWAY]

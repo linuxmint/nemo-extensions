@@ -15,7 +15,7 @@ Many useful extensions have already been written:
 | Component                         | Current Status       | Refactored |
 |-----------------------------------|----------------------|------------|
 | ~~nemo-audio-tab~~ (replaced)     | see metadata-tab     | obsolete   |
-| nemo-compare                      | functional (Py3)     | WIP        |
+| nemo-compare                      | functional (Py3)     | yes        |
 | nemo-dropbox                      | functional (Py3+C)   | (C)        |
 | nemo-emblems                      | functional (Py3)     | TODO       |
 | nemo-fileroller                   | functional (C)       | (C)        |

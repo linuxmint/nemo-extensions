@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nemo-compare 2.8.0\n"
 "Report-Msgid-Bugs-To: kontakt@eduard-dopler.de\n"
-"POT-Creation-Date: 2015-11-01 10:48+0100\n"
-"PO-Revision-Date: 2015-11-01 11:58+0100\n"
+"POT-Creation-Date: 2015-11-30 18:28+0100\n"
+"PO-Revision-Date: 2015-11-30 18:36+0100\n"
 "Last-Translator: Eduard Dopler <kontakt@eduard-dopler.de>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -12,47 +12,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/nemo-compare.py:112
-#: src/nemo-compare.py:135
-msgid "Compare to: %s"
-msgstr "Vergleichen mit: %s"
+#: src/nemo-compare-preferences.py:54
+msgid "2way"
+msgstr "Normaler Vergleich"
 
-#: src/nemo-compare.py:113
-msgid "Compare to the file remembered before"
-msgstr "Mit vorgemerkter Datei vergleichen"
+#: src/nemo-compare-preferences.py:55
+msgid "3way"
+msgstr "Dreiwege-Vergleich"
 
-#: src/nemo-compare.py:122
-msgid "Compare Later"
-msgstr "Später vergleichen"
+#: src/nemo-compare-preferences.py:56
+msgid "nway"
+msgstr "Multi-Vergleich"
 
-#: src/nemo-compare.py:123
-msgid "Remember file for later comparison"
-msgstr "Datei merken für späteren Vergleich"
-
-#: src/nemo-compare.py:136
-msgid "Compare selected files to the file remembered before"
-msgstr "Vergleiche Auswahl mit vorgemerkter Datei"
-
-#: src/nemo-compare.py:147
-msgid "Compare"
-msgstr "Vergleichen"
-
-#: src/nemo-compare.py:148
-msgid "Compare selected files"
-msgstr "Vergleiche Auswahl"
-
-#: src/nemo-compare-preferences.py:95
+#: src/nemo-compare-preferences.py:83
 msgid "Nemo Compare Extension Preferences"
 msgstr "Einstellungen für Nemo Compare"
 
-#: src/nemo-compare-preferences.py:103
-msgid "Normal Diff"
-msgstr "Normaler Vergleich (Diff)"
+#: src/nemo-compare.py:60
+msgid "File comparison via context menu."
+msgstr "Dateivergleich via Kontextmenü."
 
-#: src/nemo-compare-preferences.py:115
-msgid "Three-Way Diff"
-msgstr "Drei-Wege-Vergleich"
+#: src/nemo-compare.py:138
+msgid "Compare these items"
+msgstr "Vergleiche diese Dateien"
 
-#: src/nemo-compare-preferences.py:127
-msgid "N-Way Diff"
-msgstr "Mehrfachvergleich (n-way diff)"
+#: src/nemo-compare.py:139
+msgid "Compare selected items"
+msgstr "Vergleiche markierte Objekte"
+
+#: src/nemo-compare.py:149
+#, python-format
+msgid "%s remembered items"
+msgstr "%s vorgemerkten Dateien"
+
+#: src/nemo-compare.py:151
+#, python-format
+msgid "Compare to: %s"
+msgstr "Vergleichen mit: %s"
+
+#: src/nemo-compare.py:152
+msgid "Compare with remembered items(s)"
+msgstr "Mit vorgemerktem/n Objekte/n vergleichen"
+
+#: src/nemo-compare.py:158
+msgid "Compare Later"
+msgstr "Später vergleichen"
+
+#: src/nemo-compare.py:159
+msgid "Remember item(s) for later comparison"
+msgstr "Objekt/e für späteren Vergleich vormerken"
