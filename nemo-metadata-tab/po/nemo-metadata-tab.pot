@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nemo-metadata-tab VERSION\n"
-"POT-Creation-Date: 2015-11-25 22:44+0100\n"
+"POT-Creation-Date: 2015-11-30 21:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,702 +10,703 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/nemo-metadata-tab.py:68
+#: src/nemo-metadata-tab.py:79
+msgid "Show property page for media files"
+msgstr ""
+
+#: src/nemo-metadata-tab.py:82
 msgid "Audio"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:69
+#: src/nemo-metadata-tab.py:83
 msgid "Video"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:70
+#: src/nemo-metadata-tab.py:84
 msgid "Image"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:82 src/nemo-metadata-tab.py:169
-#: src/nemo-metadata-tab.py:183
+#: src/nemo-metadata-tab.py:96 src/nemo-metadata-tab.py:183
+#: src/nemo-metadata-tab.py:197
 msgid "Title"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:83 src/nemo-metadata-tab.py:84
+#: src/nemo-metadata-tab.py:97 src/nemo-metadata-tab.py:98
 msgid "Artist"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:85
+#: src/nemo-metadata-tab.py:99
 msgid "Album Artist"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:86
+#: src/nemo-metadata-tab.py:100
 msgid "Album"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:87
+#: src/nemo-metadata-tab.py:101
 msgid "Disc No."
 msgstr ""
 
-#: src/nemo-metadata-tab.py:88
+#: src/nemo-metadata-tab.py:102
 msgid "Track No."
 msgstr ""
 
-#: src/nemo-metadata-tab.py:89
+#: src/nemo-metadata-tab.py:103
 msgid "Total Tracks"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:90
+#: src/nemo-metadata-tab.py:104
 msgid "Year"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:91
+#: src/nemo-metadata-tab.py:105
 msgid "Genre"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:92 src/nemo-metadata-tab.py:108
-#: src/nemo-metadata-tab.py:178
+#: src/nemo-metadata-tab.py:106 src/nemo-metadata-tab.py:122
+#: src/nemo-metadata-tab.py:192
 msgid "Comment"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:93 src/nemo-metadata-tab.py:172
+#: src/nemo-metadata-tab.py:107 src/nemo-metadata-tab.py:186
 msgid "Copyright"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:94 src/nemo-metadata-tab.py:103
+#: src/nemo-metadata-tab.py:108 src/nemo-metadata-tab.py:117
 msgid "Length"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:95
+#: src/nemo-metadata-tab.py:109
 msgid "Bit Rate"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:96 src/nemo-metadata-tab.py:127
+#: src/nemo-metadata-tab.py:110 src/nemo-metadata-tab.py:141
 msgid "Channels"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:97 src/nemo-metadata-tab.py:128
+#: src/nemo-metadata-tab.py:111 src/nemo-metadata-tab.py:142
 msgid "Sampling Rate"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:102
+#: src/nemo-metadata-tab.py:116
 msgid "Container Format"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:104
+#: src/nemo-metadata-tab.py:118
 msgid "Overall Bit Rate"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:105
+#: src/nemo-metadata-tab.py:119
 msgid "Maximum Overall Bit Rate"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:106
+#: src/nemo-metadata-tab.py:120
 msgid "Movie Name"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:107
+#: src/nemo-metadata-tab.py:121
 msgid "Performer"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:109
+#: src/nemo-metadata-tab.py:123
 msgid "Recorded Date"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:110
+#: src/nemo-metadata-tab.py:124
 msgid "Encoded Date"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:111
+#: src/nemo-metadata-tab.py:125
 msgid "Video Format"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:112
+#: src/nemo-metadata-tab.py:126
 msgid "Video Codec"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:113
+#: src/nemo-metadata-tab.py:127
 msgid "Video Codec (hint)"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:114
+#: src/nemo-metadata-tab.py:128
 msgid "Video Codec (info)"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:115
+#: src/nemo-metadata-tab.py:129
 msgid "Video Bit Rate"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:116 src/nemo-metadata-tab.py:137
-#: src/nemo-metadata-tab.py:167
+#: src/nemo-metadata-tab.py:130 src/nemo-metadata-tab.py:151
+#: src/nemo-metadata-tab.py:181
 msgid "Width"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:117 src/nemo-metadata-tab.py:138
-#: src/nemo-metadata-tab.py:168
+#: src/nemo-metadata-tab.py:131 src/nemo-metadata-tab.py:152
+#: src/nemo-metadata-tab.py:182
 msgid "Height"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:118
+#: src/nemo-metadata-tab.py:132
 msgid "Display Aspect Ratio"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:119
+#: src/nemo-metadata-tab.py:133
 msgid "Frame Rate"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:120
+#: src/nemo-metadata-tab.py:134
 msgid "Scan Type"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:121 src/nemo-metadata-tab.py:158
+#: src/nemo-metadata-tab.py:135 src/nemo-metadata-tab.py:172
 msgid "Color Space"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:122
+#: src/nemo-metadata-tab.py:136
 msgid "Chroma Subsampling"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:123
+#: src/nemo-metadata-tab.py:137
 msgid "Video Language"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:124
+#: src/nemo-metadata-tab.py:138
 msgid "Audio Format"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:125
+#: src/nemo-metadata-tab.py:139
 msgid "Audio Mode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:126
+#: src/nemo-metadata-tab.py:140
 msgid "Audio Bit Rate"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:129
+#: src/nemo-metadata-tab.py:143
 msgid "Audio Language"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:134
+#: src/nemo-metadata-tab.py:148
 msgid "Date Taken"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:135
+#: src/nemo-metadata-tab.py:149
 msgid "Date Digitized"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:136
+#: src/nemo-metadata-tab.py:150
 msgid "Date"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:139
+#: src/nemo-metadata-tab.py:153
 msgid "Camera Brand"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:140
+#: src/nemo-metadata-tab.py:154
 msgid "Camera Model"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:142 src/nemo-metadata-tab.py:143
-#: src/nemo-metadata-tab.py:144 src/nemo-metadata-tab.py:145
+#: src/nemo-metadata-tab.py:156 src/nemo-metadata-tab.py:157
+#: src/nemo-metadata-tab.py:158 src/nemo-metadata-tab.py:159
 msgid "Resolution"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:147 src/nemo-metadata-tab.py:148
+#: src/nemo-metadata-tab.py:161 src/nemo-metadata-tab.py:162
 msgid "Focal Length"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:149
+#: src/nemo-metadata-tab.py:163
 msgid "Exposure Time"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:150
+#: src/nemo-metadata-tab.py:164
 msgid "Aperture Value"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:151
+#: src/nemo-metadata-tab.py:165
 msgid "ISO Speed Rating"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:152
+#: src/nemo-metadata-tab.py:166
 msgid "Metering Mode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:153
+#: src/nemo-metadata-tab.py:167
 msgid "White Balance"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:154 src/nemo-metadata-tab.py:209
-#: src/nemo-metadata-tab.py:260
+#: src/nemo-metadata-tab.py:168 src/nemo-metadata-tab.py:223
+#: src/nemo-metadata-tab.py:274
 msgid "Flash"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:155
+#: src/nemo-metadata-tab.py:169
 msgid "Exposure Program"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:156
+#: src/nemo-metadata-tab.py:170
 msgid "Exposure Mode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:157 src/nemo-metadata-tab.py:174
+#: src/nemo-metadata-tab.py:171 src/nemo-metadata-tab.py:188
 msgid "Software"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:159 src/nemo-metadata-tab.py:305
+#: src/nemo-metadata-tab.py:173 src/nemo-metadata-tab.py:319
 msgid "Contrast"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:160 src/nemo-metadata-tab.py:306
+#: src/nemo-metadata-tab.py:174 src/nemo-metadata-tab.py:320
 msgid "Saturation"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:161 src/nemo-metadata-tab.py:307
+#: src/nemo-metadata-tab.py:175 src/nemo-metadata-tab.py:321
 msgid "Sharpness"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:162 src/nemo-metadata-tab.py:221
+#: src/nemo-metadata-tab.py:176 src/nemo-metadata-tab.py:235
 msgid "Orientation"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:170 src/nemo-metadata-tab.py:186
+#: src/nemo-metadata-tab.py:184 src/nemo-metadata-tab.py:200
 msgid "Author"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:171
+#: src/nemo-metadata-tab.py:185
 msgid "Description"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:173 src/nemo-metadata-tab.py:189
+#: src/nemo-metadata-tab.py:187 src/nemo-metadata-tab.py:203
 msgid "Created"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:175
+#: src/nemo-metadata-tab.py:189
 msgid "Disclaimer"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:176
+#: src/nemo-metadata-tab.py:190
 msgid "Warning"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:177
+#: src/nemo-metadata-tab.py:191
 msgid "Source"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:184
+#: src/nemo-metadata-tab.py:198
 msgid "Subject"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:185
+#: src/nemo-metadata-tab.py:199
 msgid "Keywords"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:187
+#: src/nemo-metadata-tab.py:201
 msgid "Creator"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:188
+#: src/nemo-metadata-tab.py:202
 msgid "Producer"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:190
+#: src/nemo-metadata-tab.py:204
 msgid "Modified"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:191
+#: src/nemo-metadata-tab.py:205
 msgid "Tagged"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:192
+#: src/nemo-metadata-tab.py:206
 msgid "Form"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:193
+#: src/nemo-metadata-tab.py:207
 msgid "Pages"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:194
+#: src/nemo-metadata-tab.py:208
 msgid "Encrypted"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:195
+#: src/nemo-metadata-tab.py:209
 msgid "Page Size"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:196
+#: src/nemo-metadata-tab.py:210
 msgid "Page Rotation"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:197
+#: src/nemo-metadata-tab.py:211
 msgid "Optimized"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:198
+#: src/nemo-metadata-tab.py:212
 msgid "PDF Version"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:207
+#: src/nemo-metadata-tab.py:221
 #, python-brace-format
 msgid "{focal_35mm} (35mm film), {focal_lense} (lens)"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:210
+#: src/nemo-metadata-tab.py:224
 msgid "Flash did not fire"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:211
+#: src/nemo-metadata-tab.py:225
 msgid "Flash fired"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:212
+#: src/nemo-metadata-tab.py:226
 msgid "Strobe return light not detected"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:213
+#: src/nemo-metadata-tab.py:227
 msgid "Strobe return light detected"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:214
+#: src/nemo-metadata-tab.py:228
 msgid "return light detected"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:215
+#: src/nemo-metadata-tab.py:229
 msgid "return light not detected"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:216
+#: src/nemo-metadata-tab.py:230
 msgid "compulsory flash mode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:217
+#: src/nemo-metadata-tab.py:231
 msgid "auto mode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:218
+#: src/nemo-metadata-tab.py:232
 msgid "No flash function"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:219
+#: src/nemo-metadata-tab.py:233
 msgid "red-eye reduction mode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:222
+#: src/nemo-metadata-tab.py:236
 msgid "Horizontal (normal)"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:223
+#: src/nemo-metadata-tab.py:237
 msgid "Mirrored horizontal"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:224
+#: src/nemo-metadata-tab.py:238
 msgid "Rotated 180"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:225
+#: src/nemo-metadata-tab.py:239
 msgid "Mirrored vertical"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:226
+#: src/nemo-metadata-tab.py:240
 msgid "Mirrored horizontal then rotated 90 CCW"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:227
+#: src/nemo-metadata-tab.py:241
 msgid "Rotated 90 CW"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:228
+#: src/nemo-metadata-tab.py:242
 msgid "Mirrored horizontal then rotated 90 CW"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:229
+#: src/nemo-metadata-tab.py:243
 msgid "Rotated 90 CC"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:231
+#: src/nemo-metadata-tab.py:245
 msgid "YCbCrPositioning"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:232
+#: src/nemo-metadata-tab.py:246
 msgid "Centered"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:233
+#: src/nemo-metadata-tab.py:247
 msgid "Co-sited"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:235
+#: src/nemo-metadata-tab.py:249
 msgid "ExposureProgram"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:236 src/nemo-metadata-tab.py:247
+#: src/nemo-metadata-tab.py:250 src/nemo-metadata-tab.py:261
 msgid "Unidentified"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:237 src/nemo-metadata-tab.py:290
+#: src/nemo-metadata-tab.py:251 src/nemo-metadata-tab.py:304
 msgid "Manual"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:238
+#: src/nemo-metadata-tab.py:252
 msgid "Program Normal"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:239
+#: src/nemo-metadata-tab.py:253
 msgid "Aperture Priority"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:240
+#: src/nemo-metadata-tab.py:254
 msgid "Shutter Priority"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:241
+#: src/nemo-metadata-tab.py:255
 msgid "Program Creative"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:242
+#: src/nemo-metadata-tab.py:256
 msgid "Program Action"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:243
+#: src/nemo-metadata-tab.py:257
 msgid "Portrait Mode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:244
+#: src/nemo-metadata-tab.py:258
 msgid "Landscape Mode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:246
+#: src/nemo-metadata-tab.py:260
 msgid "MeteringMode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:248
+#: src/nemo-metadata-tab.py:262
 msgid "Average"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:249
+#: src/nemo-metadata-tab.py:263
 msgid "CenterWeightedAverage"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:250
+#: src/nemo-metadata-tab.py:264
 msgid "Spot"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:251
+#: src/nemo-metadata-tab.py:265
 msgid "MultiSpot"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:252
+#: src/nemo-metadata-tab.py:266
 msgid "Pattern"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:253
+#: src/nemo-metadata-tab.py:267
 msgid "Partial"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:254
+#: src/nemo-metadata-tab.py:268
 msgid "other"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:256
+#: src/nemo-metadata-tab.py:270
 msgid "LightSource"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:257
+#: src/nemo-metadata-tab.py:271
 msgid "Unknown"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:258
+#: src/nemo-metadata-tab.py:272
 msgid "Daylight"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:259
+#: src/nemo-metadata-tab.py:273
 msgid "Fluorescent"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:262
+#: src/nemo-metadata-tab.py:276
 msgid "SensingMethod"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:263
+#: src/nemo-metadata-tab.py:277
 msgid "Not defined"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:264
+#: src/nemo-metadata-tab.py:278
 msgid "One-chip color area"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:265
+#: src/nemo-metadata-tab.py:279
 msgid "Two-chip color area"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:266
+#: src/nemo-metadata-tab.py:280
 msgid "Three-chip color area"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:267
+#: src/nemo-metadata-tab.py:281
 msgid "Color sequential area"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:268
+#: src/nemo-metadata-tab.py:282
 msgid "Trilinear"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:269
+#: src/nemo-metadata-tab.py:283
 msgid "Color sequential linear"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:271
+#: src/nemo-metadata-tab.py:285
 msgid "FileSource"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:272
+#: src/nemo-metadata-tab.py:286
 msgid "Film Scanner"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:273
+#: src/nemo-metadata-tab.py:287
 msgid "Reflection Print Scanner"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:274
+#: src/nemo-metadata-tab.py:288
 msgid "Digital Camera"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:276
+#: src/nemo-metadata-tab.py:290
 msgid "SceneType"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:277
+#: src/nemo-metadata-tab.py:291
 msgid "Directly Photographed"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:279
+#: src/nemo-metadata-tab.py:293
 msgid "CustomRendered"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:280 src/nemo-metadata-tab.py:308
+#: src/nemo-metadata-tab.py:294 src/nemo-metadata-tab.py:322
 msgid "Normal"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:281
+#: src/nemo-metadata-tab.py:295
 msgid "Custom"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:283
+#: src/nemo-metadata-tab.py:297
 msgid "ExposureMode"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:284
+#: src/nemo-metadata-tab.py:298
 msgid "Auto Exposure"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:285
+#: src/nemo-metadata-tab.py:299
 msgid "Manual Exposure"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:286
+#: src/nemo-metadata-tab.py:300
 msgid "Auto Bracket"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:288
+#: src/nemo-metadata-tab.py:302
 msgid "WhiteBalance"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:289
+#: src/nemo-metadata-tab.py:303
 msgid "Auto"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:292
+#: src/nemo-metadata-tab.py:306
 msgid "SceneCaptureType"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:293
+#: src/nemo-metadata-tab.py:307
 msgid "Standard"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:294
+#: src/nemo-metadata-tab.py:308
 msgid "Landscape"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:295
+#: src/nemo-metadata-tab.py:309
 msgid "Portrait"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:296
+#: src/nemo-metadata-tab.py:310
 msgid "Night"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:298
+#: src/nemo-metadata-tab.py:312
 msgid "GainControl"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:299 src/nemo-metadata-tab.py:902
+#: src/nemo-metadata-tab.py:313 src/nemo-metadata-tab.py:920
 msgid "None"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:300
+#: src/nemo-metadata-tab.py:314
 msgid "Low gain up"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:301
+#: src/nemo-metadata-tab.py:315
 msgid "High gain up"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:302
+#: src/nemo-metadata-tab.py:316
 msgid "Low gain down"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:303
+#: src/nemo-metadata-tab.py:317
 msgid "High gain down"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:309
+#: src/nemo-metadata-tab.py:323
 msgid "Soft"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:310
+#: src/nemo-metadata-tab.py:324
 msgid "Hard"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:331
-msgid "Show property page for media files"
-msgstr ""
-
-#: src/nemo-metadata-tab.py:415
+#: src/nemo-metadata-tab.py:428
 msgid "More…"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:661 src/nemo-metadata-tab.py:663
-#: src/nemo-metadata-tab.py:713 src/nemo-metadata-tab.py:714
+#: src/nemo-metadata-tab.py:539 src/nemo-metadata-tab.py:677
+#: src/nemo-metadata-tab.py:679 src/nemo-metadata-tab.py:730
+#: src/nemo-metadata-tab.py:731
 #, python-format
 msgid "%s pixels"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:668
+#: src/nemo-metadata-tab.py:684
 #, python-format
 msgid "%s sec."
 msgstr ""
 
-#: src/nemo-metadata-tab.py:904 src/nemo-metadata-tab.py:916
-#: src/nemo-metadata-tab.py:918
+#: src/nemo-metadata-tab.py:922 src/nemo-metadata-tab.py:934
+#: src/nemo-metadata-tab.py:936
 msgid "Yes"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:906 src/nemo-metadata-tab.py:917
-#: src/nemo-metadata-tab.py:919
+#: src/nemo-metadata-tab.py:924 src/nemo-metadata-tab.py:935
+#: src/nemo-metadata-tab.py:937
 msgid "No"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:911
+#: src/nemo-metadata-tab.py:929
 msgid "Print"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:912
+#: src/nemo-metadata-tab.py:930
 msgid "Copy"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:913
+#: src/nemo-metadata-tab.py:931
 msgid "Change"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:914
+#: src/nemo-metadata-tab.py:932
 msgid "Add Notes"
 msgstr ""
 
-#: src/nemo-metadata-tab.py:915
+#: src/nemo-metadata-tab.py:933
 msgid "Algorithm"
 msgstr ""
