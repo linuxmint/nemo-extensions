@@ -31,8 +31,6 @@ from xdg import BaseDirectory
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
-APP = "nemo-compare"
-
 # configuration settings
 CONFIG_FORMAT = 2
 CONFIG_FILE_USER = os.path.join(BaseDirectory.xdg_config_home,
@@ -127,11 +125,13 @@ class NemoCompareConfig():
             return self.reset()
 
     def update_engines(self):
-        """TODO."""
-        if not self.config:
-            self.load()
+        """Remove all engines from config which aren't installed anymore.
 
-        # remove all engines from config which aren't installed anymore
+        Force reading the current config file before as the user may
+        have changed it.
+        """
+        self.load()
+
         installed = get_installed_engines()
         config_engines = self.config[SECTION_ENGINES]
         changed = False
