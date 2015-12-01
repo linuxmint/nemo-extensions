@@ -3,12 +3,12 @@ Section: gnome
 Priority: extra
 Maintainer: Eduard Dopler <kontakt@eduard-dopler.de>
 Build-Depends: debhelper (>= 9),
-               python-all (>= 3.2) | python3-all (>= 3.2),
+               python-all (>= 3.0) | python3-all (>= 3.0),
                python3-distutils-extra,
                dh-python
 Standards-Version: 3.9.6
 Homepage: https://github.com/EduardDopler/nemo-extensions
-XS-Python-Version: >= 3.2
+XS-Python-Version: >= 3.0
 
 Package: nemo-metadata-columns
 Architecture: all
@@ -20,4 +20,7 @@ Depends: ${python3:Depends},
          python-nemo,
          python3-mediainfodll,
          poppler-utils
-Description: Nemo extension, adding a property page for media files
+Description: Nemo extension, adding columns for media metadata.
+ This extension advances Nemo columns: A great set of media metadata
+ can be shown and sorted in new columns. Supported file types are:
+ audio, video, images and PDF.
