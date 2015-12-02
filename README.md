@@ -17,7 +17,7 @@ Many useful extensions have already been written:
 | ~~nemo-audio-tab~~ (replaced)     | see metadata-tab     | obsolete   |
 | nemo-compare                      | functional (Py3)     | yes        |
 | nemo-dropbox                      | functional (Py3+C)   | (C)        |
-| nemo-emblems                      | functional (Py3)     | TODO       |
+| nemo-emblems                      | functional (Py3)     | yes        |
 | nemo-fileroller                   | functional (C)       | (C)        |
 | nemo-folder-color-switcher        | functional (Py3)     | TODO       |
 | nemo-gtkhash                      | functional (C)       | (C)        |

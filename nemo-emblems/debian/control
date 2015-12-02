@@ -3,19 +3,22 @@ Section: utils
 Priority: extra
 Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
-               python-all,
-               python-distutils-extra,
+               python-all (>= 3.0) | python3-all (>= 3.0),
+               python3-distutils-extra,
                dh-python
 Standards-Version: 3.9.6
 Homepage: https://github.com/linuxmint/nemo-extensions
+X-Python-Version: >= 3.0
+X-Python3-Version: >= 3.0
 
 Package: nemo-emblems
 Architecture: all
 Section: utils
 Priority: extra
-Depends: ${python:Depends},
+Depends: ${python3:Depends},
          ${misc:Depends},
          nemo,
          python-nemo
-Description: Change a folder or file emblem
- Change a folder or file emblem in Nemo
+Description: Nemo extension for adding emblems to items.
+ Nemo Emblems adds a new property page for files and folders so you can
+ add and remove multiple emblems to them.

@@ -1,1 +1,1 @@
-nemo-extension/nemo-emblems.py usr/share/nemo-python/extensions
+src/nemo-emblems.py usr/share/nemo-python/extensions
