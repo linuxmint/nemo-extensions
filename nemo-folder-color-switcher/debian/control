@@ -12,14 +12,6 @@ Depends: python-nemo, nemo, ${python:Depends}, folder-color-switcher, gir1.2-nem
 Description: Change a folder color
  Change folder colors in Nemo
 
-Package: caja-folder-color-switcher
-Architecture: all
-Section: utils
-Priority: extra
-Depends: python-caja, caja, ${python:Depends}, folder-color-switcher, gir1.2-caja
-Description: Change a folder color
- Change folder colors in Caja
-
 Package: folder-color-switcher
 Architecture: all
 Section: utils

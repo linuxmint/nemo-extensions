@@ -25,8 +25,7 @@ import DistUtilsExtra.auto
 
 # Create data files
 data = [ 	
-	('/usr/share/nemo-python/extensions', ['nemo-extensions/nemo-folder-color-switcher.py']),
-	('/usr/share/caja-python/extensions', ['caja-extensions/caja-folder-color-switcher.py']) ]
+	('/usr/share/nemo-python/extensions', ['nemo-extensions/nemo-folder-color-switcher.py']) ]
 
 # Setup stage
 DistUtilsExtra.auto.setup(
