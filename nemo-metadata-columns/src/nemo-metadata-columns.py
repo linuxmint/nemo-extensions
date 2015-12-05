@@ -25,7 +25,8 @@ import signal
 import sys
 from urllib.parse import unquote
 
-from gi.repository import GObject, Nemo, GdkPixbuf, GLib
+from gi.repository import GObject, Nemo
+from PIL import Image
 # my 2 cents on MediaInfoDLL:
 # I know it is in bad shape, to put it mildly. But it is the only library I
 # could find to access video metadata in Python 3. Ideas are welcome!
@@ -275,7 +276,7 @@ class NemoMetadataColumns(GObject.GObject,
         elif mime_type.startswith("image"):
             tagdata = read_image_data(filename)
             # if exifread was not successful
-            # get at least some info from GdkPixbuf
+            # get at least some info from PIL
             if not tagdata:
                 tagdata = read_image_stub(filename)
         # PDF
@@ -443,34 +444,49 @@ def read_image_data(filename):
 
 
 def read_image_stub(filename):
-    """Read and return image metadata provided by GdkPixbuf.
+    """Read and return image metadata provided by PIL.
 
     This is usually less extensive than EXIF data but provides basic
     information for more image types.
+    As per PIL docs it is not necessary to close the file manually.
     """
     try:
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
-    except GLib.GError:
+        image = Image.open(filename)
+    except (OSError, IOError):
         return
 
     tagdata = dict()
     tagnames = set(TAGS_IMAGE_STUB.keys()).union(TAGS_IMAGE_STUB_HIDDEN)
 
-    for tagname in tagnames:
-        pixbuf_option = "tEXt::" + tagname
-        # store some tags in other columns in order to reduce their amount
-        if tagname == "Title":
-            tagname = "GENERAL TRACK NAME"
-        elif tagname == "Author":
-            tagname = "AUTHOR"
-        elif tagname == "Creation Time":
-            tagname = "GENERAL RECORDED DATE"
-        elif tagname == "Software":
-            tagname = "Image Software"
-        tagdata[tagname] = pixbuf.get_option(pixbuf_option)
+    tagdata["VIDEO WIDTH"] = _("%s pixels") % str(image.size[0])
+    tagdata["VIDEO HEIGHT"] = _("%s pixels") % str(image.size[1])
 
-    tagdata["VIDEO WIDTH"] = _("%s pixels") % str(pixbuf.get_width())
-    tagdata["VIDEO HEIGHT"] = _("%s pixels") % str(pixbuf.get_height())
+    if hasattr(image, "info"):
+        for tagname in tagnames:
+            tagvalue = image.info.get(tagname, None)
+            if not tagvalue:
+                continue
+            # store some tags in other columns in order to reduce their amount
+            if tagname == "Title":
+                tagname = "GENERAL TRACK NAME"
+            elif tagname == "Author":
+                tagname = "AUTHOR"
+            elif tagname == "Creation Time":
+                tagname = "GENERAL RECORDED DATE"
+            elif tagname == "Software":
+                tagname = "Image Software"
+            tagdata[tagname] = str(tagvalue)
+
+        # combine "Resolution" values, if any
+        resolution = image.info.get("dpi", None)
+        if resolution:
+            x_res, y_res = resolution
+            if x_res == y_res:
+                resolution = str(x_res) + " dpi"
+            else:
+                resolution = "{x_res}x{y_res} dpi".format(x_res=x_res,
+                                                          y_res=y_res)
+            tagdata["Resolution"] = resolution
 
     return tagdata
 

@@ -20,6 +20,7 @@ Depends: ${python3:Depends},
          python-nemo,
          python3-taglib,
          python3-mediainfodll,
+         python3-pil,
          poppler-utils
 Description: Nemo extension, adding a property page for media files.
  Nemo Metadata Tab adds a new property page for media files and displays

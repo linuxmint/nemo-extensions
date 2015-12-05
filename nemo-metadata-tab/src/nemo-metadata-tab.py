@@ -27,12 +27,13 @@ from collections import OrderedDict
 from tempfile import NamedTemporaryFile
 from urllib.parse import unquote
 
-from gi.repository import GObject, Gtk, Nemo, GdkPixbuf, Pango, GLib
+from gi.repository import GObject, Gtk, Nemo, GdkPixbuf, Pango
 import taglib
 # The current Nemo implementation has built-in EXIF support,
 # toggle our own parsing here:
 READ_IMAGE = True
 if READ_IMAGE:
+    from PIL import Image
     sys.path.append("/usr/share/nemo-metadata-tab")
     try:
         import exifread
@@ -385,7 +386,7 @@ class NemoMetadataTab(GObject.GObject,
             # try first with exifread
             tagdata = read_image_data(filename)
             default_tags = DEFAULT_TAGS_IMAGE
-            # or else at least some info from GdkPixbuf
+            # or else at least some info from PIL
             if not tagdata:
                 tagdata = read_image_stub(filename)
                 default_tags = DEFAULT_TAGS_IMAGE_STUB
@@ -702,31 +703,47 @@ def read_image_data(filename):
     )
 
     for tagname in tagdata:
-        if tagname in translatable_tags:
+        if ((tagname in translatable_tags and
+             tagdata[tagname])):
             tagdata[tagname] = translate_exif_words(tagname, tagdata[tagname])
 
-    return tagdata
+    # if we collected *any* data, return it
+    if any(tagdata.values()):
+        return tagdata
+    else:
+        return None
 
 
 def read_image_stub(filename):
-    """Read and return image metadata provided by GdkPixbuf.
+    """Read and return image metadata provided by PIL.
 
     This is usually less extensive than EXIF data but provides basic
     information for more image types.
+    As per PIL docs it is not necessary to close the file manually.
     """
     try:
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
-    except GLib.GError:
+        image = Image.open(filename)
+    except (OSError, IOError):
         return
 
     tagdata = OrderedDict.fromkeys(DEFAULT_TAGS_IMAGE_STUB)
 
-    for tagname in DEFAULT_TAGS_IMAGE_STUB:
-        pixbuf_option = "tEXt::" + tagname
-        tagdata[tagname] = pixbuf.get_option(pixbuf_option)
+    if hasattr(image, "info"):
+        for tagname in DEFAULT_TAGS_IMAGE_STUB:
+            tagdata[tagname] = image.info.get(tagname, None)
+        # combine "Resolution" values, if any
+        resolution = image.info.get("dpi", None)
+        if resolution:
+            x_res, y_res = resolution
+            if x_res == y_res:
+                resolution = str(x_res) + " dpi"
+            else:
+                resolution = "{x_res}x{y_res} dpi".format(x_res=x_res,
+                                                          y_res=y_res)
+            tagdata["Resolution"] = resolution
 
-    tagdata["Width"] = pixbuf.get_width()
-    tagdata["Height"] = pixbuf.get_height()
+    if len(image.size) == 2:
+        tagdata["Width"], tagdata["Height"] = image.size
 
     # add "pixels" to width and height
     if ((tagdata["Width"] and
