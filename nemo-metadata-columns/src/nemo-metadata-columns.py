@@ -362,20 +362,24 @@ def read_image_data(filename):
     if not tagdata:
         return
 
-    # use only one DateTime info (by priority)
-    # but don't translate (in order to be sortable)
+    # use only one DateTime info (by priority),
+    # don't translate it (in order to be sortable)
     # and store it in Audio's GENERAL RECORDED DATE in order to reduce columns
-    date_tag = "GENERAL RECORDED DATE"
-    if tagdata["EXIF DateTimeOriginal"]:
-        tagdata[date_tag] = tagdata["EXIF DateTimeOriginal"]
-    else:
-        if tagdata["EXIF DateTimeDigitized"]:
-            tagdata[date_tag] = tagdata["EXIF DateTimeDigitized"]
-        else:
-            tagdata[date_tag] = tagdata["Image DateTime"]
-    del tagdata["EXIF DateTimeOriginal"]
-    del tagdata["EXIF DateTimeDigitized"]
-    del tagdata["Image DateTime"]
+    # (delete the others so they do not show up as columns)
+    mapped_date_tag = "GENERAL RECORDED DATE"
+    all_date_tags = ("EXIF DateTimeOriginal",
+                     "EXIF DateTimeDigitized",
+                     "Image DateTime")
+    for date_tag in all_date_tags:
+        if date_tag in tagdata:
+            tagdata[mapped_date_tag] = tagdata.pop(date_tag)
+            break
+    for date_tag in all_date_tags:
+        if date_tag in tagdata:
+            del tagdata[date_tag]
+
+    # As we do not know which tags are set, we use dict.pop() often with
+    # default values (simpler code).
 
     # combine "Resolution" values
     if ((tagdata["Image XResolution"] and
@@ -391,18 +395,18 @@ def read_image_data(filename):
         unit = unit.replace("Pixels/Inch", "ppi").replace("Dots/Inch", "dpi")
         tagdata["Resolution"] = "{resolution} {unit}".format(
             resolution=resolution, unit=unit)
-    del tagdata["Image XResolution"]
-    del tagdata["Image YResolution"]
-    del tagdata["Image ResolutionUnit"]
+    tagdata.pop("Image XResolution", None)
+    tagdata.pop("Image YResolution", None)
+    tagdata.pop("Image ResolutionUnit", None)
 
     # combine "FocalLength" values
-    if ((tagdata["EXIF FocalLength"] and
-         tagdata["EXIF FocalLengthIn35mmFilm"])):
+    if ((tagdata.get("EXIF FocalLength", None) and
+         tagdata.get("EXIF FocalLengthIn35mmFilm", None))):
         focal_length = "{focal_35mm} (35mm film), {focal_lense} (lens)"
         tagdata["EXIF FocalLength"] = _(focal_length).format(
             focal_35mm=tagdata["EXIF FocalLengthIn35mmFilm"],
             focal_lense=tagdata["EXIF FocalLength"])
-    del tagdata["EXIF FocalLengthIn35mmFilm"]
+    tagdata.pop("EXIF FocalLengthIn35mmFilm", None)
 
     # add "pixels" to width and height
     # and store them in Video's WIDTH/HEIGHT in order to reduce columns
@@ -412,14 +416,18 @@ def read_image_data(filename):
                                   tagdata["EXIF ExifImageWidth"])
         tagdata["VIDEO HEIGHT"] = (_("%s pixels") %
                                    tagdata["EXIF ExifImageLength"])
-        del tagdata["EXIF ExifImageWidth"]
-        del tagdata["EXIF ExifImageLength"]
+        tagdata.pop("EXIF ExifImageWidth", None)
+        tagdata.pop("EXIF ExifImageLength", None)
 
     # calculate f-number
-    if tagdata["EXIF FNumber"]:
+    if tagdata.get("EXIF FNumber", None):
         first, x, second = tagdata["EXIF FNumber"].partition("/")
-        fnumber = float(first) / float(second)
-        tagdata["EXIF FNumber"] = "f/" + str(fnumber)
+        if first and second:
+            fnumber = float(first) / float(second)
+            fnumber = str(fnumber)
+        else:
+            fnumber = first + ".0"
+        tagdata["EXIF FNumber"] = "f/" + fnumber
 
     # translate some words
     translatable_tags = (

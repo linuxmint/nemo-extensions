@@ -637,13 +637,12 @@ def read_image_data(filename):
         del tagdata["DateTime"]
         tagdata["DateTimeOriginal"] = translate_exif_date(
             tagdata["DateTimeOriginal"])
-    else:
-        if tagdata["DateTimeDigitized"]:
-            del tagdata["DateTime"]
-            tagdata["DateTimeDigitized"] = translate_exif_date(
-                tagdata["DateTimeDigitized"])
-        else:
-            tagdata["DateTime"] = translate_exif_date(tagdata["DateTime"])
+    elif tagdata["DateTimeDigitized"]:
+        del tagdata["DateTime"]
+        tagdata["DateTimeDigitized"] = translate_exif_date(
+            tagdata["DateTimeDigitized"])
+    elif tagdata["DateTime"]:
+        tagdata["DateTime"] = translate_exif_date(tagdata["DateTime"])
 
     # combine "Resolution" values
     if ((tagdata["XResolution"] and
@@ -687,8 +686,12 @@ def read_image_data(filename):
     # calculate f-number
     if tagdata["FNumber"]:
         first, x, second = tagdata["FNumber"].partition("/")
-        fnumber = float(first) / float(second)
-        tagdata["FNumber"] = "f/" + str(fnumber)
+        if first and second:
+            fnumber = float(first) / float(second)
+            fnumber = str(fnumber)
+        else:
+            fnumber = first + ".0"
+        tagdata["FNumber"] = "f/" + fnumber
 
     # translate some words
     translatable_tags = (
