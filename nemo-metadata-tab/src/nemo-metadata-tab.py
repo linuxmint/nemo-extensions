@@ -189,7 +189,8 @@ DEFAULT_TAGS_IMAGE_STUB = OrderedDict(
         ("Disclaimer", _("Disclaimer")),
         ("Warning", _("Warning")),
         ("Source", _("Source")),
-        ("Comment", _("Comment"))
+        ("Comment", _("Comment")),
+        ("Resolution", _("Resolution"))
     )
 )
 DEFAULT_TAGS_PDF = OrderedDict(

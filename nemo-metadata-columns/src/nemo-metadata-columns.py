@@ -111,7 +111,8 @@ TAGS_IMAGE = {
     "EXIF Contrast": _("Contrast"),
     "EXIF Saturation": _("Saturation"),
     "EXIF Sharpness": _("Sharpness"),
-    "Image Orientation": _("Orientation")
+    "Image Orientation": _("Orientation"),
+    "Resolution": _("Resolution")
 }
 # hidden tags are read internally but not displayed on their own
 TAGS_IMAGE_HIDDEN = {
