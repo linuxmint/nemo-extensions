@@ -1,21 +1,24 @@
-Source: folder-color-switcher
-Section: gnome
+Source: nemo-folder-color-switcher
+Section: utils
 Priority: extra
 Maintainer: Linux Mint <root@linuxmint.com>
-Build-Depends: python-distutils-extra, debhelper (>=7)
+Build-Depends: debhelper (>= 9),
+               python-all (>= 3.0) | python3-all (>= 3.0),
+               python3-distutils-extra,
+               dh-python
+Standards-Version: 3.9.6
+Homepage: https://github.com/linuxmint/nemo-extensions
+X-Python-Version: >= 3.0
+X-Python3-Version: >= 3.0
 
 Package: nemo-folder-color-switcher
 Architecture: all
 Section: utils
 Priority: extra
-Depends: python-nemo, nemo, ${python:Depends}, folder-color-switcher, gir1.2-nemo-3.0
-Description: Change a folder color
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         nemo,
+         python-nemo
+Description: Nemo extension for changing folder colors
  Change folder colors in Nemo
 
-Package: folder-color-switcher
-Architecture: all
-Section: utils
-Priority: extra
-Depends: ${python:Depends}
-Description: Change a folder color
- Change folder colors

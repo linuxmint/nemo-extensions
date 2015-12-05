@@ -1,128 +1,103 @@
-# French (Canada) translation for linuxmint
+# French (Canada) translation for nemo-folder-color-switcher
 # Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: linuxmint\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-15 21:45+0200\n"
-"PO-Revision-Date: 2014-12-20 18:25+0000\n"
+"Project-Id-Version: nemo-folder-color-switcher 3.0.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2015-12-04 18:30+0100\n"
 "Last-Translator: Alexandre-Xavier Labonté-Lamoureux "
 "<alexandrexavier@live.ca>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
+"Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-06 14:10+0000\n"
-"X-Generator: Launchpad (build 17838)\n"
 
-#: ../nemo-extensions/nemo-folder-color.py:172
-#: ../caja-extensions/caja-folder-color.py:136
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:103
 msgid "Sand"
 msgstr "Sable"
 
-#: ../nemo-extensions/nemo-folder-color.py:173
-#: ../caja-extensions/caja-folder-color.py:135
+#: src/nemo-folder-color-switcher.py:104
 msgid "Beige"
 msgstr "Beige"
 
-#: ../nemo-extensions/nemo-folder-color.py:174
-#: ../caja-extensions/caja-folder-color.py:149
+#: src/nemo-folder-color-switcher.py:105
 msgid "Yellow"
 msgstr "Jaune"
 
-#: ../nemo-extensions/nemo-folder-color.py:175
-#: ../caja-extensions/caja-folder-color.py:143
+#: src/nemo-folder-color-switcher.py:106
 msgid "Orange"
 msgstr "Orange"
 
-#: ../nemo-extensions/nemo-folder-color.py:176
-#: ../caja-extensions/caja-folder-color.py:139
+#: src/nemo-folder-color-switcher.py:107
 msgid "Brown"
 msgstr "Brun"
 
-#: ../nemo-extensions/nemo-folder-color.py:177
-#: ../caja-extensions/caja-folder-color.py:146
+#: src/nemo-folder-color-switcher.py:108
 msgid "Red"
 msgstr "Rouge"
 
-#: ../nemo-extensions/nemo-folder-color.py:178
-#: ../caja-extensions/caja-folder-color.py:145
+#: src/nemo-folder-color-switcher.py:109
 msgid "Purple"
 msgstr "Violet"
 
-#: ../nemo-extensions/nemo-folder-color.py:179
-#: ../caja-extensions/caja-folder-color.py:144
+#: src/nemo-folder-color-switcher.py:110
 msgid "Pink"
 msgstr "Rose"
 
-#: ../nemo-extensions/nemo-folder-color.py:180
-#: ../caja-extensions/caja-folder-color.py:138
+#: src/nemo-folder-color-switcher.py:111
 msgid "Blue"
 msgstr "Bleu"
 
-#: ../nemo-extensions/nemo-folder-color.py:181
-#: ../caja-extensions/caja-folder-color.py:140
+#: src/nemo-folder-color-switcher.py:112
 msgid "Cyan"
 msgstr "Cyan"
 
-#. Colors submenu
-#: ../nemo-extensions/nemo-folder-color.py:182
-#: ../caja-extensions/caja-folder-color.py:134
+#: src/nemo-folder-color-switcher.py:113
 msgid "Aqua"
 msgstr "Aqua"
 
-#: ../nemo-extensions/nemo-folder-color.py:183
-#: ../caja-extensions/caja-folder-color.py:147
+#: src/nemo-folder-color-switcher.py:114
 msgid "Teal"
 msgstr "Turquoise"
 
-#: ../nemo-extensions/nemo-folder-color.py:184
-#: ../caja-extensions/caja-folder-color.py:141
+#: src/nemo-folder-color-switcher.py:115
 msgid "Green"
 msgstr "Vert"
 
-#: ../nemo-extensions/nemo-folder-color.py:185
-#: ../caja-extensions/caja-folder-color.py:148
+#: src/nemo-folder-color-switcher.py:116
 msgid "White"
 msgstr "Blanc"
 
-#: ../nemo-extensions/nemo-folder-color.py:186
-#: ../caja-extensions/caja-folder-color.py:142
+#: src/nemo-folder-color-switcher.py:117
 msgid "Grey"
 msgstr "Gris"
 
-#: ../nemo-extensions/nemo-folder-color.py:187
-#: ../caja-extensions/caja-folder-color.py:137
+#: src/nemo-folder-color-switcher.py:118
 msgid "Black"
 msgstr "Noir"
 
-#: ../nemo-extensions/nemo-folder-color.py:230
+#: src/nemo-folder-color-switcher.py:365
 msgid "Restores the color of the selected folders"
 msgstr "Restaure la couleur des dossiers sélectionnés"
 
-#: ../nemo-extensions/nemo-folder-color.py:232
+#: src/nemo-folder-color-switcher.py:363
 msgid "Restores the color of the selected folder"
 msgstr "Restaure la couleur du dossier sélectionné"
 
-#: ../nemo-extensions/nemo-folder-color.py:241
+#: src/nemo-folder-color-switcher.py:376
 #, python-format
 msgid "Changes the color of the selected folders to %s"
 msgstr "Change la couleur des dossiers sélectionnés en %s"
 
-#: ../nemo-extensions/nemo-folder-color.py:243
+#: src/nemo-folder-color-switcher.py:373
 #, python-format
 msgid "Changes the color of the selected folder to %s"
 msgstr "Change la couleur du dossier sélectionné en %s"
-
-#. Main menu [1 or +1 folder(s)]
-#: ../caja-extensions/caja-folder-color.py:129
-msgid "Change color"
-msgstr "Changer la couleur"
-
-#. Restore
-#: ../caja-extensions/caja-folder-color.py:173
-msgid "Default"
-msgstr "Par défaut"

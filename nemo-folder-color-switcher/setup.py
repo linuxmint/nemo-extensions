@@ -1,40 +1,48 @@
-#!/usr/bin/env python
-
-# Folder Color 0.0.11 - http://launchpad.net/folder-color-switcher
-# Copyright (C) 2012-2014 Marcos Alvarez Costales https://launchpad.net/~costales
-#
-# folder-color-switcher is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 3 of the License, or
-# (at your option) any later version.
-# 
-# Folder Color is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License
-# along with Folder Color; if not, see http://www.gnu.org/licenses 
-# for more information.
-
+#!/usr/bin/python3
 
 import os
 import sys
 
 import DistUtilsExtra.auto
 
-# Create data files
-data = [ 	
-	('/usr/share/nemo-python/extensions', ['nemo-extensions/nemo-folder-color-switcher.py']) ]
+data = [
+    (
+        '/usr/share/nemo-python/extensions',
+        [
+            'src/nemo-folder-color-switcher.py'
+        ]
+    ),
+    (
+        '/usr/share/icons/hicolor/10x10/apps',
+        [
+            'icons/nemo-folder-color-switcher-aqua.png',
+            'icons/nemo-folder-color-switcher-beige.png',
+            'icons/nemo-folder-color-switcher-black.png',
+            'icons/nemo-folder-color-switcher-blue.png',
+            'icons/nemo-folder-color-switcher-brown.png',
+            'icons/nemo-folder-color-switcher-cyan.png',
+            'icons/nemo-folder-color-switcher-green.png',
+            'icons/nemo-folder-color-switcher-grey.png',
+            'icons/nemo-folder-color-switcher-orange.png',
+            'icons/nemo-folder-color-switcher-pink.png',
+            'icons/nemo-folder-color-switcher-purple.png',
+            'icons/nemo-folder-color-switcher-red.png',
+            'icons/nemo-folder-color-switcher-sand.png',
+            'icons/nemo-folder-color-switcher-teal.png',
+            'icons/nemo-folder-color-switcher-white.png',
+            'icons/nemo-folder-color-switcher-yellow.png'
+        ]
+    )
+]
 
-# Setup stage
 DistUtilsExtra.auto.setup(
-    name         = "folder-color-switcher",
-    version      = "0.0.1",
-    description  = "Change the color of your folders",
+    name         = "nemo-folder-color-switcher",
+    version      = "3.0.0",
+    description  = "Nemo extension for changing folder colors",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",
     url          = "https://github.com/linuxmint/folder-color-switcher",
     license      = "GPL3",
     data_files   = data
-    )
+)
+

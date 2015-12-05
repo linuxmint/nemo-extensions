@@ -19,7 +19,7 @@ Many useful extensions have already been written:
 | nemo-dropbox                      | functional (Py3+C)   | (C)        |
 | nemo-emblems                      | functional (Py3)     | yes        |
 | nemo-fileroller                   | functional (C)       | (C)        |
-| nemo-folder-color-switcher        | functional (Py3)     | TODO       |
+| nemo-folder-color-switcher        | functional (Py3)     | yes        |
 | nemo-gtkhash                      | functional (C)       | (C)        |
 | nemo-image-converter              | functional (C)       | (C)        |
 | ~~nemo-media-columns~~ (replaced) | see metadata-columns | obsolete   |
