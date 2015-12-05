@@ -32,7 +32,7 @@ Many useful extensions have already been written:
 | nemo-repairer                     | functional (C)       | (C)        |
 | nemo-seahorse                     | functional (C)       | (C)        |
 | nemo-share                        | functional (C)       | (C)        |
-| nemo-terminal                     | functional (Py3)     | TODO       |
+| nemo-terminal                     | functional (Py3)     | yes        |
 
 
 In the latest development all Python scripts have been ported to Python 3.
