@@ -10,6 +10,7 @@ Build-Depends: debhelper (>= 9),
                libglib2.0-dev (>= 2.35.9),
                libnemo-extension-dev
 Standards-Version: 3.9.6
+Homepage: https://github.com/linuxmint/nemo-extensions
 
 Package: nemo-share
 Architecture: any

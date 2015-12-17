@@ -2,7 +2,6 @@ Source: nemo-image-converter
 Section: utils
 Priority: optional
 Maintainer: Julien Lavergne <julien.lavergne@gmail.com>
-Homepage: http://github.com/linuxmint/nemo-extensions
 Build-Depends: debhelper (>= 9),
                autotools-dev,
                dh-autoreconf,
@@ -14,6 +13,7 @@ Build-Depends: debhelper (>= 9),
                libglib2.0-dev (>= 2.37.3),
                libgtk-3-dev (>= 3.0.0)
 Standards-Version: 3.9.6
+Homepage: https://github.com/linuxmint/nemo-extensions
 
 Package: nemo-image-converter
 Architecture: any

@@ -17,6 +17,7 @@ Build-Depends: debhelper (>= 9),
                libnemo-extension-dev,
                libgcr-3-dev (>= 3.4.0)
 Standards-Version: 3.9.6
+Homepage: https://github.com/linuxmint/nemo-extensions
 
 Package: nemo-seahorse
 Architecture: any
