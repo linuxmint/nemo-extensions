@@ -10,10 +10,10 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: nemo-emblems.py:56
+#: src/nemo-emblems.py:56
 msgid "Add emblems to files and folders"
 msgstr ""
 
-#: nemo-emblems.py:60
+#: src/nemo-emblems.py:60
 msgid "Emblems"
 msgstr ""

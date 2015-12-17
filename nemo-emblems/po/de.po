@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: nemo-emblems.py:56
+#: src/nemo-emblems.py:56
 msgid "Add emblems to files and folders"
 msgstr "Embleme zu Dateien und Ordnern hinzufügen"
 
