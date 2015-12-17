@@ -7,7 +7,8 @@ Build-Depends: debhelper (>= 9),
                python3-distutils-extra,
                dh-python
 Standards-Version: 3.9.6
-XS-Python-Version: >= 3.1
+X-Python-Version: >= 3.1
+X-Python3-Version: >= 3.1
 
 Package: nemo-compare
 Architecture: all
