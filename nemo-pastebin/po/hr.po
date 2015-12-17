@@ -1,14 +1,8 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST gogo <trebelnik2@gmail.com>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-pastebin\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-25 00:19+0200\n"
-"PO-Revision-Date: 2015-04-25 16:01+0100\n"
+"Project-Id-Version: nemo-pastebin 3.0.0\n"
+"POT-Creation-Date: 2015-12-16 22:35+0100\n"
+"PO-Revision-Date: 2015-12-16 22:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -17,77 +11,93 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.7.5\n"
 
-#. if not pasteurl or not re.match("^http://.*$", pasteurl):
-#: ../nemo-pastebin.py:108
-msgid "Unable to read or parse the result page."
-msgstr "Nemoguće čitanje i obrada stranice rezultata."
-
-#: ../nemo-pastebin.py:109
-msgid "It could be a server timeout or a change server side. Try later."
+#: src/nemo-pastebin-preferences.py:67
+msgid "Nemo Pastebin Extension Preferences"
 msgstr ""
-"Možda je isteklo vrijeme na poslužitelju ili je došlo do promjene na "
-"poslužitelju. Pokušajte kasnije."
 
-#: ../nemo-pastebin.py:166
+#: src/nemo-pastebin-preferences.py:78
+#, fuzzy
+msgid "Pastebin Service"
+msgstr "Usluga lijepljenja"
+
+#: src/nemo-pastebin-preferences.py:89
+#, fuzzy
+msgid "Author"
+msgstr "Autor"
+
+#: src/nemo-pastebin-preferences.py:90
+#, fuzzy
+msgid "Username"
+msgstr "Korisničko ime"
+
+#: src/nemo-pastebin-preferences.py:91
+#, fuzzy
+msgid "Password"
+msgstr "Lozinka"
+
+#: src/nemo-pastebin-preferences.py:92
+msgid "Title"
+msgstr ""
+
+#: src/nemo-pastebin-preferences.py:93
+msgid "Perma-Tag"
+msgstr ""
+
+#: src/nemo-pastebin-preferences.py:94
+msgid "Jabber ID"
+msgstr ""
+
+#: src/nemo-pastebin-preferences.py:109
+msgid "Open in browser when finished"
+msgstr ""
+
+#: src/nemo-pastebin-preferences.py:114
+msgid "Copy pastebin URL to clipboard"
+msgstr ""
+
+#: src/nemo-pastebin.py:66
+msgid "Upload files to online pastebins"
+msgstr ""
+
+#: src/nemo-pastebin.py:110
 #, python-format
-msgid "Pastebin to %s"
+#, fuzzy
+msgid "Upload to %s"
 msgstr "Zalijepi na %s"
 
-#: ../nemo-pastebin.py:167
-#, python-format
-msgid "Send this file to %s"
-msgstr "Pošalji ovu datoteku na %s"
-
-#: ../nemo-pastebin-configurator.py:45
-#, python-format
-msgid "Can't find %s in any known prefix!"
-msgstr "Nemoguće je pronaći %s u ijednom poznatom prefiksu!"
-
-#: ../data/nemo-pastebin.gschema.xml.h:1
-msgid "Show a bubble"
-msgstr "Prikaži obavijest"
-
-#: ../data/nemo-pastebin.gschema.xml.h:2
-msgid ""
-"Show a notification to inform the user about whether the operation has been "
-"completed successfully or not."
+#: src/nemo-pastebin.py:112
+msgid "Upload to a pastebin service"
 msgstr ""
-"Prikaži obavijest korisniku, je li ili nije radnja obavljena uspješno."
 
-#: ../data/nemo-pastebin.gschema.xml.h:3
-msgid "Open a browser window"
+#: src/nemo-pastebin.py:116
+msgid "Upload this file to an online pastebin service."
+msgstr ""
+
+#: src/nemo-pastebin.py:144
+msgid "Pastebin"
+msgstr ""
+
+#: src/nemo-pastebin.py:145
+#, python-brace-format
+msgid ""
+"Uploading {filename}\n"
+"to {service}…"
+msgstr ""
+
+#: src/nemo-pastebin.py:184
+msgid "Pastebin uploaded!"
+msgstr ""
+
+#: src/nemo-pastebin.py:188
+msgid "Copy URL"
+msgstr ""
+
+#: src/nemo-pastebin.py:192
+#, fuzzy
+msgid "Open in browser"
 msgstr "Otvori prozor preglednika"
 
-#: ../data/nemo-pastebin.gschema.xml.h:4
-msgid "Open a browser and point it to the pasted document's URL."
-msgstr "Otvori preglednik i usmjeri ga na URL zalijepljenog dokumenta."
-
-#: ../data/nemo-pastebin.gschema.xml.h:5
-msgid "Selected pastebin service"
-msgstr "Odabrana usluga lijepljenja"
-
-#: ../data/nemo-pastebin.gschema.xml.h:6
-msgid "The pastebin which the file will be sent to."
-msgstr "Usluga lijepljena na koji će datoteka biti poslana."
-
-#: ../data/nemo-pastebin.gschema.xml.h:7
-msgid "Author (if not set, the login name will be used)"
-msgstr "Autor (ako nije postavljen, koristiti će se ime prijave)"
-
-#: ../data/nemo-pastebin.gschema.xml.h:8
-msgid "The name to use as author of the document."
-msgstr "Ime koje će se koristiti za autora dokumenta."
-
-#: ../data/nemo-pastebin.gschema.xml.h:9
-msgid "Username"
-msgstr "Korisničko ime:"
-
-#: ../data/nemo-pastebin.gschema.xml.h:10
-msgid "Most services don't need this."
-msgstr "Većini usluga nije potrebno."
-
-#: ../data/nemo-pastebin.gschema.xml.h:11
-msgid "Password (if needed)"
-msgstr "Lozinka (ako je potrebna)"
+#: src/nemo-pastebin.py:218
+msgid "Pastebin Error"
+msgstr ""

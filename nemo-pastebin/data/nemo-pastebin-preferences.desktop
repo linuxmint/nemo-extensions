@@ -1,0 +1,10 @@
+
+[Desktop Entry]
+Name=Nemo Pastebin Extension Preferences
+Type=Application
+GenericName=Preferences for Nemo Pastebin Extension
+Icon=gtk-preferences
+Categories=Settings;
+X-Ubuntu-Gettext-Domain=nemo-pastebin
+Exec=nemo-pastebin-preferences
+Name[de_DE]=nemo-pastebin-preferences

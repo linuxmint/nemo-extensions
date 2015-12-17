@@ -25,7 +25,7 @@ Many useful extensions have already been written:
 | ~~nemo-media-columns~~ (replaced) | see metadata-columns | obsolete   |
 | nemo-metadata-columns             | NEW (Py3)            | yes        |
 | nemo-metadata-tab                 | NEW (Py3)            | yes        |
-| nemo-pastebin                     | functional (Py3)     | TODO       |
+| nemo-pastebin                     | functional (Py3)     | yes        |
 | nemo-preview                      | functional (C)       | (C)        |
 | nemo-python                       | functional (C)       | (C)        |
 | ~~nemo-rabbitvcs~~ (removed)      | removed              | obsolete   |
@@ -65,7 +65,7 @@ stored on a per-user basis.
 - [x] ~~Port to Python 3~~
 - [x] ~~include nemo-emblems~~
 - [x] ~~include folder-color-switcher~~
-- [ ] Refactor Python 3 code (WIP)
+- [x] Refactor Python 3 code
 - [ ] Update debian build files (WIP)
 
 

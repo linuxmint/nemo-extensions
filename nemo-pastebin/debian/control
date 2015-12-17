@@ -3,28 +3,34 @@ Section: gnome
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
-               python-all (>= 2.7),
+               python-all (>= 3.3) | python3-all (>= 3.3),
+               python3-distutils-extra,
                dh-python
-Build-Depends-Indep: python-distutils-extra
 Standards-Version: 3.9.6
-X-Python-Version: >= 2.7
+Homepage: https://github.com/linuxmint/nemo-extensions
+X-Python-Version: >= 3.3
+X-Python3-Version: >= 3.3
 
 Package: nemo-pastebin
 Architecture: all
-Depends: nemo,
-         pastebinit,
-         python-gi,
-         python-nemo,
+Section: utils
+Priority: optional
+Depends: ${python3:Depends},
          ${misc:Depends},
-         ${python:Depends}
-Recommends: gir1.2-notify-0.7
-Description: Nemo extension to send files to a pastebin
- nemo-pastebin is a Nemo extension written in Python, which
- allows users to upload text-only files to a pastebin service just
- by right-clicking on them.
+         nemo,
+         python-nemo,
+         python3-xdg,
+         pastebinit,
+         gir1.2-gtk-3.0,
+         gir1.2-glib-2.0,
+         gir1.2-notify-0.7
+Recommends: python3-pyinotify
+Description: Nemo extension for pasting files to a pastebin service
+ nemo-pastebin is a Nemo extension written in Python which
+ allows users to upload files to a pastebin service via context menu.
  .
- After sending the files, a notification will be shown and the paste
- URL copied into the clipboard.
+ The process has visual feedback through notifications. On success,
+ the pastebin URL is copied to the clipboard and opened in the browser.
  .
- Users can also customize the extension's behaviour just by using
- nemo-pastebin-configurator, an easy-to-use configuration tool.
+ The extension's behaviour can be adjusted with the easy-to-use
+ configuration tool nemo-pastebin-preferences.
