@@ -8,7 +8,7 @@ data = [
         [
             'src/nemo-compare.py',
             'src/nemo-compare-preferences.py',
-            'src/utils.py'
+            'src/compare_utils.py'
         ]
     ),
     (

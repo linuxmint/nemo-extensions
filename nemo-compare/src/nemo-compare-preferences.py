@@ -24,7 +24,7 @@ from collections import OrderedDict
 
 from gi.repository import Gtk
 
-import utils
+import compare_utils as cp_utils
 
 
 TEXTDOMAIN = "nemo-compare"
@@ -64,7 +64,7 @@ class NemoCompareExtensionPreferences(Gtk.Window):
     def __init__(self):
         """Load config and create UI."""
         # configuration
-        self.config = utils.NemoCompareConfig()
+        self.config = cp_utils.NemoCompareConfig()
         # combo boxes
         self.combo_boxes = OrderedDict()
         self.combo_boxes["2way"] = None
@@ -111,7 +111,7 @@ class NemoCompareExtensionPreferences(Gtk.Window):
         In every box "(none)" will be the second entry if there is an
         active engine or the first if not.
         """
-        installed_engines = utils.get_installed_engines()
+        installed_engines = cp_utils.get_installed_engines()
         for engine_type in self.combo_boxes:
             current_engine = self.config[engine_type]
             # current, if any

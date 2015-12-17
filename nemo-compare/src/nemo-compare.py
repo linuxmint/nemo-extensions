@@ -28,7 +28,7 @@ from urllib.parse import unquote
 from gi.repository import GLib, GObject, Gio, Nemo
 
 sys.path.append("/usr/share/nemo-compare")
-import utils
+import compare_utils as cp_utils
 
 
 # react on default SIGINT
@@ -76,7 +76,7 @@ class NemoCompareExtension(GObject.GObject,
         At this time it is guaranteed to be up-to-date and that all
         engines there are present on this machine.
         """
-        self.config = utils.NemoCompareConfig()
+        self.config = cp_utils.NemoCompareConfig()
         self.remembered = []
 
     def get_name_and_desc(self):
@@ -98,7 +98,7 @@ class NemoCompareExtension(GObject.GObject,
         # check for engine changes
         self.config.update_engines()
         # start comparison (if engine for that amount is still available)
-        engine_cmd = [utils.get_engine_for_amount(self.config, len(paths))]
+        engine_cmd = [cp_utils.get_engine_for_amount(self.config, len(paths))]
         engine_cmd.extend(paths)
 
         if engine_cmd:
