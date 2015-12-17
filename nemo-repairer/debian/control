@@ -1,5 +1,5 @@
 Source: nemo-filename-repairer
-Section: gnome
+Section: utils
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Homepage: https://github.com/linuxmint/nemo-extensions

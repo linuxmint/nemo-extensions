@@ -1,5 +1,5 @@
 Source: nemo-share
-Section: gnome
+Section: utils
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),

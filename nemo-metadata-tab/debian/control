@@ -1,5 +1,5 @@
 Source: nemo-metadata-tab
-Section: gnome
+Section: utils
 Priority: optional
 Maintainer: Eduard Dopler <kontakt@eduard-dopler.de>
 Build-Depends: debhelper (>= 9),

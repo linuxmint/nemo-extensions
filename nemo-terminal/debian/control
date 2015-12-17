@@ -1,5 +1,5 @@
 Source: nemo-terminal
-Section: gnome
+Section: utils
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),

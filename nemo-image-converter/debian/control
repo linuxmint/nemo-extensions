@@ -1,5 +1,5 @@
 Source: nemo-image-converter
-Section: gnome
+Section: utils
 Priority: optional
 Maintainer: Julien Lavergne <julien.lavergne@gmail.com>
 Homepage: http://github.com/linuxmint/nemo-extensions
