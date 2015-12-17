@@ -184,7 +184,7 @@ class NemoCompareConfig():
             return CONFIG_FILE_USER
 
     def can_compare(self, amount):
-        """TODO."""
+        """Return whether there is an engine for this amount of files."""
         return bool(get_engine_for_amount(self.config, amount))
 
 
@@ -214,7 +214,7 @@ def get_installed_engines():
 
 
 def get_engine_for_amount(config, amount):
-    """TODO."""
+    """Return a list of capable engines for this amount of files."""
     config_engines = config[SECTION_ENGINES]
     if ((amount == 2 and
          config_engines[KEY_2WAY])):
