@@ -20,7 +20,8 @@ Depends: ${python3:Depends},
          python-nemo,
          python3-mediainfodll,
          python3-pil,
-         poppler-utils
+         poppler-utils,
+         gir1.2-glib-2.0
 Description: Nemo extension, adding columns for media metadata.
  This extension advances Nemo columns: A great set of media metadata
  can be shown and sorted in new columns. Supported file types are:

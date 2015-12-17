@@ -21,7 +21,11 @@ Depends: ${python3:Depends},
          python3-taglib,
          python3-mediainfodll,
          python3-pil,
-         poppler-utils
+         poppler-utils,
+         gir1.2-gtk-3.0,
+         gir1.2-glib-2.0,
+         gir1.2-pango-1.0,
+         gir1.2-gdkpixbuf-2.0
 Description: Nemo extension, adding a property page for media files.
  Nemo Metadata Tab adds a new property page for media files and displays
  various metadata. Supported file types are: audio (incl. cover art),

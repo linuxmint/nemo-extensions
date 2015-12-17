@@ -18,7 +18,9 @@ Priority: optional
 Depends: ${python3:Depends},
          ${misc:Depends},
          nemo,
-         python-nemo
+         python-nemo,
+         gir1.2-gtk-3.0,
+         gir1.2-glib-2.0
 Description: Nemo extension for adding emblems to items.
  Nemo Emblems adds a new property page for files and folders so you can
  add and remove multiple emblems to them.

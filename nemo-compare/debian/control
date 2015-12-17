@@ -18,6 +18,8 @@ Depends: ${python3:Depends},
          nemo,
          python-nemo,
          python3-xdg,
+         gir1.2-gtk-3.0,
+         gir1.2-glib-2.0,
          meld | kdiff3 | kdiff3-qt | diffuse | kompare | fldiff | tkdiff | bcompare
 Description: Context menu comparison extension for Nemo file manager
  Simple context menu file comparison extension for Nemo,
