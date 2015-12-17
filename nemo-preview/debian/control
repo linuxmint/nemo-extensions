@@ -1,6 +1,6 @@
 Source: nemo-preview
 Section: gnome
-Priority: extra
+Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
                autotools-dev,

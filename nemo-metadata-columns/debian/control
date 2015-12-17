@@ -1,6 +1,6 @@
 Source: nemo-metadata-columns
 Section: gnome
-Priority: extra
+Priority: optional
 Maintainer: Eduard Dopler <kontakt@eduard-dopler.de>
 Build-Depends: debhelper (>= 9),
                python-all (>= 3.0) | python3-all (>= 3.0),
@@ -13,7 +13,7 @@ XS-Python-Version: >= 3.0
 Package: nemo-metadata-columns
 Architecture: all
 Section: utils
-Priority: extra
+Priority: optional
 Depends: ${python3:Depends},
          ${misc:Depends},
          nemo,
