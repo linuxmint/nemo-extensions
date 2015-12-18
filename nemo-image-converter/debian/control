@@ -19,11 +19,11 @@ Package: nemo-image-converter
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         imagemagick
-Recommends: nemo (>= 2.0.0)
-Description: nemo extension to mass resize or rotate images
- This package adds a "Resize Images..." menu item to
- the context menu of all images. This opens a dialog
+         imagemagick,
+         nemo
+Description: Nemo extension to mass resize or rotate images
+ This package adds a "Resize Images" menu item to
+ the context menu of images. This opens a dialog
  where you set the desired image size and file name.
  A click on "Resize" finally resizes the image(s)
  using ImageMagick's convert tool.
