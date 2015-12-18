@@ -182,14 +182,13 @@ nemo_python_init_python (void)
 		return FALSE;
 	}
 	
-	// Commenting out: May lead to imports being impossible in Python3
-	// debug("Sanitize the python search path");
-	// PyRun_SimpleString("import sys; sys.path = filter(None, sys.path)");
-	// if (PyErr_Occurred())
-	// {
-	// 	PyErr_Print();
-	// 	return FALSE;
-	// }
+	debug("Sanitize the python search path");
+	PyRun_SimpleString("import sys; sys.path = filter(None, sys.path)");
+	if (PyErr_Occurred())
+	{
+		PyErr_Print();
+		return FALSE;
+	}
 
 	/* import gobject */
   	debug("init_pygobject");
