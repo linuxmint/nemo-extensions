@@ -4,7 +4,7 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE([1.11 check-news dist-xz])
+AM_INIT_AUTOMAKE([1.11 check-news dist-xz subdir-objects])
 AM_SILENT_RULES([yes])
 
 AC_PROG_CC_C99
