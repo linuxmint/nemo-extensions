@@ -18,7 +18,6 @@ Package: python-nemo
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         ${python3:Depends},
          python3-gi,
          gir1.2-nemo-3.0
 Description: Python binding for Nemo components
