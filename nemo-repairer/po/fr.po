@@ -1,12 +1,12 @@
 # Copyright (C) 2008 Choe Hwanjin
 # This file is distributed under the same license as the
-# nautilus-filename-repairer package.
+# nemo-filename-repairer package.
 # Choe Hwanjin <choe.hwanjin@gmail.com>, 2008
 # 
 # Translated in french by Christophe Benz <christophe.benz@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: nautilus filename repairer 0.0.0\n"
+"Project-Id-Version: nemo filename repairer 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-27 22:58+0900\n"
 "PO-Revision-Date: 2008-03-31 10:12+0100\n"
@@ -17,51 +17,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/nautilus-filename-repairer.c:119
+#: ../src/nemo-filename-repairer.c:119
 #, c-format
 msgid ""
 "<span size=\"larger\" weight=\"bold\">There was an error renaming the file "
 "to \"%s\"</span>"
 msgstr ""
 
-#: ../src/nautilus-filename-repairer.c:156
+#: ../src/nemo-filename-repairer.c:156
 #, c-format
 msgid ""
 "<span size=\"larger\" weight=\"bold\">A file named \"%s\" already exists.</"
 "span>"
 msgstr ""
 
-#: ../src/nautilus-filename-repairer.c:159
+#: ../src/nemo-filename-repairer.c:159
 #, c-format
 msgid ""
 "If you want to rename the selected file, please move or rename \"%s\" first."
 msgstr ""
 
-#: ../src/nautilus-filename-repairer.c:216
+#: ../src/nemo-filename-repairer.c:216
 #, fuzzy
 msgid "Repair filename ..."
 msgstr "Sélectionner un nom de fichier"
 
-#: ../src/nautilus-filename-repairer.c:217
+#: ../src/nemo-filename-repairer.c:217
 #, fuzzy
 msgid "Repair filename"
 msgstr "Sélectionner un nom de fichier"
 
-#: ../src/nautilus-filename-repairer.c:264
+#: ../src/nemo-filename-repairer.c:264
 #, c-format
 msgid "Re_name as \"%s\""
 msgstr "Re_nommer comme \"%s\""
 
-#: ../src/nautilus-filename-repairer.c:265
+#: ../src/nemo-filename-repairer.c:265
 #, c-format
 msgid "Rename as \"%s\"."
 msgstr "Renommer comme \"%s\""
 
-#: ../src/nautilus-filename-repairer.c:409
+#: ../src/nemo-filename-repairer.c:409
 msgid "Select a filename"
 msgstr "Sélectionner un nom de fichier"
 
-#: ../src/nautilus-filename-repairer.c:410
+#: ../src/nemo-filename-repairer.c:410
 msgid "Select a filename from sub menu items."
 msgstr "Sélectionner un nom de fichier depuis un sous-menu."
 
