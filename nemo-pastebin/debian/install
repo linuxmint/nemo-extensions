@@ -1,0 +1,4 @@
+data/nemo-pastebin-preferences.desktop usr/share/applications/
+src/nemo-pastebin.py usr/share/nemo-pastebin/
+src/pastebin_utils.py usr/share/nemo-pastebin/
+src/nemo-pastebin-preferences.py usr/share/nemo-pastebin/

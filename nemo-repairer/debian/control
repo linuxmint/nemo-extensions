@@ -1,8 +1,7 @@
 Source: nemo-filename-repairer
-Section: gnome
+Section: utils
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
-Homepage: https://github.com/linuxmint/nemo-extensions
 Build-Depends: cdbs,
                debhelper (>= 9),
                autotools-dev,
@@ -12,6 +11,7 @@ Build-Depends: cdbs,
                libglib2.0-dev (>= 2.24.0),
                libgtk-3-dev (>= 3.0.0)
 Standards-Version: 3.9.6
+Homepage: https://github.com/linuxmint/nemo-extensions
 
 Package: nemo-filename-repairer
 Architecture: any

@@ -1,0 +1,64 @@
+nemo-folder-color-switcher (3.0.0) rosa; urgency=medium
+
+  * 3.0.0
+  * Port to Python 3
+  * Improve performance
+  * Reduce icons' file size
+  * Rename package (prepend "nemo-") to fit the nemo-extensions naming scheme
+  * Include this project to the nemo-extensions repository
+  * Update debian build files
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 14:35:09 +0100
+
+folder-color-switcher (1.0.5) rosa; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Updated translations
+
+  [ Michael Webster ]
+  * Replace os.system with subprocess.call
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 06 Nov 2015 14:37:29 +0000
+
+folder-color-switcher (1.0.4) rafaela; urgency=medium
+
+  * Updated translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 02 Jun 2015 13:21:19 +0200
+
+folder-color-switcher (1.0.3) rebecca; urgency=medium
+
+  * Added dependencies on gir packages for nemo and caja
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 12 Nov 2014 10:22:27 +0100
+
+folder-color-switcher (1.0.2) rebecca; urgency=medium
+
+  * caja and nemo extension depend on folder-color-switcher
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 12 Nov 2014 01:20:46 +0100
+
+folder-color-switcher (1.0.1) rebecca; urgency=medium
+
+  * Updated translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Nov 2014 12:14:45 +0100
+
+folder-color-switcher (1.0.0) rebecca; urgency=medium
+
+  * Updated translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 31 Oct 2014 18:21:29 +0100
+
+folder-color-switcher (0.0.2) rebecca; urgency=medium
+
+  * Multiple fixes
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 30 Sep 2014 12:55:38 +0200
+
+folder-color-switcher (0.0.1) qiana; urgency=high
+
+  * Initial release
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 26 Aug 2014 13:25:00 +0100
+

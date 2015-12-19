@@ -1,0 +1,23 @@
+# Punjabi translation for nemo-emblems
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-emblems 3.0.0\n"
+"POT-Creation-Date: 2015-12-01 22:54+0100\n"
+"PO-Revision-Date: 2015-12-01 22:54+0100\n"
+"Last-Translator: Gurdit Singh Bedi <bedi.gsb.96@gmail.com>\n"
+"Language-Team: Punjabi <pa@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-emblems.py:56
+msgid "Add emblems to files and folders"
+msgstr ""
+
+#: src/nemo-emblems.py:60
+msgid "Emblems"
+msgstr "ਨਿਸ਼ਾਨ"

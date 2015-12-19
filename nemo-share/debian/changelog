@@ -1,3 +1,16 @@
+nemo-share (3.0.0) rosa; urgency=medium
+
+  * 3.0.0
+  * Update debian build files
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 18:52:48 +0100
+
+nemo-share (2.8.1) rosa; urgency=medium
+
+  * Updated translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 20 Nov 2015 17:21:40 +0000
+
 nemo-share (2.8.0) rosa; urgency=medium
 
   * 2.8.0

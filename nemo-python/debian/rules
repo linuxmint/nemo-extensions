@@ -9,7 +9,7 @@ export LDFLAGS+=-Wl,--as-needed
 export NOCONFIGURE=yes
 
 %:
-	dh $@ --parallel --with autoreconf
+	dh $@ --parallel --with autoreconf --with python3
 
 override_dh_autoreconf:
 	dh_autoreconf --as-needed ./autogen.sh

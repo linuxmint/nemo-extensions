@@ -1,6 +1,11 @@
 dnl -*- mode: m4 -*-
 AC_PREREQ(2.63)
-AC_INIT([nemo-preview],[2.8.0],[],[nemo-preview])
+
+AC_INIT([nemo-preview], [3.0.0],
+	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-preview])
+
+AC_SUBST([PACKAGE_NAME], ["$PACKAGE_NAME"])
+AC_SUBST([PACKAGE_VERSION], ["$PACKAGE_VERSION"])
 
 AC_CONFIG_HEADERS([config/config.h])
 AC_CONFIG_SRCDIR([src/main.c])
@@ -12,7 +17,7 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 AC_CANONICAL_TARGET
 
 # require automake 1.10
-AM_INIT_AUTOMAKE([1.10 dist-xz no-dist-gzip tar-ustar foreign])
+AM_INIT_AUTOMAKE([1.10 dist-xz no-dist-gzip tar-ustar foreign subdir-objects])
 AM_MAINTAINER_MODE([enable])
 
 GETTEXT_PACKAGE=AC_PACKAGE_NAME

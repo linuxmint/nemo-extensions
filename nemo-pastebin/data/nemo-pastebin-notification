@@ -1,7 +1,0 @@
-Name: nemo-pastebin-notification
-Priority: High
-Terminal: False
-DontShowAfterReboot: True
-DisplayIf: true
-Description: Nemo Pastebin has been installed. A session restart is needed to make it work properly. Once the session is restarted, a new option will display in Nemo context menu. This option lets you to send the content of text files to a pastebin through the Internet.
-Description-it: Nemo Pastebin é stato installato. Per poterlo utilizzare é necessario riavviare la sessione. Una volta riavviata la sessione, nel menù contestuale di Nemo sarà disponibile una nuova opzione, la quale consentirà di inviare il contenuto dei file di testo a un servizio di pastebin su Internet.

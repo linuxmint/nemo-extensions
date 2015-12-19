@@ -1,5 +1,0 @@
-# intltool-update -p -g nemo-emblems
-# also done automatically with setup.py build or install
-[encoding: UTF-8]
-nemo-extension/nemo-emblems.py
-

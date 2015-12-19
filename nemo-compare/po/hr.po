@@ -1,8 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nemo-compare 2.8.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-01 10:48+0100\n"
+"POT-Creation-Date: 2015-11-30 18:28+0100\n"
 "PO-Revision-Date: 2015-11-01 10:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -13,47 +12,62 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/nemo-compare.py:112
-#: src/nemo-compare.py:135
-msgid "Compare to: %s"
-msgstr "Usporedi s: %s"
+#: src/nemo-compare-preferences.py:54
+#, fuzzy
+msgid "2way"
+msgstr "Normalan Diff"
 
-#: src/nemo-compare.py:113
-msgid "Compare to the file remembered before"
-msgstr "Usporedi s prije odabranom datotekom"
+#: src/nemo-compare-preferences.py:55
+#, fuzzy
+msgid "3way"
+msgstr "Tročlani Diff"
 
-#: src/nemo-compare.py:122
-msgid "Compare Later"
-msgstr "Usporedi kasnije"
+#: src/nemo-compare-preferences.py:56
+#, fuzzy
+msgid "nway"
+msgstr "N-člani Diff"
 
-#: src/nemo-compare.py:123
-msgid "Remember file for later comparison"
-msgstr "Zapamti datoteku za kasniju usporedbu"
-
-#: src/nemo-compare.py:136
-msgid "Compare selected files to the file remembered before"
-msgstr "Usporedi odabrane datoteke s prije odabranom datotekom"
-
-#: src/nemo-compare.py:147
-msgid "Compare"
-msgstr "Usporedi"
-
-#: src/nemo-compare.py:148
-msgid "Compare selected files"
-msgstr "Usporedi odabrane datoteke"
-
-#: src/nemo-compare-preferences.py:95
+#: src/nemo-compare-preferences.py:83
+#, fuzzy
 msgid "Nemo Compare Extension Preferences"
 msgstr "Nemo podešavanja proširenja za uspoređivanje"
 
-#: src/nemo-compare-preferences.py:103
-msgid "Normal Diff"
-msgstr "Normalan Diff"
+#: src/nemo-compare.py:60
+msgid "File comparison via context menu."
+msgstr ""
 
-#: src/nemo-compare-preferences.py:115
-msgid "Three-Way Diff"
-msgstr "Tročlani Diff"
+#: src/nemo-compare.py:138
+#, fuzzy
+msgid "Compare these items"
+msgstr "Usporedite ove datoteke"
 
-#: src/nemo-compare-preferences.py:127
-msgid "N-Way Diff"
-msgstr "N-člani Diff"
+#: src/nemo-compare.py:139
+#, fuzzy
+msgid "Compare selected items"
+msgstr "Usporedi odabrane datoteke"
+
+#: src/nemo-compare.py:149
+#, fuzzy
+#, python-format
+msgid "%s remembered items"
+msgstr "%s prije odabranom datotekom"
+
+#: src/nemo-compare.py:151
+#, fuzzy
+#, python-format
+msgid "Compare to: %s"
+msgstr "Usporedi s: %s"
+
+#: src/nemo-compare.py:152
+#, fuzzy
+msgid "Compare with remembered items(s)"
+msgstr "Usporedi s prije odabranom datotekom"
+
+#: src/nemo-compare.py:158
+msgid "Compare Later"
+msgstr "Usporedi kasnije"
+
+#: src/nemo-compare.py:159
+#, fuzzy
+msgid "Remember item(s) for later comparison"
+msgstr "Zapamti datoteku za kasniju usporedbu"

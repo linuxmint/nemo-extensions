@@ -1,0 +1,102 @@
+# Amharic translation for nemo-folder-color-switcher
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.0.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2015-12-04 18:30+0100\n"
+"Last-Translator: samson <Unknown>\n"
+"Language-Team: Amharic <am@li.org>\n"
+"Language: am\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr "አሸዋ"
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr "ቤዥ"
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "ቢጫ"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "ብርቱካን"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "ቡናማ"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "ቀይ"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "ወይን ጠጅ"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "ሮዝ"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "ሰማያዊ"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "አረንጓዴ ሰማያዊ"
+
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr "ውሃ"
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr "ሰማያዊ አረንጓዴ"
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "አረንጓዴ"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "ነጭ"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "ግራጫ"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "ጥቁር"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "የተመረጡትን ፎልደሮች ቀለም እንደ ነበር መመለሻ"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "የተመረጠውን ፎልደር ቀለም እንደ ነበር መመለሻ"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "የተመረጡትን ፎልደሮች ቀለም መቀየሪያ ወደ %s"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "የተመረጠውን ፎልደር ቀለም መቀየሪያ ወደ %s"

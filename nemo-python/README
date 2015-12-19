@@ -1,25 +1,24 @@
 libnemo-extension Python bindings
-====================================
+=================================
 
-These are unstable bindings for the Nemo extension library.
+These are the Python bindings for the Nemo extension library.
+They are built against the Python 3 C API and can load Python 3 scripts.
 
-For examples and documentation check the examples sub directory.
-
-As of nemo-python 0.7.0, scripts are also loaded from $XDG_DATA_DIR/nemo-python/extensions,
+Scripts are loaded from $XDG_DATA_DIR/nemo-python/extensions,
 which includes ~/.local/share and /usr/share (or whatever your $XDG_DATA_DIR is 
 set to).
 
-Try to copy test.py to that directory for an example
+For examples and documentation check the examples sub directory.
+
 
 Requirements
 ============
 
-Nemo      1.0.3
-Python    2.3
+Nemo      1.0.3 (?)
+Python    3.3
 PyGObject 2.28.0
 
-Problems
-========
-It's currently not possible to reload the python file without
-restarting nemo. That's a planned feature for future versions
 
+Notes
+-----
+In order to reload extensions, you need to restart Nemo.

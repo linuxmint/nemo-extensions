@@ -1,3 +1,14 @@
+nemo-compare (3.0.0) rosa; urgency=medium
+
+  * 3.0.0
+  * Port to Python 3
+  * Improve performance
+  * Improve preference tool
+  * Add German translation
+  * Update debian build files
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 14:35:09 +0100
+
 nemo-compare (2.8.0) rosa; urgency=medium
 
   * 2.8.0
