@@ -1,7 +1,14 @@
-AC_PREREQ(2.57)
-AC_INIT([nemo-share],[2.8.0])
-AC_CONFIG_SRCDIR([src/nemo-share.c])
+AC_PREREQ(2.63)
+
+AC_INIT([nemo-share], [3.0.0],
+	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-share])
+
 AC_CONFIG_HEADERS([config.h])
+
+AC_SUBST([PACKAGE_NAME], ["$PACKAGE_NAME"])
+AC_SUBST([PACKAGE_VERSION], ["$PACKAGE_VERSION"])
+
+AC_CONFIG_SRCDIR([src/nemo-share.c])
 AM_INIT_AUTOMAKE([foreign 1.9 -Wall])
 
 
@@ -43,7 +50,7 @@ NEMO_EXTENSION_DIR=`$PKG_CONFIG --variable=extensiondir libnemo-extension`
 AC_SUBST(NEMO_EXTENSION_DIR)
 
 dnl ========================================================
-dnl Set INTERFACES_DIR 
+dnl Set INTERFACES_DIR
 dnl ========================================================
 
 if test "x${prefix}" = "xNONE"; then
@@ -76,7 +83,7 @@ AC_SUBST(gnomelocaledir)
 dnl ========================================================
 
 AC_CONFIG_FILES([
-  Makefile 
+  Makefile
   src/Makefile
   interfaces/Makefile
   po/Makefile.in

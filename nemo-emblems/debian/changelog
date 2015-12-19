@@ -1,3 +1,13 @@
+nemo-emblems (3.0.0) rosa; urgency=medium
+
+  * 3.0.0
+  * Port to Python 3
+  * Fix bug which passed changes of multiple emblems properties only to the most
+    recently opened one
+  * Update debian build files
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 14:35:09 +0100
+
 nemo-emblems (2.8.1) rosa; urgency=medium
 
   * Updated translations

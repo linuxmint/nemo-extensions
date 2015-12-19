@@ -1,3 +1,7 @@
+2009-10-12  nobody  <email@example.com>
+
+	* Discontinued ChangeLog file. See debian/changelog
+
 2009-10-11  Mișu Moldovan  <dumol@gnome.ro>
 
 	* configure.in: Added "ro" to ALL_LINGUAS

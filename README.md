@@ -65,8 +65,9 @@ stored on a per-user basis.
 - [x] ~~Port to Python 3~~
 - [x] ~~include nemo-emblems~~
 - [x] ~~include folder-color-switcher~~
-- [x] Refactor Python 3 code
-- [ ] Update debian build files (WIP)
+- [x] ~~Refactor Python 3 code~~
+- [x] ~~Update build files (Python extensions)~~
+- [ ] Update build files & Cleanup (C extensions)
 
 
 ## Questions? Issues?

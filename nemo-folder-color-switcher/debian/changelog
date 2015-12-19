@@ -1,3 +1,15 @@
+nemo-folder-color-switcher (3.0.0) rosa; urgency=medium
+
+  * 3.0.0
+  * Port to Python 3
+  * Improve performance
+  * Reduce icons' file size
+  * Rename package (prepend "nemo-") to fit the nemo-extensions naming scheme
+  * Include this project to the nemo-extensions repository
+  * Update debian build files
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 14:35:09 +0100
+
 folder-color-switcher (1.0.5) rosa; urgency=medium
 
   [ Clement Lefebvre ]

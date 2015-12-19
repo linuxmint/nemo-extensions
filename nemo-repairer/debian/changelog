@@ -1,3 +1,10 @@
+nemo-filename-repairer (3.0.0) rosa; urgency=medium
+
+  * 3.0.0
+  * Update debian build files
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 18:52:48 +0100
+
 nemo-filename-repairer (2.8.0) rosa; urgency=medium
 
   * 2.8.0

@@ -1,3 +1,7 @@
+2014-06-10  nobody  <email@example.com>
+
+	* Discontinued ChangeLog file. See debian/changelog
+
 2008-09-25  Jürg Billeter  <j@bitron.ch>
 
 	* po/LINGUAS, po/ca.po: Added Catalan translation by
