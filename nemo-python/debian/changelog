@@ -1,3 +1,9 @@
+nemo-python (3.0.1) rosa; urgency=medium
+
+  * Include newer python.m4
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Sun, 20 Dec 2015 21:55:48 +0100
+
 nemo-python (3.0.0) rosa; urgency=medium
 
   * 3.0.0
