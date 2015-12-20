@@ -6,9 +6,9 @@ Build-Depends: debhelper (>= 9),
                autotools-dev,
                dh-autoreconf,
                gnome-pkg-tools,
-               python-all (>= 3.3) | python3-all (>= 3.3),
+               python3-dev (>= 3.3),
                python-gi-dev,
-               libnemo-extension-dev (>= 1.0.3),
+               libnemo-extension-dev (>= 2.6.0),
                gnome-common,
                gtk-doc-tools
 Standards-Version: 3.9.6

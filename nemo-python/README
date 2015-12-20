@@ -14,7 +14,7 @@ For examples and documentation check the examples sub directory.
 Requirements
 ============
 
-Nemo      1.0.3 (?)
+Nemo      2.6.0
 Python    3.3
 PyGObject 2.28.0
 

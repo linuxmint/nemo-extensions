@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([nemo-python], [3.0.1],
+AC_INIT([nemo-python], [3.0.2],
 	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-python])
 
 AC_CONFIG_HEADERS([config.h])
@@ -11,7 +11,7 @@ AC_SUBST([PACKAGE_VERSION], ["$PACKAGE_VERSION"])
 
 AM_INIT_AUTOMAKE
 
-NEMO_REQUIRED=1.0.3
+NEMO_REQUIRED=2.6.0
 
 AC_PROG_CC
 AC_DISABLE_STATIC
@@ -35,7 +35,7 @@ dnl **************************************************
 dnl * Check for Python
 dnl **************************************************
 AM_PATH_PYTHON([3.3])
-PKG_CHECK_MODULES([PYTHON], [python-${PYTHON_VERSION}])
+# PKG_CHECK_MODULES([PYTHON], [python-${PYTHON_VERSION}])
 PYTHON_LIB_LOC="`pkg-config python-${PYTHON_VERSION} --variable=libdir`"
 # current python3 builds miss to set the libdir variable, try old one then
 if test "$PYTHON_LIB_LOC" == "" ; then

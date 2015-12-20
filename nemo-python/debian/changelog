@@ -1,3 +1,9 @@
+nemo-python (3.0.2) rosa; urgency=medium
+
+  * Fix build dependencies
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Mon, 21 Dec 2015 00:01:48 +0100
+
 nemo-python (3.0.1) rosa; urgency=medium
 
   * Include newer python.m4
