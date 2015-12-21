@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import os
-import sys
-
 import DistUtilsExtra.auto
 
 data = [
@@ -44,7 +41,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-metadata-tab",
-    version      = "3.0.0",
+    version      = "3.0.1",
     description  = "Nemo extension, adding a property page for media files",
     author       = "Eduard Dopler",
     author_email = "kontakt@eduard-dopler.de",

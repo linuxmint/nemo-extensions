@@ -21,7 +21,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-compare",
-    version      = "3.0.0",
+    version      = "3.0.1",
     description  = "Nemo extension for file comparison via context menu.",
     author       = "Eduard Dopler",
     author_email = "kontakt@eduard-dopler.de",

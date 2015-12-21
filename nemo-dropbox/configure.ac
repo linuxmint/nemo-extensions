@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([nemo-dropbox], [3.0.0],
+AC_INIT([nemo-dropbox], [3.0.1],
 	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-dropbox])
 
 AC_CONFIG_HEADERS([config.h])
@@ -16,7 +16,7 @@ AC_PREFIX_DEFAULT(/usr)
 #AC_PROG_INTLTOOL([0.29])
 
 # Dependency checks
-NEMO_REQUIRED=1.0.0
+NEMO_REQUIRED=2.6.0
 GLIB_REQUIRED=2.14.0
 
 # Used programs

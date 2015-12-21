@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import os
-import sys
-
 import DistUtilsExtra.auto
 
 data = [
@@ -22,7 +19,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-terminal",
-    version      = "3.0.0",
+    version      = "3.0.1",
     description  = "Nemo extension for embedding a terminal into it.",
     author       = "Linux Mint",
     author_email = "Fabien Loison <flo@flogisoft.com>",
