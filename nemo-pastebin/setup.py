@@ -21,7 +21,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-pastebin",
-    version      = "3.0.0",
+    version      = "3.0.1",
     description  = "Nemo extension for pasting files to a pastebin service.",
     author       = "Alessio Treglia",
     author_email = "quadrispro@ubuntu.com",

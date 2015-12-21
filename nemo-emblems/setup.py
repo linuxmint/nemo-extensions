@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import os
-import sys
-
 import DistUtilsExtra.auto
 
 data = [
@@ -16,7 +13,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-emblems",
-    version      = "3.0.0",
+    version      = "3.0.1",
     description  = "Nemo extension for adding emblems to items.",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",

@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Eduard Dopler <kontakt@eduard-dopler.de>
 Build-Depends: debhelper (>= 9),
-               python-all (>= 3.1) | python3-all (>= 3.1),
+               python3-all (>= 3.1),
                python3-distutils-extra,
                dh-python
 Standards-Version: 3.9.6
@@ -18,7 +18,7 @@ Priority: optional
 Depends: ${python3:Depends},
          ${misc:Depends},
          nemo,
-         python-nemo (>=3.0.0),
+         python-nemo (>= 3.0.0),
          python3-taglib,
          python3-mediainfodll,
          python3-pil,
@@ -27,6 +27,7 @@ Depends: ${python3:Depends},
          gir1.2-glib-2.0,
          gir1.2-pango-1.0,
          gir1.2-gdkpixbuf-2.0
+Replaces: nemo-audio-tab
 Description: Nemo extension, adding a property page for media files.
  Nemo Metadata Tab adds a new property page for media files and displays
  various metadata. Supported file types are: audio (incl. cover art),

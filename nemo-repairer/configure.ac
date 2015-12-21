@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([nemo-filename-repairer], [3.0.0],
+AC_INIT([nemo-filename-repairer], [3.0.1],
 	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-filename-repairer])
 
 AC_CONFIG_HEADERS([config.h])

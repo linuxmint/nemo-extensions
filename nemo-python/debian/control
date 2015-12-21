@@ -20,6 +20,15 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          python3-gi,
          gir1.2-nemo-3.0
+Replaces: python-nemo (<< 3.0.0)
+Conflicts: python-nemo (<< 3.0.0),
+           nemo-compare (<< 3.0.0),
+           nemo-emblems (<< 3.0.0),
+           nemo-pastebin (<< 3.0.0),
+           nemo-terminal (<< 3.0.0),
+           folder-color-switcher (<< 3.0.0),
+           nemo-audio-tab,
+           nemo-media-columns
 Description: Python binding for Nemo components
  Python binding for Nemo, to allow Nemo property page and menu item
  extensions to be written in Python.

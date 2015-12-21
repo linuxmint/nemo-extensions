@@ -5,9 +5,9 @@ Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
                autotools-dev,
                gnome-pkg-tools,
-               libnemo-extension-dev (>= 1.0.3),
+               libnemo-extension-dev (>= 2.6.0),
                libglib2.0-dev (>= 2.14.0),
-               python-all (>= 3.3) | python3-all (>= 3.3),
+               python3-dev (>= 3.3),
                python3-docutils,
                dh-autoreconf,
 Standards-Version: 3.9.6

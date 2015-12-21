@@ -1,18 +1,23 @@
-# Initialization
+AC_PREREQ(2.63)
 
-AC_INIT([nemo-fileroller],2.8.0)
+AC_INIT([nemo-fileroller], [3.0.1],
+	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-fileroller])
 
-AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+AC_CONFIG_HEADERS([config.h])
+
+AC_SUBST([PACKAGE_NAME], ["$PACKAGE_NAME"])
+AC_SUBST([PACKAGE_VERSION], ["$PACKAGE_VERSION"])
+
+AM_INIT_AUTOMAKE
 
 AC_PREFIX_DEFAULT(/usr)
 
-AM_CONFIG_HEADER(config.h)
 
 # not ready for i18n yet
 #AC_PROG_INTLTOOL([0.29])
 
 # Dependency checks
-NEMO_REQUIRED=1.0.0
+NEMO_REQUIRED=2.6.0
 GLIB_REQUIRED=2.14.0
 
 # Used programs
