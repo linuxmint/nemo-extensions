@@ -4,11 +4,11 @@ Upstream-Contact: Michael Webster <miketwebster@gmai.com>
 
 Files: *
 Copyright: 2009-2010, Alessio Treglia <quadrispro@ubuntu.com>
-License: GPL-3
+License: GPL-3+
 
 Files: debian/*
 Copyright: 2009-2012, Alessio Treglia <quadrispro@ubuntu.com>
-License: GPL-3
+License: GPL-3+
 
 License: GPL-3+
  This program is free software: you can redistribute it and/or modify
