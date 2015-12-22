@@ -161,8 +161,8 @@ nemo_python_init_python (void)
 	if (Py_IsInitialized())
 		return TRUE;
 
-	debug("g_module_open " PY_LIB_LOC "/libpython" PYTHON_VERSION "." G_MODULE_SUFFIX ".1.0");
-	libpython = g_module_open(PY_LIB_LOC "/libpython" PYTHON_VERSION "." G_MODULE_SUFFIX ".1.0", 0);
+	debug("g_module_open " PYTHON_SO);
+	libpython = g_module_open(PYTHON_SO, 0);
 	if (!libpython)
 		g_warning("g_module_open libpython failed: %s", g_module_error());
 
@@ -183,7 +183,7 @@ nemo_python_init_python (void)
 	}
 
 	debug("Sanitize the python search path");
-	PyRun_SimpleString("import sys; sys.path = filter(None, sys.path)");
+	PyRun_SimpleString("import sys; sys.path = [path for path in sys.path if path]");
 	if (PyErr_Occurred())
 	{
 		PyErr_Print();

@@ -28,7 +28,8 @@ Conflicts: python-nemo (<< 3.0.0),
            nemo-terminal (<< 3.0.0),
            folder-color-switcher (<< 3.0.0),
            nemo-audio-tab,
-           nemo-media-columns
+           nemo-media-columns,
+           nemo-rabbitvcs
 Description: Python binding for Nemo components
  Python binding for Nemo, to allow Nemo property page and menu item
  extensions to be written in Python.

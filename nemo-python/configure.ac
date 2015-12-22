@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([nemo-python], [3.0.3],
+AC_INIT([nemo-python], [3.0.4],
 	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-python])
 
 AC_CONFIG_HEADERS([config.h])
@@ -35,24 +35,10 @@ dnl **************************************************
 dnl * Check for Python
 dnl **************************************************
 AM_PATH_PYTHON([3.3])
-# PKG_CHECK_MODULES([PYTHON], [python-${PYTHON_VERSION}])
-PYTHON_LIB_LOC="`pkg-config python-${PYTHON_VERSION} --variable=libdir`"
-# current python3 builds miss to set the libdir variable, try old one then
-if test "$PYTHON_LIB_LOC" == "" ; then
-  PYTHON_LIB_LOC="`pkg-config python2 --variable=libdir`"
-fi
-py_prefix=`$PYTHON -c "import sys; print(sys.prefix)"`
-py_exec_prefix=`$PYTHON -c "import sys; print(sys.exec_prefix)"`
-PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION}"
-if test "$py_prefix" != "$py_exec_prefix"; then
-  PYTHON_INCLUDES="$PYTHON_INCLUDES -I${py_exec_prefix}/include/python${PYTHON_VERSION}"
-fi
-AC_SUBST(PYTHON_INCLUDES)
-AC_SUBST(PYTHON_LIBS)
-AC_SUBST(PYTHON_CFLAGS)
-AC_SUBST(PYTHON_LIB_LOC)
+AM_CHECK_PYTHON_HEADERS(,[AC_MSG_ERROR(could not find Python headers)])
+AM_CHECK_PYTHON_LIBS(,[AC_MSG_ERROR(could not find Python lib)])
 
-if test "`pkg-config --variable=datadir pygobject-3.0`" != "" ; then
+if test "`$PKG_CONFIG --variable=datadir pygobject-3.0`" != "" ; then
     PYGOBJECT_VERSION=pygobject-3.0
     PYGOBJECT_MAJOR_VERSION=3
     PYGOBJECT_MINOR_VERSION=0
