@@ -1,3 +1,9 @@
+nemo-python (3.0.4) rosa; urgency=medium
+
+  * Fix Python library path on multiarch
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Mon, 22 Dec 2015 16:52:48 +0100
+
 nemo-python (3.0.3) rosa; urgency=medium
 
   * Improve build dependencies

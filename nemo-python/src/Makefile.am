@@ -6,8 +6,7 @@ INCLUDES =						\
 	-I$(top_builddir)				\
 	$(DISABLE_DEPRECATED_CFLAGS)			\
 	$(NEMO_PYTHON_CFLAGS)				\
-	-DPYTHON_VERSION=\"$(PYTHON_VERSION)\"		\
-	-DPY_LIB_LOC="\"$(PYTHON_LIB_LOC)\""		\
+	-DPYTHON_SO=\"$(PYTHON_SO)\"     		\
 	$(PYTHON_INCLUDES)
 
 nemo_extensiondir=$(NEMO_EXTENSION_DIR)
