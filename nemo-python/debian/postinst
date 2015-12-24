@@ -10,7 +10,7 @@ EXTENSIONDIR_SO="${NEMO_EXTENSIONDIR}/$SO_FILE"
 
 if [ ! -f $EXTENSIONDIR_SO ]; then
   echo -n "Linking libnemo-python.so in Nemo's extensiondir..."
-  ln -s "${NEMO_PYTHON_LIBDIR}/nemo/extensions-3.0/$SO_FILE" "${EXTENSIONDIR_SO}"
+  ln -s "${EXTENSIONDIR_SO}" "${NEMO_PYTHON_LIBDIR}/nemo/extensions-3.0/$SO_FILE"
   if [ $? -eq 0 ]; then
     echo "OK"
   else
