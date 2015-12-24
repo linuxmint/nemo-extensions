@@ -839,17 +839,7 @@ def read_id3_art(filename):
         # read picture
         picture_size = apic_size - f.tell() + apic_frame_start
         picture = f.read(picture_size)
-    # create a temporary file so GtkPixbuf can read it
-    with NamedTemporaryFile("w+b") as temp_pic_file:
-        temp_pic_file.write(picture)
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(temp_pic_file.name,
-                                                        ICON_SIZE,
-                                                        ICON_SIZE)
-        widget = Gtk.Image.new_from_pixbuf(pixbuf)
-        widget.set_padding(2, 2)
-        frame = Gtk.Frame(shadow_type=Gtk.ShadowType.ETCHED_OUT)
-        frame.add(widget)
-        return frame
+        return framed_image_widget(picture)
 
 
 def read_flac_art(filename):
@@ -883,14 +873,22 @@ def read_flac_art(filename):
         # read picture
         picture_size = bytes_to_int(f.read(4))
         picture = f.read(picture_size)
+        return framed_image_widget(picture)
+
+
+def framed_image_widget(picture):
+    """Return a framed image from the picture bytes."""
     # create a temporary file so GtkPixbuf can read it
     with NamedTemporaryFile("w+b") as temp_pic_file:
         temp_pic_file.write(picture)
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(temp_pic_file.name,
-                                                        ICON_SIZE,
-                                                        ICON_SIZE)
-        widget = Gtk.Image.new_from_pixbuf(pixbuf)
-        widget.set_padding(2, 2)
+        try:
+            pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(temp_pic_file.name,
+                                                            ICON_SIZE,
+                                                            ICON_SIZE)
+            widget = Gtk.Image.new_from_pixbuf(pixbuf)
+            widget.set_padding(2, 2)
+        except GObject.GError:
+            return
         frame = Gtk.Frame(shadow_type=Gtk.ShadowType.ETCHED_OUT)
         frame.add(widget)
         return frame
