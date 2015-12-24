@@ -19,7 +19,8 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          python3-gi,
-         gir1.2-nemo-3.0
+         gir1.2-nemo-3.0,
+         libnemo-extension1 (>= 2.6.0)
 Replaces: python-nemo (<< 3.0.0)
 Conflicts: python-nemo (<< 3.0.0),
            nemo-compare (<< 3.0.0),
