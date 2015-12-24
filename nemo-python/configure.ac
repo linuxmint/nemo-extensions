@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([nemo-python], [3.0.4],
+AC_INIT([nemo-python], [3.0.5],
 	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-python])
 
 AC_CONFIG_HEADERS([config.h])
