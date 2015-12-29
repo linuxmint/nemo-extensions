@@ -14,8 +14,7 @@ Depends: ${misc:Depends},
          python,
          python-nemo (>= 1.0),
          python-xdg,
-         meld
-Suggests: kdiff3 | kdiff3-qt, diffuse, kompare, fldiff, tkdiff
+         meld | kdiff3 | kdiff3-qt | diffuse | kompare | fldiff | tkdiff | bcompare
 Description: Context menu comparison extension for Nemo file manager
  Simple context menu file comparison extension for Nemo,
  inspired by the discontinued 'diff-ext' extension. By default it uses

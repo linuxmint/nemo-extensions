@@ -22,6 +22,7 @@ import urllib
 import gettext
 import locale
 import signal
+from gi.repository import GLib
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 from gi.repository import Nemo, GObject, Gio
@@ -48,21 +49,17 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
 			self.for_later = paths[0]
 			return
 
-		args = ""
-		for path in paths:
-			args += "\"%s\" " % path
-
 		cmd = None
 		if len(paths) == 2:
-			cmd = (self.config.diff_engine + " " + args + "&")
+			cmd = [self.config.diff_engine] + paths
 		elif len(paths) == 3 and len(self.config.diff_engine_3way.strip()) > 0:
-			cmd = (self.config.diff_engine_3way + " " + args + "&")
+			cmd = [self.config.diff_engine_3way] + paths
 		elif len(self.config.diff_engine_multi.strip()) > 0:
-			cmd = (self.config.diff_engine_multi + " " + args + "&")
+			cmd = [self.config.diff_engine_multi] + paths
 
 		if cmd is not None:
-			os.system(cmd)
-		
+			GLib.spawn_async(argv=cmd, flags=GLib.SpawnFlags.DEFAULT | GLib.SpawnFlags.SEARCH_PATH)
+
 	def valid_file(self, file):
 		'''Tests if the file is valid comparable'''
 		if file.get_uri_scheme() == 'file' and file.get_file_type() in (Gio.FileType.DIRECTORY, Gio.FileType.REGULAR, Gio.FileType.SYMBOLIC_LINK):

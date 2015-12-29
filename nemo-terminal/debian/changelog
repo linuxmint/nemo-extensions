@@ -1,3 +1,15 @@
+nemo-terminal (2.8.1) rosa; urgency=medium
+
+  * Changed default shell from bash, to user shell
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 20 Nov 2015 17:22:26 +0000
+
+nemo-terminal (2.8.0) rosa; urgency=medium
+
+  * 2.8.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Oct 2015 23:29:36 +0100
+
 nemo-terminal (2.6.0) rafaela; urgency=medium
 
   * 2.6.0
