@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-git VERSION\n"
+"POT-Creation-Date: 2016-01-08 16:13+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-git.py:56
+msgid "Show git branch and file info in an infobar and in columns"
+msgstr ""
+
+#: src/nemo-git.py:95
+msgid "Git File Status"
+msgstr ""
+
+#: src/nemo-git.py:211
+#, python-format
+msgid "Git Branch: <i>%s</i>"
+msgstr ""
+
+#: src/nemo-git.py:225
+msgid "Toplevel path"
+msgstr ""
+
+#: src/nemo-git.py:227
+msgid "Everything up-to-date."
+msgstr ""
+
+#: src/nemo-git.py:239
+#, python-format
+msgid "%d change"
+msgid_plural "%d changes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/nemo-git.py:241
+msgid "Changes"
+msgstr ""
+
+#: src/nemo-git.py:246
+#, python-format
+msgid "%d untracked"
+msgid_plural "%d untracked"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/nemo-git.py:248
+msgid "Untracked"
+msgstr ""

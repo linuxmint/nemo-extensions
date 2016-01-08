@@ -1,0 +1,29 @@
+Source: nemo-git
+Section: utils
+Priority: optional
+Maintainer: Eduard Dopler <kontakt@eduard-dopler.de>
+Build-Depends: debhelper (>= 9),
+               python3-all (>= 3.0),
+               python3-distutils-extra,
+               dh-python
+Standards-Version: 3.9.6
+Homepage: https://github.com/EduardDopler/nemo-extensions
+X-Python-Version: >= 3.0
+X-Python3-Version: >= 3.0
+
+Package: nemo-git
+Architecture: all
+Section: utils
+Priority: optional
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         nemo,
+         python-nemo (>= 3.0.0),
+         gir1.2-gtk-3.0,
+         gir1.2-glib-2.0,
+         git
+Description: Nemo extension for git branch and file info.
+ In git working directories an infobar will be displayed showing the current
+ working branch and a summary of the file status. Besides, a column
+ adds the per-item status (Git file status, like "M" for modified). So you can
+ see your current git changes, untracked, new, removed, renamed files at a glance.

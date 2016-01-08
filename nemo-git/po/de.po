@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-git 3.0.0\n"
+"Report-Msgid-Bugs-To: kontakt@eduard-dopler.de\n"
+"POT-Creation-Date: 2016-01-08 16:13+0100\n"
+"PO-Revision-Date: 2016-01-08 16:13+0100\n"
+"Last-Translator: Eduard Dopler <kontakt@eduard-dopler.de>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/nemo-git.py:56
+msgid "Show git branch and file info in an infobar and in columns"
+msgstr "Git Branch und Datei-Infos in einer Infobar und Spalte anzeigen"
+
+#: src/nemo-git.py:95
+msgid "Git File Status"
+msgstr "Git Dateistatus"
+
+#: src/nemo-git.py:211
+#, python-format
+msgid "Git Branch: <i>%s</i>"
+msgstr "Git Branch: <i>%s</i>"
+
+#: src/nemo-git.py:225
+msgid "Toplevel path"
+msgstr "Haupt-Arbeitspfad"
+
+#: src/nemo-git.py:227
+msgid "Everything up-to-date."
+msgstr "Alles aktuell."
+
+#: src/nemo-git.py:239
+#, python-format
+msgid "%d change"
+msgid_plural "%d changes"
+msgstr[0] "%d Änderung"
+msgstr[1] "%d Änderungen"
+
+#: src/nemo-git.py:241
+msgid "Changes"
+msgstr "Änderungen"
+
+#: src/nemo-git.py:246
+#, python-format
+msgid "%d untracked"
+msgid_plural "%d untracked"
+msgstr[0] "%d unbeobachtet"
+msgstr[1] "%d unbeobachtet"
+
+#: src/nemo-git.py:248
+msgid "Untracked"
+msgstr "Unbeobachtet"
