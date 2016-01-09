@@ -1,3 +1,10 @@
+nemo-compare (3.0.2) rosa; urgency=medium
+
+  * Add missing dependency
+    (at least one n-way diff engine is needed, so depend on diffuse)
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Sat, 09 Jan 2016 18:12:09 +0100
+
 nemo-compare (3.0.1) rosa; urgency=medium
 
   * Improve build dependencies
