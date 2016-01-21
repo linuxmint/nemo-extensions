@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nemo-pastebin 3.0.0\n"
 "POT-Creation-Date: 2015-12-16 22:35+0100\n"
-"PO-Revision-Date: 2015-12-20 19:20+0100\n"
+"PO-Revision-Date: 2016-01-21 21:43+0100\n"
 "Last-Translator: \n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -39,7 +39,7 @@ msgstr "Naslov"
 
 #: src/nemo-pastebin-preferences.py:93
 msgid "Perma-Tag"
-msgstr ""
+msgstr "Perma-Tag"
 
 #: src/nemo-pastebin-preferences.py:94
 msgid "Jabber ID"
