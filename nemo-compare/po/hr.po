@@ -1,9 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nemo-compare 2.8.0\n"
+"Report-Msgid-Bugs-To: kontakt@eduard-dopler.de\n"
 "POT-Creation-Date: 2015-11-30 18:28+0100\n"
-"PO-Revision-Date: 2015-12-23 16:17+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2015-11-30 18:36+0100\n"
+"Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.4\n"
 
 #: src/nemo-compare-preferences.py:54
 msgid "2way"
@@ -42,10 +42,12 @@ msgid "Compare selected items"
 msgstr "Usporedi odabrane datoteke"
 
 #: src/nemo-compare.py:149
+#, python-format
 msgid "%s remembered items"
 msgstr "%s prije odabranom datotekom"
 
 #: src/nemo-compare.py:151
+#, python-format
 msgid "Compare to: %s"
 msgstr "Usporedi s: %s"
 
