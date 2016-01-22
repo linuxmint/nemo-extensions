@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nemo-folder-color-switcher 3.0.0\n"
 "POT-Creation-Date: 2015-12-04 18:30+0100\n"
-"PO-Revision-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2016-01-21 21:45+0100\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: src/nemo-folder-color-switcher.py:58
 msgid "Change folder colors via context menu"
-msgstr ""
+msgstr "Promijenite boju mapa putem sadržajnog izbornika"
 
 #: src/nemo-folder-color-switcher.py:103
 msgid "Sand"
