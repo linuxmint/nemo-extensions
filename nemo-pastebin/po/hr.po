@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nemo-pastebin 3.0.0\n"
 "POT-Creation-Date: 2015-12-16 22:35+0100\n"
-"PO-Revision-Date: 2015-12-16 22:35+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2016-01-21 21:43+0100\n"
+"Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -14,69 +14,64 @@ msgstr ""
 
 #: src/nemo-pastebin-preferences.py:67
 msgid "Nemo Pastebin Extension Preferences"
-msgstr ""
+msgstr "Osobitosti Nemo Pastebin proširenja"
 
 #: src/nemo-pastebin-preferences.py:78
-#, fuzzy
 msgid "Pastebin Service"
 msgstr "Usluga lijepljenja"
 
 #: src/nemo-pastebin-preferences.py:89
-#, fuzzy
 msgid "Author"
 msgstr "Autor"
 
 #: src/nemo-pastebin-preferences.py:90
-#, fuzzy
 msgid "Username"
 msgstr "Korisničko ime"
 
 #: src/nemo-pastebin-preferences.py:91
-#, fuzzy
 msgid "Password"
 msgstr "Lozinka"
 
 #: src/nemo-pastebin-preferences.py:92
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 #: src/nemo-pastebin-preferences.py:93
 msgid "Perma-Tag"
-msgstr ""
+msgstr "Perma-Tag"
 
 #: src/nemo-pastebin-preferences.py:94
 msgid "Jabber ID"
-msgstr ""
+msgstr "Jabber ID"
 
 #: src/nemo-pastebin-preferences.py:109
 msgid "Open in browser when finished"
-msgstr ""
+msgstr "Otvori u web pregledniku kada je završeno"
 
 #: src/nemo-pastebin-preferences.py:114
 msgid "Copy pastebin URL to clipboard"
-msgstr ""
+msgstr "Kopiraj pastebin URL u međuspremnik"
 
 #: src/nemo-pastebin.py:66
 msgid "Upload files to online pastebins"
-msgstr ""
+msgstr "Pošalji datoteke na mrežne pastebinove"
 
 #: src/nemo-pastebin.py:110
 #, python-format
-#, fuzzy
 msgid "Upload to %s"
 msgstr "Zalijepi na %s"
 
 #: src/nemo-pastebin.py:112
 msgid "Upload to a pastebin service"
-msgstr ""
+msgstr "Pošalji na pastebin uslugu"
 
 #: src/nemo-pastebin.py:116
 msgid "Upload this file to an online pastebin service."
-msgstr ""
+msgstr "Pošalji ovu datoteku na pastebin mrežnu uslugu."
 
 #: src/nemo-pastebin.py:144
 msgid "Pastebin"
-msgstr ""
+msgstr "Pastebin"
 
 #: src/nemo-pastebin.py:145
 #, python-brace-format
@@ -84,20 +79,21 @@ msgid ""
 "Uploading {filename}\n"
 "to {service}…"
 msgstr ""
+"Slanje {filename}\n"
+"na {service}…"
 
 #: src/nemo-pastebin.py:184
 msgid "Pastebin uploaded!"
-msgstr ""
+msgstr "Poslano na Pastebin!"
 
 #: src/nemo-pastebin.py:188
 msgid "Copy URL"
-msgstr ""
+msgstr "Kopiraj URL"
 
 #: src/nemo-pastebin.py:192
-#, fuzzy
 msgid "Open in browser"
-msgstr "Otvori prozor preglednika"
+msgstr "Otvori u web pregledniku"
 
 #: src/nemo-pastebin.py:218
 msgid "Pastebin Error"
-msgstr ""
+msgstr "Pastebin greška"
