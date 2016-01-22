@@ -26,6 +26,11 @@
 #include <stdint.h>
 #include <glib.h>
 #include <openssl/evp.h>
+// OpenSSL may set OPENSSL_NO_MDC2 leading to MDC2 being deactivated;
+// In that case, override the function call with NULL.
+#ifdef OPENSSL_NO_MDC2
+	#define EVP_mdc2() NULL
+#endif
 
 #include "hash-lib-crypto.h"
 #include "hash-lib.h"
