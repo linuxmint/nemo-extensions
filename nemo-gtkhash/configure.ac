@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([nemo-gtkhash], [3.0.1],
+AC_INIT([nemo-gtkhash], [3.0.2],
 	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-gtkhash])
 
 AC_CONFIG_HEADERS([config.h])

@@ -10,6 +10,7 @@ Build-Depends: debhelper (>= 9),
                libgtk-3-dev (>= 3.0.0),
                libnemo-extension-dev (>= 2.6.0),
                libgcrypt20-dev (>= 1.6.1),
+               nettle-dev,
                intltool (>= 0.40.6)
 Standards-Version: 3.9.6
 Homepage: https://github.com/linuxmint/nemo-extensions

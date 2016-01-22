@@ -1,3 +1,10 @@
+nemo-gtkhash (3.0.2) rosa; urgency=medium
+
+  * Fix compilation error due to disabled MDC2 algorithm in many OpenSSL builds
+  * Enable nettle by default (adds support for SHA3)
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 22 Jan 2016 21:02:09 +0100
+
 nemo-gtkhash (3.0.1) rosa; urgency=medium
 
   * Improve build dependencies
