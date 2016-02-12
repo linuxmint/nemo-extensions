@@ -463,7 +463,7 @@ class NemoTerminalProvider(GObject.GObject,
         if not hasattr(window, "term_visible"):
             window.term_visible = settings.get_boolean("default-visible")
         # listen for toggle key events
-        window.connect_after("key-release-event", self._toggle_visible)
+        window.connect_after("key-press-event", self._toggle_visible)
         # return the crowbar
         return Crowbar(uri, window).get_widget()
 
