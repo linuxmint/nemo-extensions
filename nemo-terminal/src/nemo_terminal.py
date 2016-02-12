@@ -531,14 +531,14 @@ class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider):
         if uri.startswith("x-nemo-desktop:///"):
             return
         #Event
-        window.connect_after("key-release-event", self._toggle_visible)
+        window.connect_after("key-press-event", self._toggle_visible)
         #Return the crowbar
         return Crowbar(uri, window).get_widget()
 
     def _toggle_visible(self, window, event):
         """Toggle the visibility of Nemo Terminal.
 
-        This method is called on a "key-release-event" on the Nemo'
+        This method is called on a "key-press-event" on the Nemo'
         window.
 
         Args:
