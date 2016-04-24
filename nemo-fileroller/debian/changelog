@@ -1,3 +1,9 @@
+nemo-fileroller (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:50:20 +0100
+
 nemo-fileroller (2.8.0) rosa; urgency=medium
 
   * 2.8.0
