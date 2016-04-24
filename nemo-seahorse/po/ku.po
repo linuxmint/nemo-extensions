@@ -4,7 +4,7 @@
 # Erdal Ronahi <erdal dot ronahi at gmail dot com>, 2009
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: nemo-seahorse 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 11:29+0200\n"
 "PO-Revision-Date: 2009-03-13 21:06+0200\n"

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-emblems VERSION\n"
+"Project-Id-Version: nemo-emblems 3.2.0\n"
 "POT-Creation-Date: 2015-12-01 22:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Балкыбаев Мурат <d2vsd1@mail.ru>\n"

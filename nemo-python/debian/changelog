@@ -1,40 +1,17 @@
-nemo-python (3.0.5) rosa; urgency=medium
+nemo-python (3.2.0) sarah; urgency=medium
 
-  * Fix installation on Ubuntu
-
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 24 Dec 2015 15:54:48 +0100
-
-nemo-python (3.0.4) rosa; urgency=medium
-
-  * Fix Python library path on multiarch
-
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Tue, 22 Dec 2015 16:52:48 +0100
-
-nemo-python (3.0.3) rosa; urgency=medium
-
-  * Improve build dependencies
-
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Mon, 21 Dec 2015 11:59:48 +0100
-
-nemo-python (3.0.2) rosa; urgency=medium
-
-  * Fix build dependencies
-
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Mon, 21 Dec 2015 00:01:48 +0100
-
-nemo-python (3.0.1) rosa; urgency=medium
-
-  * Include newer python.m4
-
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Sun, 20 Dec 2015 21:55:48 +0100
-
-nemo-python (3.0.0) rosa; urgency=medium
-
-  * 3.0.0
+  * 3.2.0
   * Port to Python 3
   * Update debian build files
+  * Include newer python.m4
 
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 18:52:48 +0100
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
+
+nemo-python (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:54:08 +0100
 
 nemo-python (2.8.0) rosa; urgency=medium
 

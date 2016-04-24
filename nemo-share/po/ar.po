@@ -7,7 +7,7 @@
 # This file is distributed under the same license as THIS package.
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-share.HEAD\n"
+"Project-Id-Version: nemo-share 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-23 22:49+0100\n"
 "PO-Revision-Date: 2008-08-09 11:25+0300\n"

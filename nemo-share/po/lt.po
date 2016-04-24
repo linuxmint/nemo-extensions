@@ -4,7 +4,7 @@
 # Aurimas Černius <aurisc4@gmail.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-share master\n"
+"Project-Id-Version: nemo-share 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-02 01:56+0300\n"
 "PO-Revision-Date: 2010-04-02 01:56+0300\n"

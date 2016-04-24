@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-emblems\n"
+"Project-Id-Version: nemo-emblems 3.2.0\n"
 "POT-Creation-Date: 2015-12-01 22:54+0100\n"
 "PO-Revision-Date: 2016-01-25 15:16+0000\n"
 "Last-Translator: karm <melo@carmu.com>\n"

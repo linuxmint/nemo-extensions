@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtkhash\n"
+"Project-Id-Version: nemo-gtkhash 3.2.0\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-28 20:28+0100\n"
 "PO-Revision-Date: 2009-12-02 14:36+0000\n"

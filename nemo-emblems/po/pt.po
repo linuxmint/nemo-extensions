@@ -1,11 +1,6 @@
-# Portuguese translation for nemo-emblems
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-emblems 3.0.0\n"
+"Project-Id-Version: nemo-emblems 3.2.0\n"
 "POT-Creation-Date: 2015-12-01 22:54+0100\n"
 "PO-Revision-Date: 2015-12-01 22:54+0100\n"
 "Last-Translator: Tiago S. <Unknown>\n"

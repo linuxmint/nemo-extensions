@@ -5,7 +5,7 @@
 # Dr.T.Vasudevan <agnihot3@gmail.com>, 2011, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: sushi master\n"
+"Project-Id-Version: nemo-preview 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-02 14:57+0530\n"
 "PO-Revision-Date: 2012-09-02 14:59+0530\n"

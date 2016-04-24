@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([nemo-seahorse], [3.0.0],
+AC_INIT([nemo-seahorse], [3.2.0],
 	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-seahorse])
 
 AC_CONFIG_HEADERS([config.h])

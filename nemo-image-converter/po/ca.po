@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-image-converter 0.3.0\n"
+"Project-Id-Version: nemo-image-converter 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-21 19:04+0200\n"
 "PO-Revision-Date: 2008-06-21 19:41+0100\n"

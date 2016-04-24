@@ -14,7 +14,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-git",
-    version      = "3.0.2",
+    version      = "3.2.0",
     description  = "Nemo extension for git branch and file info.",
     author       = "Eduard Dopler",
     author_email = "kontakt@eduard-dopler.de",

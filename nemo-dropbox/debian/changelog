@@ -1,16 +1,16 @@
-nemo-dropbox (3.0.1) rosa; urgency=medium
+nemo-dropbox (3.2.0) sarah; urgency=medium
 
-  * Improve build dependencies
-
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Mon, 21 Dec 2015 17:37:09 +0100
-
-nemo-dropbox (3.0.0) rosa; urgency=medium
-
-  * 3.0.0
+  * 3.2.0
   * Port build scripts to Python 3
   * Update debian build files
 
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 14:35:09 +0100
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
+
+nemo-dropbox (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:49:04 +0100
 
 nemo-dropbox (2.8.0) rosa; urgency=medium
 

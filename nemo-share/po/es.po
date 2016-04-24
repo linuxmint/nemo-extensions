@@ -6,7 +6,7 @@
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-share.HEAD\n"
+"Project-Id-Version: nemo-share 3.2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=nemo-share&component=general\n"
 "POT-Creation-Date: 2009-12-19 11:26+0000\n"

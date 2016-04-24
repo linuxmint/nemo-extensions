@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([nemo-dropbox], [3.0.1],
+AC_INIT([nemo-dropbox], [3.2.0],
 	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-dropbox])
 
 AC_CONFIG_HEADERS([config.h])

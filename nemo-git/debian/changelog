@@ -1,8 +1,8 @@
-nemo-git (3.0.2) rosa; urgency=medium
+nemo-git (3.2.0) sarah; urgency=medium
 
   * Add missing dependencies.
 
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 08 Jan 2016 16:46:09 +0100
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
 
 nemo-git (3.0.1) rosa; urgency=medium
 
