@@ -57,7 +57,7 @@ AC_ARG_ENABLE(gpg-check,
 	DO_CHECK=$enableval, DO_CHECK=yes)
 
 if test	"$DO_CHECK" = "yes"; then
-	accepted_versions="1.2 1.4 2.0"
+	accepted_versions="1.2 1.4 2.0 2.1"
 	AC_PATH_PROGS(GNUPG, [gpg gpg2], no)
 	ok="no"
 	if test "$GNUPG" != "no"; then
