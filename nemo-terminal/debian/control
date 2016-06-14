@@ -17,7 +17,7 @@ Depends: ${python3:Depends},
          ${misc:Depends},
          nemo,
          python-nemo (>= 3.0.0),
-		 gir1.2-vte-2.90 (>= 1:0.34.6~),
+		 gir1.2-vte-2.90 (>= 1:0.34.6~) | gir1.2-vte-2.91,
 		 gir1.2-gtk-3.0 (>= 3.8.4~),
 		 gir1.2-glib-2.0 (>= 1.38.0~)
 Description: Nemo extension for embedding a terminal into it.
