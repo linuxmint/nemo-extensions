@@ -8,6 +8,13 @@ nemo-emblems (3.2.0) sarah; urgency=medium
 
  -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
 
+nemo-emblems (3.0.1) sarah; urgency=medium
+
+  * Fixed wrong version
+  * Updated translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 14 Jun 2016 10:54:27 +0100
+
 nemo-emblems (3.0.0) sarah; urgency=medium
 
   * 3.0.0
