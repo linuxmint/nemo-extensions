@@ -29,7 +29,7 @@ data = [ ('/usr/share/nemo-python/extensions', ['nemo-extension/nemo-emblems.py'
 # Setup stage
 DistUtilsExtra.auto.setup(
     name         = "nemo-emblems",
-    version      = "0.0.1",
+    version      = "3.0.0",
     description  = "Change your folder and file emblems",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",
