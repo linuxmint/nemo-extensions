@@ -30,7 +30,14 @@
 #include "hash-func.h"
 #include "hash-lib.h"
 
-static bool gtkhash_hash_file_source_func(struct hash_file_s *data);
+// This lib can use GDK 2 or 3, but doesn't link either directly.
+// Try to avoid potential ABI/API mismatch issues by only declaring
+// necessary gdk.h functions...
+guint gdk_threads_add_idle(GSourceFunc, gpointer);
+guint gdk_threads_add_timeout(guint, GSourceFunc, gpointer);
+// (this might cause other problems)
+
+static gboolean gtkhash_hash_file_source_func(struct hash_file_s *data);
 static void gtkhash_hash_file_hash_thread_func(void *func,
 	struct hash_file_s *data);
 
@@ -57,7 +64,7 @@ void gtkhash_hash_file_cancel(struct hash_file_s *data)
 	g_cancellable_cancel(data->cancellable);
 }
 
-static bool gtkhash_hash_file_report_source_func(struct hash_file_s *data)
+static gboolean gtkhash_hash_file_report_source_func(struct hash_file_s *data)
 {
 	if (data->report_source)
 		gtkhash_hash_file_report_cb(data->cb_data, data->file_size,
@@ -69,7 +76,7 @@ static bool gtkhash_hash_file_report_source_func(struct hash_file_s *data)
 static void gtkhash_hash_file_add_report_source(struct hash_file_s *data)
 {
 	g_assert(!data->report_source);
-	data->report_source = g_timeout_add(HASH_FILE_REPORT_INTERVAL,
+	data->report_source = gdk_threads_add_timeout(HASH_FILE_REPORT_INTERVAL,
 		(GSourceFunc)gtkhash_hash_file_report_source_func, data);
 }
 
@@ -318,18 +325,35 @@ static void gtkhash_hash_file_finish(struct hash_file_s *data)
 	data->state = HASH_FILE_STATE_CALLBACK;
 }
 
+static gboolean gtkhash_hash_file_callback_stop_func(void *cb_data)
+{
+	gtkhash_hash_file_stop_cb(cb_data);
+
+	return false;
+}
+
+static gboolean gtkhash_hash_file_callback_finish_func(void *cb_data)
+{
+	gtkhash_hash_file_finish_cb(cb_data);
+
+	return false;
+}
+
 static void gtkhash_hash_file_callback(struct hash_file_s *data)
 {
 	gtkhash_hash_file_remove_source(data);
 	data->state = HASH_FILE_STATE_IDLE;
 
-	if (G_UNLIKELY(g_cancellable_is_cancelled(data->cancellable)))
-		gtkhash_hash_file_stop_cb(data->cb_data);
-	else
-		gtkhash_hash_file_finish_cb(data->cb_data);
+	if (G_UNLIKELY(g_cancellable_is_cancelled(data->cancellable))) {
+		gdk_threads_add_idle(gtkhash_hash_file_callback_stop_func,
+			data->cb_data);
+	} else {
+		gdk_threads_add_idle(gtkhash_hash_file_callback_finish_func,
+			data->cb_data);
+	}
 }
 
-static bool gtkhash_hash_file_source_func(struct hash_file_s *data)
+static gboolean gtkhash_hash_file_source_func(struct hash_file_s *data)
 {
 	static void (* const state_funcs[])(struct hash_file_s *) = {
 		[HASH_FILE_STATE_IDLE]        = NULL,

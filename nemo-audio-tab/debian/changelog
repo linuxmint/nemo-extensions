@@ -1,0 +1,17 @@
+nemo-audio-tab (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:47:37 +0100
+
+nemo-audio-tab (2.8.0) rosa; urgency=medium
+
+  * 2.8.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Oct 2015 23:16:32 +0100
+
+nemo-audio-tab (0.0.1) rafaela; urgency=high
+
+  * Initial release
+
+ -- Corbin Auriti <ravetcofx@gmail.com.com>  Wed, 02 Sep 2015 01:26:27 -0600

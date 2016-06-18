@@ -1,3 +1,21 @@
+nemo-gtkhash (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:50:59 +0100
+
+nemo-gtkhash (2.8.0) rosa; urgency=medium
+
+  * 2.8.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Oct 2015 23:24:31 +0100
+
+nemo-gtkhash (2.6.0) rafaela; urgency=medium
+
+  * 2.6.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 02 Jun 2015 13:42:21 +0200
+
 nemo-gtkhash (2.4.0) rebecca; urgency=medium
 
   * 2.4.0

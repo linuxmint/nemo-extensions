@@ -1,5 +1,5 @@
-This is NemoPreview, a quick previewer for Nautilus, the GNOME desktop file manager.
-------------------------------------------------------------------------------
+This is NemoPreview, a quick previewer for Nemo, the Cinnamon desktop file manager.
+-----------------------------------------------------------------------------------
 
 NemoPreview is a DBus-activated service. For NemoPreview to popup, applications will have
 to call the ShowFile method on the org.nemo.Preview interface.

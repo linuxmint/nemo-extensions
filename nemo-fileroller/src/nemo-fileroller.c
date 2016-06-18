@@ -28,11 +28,12 @@
 #include <libnemo-extension/nemo-extension-types.h>
 #include <libnemo-extension/nemo-file-info.h>
 #include <libnemo-extension/nemo-menu-provider.h>
+#include <libnemo-extension/nemo-name-and-desc-provider.h>
 #include "nemo-fileroller.h"
 
 
 static GObjectClass *parent_class;
-
+static gboolean always_show_extract_to = FALSE;
 
 static void
 extract_to_callback (NemoMenuItem *item,
@@ -78,11 +79,9 @@ extract_here_callback (NemoMenuItem *item,
 		       gpointer          user_data)
 {
 	GList            *files, *scan;
-	NemoFileInfo *file;
 	GString          *cmd;
 
 	files = g_object_get_data (G_OBJECT (item), "files");
-	file = files->data;
 
 	cmd = g_string_new ("file-roller --extract-here");
 
@@ -294,7 +293,7 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 		return NULL;
 
 	if (unsupported_scheme ((NemoFileInfo *) files->data))
-			return NULL;
+		return NULL;
 
 	for (scan = files; scan; scan = scan->next) {
 		NemoFileInfo *file = scan->data;
@@ -315,7 +314,8 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 			NemoFileInfo *parent;
 
 			parent = nemo_file_info_get_parent_info (file);
- 			can_write = nemo_file_info_can_write (parent);
+			can_write = nemo_file_info_can_write (parent);
+			g_object_unref (parent);
 		}
 	}
 
@@ -345,7 +345,8 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 
 		items = g_list_append (items, item);
 	}
-	else if (all_archives && ! can_write) {
+	if (all_archives &&
+        (!can_write || always_show_extract_to)) {
 		NemoMenuItem *item;
 
 		item = nemo_menu_item_new ("NemoFr::extract_to",
@@ -387,6 +388,15 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 	return items;
 }
 
+static GList *
+nemo_fr_get_name_and_desc (NemoNameAndDescProvider *provider)
+{
+    GList *ret = NULL;
+
+    ret = g_list_append (ret, _("Nemo Fileroller:::Allows managing of archives from the context menu"));
+
+    return ret;
+}
 
 static void
 nemo_fr_menu_provider_iface_init (NemoMenuProviderIface *iface)
@@ -394,10 +404,28 @@ nemo_fr_menu_provider_iface_init (NemoMenuProviderIface *iface)
 	iface->get_file_items = nemo_fr_get_file_items;
 }
 
+static void
+nemo_fr_nd_provider_iface_init (NemoNameAndDescProviderIface *iface)
+{
+    iface->get_name_and_desc = nemo_fr_get_name_and_desc;
+}
 
 static void
 nemo_fr_instance_init (NemoFr *fr)
 {
+    GSettings *settings = g_settings_new ("org.nemo.preferences");
+
+    gchar **keys = g_settings_list_keys (settings);
+    int i;
+
+    for (i = 0; i < g_strv_length (keys); i++) {
+        if (g_strcmp0 (keys[i], "context-menus-show-all-actions")) {
+            always_show_extract_to = g_settings_get_boolean (settings, "context-menus-show-all-actions");
+            break;
+        }
+    }
+    g_strfreev (keys);
+    g_object_unref (settings);
 }
 
 
@@ -439,6 +467,12 @@ nemo_fr_register_type (GTypeModule *module)
 		NULL
 	};
 
+    static const GInterfaceInfo nd_provider_iface_info = {
+        (GInterfaceInitFunc) nemo_fr_nd_provider_iface_init,
+        NULL,
+        NULL
+    };
+
 	fr_type = g_type_module_register_type (module,
 					       G_TYPE_OBJECT,
 					       "NemoFileRoller",
@@ -448,4 +482,9 @@ nemo_fr_register_type (GTypeModule *module)
 				     fr_type,
 				     NEMO_TYPE_MENU_PROVIDER,
 				     &menu_provider_iface_info);
+
+    g_type_module_add_interface (module,
+                     fr_type,
+                     NEMO_TYPE_NAME_AND_DESC_PROVIDER,
+                     &nd_provider_iface_info);
 }

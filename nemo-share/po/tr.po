@@ -1,0 +1,191 @@
+# Turkish translation for nemo-share
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the nemo-share package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-share\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-17 20:41+0000\n"
+"PO-Revision-Date: 2014-08-25 15:51+0200\n"
+"Last-Translator: Gökhan Gökkaya <gokhanlnx@gmail.com>\n"
+"Language-Team: Turkish <gokhanlnx@gmail.com>en\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-08-25 11:32+0000\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../src/nemo-share.c:129
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to share it"
+msgstr ""
+"\"%s\" dizininizi paylaşmak için Nemo'un bazı izinler eklemesi gerekiyor"
+
+#: ../src/nemo-share.c:137
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder automatically?"
+msgstr ""
+"\"%s\" dizininin paylaşılıp üzerinde çalışılması için aşağıdaki ek izinleri "
+"gerektiriyor:\n"
+"%s%s%sNemo'nun bu izinleri dizine kendiliğinden eklemesini istiyor musunuz?"
+
+#: ../src/nemo-share.c:141
+msgid "  - read permission by others\n"
+msgstr "  - başkaları tarafından okuma izinleri\n"
+
+#: ../src/nemo-share.c:142
+msgid "  - write permission by others\n"
+msgstr "  - başkaları tarafından yazma izinleri\n"
+
+#: ../src/nemo-share.c:143
+msgid "  - execute permission by others\n"
+msgstr "  - başkaları tarafından çalıştırma izinleri\n"
+
+#: ../src/nemo-share.c:147
+msgid "Add the permissions automatically"
+msgstr "İzinleri kendiliğinden ekle"
+
+#: ../src/nemo-share.c:173
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr "\"%s\" dizininin izinleri değiştirilemedi"
+
+#: ../src/nemo-share.c:444
+msgid "Share name is too long"
+msgstr "Paylaşım adı çok uzun"
+
+#: ../src/nemo-share.c:478
+msgid "The share name cannot be empty"
+msgstr "Paylaşım adı boş olmamalı"
+
+#: ../src/nemo-share.c:491
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr "Paylaşım bilgisi alınırken hata: %s"
+
+#: ../src/nemo-share.c:501
+msgid "Another share has the same name"
+msgstr "Başka bir paylaşım aynı ada sahip"
+
+#: ../src/nemo-share.c:669
+msgid "There was an error while getting the sharing information"
+msgstr "Paylaşım bilgisi alınırken bir hata oluştu"
+
+#: ../src/nemo-share.c:769
+msgid "Modify _Share"
+msgstr "_Paylaşımı Değiştir"
+
+#: ../src/nemo-share.c:771
+msgid "Create _Share"
+msgstr "_Paylaşım Oluştur"
+
+#: ../src/nemo-share.c:1029
+msgid "Share"
+msgstr "Paylaşım"
+
+#: ../src/nemo-share.c:1129
+msgid "Sharing Options"
+msgstr "Paylaşım Seçenekleri"
+
+#: ../src/nemo-share.c:1130
+msgid "Share this Folder"
+msgstr "Bu Dizini Paylaş"
+
+#: ../src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr "%s %s %s %d sinyali ile geri döndü"
+
+#: ../src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr "%s %s %s bilinmeyen bir sebep yüzünden başarısız oldu"
+
+#: ../src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr "'ağ kullanıcı paylaşımı' %d hatası ile geri döndü: %s"
+
+#: ../src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr "'ağ kullanıcı paylaşımı' %d hatası ile geri döndü"
+
+#: ../src/shares.c:187
+#, c-format
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr "'ağ kullanıcı paylaşımı' çıktısının geçerli bir UTF-8 kodlaması yok"
+
+#: ../src/shares.c:442 ../src/shares.c:615
+#, c-format
+msgid "Failed"
+msgstr "Başarısız"
+
+#: ../src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr "Samba'nın testparm uygulaması %d sinyali ile geri döndü"
+
+#: ../src/shares.c:556
+#, c-format
+msgid "Samba's testparm failed for an unknown reason"
+msgstr "Samba'nın testparm uygulaması bilinmeyen bir nedenden başarısız oldu"
+
+#: ../src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr "Samba'nın testparm uygulaması %d hatası ile geri döndü: %s"
+
+#: ../src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr "Samba'nın testparm uygulaması %d hatası ile geri döndü"
+
+#: ../src/shares.c:680
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr "%s hedefi için paylaşım silinemiyor: bu hedef paylaşılmamış"
+
+#: ../src/shares.c:726
+#, c-format
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+"Mevcut bir paylaşımın hedefi değiştirilemiyor; lütfen önce eski paylaşımı "
+"silin ve yeni bir tane ekleyin"
+
+#: ../src/nautilus-share.c:1352
+msgid "Folder Sharing"
+msgstr "Dizin Paylaşımı"
+
+#: ../interfaces/share-dialog.glade.in.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr "<big><b>Dizin Paylaşımı</b></big>"
+
+#: ../interfaces/share-dialog.glade.in.h:2
+msgid "Co_mment:"
+msgstr "Açıkla_ma:"
+
+#: ../interfaces/share-dialog.glade.in.h:3
+msgid "Share _name:"
+msgstr "Paylaşım _adı:"
+
+#: ../interfaces/share-dialog.glade.in.h:4
+msgid "Share this _folder"
+msgstr "Bu _dizini paylaş"
+
+#: ../interfaces/share-dialog.glade.in.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr "B_aşkalarının bu dizinde dosya oluşturup silmelerine izin ver"
+
+#: ../interfaces/share-dialog.glade.in.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr "_Misafir girişi (bir kullanıcı hesabı olmayanlar için)"

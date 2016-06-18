@@ -1,5 +1,5 @@
 AC_PREREQ([2.63])
-AC_INIT([nemo-seahorse], [2.4.0],
+AC_INIT([nemo-seahorse], [3.0.0],
         [https://github.com/linuxmint/nemo-extensions/issues],
         [nemo-seahorse])
 
@@ -42,7 +42,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Name of the gettext dom
 GLIB_GSETTINGS
 AM_GLIB_GNU_GETTEXT
 
-PKG_CHECK_MODULES(GTK, gtk+-3.0 >= 3.0 gio-2.0)
+PKG_CHECK_MODULES(GTK, gtk+-3.0 >= 3.0.0 gio-2.0)
 
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
@@ -57,7 +57,7 @@ AC_ARG_ENABLE(gpg-check,
 	DO_CHECK=$enableval, DO_CHECK=yes)
 
 if test	"$DO_CHECK" = "yes"; then
-	accepted_versions="1.2 1.4 2.0"
+	accepted_versions="1.2 1.4 2.0 2.1"
 	AC_PATH_PROGS(GNUPG, [gpg gpg2], no)
 	ok="no"
 	if test "$GNUPG" != "no"; then
@@ -88,7 +88,7 @@ if test	"$DO_CHECK" = "yes"; then
 fi
 
 ok="no"
-min_gpgme_version=1.0.0
+min_gpgme_version=1.2.0
 AC_PATH_PROG(GPGME_CONFIG, gpgme-config, "failed")
 if test $GPGME_CONFIG != "failed" ; then
 	AC_MSG_CHECKING(for GPGME - version >= $min_gpgme_version)
@@ -129,7 +129,7 @@ SEAHORSE_LIBS="$SEAHORSE_LIBS $GPGME_LIBS"
 # -----------------------------------------------------------------------------
 # Nemo
 
-PKG_CHECK_MODULES(NEMO, [libnemo-extension >= 1.0.0 glib-2.0 >= 2.10.0])
+PKG_CHECK_MODULES(NEMO, [libnemo-extension >= 1.0.0 glib-2.0 >= 2.37.3])
 
 AC_SUBST(NEMO_CFLAGS)
 AC_SUBST(NEMO_LIBS)
@@ -156,7 +156,7 @@ SEAHORSE_LIBS="$SEAHORSE_LIBS $GNOME_KEYRING_LIBS"
 # -----------------------------------------------------------------------------
 # DBus
 
-DBUS_GLIB_REQUIRED=0.35
+DBUS_GLIB_REQUIRED=0.78
 
 PKG_CHECK_MODULES([DBUS], [dbus-glib-1 >= $DBUS_GLIB_REQUIRED], [enable_dbus=yes],[enable_dbus=no])
 if test "$enable_dbus" = "no"; then
@@ -187,7 +187,7 @@ SEAHORSE_LIBS="$SEAHORSE_LIBS $GCR_LIBS"
 # -----------------------------------------------------------------------------
 # Libnotify
 
-LIBNOTIFY_REQUIRED=0.3
+LIBNOTIFY_REQUIRED=0.7.0
 
 # Allow libnotify to be disabled
 AC_ARG_ENABLE(libnotify,

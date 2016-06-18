@@ -1,3 +1,21 @@
+nemo-seahorse (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:55:47 +0100
+
+nemo-seahorse (2.8.0) rosa; urgency=medium
+
+  * 2.8.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Oct 2015 23:28:20 +0100
+
+nemo-seahorse (2.6.0) rafaela; urgency=medium
+
+  * 2.6.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 02 Jun 2015 13:45:16 +0200
+
 nemo-seahorse (2.4.0) rebecca; urgency=medium
 
   * 2.4.0

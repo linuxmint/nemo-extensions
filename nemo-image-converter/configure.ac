@@ -1,4 +1,4 @@
-AC_INIT([nemo-image-converter], [2.4.0], [j@bitron.ch], [nemo-image-converter])
+AC_INIT([nemo-image-converter], [3.0.0], [j@bitron.ch], [nemo-image-converter])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS(config.h)
@@ -30,7 +30,7 @@ AC_SUBST(CPPFLAGS)
 AC_SUBST(LDFLAGS)
 
 NEMO_REQUIRED=2.0.8
-GLIB_REQUIRED=2.28.0
+GLIB_REQUIRED=2.37.3
 GTK_REQUIRED=3.0.0
 
 PKG_CHECK_MODULES(NEMO,

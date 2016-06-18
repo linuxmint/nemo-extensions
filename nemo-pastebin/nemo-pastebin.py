@@ -133,7 +133,7 @@ class PastebinThread(Thread):
             else:
                 print "libnotify is not installed"
 
-class PastebinitExtension(GObject.GObject, Nemo.MenuProvider):
+class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescProvider):
     BASE_KEY = "apps.nemo-pastebin"
     def __init__(self):
         log ("Intializing nemo-pastebin extension...")
@@ -189,3 +189,5 @@ class PastebinitExtension(GObject.GObject, Nemo.MenuProvider):
             while Gtk.events_pending():
                 Gtk.main_iteration()
 
+    def get_name_and_desc(self):
+        return [_("Nemo Pastebin:::Send files to a paste service via the context menu")]

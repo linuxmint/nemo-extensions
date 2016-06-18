@@ -4,6 +4,12 @@
 
 export LDFLAGS += -Wl,-z,defs -Wl,--as-needed
 
+%:
+	dh $@ --parallel --with=autoreconf
+
+override_dh_autoreconf:
+	dh_autoreconf --as-needed
+
 override_dh_auto_build:
 	dh_auto_build
 	cd po; intltool-update -p --verbose
@@ -18,5 +24,3 @@ override_dh_auto_test:
 override_dh_makeshlibs:
 	# disable shlibs
 
-%:
-	dh $@

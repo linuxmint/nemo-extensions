@@ -2,21 +2,21 @@ Source: nemo-seahorse
 Section: gnome
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
-Build-Depends: debhelper (>= 8),
-               cdbs (>= 0.4.41),
+Build-Depends: debhelper (>= 9),
                autotools-dev,
                intltool,
-               libgpgme11-dev,
-               libnotify-dev,
-               libdbus-glib-1-dev,
+               libgpgme11-dev (>= 1.2.0),
+               libnotify-dev (>= 0.7.0),
+               libdbus-glib-1-dev (>= 0.78),
                libgnome-keyring-dev,
                libcryptui-dev,
-               libglib2.0-dev (>= 2.16),
-               libgtk-3-dev,
+               libglib2.0-dev (>= 2.37.3),
+               libgtk-3-dev (>= 3.0.0),
                gnome-pkg-tools,
+               gnome-common,
                libnemo-extension-dev,
                libgcr-3-dev (>= 3.4.0)
-Standards-Version: 3.9.2
+Standards-Version: 3.9.6
 
 Package: nemo-seahorse
 Architecture: any

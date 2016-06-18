@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-27 22:58+0900\n"
+"POT-Creation-Date: 2015-04-25 14:03+0200\n"
 "PO-Revision-Date: 2014-06-05 23:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -150,18 +151,18 @@ msgid "To be"
 msgstr "Kako treba biti"
 
 #: ../src/repair-dialog.ui.h:1
-msgid "Include _subdirectories"
-msgstr "Uključi _poddirektorije"
-
-#: ../src/repair-dialog.ui.h:2
 msgid "Nemo Filename Repairer"
 msgstr "Nemo popravljač naziva datoteka"
 
-#: ../src/repair-dialog.ui.h:3
+#: ../src/repair-dialog.ui.h:2
 msgid "Select _encoding:"
 msgstr "Odaberi _kôdiranje:"
 
-#: ../src/encoding-dialog.c:201
+#: ../src/repair-dialog.ui.h:3
+msgid "Include _subdirectories"
+msgstr "Uključi _poddirektorije"
+
+#: ../src/encoding-dialog.c:195
 #, c-format
 msgid ""
 "<span size=\"larger\">The selected \"%s\" is invalid encoding.</span>\n"

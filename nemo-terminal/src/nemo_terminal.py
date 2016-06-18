@@ -50,7 +50,13 @@ gettext.textdomain('nemo-terminal')
 _ = gettext.gettext
 
 import gi
-gi.require_version('Vte', '2.90')
+try:
+    gi.require_version('Vte', '2.90')
+    VTE_2_90_API = True
+except:
+    gi.require_version('Vte', '2.91')
+    VTE_2_90_API = False
+gi.require_version('Nemo', '3.0')
 from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio
 
 # DEFAULT_CONF = {
@@ -86,9 +92,10 @@ class NemoTerminal(object):
         self.shell_pid = -1
         self.term = Vte.Terminal()
 
-        self.shell_pid = self.term.fork_command_full(Vte.PtyFlags.DEFAULT,
-                self._path, [terminal_or_default()], None,
-                GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
+        if VTE_2_90_API:
+            self.shell_pid = self.term.fork_command_full(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
+        else:
+            self.shell_pid = self.term.spawn_sync(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
         # Make vte.sh active
         #vte_current_dir_script = ". /etc/profile.d/vte.sh ; clear"
         #self.term.feed_child(vte_current_dir_script, len(vte_current_dir_script))     
@@ -124,7 +131,10 @@ class NemoTerminal(object):
         self.term.connect("drag_data_received", self._on_drag_data_received)
         
         # Container
-        self.vscrollbar = Gtk.VScrollbar.new(self.term.adjustment)
+        if VTE_2_90_API:
+            self.vscrollbar = Gtk.VScrollbar.new(self.term.adjustment)
+        else:
+            self.vscrollbar = Gtk.VScrollbar.new(self.term.get_vadjustment())
         
         self.hbox = Gtk.HBox()
         self.hbox.pack_start(self.term, True, True, 0)
@@ -341,6 +351,10 @@ class NemoTerminal(object):
             except IOError:
                 #We can't know...
                 return False
+        elif wchan == "wait_woken":
+            return False
+        elif wchan == "do_wait":
+            return True
         else:
             return True
 
@@ -382,9 +396,10 @@ class NemoTerminal(object):
             term -- The VTE terminal (self.term).
         """
         if not self._respawn_lock:
-            self.shell_pid = self.term.fork_command_full(Vte.PtyFlags.DEFAULT,
-                self._path, [terminal_or_default()], None,
-                GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
+            if VTE_2_90_API:
+                self.shell_pid = self.term.fork_command_full(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
+            else:
+                self.shell_pid = self.term.spawn_sync(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
 
     def _on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
         """Handles drag & drop."""
@@ -527,14 +542,14 @@ class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider):
         if uri.startswith("x-nemo-desktop:///"):
             return
         #Event
-        window.connect_after("key-release-event", self._toggle_visible)
+        window.connect_after("key-press-event", self._toggle_visible)
         #Return the crowbar
         return Crowbar(uri, window).get_widget()
 
     def _toggle_visible(self, window, event):
         """Toggle the visibility of Nemo Terminal.
 
-        This method is called on a "key-release-event" on the Nemo'
+        This method is called on a "key-press-event" on the Nemo'
         window.
 
         Args:

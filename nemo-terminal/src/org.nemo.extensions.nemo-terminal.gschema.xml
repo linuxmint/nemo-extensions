@@ -41,7 +41,7 @@
 	    </key>
 	    
 	    <key name="terminal-shell" type="s">
-	       <default>"/bin/bash"</default>
+	       <default>""</default>
 	        <summary>Shell executable</summary>
 	        <description>Path to the shell executable nemo-terminal should use. Blank indicates shell will be user's default. Note that all other default parameters assume a bash-like shell.</description>
 	    </key>

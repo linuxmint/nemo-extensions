@@ -2,28 +2,27 @@ Source: nemo-preview
 Section: gnome
 Priority: extra
 Maintainer: Clement Lefebvre <root@linuxmint.com>
-Build-Depends: debhelper (>= 8.0.0),
+Build-Depends: debhelper (>= 9),
                autotools-dev,
                dh-autoreconf,
                gnome-pkg-tools (>= 0.11),
-               gobject-introspection (>= 0.9.6),
+               gobject-introspection (>= 0.9.2),
                intltool,
                libclutter-1.0-dev (>= 1.11.4),
                libclutter-gst-2.0-dev,
                libclutter-gtk-1.0-dev (>= 1.0.1),
-               libdiscid0-dev,
                libevince-dev,
                libfreetype6-dev,
                libcjs-dev,
-               libglib2.0-dev (>= 2.29.14),
+               libgirepository1.0-dev (>= 0.9.2),
+               libglib2.0-dev (>= 2.37.3),
                libgstreamer1.0-dev,
-               libgtk-3-dev (>= 3.4.0),
+               libgtk-3-dev (>= 3.5.12),
                libgtksourceview-3.0-dev,
                libmusicbrainz5-dev,
-               libneon27-gnutls-dev,
                libwebkitgtk-3.0-dev,
                gnome-common
-Standards-Version: 3.9.4
+Standards-Version: 3.9.6
 
 Package: nemo-preview
 Architecture: any
@@ -34,7 +33,7 @@ Depends: ${shlibs:Depends},
          gir1.2-clutter-gst-2.0,
          gir1.2-gtkclutter-1.0,
          gstreamer1.0-plugins-good,
-	 gir1.2-evince-3.0
+         gir1.2-evince-3.0
 Suggests: gstreamer1.0-libav
 Description: nemo-preview is a quick previewer for nemo
  Nemo-preview is a GtkClutter and Javascript-based quick previewer
