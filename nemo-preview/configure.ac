@@ -64,7 +64,7 @@ PKG_CHECK_MODULES(NEMO_PREVIEW,
                   clutter-x11-1.0 >= $CLUTTER_MIN_VERSION
                   gtk+-3.0 >= $GTK_MIN_VERSION
                   clutter-gtk-1.0 >= $CLUTTER_GTK_MIN_VERSION
-                  clutter-gst-2.0
+                  clutter-gst-3.0
                   gstreamer-1.0
                   gstreamer-pbutils-1.0
                   gstreamer-tag-1.0
