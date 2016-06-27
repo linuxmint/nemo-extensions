@@ -1,3 +1,9 @@
+nemo-preview (3.0.2) sarah; urgency=medium
+
+  * Depend on gir1.2-clutter-gst-3.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Jun 2016 10:45:24 +0100
+
 nemo-preview (3.0.1) sarah; urgency=medium
 
   * Fixed video playback
