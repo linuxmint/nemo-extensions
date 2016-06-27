@@ -32,6 +32,7 @@ Depends: ${shlibs:Depends},
          nemo (>= 1.8.5),
          gir1.2-clutter-gst-2.0,
          gir1.2-gtkclutter-1.0,
+         gir1.2-clutter-gst-3.0,
          gstreamer1.0-plugins-good,
          gir1.2-evince-3.0
 Suggests: gstreamer1.0-libav
