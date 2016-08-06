@@ -1,16 +1,16 @@
-# Amharic translation for linuxmint
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# Hebrew translation for linuxmint
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
 # This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-24 13:50+0200\n"
-"PO-Revision-Date: 2014-08-30 02:57+0000\n"
-"Last-Translator: samson <Unknown>\n"
-"Language-Team: Amharic <am@li.org>\n"
+"PO-Revision-Date: 2016-06-03 14:17+0000\n"
+"Last-Translator: shytzedaka <shaytzedaka@outlook.com>\n"
+"Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,4 +19,4 @@ msgstr ""
 
 #: ../nemo-extension/nemo-emblems.py:81
 msgid "Emblems"
-msgstr "አርማዎች"
+msgstr "סמלים"

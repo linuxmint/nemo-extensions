@@ -134,10 +134,10 @@ MainWindow.prototype = {
             new Clutter.BindConstraint({ coordinate: Clutter.BindCoordinate.SIZE,
                                          source: this._stage }));
         this._stage.add_actor(this._mainGroup);
-        this._mainGroup.set_opacity(0);
 
-        this._stage.connect('key-press-event',
-                            Lang.bind(this, this._onStageKeyPressEvent));
+        this._gtkWindow.connect('key-press-event',
+				Lang.bind(this, this._onKeyPressEvent));
+
         this._stage.connect('button-press-event',
                             Lang.bind(this, this._onButtonPressEvent));
         this._stage.connect('motion-event',
@@ -186,17 +186,19 @@ MainWindow.prototype = {
         this._clearAndQuit();
     },
 
-    _onStageKeyPressEvent : function(actor, event) {
-        let key = event.get_key_symbol();
+    _onKeyPressEvent : function(actor, event) {
+        let key = event.get_keyval()[1];
 
-        if (key == Clutter.KEY_Escape ||
-            key == Clutter.KEY_space ||
-            key == Clutter.KEY_q)
-            this._fadeOutWindow();
+        if (key == Gdk.KEY_Escape ||
+            key == Gdk.KEY_space ||
+            key == Gdk.KEY_q)
+            this._clearAndQuit();
 
-        if (key == Clutter.KEY_f ||
-            key == Clutter.KEY_F11)
+        if (key == Gdk.KEY_f ||
+            key == Gdk.KEY_F11)
             this.toggleFullScreen();
+
+        return false;
     },
 
     _onButtonPressEvent : function(actor, event) {
@@ -573,8 +575,7 @@ MainWindow.prototype = {
         }
 
         this._titleGroupLayout = new Clutter.BoxLayout();
-        this._titleGroup =  new Clutter.Box({ layout_manager: this._titleGroupLayout,
-                                              opacity: 0 });
+        this._titleGroup =  new Clutter.Box({ layout_manager: this._titleGroupLayout });
         this._stage.add_actor(this._titleGroup);
 
         this._titleGroup.add_constraint(
@@ -623,53 +624,6 @@ MainWindow.prototype = {
     /**************************************************************************
      *********************** Window move/fade helpers *************************
      **************************************************************************/
-    _fadeInWindow : function() {
-        this._mainGroup.set_opacity(0);
-        this._titleGroup.set_opacity(0);
-
-        this._gtkWindow.show_all();
-
-        Tweener.addTween(this._mainGroup,
-                         { opacity: 255,
-                           time: 0.3,
-                           transition: 'easeOutQuad',
-                           onComplete: function() {
-                               this._onMotionEvent();
-                               this._mainGroup.queue_relayout();
-                           },
-                           onCompleteScope: this
-                         });
-        Tweener.addTween(this._titleGroup,
-                         { opacity: 255,
-                           time: 0.3,
-                           transition: 'easeOutQuad',
-                           onComplete: function() {
-                               this._onMotionEvent()
-                               this._titleGroup.queue_relayout();
-                           },
-                           onCompleteScope: this
-                         });
-    },
-
-    _fadeOutWindow : function() {
-        this._removeToolbarTimeout();
-
-        Tweener.addTween(this._titleGroup,
-                         { opacity: 0,
-                           time: 0.15,
-                           transition: 'easeOutQuad'
-                         });
-
-        Tweener.addTween(this._mainGroup,
-                         { opacity: 0,
-                           time: 0.15,
-                           transition: 'easeOutQuad',
-                           onComplete: function () {
-                               this._clearAndQuit();
-                           },
-                           onCompleteScope: this
-                         });
-    },
 
     _clearAndQuit : function() {
         if (this._renderer.clear)
@@ -692,14 +646,14 @@ MainWindow.prototype = {
     },
 
     setFile : function(file) {
-	this.file = file;
+        this.file = file;
         this._createAlphaBackground();
         this._createRenderer(file);
         this._createTexture();
         this._createToolbar();
         this._createTitle();
 
-        this._fadeInWindow();
+        this._gtkWindow.show_all();
     },
 
     setTitle : function(label) {
@@ -725,6 +679,6 @@ MainWindow.prototype = {
     },
 
     close : function() {
-        this._fadeOutWindow();
+        this._clearAndQuit();
     }
 }

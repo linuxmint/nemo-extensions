@@ -1,6 +1,6 @@
 dnl -*- mode: m4 -*-
 AC_PREREQ(2.63)
-AC_INIT([nemo-preview],[3.0.0],[],[nemo-preview])
+AC_INIT([nemo-preview],[3.0.2],[],[nemo-preview])
 
 AC_CONFIG_HEADERS([config/config.h])
 AC_CONFIG_SRCDIR([src/main.c])
@@ -64,7 +64,7 @@ PKG_CHECK_MODULES(NEMO_PREVIEW,
                   clutter-x11-1.0 >= $CLUTTER_MIN_VERSION
                   gtk+-3.0 >= $GTK_MIN_VERSION
                   clutter-gtk-1.0 >= $CLUTTER_GTK_MIN_VERSION
-                  clutter-gst-2.0
+                  clutter-gst-3.0
                   gstreamer-1.0
                   gstreamer-pbutils-1.0
                   gstreamer-tag-1.0
