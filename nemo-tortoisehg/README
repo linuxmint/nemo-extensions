@@ -4,7 +4,7 @@ This extension is meant to be used with the Nemo File Manager,
 
 Requirements:
     * nemo
-    * nemo-python
+    * nemo-python (not required from Mint 18 / Cinnamon 3.x on)
     * tortoisehg
 
 To install:
