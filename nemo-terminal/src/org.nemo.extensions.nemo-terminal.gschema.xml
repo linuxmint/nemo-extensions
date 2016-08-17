@@ -65,7 +65,7 @@
         </key>
         
         <key name="terminal-change-directory-command" type="s">
-           <default>" cd %s"</default>
+           <default>" cd %s &amp;&amp; tput cuu1 &amp;&amp; tput el"</default>
            <summary>Change directory command</summary>
            <description>The command used by the terminal to change directory. %s is replaced by the shell-quoted directory name in the shell. This command will have a new line appended.</description>
         </key>
