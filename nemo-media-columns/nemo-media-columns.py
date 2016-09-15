@@ -43,7 +43,7 @@ except:
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
+class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, Nemo.NameAndDescProvider):
 	def __init__(self):
 		pass
 
@@ -233,3 +233,6 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
 				file.add_string_attribute('artist', "[no info]")
 					
 		self.get_columns()
+
+	def get_name_and_desc(self):
+		return [_("Nemo Media Columns:::Provides additional columns for the list view")]

@@ -13,7 +13,7 @@ from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MPEGInfo
 from mutagen.flac import FLAC, StreamInfo
 
-class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
+class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAndDescProvider):
     
     def get_property_pages(self, files):
         # files: list of NemoVFSFile
@@ -178,3 +178,6 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
 
         if file.is_mime_type('audio/mpeg') or file.is_mime_type('audio/flac'):
             return Nemo.PropertyPage(name="NemoPython::audio", label=self.property_label, page=self.mainWindow),
+
+    def get_name_and_desc(self):
+        return [_("Nemo Audio Tab:::View audio tag information from the properties tab")]
