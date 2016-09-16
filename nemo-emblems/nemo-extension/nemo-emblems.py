@@ -43,7 +43,7 @@ GUI = """
 
 HIDE_EMBLEMS = ['emblem-desktop', 'emblem-noread', 'emblem-nowrite', 'emblem-readonly', 'emblem-shared', 'emblem-synchronizing', 'emblem-symbolic-link', 'emblem-unreadable']
 
-class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
+class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAndDescProvider):
     
     def __init__(self):
         self.default_icon_theme = Gtk.IconTheme.get_default()
@@ -134,4 +134,6 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
         # touch the file (to force Nemo to re-render its icon)
         subprocess.call(["touch", self.filename])
 
+    def get_name_and_desc(self):
+        return [_("Nemo Emblems:::Change a folder or file emblem")]
 

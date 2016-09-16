@@ -99,7 +99,7 @@ import rabbitvcs.services.service
 from rabbitvcs.services.checkerservice import StatusCheckerStub as StatusChecker
 
 class RabbitVCS(Nemo.InfoProvider, Nemo.MenuProvider,
-                 Nemo.ColumnProvider, Nemo.PropertyPageProvider, GObject.GObject):
+                 Nemo.ColumnProvider, Nemo.PropertyPageProvider, Nemo.NameAndDescProvider, GObject.GObject):
     """
     This is the main class that implements all of our awesome features.
 
@@ -636,6 +636,10 @@ class RabbitVCS(Nemo.InfoProvider, Nemo.MenuProvider,
             page=page)
 
         return [ppage]
+
+
+    def get_name_and_desc(self):
+        return [_("Nemo RabbitVCS:::Access RabbitVCS from the context menu")]
 
 from rabbitvcs.util.contextmenuitems import *
 

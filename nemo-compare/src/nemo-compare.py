@@ -31,7 +31,7 @@ sys.path.append("/usr/share/nemo-compare")
 
 import utils
 
-class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
+class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescProvider):
 	'''Class for the extension itself'''
 
 	# to hold an item for later comparison
@@ -161,3 +161,6 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider):
 
 	def get_background_items(self, window, item):
 		return []
+
+	def get_name_and_desc(self):
+		return [_("Nemo Compare:::Allows file comparison from the context menu")]
