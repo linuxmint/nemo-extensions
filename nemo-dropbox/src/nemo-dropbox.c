@@ -40,6 +40,7 @@
 #include <libnemo-extension/nemo-extension-types.h>
 #include <libnemo-extension/nemo-menu-provider.h>
 #include <libnemo-extension/nemo-info-provider.h>
+#include <libnemo-extension/nemo-name-and-desc-provider.h>
 
 #include "g-util.h"
 #include "dropbox-command-client.h"
@@ -424,6 +425,13 @@ nemo_dropbox_cancel_update(NemoInfoProvider     *provider,
   DropboxFileInfoCommand *dfic = (DropboxFileInfoCommand *) handle;
   dfic->cancelled = TRUE;
   return;
+}
+
+static GList *
+nemo_dropbox_get_name_and_desc (NemoNameAndDescProvider *provider) {
+  GList *ret = NULL;
+  ret = g_list_append (ret, ("Nemo DropBox:::Allows managing of Dropbox web service from the context menu"));
+  return ret;
 }
 
 static void
@@ -867,6 +875,11 @@ nemo_dropbox_info_provider_iface_init (NemoInfoProviderIface *iface) {
 }
 
 static void
+nemo_dropbox_nd_provider_iface_init (NemoNameAndDescProviderIface *iface) {
+  iface->get_name_and_desc = nemo_dropbox_get_name_and_desc;
+}
+
+static void
 nemo_dropbox_instance_init (NemoDropbox *cvs) {
   cvs->filename2obj = g_hash_table_new_full((GHashFunc) g_str_hash,
 					    (GEqualFunc) g_str_equal,
@@ -942,6 +955,13 @@ nemo_dropbox_register_type (GTypeModule *module) {
     NULL
   };
 
+  static const GInterfaceInfo nd_provider_iface_info = {
+    (GInterfaceInitFunc) nemo_dropbox_nd_provider_iface_init,
+    NULL,
+    NULL
+  };
+
+
   dropbox_type =
     g_type_module_register_type(module,
 				G_TYPE_OBJECT,
@@ -957,4 +977,9 @@ nemo_dropbox_register_type (GTypeModule *module) {
 			       dropbox_type,
 			       NEMO_TYPE_INFO_PROVIDER,
 			       &info_provider_iface_info);
+
+  g_type_module_add_interface (module,
+                               dropbox_type,
+                               NEMO_TYPE_NAME_AND_DESC_PROVIDER,
+                               &nd_provider_iface_info);
 }
