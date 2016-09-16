@@ -1224,7 +1224,7 @@ nemo_share_register_type (GTypeModule *module)
 					    "NemoShare",
 					    &info, 0);
 
-  /* onglet share propri\E9t\E9 */
+  /* onglet share propriété */
   static const GInterfaceInfo property_page_provider_iface_info = {
     (GInterfaceInitFunc) nemo_share_property_page_provider_iface_init,
     NULL,
@@ -1237,7 +1237,7 @@ nemo_share_register_type (GTypeModule *module)
 			       &property_page_provider_iface_info);
 
 
-  /* premier page propri\E9t\E9 ? */
+  /* premier page propriété */
   static const GInterfaceInfo info_provider_iface_info = {
     (GInterfaceInitFunc) nemo_share_info_provider_iface_init,
     NULL,
