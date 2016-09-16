@@ -588,7 +588,7 @@ nemo_filename_repairer_register_type(GTypeModule *module)
 
     g_type_module_add_interface(module,
 				filename_repairer_type,
-			NEMO_TYPE_MENU_PROVIDER,
+				NEMO_TYPE_MENU_PROVIDER,
 				&menu_provider_iface_info);
 
 
