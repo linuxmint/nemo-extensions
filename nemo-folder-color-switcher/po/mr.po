@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
 "POT-Creation-Date: 2015-12-04 18:30+0100\n"
-"PO-Revision-Date: 2014-09-19 08:27+0000\n"
-"Last-Translator: Dupo <Unknown>\n"
-"Language-Team: French <fr@li.org>\n"
+"PO-Revision-Date: 2016-04-21 14:24+0000\n"
+"Last-Translator: Clement Lefebvre <root@linuxmint.com>\n"
+"Language-Team: Marathi <mr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,83 +15,83 @@ msgstr ""
 
 #: src/nemo-folder-color-switcher.py:103
 msgid "Sand"
-msgstr "Beige clair"
+msgstr "रेती"
 
 #: src/nemo-folder-color-switcher.py:104
 msgid "Beige"
-msgstr "Beige"
+msgstr "फिकट तपकिरी"
 
 #: src/nemo-folder-color-switcher.py:105
 msgid "Yellow"
-msgstr "Jaune"
+msgstr "पिवळा"
 
 #: src/nemo-folder-color-switcher.py:106
 msgid "Orange"
-msgstr "Orange"
+msgstr "नारंगी"
 
 #: src/nemo-folder-color-switcher.py:107
 msgid "Brown"
-msgstr "Marron"
+msgstr "तपकिरी"
 
 #: src/nemo-folder-color-switcher.py:108
 msgid "Red"
-msgstr "Rouge"
+msgstr "लाल"
 
 #: src/nemo-folder-color-switcher.py:109
 msgid "Purple"
-msgstr "Violet"
+msgstr "जांभळा"
 
 #: src/nemo-folder-color-switcher.py:110
 msgid "Pink"
-msgstr "Rose"
+msgstr "गुलाबी"
 
 #: src/nemo-folder-color-switcher.py:111
 msgid "Blue"
-msgstr "Bleu"
+msgstr "निळा"
 
 #: src/nemo-folder-color-switcher.py:112
 msgid "Cyan"
-msgstr "Cyan"
+msgstr "निळसर हिरवा"
 
 #. Colors submenu
 #: src/nemo-folder-color-switcher.py:113
 msgid "Aqua"
-msgstr "Aqua"
+msgstr "खडा रंग"
 
 #: src/nemo-folder-color-switcher.py:114
 msgid "Teal"
-msgstr "Turquoise"
+msgstr "हिरवट निळा रंग"
 
 #: src/nemo-folder-color-switcher.py:115
 msgid "Green"
-msgstr "Vert"
+msgstr "खडा रंग"
 
 #: src/nemo-folder-color-switcher.py:116
 msgid "White"
-msgstr "Blanc"
+msgstr "पांढरा"
 
 #: src/nemo-folder-color-switcher.py:117
 msgid "Grey"
-msgstr "Gris"
+msgstr "करडा"
 
 #: src/nemo-folder-color-switcher.py:118
 msgid "Black"
-msgstr "Noir"
+msgstr "काळा"
 
 #: src/nemo-folder-color-switcher.py:365
 msgid "Restores the color of the selected folders"
-msgstr "Restaure la couleur des dossiers sélectionnés"
+msgstr "निवडलेल्या फोल्डर्सचा रंग पूर्ववत करा"
 
 #: src/nemo-folder-color-switcher.py:363
 msgid "Restores the color of the selected folder"
-msgstr "Restaure la couleur du dossier sélectionné"
+msgstr "निवडलेल्या फोल्डरचा रंग पूर्ववत करा"
 
 #: src/nemo-folder-color-switcher.py:376
 #, python-format
 msgid "Changes the color of the selected folders to %s"
-msgstr "Modifie la couleur des dossiers sélectionnés en %s"
+msgstr "निवडलेल्या फोल्डर्सचा रंग बदल'%s'"
 
 #: src/nemo-folder-color-switcher.py:373
 #, python-format
 msgid "Changes the color of the selected folder to %s"
-msgstr "Modifie la couleur du dossier sélectionné en %s"
+msgstr "निवडलेल्या फोल्डरचा रंग बदल'%s'"

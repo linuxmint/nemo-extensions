@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
 "POT-Creation-Date: 2015-12-04 18:30+0100\n"
-"PO-Revision-Date: 2014-09-19 08:27+0000\n"
-"Last-Translator: Dupo <Unknown>\n"
-"Language-Team: French <fr@li.org>\n"
+"PO-Revision-Date: 2016-06-23 05:09+0000\n"
+"Last-Translator: Frank <f.boye@hotmail.nl>\n"
+"Language-Team: Papiamento <pap@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: src/nemo-folder-color-switcher.py:103
 msgid "Sand"
-msgstr "Beige clair"
+msgstr "Santu"
 
 #: src/nemo-folder-color-switcher.py:104
 msgid "Beige"
@@ -23,31 +23,31 @@ msgstr "Beige"
 
 #: src/nemo-folder-color-switcher.py:105
 msgid "Yellow"
-msgstr "Jaune"
+msgstr "Hel"
 
 #: src/nemo-folder-color-switcher.py:106
 msgid "Orange"
-msgstr "Orange"
+msgstr "Oraño"
 
 #: src/nemo-folder-color-switcher.py:107
 msgid "Brown"
-msgstr "Marron"
+msgstr "Maron"
 
 #: src/nemo-folder-color-switcher.py:108
 msgid "Red"
-msgstr "Rouge"
+msgstr "Kòra"
 
 #: src/nemo-folder-color-switcher.py:109
 msgid "Purple"
-msgstr "Violet"
+msgstr "Lila"
 
 #: src/nemo-folder-color-switcher.py:110
 msgid "Pink"
-msgstr "Rose"
+msgstr "Ros"
 
 #: src/nemo-folder-color-switcher.py:111
 msgid "Blue"
-msgstr "Bleu"
+msgstr "Blòu"
 
 #: src/nemo-folder-color-switcher.py:112
 msgid "Cyan"
@@ -60,38 +60,38 @@ msgstr "Aqua"
 
 #: src/nemo-folder-color-switcher.py:114
 msgid "Teal"
-msgstr "Turquoise"
+msgstr "Teal"
 
 #: src/nemo-folder-color-switcher.py:115
 msgid "Green"
-msgstr "Vert"
+msgstr "Bèrdè"
 
 #: src/nemo-folder-color-switcher.py:116
 msgid "White"
-msgstr "Blanc"
+msgstr "Blanku"
 
 #: src/nemo-folder-color-switcher.py:117
 msgid "Grey"
-msgstr "Gris"
+msgstr "Shinishi"
 
 #: src/nemo-folder-color-switcher.py:118
 msgid "Black"
-msgstr "Noir"
+msgstr "Pretu"
 
 #: src/nemo-folder-color-switcher.py:365
 msgid "Restores the color of the selected folders"
-msgstr "Restaure la couleur des dossiers sélectionnés"
+msgstr "Esaki ta restaura e kolo di e mapnan selekta"
 
 #: src/nemo-folder-color-switcher.py:363
 msgid "Restores the color of the selected folder"
-msgstr "Restaure la couleur du dossier sélectionné"
+msgstr "Esaki ta restaura e kolo di e mapnan selekta"
 
 #: src/nemo-folder-color-switcher.py:376
 #, python-format
 msgid "Changes the color of the selected folders to %s"
-msgstr "Modifie la couleur des dossiers sélectionnés en %s"
+msgstr "Esaki ta kambia e kolo di e mapnan selekta na %s"
 
 #: src/nemo-folder-color-switcher.py:373
 #, python-format
 msgid "Changes the color of the selected folder to %s"
-msgstr "Modifie la couleur du dossier sélectionné en %s"
+msgstr "Esaki ta kambia e kolo di e mapnan selekta na %s"

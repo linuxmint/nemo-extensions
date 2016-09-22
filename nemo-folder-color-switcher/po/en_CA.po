@@ -1,23 +1,17 @@
-# English (Canada) translation for nemo-folder-color-switcher
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
 "POT-Creation-Date: 2015-12-04 18:30+0100\n"
-"PO-Revision-Date: 2015-12-04 18:30+0100\n"
-"Last-Translator: Corbin <RavetcoFX@gmail.com>\n"
+"PO-Revision-Date: 2016-09-22 16:45+0200\n"
+"Last-Translator: Eduard Dopler <kontakt@eduard-dopler.de>\n"
 "Language-Team: English (Canada) <en_CA@li.org>\n"
-"Language: en_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/nemo-folder-color-switcher.py:58
 msgid "Change folder colors via context menu"
-msgstr ""
+msgstr "Change folder colours via context menu"
 
 #: src/nemo-folder-color-switcher.py:103
 msgid "Sand"
@@ -59,6 +53,7 @@ msgstr ""
 msgid "Cyan"
 msgstr ""
 
+#. Colors submenu
 #: src/nemo-folder-color-switcher.py:113
 msgid "Aqua"
 msgstr ""
