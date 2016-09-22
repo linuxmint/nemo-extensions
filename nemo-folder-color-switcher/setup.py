@@ -34,7 +34,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-folder-color-switcher",
-    version      = "3.0.1",
+    version      = "3.2.0",
     description  = "Nemo extension for changing folder colors",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",

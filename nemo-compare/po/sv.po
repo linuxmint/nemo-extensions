@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-compare 3.2.0\n"
+"Report-Msgid-Bugs-To: eson@svenskasprakfiler.se\n"
+"POT-Creation-Date: 2015-11-30 18:28+0100\n"
+"PO-Revision-Date: 2016-02-21 12:15+0100\n"
+"Last-Translator: Åke Engelbrektson <eson@svenskasprakfiler.se>\n"
+"Language-Team: Svenska Språkfiler <eson@svenskasprakfiler.se>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/nemo-compare-preferences.py:54
+#, fuzzy
+msgid "2way"
+msgstr "Normal Diff"
+
+#: src/nemo-compare-preferences.py:55
+#, fuzzy
+msgid "3way"
+msgstr "Trevägs Diff"
+
+#: src/nemo-compare-preferences.py:56
+#, fuzzy
+msgid "nway"
+msgstr "N-vägs Diff"
+
+#: src/nemo-compare-preferences.py:83
+#, fuzzy
+msgid "Nemo Compare Extension Preferences"
+msgstr "Inställningar för Nemos jämförelsetillägg"
+
+#: src/nemo-compare.py:60
+#, fuzzy
+msgid "File comparison via context menu."
+msgstr "File comparison via context menu."
+
+#: src/nemo-compare.py:138
+#, fuzzy
+msgid "Compare these items"
+msgstr "Jämför"
+
+#: src/nemo-compare.py:139
+#, fuzzy
+msgid "Compare selected items"
+msgstr "Jämför markerade filer"
+
+#: src/nemo-compare.py:149
+#, python-format
+#, fuzzy
+msgid "%s remembered items"
+msgstr "%s remembered items"
+
+#: src/nemo-compare.py:151
+#, python-format
+#, fuzzy
+msgid "Compare to: %s"
+msgstr "Jämför med: %s"
+
+#: src/nemo-compare.py:152
+#, fuzzy
+msgid "Compare with remembered items(s)"
+msgstr "Jämför markerade filer med tidigare inläst"
+
+#: src/nemo-compare.py:158
+#, fuzzy
+msgid "Compare Later"
+msgstr "Jämför senare"
+
+#: src/nemo-compare.py:159
+#, fuzzy
+msgid "Remember item(s) for later comparison"
+msgstr "Kom ihåg fil för senare jämförelse"

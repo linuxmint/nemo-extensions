@@ -41,7 +41,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-metadata-columns",
-    version      = "3.0.1",
+    version      = "3.2.0",
     description  = "Nemo extension, adding columns for media metadata",
     author       = "Eduard Dopler",
     author_email = "kontakt@eduard-dopler.de",

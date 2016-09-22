@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-pastebin 3.0.0\n"
+"Project-Id-Version: nemo-pastebin 3.2.0\n"
 "Report-Msgid-Bugs-To: kontakt@eduard-dopler.de\n"
 "POT-Creation-Date: 2015-12-16 22:35+0100\n"
 "PO-Revision-Date: 2015-12-16 22:35+0100\n"

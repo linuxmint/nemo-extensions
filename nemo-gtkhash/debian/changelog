@@ -1,22 +1,17 @@
-nemo-gtkhash (3.0.2) rosa; urgency=medium
+nemo-gtkhash (3.2.0) sarah; urgency=medium
 
+  * 3.2.0
+  * Update debian build files
   * Fix compilation error due to disabled MDC2 algorithm in many OpenSSL builds
   * Enable nettle by default (adds support for SHA3)
 
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 22 Jan 2016 21:02:09 +0100
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
 
-nemo-gtkhash (3.0.1) rosa; urgency=medium
-
-  * Improve build dependencies
-
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Mon, 21 Dec 2015 17:37:09 +0100
-
-nemo-gtkhash (3.0.0) rosa; urgency=medium
+nemo-gtkhash (3.0.0) sarah; urgency=medium
 
   * 3.0.0
-  * Update debian build files
 
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 14:35:09 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:50:59 +0100
 
 nemo-gtkhash (2.8.0) rosa; urgency=medium
 

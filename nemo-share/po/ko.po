@@ -6,7 +6,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-share\n"
+"Project-Id-Version: nemo-share 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-12-31 03:55+0000\n"
 "PO-Revision-Date: 2008-01-07 17:02+0900\n"

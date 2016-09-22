@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-compare 2.8.0\n"
+"Project-Id-Version: nemo-compare 3.2.0\n"
 "Report-Msgid-Bugs-To: kontakt@eduard-dopler.de\n"
 "POT-Creation-Date: 2015-11-30 18:28+0100\n"
 "PO-Revision-Date: 2015-11-30 18:36+0100\n"

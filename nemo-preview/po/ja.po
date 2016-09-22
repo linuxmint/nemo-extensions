@@ -7,7 +7,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: sushi master\n"
+"Project-Id-Version: nemo-preview 3.2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=sushi&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2012-07-08 07:16+0000\n"
 "PO-Revision-Date: 2012-07-09 21:08+0900\n"

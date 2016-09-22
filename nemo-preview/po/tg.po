@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Tajik Gnome\n"
+"Project-Id-Version: nemo-preview 3.2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=sushi&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2013-01-14 16:27+0000\n"

@@ -8,7 +8,7 @@
 # Žygimantas Beručka <zygis@gnome.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: seahorse HEAD\n"
+"Project-Id-Version: nemo-seahorse 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 11:29+0200\n"
 "PO-Revision-Date: 2011-09-02 23:29+0300\n"

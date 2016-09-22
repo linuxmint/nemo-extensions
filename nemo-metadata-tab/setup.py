@@ -41,7 +41,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-metadata-tab",
-    version      = "3.0.2",
+    version      = "3.2.0",
     description  = "Nemo extension, adding a property page for media files",
     author       = "Eduard Dopler",
     author_email = "kontakt@eduard-dopler.de",

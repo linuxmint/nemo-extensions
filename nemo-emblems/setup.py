@@ -13,7 +13,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-emblems",
-    version      = "3.0.1",
+    version      = "3.2.0",
     description  = "Nemo extension for adding emblems to items.",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",

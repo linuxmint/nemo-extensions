@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-emblems 3.2.0\n"
+"POT-Creation-Date: 2015-12-01 22:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Naungy <naungy007@gmail.com>\n"
+"Language-Team: Burmese <my@li.org>\n"
+"Language: my\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-emblems.py:56
+msgid "Add emblems to files and folders"
+msgstr ""
+
+#: src/nemo-emblems.py:60
+msgid "Emblems"
+msgstr "အမှတ်တံဆိပ်များ"

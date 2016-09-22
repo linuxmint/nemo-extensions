@@ -5,7 +5,7 @@
 # Sangeeta Kumari <sangeeta09@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: seahorse-plugins.master\n"
+"Project-Id-Version: nemo-seahorse 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 11:29+0200\n"
 "PO-Revision-Date: 2009-09-11 20:52+0530\n"
