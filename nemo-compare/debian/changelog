@@ -15,6 +15,12 @@ nemo-compare (3.0.0) sarah; urgency=medium
 
  -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:48:24 +0100
 
+nemo-compare (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:48:24 +0100
+
 nemo-compare (2.8.0) rosa; urgency=medium
 
   * 2.8.0

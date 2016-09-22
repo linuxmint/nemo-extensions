@@ -20,6 +20,18 @@ nemo-terminal (3.0.0) sarah; urgency=medium
 
  -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:57:27 +0100
 
+nemo-terminal (3.0.1) sarah; urgency=medium
+
+  * Support Vte 2.91
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 14 Jun 2016 10:52:59 +0100
+
+nemo-terminal (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:57:27 +0100
+
 nemo-terminal (2.8.1) rosa; urgency=medium
 
   * Changed default shell from bash, to user shell

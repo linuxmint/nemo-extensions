@@ -11,6 +11,12 @@ nemo-share (3.0.0) sarah; urgency=medium
 
  -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:56:38 +0100
 
+nemo-share (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:56:38 +0100
+
 nemo-share (2.8.1) rosa; urgency=medium
 
   * Updated translations
