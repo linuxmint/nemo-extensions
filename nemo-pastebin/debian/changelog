@@ -1,12 +1,6 @@
-nemo-pastebin (3.0.1) rosa; urgency=medium
+nemo-pastebin (3.2.0) sarah; urgency=medium
 
-  * Improve build dependencies
-
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Mon, 21 Dec 2015 17:37:09 +0100
-
-nemo-pastebin (3.0.0) rosa; urgency=medium
-
-  * 3.0.0
+  * 3.2.0
   * Port to Python 3
   * Improve performance
   * Improve preference tool
@@ -17,6 +11,12 @@ nemo-pastebin (3.0.0) rosa; urgency=medium
   * Update debian build files
 
  -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 18:52:48 +0100
+
+nemo-pastebin (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:52:38 +0100
 
 nemo-pastebin (2.8.0) rosa; urgency=medium
 

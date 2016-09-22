@@ -17,9 +17,7 @@ Architecture: any
 Depends: nemo,
          samba-common (>= 3.0.27a),
          samba-common-bin | samba-common (<< 2:3.4.0~pre2-1~0),
-         cinnamon-session,
-         apturl,
-         ${shlibs:Depends}, ${misc:Depends}
+         ${shlibs:Depends}, ${misc:Depends},
 Enhances: nemo
 Suggests: samba (>= 3.0.27a)
 Description: Nemo extension to share folder using Samba

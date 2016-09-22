@@ -20,4 +20,4 @@ msgstr ""
 
 #: src/nemo-emblems.py:60
 msgid "Emblems"
-msgstr "紋章"
+msgstr "圖章"

@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([nemo-seahorse], [3.0.0],
+AC_INIT([nemo-seahorse], [3.2.0],
 	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-seahorse])
 
 AC_CONFIG_HEADERS([config.h])
@@ -61,7 +61,7 @@ AC_ARG_ENABLE(gpg-check,
 	DO_CHECK=$enableval, DO_CHECK=yes)
 
 if test	"$DO_CHECK" = "yes"; then
-	accepted_versions="1.2 1.4 2.0"
+	accepted_versions="1.2 1.4 2.0 2.1"
 	AC_PATH_PROGS(GNUPG, [gpg gpg2], no)
 	ok="no"
 	if test "$GNUPG" != "no"; then
