@@ -19,7 +19,7 @@ data = [
 
 DistUtilsExtra.auto.setup(
     name         = "nemo-terminal",
-    version      = "3.0.1",
+    version      = "3.2.0",
     description  = "Nemo extension for embedding a terminal into it.",
     author       = "Linux Mint",
     author_email = "Fabien Loison <flo@flogisoft.com>",

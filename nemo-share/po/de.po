@@ -7,7 +7,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-share\n"
+"Project-Id-Version: nemo-share 3.2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=nemo-share&component=general\n"
 "POT-Creation-Date: 2009-08-09 23:38+0000\n"

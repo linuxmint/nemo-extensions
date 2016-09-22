@@ -9,7 +9,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Seahorse HEAD\n"
+"Project-Id-Version: nemo-seahorse 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 11:29+0200\n"
 "PO-Revision-Date: 2010-07-28 19:10+0300\n"

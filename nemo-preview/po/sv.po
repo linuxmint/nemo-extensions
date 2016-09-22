@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: sushi\n"
+"Project-Id-Version: nemo-preview 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-02 10:41+0200\n"
 "PO-Revision-Date: 2012-09-02 10:42+0100\n"

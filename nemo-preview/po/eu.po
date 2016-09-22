@@ -5,7 +5,7 @@
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: sushi master\n"
+"Project-Id-Version: nemo-preview 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-01 09:29+0100\n"
 "PO-Revision-Date: 2013-02-28 22:49+0100\n"

@@ -8,7 +8,7 @@
 # Simos Xenitellis <simos@gnome.org>, 2008, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: el\n"
+"Project-Id-Version: nemo-seahorse 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 11:29+0200\n"
 "PO-Revision-Date: 2009-03-28 19:04+0000\n"

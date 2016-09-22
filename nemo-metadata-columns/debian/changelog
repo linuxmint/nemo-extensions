@@ -1,11 +1,5 @@
-nemo-metadata-columns (3.0.1) rosa; urgency=medium
-
-  * Improve build dependencies
-
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Mon, 21 Dec 2015 17:37:09 +0100
-
-nemo-metadata-columns (3.0.0) rosa; urgency=high
+nemo-metadata-columns (3.2.0) sarah; urgency=high
 
   * Initial release
 
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 18:52:48 +0100
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200

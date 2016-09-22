@@ -3,7 +3,7 @@ nemo-fileroller (3.2.0) sarah; urgency=medium
   * 3.2.0
   * Update debian build files
 
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 14:35:09 +0100
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
 
 nemo-fileroller (3.0.0) sarah; urgency=medium
 

@@ -1,16 +1,10 @@
-# Belarusian translation for nemo-folder-color-switcher
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-folder-color-switcher 3.0.0\n"
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
 "POT-Creation-Date: 2015-12-04 18:30+0100\n"
-"PO-Revision-Date: 2015-12-04 18:30+0100\n"
-"Last-Translator: segray <segray@tut.by>\n"
+"PO-Revision-Date: 2015-12-25 16:04+0000\n"
+"Last-Translator: meequz <meequz@gmail.com>\n"
 "Language-Team: Belarusian <be@li.org>\n"
-"Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,6 +53,7 @@ msgstr "Сіні"
 msgid "Cyan"
 msgstr "Блакітны"
 
+#. Colors submenu
 #: src/nemo-folder-color-switcher.py:113
 msgid "Aqua"
 msgstr "Аква"
@@ -85,18 +80,18 @@ msgstr "Чорны"
 
 #: src/nemo-folder-color-switcher.py:365
 msgid "Restores the color of the selected folders"
-msgstr "Аднавіць колер абраных папак"
+msgstr "Аднавіць колер вылучаных каталогаў"
 
 #: src/nemo-folder-color-switcher.py:363
 msgid "Restores the color of the selected folder"
-msgstr "Аднавіць колер абранай папкі"
+msgstr "Аднавіць колер вылучанага каталога"
 
 #: src/nemo-folder-color-switcher.py:376
 #, python-format
 msgid "Changes the color of the selected folders to %s"
-msgstr "Змяніць колер абраных папак на %s"
+msgstr "Змяніць колер вылучаных каталогаў на %s"
 
 #: src/nemo-folder-color-switcher.py:373
 #, python-format
 msgid "Changes the color of the selected folder to %s"
-msgstr "Змяніць колер абранай папкі на %s"
+msgstr "Змяніць колер вылучанага каталога на %s"

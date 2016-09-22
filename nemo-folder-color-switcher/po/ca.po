@@ -1,16 +1,10 @@
-# Catalan translation for nemo-folder-color-switcher
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-folder-color-switcher 3.0.0\n"
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
 "POT-Creation-Date: 2015-12-04 18:30+0100\n"
-"PO-Revision-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2014-09-15 21:48+0000\n"
 "Last-Translator: Isidro Pisa <isidro@utils.info>\n"
 "Language-Team: Catalan <ca@li.org>\n"
-"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,6 +53,7 @@ msgstr "Blau"
 msgid "Cyan"
 msgstr "Cian"
 
+#. Colors submenu
 #: src/nemo-folder-color-switcher.py:113
 msgid "Aqua"
 msgstr "Aiguamarina"

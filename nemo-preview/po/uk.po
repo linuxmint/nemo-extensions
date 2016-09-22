@@ -5,7 +5,7 @@
 # Re. <ted.korostiled@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
+"Project-Id-Version: nemo-preview 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-20 22:51+0300\n"
 "PO-Revision-Date: 2012-09-20 22:53+0300\n"

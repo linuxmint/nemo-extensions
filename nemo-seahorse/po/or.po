@@ -6,7 +6,7 @@
 # Manoj Kumar Giri <mgiri@redhat.com>, 2009, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: seahorse-plugins.master.or\n"
+"Project-Id-Version: nemo-seahorse 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 11:29+0200\n"
 "PO-Revision-Date: 2011-03-04 14:28+0530\n"

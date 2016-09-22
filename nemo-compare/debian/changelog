@@ -7,7 +7,13 @@ nemo-compare (3.2.0) sarah; urgency=medium
   * Add German translation
   * Update debian build files
 
- -- Eduard Dopler <kontakt@eduard-dopler.de>  Fri, 18 Dec 2015 14:35:09 +0100
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
+
+nemo-compare (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:48:24 +0100
 
 nemo-compare (3.0.0) sarah; urgency=medium
 

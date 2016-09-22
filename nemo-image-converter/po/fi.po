@@ -5,7 +5,7 @@
 # Antti Sokero <antti.sokero@opinsys.fi>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-image-converter\n"
+"Project-Id-Version: nemo-image-converter 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-10 23:01+0200\n"
 "PO-Revision-Date: 2007-11-10 23:09+0200\n"

@@ -1,15 +1,10 @@
-# Marathi translation for nemo-emblems
-# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
-# This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-emblems 3.0.0\n"
+"Project-Id-Version: nemo-emblems 3.2.0\n"
 "POT-Creation-Date: 2015-12-01 22:54+0100\n"
 "PO-Revision-Date: 2015-12-06 08:35+0000\n"
 "Last-Translator: Vikram Kulkarni <kul.vikram@gmail.com>\n"
-"Language-Team: Marathi <mr@li.org>\n"
+"Language-Team: mr <mr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

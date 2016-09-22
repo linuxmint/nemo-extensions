@@ -25,6 +25,13 @@ import os
 import signal
 
 import gi
+try:
+    gi.require_version('Vte', '2.90')
+    VTE_2_90_API = True
+except:
+    gi.require_version('Vte', '2.91')
+    VTE_2_90_API = False
+gi.require_version('Nemo', '3.0')
 from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio
 
 
@@ -76,7 +83,6 @@ settings = Gio.Settings.new(BASE_KEY)
 
 
 class NemoTerminal():
-
     """Embedded Terminal in Nemo. Main class."""
 
     def __init__(self, uri, window):
@@ -92,10 +98,16 @@ class NemoTerminal():
         self.shell_pid = -1
         self.term = Vte.Terminal()
 
-        self.shell_pid = self.term.fork_command_full(
-            Vte.PtyFlags.DEFAULT,
-            self._path, [get_terminal_cmd()], None,
-            GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
+        if VTE_2_90_API:
+            self.shell_pid = self.term.fork_command_full(
+                Vte.PtyFlags.DEFAULT,
+                self._path, [get_terminal_cmd()], None,
+                GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
+        else:
+            self.shell_pid = self.term.spawn_sync(
+                Vte.PtyFlags.DEFAULT,
+                self._path, [get_terminal_cmd()], None,
+                GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
         # connect events
         self.term.connect_after("child-exited", self._on_term_child_exited)
         self.term.connect_after("popup-menu", self._on_term_popup_menu)
@@ -106,30 +118,32 @@ class NemoTerminal():
         self._window.add_accel_group(accel_group)
         modifier = Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK
         self.term.add_accelerator(
-                "paste-clipboard",
-                accel_group,
-                ord("V"),
-                modifier,
-                Gtk.AccelFlags.VISIBLE)
+            "paste-clipboard",
+            accel_group,
+            ord("V"),
+            modifier,
+            Gtk.AccelFlags.VISIBLE)
         self.term.add_accelerator(
-                "copy-clipboard",
-                accel_group,
-                ord("C"),
-                modifier,
-                Gtk.AccelFlags.VISIBLE)
+            "copy-clipboard",
+            accel_group,
+            ord("C"),
+            modifier,
+            Gtk.AccelFlags.VISIBLE)
         # drag & drop
         self.term.drag_dest_set(
-                Gtk.DestDefaults.MOTION |
-                Gtk.DestDefaults.HIGHLIGHT |
-                Gtk.DestDefaults.DROP,
-                [Gtk.TargetEntry.new("text/uri-list", 0, 80)],
-                Gdk.DragAction.COPY,
-                )
+            Gtk.DestDefaults.MOTION |
+            Gtk.DestDefaults.HIGHLIGHT |
+            Gtk.DestDefaults.DROP,
+            [Gtk.TargetEntry.new("text/uri-list", 0, 80)],
+            Gdk.DragAction.COPY,)
         self.term.drag_dest_add_uri_targets()
         self.term.connect("drag_data_received", self._on_drag_data_received)
 
         # container
-        self.vscrollbar = Gtk.VScrollbar.new(self.term.adjustment)
+        if VTE_2_90_API:
+            self.vscrollbar = Gtk.VScrollbar.new(self.term.adjustment)
+        else:
+            self.vscrollbar = Gtk.VScrollbar.new(self.term.get_vadjustment())
 
         self.hbox = Gtk.HBox()
         self.hbox.pack_start(self.term, True, True, 0)
@@ -317,10 +331,16 @@ class NemoTerminal():
     def _on_term_child_exited(self, term):
         """Called when the shell is terminated."""
         if not self._respawn_lock:
-            self.shell_pid = self.term.fork_command_full(
-                Vte.PtyFlags.DEFAULT,
-                self._path, [get_terminal_cmd()], None,
-                GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
+            if VTE_2_90_API:
+                self.shell_pid = self.term.fork_command_full(
+                    Vte.PtyFlags.DEFAULT,
+                    self._path, [get_terminal_cmd()], None,
+                    GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
+            else:
+                self.shell_pid = self.term.spawn_sync(
+                    Vte.PtyFlags.DEFAULT,
+                    self._path, [get_terminal_cmd()], None,
+                    GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
 
     def _on_drag_data_received(self, widget, drag_context, x, y, data, info,
                                time):
@@ -331,7 +351,6 @@ class NemoTerminal():
 
 
 class Crowbar():
-
     """Modify Nemo's widget tree when the crowbar is inserted in it.
 
     Args:
@@ -442,7 +461,6 @@ class Crowbar():
 class NemoTerminalProvider(GObject.GObject,
                            Nemo.LocationWidgetProvider,
                            Nemo.NameAndDescProvider):
-
     """Provide the Nemo Terminal in Nemo."""
 
     def get_name_and_desc(self):
@@ -463,7 +481,7 @@ class NemoTerminalProvider(GObject.GObject,
         if not hasattr(window, "term_visible"):
             window.term_visible = settings.get_boolean("default-visible")
         # listen for toggle key events
-        window.connect_after("key-release-event", self._toggle_visible)
+        window.connect_after("key-press-event", self._toggle_visible)
         # return the crowbar
         return Crowbar(uri, window).get_widget()
 
