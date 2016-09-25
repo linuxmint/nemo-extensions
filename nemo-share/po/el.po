@@ -5,7 +5,7 @@
 # Jennie Petoumenou <epetoumenou@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-share.HEAD\n"
+"Project-Id-Version: nemo-share 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 12:55+0200\n"
 "PO-Revision-Date: 2010-03-14 13:00+0200\n"

@@ -1,10 +1,17 @@
-AC_PREREQ([2.61])
-AC_INIT([nemo-gtkhash], [3.0.0])
+AC_PREREQ(2.63)
+
+AC_INIT([nemo-gtkhash], [3.2.0],
+	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-gtkhash])
+
 AC_CONFIG_HEADERS([config.h])
+
+AC_SUBST([PACKAGE_NAME], ["$PACKAGE_NAME"])
+AC_SUBST([PACKAGE_VERSION], ["$PACKAGE_VERSION"])
+
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE([1.11 check-news dist-xz])
+AM_INIT_AUTOMAKE([1.11 check-news dist-xz subdir-objects])
 AM_SILENT_RULES([yes])
 
 AC_PROG_CC_C99

@@ -25,17 +25,17 @@
 
 G_BEGIN_DECLS
 
-typedef struct _NemoPythonObject       NemoPythonObject;
-typedef struct _NemoPythonObjectClass  NemoPythonObjectClass;
+typedef struct _NemoPythonObject 		NemoPythonObject;
+typedef struct _NemoPythonObjectClass 	NemoPythonObjectClass;
 
 struct _NemoPythonObject {
-  GObject parent_slot;
-  PyObject *instance;
+	GObject parent_slot;
+	PyObject *instance;
 };
 
 struct _NemoPythonObjectClass {
-    GObjectClass parent_slot;
-    PyObject *type;
+	GObjectClass parent_slot;
+	PyObject *type;
 };
 
 GType nemo_python_object_get_type (GTypeModule *module, PyObject *type);

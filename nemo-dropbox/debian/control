@@ -3,13 +3,16 @@ Section: non-free/gnome
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
-               libnemo-extension-dev (>= 1.0.0),
+               autotools-dev,
+               gnome-pkg-tools,
+               libnemo-extension-dev (>= 2.6.0),
                libglib2.0-dev (>= 2.14.0),
-               python (>= 2.7),
-               python-docutils (>= 0.6),
-               python-gtk2 (>= 2.12),
+               python3-dev (>= 3.3),
+               python3-docutils,
                dh-autoreconf,
-               dh-python
+               python3-gi,
+               gir1.2-glib-2.0,
+               gir1.2-gdkpixbuf-2.0
 Standards-Version: 3.9.6
 XS-Autobuild: yes
 Homepage: http://www.dropbox.com/
@@ -19,10 +22,9 @@ Architecture: i386 amd64
 Depends: nemo,
          policykit-1,
          procps,
-         python-gtk2 (>= 2.12),
-         python-gpgme,
+         python3-gi,
+         python3-gpgme,
          ${shlibs:Depends},
-         ${python:Depends},
          ${misc:Depends},
          dropbox
 Description: Dropbox integration for Nemo

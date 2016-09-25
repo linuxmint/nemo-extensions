@@ -1,9 +1,0 @@
-
-[Desktop Entry]
-Name=Nemo Pastebin Configurator
-Type=Application
-GenericName=Nemo Pastebin configuration panel
-Icon=nemo-pastebin
-Categories=Settings;
-X-Ubuntu-Gettext-Domain=nemo-pastebin
-Exec=nemo-pastebin-configurator

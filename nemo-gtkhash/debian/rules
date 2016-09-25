@@ -10,7 +10,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 override_dh_auto_configure:
 	NOCONFIGURE=1 ./autogen.sh
-	dh_auto_configure -- --with-gtk=3.0 --disable-gtkhash --enable-mhash --enable-gcrypt --enable-nemo
+	dh_auto_configure -- --with-gtk=3.0 --disable-gtkhash --enable-mhash --enable-gcrypt --enable-nettle --enable-nemo
 
 override_dh_installchangelogs:
 	dh_installchangelogs NEWS

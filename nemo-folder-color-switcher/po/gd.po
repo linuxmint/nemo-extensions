@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2015-06-25 20:17+0000\n"
+"Last-Translator: GunChleoc <Unknown>\n"
+"Language-Team: Gaelic; Scottish <gd@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr "Gainmhich"
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr "Bèis"
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "Buidhe"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "Orains"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "Donn"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "Dearg"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "Purpaidh"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "Pinc"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "Gorm"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "Saidhean"
+
+#. Colors submenu
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr "Aqua"
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr "Dath a' chrann-lacha"
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "Uaine"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "Geal"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "Liath"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "Dubh"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "Aisigidh seo dath nam pasganan a thagh thu"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "Aisigidh seo dath a' phasgain a thagh thu"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "Atharraichidh seo dath nam pasganan a thagh thu gu %s"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "Atharraichidh seo dath a' phasgain a thagh thu gu %s"

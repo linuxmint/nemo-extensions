@@ -1,3 +1,30 @@
+nemo-preview (3.2.0) sarah; urgency=medium
+
+  * 3.2.0
+  * Update debian build files
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
+
+nemo-preview (3.0.2) sarah; urgency=medium
+
+  * Depend on gir1.2-clutter-gst-3.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Jun 2016 10:45:24 +0100
+
+nemo-preview (3.0.1) sarah; urgency=medium
+
+  * Fixed video playback
+  * Apply exif rotation on pictures
+  * Fixed crash when exiting preview
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 23 Jun 2016 13:28:29 +0100
+
+nemo-preview (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:53:08 +0100
+
 nemo-preview (3.0.2) sarah; urgency=medium
 
   * Depend on gir1.2-clutter-gst-3.0

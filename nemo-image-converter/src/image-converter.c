@@ -40,8 +40,6 @@ void nemo_module_list_types (const GType **types,
 void
 nemo_module_initialize (GTypeModule *module)
 {
-	g_print ("Initializing nemo-image-converter extension\n");
-
 	nemo_image_converter_register_type (module);
 	type_list[0] = NEMO_TYPE_IMAGE_CONVERTER;
 
@@ -52,7 +50,7 @@ nemo_module_initialize (GTypeModule *module)
 void
 nemo_module_shutdown (void)
 {
-	g_print ("Shutting down nemo-image-converter extension\n");
+	/* g_print ("Shutting down nemo-image-converter extension\n"); */
 }
 
 void 

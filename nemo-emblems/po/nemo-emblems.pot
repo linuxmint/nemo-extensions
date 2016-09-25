@@ -1,9 +1,7 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-24 13:50+0200\n"
+"Project-Id-Version: nemo-emblems VERSION\n"
+"POT-Creation-Date: 2015-12-01 22:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +12,10 @@ msgstr ""
 "X-Generator: Launchpad (build 18111)\n"
 "Language: \n"
 
-#: ../nemo-extension/nemo-emblems.py:81
+#: src/nemo-emblems.py:56
+msgid "Add emblems to files and folders"
+msgstr ""
+
+#: src/nemo-emblems.py:60
 msgid "Emblems"
 msgstr ""

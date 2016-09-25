@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-git 3.2.0\n"
+"Report-Msgid-Bugs-To: kontakt@eduard-dopler.de\n"
+"POT-Creation-Date: 2016-01-08 16:13+0100\n"
+"PO-Revision-Date: 2016-01-08 18:49+0100\n"
+"Last-Translator: gogo <trebelnik2@gmail.com>\n"
+"Language-Team: Croatian <hr@li.org>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/nemo-git.py:56
+msgid "Show git branch and file info in an infobar and in columns"
+msgstr ""
+"Prikaži git ogranak i informacije datoteka u traci informacije i stupcima"
+
+#: src/nemo-git.py:95
+msgid "Git File Status"
+msgstr "Git stanje datoteka"
+
+#: src/nemo-git.py:211
+#, python-format
+msgid "Git Branch: <i>%s</i>"
+msgstr "Git ogranak: <i>%s</i>"
+
+#: src/nemo-git.py:225
+msgid "Toplevel path"
+msgstr "Početna putanja"
+
+#: src/nemo-git.py:227
+msgid "Everything up-to-date."
+msgstr "Sve su promjene najnovije."
+
+#: src/nemo-git.py:239
+#, python-format
+msgid "%d change"
+msgid_plural "%d changes"
+msgstr[0] "%d promjena"
+msgstr[1] "%d promjene"
+msgstr[2] "%d promjena"
+
+#: src/nemo-git.py:241
+msgid "Changes"
+msgstr "Promjene"
+
+#: src/nemo-git.py:246
+#, python-format
+msgid "%d untracked"
+msgid_plural "%d untracked"
+msgstr[0] "%d stavka neprimjenjena"
+msgstr[1] "%d stavke neprimjenjene"
+msgstr[2] "%d stavaka neprimjenjeno"
+
+#: src/nemo-git.py:248
+msgid "Untracked"
+msgstr "Neprimjenjeno"

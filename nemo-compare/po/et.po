@@ -1,63 +1,72 @@
-# Estonian translation for the nemo-compare
-# Copyright (C) 2011 Guido Tabbernuk <boamaod@gmail.com>
-# This file is distributed under the same license as the nemo-compare package.
-# Guido Tabbernuk <boamaod@gmail.com>, 2011.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-compare 0.0.1\n"
+"Project-Id-Version: nemo-compare 3.2.0\n"
 "Report-Msgid-Bugs-To: boamaod@gmail.com\n"
-"POT-Creation-Date: 2011-10-29 02:21+0300\n"
-"PO-Revision-Date: 2011-10-24 18:26+0000\n"
+"POT-Creation-Date: 2015-11-30 18:28+0100\n"
+"PO-Revision-Date: 2015-11-30 18:56+0100\n"
 "Last-Translator: tabbernuk <boamaod@gmail.com>\n"
-"Language-Team: eesti <et@li.org>\n"
+"Language-Team: Eesti <et@li.org>\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-10-30 05:32+0000\n"
-"X-Generator: Launchpad (build 14197)\n"
-"Language: et\n"
 
-#: src/nemo-compare.py:106 src/nemo-compare.py:129
-msgid "Compare to "
-msgstr "Võrdle "
 
-#: src/nemo-compare.py:107
-msgid "Compare to the file remembered before"
-msgstr "Võrdleb varem meelde jäetud failiga"
+#: src/nemo-compare-preferences.py:54
+#, fuzzy
+msgid "2way"
+msgstr "Normal Diff"
 
-#: src/nemo-compare.py:116
-msgid "Compare Later"
-msgstr "Võrdle hiljem"
+#: src/nemo-compare-preferences.py:55
+#, fuzzy
+msgid "3way"
+msgstr "Three-Way Diff"
 
-#: src/nemo-compare.py:117
-msgid "Remember file for later comparison"
-msgstr "Jätab faili meelde, et hiljem seda võrrelda"
+#: src/nemo-compare-preferences.py:56
+#, fuzzy
+msgid "nway"
+msgstr "Multi Diff"
 
-#: src/nemo-compare.py:130
-msgid "Compare selected files to the file remembered before"
-msgstr "Võrdleb valitud faile varem meelde jäetud failiga"
-
-#: src/nemo-compare.py:141
-msgid "Compare"
-msgstr "Võrdle"
-
-#: src/nemo-compare.py:142
-msgid "Compare selected files"
-msgstr "Võrdleb valitud faile omavahel"
-
-#: src/nemo-compare-setup.py:92
+#: src/nemo-compare-preferences.py:83
 msgid "Nemo Compare Extension Preferences"
 msgstr ""
 
-#: src/nemo-compare-setup.py:100
-msgid "Normal Diff"
+#: src/nemo-compare.py:60
+msgid "File comparison via context menu."
 msgstr ""
 
-#: src/nemo-compare-setup.py:112
-msgid "Three-Way Diff"
-msgstr ""
+#: src/nemo-compare.py:138
+#, fuzzy
+msgid "Compare these items"
+msgstr "Võrdle valitud faile omavahel"
 
-#: src/nemo-compare-setup.py:124
-msgid "N-Way Diff"
-msgstr ""
+#: src/nemo-compare.py:139
+#, fuzzy
+msgid "Compare selected items"
+msgstr "Võrdle valitud faile omavahel"
+
+#: src/nemo-compare.py:149
+#, fuzzy
+#, python-format
+msgid "%s remembered items"
+msgstr "%s varem meelde jäetud failid"
+
+#: src/nemo-compare.py:151
+#, fuzzy
+#, python-format
+msgid "Compare to: %s"
+msgstr "Võrdle %s"
+
+#: src/nemo-compare.py:152
+#, fuzzy
+msgid "Compare with remembered items(s)"
+msgstr "Võrdle varem meelde jäetud failiga"
+
+#: src/nemo-compare.py:158
+msgid "Compare Later"
+msgstr "Võrdle hiljem"
+
+#: src/nemo-compare.py:159
+#, fuzzy
+msgid "Remember item(s) for later comparison"
+msgstr "Jätab failid meelde, et hiljem seda võrrelda"

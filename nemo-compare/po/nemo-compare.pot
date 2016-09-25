@@ -1,14 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-29 02:21+0300\n"
+"Project-Id-Version: nemo-compare VERSION\n"
+"POT-Creation-Date: 2015-11-30 18:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +10,52 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/nemo-compare.py:106 src/nemo-compare.py:129
-msgid "Compare to "
+#: src/nemo-compare-preferences.py:54
+msgid "2way"
 msgstr ""
 
-#: src/nemo-compare.py:107
-msgid "Compare to the file remembered before"
+#: src/nemo-compare-preferences.py:55
+msgid "3way"
 msgstr ""
 
-#: src/nemo-compare.py:116
-msgid "Compare Later"
+#: src/nemo-compare-preferences.py:56
+msgid "nway"
 msgstr ""
 
-#: src/nemo-compare.py:117
-msgid "Remember file for later comparison"
-msgstr ""
-
-#: src/nemo-compare.py:130
-msgid "Compare selected files to the file remembered before"
-msgstr ""
-
-#: src/nemo-compare.py:141
-msgid "Compare"
-msgstr ""
-
-#: src/nemo-compare.py:142
-msgid "Compare selected files"
-msgstr ""
-
-#: src/nemo-compare-setup.py:92
+#: src/nemo-compare-preferences.py:83
 msgid "Nemo Compare Extension Preferences"
 msgstr ""
 
-#: src/nemo-compare-setup.py:100
-msgid "Normal Diff"
+#: src/nemo-compare.py:60
+msgid "File comparison via context menu."
 msgstr ""
 
-#: src/nemo-compare-setup.py:112
-msgid "Three-Way Diff"
+#: src/nemo-compare.py:138
+msgid "Compare these items"
 msgstr ""
 
-#: src/nemo-compare-setup.py:124
-msgid "N-Way Diff"
+#: src/nemo-compare.py:139
+msgid "Compare selected items"
+msgstr ""
+
+#: src/nemo-compare.py:149
+#, python-format
+msgid "%s remembered items"
+msgstr ""
+
+#: src/nemo-compare.py:151
+#, python-format
+msgid "Compare to: %s"
+msgstr ""
+
+#: src/nemo-compare.py:152
+msgid "Compare with remembered items(s)"
+msgstr ""
+
+#: src/nemo-compare.py:158
+msgid "Compare Later"
+msgstr ""
+
+#: src/nemo-compare.py:159
+msgid "Remember item(s) for later comparison"
 msgstr ""

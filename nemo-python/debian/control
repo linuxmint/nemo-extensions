@@ -6,20 +6,31 @@ Build-Depends: debhelper (>= 9),
                autotools-dev,
                dh-autoreconf,
                gnome-pkg-tools,
-               python-dev,
+               python3-dev (>= 3.3),
                python-gi-dev,
-               libnemo-extension-dev (>= 1.0.3),
+               libnemo-extension-dev (>= 2.6.0),
                gnome-common,
                gtk-doc-tools
 Standards-Version: 3.9.6
+Homepage: https://github.com/linuxmint/nemo-extensions
 
 Package: python-nemo
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         ${python:Depends},
-         python-gi (>= 3.0),
-         gir1.2-nemo-3.0
+         python3-gi,
+         gir1.2-nemo-3.0,
+         libnemo-extension1 (>= 2.6.0)
+Replaces: python-nemo (<< 3.0.0)
+Conflicts: python-nemo (<< 3.0.0),
+           nemo-compare (<< 3.0.0),
+           nemo-emblems (<< 3.0.0),
+           nemo-pastebin (<< 3.0.0),
+           nemo-terminal (<< 3.0.0),
+           folder-color-switcher (<< 3.0.0),
+           nemo-audio-tab,
+           nemo-media-columns,
+           nemo-rabbitvcs
 Description: Python binding for Nemo components
  Python binding for Nemo, to allow Nemo property page and menu item
  extensions to be written in Python.

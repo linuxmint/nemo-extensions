@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2014-09-16 07:44+0000\n"
+"Last-Translator: Fajar Ichwan Noor <Unknown>\n"
+"Language-Team: Indonesian <id@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr "Warna Pasir"
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr "Krem"
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "Kuning"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "Oranye"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "Coklat"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "Merah"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "Ungu"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "Merah Muda"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "Biru"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "Cyan"
+
+#. Colors submenu
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr "Aqua"
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr "Teal"
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "Hijau"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "Putih"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "Abu-abu"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "Hitam"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "Mengembalikan warna folder-folder yang dipilih"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "Mengembalikan warna folder yang dipilih"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "Mengubah warna folder-folder yang dipilih ke %s"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "Mengubah warna folder yang dipilih ke %s"

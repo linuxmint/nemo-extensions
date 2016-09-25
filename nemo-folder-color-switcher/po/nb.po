@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2014-12-21 12:09+0000\n"
+"Last-Translator: Harald H. <haarektrans@gmail.com>\n"
+"Language-Team: Norwegian Bokmal <nb@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr "Sand"
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr "Beige"
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "Gul"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "Oransje"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "Brun"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "Rød"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "Lilla"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "Rosa"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "Blå"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "Turkis"
+
+#. Colors submenu
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr "Vann"
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr "Blågrønn"
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "Grønn"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "Hvit"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "Grå"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "Svart"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "Gjenoppretter standard farge for valgte mapper"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "Gjenoppretter standard farge for valgte mappe"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "Endrer fargen på de valgte mappene til %s"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "Endrer fargen på valgte mappe til %s"

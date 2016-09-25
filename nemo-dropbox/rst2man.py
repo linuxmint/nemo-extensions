@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 
 # Author: 
 # Contact: grubert@users.sf.net
@@ -72,7 +72,6 @@ import sys
 import os
 import time
 import re
-from types import ListType
 
 import docutils
 from docutils import nodes, utils, writers, languages
@@ -274,7 +273,7 @@ class Translator(nodes.NodeVisitor):
                      }
             def __init__(self, style):
                 if style == 'arabic':
-                    if node.has_key('start'):
+                    if 'start' in node:
                         start = node['start']
                     else:
                         start = 1
@@ -285,7 +284,7 @@ class Translator(nodes.NodeVisitor):
                 else:
                     self._style = self.enum_style[style]
                 self._cnt = -1
-            def next(self):
+            def __next__(self):
                 self._cnt += 1
                 # BUG add prefix postfix
                 try:
@@ -301,7 +300,7 @@ class Translator(nodes.NodeVisitor):
             def __repr__(self):
                 return 'enum_style%r' % list(self._style)
 
-        if node.has_key('enumtype'):
+        if 'enumtype' in node:
             self._list_char.append(enum_char(node['enumtype']))
         else:
             self._list_char.append(enum_char('bullet'))
@@ -334,20 +333,20 @@ class Translator(nodes.NodeVisitor):
         self.header_written = 1
 
     def visit_address(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.visit_docinfo_item(node, 'address', meta=None)
 
     def depart_address(self, node):
         self.depart_docinfo_item()
 
     def visit_admonition(self, node, name):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(self.starttag(node, 'div', CLASS=name))
         self.body.append('<p class="admonition-title">'
                          + self.language.labels[name] + '</p>\n')
 
     def depart_admonition(self):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append('</div>\n')
 
     def visit_attention(self, node):
@@ -388,11 +387,11 @@ class Translator(nodes.NodeVisitor):
         self.list_end()
 
     def visit_caption(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(self.starttag(node, 'p', '', CLASS='caption'))
 
     def depart_caption(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append('</p>\n')
 
     def visit_caution(self, node):
@@ -402,7 +401,7 @@ class Translator(nodes.NodeVisitor):
         self.depart_admonition()
 
     def visit_citation(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(self.starttag(node, 'table', CLASS='citation',
                                        frame="void", rules="none"))
         self.body.append('<colgroup><col class="label" /><col /></colgroup>\n'
@@ -412,31 +411,31 @@ class Translator(nodes.NodeVisitor):
         self.footnote_backrefs(node)
 
     def depart_citation(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append('</td></tr>\n'
                          '</tbody>\n</table>\n')
 
     def visit_citation_reference(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         href = ''
-        if node.has_key('refid'):
+        if 'refid' in node:
             href = '#' + node['refid']
-        elif node.has_key('refname'):
+        elif 'refname' in node:
             href = '#' + self.document.nameids[node['refname']]
         self.body.append(self.starttag(node, 'a', '[', href=href,
                                        CLASS='citation-reference'))
 
     def depart_citation_reference(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(']</a>')
 
     def visit_classifier(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(' <span class="classifier-delimiter">:</span> ')
         self.body.append(self.starttag(node, 'span', '', CLASS='classifier'))
 
     def depart_classifier(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append('</span>')
 
     def visit_colspec(self, node):
@@ -524,11 +523,11 @@ class Translator(nodes.NodeVisitor):
         pass
 
     def visit_doctest_block(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(self.starttag(node, 'pre', CLASS='doctest-block'))
 
     def depart_doctest_block(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append('\n</pre>\n')
 
     def visit_document(self, node):
@@ -613,16 +612,16 @@ class Translator(nodes.NodeVisitor):
         self.body.append(self.defs['field_name'][1])
 
     def visit_figure(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
 
     def depart_figure(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
 
     def visit_footer(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
 
     def depart_footer(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         start = self.context.pop()
         footer = (['<hr class="footer"/>\n',
                    self.starttag(node, 'div', CLASS='footer')]
@@ -631,7 +630,7 @@ class Translator(nodes.NodeVisitor):
         del self.body[start:]
 
     def visit_footnote(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(self.starttag(node, 'table', CLASS='footnote',
                                        frame="void", rules="none"))
         self.body.append('<colgroup><col class="label" /><col /></colgroup>\n'
@@ -640,7 +639,7 @@ class Translator(nodes.NodeVisitor):
         self.footnote_backrefs(node)
 
     def footnote_backrefs(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         if self.settings.footnote_backlinks and node.hasattr('backrefs'):
             backrefs = node['backrefs']
             if len(backrefs) == 1:
@@ -661,16 +660,16 @@ class Translator(nodes.NodeVisitor):
             self.context.append('<a name="%s">' % node['id'])
 
     def depart_footnote(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append('</td></tr>\n'
                          '</tbody>\n</table>\n')
 
     def visit_footnote_reference(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         href = ''
-        if node.has_key('refid'):
+        if 'refid' in node:
             href = '#' + node['refid']
-        elif node.has_key('refname'):
+        elif 'refname' in node:
             href = '#' + self.document.nameids[node['refname']]
         format = self.settings.footnote_references
         if format == 'brackets':
@@ -686,7 +685,7 @@ class Translator(nodes.NodeVisitor):
                                        CLASS='footnote-reference'))
 
     def depart_footnote_reference(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(self.context.pop() + '</a>')
 
     def visit_generated(self, node):
@@ -696,11 +695,11 @@ class Translator(nodes.NodeVisitor):
         pass
 
     def visit_header(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.context.append(len(self.body))
 
     def depart_header(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         start = self.context.pop()
         self.body_prefix.append(self.starttag(node, 'div', CLASS='header'))
         self.body_prefix.extend(self.body[start:])
@@ -714,11 +713,11 @@ class Translator(nodes.NodeVisitor):
         self.depart_admonition()
 
     def visit_image(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         atts = node.attributes.copy()
         atts['src'] = atts['uri']
         del atts['uri']
-        if not atts.has_key('alt'):
+        if 'alt' not in atts:
             atts['alt'] = atts['src']
         if isinstance(node.parent, nodes.TextElement):
             self.context.append('')
@@ -728,7 +727,7 @@ class Translator(nodes.NodeVisitor):
         self.body.append(self.emptytag(node, 'img', '', **atts))
 
     def depart_image(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(self.context.pop())
 
     def visit_important(self, node):
@@ -738,20 +737,20 @@ class Translator(nodes.NodeVisitor):
         self.depart_admonition()
 
     def visit_label(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(self.starttag(node, 'td', '%s[' % self.context.pop(),
                                        CLASS='label'))
 
     def depart_label(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(']</a></td><td>%s' % self.context.pop())
 
     def visit_legend(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append(self.starttag(node, 'div', CLASS='legend'))
 
     def depart_legend(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append('</div>\n')
 
     def visit_line_block(self, node):
@@ -769,7 +768,7 @@ class Translator(nodes.NodeVisitor):
     def visit_list_item(self, node):
         # man 7 man argues to use ".IP" instead of ".TP"
         self.body.append('\n.IP %s %d\n' % (
-                self._list_char[-1].next(),
+                next(self._list_char[-1]),
                 self._list_char[-1].get_width(),) )
 
     def depart_list_item(self, node):
@@ -788,7 +787,7 @@ class Translator(nodes.NodeVisitor):
         self.body.append(self.defs['literal_block'][1])
 
     def visit_meta(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.head.append(self.emptytag(node, 'meta', **node.attributes))
 
     def depart_meta(self, node):
@@ -876,11 +875,11 @@ class Translator(nodes.NodeVisitor):
         pass
 
     def visit_organization(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.visit_docinfo_item(node, 'organization')
 
     def depart_organization(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.depart_docinfo_item()
 
     def visit_paragraph(self, node):
@@ -931,7 +930,7 @@ class Translator(nodes.NodeVisitor):
         self.section_level -= 1
 
     def visit_status(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.visit_docinfo_item(node, 'status', meta=None)
 
     def depart_status(self, node):
@@ -1009,7 +1008,7 @@ class Translator(nodes.NodeVisitor):
         pass
 
     def visit_thead(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.write_colspecs()
         self.body.append(self.context.pop()) # '</colgroup>\n'
         # There may or may not be a <thead>; this is for <tbody> to use:
@@ -1017,7 +1016,7 @@ class Translator(nodes.NodeVisitor):
         self.body.append(self.starttag(node, 'thead', valign='bottom'))
 
     def depart_thead(self, node):
-        raise NotImplementedError, node.astext()
+        raise NotImplementedError(node.astext())
         self.body.append('</thead>\n')
 
     def visit_tip(self, node):

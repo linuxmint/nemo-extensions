@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-terminal 3.2.0\n"
+"POT-Creation-Date: 2015-12-05 18:41+0100\n"
+"PO-Revision-Date: 2016-01-21 22:38+0100\n"
+"Last-Translator: gogo <trebelnik2@gmail.com>\n"
+"Language-Team: Croatian <hr@li.org>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-terminal.py:71
+msgid "Add an embedded terminal to Nemo"
+msgstr "Dodaje ugrađen terminal u Nemo"
+
+#: src/nemo-terminal.py:153
+msgid "Paste Path(s)"
+msgstr "Zalijepi putanju"

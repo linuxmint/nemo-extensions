@@ -31,7 +31,7 @@ typedef int Py_ssize_t;
 #endif
 
 typedef enum {
-    NEMO_PYTHON_DEBUG_MISC = 1 << 0,
+	NEMO_PYTHON_DEBUG_MISC = 1 << 0,
 } NemoPythonDebug;
 
 extern NemoPythonDebug nemo_python_debug;

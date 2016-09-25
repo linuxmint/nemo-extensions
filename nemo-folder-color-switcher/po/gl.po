@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2015-03-13 08:48+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"Language-Team: Galician <gl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr "Aréa"
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr "Beixe"
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "Amarelo"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "Laranxa"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "Marrón"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "Vermello"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "Púrpura"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "Rosa"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "Azul"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "Cián"
+
+#. Colors submenu
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr "Auga"
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr "Verde azulado"
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "Verde"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "Branco"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "Gris"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "Negro"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "Restaura a cor dos cartafoles seleccionados"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "Restaura a cor do cartafol seleccionado"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "Cambia a cor dos cartafoles seleccionados ao %s"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "Cambia a cor do cartafol seleccionado ao %s"

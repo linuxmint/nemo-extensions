@@ -1,0 +1,408 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-metadata-columns 3.2.0\n"
+"POT-Creation-Date: 2015-12-05 11:55+0100\n"
+"PO-Revision-Date: 2015-12-05 11:55+0100\n"
+"Last-Translator: Eduard Dopler <kontakt@eduard-dopler.de>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/nemo-metadata-columns.py:72
+msgid "Show media metadata in columns"
+msgstr ""
+
+#: src/nemo-metadata-columns.py:76
+msgid "Length"
+msgstr "Länge"
+
+#: src/nemo-metadata-columns.py:77
+msgid "Overall Bitrate"
+msgstr "Gesamtbitrate"
+
+#: src/nemo-metadata-columns.py:78
+msgid "Album"
+msgstr "Album"
+
+#: src/nemo-metadata-columns.py:79
+msgid "Title"
+msgstr "Titel"
+
+#: src/nemo-metadata-columns.py:80
+msgid "Track#"
+msgstr "Titelnr."
+
+#: src/nemo-metadata-columns.py:81
+msgid "Artist"
+msgstr "Interpret"
+
+#: src/nemo-metadata-columns.py:82
+msgid "Genre"
+msgstr "Genre"
+
+#: src/nemo-metadata-columns.py:83
+msgid "Date"
+msgstr "Datum"
+
+#: src/nemo-metadata-columns.py:84
+msgid "Video Format"
+msgstr "Videoformat"
+
+#: src/nemo-metadata-columns.py:85
+msgid "Video Codec"
+msgstr "Video-Codec"
+
+#: src/nemo-metadata-columns.py:86
+msgid "Video Bitrate"
+msgstr "Video-Bitrate"
+
+#: src/nemo-metadata-columns.py:87
+msgid "Width"
+msgstr "Breite"
+
+#: src/nemo-metadata-columns.py:88
+msgid "Height"
+msgstr "Höhe"
+
+#: src/nemo-metadata-columns.py:89
+msgid "Aspect"
+msgstr "Seitenverhältnis"
+
+#: src/nemo-metadata-columns.py:90
+msgid "Framerate"
+msgstr "Framerate"
+
+#: src/nemo-metadata-columns.py:91
+msgid "Audio Format"
+msgstr "Audioformat"
+
+#: src/nemo-metadata-columns.py:92
+msgid "Audio Bitrate"
+msgstr "Audio-Bitrate"
+
+#: src/nemo-metadata-columns.py:93
+msgid "Channels"
+msgstr "Kanäle"
+
+#: src/nemo-metadata-columns.py:94
+msgid "Sample Rate"
+msgstr "Samplerate"
+
+#: src/nemo-metadata-columns.py:95
+msgid "Replay Gain"
+msgstr "Replay Gain"
+
+#: src/nemo-metadata-columns.py:96
+msgid "Language"
+msgstr "Sprache"
+
+#: src/nemo-metadata-columns.py:99
+msgid "Camera Brand"
+msgstr "Hersteller"
+
+#: src/nemo-metadata-columns.py:100
+msgid "Camera Model"
+msgstr "Modell"
+
+#: src/nemo-metadata-columns.py:101
+msgid "Focal Length"
+msgstr "Brennweite"
+
+#: src/nemo-metadata-columns.py:102
+msgid "Exposure Time (sec.)"
+msgstr "Belichtungszeit"
+
+#: src/nemo-metadata-columns.py:103
+msgid "Aperture Value"
+msgstr "Blende"
+
+#: src/nemo-metadata-columns.py:104
+msgid "ISO Speed Rating"
+msgstr "ISO-Wert"
+
+#: src/nemo-metadata-columns.py:105
+msgid "Metering Mode"
+msgstr "Messmethode"
+
+#: src/nemo-metadata-columns.py:106
+msgid "White Balance"
+msgstr "Weißabgleich"
+
+#: src/nemo-metadata-columns.py:107 src/nemo-metadata-columns.py:162
+msgid "Flash"
+msgstr "Blitz"
+
+#: src/nemo-metadata-columns.py:108
+msgid "Exposure Program"
+msgstr "Belichtungsprogramm"
+
+#: src/nemo-metadata-columns.py:109
+msgid "Exposure Mode"
+msgstr "Belichtungsmodus"
+
+#: src/nemo-metadata-columns.py:110
+msgid "Software"
+msgstr "Software"
+
+#: src/nemo-metadata-columns.py:111
+msgid "Color Space"
+msgstr "Farbraum"
+
+#: src/nemo-metadata-columns.py:112 src/nemo-metadata-columns.py:214
+msgid "Contrast"
+msgstr "Kontrast"
+
+#: src/nemo-metadata-columns.py:113 src/nemo-metadata-columns.py:215
+msgid "Saturation"
+msgstr "Sättigung"
+
+#: src/nemo-metadata-columns.py:114 src/nemo-metadata-columns.py:216
+msgid "Sharpness"
+msgstr "Schärfe"
+
+#: src/nemo-metadata-columns.py:115 src/nemo-metadata-columns.py:174
+msgid "Orientation"
+msgstr "Ausrichtung"
+
+#: src/nemo-metadata-columns.py:116
+msgid "Resolution"
+msgstr "Auflösung"
+
+#: src/nemo-metadata-columns.py:131
+msgid "Description"
+msgstr "Beschreibung"
+
+#: src/nemo-metadata-columns.py:132
+msgid "Copyright"
+msgstr "Copyright"
+
+#: src/nemo-metadata-columns.py:133
+msgid "Disclaimer"
+msgstr "Haftungsausschluss"
+
+#: src/nemo-metadata-columns.py:134
+msgid "Warning"
+msgstr "Warnung"
+
+#: src/nemo-metadata-columns.py:135
+msgid "Source"
+msgstr "Quelle"
+
+#: src/nemo-metadata-columns.py:136
+msgid "Comment"
+msgstr "Kommentar"
+
+#: src/nemo-metadata-columns.py:145
+msgid "Subject"
+msgstr "Betreff"
+
+#: src/nemo-metadata-columns.py:146
+msgid "Keywords"
+msgstr "Stichwörter"
+
+#: src/nemo-metadata-columns.py:147
+msgid "Author"
+msgstr "Autor"
+
+#: src/nemo-metadata-columns.py:148
+msgid "Modified"
+msgstr "Geändert"
+
+#: src/nemo-metadata-columns.py:149
+msgid "Pages"
+msgstr "Seiten"
+
+#: src/nemo-metadata-columns.py:160
+#, python-brace-format
+msgid "{focal_35mm} (35mm film), {focal_lense} (lens)"
+msgstr "{focal_35mm} (in 35mm-Film), {focal_lense} (Linse)"
+
+#: src/nemo-metadata-columns.py:163
+msgid "Flash did not fire"
+msgstr "Blitz löste nicht aus"
+
+#: src/nemo-metadata-columns.py:164
+msgid "Flash fired"
+msgstr "Blitz löste aus"
+
+#: src/nemo-metadata-columns.py:165
+msgid "Strobe return light not detected"
+msgstr "Blitzreflektion nicht erkannt"
+
+#: src/nemo-metadata-columns.py:166
+msgid "Strobe return light detected"
+msgstr "Blitzreflektion erkannt"
+
+#: src/nemo-metadata-columns.py:167
+msgid "return light detected"
+msgstr "Blitzreflektion erkannt"
+
+#: src/nemo-metadata-columns.py:168
+msgid "return light not detected"
+msgstr "Blitzreflektion nicht erkannt"
+
+#: src/nemo-metadata-columns.py:169
+msgid "compulsory flash mode"
+msgstr "Erzwungener Blitzmodus"
+
+#: src/nemo-metadata-columns.py:170
+msgid "auto mode"
+msgstr "Automatik-Modus"
+
+#: src/nemo-metadata-columns.py:171
+msgid "No flash function"
+msgstr "Keine Blitzlichtfunktion"
+
+#: src/nemo-metadata-columns.py:172
+msgid "red-eye reduction mode"
+msgstr "Rote-Augen-Reduktions-Modus"
+
+#: src/nemo-metadata-columns.py:175
+msgid "Horizontal (normal)"
+msgstr "Horizontal (Normal)"
+
+#: src/nemo-metadata-columns.py:176
+msgid "Mirrored horizontal"
+msgstr "Horizontal (Gespiegelt)"
+
+#: src/nemo-metadata-columns.py:177
+msgid "Rotated 180"
+msgstr "180° gedreht"
+
+#: src/nemo-metadata-columns.py:178
+msgid "Mirrored vertical"
+msgstr "Vertikal gespiegelt"
+
+#: src/nemo-metadata-columns.py:179
+msgid "Mirrored horizontal then rotated 90 CCW"
+msgstr "Horizontal gespiegelt, dann 90° gegen den UZS gedreht"
+
+#: src/nemo-metadata-columns.py:180
+msgid "Rotated 90 CW"
+msgstr "90° im UZS gedreht"
+
+#: src/nemo-metadata-columns.py:181
+msgid "Mirrored horizontal then rotated 90 CW"
+msgstr "Horizontal gespiegelt, dann 90° im UZS gedreht"
+
+#: src/nemo-metadata-columns.py:182
+msgid "Rotated 90 CC"
+msgstr "90° gegen den UZS gedreht"
+
+#: src/nemo-metadata-columns.py:184
+msgid "ExposureProgram"
+msgstr "Belichtungsprogramm"
+
+#: src/nemo-metadata-columns.py:185 src/nemo-metadata-columns.py:196
+msgid "Unidentified"
+msgstr "Unbekannt"
+
+#: src/nemo-metadata-columns.py:186 src/nemo-metadata-columns.py:212
+msgid "Manual"
+msgstr "Manuell"
+
+#: src/nemo-metadata-columns.py:187
+msgid "Program Normal"
+msgstr "Normales Programm"
+
+#: src/nemo-metadata-columns.py:188
+msgid "Aperture Priority"
+msgstr "Blendenpriorität"
+
+#: src/nemo-metadata-columns.py:189
+msgid "Shutter Priority"
+msgstr "Verschlusszeitpriorität"
+
+#: src/nemo-metadata-columns.py:190
+msgid "Program Creative"
+msgstr "Kreatives Programm"
+
+#: src/nemo-metadata-columns.py:191
+msgid "Program Action"
+msgstr "Bewegungsprogramm"
+
+#: src/nemo-metadata-columns.py:192
+msgid "Portrait Mode"
+msgstr "Hochformat (Porträt)"
+
+#: src/nemo-metadata-columns.py:193
+msgid "Landscape Mode"
+msgstr "Querformat (Landschaft)"
+
+#: src/nemo-metadata-columns.py:195
+msgid "MeteringMode"
+msgstr "Messmethode"
+
+#: src/nemo-metadata-columns.py:197
+msgid "Average"
+msgstr "Durchschnitt"
+
+#: src/nemo-metadata-columns.py:198
+msgid "CenterWeightedAverage"
+msgstr "Mittengewichteter Durchschnitt"
+
+#: src/nemo-metadata-columns.py:199
+msgid "Spot"
+msgstr "Spot"
+
+#: src/nemo-metadata-columns.py:200
+msgid "MultiSpot"
+msgstr "Mehrfach-Spot"
+
+#: src/nemo-metadata-columns.py:201
+msgid "Pattern"
+msgstr "Muster"
+
+#: src/nemo-metadata-columns.py:202
+msgid "Partial"
+msgstr "Teilweise"
+
+#: src/nemo-metadata-columns.py:203
+msgid "other"
+msgstr "Andere"
+
+#: src/nemo-metadata-columns.py:205
+msgid "ExposureMode"
+msgstr "Belichtungsmodus"
+
+#: src/nemo-metadata-columns.py:206
+msgid "Auto Exposure"
+msgstr "Belichtungsautomatik"
+
+#: src/nemo-metadata-columns.py:207
+msgid "Manual Exposure"
+msgstr "Manuelle Belichtung"
+
+#: src/nemo-metadata-columns.py:208
+msgid "Auto Bracket"
+msgstr "Automatische Belichtungsreihe"
+
+#: src/nemo-metadata-columns.py:210
+msgid "WhiteBalance"
+msgstr "Weißabgleich"
+
+#: src/nemo-metadata-columns.py:211
+msgid "Auto"
+msgstr "Automatik"
+
+#: src/nemo-metadata-columns.py:217
+msgid "Normal"
+msgstr "Normal"
+
+#: src/nemo-metadata-columns.py:218
+msgid "Soft"
+msgstr "Weich"
+
+#: src/nemo-metadata-columns.py:219
+msgid "Hard"
+msgstr "Hart"
+
+#: src/nemo-metadata-columns.py:331 src/nemo-metadata-columns.py:416
+#: src/nemo-metadata-columns.py:418 src/nemo-metadata-columns.py:461
+#: src/nemo-metadata-columns.py:462
+#, python-format
+msgid "%s pixels"
+msgstr ""

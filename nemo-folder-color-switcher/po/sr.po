@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2016-02-17 23:23+0000\n"
+"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
+"Language-Team: српски <xfce4@xfce4.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+"Language: sr\n"
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr "пешчану"
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr "беж"
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "жуту"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "наранџасту"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "смеђу"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "црвену"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "љубичасту"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "ружичасту"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "плаву"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "тиркизну"
+
+#. Colors submenu
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr "светло плаву"
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr "зеленкасту"
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "зелену"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "белу"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "сиву"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "црну"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "Враћа подразумевану боју изабраним фасциклама"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "Враћа подразумевану боју изабраној фасцикли"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "Мења боју изабраним фасциклама у %s"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "Мења боју изабраној фасцикли у %s"

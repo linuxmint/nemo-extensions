@@ -1,12 +1,13 @@
 Source: nemo-fileroller
-Section: misc
+Section: utils
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
-               libnemo-extension-dev (>= 1.0.0),
+               libnemo-extension-dev (>= 2.6.0),
                libglib2.0-dev (>= 2.14.0),
                dh-autoreconf
 Standards-Version: 3.9.6
+Homepage: https://github.com/linuxmint/nemo-extensions
 
 Package: nemo-fileroller
 Architecture: i386 amd64

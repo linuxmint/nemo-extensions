@@ -1,0 +1,21 @@
+#!/bin/sh
+
+#DEBHELPER#
+
+# Make sure the libnemo-python.so lands in the extension directory
+NEMO_EXTENSIONDIR="`pkg-config --variable=extensiondir libnemo-extension`"
+NEMO_PYTHON_LIBDIR="`pkg-config --variable=libdir nemo-python`"
+SO_FILE="libnemo-python.so"
+EXTENSIONDIR_SO="${NEMO_EXTENSIONDIR}/$SO_FILE"
+
+if [ ! -f $EXTENSIONDIR_SO ]; then
+  echo -n "Linking libnemo-python.so in Nemo's extensiondir..."
+  ln -s "${EXTENSIONDIR_SO}" "${NEMO_PYTHON_LIBDIR}/nemo/extensions-3.0/$SO_FILE"
+  if [ $? -eq 0 ]; then
+    echo "OK"
+  else
+    echo "WARNING: libnemo-python.so might not be in the directory."
+  fi
+fi
+
+exit 0

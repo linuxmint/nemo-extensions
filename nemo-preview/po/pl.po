@@ -8,7 +8,7 @@
 # Aviary.pl <gnomepl@aviary.pl>, 2011-2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: sushi\n"
+"Project-Id-Version: nemo-preview 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-04 20:56+0200\n"
 "PO-Revision-Date: 2012-09-04 20:57+0200\n"

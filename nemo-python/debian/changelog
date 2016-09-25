@@ -1,3 +1,13 @@
+nemo-python (3.2.0) sarah; urgency=medium
+
+  * 3.2.0
+  * Port to Python 3
+  * Update debian build files
+  * Include newer python.m4
+  * Fix Python library path on multiarch
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
+
 nemo-python (3.0.0) sarah; urgency=medium
 
   * 3.0.0

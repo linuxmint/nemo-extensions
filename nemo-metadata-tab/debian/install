@@ -1,0 +1,15 @@
+src/nemo-metadata-tab.py usr/share/nemo-metadata-tab
+src/exifread/__init__.py usr/share/nemo-metadata-tab/exifread
+src/exifread/classes.py usr/share/nemo-metadata-tab/exifread
+src/exifread/exif_log.py usr/share/nemo-metadata-tab/exifread
+src/exifread/utils.py usr/share/nemo-metadata-tab/exifread
+src/exifread/tags/__init__.py usr/share/nemo-metadata-tab/exifread/tags
+src/exifread/tags/exif.py usr/share/nemo-metadata-tab/exifread/tags
+src/exifread/tags/makernote/__init__.py usr/share/nemo-metadata-tab/exifread/tags/makernote
+src/exifread/tags/makernote/apple.py usr/share/nemo-metadata-tab/exifread/tags/makernote
+src/exifread/tags/makernote/canon.py usr/share/nemo-metadata-tab/exifread/tags/makernote
+src/exifread/tags/makernote/casio.py usr/share/nemo-metadata-tab/exifread/tags/makernote
+src/exifread/tags/makernote/fujifilm.py usr/share/nemo-metadata-tab/exifread/tags/makernote
+src/exifread/tags/makernote/nikon.py usr/share/nemo-metadata-tab/exifread/tags/makernote
+src/exifread/tags/makernote/olympus.py usr/share/nemo-metadata-tab/exifread/tags/makernote
+

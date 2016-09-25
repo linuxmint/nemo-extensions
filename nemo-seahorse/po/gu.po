@@ -6,7 +6,7 @@
 # Sweta Kothari <swkothar@redhat.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: gu\n"
+"Project-Id-Version: nemo-seahorse 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 11:29+0200\n"
 "PO-Revision-Date: 2011-02-18 11:41+0530\n"

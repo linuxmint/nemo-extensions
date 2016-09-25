@@ -1,11 +1,11 @@
 # Copyright (C) 2008 Choe Hwanjin
 # This file is distributed under the same license as the
-# nautilus-filename-repairer package.
+# nemo-filename-repairer package.
 # Choe Hwanjin <choe.hwanjin@gmail.com>, 2008
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: nautilus filename repairer 0.0.0\n"
+"Project-Id-Version: nemo-filename-repairer 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-27 22:58+0900\n"
 "PO-Revision-Date: 2008-01-13 02:07+ZONE\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/nautilus-filename-repairer.c:119
+#: ../src/nemo-filename-repairer.c:119
 #, c-format
 msgid ""
 "<span size=\"larger\" weight=\"bold\">There was an error renaming the file "
@@ -25,7 +25,7 @@ msgstr ""
 "<span size=\"larger\" weight=\"bold\">파일이름을 \"%s\"(으)로 바꾸는 데 오류"
 "가 발생했습니다</span>"
 
-#: ../src/nautilus-filename-repairer.c:156
+#: ../src/nemo-filename-repairer.c:156
 #, c-format
 msgid ""
 "<span size=\"larger\" weight=\"bold\">A file named \"%s\" already exists.</"
@@ -34,7 +34,7 @@ msgstr ""
 "<span size=\"larger\" weight=\"bold\">\"%s\"(이)라는 이름의 파일이 이미 있습"
 "니다.</span>"
 
-#: ../src/nautilus-filename-repairer.c:159
+#: ../src/nemo-filename-repairer.c:159
 #, c-format
 msgid ""
 "If you want to rename the selected file, please move or rename \"%s\" first."
@@ -42,29 +42,29 @@ msgstr ""
 "그래도 이름을 바꾸시려면, 먼저 \"%s\" 파일을 다른 디렉토리로 옮기거나 이름을 "
 "바꾸십시오."
 
-#: ../src/nautilus-filename-repairer.c:216
+#: ../src/nemo-filename-repairer.c:216
 msgid "Repair filename ..."
 msgstr "파일이름 고치기 ..."
 
-#: ../src/nautilus-filename-repairer.c:217
+#: ../src/nemo-filename-repairer.c:217
 msgid "Repair filename"
 msgstr "파일이름 고치기"
 
-#: ../src/nautilus-filename-repairer.c:264
+#: ../src/nemo-filename-repairer.c:264
 #, c-format
 msgid "Re_name as \"%s\""
 msgstr "\"%s\"(으)로 이름 바꾸기(_N)"
 
-#: ../src/nautilus-filename-repairer.c:265
+#: ../src/nemo-filename-repairer.c:265
 #, c-format
 msgid "Rename as \"%s\"."
 msgstr "\"%s\"(으)로 이름을 바꿉니다."
 
-#: ../src/nautilus-filename-repairer.c:409
+#: ../src/nemo-filename-repairer.c:409
 msgid "Select a filename"
 msgstr "파일이름 선택"
 
-#: ../src/nautilus-filename-repairer.c:410
+#: ../src/nemo-filename-repairer.c:410
 msgid "Select a filename from sub menu items."
 msgstr "서브메뉴에서 파일이름을 고릅니다."
 

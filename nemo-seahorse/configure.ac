@@ -1,13 +1,17 @@
-AC_PREREQ([2.63])
-AC_INIT([nemo-seahorse], [3.0.0],
-        [https://github.com/linuxmint/nemo-extensions/issues],
-        [nemo-seahorse])
+AC_PREREQ(2.63)
+
+AC_INIT([nemo-seahorse], [3.2.0],
+	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-seahorse])
+
+AC_CONFIG_HEADERS([config.h])
+
+AC_SUBST([PACKAGE_NAME], ["$PACKAGE_NAME"])
+AC_SUBST([PACKAGE_VERSION], ["$PACKAGE_VERSION"])
 
 # -----------------------------------------------------------------------------
 
 AM_INIT_AUTOMAKE([1.11 tar-ustar foreign -Wno-portability])
 AM_SANITY_CHECK
-AM_CONFIG_HEADER(config.h)
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AM_MAINTAINER_MODE([enable])
 AC_CONFIG_MACRO_DIR([m4])

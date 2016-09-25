@@ -1,104 +1,95 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-01 11:34+0300\n"
+"Project-Id-Version: nemo-pastebin VERSION\n"
+"POT-Creation-Date: 2015-12-16 22:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. if not pasteurl or not re.match("^http://.*$", pasteurl):
-#: ../nemo-pastebin.py:108
-msgid "Unable to read or parse the result page."
+#: src/nemo-pastebin-preferences.py:67
+msgid "Nemo Pastebin Extension Preferences"
 msgstr ""
 
-#: ../nemo-pastebin.py:109
-msgid "It could be a server timeout or a change server side. Try later."
+#: src/nemo-pastebin-preferences.py:78
+msgid "Pastebin Service"
 msgstr ""
 
-#: ../nemo-pastebin.py:166
-#, python-format
-msgid "Pastebin to %s"
+#: src/nemo-pastebin-preferences.py:89
+msgid "Author"
 msgstr ""
 
-#: ../nemo-pastebin.py:167
-#, python-format
-msgid "Send this file to %s"
-msgstr ""
-
-#: ../nemo-pastebin.py:193
-msgid "Nemo Pastebin:::Send files to a paste service via the context menu"
-msgstr ""
-
-#: ../nemo-pastebin-configurator.py:45
-#, python-format
-msgid "Can't find %s in any known prefix!"
-msgstr ""
-
-#: ../data/nemo-pastebin-configurator.desktop:4
-msgid "Nemo Pastebin Configurator"
-msgstr ""
-
-#: ../data/nemo-pastebin-configurator.desktop:6
-msgid "Nemo Pastebin configuration panel"
-msgstr ""
-
-#: ../data/nemo-pastebin-configurator.desktop:7
-msgid "nemo-pastebin"
-msgstr ""
-
-#: ../data/nemo-pastebin.gschema.xml.h:1
-msgid "Show a bubble"
-msgstr ""
-
-#: ../data/nemo-pastebin.gschema.xml.h:2
-msgid ""
-"Show a notification to inform the user about whether the operation has been "
-"completed successfully or not."
-msgstr ""
-
-#: ../data/nemo-pastebin.gschema.xml.h:3
-msgid "Open a browser window"
-msgstr ""
-
-#: ../data/nemo-pastebin.gschema.xml.h:4
-msgid "Open a browser and point it to the pasted document's URL."
-msgstr ""
-
-#: ../data/nemo-pastebin.gschema.xml.h:5
-msgid "Selected pastebin service"
-msgstr ""
-
-#: ../data/nemo-pastebin.gschema.xml.h:6
-msgid "The pastebin which the file will be sent to."
-msgstr ""
-
-#: ../data/nemo-pastebin.gschema.xml.h:7
-msgid "Author (if not set, the login name will be used)"
-msgstr ""
-
-#: ../data/nemo-pastebin.gschema.xml.h:8
-msgid "The name to use as author of the document."
-msgstr ""
-
-#: ../data/nemo-pastebin.gschema.xml.h:9
+#: src/nemo-pastebin-preferences.py:90
 msgid "Username"
 msgstr ""
 
-#: ../data/nemo-pastebin.gschema.xml.h:10
-msgid "Most services don't need this."
+#: src/nemo-pastebin-preferences.py:91
+msgid "Password"
 msgstr ""
 
-#: ../data/nemo-pastebin.gschema.xml.h:11
-msgid "Password (if needed)"
+#: src/nemo-pastebin-preferences.py:92
+msgid "Title"
+msgstr ""
+
+#: src/nemo-pastebin-preferences.py:93
+msgid "Perma-Tag"
+msgstr ""
+
+#: src/nemo-pastebin-preferences.py:94
+msgid "Jabber ID"
+msgstr ""
+
+#: src/nemo-pastebin-preferences.py:109
+msgid "Open in browser when finished"
+msgstr ""
+
+#: src/nemo-pastebin-preferences.py:114
+msgid "Copy pastebin URL to clipboard"
+msgstr ""
+
+#: src/nemo-pastebin.py:66
+msgid "Upload files to online pastebins"
+msgstr ""
+
+#: src/nemo-pastebin.py:110
+#, python-format
+msgid "Upload to %s"
+msgstr ""
+
+#: src/nemo-pastebin.py:112
+msgid "Upload to a pastebin service"
+msgstr ""
+
+#: src/nemo-pastebin.py:116
+msgid "Upload this file to an online pastebin service."
+msgstr ""
+
+#: src/nemo-pastebin.py:144
+msgid "Pastebin"
+msgstr ""
+
+#: src/nemo-pastebin.py:145
+#, python-brace-format
+msgid ""
+"Uploading {filename}\n"
+"to {service}…"
+msgstr ""
+
+#: src/nemo-pastebin.py:184
+msgid "Pastebin uploaded!"
+msgstr ""
+
+#: src/nemo-pastebin.py:188
+msgid "Copy URL"
+msgstr ""
+
+#: src/nemo-pastebin.py:192
+msgid "Open in browser"
+msgstr ""
+
+#: src/nemo-pastebin.py:218
+msgid "Pastebin Error"
 msgstr ""

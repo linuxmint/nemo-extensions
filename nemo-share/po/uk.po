@@ -6,7 +6,7 @@
 # Дмитро Шевченко <bsdpolitruk@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-share master\n"
+"Project-Id-Version: nemo-share 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-04 17:06+0200\n"
 "PO-Revision-Date: 2009-09-12 18:51+0300\n"

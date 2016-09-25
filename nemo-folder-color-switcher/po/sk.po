@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2014-09-16 11:56+0000\n"
+"Last-Translator: tibbi <tibbbi2@gmail.com>\n"
+"Language-Team: Slovak <sk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr "Piesok"
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr "Béžová"
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "Žltá"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "Oranžová"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "Hnedá"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "Červená"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "Fialová"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "Ružová"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "Modrá"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "Azúrová"
+
+#. Colors submenu
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr "Voda"
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr "Čajovníková zelená"
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "Zelená"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "Biela"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "Šedá"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "Čierna"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "Obnoví farbu vybraných priečinkov"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "Obnoví farbu vybraného priečinku"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "Zmení farbu vybraných priečinkov na %s"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "Zmení farbu vybraného priečinku na %s"

@@ -1,7 +1,15 @@
-AC_INIT([nemo-image-converter], [3.0.0], [j@bitron.ch], [nemo-image-converter])
+AC_PREREQ(2.63)
+
+AC_INIT([nemo-image-converter], [3.2.0],
+	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-image-converter])
+
+AC_CONFIG_HEADERS([config.h])
+
+AC_SUBST([PACKAGE_NAME], ["$PACKAGE_NAME"])
+AC_SUBST([PACKAGE_VERSION], ["$PACKAGE_VERSION"])
+
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([Makefile.am])
-AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([dist-bzip2])
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 

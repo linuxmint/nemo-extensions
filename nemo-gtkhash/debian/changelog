@@ -1,3 +1,12 @@
+nemo-gtkhash (3.2.0) sarah; urgency=medium
+
+  * 3.2.0
+  * Update debian build files
+  * Fix compilation error due to disabled MDC2 algorithm in many OpenSSL builds
+  * Enable nettle by default (adds support for SHA3)
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
+
 nemo-gtkhash (3.0.0) sarah; urgency=medium
 
   * 3.0.0

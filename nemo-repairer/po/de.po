@@ -1,13 +1,13 @@
-# German translation of nautilus-filename-repairer.
+# German translation of nemo-filename-repairer.
 # Copyright (C) 2008 Choe Hwanjin.
 # This file is distributed under the same license as the
-# nautilus-filename-repairer package.
+# nemo-filename-repairer package.
 # Chris Leick <c.leick@vollbio.de>, 2011
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: nautilus-filename-repairer 0.0.6-1\n"
-"Report-Msgid-Bugs-To: nautilus-filename-repairer@packages.debian.org\n"
+"Project-Id-Version: nemo-filename-repairer 3.2.0\n"
+"Report-Msgid-Bugs-To: nemo-filename-repairer@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-28 10:44+0200\n"
 "PO-Revision-Date: 2011-08-02 19:05+0100\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/nautilus-filename-repairer.c:272
+#: ../src/nemo-filename-repairer.c:272
 #, c-format
 msgid ""
 "An error accurs while renaming the file to \"%s\":\n"
@@ -27,31 +27,31 @@ msgstr ""
 "\n"
 "<span weight=\"bold\" size=\"larger\">%s</span>"
 
-#: ../src/nautilus-filename-repairer.c:318
+#: ../src/nemo-filename-repairer.c:318
 #, c-format
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr ""
 "Eine Datei mit dem Namen »%s« existiert bereits. Möchten Sie sie ersetzen?"
 
-#: ../src/nautilus-filename-repairer.c:389
+#: ../src/nemo-filename-repairer.c:389
 #, c-format
 msgid "Re_name as \"%s\""
 msgstr "_Umbenennen in »%s«"
 
-#: ../src/nautilus-filename-repairer.c:390
+#: ../src/nemo-filename-repairer.c:390
 #, c-format
 msgid "Rename as \"%s\"."
 msgstr "Umbenennen in »%s«"
 
-#: ../src/nautilus-filename-repairer.c:412
+#: ../src/nemo-filename-repairer.c:412
 msgid "Select a filename"
 msgstr "Wählen Sie einen Dateinamen."
 
-#: ../src/nautilus-filename-repairer.c:413
+#: ../src/nemo-filename-repairer.c:413
 msgid "Select a filename from sub menu items."
 msgstr "Wählen Sie einen Dateinamen aus den Elementen des Untermenüs."
 
-#: ../src/nautilus-filename-repairer.c:422
+#: ../src/nemo-filename-repairer.c:422
 #, c-format
 msgid "Rename as \"%s\""
 msgstr "Umbenennen in »%s«"

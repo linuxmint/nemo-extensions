@@ -1,3 +1,24 @@
+nemo-pastebin (3.2.0) sarah; urgency=medium
+
+  * 3.2.0
+  * Port to Python 3
+  * Improve performance
+  * Improve preference tool
+  * Improve status feedback in notifications
+  * Add actions to success notifications
+  * Watch config file with inotify if available
+  * Add German translation
+  * Update debian build files
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
+
+nemo-pastebin (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:52:38 +0100
+
+
 nemo-pastebin (3.0.0) sarah; urgency=medium
 
   * 3.0.0

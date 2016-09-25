@@ -1,6 +1,13 @@
-AC_INIT([nemo-filename-repairer], [3.0.0], [choe.hwanjin@gmail.com], [nemo-filename-repairer])
+AC_PREREQ(2.63)
+
+AC_INIT([nemo-filename-repairer], [3.2.0],
+	[https://github.com/linuxmint/nemo-extensions/issues], [nemo-filename-repairer])
+
+AC_CONFIG_HEADERS([config.h])
+
+AC_SUBST([PACKAGE_NAME], ["$PACKAGE_NAME"])
+AC_SUBST([PACKAGE_VERSION], ["$PACKAGE_VERSION"])
 AC_CONFIG_SRCDIR([Makefile.am])
-AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([dist-bzip2])
 
 # Checks for programs.

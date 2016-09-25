@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2016-02-26 14:12+0000\n"
+"Last-Translator: Yuki Painglay <Unknown>\n"
+"Language-Team: Burmese <my@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "အဝါရောင်"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "လိမ္မော်ရောင်"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "အညိုရောင်"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "အ​နီရောင်"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "ခရမ်းနုရောင်"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "ပန်းရောင်"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "အ​ပြာရောင်"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "အပြာနုရောင်"
+
+#. Colors submenu
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "အစိမ်းရောင်"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "အဖြူရောင်"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "မီးခိုးရောင်"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "အနက်ရောင်"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "ရွေးချယ်ထားသော folder များအရောင်ကိုမူလအတိုင်းပြန်ထားမည်။"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "ရွေးချယ်ထားသော folder အရောင်ကိုမူလအတိုင်းပြန်ထားမည်။"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "ရွေးချယ်ထားသော folder များအရောင်ကို %s သို့ပြောင်းလဲပါ။"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "ရွေးချယ်ထားသော folder အရောင်ကို %s သို့ပြောင်းလဲပါ။"

@@ -1283,8 +1283,6 @@ nemo_share_register_type (GTypeModule *module)
 void
 nemo_module_initialize (GTypeModule  *module)
 {
-  /*g_print ("Initializing nemo-share extension\n");*/
-
   bindtextdomain("nemo-share", NEMO_SHARE_LOCALEDIR);
   bind_textdomain_codeset("nemo-share", "UTF-8");
 

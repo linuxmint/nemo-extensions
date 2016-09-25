@@ -1,3 +1,16 @@
+nemo-seahorse (3.2.0) sarah; urgency=medium
+
+  * 3.2.0
+  * Update debian build files
+
+ -- Eduard Dopler <kontakt@eduard-dopler.de>  Thu, 22 Sep 2016 14:20:00 +0200
+
+nemo-seahorse (3.0.0) sarah; urgency=medium
+
+  * 3.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Apr 2016 12:55:47 +0100
+
 nemo-seahorse (3.0.0) sarah; urgency=medium
 
   * 3.0.0

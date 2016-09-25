@@ -1,0 +1,30 @@
+Source: nemo-metadata-columns
+Section: utils
+Priority: optional
+Maintainer: Eduard Dopler <kontakt@eduard-dopler.de>
+Build-Depends: debhelper (>= 9),
+               python3-all (>= 3.0),
+               python3-distutils-extra,
+               dh-python
+Standards-Version: 3.9.6
+Homepage: https://github.com/EduardDopler/nemo-extensions
+X-Python-Version: >= 3.0
+X-Python3-Version: >= 3.0
+
+Package: nemo-metadata-columns
+Architecture: all
+Section: utils
+Priority: optional
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         nemo,
+         python-nemo (>= 3.0.0),
+         python3-mediainfodll,
+         python3-pil,
+         poppler-utils,
+         gir1.2-glib-2.0
+Replaces: nemo-media-columns
+Description: Nemo extension, adding columns for media metadata.
+ This extension advances Nemo columns: A great set of media metadata
+ can be shown and sorted in new columns. Supported file types are:
+ audio, video, images and PDF.

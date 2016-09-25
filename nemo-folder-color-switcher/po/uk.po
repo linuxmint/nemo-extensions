@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2016-04-16 15:20+0000\n"
+"Last-Translator: Микола Ткач <Stuartlittle1970@gmail.com>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr ""
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr "Піщаний"
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr "Беж"
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "Жовтий"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "Помаранчевий"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "Коричневий"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "Червоний"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "Пурпуровий"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "Рожевий"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "Синій"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "Блакитний"
+
+#. Colors submenu
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr "Світло-блакитний"
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr "Зеленяво-блакитний"
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "Зелений"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "Білий"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "Сірий"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "Чорний"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "Відновити колір вибраних тек"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "Відновити колір вибраної теки"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "Змінити колір вибраних тек для %s"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "Змінити колір вибраної теки для %s"

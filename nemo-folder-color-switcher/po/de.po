@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-folder-color-switcher 3.2.0\n"
+"POT-Creation-Date: 2015-12-04 18:30+0100\n"
+"PO-Revision-Date: 2016-09-22 16:45+0200\n"
+"Last-Translator: Eduard Dopler <kontakt@eduard-dopler.de>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/nemo-folder-color-switcher.py:58
+msgid "Change folder colors via context menu"
+msgstr "Ordnerfarben ändern per Kontextmenü"
+
+#: src/nemo-folder-color-switcher.py:103
+msgid "Sand"
+msgstr "Sand"
+
+#: src/nemo-folder-color-switcher.py:104
+msgid "Beige"
+msgstr "Beige"
+
+#: src/nemo-folder-color-switcher.py:105
+msgid "Yellow"
+msgstr "Gelb"
+
+#: src/nemo-folder-color-switcher.py:106
+msgid "Orange"
+msgstr "Orange"
+
+#: src/nemo-folder-color-switcher.py:107
+msgid "Brown"
+msgstr "Braun"
+
+#: src/nemo-folder-color-switcher.py:108
+msgid "Red"
+msgstr "Rot"
+
+#: src/nemo-folder-color-switcher.py:109
+msgid "Purple"
+msgstr "Purpur"
+
+#: src/nemo-folder-color-switcher.py:110
+msgid "Pink"
+msgstr "Rosa"
+
+#: src/nemo-folder-color-switcher.py:111
+msgid "Blue"
+msgstr "Blau"
+
+#: src/nemo-folder-color-switcher.py:112
+msgid "Cyan"
+msgstr "Cyan"
+
+#. Colors submenu
+#: src/nemo-folder-color-switcher.py:113
+msgid "Aqua"
+msgstr "Grünblau"
+
+#: src/nemo-folder-color-switcher.py:114
+msgid "Teal"
+msgstr "Blaugrün"
+
+#: src/nemo-folder-color-switcher.py:115
+msgid "Green"
+msgstr "Grün"
+
+#: src/nemo-folder-color-switcher.py:116
+msgid "White"
+msgstr "Weiß"
+
+#: src/nemo-folder-color-switcher.py:117
+msgid "Grey"
+msgstr "Grau"
+
+#: src/nemo-folder-color-switcher.py:118
+msgid "Black"
+msgstr "Schwarz"
+
+#: src/nemo-folder-color-switcher.py:365
+msgid "Restores the color of the selected folders"
+msgstr "Stellt die Farbe der ausgewählten Ordner wieder hier"
+
+#: src/nemo-folder-color-switcher.py:363
+msgid "Restores the color of the selected folder"
+msgstr "Stellt die Farbe des ausgewählten Ordners wieder hier"
+
+#: src/nemo-folder-color-switcher.py:376
+#, python-format
+msgid "Changes the color of the selected folders to %s"
+msgstr "Die Farbe der ausgewählten Ordner zu %s ändern"
+
+#: src/nemo-folder-color-switcher.py:373
+#, python-format
+msgid "Changes the color of the selected folder to %s"
+msgstr "Die Farbe des ausgewählten Ordners zu %s ändern"

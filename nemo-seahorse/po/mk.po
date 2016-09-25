@@ -10,7 +10,7 @@
 # Jovan Naumovski <jovan@lugola.net>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: seahorse.HEAD.mk\n"
+"Project-Id-Version: nemo-seahorse 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 11:29+0200\n"
 "PO-Revision-Date: 2008-03-08 15:12+0100\n"

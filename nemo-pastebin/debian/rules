@@ -1,7 +1,4 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --with python2
-
-override_dh_auto_install:
-	dh_auto_install -- --install-scripts=/usr/share/nemo-pastebin/
+	dh $@ --with python3 --buildsystem=pybuild

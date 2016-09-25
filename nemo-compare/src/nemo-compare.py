@@ -1,166 +1,180 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-#    nemo-compare --- Context menu extension for Nemo file manager
-#    Copyright (C) 2011  Guido Tabbernuk <boamaod@gmail.com>
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#!/usr/bin/python3
+"""nemo-compare -- Nemo extension for file comparison via context menu.
 
-import sys
-import os
-import urllib
+Copyright (C) 2011  Guido Tabbernuk <boamaod@gmail.com>
+Copyright (C) 2015  Eduard Dopler <kontakt@eduard-dopler.de>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"""
+
 import gettext
 import locale
+import os
 import signal
-from gi.repository import GLib
-signal.signal(signal.SIGINT, signal.SIG_DFL)
+import sys
+from urllib.parse import unquote
 
-from gi.repository import Nemo, GObject, Gio
+from gi.repository import GLib, GObject, Gio, Nemo
 
 sys.path.append("/usr/share/nemo-compare")
+import compare_utils as cp_utils
 
-import utils
 
-class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescProvider):
-	'''Class for the extension itself'''
+# react on default SIGINT
+signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-	# to hold an item for later comparison
-	for_later = None
 
-	def __init__(self):
-		'''Load config'''
+TEXTDOMAIN = "nemo-compare"
 
-		self.config = utils.NemoCompareConfig()
-		self.config.load()
 
-	def menu_activate_cb(self, menu, paths):
-		'''Telling from amount of paths runs appropriate comparator engine'''
-		if len(paths) == 1:
-			self.for_later = paths[0]
-			return
+def init_locale():
+    """Initialize internationalization."""
+    locale.setlocale(locale.LC_ALL, "")
+    gettext.bindtextdomain(TEXTDOMAIN)
+    gettext.textdomain(TEXTDOMAIN)
 
-		cmd = None
-		if len(paths) == 2:
-			cmd = [self.config.diff_engine] + paths
-		elif len(paths) == 3 and len(self.config.diff_engine_3way.strip()) > 0:
-			cmd = [self.config.diff_engine_3way] + paths
-		elif len(self.config.diff_engine_multi.strip()) > 0:
-			cmd = [self.config.diff_engine_multi] + paths
 
-		if cmd is not None:
-			GLib.spawn_async(argv=cmd, flags=GLib.SpawnFlags.DEFAULT | GLib.SpawnFlags.SEARCH_PATH)
+def _(message):
+    """Return translated version of message.
 
-	def valid_file(self, file):
-		'''Tests if the file is valid comparable'''
-		if file.get_uri_scheme() == 'file' and file.get_file_type() in (Gio.FileType.DIRECTORY, Gio.FileType.REGULAR, Gio.FileType.SYMBOLIC_LINK):
-			return True
-		else:
-			return False
+    As the textdomain could have been changed by other (nemo-extension)
+    scripts, this function checks whether it is set correctly.
+    """
+    if gettext.textdomain() != TEXTDOMAIN:
+        init_locale()
+    return gettext.gettext(message)
 
-	def get_file_items(self, window, files):
-		'''Main method to detect what choices should be offered in the context menu'''
-		paths = []
-		for file in files:
-			if self.valid_file(file):
-				path = urllib.unquote(file.get_uri()[7:])
-				paths.append(path)
 
-		# no files selected
-		if len(paths) < 1:
-			return
+# extension's name and short description
+NAME_DESC = "Nemo Compare:::" + _("File comparison via context menu.")
 
-		# initialize i18n
-		locale.setlocale(locale.LC_ALL, '')
-		gettext.bindtextdomain(utils.APP)
-		gettext.textdomain(utils.APP)
-		_ = gettext.gettext
 
-		item1 = None
-		item2 = None
-		item3 = None
+class NemoCompareExtension(GObject.GObject,
+                           Nemo.MenuProvider,
+                           Nemo.NameAndDescProvider):
 
-		# for paths with remembered items
-		new_paths = list(paths)
-		
-		for_later_relative = None
-		if self.for_later is not None:
-			if len(paths) >= 1:	
-				for_later_relative = os.path.relpath(self.for_later, os.path.dirname(paths[0]))
-			else: 
-				for_later_relative = self.for_later
+    """Class adding context menu items for file comparison in Nemo.
 
-		# exactly one file selected
-		if len(paths) == 1:
+    Files/Directories can be compared depending on the amount (normal,
+    3way, multi comparision) or remembered for later comparison.
+    """
 
-			# and one was already selected for later comparison
-			if self.for_later is not None:
+    def __init__(self):
+        """Load saved configuration file.
 
-				# we don't want to compare file to itself
-				if self.for_later not in paths:
-					item1 = Nemo.MenuItem(
-						name="NemoCompareExtension::CompareTo",
-						label=_('Compare to: ') + for_later_relative,
-						tip=_("Compare to the file remembered before")
-					)
+        At this time it is guaranteed to be up-to-date and that all
+        engines there are present on this machine.
+        """
+        self.config = cp_utils.NemoCompareConfig()
+        self.remembered = []
 
-					# compare the one saved for later to the one selected now
-					new_paths.insert(0, self.for_later)
+    def get_name_and_desc(self):
+        """Return the name and a short description for the module overview."""
+        return [NAME_DESC]
 
-			# if only one file selected, we offer to remember it for later anyway
-			item3 = Nemo.MenuItem(
-				name="NemoCompareExtension::CompareLater",
-				label=_('Compare Later'),
-				tip=_("Remember file for later comparison")
-			)
+    def menu_activate_cb(self, menu, paths, remember=False):
+        """Callback for menu item activation.
 
-		# can always compare, if more than one selected
-		else:
-			# if we have already remembered one file and add some more, we can do n-way compare
-			if self.for_later is not None:
-				if self.for_later not in paths:
-					# if multi compare enabled and in case of 2 files selected 3way compare enabled
-					if len(self.config.diff_engine_multi.strip()) > 0 or (len(paths) == 2 and len(self.config.diff_engine_3way.strip()) > 0):
-						item1 = Nemo.MenuItem(
-							name="NemoCompareExtension::MultiCompare",
-							label=_('Compare to: ') + for_later_relative,
-							tip=_("Compare selected files to the file remembered before")
-						)
-						# compare the one saved for later to the ones selected now
-						new_paths.insert(0, self.for_later)
+        If remembered is True, store the paths in self.remembered.
+        Else lookup the comparator engine for that amount of paths and
+        run it. The engine list is updated before.
+        """
+        # remember only
+        if remember:
+            self.remembered = paths
+            return
 
-			# if multi compare enabled, we can compare any number
-			# if there are two files selected we can always compare
-			# if three files selected and 3-way compare is on, we can do it
-			if len(self.config.diff_engine_multi.strip()) > 0 or len(paths) == 2 or (len(paths) == 3 and len(self.config.diff_engine_3way.strip()) > 0):
-				item2 = Nemo.MenuItem(
-					name="NemoCompareExtension::CompareWithin",
-					label=_('Compare'),
-					tip=_("Compare selected files")
-				)
+        # check for engine changes
+        self.config.update_engines()
+        # start comparison (if engine for that amount is still available)
+        engine_cmd = [cp_utils.get_engine_for_amount(self.config, len(paths))]
+        engine_cmd.extend(paths)
 
-		if item1: item1.connect('activate', self.menu_activate_cb, new_paths)
-		if item2: item2.connect('activate', self.menu_activate_cb, paths)
-		if item3: item3.connect('activate', self.menu_activate_cb, paths)
+        if engine_cmd:
+            flags = GLib.SpawnFlags.DEFAULT | GLib.SpawnFlags.SEARCH_PATH
+            GLib.spawn_async(argv=engine_cmd, flags=flags)
 
-		items = [item1, item2, item3]
+    def get_file_items(self, window, files):
+        """Create menu items for file comparison.
 
-		while None in items:
-			items.remove(None)
+        Always create "Compare later" menu item.
+        Create "Compare these files" if more than one file is selected.
+        Create "Compare this/these file/s to remembered" if there is
+        something remembered.
+        The menu items' callback functions are connected with
+        menu_activate_cb.
+        """
+        # handle only up to 10 selected files
+        if len(files) > 10:
+            return
 
-		return items
+        paths = [unquote(f.get_uri()[7:])
+                 for f in files
+                 if valid_file(f)]
+        if not paths:
+            return
 
-	def get_background_items(self, window, item):
-		return []
+        num_paths = len(paths)
+        num_remembered = len(self.remembered)
+        combined = paths + self.remembered
+        num_combined = len(combined)
 
-	def get_name_and_desc(self):
-		return [_("Nemo Compare:::Allows file comparison from the context menu")]
+        menus = []
+        # create "Compare within" if selection >=2
+        if ((num_paths >= 2 and
+             self.config.can_compare(num_paths))):
+            item = Nemo.MenuItem(name="NemoCompareExtension::CompareWithin",
+                                 label=_("Compare these items"),
+                                 tip=_("Compare selected items"))
+            item.connect("activate", self.menu_activate_cb, paths)
+            menus.append(item)
+        # create "Compare with remembered" if sth. is remembered
+        if ((num_remembered >= 1 and
+             self.config.can_compare(num_combined))):
+            if num_remembered == 1:
+                compare_to = os.path.relpath(self.remembered[0],
+                                             os.path.dirname(paths[0]))
+            else:
+                compare_to = _("%s remembered items") % len(self.remembered)
+            item = Nemo.MenuItem(name="NemoCompareExtension::CompareTo",
+                                 label=_("Compare to: %s") % compare_to,
+                                 tip=_("Compare with remembered items(s)"))
+            item.connect("activate", self.menu_activate_cb, combined)
+            menus.append(item)
+
+        # always create "Compare later" menu item
+        item = Nemo.MenuItem(name="NemoCompareExtension::CompareLater",
+                             label=_("Compare Later"),
+                             tip=_("Remember item(s) for later comparison"))
+        item.connect("activate", self.menu_activate_cb, paths, True)
+        menus.append(item)
+
+        return menus
+
+    def get_background_items(self, window, item):
+        """Return empty list. Do not react on background clicks."""
+        return []
+
+
+def valid_file(file_object):
+    """Return whether an file_object is comparable.
+
+    That is either a regular file, a symbolic link or a directory,
+    all with an "file" URI scheme.
+    """
+    valid_file_types = (Gio.FileType.DIRECTORY,
+                        Gio.FileType.REGULAR,
+                        Gio.FileType.SYMBOLIC_LINK)
+    return ((file_object.get_uri_scheme() == "file" and
+             file_object.get_file_type() in valid_file_types))
