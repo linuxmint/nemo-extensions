@@ -30,6 +30,7 @@
 #include "nemo-image-rotator.h"
 
 #include <libnemo-extension/nemo-menu-provider.h>
+#include <libnemo-extension/nemo-name-and-desc-provider.h>
 
 #include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
@@ -145,6 +146,13 @@ nemo_image_converter_get_file_items (NemoMenuProvider *provider,
 	return NULL;
 }
 
+static GList *
+nemo_image_converter_get_name_and_desc (NemoNameAndDescProvider *provider) {
+	GList *ret = NULL;
+	ret = g_list_append (ret, ("Nemo Image Converter:::Allows image resizing and rotation from the context menu"));
+	return ret;
+}
+
 static void
 nemo_image_converter_menu_provider_iface_init (NemoMenuProviderIface *iface)
 {
@@ -152,7 +160,12 @@ nemo_image_converter_menu_provider_iface_init (NemoMenuProviderIface *iface)
 	iface->get_file_items = nemo_image_converter_get_file_items;
 }
 
-static void 
+static void
+nemo_image_converter_nd_provider_iface_init (NemoNameAndDescProviderIface *iface) {
+	iface->get_name_and_desc = nemo_image_converter_get_name_and_desc;
+}
+
+static void
 nemo_image_converter_instance_init (NemoImageConverter *img)
 {
 }
@@ -189,6 +202,13 @@ nemo_image_converter_register_type (GTypeModule *module)
 		NULL
 	};
 
+	static const GInterfaceInfo nd_provider_iface_info = {
+		(GInterfaceInitFunc) nemo_image_converter_nd_provider_iface_init,
+		NULL,
+		NULL
+	};
+
+
 	image_converter_type = g_type_module_register_type (module,
 						     G_TYPE_OBJECT,
 						     "NemoImageConverter",
@@ -198,4 +218,9 @@ nemo_image_converter_register_type (GTypeModule *module)
 				     image_converter_type,
 				     NEMO_TYPE_MENU_PROVIDER,
 				     &menu_provider_iface_info);
+
+	g_type_module_add_interface (module,
+                                     image_converter_type,
+                                     NEMO_TYPE_NAME_AND_DESC_PROVIDER,
+                                     &nd_provider_iface_info);
 }

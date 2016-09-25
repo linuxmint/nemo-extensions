@@ -27,6 +27,7 @@
 #include <libnemo-extension/nemo-extension-types.h>
 #include <libnemo-extension/nemo-file-info.h>
 #include <libnemo-extension/nemo-menu-provider.h>
+#include <libnemo-extension/nemo-name-and-desc-provider.h>
 #include "nemo-seahorse.h"
 
 static GObjectClass *parent_class;
@@ -172,10 +173,26 @@ seahorse_nemo_get_file_items (NemoMenuProvider *provider,
     return items;
 }
 
+static GList *
+seahorse_nemo_get_name_and_desc (NemoNameAndDescProvider *provider)
+{
+    GList *ret = NULL;
+
+    ret = g_list_append (ret, ("Nemo Seahorse:::Allows encryption and decryption of OpenPGP files from the context menu"));
+
+    return ret;
+}
+
 static void
 seahorse_nemo_menu_provider_iface_init (NemoMenuProviderIface *iface)
 {
     iface->get_file_items = seahorse_nemo_get_file_items;
+}
+
+static void
+seahorse_nemo_nd_provider_iface_init (NemoNameAndDescProviderIface *iface)
+{
+    iface->get_name_and_desc = seahorse_nemo_get_name_and_desc;
 }
 
 static void
@@ -213,9 +230,18 @@ seahorse_nemo_register_type (GTypeModule *module)
         NULL, NULL
     };
 
+    static const GInterfaceInfo nd_provider_iface_info = {
+        (GInterfaceInitFunc) seahorse_nemo_nd_provider_iface_init,
+        NULL,NULL
+    };
+
+
     seahorse_nemo_type = g_type_module_register_type (module,
                     G_TYPE_OBJECT, "SeahorseNemo", &info, 0);
 
     g_type_module_add_interface (module, seahorse_nemo_type,
                     NEMO_TYPE_MENU_PROVIDER, &menu_provider_iface_info);
+
+    g_type_module_add_interface (module, seahorse_nemo_type,
+                    NEMO_TYPE_NAME_AND_DESC_PROVIDER, &nd_provider_iface_info);
 }

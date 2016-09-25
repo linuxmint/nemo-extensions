@@ -33,6 +33,7 @@
 #include <gtk/gtk.h>
 
 #include <libnemo-extension/nemo-menu-provider.h>
+#include <libnemo-extension/nemo-name-and-desc-provider.h>
 
 #include "nemo-filename-repairer.h"
 #include "nemo-filename-repairer-i18n.h"
@@ -514,10 +515,26 @@ nemo_filename_repairer_get_file_items(NemoMenuProvider *provider,
     return menu;
 }
 
+static GList *
+nemo_filename_repairer_get_name_and_desc (NemoNameAndDescProvider *provider)
+{
+    GList *ret = NULL;
+
+    ret = g_list_append (ret, ("Nemo Filename Repairer:::Allows filename encoding repair from the context menu"));
+
+    return ret;
+}
+
 static void
 nemo_filename_repairer_menu_provider_iface_init(NemoMenuProviderIface *iface)
 {
     iface->get_file_items = nemo_filename_repairer_get_file_items;
+}
+
+static void
+nemo_filename_repairer_nd_provider_iface_init (NemoNameAndDescProviderIface *iface)
+{
+    iface->get_name_and_desc = nemo_filename_repairer_get_name_and_desc;
 }
 
 static void 
@@ -557,6 +574,13 @@ nemo_filename_repairer_register_type(GTypeModule *module)
 	NULL
     };
 
+    static const GInterfaceInfo nd_provider_iface_info = {
+        (GInterfaceInitFunc) nemo_filename_repairer_nd_provider_iface_init,
+        NULL,
+        NULL
+    };
+
+
     filename_repairer_type = g_type_module_register_type(module,
 						 G_TYPE_OBJECT,
 						 "NemoFilenameRepairer",
@@ -566,6 +590,12 @@ nemo_filename_repairer_register_type(GTypeModule *module)
 				filename_repairer_type,
 				NEMO_TYPE_MENU_PROVIDER,
 				&menu_provider_iface_info);
+
+
+    g_type_module_add_interface(module,
+				filename_repairer_type,
+				NEMO_TYPE_NAME_AND_DESC_PROVIDER,
+				&nd_provider_iface_info);
 }
 
 void  nemo_filename_repairer_on_module_init(void)

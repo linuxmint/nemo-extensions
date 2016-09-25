@@ -30,6 +30,7 @@
 #include <libnemo-extension/nemo-info-provider.h>
 #include <libnemo-extension/nemo-menu-provider.h>
 #include <libnemo-extension/nemo-property-page-provider.h>
+#include <libnemo-extension/nemo-name-and-desc-provider.h>
 
 #include "nemo-share.h"
 
@@ -999,11 +1000,27 @@ nemo_share_cancel_update (NemoInfoProvider *provider,
   share_handle->cancelled = TRUE;
 }
 
+static GList *
+nemo_share_get_name_and_desc (NemoNameAndDescProvider *provider)
+{
+    GList *ret = NULL;
+
+    ret = g_list_append (ret, ("Nemo Share:::Allows you to quickly share a folder from the context menu"));
+
+    return ret;
+}
+
 static void 
 nemo_share_info_provider_iface_init (NemoInfoProviderIface *iface)
 {
   iface->update_file_info = nemo_share_update_file_info;
   iface->cancel_update = nemo_share_cancel_update;
+}
+
+static void
+nemo_share_nd_provider_iface_init (NemoNameAndDescProviderIface *iface)
+{
+    iface->get_name_and_desc = nemo_share_get_name_and_desc;
 }
 
 /*--------------------------------------------------------------------------*/
@@ -1207,7 +1224,7 @@ nemo_share_register_type (GTypeModule *module)
 					    "NemoShare",
 					    &info, 0);
 
-  /* onglet share propriété */
+  /* onglet share propriÃ©tÃ© */
   static const GInterfaceInfo property_page_provider_iface_info = {
     (GInterfaceInitFunc) nemo_share_property_page_provider_iface_init,
     NULL,
@@ -1220,7 +1237,7 @@ nemo_share_register_type (GTypeModule *module)
 			       &property_page_provider_iface_info);
 
 
-  /* premier page propriété ? */
+  /* premier page propriÃ©tÃ© */
   static const GInterfaceInfo info_provider_iface_info = {
     (GInterfaceInitFunc) nemo_share_info_provider_iface_init,
     NULL,
@@ -1243,7 +1260,17 @@ nemo_share_register_type (GTypeModule *module)
 			       share_type,
 			       NEMO_TYPE_MENU_PROVIDER,
 			       &menu_provider_iface_info);
-  
+
+  static const GInterfaceInfo nd_provider_iface_info = {
+    (GInterfaceInitFunc) nemo_share_nd_provider_iface_init,
+    NULL,
+    NULL
+    };
+
+  g_type_module_add_interface (module,
+                               share_type,
+                               NEMO_TYPE_NAME_AND_DESC_PROVIDER,
+                               &nd_provider_iface_info);
 }
 
 /* Extension module functions.  These functions are defined in 
