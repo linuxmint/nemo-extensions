@@ -559,6 +559,7 @@ class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider, Nemo.Na
         if event.keyval == \
             Gdk.keyval_from_name(settings.get_string("terminal-hotkey")):
             window.term_visible = not window.term_visible
+            settings.set_boolean("default-visible",  window.term_visible)
             for callback in window.toggle_hide_cb:
                 callback(window.term_visible)
             return True #Stop the event propagation
