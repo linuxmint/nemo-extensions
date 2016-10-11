@@ -72,7 +72,7 @@ PKG_CHECK_MODULES(NEMO_PREVIEW,
                   evince-document-3.0
                   evince-view-3.0
                   gtksourceview-3.0
-                  webkitgtk-3.0)
+                  webkit2gtk-4.0)
 
 GLIB_MKENUMS=`$PKG_CONFIG --variable=glib_mkenums glib-2.0`
 AC_SUBST(GLIB_MKENUMS)
