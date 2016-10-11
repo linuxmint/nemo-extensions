@@ -31,11 +31,14 @@ from subprocess import check_output, CalledProcessError
 from threading import Thread
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
-
+import gi
+gi.require_version("Gtk", "3.0")
 from gi.repository import GObject, Gdk, Gio, Gtk
+gi.require_version('Nemo', '3.0')
 from gi.repository import Nemo
 
 try:
+    gi.require_version('Notify', '0.7')
     from gi.repository import Notify
 except ImportError:
     Notify = None
