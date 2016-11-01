@@ -77,7 +77,7 @@ ImageRenderer.prototype = {
         (stream, null,
          Lang.bind(this, function(obj, res) {
              let pix = GdkPixbuf.Pixbuf.new_from_stream_finish(res);
-             pix.apply_embedded_orientation();
+             pix = pix.apply_embedded_orientation();
 
              this._texture = new GtkClutter.Texture({ keep_aspect_ratio: true });
              this._texture.set_from_pixbuf(pix);
