@@ -25,6 +25,7 @@
  *
  */
 
+const GdkPixbuf = imports.gi.GdkPixbuf;
 const Gio = imports.gi.Gio;
 const Gst = imports.gi.Gst;
 const Gtk = imports.gi.Gtk;
