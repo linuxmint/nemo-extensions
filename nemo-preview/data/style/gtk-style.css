@@ -9,7 +9,7 @@ GtkWindow {
 GtkSourceView {
     color: @np_text_color;
     background-color: shade (@np_fg_color, 1.10);
-    font: Monospace 10;
+    font: 10 monospace;
 }
 
 NemoPreviewFontWidget {
@@ -32,7 +32,7 @@ NemoPreviewFontWidget {
 }
 
 .np-decoration {
-    font: bold;
+    font-weight: bold;
 }
 
 .np-decoration.button {
