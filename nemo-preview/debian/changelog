@@ -1,3 +1,9 @@
+nemo-preview (3.2.0) serena; urgency=medium
+
+  * 3.2.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 07 Nov 2016 11:41:47 +0000
+
 nemo-preview (3.0.2) sarah; urgency=medium
 
   * Depend on gir1.2-clutter-gst-3.0

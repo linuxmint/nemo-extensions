@@ -1,3 +1,9 @@
+nemo-terminal (3.2.0) serena; urgency=medium
+
+  * 3.2.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 07 Nov 2016 11:47:11 +0000
+
 nemo-terminal (3.0.1) sarah; urgency=medium
 
   * Support Vte 2.91
