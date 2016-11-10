@@ -7,16 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-24 13:50+0200\n"
+"POT-Creation-Date: 2016-10-26 11:55+0100\n"
 "PO-Revision-Date: 2015-03-25 09:36+0000\n"
 "Last-Translator: Hemanth Kumar <Unknown>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-06-25 09:30+0000\n"
-"X-Generator: Launchpad (build 18111)\n"
+"X-Launchpad-Export-Date: 2016-11-09 17:15+0000\n"
+"X-Generator: Launchpad (build 18255)\n"
 
-#: ../nemo-extension/nemo-emblems.py:81
+#: ../nemo-extension/nemo-emblems.py:82
 msgid "Emblems"
 msgstr "முத்திரைகள்"
+
+#: ../nemo-extension/nemo-emblems.py:138
+msgid "Nemo Emblems:::Change a folder or file emblem"
+msgstr ""
