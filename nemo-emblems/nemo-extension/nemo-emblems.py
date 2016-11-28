@@ -135,5 +135,5 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
         subprocess.call(["touch", self.filename])
 
     def get_name_and_desc(self):
-        return [_("Nemo Emblems:::Change a folder or file emblem")]
+        return [("Nemo Emblems:::Change a folder or file emblem")]
 
