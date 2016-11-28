@@ -235,4 +235,4 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 		self.get_columns()
 
 	def get_name_and_desc(self):
-		return [_("Nemo Media Columns:::Provides additional columns for the list view")]
+		return [("Nemo Media Columns:::Provides additional columns for the list view")]
