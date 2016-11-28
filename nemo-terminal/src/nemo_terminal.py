@@ -565,7 +565,7 @@ class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider, Nemo.Na
             return True #Stop the event propagation
 
     def get_name_and_desc(self):
-        return [_("Nemo Terminal:::Embedded terminal for Nemo")]
+        return [("Nemo Terminal:::Embedded terminal for Nemo")]
 
 if __name__ == "__main__":
     #Code for testing Nemo Terminal outside of Nemo
