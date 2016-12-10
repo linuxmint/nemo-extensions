@@ -639,7 +639,7 @@ class RabbitVCS(Nemo.InfoProvider, Nemo.MenuProvider,
 
 
     def get_name_and_desc(self):
-        return [_("Nemo RabbitVCS:::Access RabbitVCS from the context menu")]
+        return [("Nemo RabbitVCS:::Access RabbitVCS from the context menu")]
 
 from rabbitvcs.util.contextmenuitems import *
 

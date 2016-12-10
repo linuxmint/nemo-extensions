@@ -180,4 +180,4 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
             return Nemo.PropertyPage(name="NemoPython::audio", label=self.property_label, page=self.mainWindow),
 
     def get_name_and_desc(self):
-        return [_("Nemo Audio Tab:::View audio tag information from the properties tab")]
+        return [("Nemo Audio Tab:::View audio tag information from the properties tab")]
