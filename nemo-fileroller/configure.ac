@@ -20,11 +20,7 @@ AC_PROG_CC
 AM_PROG_LIBTOOL
 
 # Check for pkg-config
-AC_CHECK_PROG(HAVE_PKGCONFIG, pkg-config, yes, no)
-AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
-if test "x$HAVE_PKGCONFIG" = "xno"; then
-	AC_MSG_ERROR(you need to have pkgconfig installed !)
-fi
+PKG_PROG_PKG_CONFIG
 
 PKG_CHECK_MODULES(NEMO, libnemo-extension >= $NEMO_REQUIRED)
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED)
