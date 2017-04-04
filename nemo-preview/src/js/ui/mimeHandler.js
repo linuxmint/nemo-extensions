@@ -58,7 +58,7 @@ MimeHandler.prototype = {
     },
 
     registerMimeTypes: function(mimeTypes, obj) {
-        for (idx in mimeTypes)
+        for (let idx in mimeTypes)
             this.registerMime(mimeTypes[idx], obj);
     },
 
@@ -70,7 +70,7 @@ MimeHandler.prototype = {
             /* if this fails, try to see if we have any handlers
              * registered for a parent type.
              */
-            for (key in this._mimeTypes) {
+            for (let key in this._mimeTypes) {
                 if (Gio.content_type_is_a (mime, key))
                     return this._mimeTypes[key];
             }
