@@ -30,9 +30,9 @@ const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
 const Gdk = imports.gi.Gdk;
 
-screen = Gdk.Screen.get_default()
-mon = screen.get_primary_monitor()
-s = screen.get_monitor_scale_factor(mon)
+let screen = Gdk.Screen.get_default()
+let mon = screen.get_primary_monitor()
+let s = screen.get_monitor_scale_factor(mon)
 
 // TODO: This is the only way to tell clutter what scale to use until
 // our next clutter version
