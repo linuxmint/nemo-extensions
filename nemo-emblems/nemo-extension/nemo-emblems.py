@@ -132,7 +132,9 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
         self.gio_file.set_attributes_from_info(self.file_info, 0, None)
 
         # touch the file (to force Nemo to re-render its icon)
-        subprocess.call(["touch", self.filename])
+        returncode = subprocess.call(["touch", "-r", self.filename, self.filename])
+        if returncode != 0:
+            subprocess.call(["touch", self.filename])
 
     def get_name_and_desc(self):
         return [("Nemo Emblems:::Change a folder or file emblem")]
