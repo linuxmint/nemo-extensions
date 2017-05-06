@@ -1,11 +1,11 @@
 gsettings_SCHEMAS = \
-	org.nemo.seahorse.gschema.xml \
-	org.nemo.seahorse.window.gschema.xml
+	org.nemo.extensions.seahorse.gschema.xml \
+	org.nemo.extensions.seahorse.window.gschema.xml
 
 @GSETTINGS_RULES@
 
 convert_DATA = \
-	org.nemo.seahorse.convert
+	org.nemo.extensions.seahorse.convert
 
 convertdir = \
 	$(datarootdir)/GConf/gsettings

@@ -703,7 +703,7 @@ main (int argc, char **argv)
         return 2;
     }
 
-    seahorse_tool_settings = g_settings_new ("org.nemo.seahorse");
+    seahorse_tool_settings = g_settings_new ("org.nemo.extensions.seahorse");
 
     /* The basic settings for the operation */
     memset (&mode, 0, sizeof (mode));

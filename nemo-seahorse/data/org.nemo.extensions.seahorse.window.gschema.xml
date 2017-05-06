@@ -1,5 +1,5 @@
 <schemalist>
-	<schema id="org.nemo.seahorse.window">
+	<schema id="org.nemo.extensions.seahorse.window">
 		<key name="width" type="i">
 			<default>-1</default>
 			<summary>Width of the window</summary>

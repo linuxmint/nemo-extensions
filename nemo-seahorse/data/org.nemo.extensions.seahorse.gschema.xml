@@ -1,5 +1,5 @@
 <schemalist>
-	<schema id="org.nemo.seahorse" path="/org.nemo.seahorse/">
+	<schema id="org.nemo.extensions.seahorse" path="/org/nemo/extensions/seahorse/">
 		<key name="package-extension" type="s">
 			<default>'.zip'</default>
 			<summary>File extension for packages</summary>
