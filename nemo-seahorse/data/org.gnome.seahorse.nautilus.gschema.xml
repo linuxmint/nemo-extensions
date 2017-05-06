@@ -1,5 +1,5 @@
 <schemalist>
-	<schema id="org.gnome.seahorse.nautilus" path="/org/gnome/seahorse/nautilus/">
+	<schema id="org.nemo.seahorse" path="/org.nemo.seahorse/">
 		<key name="package-extension" type="s">
 			<default>'.zip'</default>
 			<summary>File extension for packages</summary>
