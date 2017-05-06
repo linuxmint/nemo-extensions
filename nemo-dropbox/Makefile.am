@@ -9,7 +9,7 @@ dropbox: dropbox.in serializeimages.py
 	python serializeimages.py $(PACKAGE_VERSION) $(datadir)/applications < dropbox.in > dropbox
 	chmod +x dropbox
 
-dropbox.1: dropbox.txt.in dropbox docgen.py
+dropbox.1: dropbox dropbox.txt.in docgen.py
 	python docgen.py $(PACKAGE_VERSION) < dropbox.txt.in > dropbox.txt
 	$(RST2MAN) dropbox.txt > dropbox.1
 
