@@ -17,8 +17,8 @@
  *   along with GtkHash. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GTKHASH_HASH_HASH_LIB_POLARSSL_H
-#define GTKHASH_HASH_HASH_LIB_POLARSSL_H
+#ifndef GTKHASH_HASH_HASH_LIB_MBEDTLS_H
+#define GTKHASH_HASH_HASH_LIB_MBEDTLS_H
 
 #ifndef IN_HASH_LIB
 	#error "don't use directly"
@@ -29,11 +29,11 @@
 
 #include "hash-func.h"
 
-bool gtkhash_hash_lib_polarssl_is_supported(const enum hash_func_e id);
-void gtkhash_hash_lib_polarssl_start(struct hash_func_s *func);
-void gtkhash_hash_lib_polarssl_update(struct hash_func_s *func,
+bool gtkhash_hash_lib_mbedtls_is_supported(const enum hash_func_e id);
+void gtkhash_hash_lib_mbedtls_start(struct hash_func_s *func);
+void gtkhash_hash_lib_mbedtls_update(struct hash_func_s *func,
 	const uint8_t *buffer, const size_t size);
-void gtkhash_hash_lib_polarssl_stop(struct hash_func_s *func);
-uint8_t *gtkhash_hash_lib_polarssl_finish(struct hash_func_s *func, size_t *size);
+void gtkhash_hash_lib_mbedtls_stop(struct hash_func_s *func);
+uint8_t *gtkhash_hash_lib_mbedtls_finish(struct hash_func_s *func, size_t *size);
 
 #endif

@@ -137,21 +137,33 @@ if test "${enable_libcrypto}" = "yes" ; then
 	AC_DEFINE([ENABLE_LIBCRYPTO], [1])
 fi
 
-AC_MSG_CHECKING([whether to use PolarSSL])
-AC_ARG_ENABLE([polarssl],
-	[AS_HELP_STRING([--enable-polarssl], [use PolarSSL])],
-	[enable_polarssl="${enableval}"], [enable_polarssl="no"])
-AC_MSG_RESULT(["${enable_polarssl}"])
-AM_CONDITIONAL([ENABLE_POLARSSL], [test "${enable_polarssl}" = "yes"])
-AC_DEFINE([ENABLE_POLARSSL], [0], [Use PolarSSL])
+AC_MSG_CHECKING([whether to use mbed TLS])
+AC_ARG_ENABLE([mbedtls],
+	[AS_HELP_STRING([--enable-mbedtls], [use mbed TLS])],
+	[enable_mbedtls="${enableval}"], [enable_mbedtls="no"])
+AC_MSG_RESULT(["${enable_mbedtls}"])
+AM_CONDITIONAL([ENABLE_MBEDTLS], [test "${enable_mbedtls}" = "yes"])
+AC_DEFINE([ENABLE_MBEDTLS], [0], [Use mbed TLS])
+AC_DEFINE([HAVE_MBEDTLS_2_0_0], [0], [Have mbed TLS 2.x+])
 
-if test "${enable_polarssl}" = "yes" ; then
-	AC_CHECK_HEADER([polarssl/md.h], [:], [AC_MSG_ERROR([polarssl headers not found])])
-	AC_CHECK_LIB([polarssl], [md_update], [:], [AC_MSG_ERROR([polarssl library not found])])
-	POLARSSL_LIBS="-lpolarssl"
-	AC_SUBST([POLARSSL_LIBS])
-	hash_libs="${hash_libs} polarssl"
-	AC_DEFINE([ENABLE_POLARSSL], [1])
+if test "${enable_mbedtls}" = "yes" ; then
+	AC_CHECK_HEADER([mbedtls/md.h], [have_mbedtls_2_0_0="yes"], [have_mbedtls_2_0_0="no"])
+	AC_CHECK_HEADER([polarssl/md.h], [have_mbedtls_1_3_0="yes"], [have_mbedtls_1_3_0="no"])
+	if test "${have_mbedtls_2_0_0}" != "yes" && test "${have_mbedtls_1_3_0}" != "yes"; then
+		AC_MSG_ERROR([mbedtls headers not found])
+	fi
+	if test "${have_mbedtls_2_0_0}" = "yes"; then
+		AC_CHECK_LIB([mbedcrypto], [mbedtls_md_update], [:], [AC_MSG_ERROR([mbedtls library not found])])
+		MBEDTLS_LIBS="-lmbedcrypto"
+		hash_libs="${hash_libs} mbedtls"
+		AC_DEFINE([HAVE_MBEDTLS_2_0_0], [1])
+	else
+		AC_CHECK_LIB([polarssl], [md_update], [:], [AC_MSG_ERROR([mbedtls library not found])])
+		MBEDTLS_LIBS="-lpolarssl"
+		hash_libs="${hash_libs} polarssl"
+	fi
+	AC_SUBST([MBEDTLS_LIBS])
+	AC_DEFINE([ENABLE_MBEDTLS], [1])
 fi
 
 AC_MSG_CHECKING([whether to use Nettle])
@@ -363,8 +375,9 @@ nettle_funcs="
 nss_funcs="
 	MD2 MD5
 	SHA1 SHA256 SHA384 SHA512"
-polarssl_funcs="
+mbedtls_funcs="
 	MD2 MD4 MD5
+	RIPEMD160
 	SHA1 SHA224 SHA256 SHA384 SHA512"
 zlib_funcs="
 	CRC32

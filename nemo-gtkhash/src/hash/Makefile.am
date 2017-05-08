@@ -62,9 +62,9 @@ hash_la_CPPFLAGS += $(NSS_CFLAGS)
 hash_la_LIBADD += $(NSS_LIBS)
 endif
 
-if ENABLE_POLARSSL
-hash_la_SOURCES += hash-lib-polarssl.c hash-lib-polarssl.h
-hash_la_LIBADD += $(POLARSSL_LIBS)
+if ENABLE_MBEDTLS
+hash_la_SOURCES += hash-lib-mbedtls.c hash-lib-mbedtls.h
+hash_la_LIBADD += $(MBEDTLS_LIBS)
 endif
 
 if ENABLE_ZLIB
