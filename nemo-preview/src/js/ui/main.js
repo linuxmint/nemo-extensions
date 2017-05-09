@@ -25,6 +25,7 @@
  *
  */
 
+const Format = imports.format;
 const Gettext = imports.gettext;
 
 const GLib = imports.gi.GLib;
@@ -32,7 +33,6 @@ const Gtk = imports.gi.Gtk;
 
 const Application = imports.ui.application;
 const Path = imports.util.path;
-const Format = imports.util.format;
 const Utils = imports.ui.utils;
 const Tweener = imports.ui.tweener;
 

@@ -22,7 +22,6 @@ dist_jsviewers_DATA = \
 jsutildir = $(pkgdatadir)/js/util
 dist_jsutil_DATA = \
     js/util/constants.js \
-    js/util/format.js \
     js/util/totemMimeTypes.js
 
 jsutil_built_sources = \
