@@ -67,6 +67,7 @@ MainWindow.prototype = {
         args = args || {};
 
         this._background = null;
+        this._isFullScreen = false;
         this._pendingRenderer = null;
         this._renderer = null;
         this._texture = null;
