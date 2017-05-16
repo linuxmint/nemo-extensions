@@ -24,7 +24,7 @@
         <child>
           <object class="GtkLabel" id="logo_label">
             <property name="visible">True</property>
-            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Folder Sharing&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="label" translatable="yes">Folder Sharing</property>
             <property name="use_markup">True</property>
             <property name="justify">center</property>
           </object>
