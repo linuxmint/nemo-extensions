@@ -26,6 +26,7 @@
  */
 
 imports.gi.versions.ClutterGst = '3.0';
+imports.gi.versions.Gdk = '3.0';
 const ClutterGst = imports.gi.ClutterGst;
 const Clutter = imports.gi.Clutter;
 const Gdk = imports.gi.Gdk;
