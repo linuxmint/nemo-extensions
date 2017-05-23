@@ -25,6 +25,8 @@
  *
  */
 
+imports.gi.versions.GdkX11 = '3.0';
+
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
