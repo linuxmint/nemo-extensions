@@ -93,7 +93,7 @@ msgstr "Общий доступ"
 
 #: ../src/nemo-share.c:1115
 msgid "Folder Sharing"
-msgstr "<big><b>Общий доступ к папке</b></big>"
+msgstr "Общий доступ к папке"
 
 #: ../src/nemo-share.c:1156
 msgid "Sharing Options"
