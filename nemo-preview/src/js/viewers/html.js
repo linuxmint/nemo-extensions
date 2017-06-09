@@ -25,6 +25,7 @@
  *
  */
 
+imports.gi.versions.WebKit2 = '4.0';
 const GtkClutter = imports.gi.GtkClutter;
 const Gtk = imports.gi.Gtk;
 const GLib = imports.gi.GLib;
