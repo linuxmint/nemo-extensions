@@ -1,6 +1,6 @@
 dnl -*- mode: m4 -*-
 AC_PREREQ(2.63)
-AC_INIT([nemo-preview],[3.4.1],[],[nemo-preview])
+AC_INIT([nemo-preview],[3.4.2],[],[nemo-preview])
 
 AC_CONFIG_HEADERS([config/config.h])
 AC_CONFIG_SRCDIR([src/main.c])
