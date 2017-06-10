@@ -103,7 +103,8 @@ NemoPreview_1_0_gir_INCLUDES = \
     GstTag-1.0 \
     GdkPixbuf-2.0 \
     Gtk-3.0 \
-    EvinceDocument-3.0 \
+    XreaderDocument-1.5.0 \
+    XreaderView-1.5.0 \
     GtkSource-3.0
 
 NemoPreview_1_0_gir_FILES = \

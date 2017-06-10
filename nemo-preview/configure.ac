@@ -69,8 +69,8 @@ PKG_CHECK_MODULES(NEMO_PREVIEW,
                   gstreamer-pbutils-1.0
                   gstreamer-tag-1.0
                   libmusicbrainz5
-                  evince-document-3.0
-                  evince-view-3.0
+                  xreader-document-1.5.0
+                  xreader-view-1.5.0
                   gtksourceview-3.0
                   webkit2gtk-4.0)
 

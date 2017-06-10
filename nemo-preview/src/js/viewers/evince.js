@@ -25,8 +25,8 @@
  *
  */
 
-const EvDoc = imports.gi.EvinceDocument;
-const EvView = imports.gi.EvinceView;
+const EvDoc = imports.gi.XreaderDocument;
+const EvView = imports.gi.XreaderView;
 const Gtk = imports.gi.Gtk;
 const GtkClutter = imports.gi.GtkClutter;
 const NemoPreview = imports.gi.NemoPreview;
@@ -39,11 +39,11 @@ const Constants = imports.util.constants;
 const MimeHandler = imports.ui.mimeHandler;
 const Utils = imports.ui.utils;
 
-function EvinceRenderer(args) {
+function XreaderRenderer(args) {
     this._init(args);
 }
 
-EvinceRenderer.prototype = {
+XreaderRenderer.prototype = {
     _init : function(args) {
         EvDoc.init();
 
@@ -178,7 +178,7 @@ EvinceRenderer.prototype = {
 }
 
 let handler = new MimeHandler.MimeHandler();
-let renderer = new EvinceRenderer();
+let renderer = new XreaderRenderer();
 
 let mimeTypes = NemoPreview.query_supported_document_types();
 handler.registerMimeTypes(mimeTypes, renderer);
