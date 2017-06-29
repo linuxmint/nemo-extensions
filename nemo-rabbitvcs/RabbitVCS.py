@@ -66,6 +66,8 @@ import os.path
 from os.path import isdir, isfile, realpath, basename
 import datetime
 
+import gi
+gi.require_version('Nemo', '3.0')
 from gi.repository import Nemo, GObject, Gtk, GdkPixbuf
 
 import pysvn
