@@ -106,8 +106,8 @@ seahorse_widget_constructed (GObject *object)
 	/* Load window size for windows that aren't dialogs */
 	window = GTK_WINDOW (seahorse_widget_get_toplevel (self));
 	if (!GTK_IS_DIALOG (window)) {
-		path = g_strdup_printf ("/org/gnome/seahorse/nautilus/windows/%s/", self->name);
-		self->settings = g_settings_new_with_path ("org.gnome.seahorse.nautilus.window", path);
+		path = g_strdup_printf ("/org.nemo.extensions.seahorse/windows/%s/", self->name);
+		self->settings = g_settings_new_with_path ("org.nemo.extensions.seahorse.window", path);
 		g_free (path);
 
 		width = g_settings_get_int (self->settings, "width");

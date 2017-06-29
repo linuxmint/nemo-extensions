@@ -1,5 +1,5 @@
 
-INCLUDES = -I$(top_builddir) 	\
+AM_CPPFLAGS = -I$(top_builddir) 	\
 	-I$(top_srcdir) 			\
 	$(NEMO_CFLAGS) 			\
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"
