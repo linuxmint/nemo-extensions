@@ -14,10 +14,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the
- * Free Software Foundation, Inc.,
- * 51 Franklin Street, Suite 500,
- * Boston, MA 02110-1335, USA.
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
@@ -106,8 +103,8 @@ seahorse_widget_constructed (GObject *object)
 	/* Load window size for windows that aren't dialogs */
 	window = GTK_WINDOW (seahorse_widget_get_toplevel (self));
 	if (!GTK_IS_DIALOG (window)) {
-		path = g_strdup_printf ("/org/gnome/seahorse/nautilus/windows/%s/", self->name);
-		self->settings = g_settings_new_with_path ("org.gnome.seahorse.nautilus.window", path);
+		path = g_strdup_printf ("/org/nemo/plugins/seahorse/windows/%s/", self->name);
+		self->settings = g_settings_new_with_path ("org.nemo.plugins.seahorse.window", path);
 		g_free (path);
 
 		width = g_settings_get_int (self->settings, "width");

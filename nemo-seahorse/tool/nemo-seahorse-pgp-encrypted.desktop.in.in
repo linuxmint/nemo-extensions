@@ -1,7 +1,7 @@
 [Desktop Entry]
-_Name=Import Key
-MimeType=application/pgp-keys;
-Exec=seahorse-tool --import
+_Name=Decrypt File
+MimeType=application/pgp-encrypted;
+Exec=nemo-seahorse-tool --decrypt
 Type=Application
 Terminal=false
 NoDisplay=true

@@ -1,7 +1,7 @@
 [Desktop Entry]
-_Name=Decrypt File
-MimeType=application/pgp-encrypted;
-Exec=seahorse-tool --decrypt
+_Name=Verify Signature
+MimeType=application/pgp-signature;
+Exec=nemo-seahorse-tool --verify
 Type=Application
 Terminal=false
 NoDisplay=true

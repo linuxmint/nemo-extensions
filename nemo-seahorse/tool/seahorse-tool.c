@@ -13,10 +13,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the
- * Free Software Foundation, Inc.,
- * 51 Franklin Street, Suite 500,
- * Boston, MA 02110-1335, USA.
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -149,26 +146,28 @@ init_crypt ()
  */
 
 static gpgme_key_t*
-prompt_recipients (gpgme_key_t *signkey)
+prompt_recipients (gpgme_key_t *signkey, gboolean *symmetric)
 {
     gpgme_error_t gerr = 0;
     CryptUIKeyset *keyset;
     gpgme_ctx_t ctx;
     gpgme_key_t key;
     GArray *keys = NULL;
-    gchar **recips;
+    gpgme_key_t *ret = NULL;
+    gchar **recips = NULL;
     gchar *signer;
 
+    g_assert (symmetric != NULL);
     *signkey = NULL;
 
     keyset = cryptui_keyset_new ("openpgp", TRUE);
 
     if (cryptui_keyset_get_count (keyset) == 0) {
-        cryptui_need_to_get_keys ();
+        *symmetric = cryptui_need_to_get_keys_or_symmetric ();
     } else {
-        recips = cryptui_prompt_recipients (keyset, _("Choose Recipients"), &signer);
+        recips = cryptui_prompt_recipients_with_symmetric (keyset, _("Encryption settings"), &signer, symmetric);
 
-        if (recips) {
+        if (recips || *symmetric) {
             gpgme_check_version (NULL);
             gerr = gpgme_engine_check_version (GPGME_PROTOCOL_OpenPGP);
             g_return_val_if_fail (gerr == 0, NULL);
@@ -181,13 +180,14 @@ prompt_recipients (gpgme_key_t *signkey)
                 gchar *id = cryptui_keyset_key_raw_keyid (keyset, signer);
                 gerr = gpgme_get_key (ctx, id, signkey, 1);
                 g_free (id);
+                g_free (signer);
 
                 /* A more descriptive error message */
                 if (GPG_ERR_EOF == gpgme_err_code (gerr))
                     gerr = gpgme_error (GPG_ERR_NOT_FOUND);
             }
 
-            if (gerr == 0) {
+            if (gerr == 0 && !*symmetric) {
                 gchar **ids;
                 guint num;
 
@@ -210,29 +210,27 @@ prompt_recipients (gpgme_key_t *signkey)
 
                 if (gerr == 0 && num != keys->len)
                     g_warning ("couldn't load all the keys (%d/%d) from GPGME", keys->len, num);
-            }
 
+                ret = (gpgme_key_t*) g_array_free (keys, FALSE);
+            }
+            g_strfreev (recips);
             gpgme_release (ctx);
         }
 
         g_object_unref (keyset);
-
-        if (!recips)
-            return NULL;
-
-        g_strfreev (recips);
-        g_free (signer);
-
-        if (gerr == 0 && keys->len)
-            return (gpgme_key_t*)g_array_free (keys, FALSE);
-
-        /* When failure, free all our return values */
-        seahorse_util_free_keys ((gpgme_key_t*)g_array_free (keys, FALSE));
-        if (*signkey)
-            gpgme_key_unref (*signkey);
-
-        seahorse_util_handle_gpgme (gerr, _("Couldn't load keys"));
     }
+
+    if (gerr == 0 && (*symmetric || recips))
+        return ret;
+
+    /* When failure, free all our return values */
+    if (keys)
+        seahorse_util_free_keys ((gpgme_key_t*)g_array_free (keys, FALSE));
+    if (*signkey)
+        gpgme_key_unref (*signkey);
+
+    if (gerr)
+        seahorse_util_handle_gpgme (gerr, _("Couldn't load keys"));
 
     return NULL;
 }
@@ -245,7 +243,7 @@ encrypt_sign_start (SeahorseToolMode *mode, const gchar *uri, gpgme_data_t urida
     gpgme_error_t gerr;
     gchar *touri;
 
-    g_assert (mode->recipients && mode->recipients[0]);
+    g_assert (mode->symmetric || (mode->recipients && mode->recipients[0]));
 
     /* File to encrypt to */
     touri = seahorse_util_add_suffix (uri, SEAHORSE_CRYPT_SUFFIX,
@@ -268,10 +266,12 @@ encrypt_sign_start (SeahorseToolMode *mode, const gchar *uri, gpgme_data_t urida
     gpgme_signers_clear (pop->gctx);
     if (mode->signer) {
         gpgme_signers_add (pop->gctx, mode->signer);
+        /* mode->recipients might be NULL if symmetric encryption has been selected */
         gerr = gpgme_op_encrypt_sign_start (pop->gctx, mode->recipients,
                                             GPGME_ENCRYPT_ALWAYS_TRUST, uridata, cipher);
 
     } else {
+        /* mode->recipients might be NULL if symmetric encryption has been selected */
         gerr = gpgme_op_encrypt_start (pop->gctx, mode->recipients,
                                        GPGME_ENCRYPT_ALWAYS_TRUST, uridata, cipher);
     }
@@ -699,18 +699,17 @@ main (int argc, char **argv)
 
     if(!uris || !uris[0]) {
         fprintf (stderr, "seahorse-tool: must specify files\n");
-        g_option_context_free (octx);
         return 2;
     }
 
-    seahorse_tool_settings = g_settings_new ("org.gnome.seahorse.nautilus");
+    seahorse_tool_settings = g_settings_new ("org.nemo.plugins.seahorse");
 
     /* The basic settings for the operation */
     memset (&mode, 0, sizeof (mode));
 
     if (mode_encrypt_sign || mode_encrypt) {
-        mode.recipients = prompt_recipients (&mode.signer);
-        if (mode.recipients) {
+        mode.recipients = prompt_recipients (&mode.signer, &mode.symmetric);
+        if (mode.recipients || mode.symmetric) {
             mode.title = _("Encrypting");
             mode.errmsg = _("Couldn't encrypt file: %s");
             mode.startcb = encrypt_sign_start;
@@ -746,7 +745,6 @@ main (int argc, char **argv)
 
     } else {
         fprintf (stderr, "seahorse-tool: must specify an operation");
-        g_option_context_free (octx);
         return 2;
     }
 
@@ -772,13 +770,12 @@ main (int argc, char **argv)
     if (mode.signer)
         gpgme_key_unref (mode.signer);
 
-    seahorse_notification_cleanup ();
-
     g_object_unref (seahorse_tool_settings);
     seahorse_tool_settings = NULL;
 
+    seahorse_notification_cleanup ();
+
     g_strfreev (uris);
-    g_option_context_free (octx);
 
     return ret;
 }

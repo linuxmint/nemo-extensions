@@ -1,7 +1,7 @@
 [Desktop Entry]
-_Name=Verify Signature
-MimeType=application/pgp-signature;
-Exec=seahorse-tool --verify
+_Name=Import Key
+MimeType=application/pgp-keys;
+Exec=nemo-seahorse-tool --import
 Type=Application
 Terminal=false
 NoDisplay=true

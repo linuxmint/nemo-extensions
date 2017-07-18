@@ -5,9 +5,9 @@ nemo-ext/nemo-seahorse.c
 tool/seahorse-notification.c
 [type: gettext/glade]tool/seahorse-notify.xml
 tool/seahorse-passphrase.c
-tool/seahorse-pgp-encrypted.desktop.in.in
-tool/seahorse-pgp-keys.desktop.in.in
-tool/seahorse-pgp-signature.desktop.in.in
+tool/nemo-seahorse-pgp-encrypted.desktop.in.in
+tool/nemo-seahorse-pgp-keys.desktop.in.in
+tool/nemo-seahorse-pgp-signature.desktop.in.in
 [type: gettext/glade]tool/seahorse-progress.xml
 tool/seahorse-tool.c
 tool/seahorse-tool-files.c
