@@ -26,14 +26,12 @@ if test "x$HAVE_PKGCONFIG" = "xno"; then
   AC_MSG_ERROR(you need to have pkgconfig installed !)
 fi
 
-PKG_CHECK_MODULES(NEMO, libnemo-extension >= $NEMO_REQUIRED)
-PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED)
+PKG_CHECK_MODULES(NEMO_SHARE, [libnemo-extension >= $NEMO_REQUIRED
+                               glib-2.0 >= $GLIB_REQUIRED
+                               cinnamon-desktop >= 3.0.0])
 
-AC_SUBST(NEMO_CFLAGS)
-AC_SUBST(NEMO_LIBS)
-
-AC_SUBST(GLIB_CFLAGS)
-AC_SUBST(GLIB_LIBS)
+AC_SUBST(NEMO_SHARE_CFLAGS)
+AC_SUBST(NEMO_SHARE_LIBS)
 
 dnl ========================================================
 dnl Get nemo extensionsdir

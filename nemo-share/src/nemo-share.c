@@ -32,6 +32,8 @@
 #include <libnemo-extension/nemo-property-page-provider.h>
 #include <libnemo-extension/nemo-name-and-desc-provider.h>
 
+#include <libcinnamon-desktop/gnome-installer.h>
+
 #include "nemo-share.h"
 
 #include <glib/gi18n-lib.h>
@@ -72,7 +74,7 @@ typedef struct {
 
   GtkWidget *main; /* Widget that holds all the rest.  Its "PropertyPage" GObject-data points to this PropertyPage structure */
   
-  GtkWidget *checkbutton_share_folder;
+  GtkWidget *switch_share_folder;
   GtkWidget *hbox_share_name;
   GtkWidget *hbox_share_comment;
   GtkWidget *entry_share_name;
@@ -82,12 +84,16 @@ typedef struct {
   GtkWidget *label_status;
   GtkWidget *button_cancel;
   GtkWidget *button_apply;
+  GtkWidget *samba_infobar;
+  GtkWidget *install_samba_button;
+  GtkWidget *samba_label;
 
   GtkWidget *standalone_window;
 
   gboolean was_initially_shared;
   gboolean was_writable;
   gboolean is_dirty;
+  gboolean samba_check_ok;
 } PropertyPage;
 
 static void property_page_set_warning (PropertyPage *page);
@@ -377,7 +383,7 @@ property_page_commit (PropertyPage *page)
   GError *error;
   gboolean retval;
 
-  is_shared = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (page->checkbutton_share_folder));
+  is_shared = gtk_switch_get_active (GTK_SWITCH (page->switch_share_folder));
 
   share_info.path = page->path;
   share_info.share_name = (char *) gtk_entry_get_text (GTK_ENTRY (page->entry_share_name));
@@ -542,7 +548,7 @@ property_page_check_sensitivity (PropertyPage *page)
   gboolean enabled;
   gboolean apply_is_sensitive;
 
-  enabled = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (page->checkbutton_share_folder));
+  enabled = gtk_switch_get_active (GTK_SWITCH (page->switch_share_folder));
   property_page_set_controls_sensitivity (page, enabled);
 
   if (enabled)
@@ -586,13 +592,80 @@ modify_share_comment_text_entry  (GtkEditable *editable,
 }
 
 static void
-on_checkbutton_share_folder_toggled    (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
+install_done (PropertyPage *page,
+              gboolean      success)
 {
-  PropertyPage *page;
+    if (success) {
+        gtk_label_set_text (GTK_LABEL (page->samba_label),
+                            _("Please log out and back in to finalize changes"));
+    } else {
+        gtk_label_set_text (GTK_LABEL (page->samba_label),
+                            _("Something went wrong.  You may need to install samba "
+                              "and add your user to the 'sambashare' group manually."));
+    }
 
-  page = user_data;
+    gtk_widget_hide (page->install_samba_button);
+}
 
+static void
+install_samba_clicked_cb (GtkButton *button,
+                          PropertyPage *page)
+{
+    gint exit_status;
+    GError *error;
+
+    const gchar *command = "pkexec " PKGDATADIR "/install-samba";
+
+    error = NULL;
+
+    if (!g_spawn_command_line_sync (command,
+                                    NULL,
+                                    NULL,
+                                    &exit_status,
+                                    &error)) {
+        g_printerr ("Could not spawn install-samba: %s\n", error->message);
+        g_error_free (error);
+    } else {
+        if (exit_status == EXIT_SUCCESS) {
+            install_done (page, TRUE);
+            return;
+        }
+    }
+
+    install_done (page, FALSE);
+}
+
+static gboolean
+check_samba_installed (void)
+{
+  gboolean installed;
+  gboolean permitted;
+  gchar *id_cmd;
+  gchar *output;
+
+  installed = g_file_test ("/usr/sbin/smbd", G_FILE_TEST_IS_EXECUTABLE);
+
+  id_cmd = g_strdup_printf ("id -Gn %s", g_get_user_name ());
+  output = NULL;
+  permitted = FALSE;
+
+  if (g_spawn_command_line_sync (id_cmd,
+                                 &output,
+                                 NULL,
+                                 NULL,
+                                 NULL)) {
+    permitted = g_strstr_len (output, -1, "sambashare") != NULL;
+    g_free (output);
+  }
+
+  g_free (id_cmd);
+
+  return installed && permitted;
+}
+
+static void
+on_switch_share_folder_active_changed (PropertyPage *page)
+{
   property_page_check_sensitivity (page);
 }
 
@@ -668,6 +741,7 @@ create_property_page (NemoFileInfo *fileinfo)
 
   page->path = get_fullpath_from_fileinfo(fileinfo);
   page->fileinfo = g_object_ref (fileinfo);
+  page->samba_check_ok = FALSE;
 
   error = NULL;
   if (!shares_get_share_info_for_path (page->path, &share_info, &error))
@@ -701,7 +775,7 @@ create_property_page (NemoFileInfo *fileinfo)
 			  page,
 			  free_property_page_cb);
 
-  page->checkbutton_share_folder = GTK_WIDGET (gtk_builder_get_object (page->xml,"checkbutton_share_folder"));
+  page->switch_share_folder = GTK_WIDGET (gtk_builder_get_object (page->xml,"switch_share_folder"));
   page->hbox_share_comment = GTK_WIDGET (gtk_builder_get_object (page->xml,"hbox_share_comment"));
   page->hbox_share_name = GTK_WIDGET (gtk_builder_get_object (page->xml,"hbox_share_name"));
   page->checkbutton_share_rw_ro = GTK_WIDGET (gtk_builder_get_object (page->xml,"checkbutton_share_rw_ro"));
@@ -712,8 +786,12 @@ create_property_page (NemoFileInfo *fileinfo)
   page->button_cancel = GTK_WIDGET (gtk_builder_get_object (page->xml,"button_cancel"));
   page->button_apply = GTK_WIDGET (gtk_builder_get_object (page->xml,"button_apply"));
 
+  page->samba_infobar = GTK_WIDGET (gtk_builder_get_object (page->xml, "samba_infobar"));
+  page->samba_label = GTK_WIDGET (gtk_builder_get_object (page->xml, "samba_label"));
+  page->install_samba_button = GTK_WIDGET (gtk_builder_get_object (page->xml, "install_samba_button"));
+
   /* Sanity check so that we don't screw up the Glade file */
-  g_assert (page->checkbutton_share_folder != NULL
+  g_assert (page->switch_share_folder != NULL
 	    && page->hbox_share_comment != NULL
 	    && page->hbox_share_name != NULL
 	    && page->checkbutton_share_rw_ro != NULL
@@ -760,10 +838,10 @@ create_property_page (NemoFileInfo *fileinfo)
   /* Share toggle */
 
   if (share_info)
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (page->checkbutton_share_folder), TRUE);
+    gtk_switch_set_active (GTK_SWITCH (page->switch_share_folder), TRUE);
   else
     {
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (page->checkbutton_share_folder), FALSE);
+      gtk_switch_set_active (GTK_SWITCH (page->switch_share_folder), FALSE);
     }
 
   /* Share name */
@@ -800,11 +878,19 @@ create_property_page (NemoFileInfo *fileinfo)
 
   property_page_check_sensitivity (page);
 
+  if (!check_samba_installed ()) {
+    gtk_widget_show (page->samba_infobar);
+    gtk_widget_set_sensitive (page->switch_share_folder, FALSE);
+  } else {
+    gtk_widget_hide (page->samba_infobar);
+    gtk_widget_set_sensitive (page->switch_share_folder, TRUE);
+  }
+
   /* Signal handlers */
 
-  g_signal_connect (page->checkbutton_share_folder, "toggled",
-                    G_CALLBACK (on_checkbutton_share_folder_toggled),
-                    page);
+  g_signal_connect_swapped (page->switch_share_folder, "notify::active",
+                            G_CALLBACK (on_switch_share_folder_active_changed),
+                            page);
 
   g_signal_connect (page->checkbutton_share_rw_ro, "toggled",
                     G_CALLBACK (on_checkbutton_rw_ro_toggled),
@@ -824,6 +910,9 @@ create_property_page (NemoFileInfo *fileinfo)
 
   g_signal_connect (page->button_apply, "clicked",
 		    G_CALLBACK (button_apply_clicked_cb), page);
+
+  g_signal_connect (page->install_samba_button, "clicked",
+            G_CALLBACK (install_samba_clicked_cb), page);
 
   if (share_info != NULL)
     shares_free_share_info (share_info);
