@@ -9,8 +9,8 @@
  <vendor_url>https://github.com/linuxmint/nemo-extensions</vendor_url>
 
  <action id="org.nemo-share.samba_install">
-   <description>Install the 'samba' package and add user '$(USER)' to the 'sambashare' group</description>
-   <message>Please enter your password to perform these operations</message>
+   <description>Install the 'samba' package and add the current user to the 'sambashare' group</description>
+   <message>Authentication is required to install 'samba' and add the current user to the 'sambashare' group.</message>
    <icon_name>gksu-root-terminal</icon_name>
    <defaults>
      <allow_any>no</allow_any>
