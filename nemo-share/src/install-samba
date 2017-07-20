@@ -1,0 +1,44 @@
+#!/usr/bin/python3
+
+import gi
+gi.require_version("CinnamonDesktop", "3.0")
+from gi.repository import CinnamonDesktop, GLib
+
+import sys
+import os
+import pwd
+import subprocess
+
+class Main:
+    def __init__(self, user):
+        self.user = user
+        CinnamonDesktop.installer_install_packages (["samba"], self.on_install_finished)
+
+    def on_install_finished(self, success, data=None):
+        ret = 0
+
+        if not success:
+            ret = -1
+        else:
+            try:
+                cp = subprocess.run(["usermod", "-a", "-G", "sambashare", self.user], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
+                ret = cp.returncode
+            except subprocess.CalledProcessError as e:
+                print(str(e))
+                ret = e.returncode
+
+        ml.quit()
+        exit(ret)
+
+if __name__ == "__main__":
+    ml = GLib.MainLoop.new(None, True)
+
+    if len(sys.argv) == 2:
+        user = sys.argv[1]
+    else:
+        uid = int(os.getenv("PKEXEC_UID"))
+        passwd = pwd.getpwuid(uid)
+        user = passwd[0]
+
+    main = Main(user)
+    ml.run()
