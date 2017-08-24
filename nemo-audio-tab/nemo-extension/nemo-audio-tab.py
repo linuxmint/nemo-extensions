@@ -14,36 +14,36 @@ from mutagen.mp3 import MPEGInfo
 from mutagen.flac import FLAC, StreamInfo
 
 class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAndDescProvider):
-    
+
     def get_property_pages(self, files):
         # files: list of NemoVFSFile
         if len(files) != 1:
             return
-        
+
         file = files[0]
         if file.get_uri_scheme() != 'file':
             return
-        
+
         filename = urllib.unquote(file.get_uri()[7:])
-        
+
         #GUI
         locale.setlocale(locale.LC_ALL, '')
         _ = gettext.gettext
         self.property_label = Gtk.Label(_('Audio'))
         self.property_label.show()
-        
+
         self.builder = Gtk.Builder()
         self.builder.add_from_file("/usr/share/nemo-python/extensions/nemo-audio-tab.glade")
-        
+
         #connect signals to python methods
         self.builder.connect_signals(self)
-        
+
         #connect gtk objects to python variables
         for obj in self.builder.get_objects():
             if issubclass(type(obj), Gtk.Buildable):
                 name = Gtk.Buildable.get_name(obj)
                 setattr(self, name, obj)
-        
+
         # set defaults to blank to prevent nonetype errors
         file.add_string_attribute('title', '')
         file.add_string_attribute('album', '')
@@ -57,7 +57,7 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
         file.add_string_attribute('length', '')
         file.add_string_attribute('encodedby', '')
         file.add_string_attribute('copyright', '')
-        
+
         no_info = _("No Info")
         mutaFile = mutagen.File(filename)
 
@@ -97,7 +97,7 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
                 file.add_string_attribute('date', no_info)
                 file.add_string_attribute('encodedby', no_info)
                 file.add_string_attribute('copyright', no_info)
-                
+
                 # try to read MP3 information (bitrate, length, samplerate)
             try:
                 mpinfo = MPEGInfo (filename)
@@ -147,13 +147,13 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
                 file.add_string_attribute('date', no_info)
                 file.add_string_attribute('encodedby', no_info)
                 file.add_string_attribute('copyright', no_info)
-                
+
                 # try to read the FLAC information (length, samplerate)
             try:
                 fcinfo = StreamInfo (filename)
-                
+
                 file.add_string_attribute('samplerate', str(fcinfo.sample_rate) + " Hz")
-                
+
                 # [SabreWolfy] added consistent formatting of times in format hh:mm:ss
                 flaclength = "%02i:%02i:%02i" % ((int(mutaFile.info.length/3600)), (int(mutaFile.info.length/60%60)), (int(mutaFile.info.length%60)))
                 file.add_string_attribute('length', flaclength)

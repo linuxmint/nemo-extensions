@@ -78,16 +78,16 @@ class PastebinThread(Thread):
     def run(self):
         log ("PastebinThread started!")
         cmdline = ["pastebinit"]
-        
+
         options = {}
         options['-b'] = "http://" + self.settings.get_string("pastebin")
         options['-a'] = self.settings.get_string("author")
         options['-u'] = self.settings.get_string("username")
         options['-p'] = self.settings.get_string("password")
-        
+
         if not options['-a'] or options['-a'].strip() == '':
             options['-a'] = os.getenv("USERNAME")
-        
+
         for opt in options:
             if options[opt] != None and options[opt].strip() != '':
                 cmdline.append(opt)
@@ -107,7 +107,7 @@ class PastebinThread(Thread):
             summary = error.message
             icon = helper.render_icon(Gtk.STOCK_DIALOG_ERROR, Gtk.IconSize.DIALOG, None)
         except:
-#        if not pasteurl or not re.match("^http://.*$", pasteurl):
+            #        if not pasteurl or not re.match("^http://.*$", pasteurl):
             summary = _("Unable to read or parse the result page.")
             message = _("It could be a server timeout or a change server side. Try later.")
             icon = helper.render_icon(Gtk.STOCK_DIALOG_ERROR, Gtk.IconSize.DIALOG, None)
@@ -122,11 +122,11 @@ class PastebinThread(Thread):
             cb = Gtk.Clipboard.get(atom)
             cb.clear()
             cb.set_text(pasteurl, -1)
-            
+
             # Open a browser window
             if self.settings['openbrowser']:
                 webbrowser.open(pasteurl)
-            
+
         # Show a bubble
         if self.settings['shownotification']:
             if Notify != None:
@@ -144,16 +144,16 @@ class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescPr
         self.validate_settings()
 
     def validate_settings(self):
-    # Make sure "pastebin" value is supported by pastebinit
+        # Make sure "pastebin" value is supported by pastebinit
         pass #TODO
-    
+
     def show_error_message(self, error, description):
         n = Notify.Notification.new(error, description, None)
         helper = Gtk.Button()
         icon = helper.render_icon(Gtk.STOCK_DIALOG_ERROR, Gtk.IconSize.DIALOG)
         n.set_icon_from_pixbuf(icon)
         n.show()
-    
+
     def get_file_items(self, window, files):
         if len(files)!=1:
             return
@@ -166,8 +166,8 @@ class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescPr
         pastebin = self.settings.get_string("pastebin")
         #Called when the user selects a file in Nemo.
         item = Nemo.MenuItem(name="NemoPython::pastebin_item",
-                                 label=_("Pastebin to %s" % pastebin),
-                                 tip=_("Send this file to %s" % pastebin))
+                             label=_("Pastebin to %s" % pastebin),
+                             tip=_("Send this file to %s" % pastebin))
         item.set_property('icon', "nemo-pastebin")
         item.connect("activate", self.menu_activate_cb, files)
         items.append(item)
@@ -184,7 +184,7 @@ class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescPr
         # TODO: MIME check
 
         filename = urllib.unquote(filename.get_uri()[7:])
-        
+
         thread = PastebinThread(self.settings, filename)
         thread.start()
         while (thread.isAlive()):

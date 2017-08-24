@@ -64,14 +64,14 @@ class Controller(object):
         self.settings = settings = Gio.Settings.new(self.BASE_KEY)
         builder = Gtk.Builder.new()
         builder.add_from_file(UI_FILE)
-        
+
         self.dialog_main = builder.get_object('dialog_main')
         tableOptions = builder.get_object('table_options')
 
         # Set checkbuttons up
         openbrowser = builder.get_object('openbrowser')
         shownotification = builder.get_object('shownotification')
-        
+
         openbrowser.set_active(settings.get_boolean("openbrowser"))
         settings.connect("changed::openbrowser", self.on_openbrowser_changed, openbrowser)
         openbrowser.connect('toggled', self.on_openbrowser_toggled, settings)
@@ -83,7 +83,7 @@ class Controller(object):
         self.author = author = builder.get_object('entry_author')
         self.username = username = builder.get_object('entry_username')
         self.password = password = builder.get_object('entry_password')
-        
+
         author.set_text(settings.get_string("author"))
         username.set_text(settings.get_string("username"))
         password.set_text(settings.get_string("password"))
@@ -131,10 +131,10 @@ class Controller(object):
 
     def showErrorMessage(self, message):
         md = Gtk.MessageDialog.new(parent=self.dialog_main,
-            message_format=message,
-            buttons=Gtk.ButtonsType.CLOSE,
-            type = Gtk.MessageType.ERROR,
-            flags = Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT)
+                                   message_format=message,
+                                   buttons=Gtk.ButtonsType.CLOSE,
+                                   type = Gtk.MessageType.ERROR,
+                                   flags = Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT)
         md.run()
         md.destroy()
 
@@ -149,7 +149,6 @@ class Controller(object):
 def main():
     c = Controller()
     Gtk.main()
-    
+
 if __name__ == "__main__":
     main()
-
