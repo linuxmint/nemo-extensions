@@ -27,7 +27,6 @@ Standards-Version: 3.9.6
 Package: nemo-preview
 Architecture: any
 Depends: cjs,
-         gir1.2-clutter-gst-2.0,
          gir1.2-clutter-gst-3.0,
          gir1.2-evince-3.0,
          gir1.2-gtkclutter-1.0,
