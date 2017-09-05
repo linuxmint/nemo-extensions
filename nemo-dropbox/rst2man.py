@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Author: 
+# Author:
 # Contact: grubert@users.sf.net
 # Copyright: This module has been placed in the public domain.
 
@@ -28,7 +28,7 @@ from docutils.core import publish_cmdline, default_description
 Simple man page writer for reStructuredText.
 
 Man pages (short for "manual pages") contain system documentation on unix-like
-systems. The pages are grouped in numbered sections: 
+systems. The pages are grouped in numbered sections:
 
  1 executable programs and shell commands
  2 system calls
@@ -150,7 +150,7 @@ class Table:
         text += '|%s|.\n' % ('|'.join(self._coldefs))
         for row in self._rows:
             # row = array of cells. cell = array of lines.
-            # line above 
+            # line above
             text += '_\n'
             max_lns_in_cell = 0
             for cell in row:
@@ -192,13 +192,13 @@ class Translator(nodes.NodeVisitor):
         # writing the header .TH and .SH NAME is postboned after
         # docinfo.
         self._docinfo = {
-                "title" : "", "subtitle" : "",
-                "manual_section" : "", "manual_group" : "",
-                "author" : "", 
-                "date" : "", 
-                "copyright" : "",
-                "version" : "",
-                    }
+            "title" : "", "subtitle" : "",
+            "manual_section" : "", "manual_group" : "",
+            "author" : "",
+            "date" : "",
+            "copyright" : "",
+            "version" : "",
+        }
         self._in_docinfo = None
         self._active_table = None
         self._in_entry = None
@@ -209,31 +209,31 @@ class Translator(nodes.NodeVisitor):
         # central definition of simple processing rules
         # what to output on : visit, depart
         self.defs = {
-                'indent' : ('.INDENT %.1f\n', '.UNINDENT\n'),
-                'definition' : ('', ''),
-                'definition_list' : ('', '.TP 0\n'),
-                'definition_list_item' : ('\n.TP', ''),
-                #field_list
-                #field
-                'field_name' : ('\n.TP\n.B ', '\n'),
-                'field_body' : ('', '.RE\n', ),
-                'literal' : ('\\fB', '\\fP'),
-                'literal_block' : ('\n.nf\n', '\n.fi\n'),
+            'indent' : ('.INDENT %.1f\n', '.UNINDENT\n'),
+            'definition' : ('', ''),
+            'definition_list' : ('', '.TP 0\n'),
+            'definition_list_item' : ('\n.TP', ''),
+            #field_list
+            #field
+            'field_name' : ('\n.TP\n.B ', '\n'),
+            'field_body' : ('', '.RE\n', ),
+            'literal' : ('\\fB', '\\fP'),
+            'literal_block' : ('\n.nf\n', '\n.fi\n'),
 
-                #option_list
-                'option_list_item' : ('\n.TP', ''),
-                #option_group, option
-                'description' : ('\n', ''),
-                
-                'reference' : (r'\fI\%', r'\fP'),
-                #'target'   : (r'\fI\%', r'\fP'),
-                'emphasis': ('\\fI', '\\fP'),
-                'strong' : ('\\fB', '\\fP'),
-                'term' : ('\n.B ', '\n'),
-                'title_reference' : ('\\fI', '\\fP'),
+            #option_list
+            'option_list_item' : ('\n.TP', ''),
+            #option_group, option
+            'description' : ('\n', ''),
 
-                'problematic' : ('\n.nf\n', '\n.fi\n'),
-                    }
+            'reference' : (r'\fI\%', r'\fP'),
+            #'target'   : (r'\fI\%', r'\fP'),
+            'emphasis': ('\\fI', '\\fP'),
+            'strong' : ('\\fB', '\\fP'),
+            'term' : ('\n.B ', '\n'),
+            'title_reference' : ('\\fI', '\\fP'),
+
+            'problematic' : ('\n.nf\n', '\n.fi\n'),
+        }
         # TODO dont specify the newline before a dot-command, but ensure
         # check it is there.
 
@@ -264,14 +264,14 @@ class Translator(nodes.NodeVisitor):
     def list_start(self, node):
         class enum_char:
             enum_style = {
-                    'arabic'     : (3,1),
-                    'loweralpha' : (3,'a'),
-                    'upperalpha' : (3,'A'),
-                    'lowerroman' : (5,'i'),
-                    'upperroman' : (5,'I'),
-                    'bullet'     : (2,'\\(bu'),
-                    'emdash'     : (2,'\\(em'),
-                     }
+                'arabic'     : (3,1),
+                'loweralpha' : (3,'a'),
+                'upperalpha' : (3,'A'),
+                'lowerroman' : (5,'i'),
+                'upperroman' : (5,'I'),
+                'bullet'     : (2,'\\(bu'),
+                'emdash'     : (2,'\\(em'),
+            }
             def __init__(self, style):
                 if style == 'arabic':
                     if node.has_key('start'):
@@ -279,8 +279,8 @@ class Translator(nodes.NodeVisitor):
                     else:
                         start = 1
                     self._style = (
-                            len(str(len(node.children)))+2,
-                            start )
+                        len(str(len(node.children)))+2,
+                        start )
                 # BUG: fix start for alpha
                 else:
                     self._style = self.enum_style[style]
@@ -538,15 +538,15 @@ class Translator(nodes.NodeVisitor):
 
     def depart_document(self, node):
         if self._docinfo['author']:
-            self.body.append('\n.SH AUTHOR\n%s\n' 
-                    % self._docinfo['author'])
+            self.body.append('\n.SH AUTHOR\n%s\n'
+                             % self._docinfo['author'])
         if self._docinfo['copyright']:
-            self.body.append('\n.SH COPYRIGHT\n%s\n' 
-                    % self._docinfo['copyright'])
+            self.body.append('\n.SH COPYRIGHT\n%s\n'
+                             % self._docinfo['copyright'])
         self.body.append(
-                self.comment(
-                        'Generated by docutils manpage writer on %s.\n' 
-                        % (time.strftime('%Y-%m-%d %H:%M')) ) )
+            self.comment(
+                'Generated by docutils manpage writer on %s.\n'
+                % (time.strftime('%Y-%m-%d %H:%M')) ) )
 
     def visit_emphasis(self, node):
         self.body.append(self.defs['emphasis'][0])
@@ -589,7 +589,7 @@ class Translator(nodes.NodeVisitor):
         #self.body.append(self.comment('visit_field_body'))
         if self._in_docinfo:
             self._docinfo[
-                    self._field_name.lower().replace(" ","_")] = node.astext()
+                self._field_name.lower().replace(" ","_")] = node.astext()
             raise nodes.SkipNode
 
     def depart_field_body(self, node):
@@ -600,7 +600,7 @@ class Translator(nodes.NodeVisitor):
 
     def depart_field_list(self, node):
         self.dedent('depart_field_list')
-        
+
 
     def visit_field_name(self, node):
         if self._in_docinfo:
@@ -769,8 +769,8 @@ class Translator(nodes.NodeVisitor):
     def visit_list_item(self, node):
         # man 7 man argues to use ".IP" instead of ".TP"
         self.body.append('\n.IP %s %d\n' % (
-                self._list_char[-1].next(),
-                self._list_char[-1].get_width(),) )
+            self._list_char[-1].next(),
+            self._list_char[-1].get_width(),) )
 
     def depart_list_item(self, node):
         pass
@@ -830,7 +830,7 @@ class Translator(nodes.NodeVisitor):
         # as one option could have several forms it is a group
         # options without parameter bold only, .B, -v
         # options with parameter bold italic, .BI, -f file
-        
+
         # we do not know if .B or .BI
         self.context.append('.B')           # blind guess
         self.context.append(len(self.body)) # to be able to insert later

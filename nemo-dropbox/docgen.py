@@ -18,8 +18,8 @@ for cmd in commands:
     formatted_commands += '\n\n'
 
 sys.stdout.write(sys.stdin.read().replace\
-                     ('@AUTHORS@', authors).replace\
-                     ('@DATE@', datetime.date.today().isoformat()).replace\
-                     ('@PACKAGE_VERSION@', sys.argv[1]).replace\
-                     ('@SYNOPSIS@', '| '+'\n| '.join(commands[cmd].__doc__.split('\n', 2)[1].decode('ascii').replace(cmd, "`%s`" % cmd).replace("dropbox", "``dropbox``") for cmd in commands)).replace\
-                     ('@COMMANDS@', formatted_commands))
+                 ('@AUTHORS@', authors).replace\
+                 ('@DATE@', datetime.date.today().isoformat()).replace\
+                 ('@PACKAGE_VERSION@', sys.argv[1]).replace\
+                 ('@SYNOPSIS@', '| '+'\n| '.join(commands[cmd].__doc__.split('\n', 2)[1].decode('ascii').replace(cmd, "`%s`" % cmd).replace("dropbox", "``dropbox``") for cmd in commands)).replace\
+                 ('@COMMANDS@', formatted_commands))

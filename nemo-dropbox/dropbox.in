@@ -142,7 +142,7 @@ def plat():
         arch = platform.machine()
         if (arch[0] == 'i' and
             arch[1].isdigit() and
-            arch[2:4] == '86'):
+                arch[2:4] == '86'):
             plat = "x86"
         elif arch == 'x86_64':
             plat = arch
@@ -873,12 +873,12 @@ options:
 
                     env_term = os.environ.get('TERM','')
                     supports_color = (sys.stderr.isatty() and (
-                                        env_term.startswith('vt') or
-                                        env_term.startswith('linux') or
-                                        'xterm' in env_term or
-                                        'color' in env_term
-                                        )
-                                     )
+                        env_term.startswith('vt') or
+                        env_term.startswith('linux') or
+                        'xterm' in env_term or
+                        'color' in env_term
+                    )
+                    )
 
                     # TODO: Test when you don't support color.
                     if not supports_color:
@@ -964,7 +964,7 @@ options:
                         continue
                     if not os.path.exists(fp):
                         console_print(u"%-*s %s" % \
-                                          (indent, file+':', "File doesn't exist"))
+                                      (indent, file+':', "File doesn't exist"))
                         continue
 
                     try:
@@ -1382,9 +1382,9 @@ def main(argv):
 
     globaloptionparser = optparse.OptionParser()
     globaloptionparser.add_option("--http-proxy", action="callback",
-        type="string", callback=set_http_proxy)
+                                  type="string", callback=set_http_proxy)
     globaloptionparser.add_option("--https-proxy", action="callback",
-        type="string", callback=set_https_proxy)
+                                  type="string", callback=set_https_proxy)
     globaloptionparser.parse_args(argv[0:i])
 
     # now dispatch and run

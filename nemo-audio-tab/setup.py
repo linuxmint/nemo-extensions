@@ -19,5 +19,4 @@ DistUtilsExtra.auto.setup(
     url          = "https://github.com/linuxmint/nemo-extensions",
     license      = "GPL3",
     data_files   = data
-    )
-
+)
