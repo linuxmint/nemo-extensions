@@ -28,8 +28,8 @@
 #include "nemo-preview-pdf-loader.h"
 
 #include "nemo-preview-utils.h"
-#include <evince-document.h>
-#include <evince-view.h>
+#include <xreader-document.h>
+#include <xreader-view.h>
 #include <glib/gstdio.h>
 #include <gdk/gdkx.h>
 

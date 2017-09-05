@@ -29,7 +29,7 @@
 #define __NEMO_PREVIEW_UTILS_H__
 
 #include <clutter/clutter.h>
-#include <evince-document.h>
+#include <xreader-document.h>
 #include <gdk/gdk.h>
 
 G_BEGIN_DECLS
