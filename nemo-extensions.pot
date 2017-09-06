@@ -1,0 +1,1295 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-06 17:23+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:32
+msgid "Audio"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:61
+msgid "No Info"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:1
+msgid "Title:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:2
+msgid "Artist:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:3
+msgid "Album:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:4
+msgid "Album Artist:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:5
+msgid "Genre:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:6
+msgid "Year:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:7
+msgid "Track #:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:8
+msgid "Length:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:9
+msgid "Bitrate:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:10
+msgid "Sample Rate:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:11
+msgid "Encoded by:"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.glade.h:12
+msgid "Copyright:"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare-preferences.py:95
+msgid "Nemo Compare Extension Preferences"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare-preferences.py:103
+msgid "Normal Diff"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare-preferences.py:115
+msgid "Three-Way Diff"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare-preferences.py:127
+msgid "N-Way Diff"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare.py:112 nemo-compare/src/nemo-compare.py:135
+msgid "Compare to: "
+msgstr ""
+
+#: nemo-compare/src/nemo-compare.py:113
+msgid "Compare to the file remembered before"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare.py:122
+msgid "Compare Later"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare.py:123
+msgid "Remember file for later comparison"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare.py:136
+msgid "Compare selected files to the file remembered before"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare.py:147
+msgid "Compare"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare.py:148
+msgid "Compare selected files"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:82
+msgid "Emblems"
+msgstr ""
+
+#: nemo-fileroller/src/nemo-fileroller.c:333
+msgid "Extract Here"
+msgstr ""
+
+#: nemo-fileroller/src/nemo-fileroller.c:335
+msgid "Extract the selected archive to the current position"
+msgstr ""
+
+#: nemo-fileroller/src/nemo-fileroller.c:353
+msgid "Extract To..."
+msgstr ""
+
+#: nemo-fileroller/src/nemo-fileroller.c:354
+msgid "Extract the selected archive"
+msgstr ""
+
+#: nemo-fileroller/src/nemo-fileroller.c:373
+msgid "Compress..."
+msgstr ""
+
+#: nemo-fileroller/src/nemo-fileroller.c:374
+msgid "Create a compressed archive with the selected objects"
+msgstr ""
+
+#: nemo-gtkhash/src/callbacks.c:47
+msgid "Save Digests"
+msgstr ""
+
+#: nemo-gtkhash/src/callbacks.c:236
+msgid "A GTK+ utility for computing message digests or checksums."
+msgstr ""
+
+#: nemo-gtkhash/src/callbacks.c:240
+msgid "translator-credits"
+msgstr ""
+
+#: nemo-gtkhash/src/callbacks.c:262
+msgid "Select Files"
+msgstr ""
+
+#: nemo-gtkhash/src/gui.c:293
+#, c-format
+msgid "Failed to read \"%s\""
+msgstr ""
+
+#: nemo-gtkhash/src/gui.c:310
+#, c-format
+msgid ""
+"Failed to read \"%s\":\n"
+"%s"
+msgstr ""
+
+#: nemo-gtkhash/src/gui.c:359
+msgid "Not a regular file"
+msgstr ""
+
+#: nemo-gtkhash/src/gui.c:381
+msgid "Unknown error"
+msgstr ""
+
+#: nemo-gtkhash/src/gui.c:383
+#, c-format
+msgid ""
+"Failed to add \"%s\":\n"
+"%s"
+msgstr ""
+
+#: nemo-gtkhash/src/hash.c:74 nemo-gtkhash/src/nautilus/properties-hash.c:61
+#, c-format
+msgid "%s of %s - 1 minute left (%s/sec)"
+msgstr ""
+
+#: nemo-gtkhash/src/hash.c:77 nemo-gtkhash/src/nautilus/properties-hash.c:64
+#, c-format
+msgid "%s of %s - %u minutes left (%s/sec)"
+msgstr ""
+
+#: nemo-gtkhash/src/hash.c:81 nemo-gtkhash/src/nautilus/properties-hash.c:68
+#, c-format
+msgid "%s of %s - 1 second left (%s/sec)"
+msgstr ""
+
+#: nemo-gtkhash/src/hash.c:84 nemo-gtkhash/src/nautilus/properties-hash.c:71
+#, c-format
+msgid "%s of %s - %u seconds left (%s/sec)"
+msgstr ""
+
+#: nemo-gtkhash/src/main.c:86
+msgid "Check against the specified digest or checksum"
+msgstr ""
+
+#: nemo-gtkhash/src/main.c:86
+msgid "DIGEST"
+msgstr ""
+
+#: nemo-gtkhash/src/main.c:90
+msgid "Read program data from the specified directory"
+msgstr ""
+
+#: nemo-gtkhash/src/main.c:90
+msgid "DIRECTORY"
+msgstr ""
+
+#: nemo-gtkhash/src/main.c:94
+msgid "Hash the specified text"
+msgstr ""
+
+#: nemo-gtkhash/src/main.c:94
+msgid "TEXT"
+msgstr ""
+
+#: nemo-gtkhash/src/main.c:98
+msgid "Show version information"
+msgstr ""
+
+#: nemo-gtkhash/src/main.c:102
+msgid "[FILE|URI...]"
+msgstr ""
+
+#: nemo-gtkhash/src/prefs.c:76
+msgid "Failed to enable any supported hash functions."
+msgstr ""
+
+#: nemo-gtkhash/src/nautilus/properties.c:436
+#: nemo-gtkhash/src/nautilus/properties.c:439
+#: nemo-gtkhash/src/nautilus/properties.c:441
+msgid "Digests"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-converter.c:121
+msgid "_Resize Images..."
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-converter.c:122
+msgid "Resize each selected image"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-converter.c:131
+msgid "Ro_tate Images..."
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-converter.c:132
+msgid "Rotate each selected image"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-resizer.c:211
+#: nemo-image-converter/src/nemo-image-rotator.c:208
+msgid "_Skip"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-resizer.c:213
+#: nemo-image-converter/src/nemo-image-rotator.c:210
+msgid "_Retry"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-resizer.c:291
+#, c-format
+msgid "Resizing image: %d of %d"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-resizer.c:296
+#, c-format
+msgid "<i>Resizing \"%s\"</i>"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-resizer.c:314
+#: nemo-image-converter/src/nemo-image-rotator.c:313
+msgid "Please enter a valid filename suffix!"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-rotator.c:290
+#, c-format
+msgid "Rotating image: %d of %d"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-rotator.c:295
+#, c-format
+msgid "<i>Rotating \"%s\"</i>"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:1
+msgid "Resize Images"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:2
+msgid "<b>Image Size</b>"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:3
+msgid "Select a size:"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:4
+msgid "16x16"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:5
+msgid "32x32"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:6
+msgid "48x48"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:7
+msgid "96x96"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:8
+msgid "128x128"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:9
+msgid "640x480"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:10
+msgid "800x600"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:11
+msgid "1024x768"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:12
+msgid "1280x960"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:13
+msgid "pixels"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:14
+msgid "Scale:"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:15
+msgid "percent"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:16
+msgid "Custom size:"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:17
+msgid "Width:"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:18
+msgid "Height:"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:19
+msgid "<b>Filename</b>"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:20
+msgid "Append"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:21
+msgid ".resized"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:22
+msgid "to file title"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:23
+msgid "Resize in place"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-resize.ui.h:24
+msgid "_Resize"
+msgstr ""
+
+#: nemo-pastebin/nemo-pastebin-configurator.py:45
+#, python-format
+msgid "Can't find %s in any known prefix!"
+msgstr ""
+
+#: nemo-pastebin/nemo-pastebin.py:111
+msgid "Unable to read or parse the result page."
+msgstr ""
+
+#: nemo-pastebin/nemo-pastebin.py:112
+msgid "It could be a server timeout or a change server side. Try later."
+msgstr ""
+
+#: nemo-pastebin/nemo-pastebin.py:169
+#, python-format
+msgid "Pastebin to %s"
+msgstr ""
+
+#: nemo-pastebin/nemo-pastebin.py:170
+#, python-format
+msgid "Send this file to %s"
+msgstr ""
+
+#: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:1
+msgid "Nemo Pastebin configuration panel"
+msgstr ""
+
+#: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:2
+msgid "<b>Pastebin</b>:"
+msgstr ""
+
+#: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:3
+msgid "<b>Open browser</b>:"
+msgstr ""
+
+#: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:4
+msgid "<b>Show a notification</b>:"
+msgstr ""
+
+#: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:5
+msgid "<b>Username</b>:"
+msgstr ""
+
+#: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:6
+msgid "<b>Password</b>"
+msgstr ""
+
+#: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:7
+msgid "<b>Author</b>:"
+msgstr ""
+
+#: nemo-preview/src/libnemo-preview/nemo-preview-file-loader.c:639
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-preview/src/libnemo-preview/nemo-preview-file-loader.c:651
+msgid "Empty Folder"
+msgstr ""
+
+#: nemo-preview/src/js/ui/fallbackRenderer.js:123
+msgid "Type"
+msgstr ""
+
+#: nemo-preview/src/js/ui/fallbackRenderer.js:124
+#: nemo-preview/src/js/ui/fallbackRenderer.js:133
+#: nemo-preview/src/js/ui/fallbackRenderer.js:139
+#: nemo-preview/src/js/ui/spinnerBox.js:60
+msgid "Loading..."
+msgstr ""
+
+#: nemo-preview/src/js/ui/fallbackRenderer.js:132
+msgid "Size"
+msgstr ""
+
+#: nemo-preview/src/js/ui/fallbackRenderer.js:138
+msgid "Modified"
+msgstr ""
+
+#: nemo-preview/src/js/viewers/audio.js:176
+msgid "from"
+msgstr ""
+
+#: nemo-preview/src/js/viewers/audio.js:178
+msgid "by"
+msgstr ""
+
+#: nemo-preview/src/js/viewers/evince.js:81
+#, javascript-format
+msgid "%d of %d"
+msgstr ""
+
+#: nemo-repairer/src/encoding-dialog.c:195
+#, c-format
+msgid ""
+"<span size=\"larger\">The selected \"%s\" is invalid encoding.</span>\n"
+"<span size=\"larger\">Please choose another one.</span>"
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:120
+#, c-format
+msgid ""
+"<span size=\"larger\" weight=\"bold\">There was an error renaming the file "
+"to \"%s\"</span>"
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:157
+#, c-format
+msgid ""
+"<span size=\"larger\" weight=\"bold\">A file named \"%s\" already exists.</"
+"span>"
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:160
+#, c-format
+msgid ""
+"If you want to rename the selected file, please move or rename \"%s\" first."
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:217
+msgid "Repair filename ..."
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:218
+msgid "Repair filename"
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:265
+#, c-format
+msgid "Re_name as \"%s\""
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:266
+#, c-format
+msgid "Rename as \"%s\"."
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:410
+msgid "Select a filename"
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:411
+msgid "Select a filename from sub menu items."
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:82
+msgid "Arabic - CP1256"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:83
+msgid "Baltic - CP1257"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:84
+msgid "Central European latin - CP1250"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:85
+msgid "Chinese simplified - CP936"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:86
+msgid "Chinese traditional - CP950"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:87
+msgid "Cyrillic - CP1251"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:88
+msgid "Greek - CP1253"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:89
+msgid "Hebrew - CP1255"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:90
+msgid "Japanese - CP932"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:91
+msgid "Korean - CP949"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:92
+msgid "Thai - CP874"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:93
+msgid "Turkish - CP1254"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:94
+msgid "Vietnamese - CP1258"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:95
+msgid "Western European latin - CP1252"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:96
+msgid "IBM PC (MS-DOS) - CP437"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:211
+#, c-format
+msgid ""
+"<span size=\"larger\" weight=\"bold\">There was an error renaming \"%s\" to "
+"\"%s\"</span>"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:316
+msgid "Other ..."
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:722
+msgid "As is"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.c:729
+msgid "To be"
+msgstr ""
+
+#: nemo-repairer/src/repairer.c:50
+msgid "Nemo Filename Repairer: Select Files To Rename"
+msgstr ""
+
+#: nemo-repairer/src/encoding-dialog.ui.h:1
+msgid "Select an encoding name to use"
+msgstr ""
+
+#: nemo-repairer/src/encoding-dialog.ui.h:2
+msgid "_Encoding name to add: "
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:569
+msgid "Key Imported"
+msgid_plural "Keys Imported"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:573
+#, c-format
+msgid "Imported %i key"
+msgid_plural "Imported %i keys"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:575
+msgid "Imported a key for"
+msgid_plural "Imported keys for"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:603
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>expired</b></i> on %s."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:604
+msgid "Invalid Signature"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:610
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s <b>Expired</b>."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:611
+msgid "Expired Signature"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:617
+#, c-format
+msgid "Signed by <i><key id='%s'/> <b>Revoked</b></i> on %s."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:618
+msgid "Revoked Signature"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:625
+msgid "Good Signature"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:626
+#, c-format
+msgid "Signed by <i><key id='%s'/></i> on %s."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:628
+msgid "Untrusted Valid Signature"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:629
+#, c-format
+msgid "Valid but <b>untrusted</b> signature by <i><key id='%s'/></i> on %s."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:635
+msgid "Signing key not in keyring."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:636
+msgid "Unknown Signature"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:640
+msgid "Bad or forged signature. The signed data was modified."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:641
+msgid "Bad Signature"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notification.c:649
+msgid "Couldn't verify signature."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-passphrase.c:111
+msgid "Wrong passphrase."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-passphrase.c:115
+#, c-format
+msgid "Enter new passphrase for '%s'"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-passphrase.c:117
+#, c-format
+msgid "Enter passphrase for '%s'"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-passphrase.c:120
+msgid "Enter new passphrase"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-passphrase.c:122
+msgid "Enter passphrase"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-passphrase.c:127
+msgid "Passphrase"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-passphrase.c:135
+msgid "Ok"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-passphrase.c:136
+msgid "Cancel"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:58
+msgid "Import keys from the file"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:60
+msgid "Encrypt file"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:62
+msgid "Sign file with default key"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:64
+msgid "Encrypt and sign file with default key"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:66
+msgid "Decrypt encrypted file"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:68
+msgid "Verify signature file"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:70
+msgid "Read list of URIs on standard in"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:72
+msgid "file..."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:168
+msgid "Encryption settings"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:233
+#: nemo-seahorse/tool/seahorse-tool.c:347
+msgid "Couldn't load keys"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:250
+#, c-format
+msgid "Choose Encrypted File Name for '%s'"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:325
+msgid "Choose Signer"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:367
+#, c-format
+msgid "Choose Signature File Name for '%s'"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:407
+msgid "Import is complete"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:440
+msgid "Importing keys ..."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:470
+msgid "Import Failed"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:471
+msgid "Keys were found but not imported."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:494
+msgid "Imported key"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:496
+#, c-format
+msgid "Imported %d key"
+msgid_plural "Imported %d keys"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:518
+#, c-format
+msgid "Choose Decrypted File Name for '%s'"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:575
+#, c-format
+msgid "Choose Original File for '%s'"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:648
+msgid "No valid signatures found"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:695
+msgid "File Encryption Tool"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:713
+msgid "Encrypting"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:714
+#, c-format
+msgid "Couldn't encrypt file: %s"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:722
+msgid "Signing"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:723
+#, c-format
+msgid "Couldn't sign file: %s"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:728
+msgid "Importing"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:729
+#, c-format
+msgid "Couldn't import keys from file: %s"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:735
+msgid "Decrypting"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:736
+#, c-format
+msgid "Couldn't decrypt file: %s"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:741
+msgid "Verifying"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool.c:742
+#, c-format
+msgid "Couldn't verify file: %s"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:116
+msgid "Ace (.ace)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:117
+msgid "Ar (.ar)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:118
+msgid "Arj (.arj)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:125
+msgid "Ear (.ear)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:126
+msgid "Self-extracting zip (.exe)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:128
+msgid "Jar (.jar)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:129
+msgid "Lha (.lzh)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:131
+msgid "Rar (.rar)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:133
+msgid "Tar uncompressed (.tar)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:134
+msgid "Tar compressed with bzip (.tar.bz)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:135
+msgid "Tar compressed with bzip2 (.tar.bz2)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:136
+msgid "Tar compressed with gzip (.tar.gz)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:137
+msgid "Tar compressed with lzop (.tar.lzo)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:138
+msgid "Tar compressed with compress (.tar.Z)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:140
+msgid "War (.war)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:141
+msgid "Zip (.zip)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:142
+msgid "Zoo (.zoo)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:143
+msgid "7-Zip (.7z)"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:325
+#, c-format
+msgid "You have selected %d file "
+msgid_plural "You have selected %d files "
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:330
+#, c-format
+msgid "and %d folder"
+msgid_plural "and %d folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:335
+#, c-format
+msgid "<b>%s%s</b>"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:343
+#, c-format
+msgid "You have selected %d file"
+msgid_plural "You have selected %d files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:348
+#, c-format
+msgid "You have selected %d folder"
+msgid_plural "You have selected %d folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:863
+msgid "Preparing..."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:872
+#: nemo-seahorse/tool/seahorse-tool-files.c:895
+msgid "Couldn't list files"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-tool-files.c:882
+#: nemo-seahorse/tool/seahorse-util.c:396
+msgid "Couldn't package files"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-util.c:170
+msgid "Decryption failed. You probably do not have the decryption key."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-util.c:197
+msgid "%Y-%m-%d"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-util.c:391
+msgid "Couldn't run file-roller"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-util.c:397
+msgid "The file-roller process did not complete successfully"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-util.c:433
+msgid "All key files"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-util.c:440
+#: nemo-seahorse/tool/seahorse-util.c:480
+msgid "All files"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-util.c:473
+msgid "Archive files"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-util.c:502
+msgid ""
+"<b>A file already exists with this name.</b>\n"
+"\n"
+"Do you want to replace it with a new file?"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-util.c:505
+msgid "_Replace"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-multi-encrypt.xml.h:1
+msgid "Encrypt Multiple Files"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-multi-encrypt.xml.h:2
+msgid "<b>You have selected multiple files or folders</b>"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-multi-encrypt.xml.h:3
+msgid "encrypted-package"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-multi-encrypt.xml.h:4
+msgid "Encrypt each file separately"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-multi-encrypt.xml.h:5
+msgid "Encrypt packed together in a package"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-multi-encrypt.xml.h:6
+msgid "Packaging:"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-multi-encrypt.xml.h:7
+msgid "Package Name:"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-multi-encrypt.xml.h:8
+msgid ""
+"Because the files are located remotely, each file will be encrypted "
+"separately."
+msgstr ""
+
+#: nemo-seahorse/nemo-ext/nemo-seahorse.c:159
+msgid "Encrypt..."
+msgstr ""
+
+#: nemo-seahorse/nemo-ext/nemo-seahorse.c:160
+msgid "Encrypt (and optionally sign) the selected file"
+msgid_plural "Encrypt the selected files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-seahorse/nemo-ext/nemo-seahorse.c:166
+msgid "Sign"
+msgstr ""
+
+#: nemo-seahorse/nemo-ext/nemo-seahorse.c:167
+msgid "Sign the selected file"
+msgid_plural "Sign the selected files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nemo-share/src/nemo-share.c:134
+#, c-format
+msgid ""
+"Nemo needs to add some permissions to your folder \"%s\" in order to share it"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:142
+#, c-format
+msgid ""
+"The folder \"%s\" needs the following extra permissions for sharing to "
+"work:\n"
+"%s%s%sDo you want Nemo to add these permissions to the folder automatically?"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:146
+msgid "  - read permission by others\n"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:147
+msgid "  - write permission by others\n"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:148
+msgid "  - execute permission by others\n"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:152
+msgid "Add the permissions automatically"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:178
+#, c-format
+msgid "Could not change the permissions of folder \"%s\""
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:457
+msgid "Share name is too long"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:491
+msgid "The share name cannot be empty"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:504
+#, c-format
+msgid "Error while getting share information: %s"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:514
+msgid "Another share has the same name"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:561 nemo-share/src/nemo-share.c:867
+msgid "Modify _Share"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:561 nemo-share/src/nemo-share.c:869
+msgid "Create _Share"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:600
+msgid "Please log out and back in to finalize changes"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:603
+msgid ""
+"Something went wrong.  You may need to install samba and add your user to "
+"the 'sambashare' group manually."
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:755
+msgid "There was an error while getting the sharing information"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:1158
+msgid "Share"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:1218
+msgid "Folder Sharing"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:1259
+msgid "Sharing Options"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:1260
+msgid "Share this Folder"
+msgstr ""
+
+#: nemo-share/src/shares.c:125
+#, c-format
+msgid "%s %s %s returned with signal %d"
+msgstr ""
+
+#: nemo-share/src/shares.c:134
+#, c-format
+msgid "%s %s %s failed for an unknown reason"
+msgstr ""
+
+#: nemo-share/src/shares.c:154
+#, c-format
+msgid "'net usershare' returned error %d: %s"
+msgstr ""
+
+#: nemo-share/src/shares.c:156
+#, c-format
+msgid "'net usershare' returned error %d"
+msgstr ""
+
+#: nemo-share/src/shares.c:187
+msgid "the output of 'net usershare' is not in valid UTF-8 encoding"
+msgstr ""
+
+#: nemo-share/src/shares.c:442 nemo-share/src/shares.c:616
+msgid "Failed"
+msgstr ""
+
+#: nemo-share/src/shares.c:550
+#, c-format
+msgid "Samba's testparm returned with signal %d"
+msgstr ""
+
+#: nemo-share/src/shares.c:556
+msgid "Samba's testparm failed for an unknown reason"
+msgstr ""
+
+#: nemo-share/src/shares.c:571
+#, c-format
+msgid "Samba's testparm returned error %d: %s"
+msgstr ""
+
+#: nemo-share/src/shares.c:573
+#, c-format
+msgid "Samba's testparm returned error %d"
+msgstr ""
+
+#: nemo-share/src/shares.c:684
+#, c-format
+msgid "Cannot remove the share for path %s: that path is not shared"
+msgstr ""
+
+#: nemo-share/src/shares.c:730
+msgid ""
+"Cannot change the path of an existing share; please remove the old share "
+"first and add a new one"
+msgstr ""
+
+#: nemo-share/interfaces/share-dialog.ui.h:1
+msgid "<big><b>Folder Sharing</b></big>"
+msgstr ""
+
+#: nemo-share/interfaces/share-dialog.ui.h:2
+msgid "Share this _folder"
+msgstr ""
+
+#: nemo-share/interfaces/share-dialog.ui.h:3
+msgid "Share _name:"
+msgstr ""
+
+#: nemo-share/interfaces/share-dialog.ui.h:4
+msgid "Co_mment:"
+msgstr ""
+
+#: nemo-share/interfaces/share-dialog.ui.h:5
+msgid "_Allow others to create and delete files in this folder"
+msgstr ""
+
+#: nemo-share/interfaces/share-dialog.ui.h:6
+msgid "_Guest access (for people without a user account)"
+msgstr ""
+
+#: nemo-share/interfaces/share-dialog.ui.h:7
+msgid "Install"
+msgstr ""
+
+#: nemo-share/interfaces/share-dialog.ui.h:8
+msgid ""
+"Samba needs to be installed, and your user account needs to join the "
+"'sambashare' group."
+msgstr ""

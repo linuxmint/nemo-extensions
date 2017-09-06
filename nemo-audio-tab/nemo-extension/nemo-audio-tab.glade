@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.1 -->
+<!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.0"/>
   <object class="GtkScrolledWindow" id="mainWindow">
@@ -39,7 +39,6 @@
                   <object class="GtkLabel" id="title_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[baby]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -78,7 +77,6 @@
                   <object class="GtkLabel" id="artist_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[justin_bieber]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -117,7 +115,6 @@
                   <object class="GtkLabel" id="album_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[my worlds]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -156,7 +153,6 @@
                   <object class="GtkLabel" id="album_artist_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[justin bieber]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -195,7 +191,6 @@
                   <object class="GtkLabel" id="genre_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[pop; r&amp;b]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -234,7 +229,6 @@
                   <object class="GtkLabel" id="year_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[2099]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -273,7 +267,6 @@
                   <object class="GtkLabel" id="track_number_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[0/10]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -312,7 +305,6 @@
                   <object class="GtkLabel" id="length_number">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[not long enough]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -362,7 +354,6 @@
                   <object class="GtkLabel" id="bitrate_number">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[123 kb]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -401,7 +392,6 @@
                   <object class="GtkLabel" id="sample_rate_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[1000Hz]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -440,7 +430,6 @@
                   <object class="GtkLabel" id="encoded_by_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[itunes v 6.0.0.18]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -479,7 +468,6 @@
                   <object class="GtkLabel" id="copyright_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">[GNU 3.0]</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>

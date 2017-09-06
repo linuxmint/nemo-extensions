@@ -1,0 +1,54 @@
+#!/bin/bash
+
+#nemo-audio-tab
+intltool-extract --type=gettext/glade nemo-audio-tab/nemo-extension/*.glade
+xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot nemo-audio-tab/nemo-extension/*.py nemo-audio-tab/nemo-extension/*.glade.h
+rm -f nemo-audio-tab/nemo-extension/*.glade.h
+
+#nemo-compare
+xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-compare/src/*.py
+
+#nemo-dropbox
+xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-dropbox/src/*.c nemo-dropbox/src/*.h
+xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-dropbox/*.py
+
+#nemo-emblems
+xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-emblems/nemo-extension/*.py
+
+#nemo-fileroller
+xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-fileroller/src/*.c nemo-fileroller/src/*.h
+
+#nemo-gtkhash
+xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-gtkhash/src/*.c nemo-gtkhash/src/*/*.c nemo-gtkhash/src/*/*/*.c
+
+#nemo-image-converter
+intltool-extract --type=gettext/glade nemo-image-converter/data/*.ui
+xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-image-converter/src/*.c nemo-image-converter/src/*.h nemo-image-converter/data/*.ui.h
+rm -f nemo-image-converter/data/*.ui.h
+
+#nemo-media-columns
+xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-media-columns/*.py
+
+#nemo-pastebin
+intltool-extract --type=gettext/glade nemo-pastebin/data/*.ui
+xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-pastebin/*.py nemo-pastebin/data/*.ui.h
+rm -f nemo-pastebin/data/*.ui.h
+
+#nemo-preview
+xgettext --language=C --keyword=_ --keyword=N_ --keyword=g_dngettext:2,3 --flag=N_:1:pass-c-format --output=nemo-extensions.pot --join-existing nemo-preview/src/*.c nemo-preview/src/libnemo-preview/*.c nemo-preview/src/libnemo-preview/*.h
+xgettext --language=JavaScript --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-preview/src/js/*/*.js
+
+#nemo-repairer
+intltool-extract --type=gettext/glade nemo-repairer/src/*.ui
+xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-repairer/src/*.c nemo-repairer/src/*.h nemo-repairer/src/*.ui.h
+rm -f nemo-repairer/src/*.ui.h
+
+#nemo-seahorse
+intltool-extract --type=gettext/glade nemo-seahorse/tool/*.xml
+xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-seahorse/tool/*.c nemo-seahorse/tool/*.h nemo-seahorse/tool/*.xml.h nemo-seahorse/nemo-ext/*.c nemo-seahorse/nemo-ext/*.h
+rm -f nemo-seahorse/tool/*.xml.h
+
+#nemo-share
+intltool-extract --type=gettext/glade nemo-share/interfaces/*.ui
+xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-share/src/*.c nemo-share/src/*.h nemo-share/interfaces/*.ui.h
+rm -f nemo-share/interfaces/*.ui.h
