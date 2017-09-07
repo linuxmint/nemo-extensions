@@ -28,11 +28,15 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
 
         #GUI
         locale.setlocale(locale.LC_ALL, '')
+        gettext.bindtextdomain("nemo-extensions")
+        gettext.textdomain("nemo-extensions")
         _ = gettext.gettext
+
         self.property_label = Gtk.Label(_('Audio'))
         self.property_label.show()
 
         self.builder = Gtk.Builder()
+        self.builder.set_translation_domain('nemo-extensions')
         self.builder.add_from_file("/usr/share/nemo-python/extensions/nemo-audio-tab.glade")
 
         #connect signals to python methods
