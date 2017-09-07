@@ -1,6 +1,6 @@
 INCLUDES =						\
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	\
-	-DGETTEXT_PACKAGE=\""file-roller"\" 	\
+	-DGETTEXT_PACKAGE=\""nemo-extensions"\" 	\
 	-I$(top_srcdir)					\
 	-I$(top_builddir)
 

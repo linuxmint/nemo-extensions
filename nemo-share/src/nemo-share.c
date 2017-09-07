@@ -763,7 +763,7 @@ create_property_page (NemoFileInfo *fileinfo)
 
 
   page->xml = gtk_builder_new ();
-  gtk_builder_set_translation_domain (page->xml, "nemo-share");
+  gtk_builder_set_translation_domain (page->xml, "nemo-extensions");
   g_assert (gtk_builder_add_from_file (page->xml,
               INTERFACES_DIR"/share-dialog.ui", &error));
 
@@ -1374,8 +1374,8 @@ nemo_module_initialize (GTypeModule  *module)
 {
   /*g_print ("Initializing nemo-share extension\n");*/
 
-  bindtextdomain("nemo-share", NEMO_SHARE_LOCALEDIR);
-  bind_textdomain_codeset("nemo-share", "UTF-8");
+  bindtextdomain("nemo-extensions", NEMO_SHARE_LOCALEDIR);
+  bind_textdomain_codeset("nemo-extensions", "UTF-8");
 
   nemo_share_register_type (module);
 }
