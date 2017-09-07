@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-07 12:39+0100\n"
+"POT-Creation-Date: 2017-09-07 12:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. if not pasteurl or not re.match("^http://.*$", pasteurl):
-#: ../nemo-pastebin.py:111 ../nemo-pastebin.py:166
+#: ../nemo-pastebin.py:111
 msgid "Unable to read or parse the result page."
 msgstr ""
 
@@ -26,12 +26,12 @@ msgstr ""
 msgid "It could be a server timeout or a change server side. Try later."
 msgstr ""
 
-#: ../nemo-pastebin.py:170
+#: ../nemo-pastebin.py:169
 #, python-format
 msgid "Pastebin to %s"
 msgstr ""
 
-#: ../nemo-pastebin.py:171
+#: ../nemo-pastebin.py:170
 #, python-format
 msgid "Send this file to %s"
 msgstr ""

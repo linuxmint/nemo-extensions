@@ -83,8 +83,8 @@ class NemoCompareExtensionPreferences:
 
         # initialize i18n
         locale.setlocale(locale.LC_ALL, '')
-        gettext.bindtextdomain(utils.APP)
-        gettext.textdomain(utils.APP)
+        gettext.bindtextdomain("nemo-extensions")
+        gettext.textdomain("nemo-extensions")
         _ = gettext.gettext
 
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
@@ -92,7 +92,7 @@ class NemoCompareExtensionPreferences:
         icon=self.window.render_icon(gtk.STOCK_PREFERENCES, gtk.ICON_SIZE_DIALOG)
         self.window.set_icon(icon)
         self.window.set_resizable(False)
-        self.window.set_title(_("Nemo Compare Extension Preferences"))
+        self.window.set_title(_("Nemo Compare"))
         self.window.connect("delete_event",self.cancel_event)
         self.window.set_border_width(15)
 

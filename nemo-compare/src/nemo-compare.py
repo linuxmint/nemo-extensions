@@ -81,8 +81,8 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescP
 
         # initialize i18n
         locale.setlocale(locale.LC_ALL, '')
-        gettext.bindtextdomain(utils.APP)
-        gettext.textdomain(utils.APP)
+        gettext.bindtextdomain("nemo-extensions")
+        gettext.textdomain("nemo-extensions")
         _ = gettext.gettext
 
         item1 = None
