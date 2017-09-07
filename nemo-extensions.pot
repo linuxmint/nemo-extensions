@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-06 17:23+0100\n"
+"POT-Creation-Date: 2017-09-07 12:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:32
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:35
 msgid "Audio"
 msgstr ""
 
-#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:61
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:65
 msgid "No Info"
 msgstr ""
 
@@ -396,6 +396,66 @@ msgstr ""
 
 #: nemo-image-converter/data/nemo-image-resize.ui.h:24
 msgid "_Resize"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:57
+msgid "Title"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:58
+msgid "Album"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:59
+msgid "Artist"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:60
+msgid "Track"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:61
+msgid "Genre"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:62
+msgid "Date"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:63
+msgid "Bitrate"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:64
+msgid "Sample Rate"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:65
+msgid "Length"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:66
+msgid "EXIF Date"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:67
+msgid "EXIF Software"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:68
+msgid "EXIF Flash"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:69
+msgid "EXIF Image Size"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:70
+msgid "EXIF Rating"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:71
+msgid "Image Size"
 msgstr ""
 
 #: nemo-pastebin/nemo-pastebin-configurator.py:45

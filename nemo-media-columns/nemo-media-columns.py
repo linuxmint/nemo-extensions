@@ -43,27 +43,32 @@ except:
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
+import gettext
+gettext.bindtextdomain("nemo-extensions")
+gettext.textdomain("nemo-extensions")
+_ = gettext.gettext
+
 class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, Nemo.NameAndDescProvider):
     def __init__(self):
         pass
 
     def get_columns(self):
         return (
-            Nemo.Column(name="NemoPython::title_column",attribute="title",label="Title",description="Song title"),
-            Nemo.Column(name="NemoPython::album_column",attribute="album",label="Album",description="Album"),
-            Nemo.Column(name="NemoPython::artist_column",attribute="artist",label="Artist",description="Artist"),
-            Nemo.Column(name="NemoPython::tracknumber_column",attribute="tracknumber",label="Track",description="Track number"),
-            Nemo.Column(name="NemoPython::genre_column",attribute="genre",label="Genre",description="Genre"),
-            Nemo.Column(name="NemoPython::date_column",attribute="date",label="Date",description="Date"),
-            Nemo.Column(name="NemoPython::bitrate_column",attribute="bitrate",label="Bitrate",description="Audio Bitrate in kilo bits per second"),
-            Nemo.Column(name="NemoPython::samplerate_column",attribute="samplerate",label="Sample rate",description="Sample rate in Hz"),
-            Nemo.Column(name="NemoPython::length_column",attribute="length",label="Length",description="Length of audio"),
-            Nemo.Column(name="NemoPython::exif_datetime_original_column",attribute="exif_datetime_original",label="EXIF Dateshot ",description="Get the photo capture date from EXIF data"),
-            Nemo.Column(name="NemoPython::exif_software_column",attribute="exif_software",label="EXIF Software",description="EXIF - software used to save image"),
-            Nemo.Column(name="NemoPython::exif_flash_column",attribute="exif_flash",label="EXIF flash",description="EXIF - flash mode"),
-            Nemo.Column(name="NemoPython::exif_pixeldimensions_column",attribute="exif_pixeldimensions",label="EXIF Image Size",description="Image size - pixel dimensions as reported by EXIF data"),
-            Nemo.Column(name="NemoPython::exif_rating",attribute="exif_rating",label="EXIF Rating",description="Rating of the Image as reported by EXIF data"),
-            Nemo.Column(name="NemoPython::pixeldimensions_column",attribute="pixeldimensions",label="Image Size",description="Image/video size - actual pixel dimensions"),
+            Nemo.Column(name="NemoPython::title_column",attribute="title",label=_("Title"),description=""),
+            Nemo.Column(name="NemoPython::album_column",attribute="album",label=_("Album"),description=""),
+            Nemo.Column(name="NemoPython::artist_column",attribute="artist",label=_("Artist"),description=""),
+            Nemo.Column(name="NemoPython::tracknumber_column",attribute="tracknumber",label=_("Track"),description=""),
+            Nemo.Column(name="NemoPython::genre_column",attribute="genre",label=_("Genre"),description=""),
+            Nemo.Column(name="NemoPython::date_column",attribute="date",label=_("Date"),description=""),
+            Nemo.Column(name="NemoPython::bitrate_column",attribute="bitrate",label=_("Bitrate"),description=""),
+            Nemo.Column(name="NemoPython::samplerate_column",attribute="samplerate",label=_("Sample Rate"),description=""),
+            Nemo.Column(name="NemoPython::length_column",attribute="length",label=_("Length"),description=""),
+            Nemo.Column(name="NemoPython::exif_datetime_original_column",attribute="exif_datetime_original",label=_("EXIF Date"),description=""),
+            Nemo.Column(name="NemoPython::exif_software_column",attribute="exif_software",label=_("EXIF Software"),description=""),
+            Nemo.Column(name="NemoPython::exif_flash_column",attribute="exif_flash",label=_("EXIF Flash"),description=""),
+            Nemo.Column(name="NemoPython::exif_pixeldimensions_column",attribute="exif_pixeldimensions",label=_("EXIF Image Size"),description=""),
+            Nemo.Column(name="NemoPython::exif_rating",attribute="exif_rating",label=_("EXIF Rating"),description=""),
+            Nemo.Column(name="NemoPython::pixeldimensions_column",attribute="pixeldimensions",label=_("Image Size"),description=""),
         )
 
     def update_file_info(self, file):
