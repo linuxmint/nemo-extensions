@@ -76,8 +76,8 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
 
         #GUI
         locale.setlocale(locale.LC_ALL, '')
-        gettext.bindtextdomain('nemo-emblems')
-        gettext.textdomain('nemo-emblems')
+        gettext.bindtextdomain('nemo-extensions')
+        gettext.textdomain('nemo-extensions')
         _ = gettext.gettext
         self.property_label = Gtk.Label(_('Emblems'))
         self.property_label.show()

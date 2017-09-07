@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-10 10:00+0000\n"
+"POT-Creation-Date: 2017-09-07 12:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,4 @@ msgstr ""
 
 #: ../nemo-extension/nemo-emblems.py:82
 msgid "Emblems"
-msgstr ""
-
-#: ../nemo-extension/nemo-emblems.py:138
-msgid "Nemo Emblems:::Change a folder or file emblem"
 msgstr ""
