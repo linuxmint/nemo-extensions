@@ -293,7 +293,7 @@ AM_CONDITIONAL([ENABLE_NLS], [test "${enable_nls}" != "no"])
 if test "${enable_nls}" = "no" ; then
 	AC_DEFINE([ENABLE_NLS], [0])
 else
-	GETTEXT_PACKAGE="${PACKAGE}"
+	GETTEXT_PACKAGE=nemo-extensions
 	AC_SUBST([GETTEXT_PACKAGE])
 	AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["${GETTEXT_PACKAGE}"], [Define the gettext package])
 	IT_PROG_INTLTOOL([0.40.6])
