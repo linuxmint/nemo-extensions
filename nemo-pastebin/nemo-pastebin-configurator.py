@@ -26,6 +26,10 @@ import re
 import gettext
 from subprocess import check_output
 from xdg import BaseDirectory
+
+import gi
+
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gio, Gtk
 
 APP_NAME = "nemo-pastebin"
@@ -33,7 +37,7 @@ APP_DATA_PATHS = [os.path.join(sys.path[0], 'data')]
 for dir in BaseDirectory.xdg_data_dirs:
     APP_DATA_PATHS.append(os.path.join(dir, APP_NAME))
 
-gettext.install(APP_NAME)
+gettext.install("nemo-extensions")
 
 def find_data_file(path):
     target = None
@@ -63,6 +67,7 @@ class Controller(object):
     def __init__(self):
         self.settings = settings = Gio.Settings.new(self.BASE_KEY)
         builder = Gtk.Builder.new()
+        builder.set_translation_domain("nemo-extensions")
         builder.add_from_file(UI_FILE)
 
         self.dialog_main = builder.get_object('dialog_main')
@@ -90,7 +95,6 @@ class Controller(object):
 
         # Set combobox up
         self.presets = presets = get_presets()
-        print presets
         pastebin = builder.get_object("combobox_pastebin")
         pastebin.set_entry_text_column(0)
         curr_selected = settings.get_string("pastebin")

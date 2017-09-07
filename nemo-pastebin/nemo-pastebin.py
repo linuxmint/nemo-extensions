@@ -48,7 +48,7 @@ APP_NAME = "nemo-pastebin"
 LOGGING = 1
 MAINTAINER_MODE = True
 
-gettext.install(APP_NAME)
+gettext.install("nemo-extensions")
 
 class log:
     def log(self, message):
@@ -139,7 +139,7 @@ class PastebinThread(Thread):
 class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescProvider):
     BASE_KEY = "apps.nemo-pastebin"
     def __init__(self):
-        log ("Intializing nemo-pastebin extension...")
+        log ("Initializing nemo-pastebin extension...")
         self.settings = Gio.Settings.new(self.BASE_KEY)
         self.validate_settings()
 
@@ -166,8 +166,8 @@ class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescPr
         pastebin = self.settings.get_string("pastebin")
         #Called when the user selects a file in Nemo.
         item = Nemo.MenuItem(name="NemoPython::pastebin_item",
-                             label=_("Pastebin to %s" % pastebin),
-                             tip=_("Send this file to %s" % pastebin))
+                             label=_("Pastebin to %s") % pastebin,
+                             tip=_("Send this file to %s") % pastebin)
         item.set_property('icon', "nemo-pastebin")
         item.connect("activate", self.menu_activate_cb, files)
         items.append(item)

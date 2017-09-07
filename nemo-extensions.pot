@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-07 12:21+0100\n"
+"POT-Creation-Date: 2017-09-07 12:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -458,7 +458,7 @@ msgstr ""
 msgid "Image Size"
 msgstr ""
 
-#: nemo-pastebin/nemo-pastebin-configurator.py:45
+#: nemo-pastebin/nemo-pastebin-configurator.py:49
 #, python-format
 msgid "Can't find %s in any known prefix!"
 msgstr ""
@@ -482,31 +482,31 @@ msgid "Send this file to %s"
 msgstr ""
 
 #: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:1
-msgid "Nemo Pastebin configuration panel"
+msgid "Nemo Pastebin"
 msgstr ""
 
 #: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:2
-msgid "<b>Pastebin</b>:"
+msgid "Pastebin"
 msgstr ""
 
 #: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:3
-msgid "<b>Open browser</b>:"
+msgid "Open the browser"
 msgstr ""
 
 #: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:4
-msgid "<b>Show a notification</b>:"
+msgid "Show a notification"
 msgstr ""
 
 #: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:5
-msgid "<b>Username</b>:"
+msgid "Username"
 msgstr ""
 
 #: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:6
-msgid "<b>Password</b>"
+msgid "Password"
 msgstr ""
 
 #: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:7
-msgid "<b>Author</b>:"
+msgid "Author"
 msgstr ""
 
 #: nemo-preview/src/libnemo-preview/nemo-preview-file-loader.c:639

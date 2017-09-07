@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-01 11:34+0300\n"
+"POT-Creation-Date: 2017-09-07 12:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,29 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. if not pasteurl or not re.match("^http://.*$", pasteurl):
-#: ../nemo-pastebin.py:108
+#: ../nemo-pastebin.py:111 ../nemo-pastebin.py:166
 msgid "Unable to read or parse the result page."
 msgstr ""
 
-#: ../nemo-pastebin.py:109
+#: ../nemo-pastebin.py:112
 msgid "It could be a server timeout or a change server side. Try later."
 msgstr ""
 
-#: ../nemo-pastebin.py:166
+#: ../nemo-pastebin.py:170
 #, python-format
 msgid "Pastebin to %s"
 msgstr ""
 
-#: ../nemo-pastebin.py:167
+#: ../nemo-pastebin.py:171
 #, python-format
 msgid "Send this file to %s"
 msgstr ""
 
-#: ../nemo-pastebin.py:193
-msgid "Nemo Pastebin:::Send files to a paste service via the context menu"
-msgstr ""
-
-#: ../nemo-pastebin-configurator.py:45
+#: ../nemo-pastebin-configurator.py:49
 #, python-format
 msgid "Can't find %s in any known prefix!"
 msgstr ""
