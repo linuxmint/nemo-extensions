@@ -31,7 +31,7 @@ const Gtk = imports.gi.Gtk;
 const GtkClutter = imports.gi.GtkClutter;
 const NemoPreview = imports.gi.NemoPreview;
 
-const Gettext = imports.gettext.domain('nemo-preview');
+const Gettext = imports.gettext.domain('nemo-extensions');
 const _ = Gettext.gettext;
 const Lang = imports.lang;
 

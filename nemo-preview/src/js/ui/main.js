@@ -37,7 +37,7 @@ const Utils = imports.ui.utils;
 const Tweener = imports.ui.tweener;
 
 function run(argv) {
-    Gettext.bindtextdomain('nemo-preview', Path.LOCALE_DIR);
+    Gettext.bindtextdomain('nemo-extensions', Path.LOCALE_DIR);
     String.prototype.format = Format.format;
 
     GLib.set_application_name('NemoPreview');
