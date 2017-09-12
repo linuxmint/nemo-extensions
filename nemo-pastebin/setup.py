@@ -33,7 +33,6 @@ def get_app_path_files():
 
 pkg_data_files = [
     ('share/pixmaps/', ['data/nemo-pastebin.svg']),
-    ('share/applications/', ['data/nemo-pastebin-configurator.desktop']),
     ('share/glib-2.0/schemas/', ['data/nemo-pastebin.gschema.xml']),
     ('share/nemo-pastebin/', get_app_path_files()),
 ]
