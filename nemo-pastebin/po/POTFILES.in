@@ -1,5 +1,4 @@
 nemo-pastebin.py
 nemo-pastebin-configurator.py
 data/nemo-pastebin-configurator.ui
-data/nemo-pastebin-configurator.desktop
 data/nemo-pastebin.gschema.xml
