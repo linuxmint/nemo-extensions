@@ -71,7 +71,17 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             Nemo.Column(name="NemoPython::pixeldimensions_column",attribute="pixeldimensions",label=_("Image Size"),description=""),
         )
 
-    def update_file_info(self, file):
+
+    def update_file_info_full(self, provider, handle, closure, file):
+        GObject.idle_add(self.update_cb, provider, handle, closure, file)
+        return Nemo.OperationResult.IN_PROGRESS
+
+    def update_cb(self, provider, handle, closure, file):
+        self.do_update_file_info(file)
+        file.invalidate_extension_info()
+        Nemo.info_provider_update_complete_invoke(closure, provider, handle, Nemo.OperationResult.COMPLETE)
+
+    def do_update_file_info(self, file):
         # set defaults to blank
         file.add_string_attribute('title', '')
         file.add_string_attribute('album', '')
