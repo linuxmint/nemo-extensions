@@ -48,7 +48,34 @@ gettext.bindtextdomain("nemo-extensions")
 gettext.textdomain("nemo-extensions")
 _ = gettext.gettext
 
+class FileExtensionInfo():
+
+    def __init__(self, uri):
+        self.uri = uri
+        self.title = None
+        self.album = None
+        self.artist = None
+        self.tracknumber = None
+        self.genre = None
+        self.date = None
+        self.bitrate = None
+        self.samplerate = None
+        self.length = None
+        self.exif_datetime_original = None
+        self.exif_software = None
+        self.exif_flash = None
+        self.exif_pixeldimensions = None
+        self.exif_rating = None
+        self.pixeldimensions = None
+
 class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, Nemo.NameAndDescProvider):
+
+    # Cache information fetched in this extension
+    # Calling invalidate_extension_info() is necessary to update the file info in the view
+    # but it leads to Nemo getting stuck indefinitely when browsing back and forth very fast
+    # To prevent this, we cache the result and serve it synchronously when it's already there.
+    files_extension_info = {}
+
     def __init__(self):
         pass
 
@@ -71,10 +98,26 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             Nemo.Column(name="NemoPython::pixeldimensions_column",attribute="pixeldimensions",label=_("Image Size"),description=""),
         )
 
+    def set_file_attributes(self, file, info):
+        for attribute in ("title", "album", "artist", "tracknumber", "genre", "date", "bitrate", "samplerate", "length", "exif_datetime_original", "exif_software", "exif_flash", "exif_pixeldimensions"):
+            value = getattr(info, attribute)
+            if value is None:
+                file.add_string_attribute(attribute, '')
+            else:
+                file.add_string_attribute(attribute, value)
 
     def update_file_info_full(self, provider, handle, closure, file):
-        GObject.idle_add(self.update_cb, provider, handle, closure, file)
-        return Nemo.OperationResult.IN_PROGRESS
+        if file.get_uri_scheme() != 'file':
+            return
+        uri = urllib.unquote(file.get_uri())
+        if uri in self.files_extension_info.keys():
+            info = self.files_extension_info[uri]
+            self.set_file_attributes(file, info)
+            # del self.files_extension_info[uri]
+            return Nemo.OperationResult.COMPLETE
+        else:
+            GObject.idle_add(self.update_cb, provider, handle, closure, file)
+            return Nemo.OperationResult.IN_PROGRESS
 
     def cancel_update(self, provider, handle):
         handle.cancelled = True
@@ -86,25 +129,9 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         return False
 
     def do_update_file_info(self, file):
-        # set defaults to blank
-        file.add_string_attribute('title', '')
-        file.add_string_attribute('album', '')
-        file.add_string_attribute('artist', '')
-        file.add_string_attribute('tracknumber', '')
-        file.add_string_attribute('genre', '')
-        file.add_string_attribute('date', '')
-        file.add_string_attribute('bitrate', '')
-        file.add_string_attribute('samplerate', '')
-        file.add_string_attribute('length', '')
-        file.add_string_attribute('exif_datetime_original', '')
-        file.add_string_attribute('exif_software', '')
-        file.add_string_attribute('exif_flash', '')
-        file.add_string_attribute('exif_pixeldimensions', '')
-        file.add_string_attribute('exif_rating','')
-        file.add_string_attribute('pixeldimensions', '')
 
-        if file.get_uri_scheme() != 'file':
-            return
+        uri = urllib.unquote(file.get_uri())
+        info = FileExtensionInfo(uri)
 
         # strip file:// to get absolute path
         filename = urllib.unquote(file.get_uri()[7:])
@@ -116,142 +143,114 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 audio = EasyID3(filename)
                 # sometimes the audio variable will not have one of these items defined, that's why
                 # there is this long try / except attempt
-                try: file.add_string_attribute('title', audio["title"][0])
-                except: file.add_string_attribute('title', "[n/a]")
-                try: file.add_string_attribute('album', audio["album"][0])
-                except: file.add_string_attribute('album', "[n/a]")
-                try: file.add_string_attribute('artist', audio["artist"][0])
-                except: file.add_string_attribute('artist', "[n/a]")
-                try: file.add_string_attribute('tracknumber', audio["tracknumber"][0])
-                except: file.add_string_attribute('tracknumber', "[n/a]")
-                try: file.add_string_attribute('genre', audio["genre"][0])
-                except: file.add_string_attribute('genre', "[n/a]")
-                try: file.add_string_attribute('date', audio["date"][0])
-                except: file.add_string_attribute('date', "[n/a]")
+                try: info.title = audio["title"][0]
+                except: pass
+                try: info.album = audio["album"][0]
+                except: pass
+                try: info.artist = audio["artist"][0]
+                except: pass
+                try: info.tracknumber = audio["tracknumber"][0]
+                except: pass
+                try: info.genre = audio["genre"][0]
+                except: pass
+                try: info.date = audio["date"][0]
+                except: pass
             except:
-                # [SabreWolfy] some files have no ID3 tag and will throw this exception:
-                file.add_string_attribute('title', "[no ID3]")
-                file.add_string_attribute('album', "[no ID3]")
-                file.add_string_attribute('artist', "[no ID3]")
-                file.add_string_attribute('tracknumber', "[no ID3]")
-                file.add_string_attribute('genre', "[no ID3]")
-                file.add_string_attribute('date', "[no ID3]")
+                pass
 
             # try to read MP3 information (bitrate, length, samplerate)
             try:
                 mpfile = open (filename)
                 mpinfo = MPEGInfo (mpfile)
-                file.add_string_attribute('bitrate', str(mpinfo.bitrate/1000) + " Kbps")
-                file.add_string_attribute('samplerate', str(mpinfo.sample_rate) + " Hz")
+                info.bitrate = str(mpinfo.bitrate/1000) + " Kbps"
+                info.samplerate = str(mpinfo.sample_rate) + " Hz"
                 # [SabreWolfy] added consistent formatting of times in format hh:mm:ss
                 # [SabreWolfy[ to allow for correct column sorting by length
                 mp3length = "%02i:%02i:%02i" % ((int(mpinfo.length/3600)), (int(mpinfo.length/60%60)), (int(mpinfo.length%60)))
                 mpfile.close()
-                file.add_string_attribute('length', mp3length)
+                info.length = mp3length
             except:
-                file.add_string_attribute('bitrate', "[n/a]")
-                file.add_string_attribute('length', "[n/a]")
-                file.add_string_attribute('samplerate', "[n/a]")
                 try:
                     mpfile.close()
                 except: pass
 
         # image handling
-        if file.is_mime_type('image/jpeg') or file.is_mime_type('image/png') or file.is_mime_type('image/gif') or file.is_mime_type('image/bmp'):
+        elif file.is_mime_type('image/jpeg') or file.is_mime_type('image/png') or file.is_mime_type('image/gif') or file.is_mime_type('image/bmp'):
             # EXIF handling routines
             try:
                 metadata = pyexiv2.ImageMetadata(filename)
                 metadata.read()
                 try:
                     exif_datetimeoriginal = metadata['Exif.Photo.DateTimeOriginal']
-                    file.add_string_attribute('exif_datetime_original',str(exif_datetimeoriginal.raw_value))
+                    info.exif_datetime_original = str(exif_datetimeoriginal.raw_value)
                 except:
-                    file.add_string_attribute('exif_datetime_original',"")
+                    pass
                 try:
                     exif_imagesoftware = metadata['Exif.Image.Software']
-                    file.add_string_attribute('exif_software',str(exif_imagesoftware.raw_value))
+                    info.exif_software = str(exif_imagesoftware.raw_value)
                 except:
-                    file.add_string_attribute('exif_software',"")
+                    pass
                 try:
                     exif_photoflash = metadata['Exif.Photo.Flash']
-                    file.add_string_attribute('exif_flash',str(exif_photoflash.raw_value))
+                    info.exif_flash = str(exif_photoflash.raw_value)
                 except:
-                    file.add_string_attribute('exif_flash',"")
-                try:
-                    exif_pixelydimension = metadata['Exif.Photo.PixelYDimension']
-                    exif_pixelxdimension = metadata['Exif.Photo.PixelXDimension']
-                    file.add_string_attribute('exif_pixeldimensions',str(exif_pixelydimension.raw_value)+'x'+str(exif_pixelxdimension.raw_value))
-                except:
-                    file.add_string_attribute('exif_pixeldimensions',"")
+                    pass
                 try:
                     exif_rating = metadata['Xmp.xmp.Rating']
-                    file.add_string_attribute('exif_rating',str(exif_rating.raw_value))
+                    info.exif_rating = str(exif_rating.raw_value)
                 except:
-                    file.add_string_attribute('exif_rating',"")
+                    pass
             except:
-                # no exif data?
-                file.add_string_attribute('exif_datetime_original',"")
-                file.add_string_attribute('exif_software',"")
-                file.add_string_attribute('exif_flash',"")
-                file.add_string_attribute('exif_pixeldimensions',"")
-                file.add_string_attribute('exif_rating',"")
+                pass
             # try read image info directly
             try:
                 im = Image.open(filename)
-                file.add_string_attribute('pixeldimensions',str(im.size[0])+'x'+str(im.size[1]))
+                info.pixeldimensions = str(im.size[0])+'x'+str(im.size[1])
             except:
-                file.add_string_attribute('pixeldimensions',"[image read error]")
+                pass
 
         # video/flac handling
-        if file.is_mime_type('video/x-msvideo') | file.is_mime_type('video/mpeg') | file.is_mime_type('video/x-ms-wmv') | file.is_mime_type('video/mp4') | file.is_mime_type('audio/x-flac') | file.is_mime_type('video/x-flv') | file.is_mime_type('video/x-matroska') | file.is_mime_type('audio/x-wav'):
+        elif file.is_mime_type('video/x-msvideo') | file.is_mime_type('video/mpeg') | file.is_mime_type('video/x-ms-wmv') | file.is_mime_type('video/mp4') | file.is_mime_type('audio/x-flac') | file.is_mime_type('video/x-flv') | file.is_mime_type('video/x-matroska') | file.is_mime_type('audio/x-wav'):
             try:
-                info=kaa.metadata.parse(filename)
-                try: file.add_string_attribute('length',"%02i:%02i:%02i" % ((int(info.length/3600)), (int(info.length/60%60)), (int(info.length%60))))
-                except: file.add_string_attribute('length','[n/a]')
-                try: file.add_string_attribute('pixeldimensions', str(info.video[0].width) + 'x'+ str(info.video[0].height))
-                except: file.add_string_attribute('pixeldimensions','[n/a]')
-                try: file.add_string_attribute('bitrate',str(round(info.audio[0].bitrate/1000)))
-                except: file.add_string_attribute('bitrate','[n/a]')
-                try: file.add_string_attribute('samplerate',str(int(info.audio[0].samplerate))+' Hz')
-                except: file.add_string_attribute('samplerate','[n/a]')
-                try: file.add_string_attribute('title', info.title)
-                except: file.add_string_attribute('title', '[n/a]')
-                try: file.add_string_attribute('artist', info.artist)
-                except: file.add_string_attribute('artist', '[n/a]')
-                try: file.add_string_attribute('genre', info.genre)
-                except: file.add_string_attribute('genre', '[n/a]')
-                try: file.add_string_attribute('tracknumber',info.trackno)
-                except: file.add_string_attribute('tracknumber', '[n/a]')
-                try: file.add_string_attribute('date',info.userdate)
-                except: file.add_string_attribute('date', '[n/a]')
-                try: file.add_string_attribute('album',info.album)
-                except: file.add_string_attribute('album', '[n/a]')
+                metadata=kaa.metadata.parse(filename)
+                try: info.length = "%02i:%02i:%02i" % ((int(metadata.length/3600)), (int(metadata.length/60%60)), (int(metadata.length%60)))
+                except: pass
+                try: info.pixeldimensions = str(metadata.video[0].width) + 'x'+ str(metadata.video[0].height)
+                except: pass
+                try: info.bitrate = str(round(metadata.audio[0].bitrate/1000))
+                except: pass
+                try: info.samplerate = str(int(metadata.audio[0].samplerate))+' Hz'
+                except: pass
+                try: info.title = metadata.title
+                except: pass
+                try: info.artist = metadata.artist
+                except: pass
+                try: info.genre = metadata.genre
+                except: pass
+                try: info.tracknumber = metadata.trackno
+                except: pass
+                try: info.date = metadata.userdate
+                except: pass
+                try: info.album = metadata.album
+                except: pass
             except:
-                file.add_string_attribute('length','error')
-                file.add_string_attribute('pixeldimensions','error')
-                file.add_string_attribute('bitrate','error')
-                file.add_string_attribute('samplerate','error')
-                file.add_string_attribute('title','error')
-                file.add_string_attribute('artist','error')
-                file.add_string_attribute('genre','error')
-                file.add_string_attribute('track','error')
-                file.add_string_attribute('date','error')
-                file.add_string_attribute('album','error')
+                pass
+
         # pdf handling
-        if file.is_mime_type('application/pdf'):
+        elif file.is_mime_type('application/pdf'):
             try:
                 f = open(filename, "rb")
                 pdf = PdfFileReader(f)
-                try: file.add_string_attribute('title', pdf.getDocumentInfo().title)
-                except: file.add_string_attribute('title', "[n/a]")
-                try: file.add_string_attribute('artist', pdf.getDocumentInfo().author)
-                except: file.add_string_attribute('artist', "[n/a]")
+                try: info.title = pdf.getDocumentInfo().title
+                except: pass
+                try: info.artist = pdf.getDocumentInfo().author
+                except: pass
                 f.close()
             except:
-                file.add_string_attribute('title', "[no info]")
-                file.add_string_attribute('artist', "[no info]")
+                pass
 
-        self.get_columns()
+        self.set_file_attributes(file, info)
+        self.files_extension_info[uri] = info
 
     def get_name_and_desc(self):
         return [("Nemo Media Columns:::Provides additional columns for the list view")]
