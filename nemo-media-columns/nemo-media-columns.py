@@ -76,10 +76,14 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         GObject.idle_add(self.update_cb, provider, handle, closure, file)
         return Nemo.OperationResult.IN_PROGRESS
 
+    def cancel_update(self, provider, handle):
+        handle.cancelled = True
+
     def update_cb(self, provider, handle, closure, file):
         self.do_update_file_info(file)
         file.invalidate_extension_info()
         Nemo.info_provider_update_complete_invoke(closure, provider, handle, Nemo.OperationResult.COMPLETE)
+        return False
 
     def do_update_file_info(self, file):
         # set defaults to blank
