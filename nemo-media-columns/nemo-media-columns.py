@@ -48,13 +48,8 @@ gettext.bindtextdomain("nemo-extensions")
 gettext.textdomain("nemo-extensions")
 _ = gettext.gettext
 
-import time
-
 class FileExtensionInfo():
-
-    def __init__(self, uri):
-        self.time = time.time()
-        self.uri = uri
+    def __init__(self):
         self.title = None
         self.album = None
         self.artist = None
@@ -72,13 +67,6 @@ class FileExtensionInfo():
         self.pixeldimensions = None
 
 class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, Nemo.NameAndDescProvider):
-
-    # Cache information fetched in this extension
-    # Calling invalidate_extension_info() is necessary to update the file info in the view
-    # but it leads to Nemo getting stuck indefinitely when browsing back and forth very fast
-    # To prevent this, we cache the result and serve it synchronously when it's already there.
-    files_extension_info = {}
-
     def __init__(self):
         pass
 
@@ -102,43 +90,50 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         )
 
     def set_file_attributes(self, file, info):
-        for attribute in ("title", "album", "artist", "tracknumber", "genre", "date", "bitrate", "samplerate", "length", "exif_datetime_original", "exif_software", "exif_flash", "exif_pixeldimensions"):
+        for attribute in ("title", "album", "artist", "tracknumber", \
+                          "genre", "date", "bitrate", "samplerate",\
+                          "length", "exif_datetime_original", "exif_software", \
+                          "exif_flash", "exif_pixeldimensions", "exif_rating", "pixeldimensions"):
             value = getattr(info, attribute)
             if value is None:
                 file.add_string_attribute(attribute, '')
             else:
                 file.add_string_attribute(attribute, value)
 
-    def delete_file_extension_info(self, uri):
-        if uri in self.files_extension_info.keys():
-            del self.files_extension_info[uri]
-
     def update_file_info_full(self, provider, handle, closure, file):
         if file.get_uri_scheme() != 'file':
             return
-        uri = urllib.unquote(file.get_uri())
-        if uri in self.files_extension_info.keys():
-            info = self.files_extension_info[uri]
-            self.set_file_attributes(file, info)
-            # del self.files_extension_info[uri]
-            return Nemo.OperationResult.COMPLETE
-        else:
-            GObject.idle_add(self.update_cb, provider, handle, closure, file)
-            return Nemo.OperationResult.IN_PROGRESS
+
+        handle.cancelled = False
+
+        idle_id = GObject.idle_add(self.update_cb, provider, handle, closure, file)
+        handle.idle_id = idle_id
+
+        return Nemo.OperationResult.IN_PROGRESS
+
+    def clear_cb(self, handle):
+        if handle.idle_id > 0:
+            GObject.source_remove(handle.idle_id)
+            handle.idle_id = 0
 
     def cancel_update(self, provider, handle):
+        print "cancel_update? %s" % handle.idle_id
+        self.clear_cb(handle)
         handle.cancelled = True
 
     def update_cb(self, provider, handle, closure, file):
+        handle.idle_id = 0
+
+        if handle.cancelled:
+            return False
+
         self.do_update_file_info(file)
-        file.invalidate_extension_info()
+
         Nemo.info_provider_update_complete_invoke(closure, provider, handle, Nemo.OperationResult.COMPLETE)
         return False
 
     def do_update_file_info(self, file):
-
-        uri = urllib.unquote(file.get_uri())
-        info = FileExtensionInfo(uri)
+        info = FileExtensionInfo()
 
         # strip file:// to get absolute path
         filename = urllib.unquote(file.get_uri()[7:])
@@ -213,7 +208,8 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             try:
                 im = Image.open(filename)
                 info.pixeldimensions = str(im.size[0])+'x'+str(im.size[1])
-            except:
+            except error as e:
+                print e
                 pass
 
         # video/flac handling
@@ -257,8 +253,8 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 pass
 
         self.set_file_attributes(file, info)
-        self.files_extension_info[uri] = info
-        GObject.timeout_add_seconds(30, self.delete_file_extension_info, uri)
+
+        del info
 
     def get_name_and_desc(self):
         return [("Nemo Media Columns:::Provides additional columns for the list view")]
