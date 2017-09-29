@@ -48,9 +48,12 @@ gettext.bindtextdomain("nemo-extensions")
 gettext.textdomain("nemo-extensions")
 _ = gettext.gettext
 
+import time
+
 class FileExtensionInfo():
 
     def __init__(self, uri):
+        self.time = time.time()
         self.uri = uri
         self.title = None
         self.album = None
@@ -105,6 +108,10 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 file.add_string_attribute(attribute, '')
             else:
                 file.add_string_attribute(attribute, value)
+
+    def delete_file_extension_info(self, uri):
+        if uri in self.files_extension_info.keys():
+            del self.files_extension_info[uri]
 
     def update_file_info_full(self, provider, handle, closure, file):
         if file.get_uri_scheme() != 'file':
@@ -251,6 +258,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
         self.set_file_attributes(file, info)
         self.files_extension_info[uri] = info
+        GObject.timeout_add_seconds(30, self.delete_file_extension_info, uri)
 
     def get_name_and_desc(self):
         return [("Nemo Media Columns:::Provides additional columns for the list view")]
