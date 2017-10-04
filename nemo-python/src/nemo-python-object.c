@@ -411,6 +411,8 @@ nemo_python_object_cancel_update (NemoInfoProvider 		*provider,
 									  NemoOperationHandle 	*handle)
 {
 	NemoPythonObject *object = (NemoPythonObject*)provider;
+    PyObject *py_ret = NULL;
+
 	PyGILState_STATE state = pyg_gil_state_ensure();
 	PyObject *py_handle = nemo_python_boxed_new (_PyNemoOperationHandle_Type, handle, FALSE);
 
@@ -419,12 +421,15 @@ nemo_python_object_cancel_update (NemoInfoProvider 		*provider,
 	CHECK_OBJECT(object);
 	CHECK_METHOD_NAME(object->instance);
 
-    PyObject_CallMethod(object->instance,
+    py_ret = PyObject_CallMethod(object->instance,
 								 METHOD_PREFIX METHOD_NAME, "(NN)",
 								 pygobject_new((GObject*)provider),
 								 py_handle);
 
+    HANDLE_RETVAL(py_ret);
+
  beach:
+    Py_XDECREF(py_ret);
 	pyg_gil_state_release(state);
 }
 #undef METHOD_NAME
