@@ -597,7 +597,7 @@ install_done (PropertyPage *page,
 {
     if (success) {
         gtk_label_set_text (GTK_LABEL (page->samba_label),
-                            _("Please log out and back in to finalize changes"));
+                            _("Please reboot to finalize changes"));
     } else {
         gtk_label_set_text (GTK_LABEL (page->samba_label),
                             _("Something went wrong.  You may need to install samba "
