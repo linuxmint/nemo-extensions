@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
+<!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.0"/>
   <object class="GtkVBox" id="vbox1">
@@ -28,9 +28,12 @@
           <object class="GtkLabel" id="logo_label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Folder Sharing&lt;/b&gt;&lt;/big&gt;</property>
-            <property name="use_markup">True</property>
+            <property name="label" translatable="yes">Folder Sharing</property>
             <property name="justify">center</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+              <attribute name="scale" value="1.2"/>
+            </attributes>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -247,6 +250,12 @@
             <property name="x_options">GTK_FILL</property>
             <property name="y_options"/>
           </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
         </child>
         <child>
           <placeholder/>
