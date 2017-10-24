@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+import argparse
+import os
+import subprocess
+import sys
+
+parser = argparse.ArgumentParser(description='Bumps versions for a new Cinnamon release.')
+parser.add_argument('-c', '--codename', required=True, help='a Mint codename')
+parser.add_argument('-v', '--version', required=True, help='a version number')
+args = parser.parse_args()
+
+for directory in os.listdir("."):
+    if directory == ".git":
+        continue
+    if os.path.isdir(directory):
+        os.chdir(directory)
+        print("")
+        print("    ", directory)
+        print("----------------")
+        for filename in ["configure.in", "configure.ac"]:
+            if os.path.exists(filename):
+                subprocess.call(["sed", "-i", "/AC_INIT/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
+                subprocess.call(["sed", "-i", "/^VERSION=/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
+        for filename in ["setup.py"]:
+            if os.path.exists(filename):
+                subprocess.call(["sed", "-i", "/version/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
+        for filename in ["PKG-INFO"]:
+            if os.path.exists(filename):
+                subprocess.call(["sed", "-i", "/Version:/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
+        subprocess.call(["dch", "--distribution", args.codename, "-v", args.version,  args.version], stdout=None, stderr=None)
+        os.chdir("..")
+        print("----------------")
+
+
