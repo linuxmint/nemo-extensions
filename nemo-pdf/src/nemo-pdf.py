@@ -163,7 +163,7 @@ class NemoPdf(Nemo.MenuProvider, GObject.GObject, Nemo.NameAndDescProvider):
 				l = []
 				for f in files:
 					l.append(urllib.unquote(f.get_uri()[7:]))
-				t = threading.Thread(target = lambda: NemoPdfCommand('pdftk "' + '"'.join(l) + '" cat output "' + file_s + '"', None))
+				t = threading.Thread(target = lambda: NemoPdfCommand('pdftk "' + '" "'.join(l) + '" cat output "' + file_s + '"', None))
 				t.start()
 				
 				win = Gtk.Dialog('Merging PDF')
