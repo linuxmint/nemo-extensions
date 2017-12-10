@@ -1,6 +1,6 @@
 /* generated with mime-type-imports.sh in the totem module, don't edit or
    commit in the nemo-preview module without filing a bug against totem */
-let audioTypes = [
+var audioTypes = [
     "audio/3gpp",
     "audio/ac3",
     "audio/AMR",
@@ -48,7 +48,7 @@ let audioTypes = [
     "application/x-flac",
 ];
 
-let videoTypes = [
+var videoTypes = [
     "application/mxf",
     "application/ogg",
     "application/ram",
