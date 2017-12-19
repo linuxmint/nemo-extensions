@@ -25,6 +25,6 @@
  *
  */
 
-let LOCALE_DIR = '@localedir@';
-let ICONS_DIR = '@pkgdatadir@/icons/';
-let STYLE_DIR = '@pkgdatadir@/style/';
+var LOCALE_DIR = '@localedir@';
+var ICONS_DIR = '@pkgdatadir@/icons/';
+var STYLE_DIR = '@pkgdatadir@/style/';
