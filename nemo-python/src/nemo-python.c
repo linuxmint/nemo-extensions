@@ -154,7 +154,7 @@ nemo_python_load_dir (GTypeModule *module,
 static gboolean
 nemo_python_init_python (void)
 {
-	PyObject *gi, *require_version, *args, *nemo;
+	PyObject *nemo;
 	GModule *libpython;
 	char *argv[] = { "nemo", NULL };
 
@@ -201,20 +201,7 @@ nemo_python_init_python (void)
 	/* import nemo */
 	g_setenv("INSIDE_NEMO_PYTHON", "", FALSE);
 	debug("import nemo");
-	gi = PyImport_ImportModule ("gi");
-	if (!gi) {
-		g_critical ("can't find gi");
-		return FALSE;
-	}
-
-
-	require_version = PyObject_GetAttrString (gi, (char *) "require_version");
-	args = PyTuple_Pack (2, PyUnicode_FromString ("Nemo"),
-	PyUnicode_FromString ("3.0"));
-	PyObject_CallObject (require_version, args);
-	Py_DECREF (require_version);
-	Py_DECREF (args);
-	Py_DECREF (gi);
+	PyRun_SimpleString("import gi; gi.require_version('Nemo', '3.0')");
 	nemo = PyImport_ImportModule("gi.repository.Nemo");
 	if (!nemo)
 	{
