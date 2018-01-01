@@ -1,10 +1,10 @@
-import os,threading,gettext,urllib
+import os,threading,gettext,urllib,locale
 from gi.repository import Nemo, GObject, Gtk
 
-gettext.bindtextdomain('nemo-pdf', '/usr/share/locale')
-def _(str):
-	gettext.textdomain('nemo-pdf')	
-	return gettext.gettext(str)
+locale.setlocale(locale.LC_ALL, '')
+gettext.bindtextdomain("nemo-extensions")
+gettext.textdomain("nemo-extensions")
+_ = gettext.gettext
 
 def all_files_are_pdf(files):
 	for f in files:
