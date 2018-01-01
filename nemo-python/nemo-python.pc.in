@@ -4,4 +4,5 @@ Version: @VERSION@
 
 prefix=@prefix@
 libdir=${prefix}/lib
+datarootdir=@datarootdir@
 pythondir=@datadir@/nemo-python/extensions

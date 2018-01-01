@@ -1,4 +1,4 @@
-INCLUDES =						\
+AM_CPPFLAGS =						\
 	-DG_LOG_DOMAIN=\"Nemo-Python\"	        \
 	-DDATADIR=\"$(datadir)\"			\
 	-DLIBDIR=\"$(libdir)\"				\

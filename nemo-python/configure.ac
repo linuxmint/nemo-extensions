@@ -1,13 +1,7 @@
 AC_PREREQ(2.60)
-AC_INIT
 
-PACKAGE=nemo-python
-VERSION=3.6.0
-
-AC_SUBST(PACKAGE)
-AC_SUBST(VERSION)
-
-AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
+AC_INIT([nemo-python], [3.6.0])
+AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -95,7 +89,7 @@ AC_OUTPUT([
 ])
 
 echo
-echo " nemo-python $VERSION"
+echo " nemo-python "
 echo
 echo "    Nemo Prefix: ${prefix}"
 echo "  PyGObject Version: ${PYGOBJECT_VERSION}"
