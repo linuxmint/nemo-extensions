@@ -44,8 +44,7 @@ NemoPreviewFontWidget {
     border-radius: 0;
     border-width: 0;
     background-color: alpha (#000, 0.0);
-
-    -GtkWidget-focus-line-width: 0;
+    outline-width: 0px;
 }
 
 .np-decoration.button:hover {

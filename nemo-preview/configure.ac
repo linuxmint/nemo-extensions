@@ -1,6 +1,6 @@
 dnl -*- mode: m4 -*-
 AC_PREREQ(2.63)
-AC_INIT([nemo-preview],[3.6.1],[],[nemo-preview])
+AC_INIT([nemo-preview],[3.6.2],[],[nemo-preview])
 
 AC_CONFIG_HEADERS([config/config.h])
 AC_CONFIG_SRCDIR([src/main.c])
@@ -69,8 +69,8 @@ PKG_CHECK_MODULES(NEMO_PREVIEW,
                   gstreamer-pbutils-1.0
                   gstreamer-tag-1.0
                   libmusicbrainz5
-                  xreader-document-1.5.0
-                  xreader-view-1.5.0
+                  xreader-document-1.5
+                  xreader-view-1.5
                   gtksourceview-3.0
                   webkit2gtk-4.0)
 
