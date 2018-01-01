@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 # -*- coding: utf-8 -*-
 #    nemo-compare --- Context menu extension for Nemo file manager
 #    Copyright (C) 2011  Guido Tabbernuk <boamaod@gmail.com>
