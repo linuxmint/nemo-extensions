@@ -24,6 +24,12 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
         if file.get_uri_scheme() != 'file':
             return
 
+        if file.is_directory():
+            return
+
+        if not(file.is_mime_type('audio/mpeg') or file.is_mime_type('audio/flac')):
+            return
+
         filename = urllib.unquote(file.get_uri()[7:])
 
         #GUI
@@ -38,9 +44,6 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
         self.builder = Gtk.Builder()
         self.builder.set_translation_domain('nemo-extensions')
         self.builder.add_from_file("/usr/share/nemo-python/extensions/nemo-audio-tab.glade")
-
-        #connect signals to python methods
-        self.builder.connect_signals(self)
 
         #connect gtk objects to python variables
         for obj in self.builder.get_objects():
@@ -104,7 +107,7 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
 
                 # try to read MP3 information (bitrate, length, samplerate)
             try:
-                mpinfo = MPEGInfo (filename)
+                mpinfo = MPEGInfo(open(filename))
                 file.add_string_attribute('bitrate', str(mpinfo.bitrate/1000) + " Kbps")
 
                 file.add_string_attribute('samplerate', str(mpinfo.sample_rate) + " Hz")
@@ -154,7 +157,7 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
 
                 # try to read the FLAC information (length, samplerate)
             try:
-                fcinfo = StreamInfo (filename)
+                fcinfo = StreamInfo(filename)
 
                 file.add_string_attribute('samplerate', str(fcinfo.sample_rate) + " Hz")
 
@@ -180,8 +183,7 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
         self.builder.get_object("encoded_by_text").set_label(file.get_string_attribute('encodedby'))
         self.builder.get_object("copyright_text").set_label(file.get_string_attribute('copyright'))
 
-        if file.is_mime_type('audio/mpeg') or file.is_mime_type('audio/flac'):
-            return Nemo.PropertyPage(name="NemoPython::audio", label=self.property_label, page=self.mainWindow),
+        return Nemo.PropertyPage(name="NemoPython::audio", label=self.property_label, page=self.mainWindow),
 
     def get_name_and_desc(self):
         return [("Nemo Audio Tab:::View audio tag information from the properties tab")]
