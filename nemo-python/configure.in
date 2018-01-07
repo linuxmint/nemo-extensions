@@ -36,8 +36,8 @@ AC_PREFIX_DEFAULT([$(pkg-config --variable=prefix libnemo-extension || echo /usr
 dnl **************************************************
 dnl * Check for Python
 dnl **************************************************
-AM_CHECK_PYTHON_HEADERS(,[AC_MSG_ERROR(could not find Python headers)])
-AM_CHECK_PYTHON_LIBS(,[AC_MSG_ERROR(could not find Python lib)])
+PYG_CHECK_PYTHON_HEADERS(,[AC_MSG_ERROR(could not find Python headers)])
+PYG_CHECK_PYTHON_LIBS(,[AC_MSG_ERROR(could not find Python lib)])
 
 if test "`pkg-config --variable=datadir pygobject-3.0`" != "" ; then
     PYGOBJECT_VERSION=pygobject-3.0
@@ -99,5 +99,6 @@ echo " nemo-python $VERSION"
 echo
 echo "    Nemo Prefix: ${prefix}"
 echo "  PyGObject Version: ${PYGOBJECT_VERSION}"
+echo "     Python Library: ${PYTHON_LIB_LOC}/${PYTHON_LIB_NAME}"
 echo "      Documentation: ${enable_gtk_doc}"
 echo
