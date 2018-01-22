@@ -13,6 +13,8 @@ shared: &shared
         - run:
             name: Install dependencies
             command: |
+                wget https://github.com/linuxmint/xapps/releases/download/master.${CIRCLE_JOB}/packages.tar.gz -O xapps.tar.gz
+                wget https://github.com/linuxmint/cinnamon-desktop/releases/download/master.${CIRCLE_JOB}/packages.tar.gz -O cinnamon-desktop.tar.gz
                 wget https://github.com/linuxmint/nemo/releases/download/master.${CIRCLE_JOB}/packages.tar.gz -O nemo.tar.gz
                 ls *.tar.gz | xargs -i tar zxvf {}
                 apt install --yes --allow-downgrades ./packages/*.deb
@@ -20,7 +22,20 @@ shared: &shared
 
         - run:
             name: Build project
-            command: ./buildall
+            command: |
+                for i in `find ./ -maxdepth 1 -mindepth 1 -type d`; do
+                   if [ $i = "./.git" ]; then
+                      continue
+                   fi
+                   cd $i
+                   echo     ....
+                   echo     ....
+                   echo     ........................................... BUILDING: $i
+                   echo     ....
+                   echo     ....
+                   mint-build -i
+                   cd ..
+                done
 
         - run:
             name: Prepare packages
