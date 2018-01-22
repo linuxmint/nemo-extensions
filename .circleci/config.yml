@@ -20,14 +20,14 @@ shared: &shared
 
         - run:
             name: Build project
-            command: mint-build -i
+            command: ./buildall
 
         - run:
             name: Prepare packages
             command: |
                 if [ -z $CI_PULL_REQUEST ]; then
                     mkdir /packages
-                    mv /root/*.deb /packages/
+                    mv *.deb /packages/
                     git log > /packages/git.log
                     cd /
                     tar zcvf packages.tar.gz packages
