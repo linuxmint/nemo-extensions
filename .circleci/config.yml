@@ -33,7 +33,7 @@ shared: &shared
                    echo     ........................................... BUILDING: $i
                    echo     ....
                    echo     ....
-                   mint-build -i
+                   mint-build
                    cd ..
                 done
 
