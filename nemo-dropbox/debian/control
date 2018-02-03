@@ -20,11 +20,11 @@ Depends: nemo,
          policykit-1,
          procps,
          python-gtk2 (>= 2.12),
-         python-gpgme,
          ${shlibs:Depends},
          ${python:Depends},
          ${misc:Depends},
          dropbox
+Suggests: python-gpgme (>= 0.1)
 Description: Dropbox integration for Nemo
  Nemo Dropbox is an extension that integrates the Dropbox web service with
  your Cinnamon Desktop.
