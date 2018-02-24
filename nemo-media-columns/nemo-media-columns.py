@@ -107,7 +107,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
     def update_file_info_full(self, provider, handle, closure, file):
         if file.get_uri_scheme() != 'file':
-            return Nemo.OperationResult.SUCCESS
+            return Nemo.OperationResult.COMPLETE
 
         self.current_idle_id = GObject.idle_add(self.update_cb, provider, handle, closure, file)
 
