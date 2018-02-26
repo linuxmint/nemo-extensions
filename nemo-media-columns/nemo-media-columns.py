@@ -68,7 +68,7 @@ class FileExtensionInfo():
 
 class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, Nemo.NameAndDescProvider):
     def __init__(self):
-        self.current_idle_id = 0
+        self.ids_by_handle = {}
 
     def get_columns(self):
         return (
@@ -101,22 +101,26 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 file.add_string_attribute(attribute, value)
 
     def cancel_update(self, provider, handle):
-        if self.current_idle_id > 0:
-            GObject.source_remove(self.current_idle_id)
-            self.current_idle_id = 0
+        if handle in self.ids_by_handle.keys():
+            GObject.source_remove(self.ids_by_handle[handle])
+            del self.ids_by_handle[handle]
 
     def update_file_info_full(self, provider, handle, closure, file):
         if file.get_uri_scheme() != 'file':
             return Nemo.OperationResult.COMPLETE
 
-        self.current_idle_id = GObject.idle_add(self.update_cb, provider, handle, closure, file)
+        if handle in self.ids_by_handle.keys():
+            GObject.source_remove(self.ids_by_handle[handle])
+
+        self.ids_by_handle[handle] = GObject.idle_add(self.update_cb, provider, handle, closure, file)
 
         return Nemo.OperationResult.IN_PROGRESS
 
     def update_cb(self, provider, handle, closure, file):
-        self.current_idle_id = 0
-
         self.do_update_file_info(file)
+
+        if handle in self.ids_by_handle.keys():
+            del self.ids_by_handle[handle]
 
         Nemo.info_provider_update_complete_invoke(closure, provider, handle, Nemo.OperationResult.COMPLETE)
 
