@@ -434,6 +434,10 @@ nemo_python_object_cancel_update (NemoInfoProvider 		*provider,
 }
 #undef METHOD_NAME
 
+typedef struct {
+  gpointer ptr;
+} DummyStruct;
+
 #define METHOD_NAME "update_file_info"
 static NemoOperationResult
 nemo_python_object_update_file_info (NemoInfoProvider 		*provider,
@@ -445,9 +449,19 @@ nemo_python_object_update_file_info (NemoInfoProvider 		*provider,
     NemoOperationResult ret = NEMO_OPERATION_COMPLETE;
     PyObject *py_ret = NULL;
 	PyGILState_STATE state = pyg_gil_state_ensure();
-	PyObject *py_handle = nemo_python_boxed_new (_PyNemoOperationHandle_Type, *handle, FALSE);
 
-  	debug_enter();
+    /* For python extensions, we can't do assignment on the handle within python itself,
+     * so we make a dummy struct to fill it.  Nemo relies on the handle pointer for
+     * async flow control on info provider extensions, so it's cricial this does not remain
+     * NULL.  This also allows a nice hash table key for python extensions to track idle
+     * ids, and handle cancel_upate calls correctly.
+     */
+
+    *handle = (NemoOperationHandle *) g_new0(DummyStruct, 1);
+
+    PyObject *py_handle = nemo_python_boxed_new (_PyNemoOperationHandle_Type, *handle, TRUE);
+
+    debug_enter();
 
 	CHECK_OBJECT(object);
 
