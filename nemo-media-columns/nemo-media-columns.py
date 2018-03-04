@@ -145,7 +145,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 except: pass
                 try: info.artist = audio["artist"][0]
                 except: pass
-                try: info.tracknumber = audio["tracknumber"][0]
+                try: info.tracknumber = "{:0>2}".format(audio["tracknumber"][0])
                 except: pass
                 try: info.genre = audio["genre"][0]
                 except: pass
