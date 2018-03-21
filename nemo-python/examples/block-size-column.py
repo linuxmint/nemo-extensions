@@ -1,5 +1,10 @@
 import os
-import urllib
+
+# A way to get unquote working with python 2 and 3
+try:
+    from urllib import unquote
+except ImportError:
+    from urllib.parse import unquote
 
 from gi.repository import GObject, Nemo
 
@@ -17,6 +22,6 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
         if file.get_uri_scheme() != 'file':
             return
 
-        filename = urllib.unquote(file.get_uri()[7:])
+        filename = unquote(file.get_uri()[7:])
 
         file.add_string_attribute('block_size', str(os.stat(filename).st_blksize))

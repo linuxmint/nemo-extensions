@@ -22,10 +22,19 @@
     the main class from a Nemo module class will be loaded</para>
     
     <note>
-<title>A note about the standard python extensions install path</title>
+<title>Extension Install Path for &lt; v1.2.0</title>
 
 <para>As of nemo-python 0.7.0 (and continued in 1.0+), nemo-python looks in ~/.local/share/nemo-python/extensions 
 for local extensions and $PREFIX/share/nemo-python/extensions for global extensions.</para>
+    </note>
+
+    <note>
+<title>Extension Install Path for &gt;= v1.2.0</title>
+<para>As of nemo-python 1.2.0, python extensions are loaded in the following order:
+
+  1. $XDG_DATA_HOME/nemo-python/extensions
+  2. nemo_prefix/share/nemo-python/extensions
+  3. $XDG_DATA_DIRS/nemo-python/extensions</para>
     </note>
     
     <note>
@@ -34,6 +43,11 @@ for local extensions and $PREFIX/share/nemo-python/extensions for global extensi
     nemo-python now directly uses Nemo's annotations, which must be imported by the "from gi.repository import Nemo" command.</para>
     <para>2. The extension class must now derive itself from a gobject.GObject in addition to the standard Nemo classes.</para>
     <para>3. For now, some Nemo class constructors require passing named arguments instead of a standard argument list.  This requirement may go away at some point.</para>
+    </note>
+
+    <note>
+        <title>Python3</title>
+        <para>As of nemo-python v1.2.0, nemo-python can be built to embed python3 instead of python2.  It uses the $PYTHON environment variable to determine which library to use.</para>
     </note>
 
     <xi:include href="nemo-python-overview-example.xml"/>

@@ -1,5 +1,10 @@
 import hashlib
-import urllib
+
+# A way to get unquote working with python 2 and 3
+try:
+    from urllib import unquote
+except ImportError:
+    from urllib.parse import unquote
 
 from gi.repository import Nemo, Gtk, GObject
 
@@ -18,7 +23,7 @@ class MD5SumPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
         if file.is_directory():
             return
 
-        filename = urllib.unquote(file.get_uri()[7:])
+        filename = unquote(file.get_uri()[7:])
 
         self.property_label = Gtk.Label('MD5Sum')
         self.property_label.show()
@@ -33,13 +38,8 @@ class MD5SumPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
         self.value_label = Gtk.Label()
         self.hbox.pack_start(self.value_label, False, False, 0)
 
-        md5sum = hashlib.md5()
-        with open(filename,'rb') as f:
-            for chunk in iter(lambda: f.read(8192), ''):
-                md5sum.update(chunk)
-        f.close()
-
-        self.value_label.set_text(md5sum.hexdigest())
+        md5sum = hashlib.md5(filename.encode("utf-8")).hexdigest()
+        self.value_label.set_text(md5sum)
         self.value_label.show()
 
         return Nemo.PropertyPage(name="NemoPython::md5_sum",
