@@ -16,7 +16,7 @@ Depends: ${misc:Depends}, ${python:Depends},
          python-kaa-metadata,
          libnemo-extension1a,
          python-pypdf | python-pypdf2,
-         python-imaging
+         python-pil
 Description: Nemo Extension
  A Nemo extension to display music/EXIF and PDF metadata info
  in the Nemo List View.

@@ -33,7 +33,7 @@ import pyexiv2
 # for reading videos. for future improvement, this can also read mp3!
 import kaa.metadata
 # for reading image dimensions
-import Image
+import PIL.Image
 # for reading pdf
 try:
     from pyPdf import PdfFileReader
@@ -200,7 +200,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 pass
             # try read image info directly
             try:
-                im = Image.open(filename)
+                im = PIL.Image.open(filename)
                 info.pixeldimensions = str(im.size[0])+'x'+str(im.size[1])
             except error as e:
                 print e
