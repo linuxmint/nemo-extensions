@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #nemo-audio-tab
-intltool-extract --type=gettext/glade nemo-audio-tab/nemo-extension/*.glade
+intltool-extract --type=gettext/glade nemo-audio-tab/nemo-extension/nemo-audio-tab.glade
 xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot nemo-audio-tab/nemo-extension/*.py nemo-audio-tab/nemo-extension/*.glade.h
 rm -f nemo-audio-tab/nemo-extension/*.glade.h
 
@@ -22,7 +22,8 @@ xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --jo
 xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-gtkhash/src/*.c nemo-gtkhash/src/*/*.c nemo-gtkhash/src/*/*/*.c
 
 #nemo-image-converter
-intltool-extract --type=gettext/glade nemo-image-converter/data/*.ui
+intltool-extract --type=gettext/glade nemo-image-converter/data/nemo-image-resize.ui
+intltool-extract --type=gettext/glade nemo-image-converter/data/nemo-image-rotate.ui
 xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-image-converter/src/*.c nemo-image-converter/src/*.h nemo-image-converter/data/*.ui.h
 rm -f nemo-image-converter/data/*.ui.h
 
@@ -30,7 +31,7 @@ rm -f nemo-image-converter/data/*.ui.h
 xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-media-columns/*.py
 
 #nemo-pastebin
-intltool-extract --type=gettext/glade nemo-pastebin/data/*.ui
+intltool-extract --type=gettext/glade nemo-pastebin/data/nemo-pastebin-configurator.ui
 xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-pastebin/*.py nemo-pastebin/data/*.ui.h
 rm -f nemo-pastebin/data/*.ui.h
 
@@ -39,16 +40,19 @@ xgettext --language=C --keyword=_ --keyword=N_ --keyword=g_dngettext:2,3 --flag=
 xgettext --language=JavaScript --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-preview/src/js/*/*.js
 
 #nemo-repairer
-intltool-extract --type=gettext/glade nemo-repairer/src/*.ui
+intltool-extract --type=gettext/glade nemo-repairer/src/encoding-dialog.ui
+intltool-extract --type=gettext/glade nemo-repairer/src/repair-dialog.ui
 xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-repairer/src/*.c nemo-repairer/src/*.h nemo-repairer/src/*.ui.h
 rm -f nemo-repairer/src/*.ui.h
 
 #nemo-seahorse
-intltool-extract --type=gettext/glade nemo-seahorse/tool/*.xml
+intltool-extract --type=gettext/glade nemo-seahorse/tool/seahorse-multi-encrypt.xml
+intltool-extract --type=gettext/glade nemo-seahorse/tool/seahorse-notify.xml
+intltool-extract --type=gettext/glade nemo-seahorse/tool/seahorse-progress.xml
 xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-seahorse/tool/*.c nemo-seahorse/tool/*.h nemo-seahorse/tool/*.xml.h nemo-seahorse/nemo-ext/*.c nemo-seahorse/nemo-ext/*.h
 rm -f nemo-seahorse/tool/*.xml.h
 
 #nemo-share
-intltool-extract --type=gettext/glade nemo-share/interfaces/*.ui
+intltool-extract --type=gettext/glade nemo-share/interfaces/share-dialog.ui
 xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-share/src/*.c nemo-share/src/*.h nemo-share/interfaces/*.ui.h
 rm -f nemo-share/interfaces/*.ui.h
