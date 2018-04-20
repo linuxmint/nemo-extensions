@@ -333,7 +333,7 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 					       _("Extract Here"),
 					       /* Translators: the current position is the current folder */
 					       _("Extract the selected archive to the current position"),
-					       "extract-archive");
+					       "extract-archive-symbolic");
 		g_signal_connect (item,
 				  "activate",
 				  G_CALLBACK (extract_here_callback),
@@ -352,7 +352,7 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 		item = nemo_menu_item_new ("NemoFr::extract_to",
 					       _("Extract To..."),
 					       _("Extract the selected archive"),
-					       "extract-archive");
+					       "extract-archive-symbolic");
 		g_signal_connect (item,
 				  "activate",
 				  G_CALLBACK (extract_to_callback),
@@ -372,7 +372,7 @@ nemo_fr_get_file_items (NemoMenuProvider *provider,
 		item = nemo_menu_item_new ("NemoFr::add",
 					       _("Compress..."),
 					       _("Create a compressed archive with the selected objects"),
-					       "add-files-to-archive");
+					       "add-files-to-archive-symbolic");
 		g_signal_connect (item,
 				  "activate",
 				  G_CALLBACK (add_callback),
