@@ -92,8 +92,6 @@ openoffice_missing_unoconv_ready_cb (GObject *source,
 
   g_dbus_connection_call_finish (G_DBUS_CONNECTION (source), res, &error);
   if (error != NULL) {
-    GError *local_error;
-
     /* can't install unoconv with packagekit - nothing else we can do */
     /* FIXME: error reporting! */
     g_warning ("unoconv not found, and PackageKit failed to install it with error %s",
