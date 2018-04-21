@@ -187,7 +187,7 @@ load_libreoffice (NemoPreviewPdfLoader *self)
   tmp_name = g_strrstr (doc_name, ".");
   if (tmp_name)
     *tmp_name = '\0';
-  tmp_name = g_strdup_printf ("%s.pdf", tmp_name);
+  tmp_name = g_strdup_printf ("%s.pdf", doc_name);
   g_free (doc_name);
 
   pdf_dir = g_build_filename (g_get_user_cache_dir (), "sushi", NULL);
