@@ -40,14 +40,14 @@ enum {
   PROP_URI
 };
 
-static void load_openoffice (NemoPreviewPdfLoader *self);
+static void load_libreoffice (NemoPreviewPdfLoader *self);
 
 struct _NemoPreviewPdfLoaderPrivate {
   EvDocument *document;
   gchar *uri;
   gchar *pdf_path;
 
-  GPid unoconv_pid;
+  GPid libreoffice_pid;
 };
 
 static void
@@ -83,42 +83,42 @@ load_pdf (NemoPreviewPdfLoader *self,
 }
 
 static void
-openoffice_missing_unoconv_ready_cb (GObject *source,
-                                     GAsyncResult *res,
-                                     gpointer user_data)
+libreoffice_missing_ready_cb (GObject *source,
+                              GAsyncResult *res,
+                              gpointer user_data)
 {
   NemoPreviewPdfLoader *self = user_data;
   GError *error = NULL;
 
   g_dbus_connection_call_finish (G_DBUS_CONNECTION (source), res, &error);
   if (error != NULL) {
-    /* can't install unoconv with packagekit - nothing else we can do */
+    /* can't install libreoffice with packagekit - nothing else we can do */
     /* FIXME: error reporting! */
-    g_warning ("unoconv not found, and PackageKit failed to install it with error %s",
+    g_warning ("libreoffice not found, and PackageKit failed to install it with error %s",
                error->message);
     return;
   }
 
-  /* now that we have unoconv installed, try again loading the document */
-  load_openoffice (self);
+  /* now that we have libreoffice installed, try again loading the document */
+  load_libreoffice (self);
 }
 
 static void
-openoffice_missing_unoconv (NemoPreviewPdfLoader *self)
+libreoffice_missing (NemoPreviewPdfLoader *self)
 {
   GApplication *app = g_application_get_default ();
   GtkWidget *widget = GTK_WIDGET (gtk_application_get_active_window (GTK_APPLICATION (app)));
   GDBusConnection *connection = g_application_get_dbus_connection (app);
   guint xid = 0;
   GdkWindow *gdk_window;
-  const gchar *unoconv_path[2];
+  const gchar *libreoffice_path[2];
 
   gdk_window = gtk_widget_get_window (widget);
   if (gdk_window != NULL)
     xid = GDK_WINDOW_XID (gdk_window);
 
-  unoconv_path[0] = "/usr/bin/unoconv";
-  unoconv_path[1] = NULL;
+  libreoffice_path[0] = "/usr/bin/libreoffice";
+  libreoffice_path[1] = NULL;
 
   g_dbus_connection_call (connection,
                           "org.freedesktop.PackageKit",
@@ -127,25 +127,25 @@ openoffice_missing_unoconv (NemoPreviewPdfLoader *self)
                           "InstallProvideFiles",
                           g_variant_new ("(u^ass)",
                                          xid,
-                                         unoconv_path,
+                                         libreoffice_path,
                                          "hide-confirm-deps"),
                           NULL, G_DBUS_CALL_FLAGS_NONE,
                           G_MAXINT, NULL,
-                          openoffice_missing_unoconv_ready_cb,
+                          libreoffice_missing_ready_cb,
                           self);
 }
 
 static void
-unoconv_child_watch_cb (GPid pid,
-                        gint status,
-                        gpointer user_data)
+libreoffice_child_watch_cb (GPid pid,
+                            gint status,
+                            gpointer user_data)
 {
   NemoPreviewPdfLoader *self = user_data;
   GFile *file;
   gchar *uri;
 
   g_spawn_close_pid (pid);
-  self->priv->unoconv_pid = -1;
+  self->priv->libreoffice_pid = -1;
 
   file = g_file_new_for_path (self->priv->pdf_path);
   uri = g_file_get_uri (file);
@@ -156,70 +156,72 @@ unoconv_child_watch_cb (GPid pid,
 }
 
 static void
-load_openoffice (NemoPreviewPdfLoader *self)
+load_libreoffice (NemoPreviewPdfLoader *self)
 {
-  gchar *unoconv_path;
+  gchar *libreoffice_path;
   GFile *file;
-  gchar *doc_path, *tmp_name, *tmp_path, *pdf_path;
+  gchar *doc_path, *doc_name, *tmp_name, *pdf_dir;
   gboolean res;
   GPid pid;
   GError *error = NULL;
-  const gchar *unoconv_argv[] = {
+  const gchar *libreoffice_argv[] = {
     NULL /* to be replaced with binary */,
-    "-f", "pdf",
-    "-o", NULL /* to be replaced with output file */,
+    "--convert-to", "pdf",
+    "--outdir", NULL /* to be replaced with output dir */,
     NULL /* to be replaced with input file */,
     NULL
   };
 
-  unoconv_path = g_find_program_in_path ("unoconv");
-  if (unoconv_path == NULL) {
-      openoffice_missing_unoconv (self);
-      return;
+  libreoffice_path = g_find_program_in_path ("libreoffice");
+  if (libreoffice_path == NULL) {
+    libreoffice_missing (self);
+    return;
   }
 
   file = g_file_new_for_uri (self->priv->uri);
   doc_path = g_file_get_path (file);
+  doc_name = g_file_get_basename (file);
   g_object_unref (file);
 
-  tmp_name = g_strdup_printf ("nemo-preview-%d.pdf", getpid ());
-  tmp_path = g_build_filename (g_get_user_cache_dir (), "sushi", NULL);
-  self->priv->pdf_path = pdf_path =
-    g_build_filename (tmp_path, tmp_name, NULL);
-  g_mkdir_with_parents (tmp_path, 0700);
+  /* libreoffice --convert-to replaces the extension with .pdf */
+  tmp_name = g_strrstr (doc_name, ".");
+  if (tmp_name)
+    *tmp_name = '\0';
+  tmp_name = g_strdup_printf ("%s.pdf", tmp_name);
+  g_free (doc_name);
+
+  pdf_dir = g_build_filename (g_get_user_cache_dir (), "sushi", NULL);
+  self->priv->pdf_path = g_build_filename (pdf_dir, tmp_name, NULL);
+  g_mkdir_with_parents (pdf_dir, 0700);
 
   g_free (tmp_name);
-  g_free (tmp_path);
+  libreoffice_argv[0] = libreoffice_path;
+  libreoffice_argv[4] = pdf_dir;
+  libreoffice_argv[5] = doc_path;
 
-  unoconv_argv[0] = unoconv_path;
-  unoconv_argv[4] = pdf_path;
-  unoconv_argv[5] = doc_path;
-
-  tmp_name = g_strjoinv (" ", (gchar **) unoconv_argv);
+  tmp_name = g_strjoinv (" ", (gchar **) libreoffice_argv);
   g_debug ("Executing LibreOffice command: %s", tmp_name);
   g_free (tmp_name);
 
-  res = g_spawn_async (NULL, (gchar **) unoconv_argv, NULL,
+  res = g_spawn_async (NULL, (gchar **) libreoffice_argv, NULL,
                        G_SPAWN_DO_NOT_REAP_CHILD,
                        NULL, NULL,
                        &pid, &error);
 
+  g_free (pdf_dir);
   g_free (doc_path);
-  g_free (unoconv_path);
+  g_free (libreoffice_path);
 
   if (!res) {
-    g_warning ("Error while spawning unoconv: %s",
+    g_warning ("Error while spawning libreoffice: %s",
                error->message);
     g_error_free (error);
-    g_free (unoconv_path);
 
     return;
   }
 
-  g_child_watch_add (pid, unoconv_child_watch_cb, self);
-  self->priv->unoconv_pid = pid;
-
-  g_free (unoconv_path);
+  g_child_watch_add (pid, libreoffice_child_watch_cb, self);
+  self->priv->libreoffice_pid = pid;
 }
 
 static gboolean
@@ -268,7 +270,7 @@ query_info_ready_cb (GObject *obj,
   if (content_type_is_native (content_type))
     load_pdf (self, self->priv->uri);
   else
-    load_openoffice (self);
+    load_libreoffice (self);
 
   g_object_unref (info);
 }
@@ -309,9 +311,9 @@ nemo_preview_pdf_loader_cleanup_document (NemoPreviewPdfLoader *self)
     g_free (self->priv->pdf_path);
   }
 
-  if (self->priv->unoconv_pid != -1) {
-    kill (self->priv->unoconv_pid, SIGKILL);
-    self->priv->unoconv_pid = -1;
+  if (self->priv->libreoffice_pid != -1) {
+    kill (self->priv->libreoffice_pid, SIGKILL);
+    self->priv->libreoffice_pid = -1;
   }
 }
 
@@ -405,7 +407,7 @@ nemo_preview_pdf_loader_init (NemoPreviewPdfLoader *self)
     G_TYPE_INSTANCE_GET_PRIVATE (self,
                                  NEMO_PREVIEW_TYPE_PDF_LOADER,
                                  NemoPreviewPdfLoaderPrivate);
-  self->priv->unoconv_pid = -1;
+  self->priv->libreoffice_pid = -1;
 }
 
 NemoPreviewPdfLoader *
