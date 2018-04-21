@@ -160,16 +160,19 @@ unoconv_child_watch_cb (GPid pid,
 static void
 load_openoffice (NemoPreviewPdfLoader *self)
 {
-  gchar *doc_path, *pdf_path, *tmp_name, *tmp_path, *quoted_path;
-  GFile *file;
-  gboolean res;
-  gchar *cmd;
-
-  gint argc;
-  GPid pid;
-  gchar **argv = NULL;
-  GError *error = NULL;
   gchar *unoconv_path;
+  GFile *file;
+  gchar *doc_path, *tmp_name, *tmp_path, *pdf_path;
+  gboolean res;
+  GPid pid;
+  GError *error = NULL;
+  const gchar *unoconv_argv[] = {
+    NULL /* to be replaced with binary */,
+    "-f", "pdf",
+    "-o", NULL /* to be replaced with output file */,
+    NULL /* to be replaced with input file */,
+    NULL
+  };
 
   unoconv_path = g_find_program_in_path ("unoconv");
   if (unoconv_path == NULL) {
@@ -179,10 +182,7 @@ load_openoffice (NemoPreviewPdfLoader *self)
 
   file = g_file_new_for_uri (self->priv->uri);
   doc_path = g_file_get_path (file);
-  quoted_path = g_shell_quote (doc_path);
-
   g_object_unref (file);
-  g_free (doc_path);
 
   tmp_name = g_strdup_printf ("nemo-preview-%d.pdf", getpid ());
   tmp_path = g_build_filename (g_get_user_cache_dir (), "sushi", NULL);
@@ -190,31 +190,24 @@ load_openoffice (NemoPreviewPdfLoader *self)
     g_build_filename (tmp_path, tmp_name, NULL);
   g_mkdir_with_parents (tmp_path, 0700);
 
-  cmd = g_strdup_printf ("unoconv -f pdf -o %s %s", pdf_path, quoted_path);
-
   g_free (tmp_name);
   g_free (tmp_path);
-  g_free (quoted_path);
 
-  res = g_shell_parse_argv (cmd, &argc, &argv, &error);
-  g_free (cmd);
+  unoconv_argv[0] = unoconv_path;
+  unoconv_argv[4] = pdf_path;
+  unoconv_argv[5] = doc_path;
 
-  if (!res) {
-    g_warning ("Error while parsing the unoconv command line: %s",
-               error->message);
-    g_error_free (error);
-    g_free (unoconv_path);
+  tmp_name = g_strjoinv (" ", (gchar **) unoconv_argv);
+  g_debug ("Executing LibreOffice command: %s", tmp_name);
+  g_free (tmp_name);
 
-    return;
-  }
-
-  res = g_spawn_async (NULL, argv, NULL,
-                       G_SPAWN_DO_NOT_REAP_CHILD |
-                       G_SPAWN_SEARCH_PATH,
+  res = g_spawn_async (NULL, (gchar **) unoconv_argv, NULL,
+                       G_SPAWN_DO_NOT_REAP_CHILD,
                        NULL, NULL,
                        &pid, &error);
 
-  g_strfreev (argv);
+  g_free (doc_path);
+  g_free (unoconv_path);
 
   if (!res) {
     g_warning ("Error while spawning unoconv: %s",
