@@ -9,6 +9,7 @@ nemo_extension_LTLIBRARIES=libnemo-dropbox.la
 libnemo_dropbox_la_CFLAGS = 	                \
 	-DDATADIR=\"$(datadir)\"					    \
 	-DEMBLEMDIR=\"$(EMBLEM_DIR)\"					\
+	-DNEMOICONDIR=\"$(NEMO_ICON_DIR)\"				\
 	-Wall                                           \
 	$(WARN_CFLAGS)                                  \
 	$(DISABLE_DEPRECATED_CFLAGS)					\

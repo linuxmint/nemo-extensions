@@ -721,7 +721,7 @@ nemo_dropbox_get_file_items(NemoMenuProvider *provider,
 
     root_menu = nemo_menu_new();
     root_item = nemo_menu_item_new("NemoDropbox::root_item",
-				       "Dropbox", "Dropbox Options", "dropbox");
+				       "Dropbox", "Dropbox Options", "nemo-dropbox-symbolic");
 
     toret = g_list_append(toret, root_item);
     GString *action_string = g_string_new("NemoDropbox::");
@@ -754,6 +754,8 @@ add_emblem_paths(GHashTable* emblem_paths_response)
   int i;
 
   GtkIconTheme *theme = gtk_icon_theme_get_default();
+
+  gtk_icon_theme_append_search_path (theme, NEMOICONDIR);
 
   if (emblem_paths_response &&
       (emblem_paths_list = g_hash_table_lookup(emblem_paths_response, "path"))) {

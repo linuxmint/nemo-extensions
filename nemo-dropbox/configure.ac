@@ -107,6 +107,9 @@ AC_DEFINE_UNQUOTED(NEMO_VERSION_MICRO, [$NEMO_VERSION_MICRO], [ nemo version mic
 EMBLEM_DIR='${datadir}/nemo-dropbox/emblems'
 AC_SUBST(EMBLEM_DIR)
 
+NEMO_ICON_DIR='${datadir}/nemo-dropbox/icons'
+AC_SUBST(NEMO_ICON_DIR)
+
 AC_CONFIG_FILES([
 	Makefile 
 	src/Makefile
@@ -127,6 +130,7 @@ AC_CONFIG_FILES([
 	data/icons/hicolor/64x64/apps/Makefile
 	data/icons/hicolor/256x256/Makefile
 	data/icons/hicolor/256x256/apps/Makefile
+    data/icons/nemo-dropbox/Makefile
 	data/emblems/Makefile])
 
 AC_OUTPUT
