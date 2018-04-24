@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 
 # change log:
 # RavetcoFX: Forked from nemo-media-columns and nemo-emblems

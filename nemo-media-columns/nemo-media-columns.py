@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 
 # change log:
 # geb666: original bsc.py, based on work by Giacomo Bordiga

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
 
 # Folder Color 0.0.11 - http://launchpad.net/folder-color
 # Copyright (C) 2012-2014 Marcos Alvarez Costales https://launchpad.net/~costales
