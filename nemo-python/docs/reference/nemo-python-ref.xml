@@ -3,12 +3,10 @@
 [
 <!ENTITY % entities SYSTEM "entities.docbook">
 %entities;
-<!ENTITY builddate SYSTEM "builddate.xml">
 <!ENTITY version SYSTEM "version.xml">
 ]>
 <book id="nemo-python-reference" xmlns:xi="http://www.w3.org/2001/XInclude">
   <bookinfo>
-    <pubdate>&builddate;</pubdate>
     <title>nemo-python Reference Manual</title>
     <edition>Reference Manual for nemo-python &version;</edition>
     <releaseinfo>For nemo-python version &version;</releaseinfo>
