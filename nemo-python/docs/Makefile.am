@@ -65,12 +65,10 @@ CSSdir = $(HTMLdir)
 CSS_DATA = $(CSS_FILES)
 
 BUILT_SOURCES = 		\
-	reference/builddate.xml	\
 	$(HTML_FILES)
 
 CLEANFILES = 			\
 	nemo-python-ref.*	\
-	reference/builddate.xml	\
 	$(HTML_FILES)
 
 EXTRA_DIST = 		\
@@ -86,9 +84,6 @@ REFERENCE_DEPS = 	\
 	$(FIXXREF)
 
 if ENABLE_GTK_DOC
-
-reference/builddate.xml: $(REFERENCE_DEPS)
-	$(PYTHON) -c 'import datetime; print datetime.date.today()' > $@
 
 $(HTML_FILES): $(REFERENCE_DEPS)
 	xsltproc --nonet --xinclude -o $(BUILDDIR)/html/ \
