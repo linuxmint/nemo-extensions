@@ -10,9 +10,12 @@ Build-Depends:
  python-gi-dev,
 Standards-Version: 3.9.6
 
-Package: python-nemo
+Package: nemo-python
 Architecture: any
 Depends: gir1.2-nemo-3.0 (>= 3.6), ${misc:Depends}, ${shlibs:Depends}
-Description: Python binding for Nemo components
- Python binding for Nemo, to allow Nemo property page and menu item
- extensions to be written in Python.
+Conflicts: python-nemo
+Provides: python-nemo
+Replaces: python-nemo
+Description: Python bindings for nemo components
+ Python bindings for Nemo, to allow creation of Nemo extensions in Python.
+ This allows creating property page and menu item extensions.

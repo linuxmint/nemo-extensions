@@ -1,2 +1,2 @@
-docs/html/* usr/share/gtk-doc/html/python-nemo/
-examples/README usr/share/doc/python-nemo/examples
+docs/html/* usr/share/gtk-doc/html/nemo-python/
+examples/README usr/share/doc/nemo-python/examples
