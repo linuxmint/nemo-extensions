@@ -11,312 +11,227 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <child>
-          <object class="GtkBox" id="box1">
+          <object class="GtkGrid" id="grid">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="orientation">vertical</property>
+            <property name="vexpand">True</property>
+            <property name="row_spacing">4</property>
+            <property name="column_spacing">16</property>
             <child>
-              <object class="GtkBox" id="box_title">
+              <object class="GtkLabel" id="label_title">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_title">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">70</property>
-                    <property name="label" translatable="yes">Title:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="title_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Title:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_artist">
+              <object class="GtkLabel" id="title_text">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_artist">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">64</property>
-                    <property name="label" translatable="yes">Artist:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="artist_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="hexpand">True</property>
+                <property name="selectable">True</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="album">
+              <object class="GtkLabel" id="label_artist">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_album">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">58</property>
-                    <property name="label" translatable="yes">Album:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="album_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Artist:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_album_artist">
+              <object class="GtkLabel" id="artist_text">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_album_artist">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">25</property>
-                    <property name="label" translatable="yes">Album Artist:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="album_artist_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">3</property>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_genre">
+              <object class="GtkLabel" id="label_album">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_genre">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">59</property>
-                    <property name="label" translatable="yes">Genre:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="genre_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Album:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">4</property>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_year">
+              <object class="GtkLabel" id="album_text">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_year">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">68</property>
-                    <property name="label" translatable="yes">Year:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="year_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">5</property>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_track_num">
+              <object class="GtkLabel" id="label_album_artist">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_track_num">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">52</property>
-                    <property name="label" translatable="yes">Track #:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="track_number_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Album Artist:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">6</property>
+                <property name="left_attach">0</property>
+                <property name="top_attach">3</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_length">
+              <object class="GtkLabel" id="album_artist_text">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_length">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">56</property>
-                    <property name="label" translatable="yes">Length:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="length_number">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">7</property>
+                <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_genre">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Genre:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="genre_text">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_year">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Year:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="year_text">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_track_num">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Track #:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">6</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="track_number_text">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">6</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_length">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Length:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">7</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="length_number">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">7</property>
               </packing>
             </child>
             <child>
@@ -325,161 +240,117 @@
                 <property name="can_focus">False</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">8</property>
+                <property name="left_attach">0</property>
+                <property name="top_attach">8</property>
+                <property name="width">2</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_bitrate">
+              <object class="GtkLabel" id="label_text_bitrate">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_text_bitrate">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">56</property>
-                    <property name="label" translatable="yes">Bitrate:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="bitrate_number">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Bitrate:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">9</property>
+                <property name="left_attach">0</property>
+                <property name="top_attach">9</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_sample_rate">
+              <object class="GtkLabel" id="bitrate_number">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_sample_rate">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">24</property>
-                    <property name="label" translatable="yes">Sample Rate:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="sample_rate_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">10</property>
+                <property name="left_attach">1</property>
+                <property name="top_attach">9</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_encoded_by">
+              <object class="GtkLabel" id="label_sample_rate">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_encoded_by">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">30</property>
-                    <property name="label" translatable="yes">Encoded by:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="encoded_by_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Sample Rate:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">11</property>
+                <property name="left_attach">0</property>
+                <property name="top_attach">10</property>
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="box_copyright">
+              <object class="GtkLabel" id="sample_rate_text">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <child>
-                  <object class="GtkLabel" id="label_copyright">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_left">23</property>
-                    <property name="margin_right">40</property>
-                    <property name="label" translatable="yes">Copyright:</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="copyright_text">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">12</property>
+                <property name="left_attach">1</property>
+                <property name="top_attach">10</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_encoded_by">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Encoded by:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">11</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="encoded_by_text">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">11</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_copyright">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Copyright:</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">12</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="copyright_text">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="selectable">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">12</property>
               </packing>
             </child>
           </object>
