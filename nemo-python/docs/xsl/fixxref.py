@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
 # -*- Mode: Python; py-indent-offset: 4 -*-
 
 import getopt
