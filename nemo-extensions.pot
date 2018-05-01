@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-24 11:10+0100\n"
+"POT-Creation-Date: 2018-05-01 13:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:35
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:41
 msgid "Audio"
 msgstr ""
 
-#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:65
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:68
 msgid "No Info"
 msgstr ""
 
@@ -375,10 +375,12 @@ msgid "Height:"
 msgstr ""
 
 #: nemo-image-converter/data/nemo-image-resize.ui.h:19
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:6
 msgid "<b>Filename</b>"
 msgstr ""
 
 #: nemo-image-converter/data/nemo-image-resize.ui.h:20
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:7
 msgid "Append"
 msgstr ""
 
@@ -387,6 +389,7 @@ msgid ".resized"
 msgstr ""
 
 #: nemo-image-converter/data/nemo-image-resize.ui.h:22
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:9
 msgid "to file title"
 msgstr ""
 
@@ -396,6 +399,38 @@ msgstr ""
 
 #: nemo-image-converter/data/nemo-image-resize.ui.h:24
 msgid "_Resize"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:1
+msgid "Rotate Images"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:2
+msgid "<b>Image Rotation</b>"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:3
+msgid "Select an angle:"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:4
+msgid "Custom angle:"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:5
+msgid "degrees clockwise"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:8
+msgid ".rotated"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:10
+msgid "Rotate in place"
+msgstr ""
+
+#: nemo-image-converter/data/nemo-image-rotate.ui.h:11
+msgid "_Rotate"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:75
@@ -547,7 +582,7 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#: nemo-preview/src/js/viewers/evince.js:81
+#: nemo-preview/src/js/viewers/xreader.js:81
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
@@ -694,6 +729,18 @@ msgstr ""
 
 #: nemo-repairer/src/encoding-dialog.ui.h:2
 msgid "_Encoding name to add: "
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.ui.h:1
+msgid "Nemo Filename Repairer"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.ui.h:2
+msgid "Select _encoding:"
+msgstr ""
+
+#: nemo-repairer/src/repair-dialog.ui.h:3
+msgid "Include _subdirectories"
 msgstr ""
 
 #: nemo-seahorse/tool/seahorse-notification.c:569
@@ -1150,6 +1197,14 @@ msgstr ""
 msgid ""
 "Because the files are located remotely, each file will be encrypted "
 "separately."
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-notify.xml.h:1
+msgid "Notification Messages"
+msgstr ""
+
+#: nemo-seahorse/tool/seahorse-progress.xml.h:1
+msgid "Progress Title"
 msgstr ""
 
 #: nemo-seahorse/nemo-ext/nemo-seahorse.c:159
