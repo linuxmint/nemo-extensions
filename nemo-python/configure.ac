@@ -1,6 +1,6 @@
 AC_PREREQ(2.60)
 
-AC_INIT([nemo-python], [3.6.0])
+AC_INIT([nemo-python], [3.8.0])
 AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
 AC_CONFIG_MACRO_DIR([m4])
