@@ -2,19 +2,17 @@ Source: nemo-fileroller
 Section: misc
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
-Build-Depends: debhelper (>= 9),
-               libnemo-extension-dev (>= 1.0.0),
-               libglib2.0-dev (>= 2.14.0),
-               dh-autoreconf
+Build-Depends:
+ debhelper (>= 10),
+ libglib2.0-dev (>= 2.14.0),
+ libnemo-extension-dev (>= 1.0.0),
 Standards-Version: 3.9.6
 
 Package: nemo-fileroller
-Architecture: i386 amd64
-Depends: ${shlibs:Depends},
-         ${misc:Depends},
-         nemo,
-         file-roller
+Architecture: any
+Depends: file-roller, nemo, ${misc:Depends}, ${shlibs:Depends}
+Recommends: cinnamon-l10n
 Description: File Roller integration for Nemo
- Nemo File Roller is an extension that integrates the File Roller service with
- your Cinnamon Desktop.
-
+ Nemo File Roller is an Nemo extension which allows you to create and extract
+ archives in Nemo. This extension adds "Extract Here" (for archive files) and
+ "Compress..." items to the right-click menu.
