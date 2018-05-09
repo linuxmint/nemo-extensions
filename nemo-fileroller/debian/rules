@@ -1,17 +1,18 @@
 #!/usr/bin/make -f
 
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
+
 %:
-	dh $@ --with=autoreconf
+	dh $@
 
-override_dh_autoreconf:
-	dh_autoreconf --as-needed
-
-override_dh_makeshlibs:
-	# Don't generate a shlibs file for the plugin
-	dh_makeshlibs -X/usr/lib/nemo/
+override_dh_auto_configure:
+	dh_auto_configure -- --disable-static
 
 override_dh_auto_install:
 	dh_auto_install
 	# Drop useless files
-	rm -f debian/nemo-fileroller/usr/lib/nemo/extensions-*/libnemo-fileroller.a
-	rm -f debian/nemo-fileroller/usr/lib/nemo/extensions-*/libnemo-fileroller.la
+	find debian/ -name '*.la' -delete
+
+# Don't generate a shlibs file for the plugin
+override_dh_makeshlibs:
