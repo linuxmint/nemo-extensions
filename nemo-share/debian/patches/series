@@ -1,5 +1,0 @@
-# This series applies on GIT commit 637d65ba140214baf3889ee664c594ccc851c59d
-02_install_missing_samba.patch
-03_use_apturl.patch
-15_user-acl.patch
-99_ltmain_as-needed.patch
