@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: nemo-creation-date
+Source: https://github.com/linuxmint/nemo-extensions
+
+Files: *
+Copyright: 2016, Linux Mint
+License: LGPL-3+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public License V3.
+ .
+ The complete text of the GNU Library General Public License can be found in
+ "/usr/share/common-licenses/LGPL-3".

@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	mkdir -p debian/build
+	meson debian/build \
+		--prefix=/usr \
+		--buildtype=plain \
+		--errorlogs
+
+override_dh_auto_build:
+	ninja -C debian/build
+
+override_dh_auto_test:
+	# disable tests
+
+override_dh_auto_install:
+	DESTDIR=${CURDIR}/debian/nemo-creation-date \
+	ninja -C debian/build install
+
+override_dh_makeshlibs:
+	# disabled

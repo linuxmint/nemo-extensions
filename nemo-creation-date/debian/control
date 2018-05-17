@@ -1,0 +1,20 @@
+Source: nemo-creation-date
+Section: gnome
+Priority: optional
+Maintainer: Clement Lefebvre <root@linuxmint.com>
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               meson,
+               libglib2.0-dev (>= 2.35.9),
+               libnemo-extension-dev,
+               libcinnamon-desktop-dev (>= 3.0.0)
+Standards-Version: 3.9.6
+
+Package: nemo-creation-date
+Architecture: any
+Depends: nemo,
+         cinnamon-desktop-data,
+         ${shlibs:Depends}, ${misc:Depends},
+Enhances: nemo
+Description: Nemo extension to display a file's creation
+ date in a list view column
