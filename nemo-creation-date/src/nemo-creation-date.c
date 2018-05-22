@@ -34,18 +34,40 @@
 #include <string.h>
 #include <time.h>
 
-static void nemo_creation_date_column_provider_iface_init (NemoColumnProviderIface *iface);
-static void nemo_creation_date_info_provider_iface_init (NemoInfoProviderIface *iface);
-static void nemo_creation_date_nd_provider_iface_init (NemoNameAndDescProviderIface *iface);
+typedef struct {
+  NemoFileInfo *info;
+  GClosure *update_complete;
+  GCancellable *cancellable;
+  NemoInfoProvider *provider;
+
+  GFile *location;
+  gchar *formatted;
+  gchar *formatted_time;
+} NemoCreationDateHandle;
 
 struct _NemoCreationDate {
     GObject parent_object;
+
+    GThreadPool *pool;
+
     GSettings *nemo_settings;
     GSettings *cinnamon_interface_settings;
 
     gint format_type;
     gboolean use_24h;
 };
+
+typedef enum
+{
+    NEMO_DATE_FORMAT_LOCALE,
+    NEMO_DATE_FORMAT_ISO,
+    NEMO_DATE_FORMAT_INFORMAL
+} NemoDateFormat;
+
+static gboolean update_file_info_finished (NemoCreationDateHandle *handle);
+static void nemo_creation_date_column_provider_iface_init (NemoColumnProviderIface *iface);
+static void nemo_creation_date_info_provider_iface_init (NemoInfoProviderIface *iface);
+static void nemo_creation_date_nd_provider_iface_init (NemoNameAndDescProviderIface *iface);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (NemoCreationDate,
                                 nemo_creation_date,
@@ -58,19 +80,47 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (NemoCreationDate,
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (NEMO_TYPE_NAME_AND_DESC_PROVIDER,
                                                                nemo_creation_date_nd_provider_iface_init));
 
-typedef struct {
-  gboolean cancelled;
-  NemoInfoProvider *provider;
-  NemoFileInfo *file;
-  GClosure *update_complete;
-} NemoCreationDateHandle;
-
-typedef enum
+static NemoOperationHandle *
+new_handle (NemoCreationDate *cd,
+            NemoFileInfo     *info,
+            GClosure         *update_complete,
+            GFile            *location)
 {
-    NEMO_DATE_FORMAT_LOCALE,
-    NEMO_DATE_FORMAT_ISO,
-    NEMO_DATE_FORMAT_INFORMAL
-} NemoDateFormat;
+    NemoCreationDateHandle *handle;
+
+    handle = g_new0 (NemoCreationDateHandle, 1);
+
+    /* This stuff is just kept alive, but never used in our
+     * worker thread.  The info is really a NemoFile, which isn't
+     * thread-safe to mess with */
+    handle->info = g_object_ref (info);
+    handle->provider = (NemoInfoProvider *) cd;
+    handle->update_complete = g_closure_ref (update_complete);
+    handle->cancellable = g_cancellable_new ();
+
+    /* This is all we need for our worker thread */
+    handle->location = location;
+    handle->formatted = NULL;
+    handle->formatted_time = NULL;
+
+    return (NemoOperationHandle *) handle;
+}
+
+static void
+free_handle (NemoOperationHandle *handle)
+{
+    NemoCreationDateHandle *cd_handle = (NemoCreationDateHandle *) handle;
+
+    g_object_unref (cd_handle->info);
+    g_closure_unref (cd_handle->update_complete);
+    g_object_unref (cd_handle->cancellable);
+
+    g_object_unref (cd_handle->location);
+    g_free (cd_handle->formatted);
+    g_free (cd_handle->formatted_time);
+
+    g_free (cd_handle);
+}
 
 static GList *
 nemo_creation_date_get_columns (NemoColumnProvider *provider)
@@ -94,7 +144,6 @@ nemo_creation_date_get_columns (NemoColumnProvider *provider)
 
     return columns;
 }
-
 
 /* eel_str_replace_substring */
 char *
@@ -147,13 +196,10 @@ str_replace_substring (const char *string,
     return result;
 }
 
-static NemoOperationResult
-nemo_creation_date_update_file_info (NemoInfoProvider     *provider,
-                                     NemoFileInfo         *file,
-                                     GClosure             *update_complete,
-                                     NemoOperationHandle **handle)
+static void
+get_btime_thread (NemoCreationDateHandle *handle,
+                  NemoCreationDate       *cd)
 {
-    NemoCreationDate *cd;
     GFile *location;
     GDateTime *file_date_time, *file_date, *now, *today_midnight;
     gchar *path;
@@ -164,31 +210,19 @@ nemo_creation_date_update_file_info (NemoInfoProvider     *provider,
     gboolean use_24;
     time_t btime;
 
-    cd = (NemoCreationDate *) provider;
-
-    location = nemo_file_info_get_location (file);
-
-    if (!g_file_is_native (location))
-    {
-        nemo_file_info_add_string_attribute (file, "creation-date", "");
-        nemo_file_info_add_string_attribute (file, "creation-date-with-time", "");
-        g_object_unref (location);
-
-        return NEMO_OPERATION_COMPLETE;
-    }
+    location = handle->location;
 
     path = g_file_get_path (location);
     btime = get_file_btime (path);
 
     g_free (path);
-    g_object_unref (location);
 
     if (btime == 0)
     {
-        nemo_file_info_add_string_attribute (file, "creation-date", "");
-        nemo_file_info_add_string_attribute (file, "creation-date-with-time", "");
+        formatted = NULL;
+        formatted_time = NULL;
 
-        return NEMO_OPERATION_COMPLETE;
+        goto out;
     }
 
     file_date_time = g_date_time_new_from_unix_local (btime);
@@ -315,18 +349,90 @@ out:
     /* Replace ":" with ratio. Replacement is done afterward because g_date_time_format
      * may fail with utf8 chars in some locales */
     result_with_ratio = str_replace_substring (formatted, ":", "∶");
-    nemo_file_info_add_string_attribute (file, "creation-date", result_with_ratio);
+    handle->formatted = g_strdup (result_with_ratio);
 
     g_clear_pointer (&result_with_ratio, g_free);
-
     result_with_ratio = str_replace_substring (formatted_time, ":", "∶");
-    nemo_file_info_add_string_attribute (file, "creation-date-with-time", result_with_ratio);
+    handle->formatted_time = g_strdup (result_with_ratio);
 
     g_free (result_with_ratio);
     g_free (formatted);
     g_free (formatted_time);
 
-    return NEMO_OPERATION_COMPLETE;
+    g_idle_add_full (G_PRIORITY_DEFAULT,
+                     (GSourceFunc) update_file_info_finished,
+                     handle,
+                     (GDestroyNotify) free_handle);
+}
+
+static void
+update_btime_file_infos (NemoFileInfo *info,
+                         const gchar  *formatted,
+                         const gchar  *formatted_time)
+{
+    if (formatted != NULL)
+    {
+        nemo_file_info_add_string_attribute (info,
+                                             "creation-date",
+                                             formatted);
+    }
+
+    if (formatted_time != NULL)
+    {
+        nemo_file_info_add_string_attribute (info,
+                                             "creation-date-with-time",
+                                             formatted_time);
+    }
+}
+
+static NemoOperationResult
+nemo_creation_date_update_file_info (NemoInfoProvider     *provider,
+                                     NemoFileInfo         *file,
+                                     GClosure             *update_complete,
+                                     NemoOperationHandle **handle)
+{
+    NemoCreationDate *cd;
+    GFile *location;
+
+    cd = (NemoCreationDate *) provider;
+
+    location = nemo_file_info_get_location (file);
+
+    if (!g_file_is_native (location))
+    {
+        g_object_unref (location);
+
+        return NEMO_OPERATION_COMPLETE;
+    }
+
+    *handle = new_handle (cd, file, update_complete, location);
+
+    if (g_thread_pool_push (cd->pool,
+                            *handle,
+                            NULL))
+    {
+        return NEMO_OPERATION_IN_PROGRESS;
+    }
+
+    return NEMO_OPERATION_FAILED;
+}
+
+static gboolean
+update_file_info_finished (NemoCreationDateHandle *handle)
+{
+    if (!g_cancellable_is_cancelled (handle->cancellable))
+    {
+        update_btime_file_infos (handle->info,
+                                 handle->formatted,
+                                 handle->formatted_time);
+
+        nemo_info_provider_update_complete_invoke(handle->update_complete,
+                                                  handle->provider,
+                                                  (NemoOperationHandle *) handle,
+                                                  NEMO_OPERATION_COMPLETE);
+    }
+
+    return FALSE;
 }
 
 static void
@@ -334,9 +440,9 @@ nemo_creation_date_cancel_update (NemoInfoProvider *provider,
                                   NemoOperationHandle *handle)
 {
     NemoCreationDateHandle *cd_handle;
-    
     cd_handle = (NemoCreationDateHandle *) handle;
-    cd_handle->cancelled = TRUE;
+
+    g_cancellable_cancel (cd_handle->cancellable);
 }
 
 static GList *
@@ -369,12 +475,26 @@ nemo_creation_date_finalize (GObject *object)
     g_clear_object (&cd->nemo_settings);
     g_clear_object (&cd->cinnamon_interface_settings);
 
+    g_thread_pool_free (cd->pool, FALSE, FALSE);
+
     G_OBJECT_CLASS (nemo_creation_date_parent_class)->finalize (object);
 }
 
 static void
 nemo_creation_date_init (NemoCreationDate *cd)
 {
+    /* Realistically, only one thread should be needed for this extension.
+     * If you had a lot of directories open, you could have a lot of requests
+     * being thrown at the extension, but within a directory the requests
+     * are fed in series to the extension - meaning if you have a directory with
+     * a million files, only one file at a time will be processed anyhow.
+     */
+    cd->pool = g_thread_pool_new ((GFunc) get_btime_thread,
+                                  cd,
+                                  1,
+                                  TRUE,
+                                  NULL);
+
     cd->nemo_settings = g_settings_new("org.nemo.preferences");
     cd->cinnamon_interface_settings = g_settings_new ("org.cinnamon.desktop.interface");
 
