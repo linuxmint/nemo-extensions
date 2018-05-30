@@ -35,26 +35,26 @@
 #include <time.h>
 
 typedef struct {
-  NemoFileInfo *info;
-  GClosure *update_complete;
-  GCancellable *cancellable;
-  NemoInfoProvider *provider;
+    NemoFileInfo     *info;
+    GClosure         *update_complete;
+    GCancellable     *cancellable;
+    NemoInfoProvider *provider;
 
-  GFile *location;
-  gchar *formatted;
-  gchar *formatted_time;
+    GFile            *location;
+    gchar            *formatted;
+    gchar            *formatted_time;
 } NemoCreationDateHandle;
 
 struct _NemoCreationDate {
-    GObject parent_object;
+    GObject           parent_object;
 
-    GThreadPool *pool;
+    GThreadPool      *pool;
 
-    GSettings *nemo_settings;
-    GSettings *cinnamon_interface_settings;
+    GSettings        *nemo_settings;
+    GSettings        *cinnamon_interface_settings;
 
-    gint format_type;
-    gboolean use_24h;
+    gint              format_type;
+    gboolean          use_24h;
 };
 
 typedef enum
@@ -155,10 +155,10 @@ str_replace_substring (const char *string,
     const char *p, *substring_position;
     char *result, *result_position;
 
-    g_return_val_if_fail (substring != NULL, g_strdup (string));
-    g_return_val_if_fail (substring[0] != '\0', g_strdup (string));
+    g_return_val_if_fail ((substring != NULL && substring[0] != '\0'), g_strdup (string));
 
-    if (string == NULL) {
+    if (string == NULL)
+    {
         return NULL;
     }
 
@@ -166,30 +166,39 @@ str_replace_substring (const char *string,
     replacement_length = replacement ? strlen (replacement) : 0;
 
     result_length = strlen (string);
-    for (p = string; ; p = substring_position + substring_length) {
+    for (p = string; ; p = substring_position + substring_length)
+    {
         substring_position = strstr (p, substring);
-        if (substring_position == NULL) {
+
+        if (substring_position == NULL)
+        {
             break;
         }
+
         result_length += replacement_length - substring_length;
     }
 
     result = g_malloc (result_length + 1);
 
     result_position = result;
-    for (p = string; ; p = substring_position + substring_length) {
+    for (p = string; ; p = substring_position + substring_length)
+    {
         substring_position = strstr (p, substring);
-        if (substring_position == NULL) {
+
+        if (substring_position == NULL)
+        {
             remaining_length = strlen (p);
             memcpy (result_position, p, remaining_length);
             result_position += remaining_length;
             break;
         }
+
         memcpy (result_position, p, substring_position - p);
         result_position += substring_position - p;
         memcpy (result_position, replacement, replacement_length);
         result_position += replacement_length;
     }
+
     g_assert (result_position - result == result_length);
     result_position[0] = '\0';
 
@@ -233,8 +242,7 @@ get_btime_thread (NemoCreationDateHandle *handle,
         formatted_time = g_strdup (formatted);
         goto out;
     }
-    else
-    if (cd->format_type == NEMO_DATE_FORMAT_ISO)
+    else if (cd->format_type == NEMO_DATE_FORMAT_ISO)
     {
         formatted = g_date_time_format (file_date_time, "%Y-%m-%d %H:%M:%S");
         formatted_time = g_strdup (formatted);
@@ -257,25 +265,33 @@ get_btime_thread (NemoCreationDateHandle *handle,
     use_24 = cd->use_24h;
 
     // Show only the time if date is on today
-    if (days_ago < 1) {
-        if (use_24) {
+    if (days_ago < 1)
+    {
+        if (use_24)
+        {
             /* Translators: Time in 24h format */
             format = format_time = _("%H:%M");
-        } else {
+        }
+        else
+        {
             /* Translators: Time in 12h format */
             format = format_time = _("%l:%M %p");
         }
     }
     // Show the word "Yesterday" and time if date is on yesterday
-    else if (days_ago < 2) {
+    else if (days_ago < 2)
+    {
             // xgettext:no-c-format
         format = _("Yesterday");
-        if (use_24) {
+        if (use_24)
+        {
             /* Translators: this is the word Yesterday followed by
              * a time in 24h format. i.e. "Yesterday 23:04" */
             // xgettext:no-c-format
             format_time = _("Yesterday %H:%M");
-        } else {
+        }
+        else
+        {
             /* Translators: this is the word Yesterday followed by
              * a time in 12h format. i.e. "Yesterday 9:04 PM" */
             // xgettext:no-c-format
@@ -283,50 +299,64 @@ get_btime_thread (NemoCreationDateHandle *handle,
         }
     }
     // Show a week day and time if date is in the last week
-    else if (days_ago < 7) {
+    else if (days_ago < 7)
+    {
         // xgettext:no-c-format
         format = _("%A");
-        if (use_24) {
+        if (use_24)
+        {
             /* Translators: this is the name of the week day followed by
              * a time in 24h format. i.e. "Monday 23:04" */
             // xgettext:no-c-format
             format_time = _("%A %H:%M");
-        } else {
+        }
+        else
+        {
             /* Translators: this is the week day name followed by
              * a time in 12h format. i.e. "Monday 9:04 PM" */
             // xgettext:no-c-format
             format_time = _("%A %l:%M %p");
         }
-    } else if (g_date_time_get_year (file_date) == g_date_time_get_year (now)) {
+    }
+    else if (g_date_time_get_year (file_date) == g_date_time_get_year (now))
+    {
         /* Translators: this is the day of the month followed
          * by the abbreviated month name i.e. "3 February" */
         // xgettext:no-c-format
         format = _("%-e %B");
-        if (use_24) {
+        if (use_24)
+        {
             /* Translators: this is the day of the month followed
              * by the abbreviated month name followed by a time in
              * 24h format i.e. "3 February 23:04" */
             // xgettext:no-c-format
             format_time = _("%-e %B %H:%M");
-        } else {
+        }
+        else
+        {
             /* Translators: this is the day of the month followed
              * by the abbreviated month name followed by a time in
              * 12h format i.e. "3 February 9:04" */
             // xgettext:no-c-format
             format_time = _("%-e %B %l:%M %p");
         }
-    } else {
+    }
+    else
+    {
         /* Translators: this is the day of the month followed by the abbreviated
          * month name followed by the year i.e. "3 Feb 2015" */
         // xgettext:no-c-format
         format = _("%-e %b %Y");
-        if (use_24) {
+        if (use_24)
+        {
             /* Translators: this is the day number followed
              * by the abbreviated month name followed by the year followed
              * by a time in 24h format i.e. "3 Feb 2015 23:04" */
             // xgettext:no-c-format
             format_time = _("%-e %b %Y %H:%M");
-        } else {
+        }
+        else
+        {
             /* Translators: this is the day number followed
              * by the abbreviated month name followed by the year followed
              * by a time in 12h format i.e. "3 Feb 2015 9:04 PM" */
