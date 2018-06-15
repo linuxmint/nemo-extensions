@@ -15,7 +15,7 @@
 	<schema path="/org/nemo/extensions/nemo-terminal/" 
 	    id="org.nemo.extensions.nemo-terminal" 
 	    gettext-domain="nemo-terminal">
-	    <key name="default-terminal-height" type="y">    
+	    <key name="default-terminal-height" type="i">    
 	        <default>5</default>
 	        <summary>Set the default number of lines for the terminal.</summary>
 	        <description>Set the default number of lines for the terminal when it is first opened.</description>

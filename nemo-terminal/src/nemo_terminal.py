@@ -50,12 +50,7 @@ gettext.textdomain('nemo-terminal')
 _ = gettext.gettext
 
 import gi
-try:
-    gi.require_version('Vte', '2.90')
-    VTE_2_90_API = True
-except:
-    gi.require_version('Vte', '2.91')
-    VTE_2_90_API = False
+gi.require_version('Vte', '2.91')
 gi.require_version('Nemo', '3.0')
 from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio
 
@@ -92,17 +87,15 @@ class NemoTerminal(object):
         self.shell_pid = -1
         self.term = Vte.Terminal()
 
-        if VTE_2_90_API:
-            self.shell_pid = self.term.fork_command_full(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
-        else:
-            self.shell_pid = self.term.spawn_sync(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
+        self.shell_pid = self.term.spawn_sync(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
+
         # Make vte.sh active
         #vte_current_dir_script = ". /etc/profile.d/vte.sh ; clear"
         #self.term.feed_child(vte_current_dir_script, len(vte_current_dir_script))
 
         self.term.connect_after("child-exited", self._on_term_child_exited)
         self.term.connect_after("popup-menu", self._on_term_popup_menu)
-        self.term.connect("button-release-event", self._on_term_popup_menu)
+        self.term.connect("button-press-event", self._on_term_popup_menu)
 
         #Accelerators
         accel_group = Gtk.AccelGroup()
@@ -131,10 +124,7 @@ class NemoTerminal(object):
         self.term.connect("drag_data_received", self._on_drag_data_received)
 
         # Container
-        if VTE_2_90_API:
-            self.vscrollbar = Gtk.VScrollbar.new(self.term.adjustment)
-        else:
-            self.vscrollbar = Gtk.VScrollbar.new(self.term.get_vadjustment())
+        self.vscrollbar = Gtk.VScrollbar.new(self.term.get_vadjustment())
 
         self.hbox = Gtk.HBox()
         self.hbox.pack_start(self.term, True, True, 0)
@@ -184,12 +174,11 @@ class NemoTerminal(object):
         menu_item.connect_after("activate",
                                 lambda w: self.show_about_dialog())
         self.menu.add(menu_item)
-        #
         self.menu.show_all()
-        #Conf
-        self._set_term_height( \
-            settings.get_value("default-terminal-height").get_byte())
+
+        self._set_term_height(settings.get_int("default-terminal-height"))
         self._visible = True
+
         #Lock
         self._respawn_lock = False
         #Register the callback for show/hide
@@ -240,7 +229,12 @@ class NemoTerminal(object):
         Args:
             uri -- The URI of the destination directory.
         """
+
+        if settings.get_enum("default-follow-mode") in (0, 2):
+            return 
+
         self._path = self._uri_to_path(uri)
+
         if not self._shell_is_busy():
             # Clear any input
             eraselinekeys = settings.get_string("terminal-erase-line").decode('string_escape')
@@ -338,25 +332,15 @@ class NemoTerminal(object):
     def _shell_is_busy(self):
         """Check if the shell is waiting for a command or not."""
         wchan_path = "/proc/%i/wchan" % self.shell_pid
+
         wchan = open(wchan_path, "r").read()
-        if wchan == "n_tty_read":
+
+        if wchan == "poll_schedule_timeout":
             return False
-        elif wchan == "schedule":
-            shell_stack_path = "/proc/%i/stack" % self.shell_pid
-            try:
-                for line in open(shell_stack_path, "r"):
-                    if line.split(" ")[-1].startswith("n_tty_read"):
-                        return False
-                return True
-            except IOError:
-                #We can't know...
-                return False
-        elif wchan == "wait_woken":
-            return False
-        elif wchan == "do_wait":
+        elif wchan in ("do_wait", "wait_woken"):
             return True
-        else:
-            return True
+
+        return False
 
     def _uri_to_path(self, uri):
         """Returns the path corresponding of the given URI.
@@ -377,17 +361,17 @@ class NemoTerminal(object):
 
     def _on_term_popup_menu(self, widget, event=None):
         """Displays the contextual menu on right-click and menu-key."""
-        if event: #button-release-event
-            if event.type == Gdk.EventType.BUTTON_RELEASE \
-                    and event.button != 3:
-                return
+        if event and event.button != 3:
+            return Gdk.EVENT_PROPAGATE
         # Should the Paste Filenames option be displayed?
         gtkClipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
         if gtkClipboard.wait_is_uris_available():
             self.menu_item_pastefilenames.show()
         else:
             self.menu_item_pastefilenames.hide()
-        self.menu.popup(None, None, None, None, 3, 0)
+        self.menu.popup_at_pointer(event)
+
+        return Gdk.EVENT_STOP
 
     def _on_term_child_exited(self, term):
         """Called when the shell is terminated.
@@ -396,10 +380,7 @@ class NemoTerminal(object):
             term -- The VTE terminal (self.term).
         """
         if not self._respawn_lock:
-            if VTE_2_90_API:
-                self.shell_pid = self.term.fork_command_full(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)[1]
-            else:
-                self.shell_pid = self.term.spawn_sync(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
+            self.shell_pid = self.term.spawn_sync(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
 
     def _on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
         """Handles drag & drop."""
@@ -518,7 +499,6 @@ class Crowbar(object):
                       % __app_disp_name__)
             hbox.nt.destroy()
 
-
 class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider, Nemo.NameAndDescProvider):
     """Provides Nemo Terminal in Nemo."""
 
@@ -562,7 +542,9 @@ class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider, Nemo.Na
             settings.set_boolean("default-visible",  window.term_visible)
             for callback in window.toggle_hide_cb:
                 callback(window.term_visible)
-            return True #Stop the event propagation
+            return Gdk.EVENT_STOP #Stop the event propagation
+
+        return Gdk.EVENT_PROPAGATE
 
     def get_name_and_desc(self):
         return [("Nemo Terminal:::Embedded terminal for Nemo")]
