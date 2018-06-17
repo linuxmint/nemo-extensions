@@ -331,16 +331,16 @@ class NemoTerminal(object):
 
     def _shell_is_busy(self):
         """Check if the shell is waiting for a command or not."""
-        wchan_path = "/proc/%i/wchan" % self.shell_pid
 
-        wchan = open(wchan_path, "r").read()
+        pty = self.term.get_pty()
+        fd = pty.get_fd()
 
-        if wchan == "poll_schedule_timeout":
+        fgpid = os.tcgetpgrp(fd)
+
+        if fgpid == -1 or fgpid == self.shell_pid:
             return False
-        elif wchan in ("do_wait", "wait_woken"):
-            return True
 
-        return False
+        return True
 
     def _uri_to_path(self, uri):
         """Returns the path corresponding of the given URI.
