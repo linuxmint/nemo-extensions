@@ -373,7 +373,7 @@ class NemoTerminal(object):
 
         return Gdk.EVENT_STOP
 
-    def _on_term_child_exited(self, term):
+    def _on_term_child_exited(self, term, status):
         """Called when the shell is terminated.
 
         Args:
