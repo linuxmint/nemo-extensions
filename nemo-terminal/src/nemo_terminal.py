@@ -218,9 +218,9 @@ class NemoTerminal(object):
             for idx, uri in enumerate(uris):
                 path = Gio.file_parse_name(uri).get_path()
                 quoted = GLib.shell_quote(path)
-                self.term.feed_child(quoted, len(quoted))
+                self.feed_child(quoted)
                 if idx != (len(uris)-1):
-                    self.term.feed_child(' ', 1)
+                    self.feed_child(' ')
         return
 
     def change_directory(self, uri):
@@ -238,17 +238,17 @@ class NemoTerminal(object):
         if not self._shell_is_busy():
             # Clear any input
             eraselinekeys = settings.get_string("terminal-erase-line").decode('string_escape')
-            self.term.feed_child(eraselinekeys, len(eraselinekeys))
+            self.feed_child(eraselinekeys)
 
             # Change directory
             cdcmd_nonewline = settings.get_string("terminal-change-directory-command") \
                 % GLib.shell_quote(self._path)
             cdcmd = "%s\n" % cdcmd_nonewline
-            self.term.feed_child(cdcmd, len(cdcmd))
+            self.feed_child(cdcmd)
 
             # Restore user input
             restorelinekeys = settings.get_string("terminal-restore-line").decode('string_escape')
-            self.term.feed_child(restorelinekeys, len(restorelinekeys))
+            self.feed_child(restorelinekeys)
 
     def get_widget(self):
         """Return the top-level widget of Nemo Terminal."""
@@ -386,8 +386,17 @@ class NemoTerminal(object):
         """Handles drag & drop."""
         for uri in data.get_uris():
             path = "'%s' " % self._uri_to_path(uri).replace("'", r"'\''")
-            self.term.feed_child(path, len(path))
+            self.feed_child(path)
 
+    def feed_child(self, text):
+        """
+        gobject-introspection/python-gi differences force us to try with and
+        without the text length. One of them will work.
+        """
+        try:
+            self.term.feed_child(text)
+        except TypeError:
+            self.term.feed_child(text, len(text))
 
 class Crowbar(object):
     """Modify the Nemo' widget tree when the crowbar is inserted in it.
