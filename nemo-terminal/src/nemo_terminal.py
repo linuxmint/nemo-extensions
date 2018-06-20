@@ -87,6 +87,8 @@ class NemoTerminal(object):
         self.shell_pid = -1
         self.term = Vte.Terminal()
 
+        settings.bind("audible-bell", self.term, "audible-bell", Gio.SettingsBindFlags.GET)
+
         self.shell_pid = self.term.spawn_sync(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
 
         # Make vte.sh active
