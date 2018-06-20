@@ -216,7 +216,9 @@ class NemoTerminal(object):
             uris = gtkClipboard.wait_for_uris()
             concatfilenames = ""
             for idx, uri in enumerate(uris):
-                path = Gio.file_parse_name(uri).get_path()
+                path = self._uri_to_path(uri)
+                if path == "":
+                    continue
                 quoted = GLib.shell_quote(path)
                 self.feed_child(quoted)
                 if idx != (len(uris)-1):
@@ -234,6 +236,9 @@ class NemoTerminal(object):
             return 
 
         self._path = self._uri_to_path(uri)
+
+        if self._path == "":
+            return
 
         if not self._shell_is_busy():
             # Clear any input
@@ -348,7 +353,12 @@ class NemoTerminal(object):
         Args:
             uri -- The URI to convert."""
         gfile = Gio.file_parse_name(uri)
-        return gfile.get_path()
+
+        path = gfile.get_path()
+        if path:
+            return path
+        else:
+            return ""
 
     def _set_term_height(self, height):
         """Change the terminal height.
@@ -380,11 +390,16 @@ class NemoTerminal(object):
             term -- The VTE terminal (self.term).
         """
         if not self._respawn_lock:
+            if self._path == "":
+                self._path = GLib.get_home_dir()
             self.shell_pid = self.term.spawn_sync(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
 
     def _on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
         """Handles drag & drop."""
         for uri in data.get_uris():
+            if self._uri_to_path(uri) == "":
+                continue
+
             path = "'%s' " % self._uri_to_path(uri).replace("'", r"'\''")
             self.feed_child(path)
 
