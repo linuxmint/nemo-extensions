@@ -1,8 +1,7 @@
 Name: Nemo-Python
 Description: Nemo-Python Components
-Version: @VERSION@
+Version: @version@
 
 prefix=@prefix@
 libdir=${prefix}/lib
-datarootdir=@datarootdir@
-pythondir=@datadir@/nemo-python/extensions
+pythondir=${prefix}/share/nemo-python/extensions

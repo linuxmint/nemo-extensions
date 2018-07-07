@@ -3,6 +3,9 @@
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
 
 <refentry id="enum-nemo-python-operation-result">
+  <refmeta>
+    <refentrytitle>Nemo.OperationResult</refentrytitle>
+  </refmeta>
   <refnamediv>
     <refname>Nemo.OperationResult</refname>
     <refpurpose>Nemo.OperationResult Reference</refpurpose>

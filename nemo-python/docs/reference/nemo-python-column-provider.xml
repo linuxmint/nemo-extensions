@@ -3,6 +3,9 @@
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
 
 <refentry id="class-nemo-python-column-provider">
+  <refmeta>
+    <refentrytitle>Nemo.ColumnProvider</refentrytitle>
+  </refmeta>
   <refnamediv>
     <refname>Nemo.ColumnProvider</refname>
     <refpurpose>Nemo.ColumnProvider Reference</refpurpose>

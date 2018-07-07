@@ -2,6 +2,7 @@ from gi.repository import Nemo, GObject
 
 class UpdateFileInfoAsync(GObject.GObject, Nemo.InfoProvider):
     def __init__(self):
+        super(UpdateFileInfoAsync, self).__init__()
         pass
 
     def update_file_info_full(self, provider, handle, closure, file):

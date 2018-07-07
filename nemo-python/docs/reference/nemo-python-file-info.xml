@@ -3,6 +3,9 @@
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
 
 <refentry id="class-nemo-python-file-info">
+  <refmeta>
+    <refentrytitle>Nemo.FileInfo</refentrytitle>
+  </refmeta>
   <refnamediv>
     <refname>Nemo.FileInfo</refname>
     <refpurpose>Nemo.FileInfo Reference</refpurpose>
