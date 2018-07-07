@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 
 # change log:
 # geb666: original bsc.py, based on work by Giacomo Bordiga
@@ -22,23 +22,20 @@
 # Julien Blanc: fix bug caused by missing Exif.Image.Software key
 # mtwebster: convert for use as a nemo extension
 import os
-import urllib
-#import nemo
-from gi.repository import Nemo, GObject, Gtk, GdkPixbuf
+
+from urllib import parse
+import gi
+gi.require_version('GExiv2', '0.10')
+from gi.repository import Nemo, GObject, Gtk, GdkPixbuf, GExiv2
 # for id3 support
 from mutagen.easyid3 import EasyID3
-from mutagen.mp3 import MPEGInfo
-# for exif support
-import pyexiv2
+from mutagen.mp3 import MP3
 # for reading videos. for future improvement, this can also read mp3!
-import kaa.metadata
+from pymediainfo import MediaInfo
 # for reading image dimensions
 import PIL.Image
 # for reading pdf
-try:
-    from pyPdf import PdfFileReader
-except:
-    pass
+from PyPDF2 import PdfFileReader
 
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
@@ -130,7 +127,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         info = FileExtensionInfo()
 
         # strip file:// to get absolute path
-        filename = urllib.unquote(file.get_uri()[7:])
+        filename = parse.unquote(file.get_uri()[7:])
 
         # mp3 handling
         if file.is_mime_type('audio/mpeg'):
@@ -151,86 +148,116 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 except: pass
                 try: info.date = audio["date"][0]
                 except: pass
-            except:
+            except Exception as e:
                 pass
 
             # try to read MP3 information (bitrate, length, samplerate)
             try:
-                mpfile = open (filename)
-                mpinfo = MPEGInfo (mpfile)
-                info.bitrate = str(mpinfo.bitrate/1000) + " Kbps"
-                info.samplerate = str(mpinfo.sample_rate) + " Hz"
-                # [SabreWolfy] added consistent formatting of times in format hh:mm:ss
-                # [SabreWolfy[ to allow for correct column sorting by length
-                mp3length = "%02i:%02i:%02i" % ((int(mpinfo.length/3600)), (int(mpinfo.length/60%60)), (int(mpinfo.length%60)))
-                mpfile.close()
-                info.length = mp3length
-            except:
-                try:
-                    mpfile.close()
-                except: pass
+                with open(filename, 'rb') as mpfile:
+                    mpinfo = MP3(mpfile).info
+                    info.bitrate = str(mpinfo.bitrate / 1000) + " Kbps"
+                    info.samplerate = str(mpinfo.sample_rate) + " Hz"
+                    # [SabreWolfy] added consistent formatting of times in format hh:mm:ss
+                    # [SabreWolfy[ to allow for correct column sorting by length
+                    info.length = "%02i:%02i:%02i" % ((int(mpinfo.length/3600)), (int(mpinfo.length/60%60)), (int(mpinfo.length%60)))
+            except Exception:
+                pass
 
         # image handling
         elif file.is_mime_type('image/jpeg') or file.is_mime_type('image/png') or file.is_mime_type('image/gif') or file.is_mime_type('image/bmp'):
             # EXIF handling routines
             try:
-                metadata = pyexiv2.ImageMetadata(filename)
-                metadata.read()
+                metadata = GExiv2.Metadata(path=filename)
+
                 try:
-                    exif_datetimeoriginal = metadata['Exif.Photo.DateTimeOriginal']
-                    info.exif_datetime_original = str(exif_datetimeoriginal.raw_value)
+                    info.exif_datetime_original = str(metadata.get_date_time())
                 except:
                     pass
-                try:
-                    exif_imagesoftware = metadata['Exif.Image.Software']
-                    info.exif_software = str(exif_imagesoftware.raw_value)
-                except:
-                    pass
-                try:
-                    exif_photoflash = metadata['Exif.Photo.Flash']
-                    info.exif_flash = str(exif_photoflash.raw_value)
-                except:
-                    pass
-                try:
-                    exif_rating = metadata['Xmp.xmp.Rating']
-                    info.exif_rating = str(exif_rating.raw_value)
-                except:
-                    pass
-            except:
+
+                info.exif_software = metadata.get('Exif.Image.Software', None)
+                info.exif_flash = metadata.get('Exif.Photo.Flash', None)
+                info.exif_rating = metadata.get('Xmp.xmp.Rating', None)
+            except GLib.Error as e:
                 pass
+                
             # try read image info directly
             try:
                 im = PIL.Image.open(filename)
                 info.pixeldimensions = str(im.size[0])+'x'+str(im.size[1])
-            except error as e:
-                print e
+            except Exception as e:
                 pass
 
         # video/flac handling
         elif file.is_mime_type('video/x-msvideo') | file.is_mime_type('video/mpeg') | file.is_mime_type('video/x-ms-wmv') | file.is_mime_type('video/mp4') | file.is_mime_type('audio/x-flac') | file.is_mime_type('video/x-flv') | file.is_mime_type('video/x-matroska') | file.is_mime_type('audio/x-wav'):
             try:
-                metadata=kaa.metadata.parse(filename)
-                try: info.length = "%02i:%02i:%02i" % ((int(metadata.length/3600)), (int(metadata.length/60%60)), (int(metadata.length%60)))
-                except: pass
-                try: info.pixeldimensions = str(metadata.video[0].width) + 'x'+ str(metadata.video[0].height)
-                except: pass
-                try: info.bitrate = str(round(metadata.audio[0].bitrate/1000))
-                except: pass
-                try: info.samplerate = str(int(metadata.audio[0].samplerate))+' Hz'
-                except: pass
-                try: info.title = metadata.title
-                except: pass
-                try: info.artist = metadata.artist
-                except: pass
-                try: info.genre = metadata.genre
-                except: pass
-                try: info.tracknumber = metadata.trackno
-                except: pass
-                try: info.date = metadata.userdate
-                except: pass
-                try: info.album = metadata.album
-                except: pass
-            except:
+                mediainfo = MediaInfo.parse(filename)
+
+                duration = 0
+
+                for trackobj in mediainfo.tracks:
+                    track = trackobj.to_data()
+
+                    if track["track_type"] == "Video":
+                        try:
+                            info.pixeldimensions = "%dx%d" % (track["width"], track["height"])
+                        except:
+                            pass
+
+                        try:
+                            duration = int(track['duration'])
+                        except:
+                            pass
+
+                    if track["track_type"] == "Audio":
+                        try:
+                            info.bitrate = track['other_bit_rate'][0]
+                        except:
+                            pass
+                        try:
+                            info.samplerate = track['other_sampling_rate'][0]
+                        except:
+                            pass
+                        try:
+                            if duration == 0:
+                                duration = int(track['duration'])
+                        except:
+                            pass
+
+                    if track["track_type"] == "General":
+                        try:
+                            if duration == 0:
+                                duration = int(track['duration'])
+                        except:
+                            pass
+                        try:
+                            info.title = track['track_name']
+                        except:
+                            pass
+                        try:
+                            info.artist = track['performer']
+                        except:
+                            pass
+                        try:
+                            info.genre = track['genre']
+                        except:
+                            pass
+                        try:
+                            info.tracknumber = track['track_name_position']
+                        except:
+                            pass
+                        try:
+                            info.date = track['recorded_date']
+                        except:
+                            pass
+                        try:
+                            info.album = track['album']
+                        except:
+                            pass
+
+                if duration > 0:
+                    seconds = duration / 1000 # ms to s
+                    info.length = "%02i:%02i:%02i" % ((seconds / 3600), (seconds / 60 % 60), (seconds % 60))
+            except Exception as e:
                 pass
 
         # pdf handling

@@ -1,4 +1,6 @@
 #!/usr/bin/make -f
 
+export PYBUILD_NAME=nemo-media-columns
+
 %:
-	dh $@ --with python2
+	dh $@ --with python3 --buildsystem=pybuild
