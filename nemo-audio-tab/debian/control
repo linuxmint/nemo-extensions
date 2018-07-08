@@ -3,8 +3,8 @@ Section: gnome
 Priority: extra
 Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
-               python-all,
-               python-distutils-extra,
+               python3-all,
+               python3-setuptools,
                dh-python
 Standards-Version: 3.9.6
 Homepage: https://github.com/linuxmint/nemo-extensions
@@ -13,9 +13,10 @@ Package: nemo-audio-tab
 Architecture: all
 Section: utils
 Priority: extra
-Depends: ${python:Depends},
-         ${misc:Depends},
-         nemo,
+Depends: ${misc:Depends},
+         gir1.2-nemo-3.0,
+         gir1.2-gtk-3.0,
+         gir1.2-glib-2.0,
          python-nemo,
-         python-mutagen
+         python3-mutagen
 Description: View audio tag information from the file manager's properties tab
