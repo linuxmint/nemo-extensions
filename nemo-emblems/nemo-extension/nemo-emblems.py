@@ -1,4 +1,4 @@
-import urllib
+from urllib import parse
 import locale, gettext, os
 import subprocess
 
@@ -69,7 +69,7 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
         if file.get_uri_scheme() != 'file':
             return
 
-        self.filename = urllib.unquote(file.get_uri()[7:])
+        self.filename = parse.unquote(file.get_uri()[7:])
         self.gio_file = Gio.File.new_for_path(self.filename)
         self.file_info = self.gio_file.query_info(METADATA_EMBLEMS, 0, None)
         self.file_emblem_names = self.file_info.get_attribute_stringv(METADATA_EMBLEMS)
@@ -96,7 +96,7 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
 
         left = 0
         top = 0
-        for emblem_name, display_name in sorted(self.display_names.items(), key=lambda x: x[1]):
+        for emblem_name, display_name in sorted(list(self.display_names.items()), key=lambda x: x[1]):
             checkbutton = Gtk.CheckButton()
             checkbutton.set_label(display_name)
 

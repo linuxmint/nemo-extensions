@@ -1,4 +1,6 @@
-#!/usr/bin/make -f
+#export DH_VERBOSE=0
+
+export PYBUILD_NAME=nemo-emblems
 
 %:
-	dh $@ --with python2
+	dh $@ --with python3 --buildsystem=pybuild
