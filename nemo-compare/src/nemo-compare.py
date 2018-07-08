@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #    nemo-compare --- Context menu extension for Nemo file manager
 #    Copyright (C) 2011  Guido Tabbernuk <boamaod@gmail.com>
@@ -18,7 +18,7 @@
 
 import sys
 import os
-import urllib
+from urllib import parse
 import gettext
 import locale
 import signal
@@ -72,7 +72,7 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescP
         paths = []
         for file in files:
             if self.valid_file(file):
-                path = urllib.unquote(file.get_uri()[7:])
+                path = parse.unquote(file.get_uri()[7:])
                 paths.append(path)
 
         # no files selected
