@@ -20,46 +20,34 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 #
 
-import os
-from distutils.core import setup
-from DistUtilsExtra.command import *
+from setuptools import setup
+from DistUtilsExtra.command import build_i18n, clean_i18n
 
 def get_app_path_files():
     return [
-        'data/nemo-pastebin.png',
-        'data/nemo-pastebin-notification',
-        'data/nemo-pastebin-configurator.ui'
+        'data/nemo-pastebin-configurator.ui',
+        'src/nemo-pastebin-configurator.py'
     ]
 
-pkg_data_files = [
-    ('share/pixmaps/', ['data/nemo-pastebin.svg']),
-    ('share/glib-2.0/schemas/', ['data/nemo-pastebin.gschema.xml']),
-    ('share/nemo-pastebin/', get_app_path_files()),
-]
-
-pkg_scripts = [
-    'nemo-pastebin.py',
-    'nemo-pastebin-configurator.py'
+data_files = [
+    ('/usr/share/icons/hicolor/scalable/apps', ['data/nemo-pastebin.svg']),
+    ('/usr/share/icons/hicolor/48x48/apps', ['data/nemo-pastebin.png']),
+    ('/usr/share/glib-2.0/schemas', ['data/nemo-pastebin.gschema.xml']),
+    ('/usr/bin', ['src/nemo-pastebin-configurator']),
+    ('/usr/share/nemo-pastebin', get_app_path_files()),
+    ('/usr/share/nemo-python/extensions', ['src/nemo-pastebin.py'])
 ]
 
 pkg_short_dsc = "Nemo extension to send files to a pastebin"
-
 pkg_long_dsc = """nemo-pastebin is a Nemo extension written in Python, which allows users to upload text-only files to a pastebin service just by right-clicking on them. Users can also add their favorite service just by creatine new presets."""
 
 setup(name='nemo-pastebin',
       version='3.8.0',
-      platforms=['all'],
       author='Linux Mint',
       author_email='root@linuxmint.com',
       license='GPL-2',
       url='https://github.com/linuxmint/nemo-extensions',
       description=pkg_short_dsc,
       long_description=pkg_long_dsc,
-      data_files=pkg_data_files,
-      scripts=pkg_scripts,
-      cmdclass = { "build" : build_extra.build_extra,
-                   "build_i18n" :  build_i18n.build_i18n,
-                   "build_icons" :  build_icons.build_icons,
-                   "clean": clean_i18n.clean_i18n,
-                   }
-      )
+      data_files=data_files
+)

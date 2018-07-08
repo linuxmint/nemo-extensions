@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # nemo-pastebin - Nemo extension to paste a file to a pastebin service
 # Written by:
@@ -25,42 +25,27 @@ import sys
 import re
 import gettext
 from subprocess import check_output
-from xdg import BaseDirectory
 
 import gi
-
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gio, Gtk
 
-APP_NAME = "nemo-pastebin"
-APP_DATA_PATHS = [os.path.join(sys.path[0], 'data')]
-for dir in BaseDirectory.xdg_data_dirs:
-    APP_DATA_PATHS.append(os.path.join(dir, APP_NAME))
-
 gettext.install("nemo-extensions")
-
-def find_data_file(path):
-    target = None
-    for p in APP_DATA_PATHS:
-        target = os.path.join(p, path)
-        if os.path.isfile(target):
-            return target
-    if target == None:
-        raise IOError(_("Can't find %s in any known prefix!") % path)
 
 def get_presets():
     try:
-        res = check_output(["pastebinit", "-l"])
+        res = check_output(["pastebinit", "-l"]).decode()
         # split the line and throw away the first slice
         res = re.split("\n-?\s?", res.strip())[1:]
-    except OSError:
+    except OSError as e:
+        print(e)
         sys.exit(1)
-    except:
+    except Exception as e:
+        print(e)
         sys.exit(-1)
     return res
 
-UI_FILE = find_data_file('nemo-pastebin-configurator.ui')
-ICON_FILE = find_data_file('nemo-pastebin.png')
+UI_FILE = '/usr/share/nemo-pastebin/nemo-pastebin-configurator.ui'
 
 class Controller(object):
     BASE_KEY = "apps.nemo-pastebin"
@@ -125,7 +110,7 @@ class Controller(object):
         pass
         #combo_box.set_active(self.presets.index(settings.get_string("pastebin")))
     def on_pastebin_combo_changed(self, combo_box, settings):
-        print "Selected ", combo_box.get_active_text()
+        print("Selected: %s" % combo_box.get_active_text())
         settings.set_string("pastebin", combo_box.get_active_text())
 
     def _save_remaining_settings(self):
