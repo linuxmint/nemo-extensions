@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
 ############################################################################
@@ -44,22 +44,17 @@ from signal import SIGTERM, SIGKILL
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
+import codecs
+
 import gettext
-gettext.bindtextdomain('nemo-terminal', '@prefix@/share/locale')
-gettext.textdomain('nemo-terminal')
+gettext.bindtextdomain("nemo-extensions")
+gettext.textdomain("nemo-extensions")
 _ = gettext.gettext
 
 import gi
 gi.require_version('Vte', '2.91')
 gi.require_version('Nemo', '3.0')
 from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio
-
-# DEFAULT_CONF = {
-#         'general/def_term_height': 5, #lines
-#         'general/def_visible': False,
-#         'general/term_on_top': True,
-#         'terminal/shell': Vte.get_user_shell(),
-#         }
 
 BASE_KEY = "org.nemo.extensions.nemo-terminal"
 settings = Gio.Settings.new(BASE_KEY)
@@ -205,7 +200,7 @@ class NemoTerminal(object):
             workingDir = os.readlink('/proc/%s/cwd' % pgroup)
         gfile = Gio.file_parse_name(workingDir)
         workingDirUri = gfile.get_uri()
-        print workingDirUri
+        print( workingDirUri)
         # TODO: something useful (like changing the working dir)
         return
 
@@ -244,18 +239,19 @@ class NemoTerminal(object):
 
         if not self._shell_is_busy():
             # Clear any input
-            eraselinekeys = settings.get_string("terminal-erase-line").decode('string_escape')
-            self.feed_child(eraselinekeys)
+
+            eraselinekeys = settings.get_string("terminal-erase-line")
+            self.feed_child(eraselinekeys.encode().decode("unicode_escape"))
 
             # Change directory
             cdcmd_nonewline = settings.get_string("terminal-change-directory-command") \
                 % GLib.shell_quote(self._path)
             cdcmd = "%s\n" % cdcmd_nonewline
-            self.feed_child(cdcmd)
+            self.feed_child(cdcmd.encode().decode("unicode_escape"))
 
             # Restore user input
-            restorelinekeys = settings.get_string("terminal-restore-line").decode('string_escape')
-            self.feed_child(restorelinekeys)
+            restorelinekeys = settings.get_string("terminal-restore-line")
+            self.feed_child(restorelinekeys.encode().decode("unicode_escape"))
 
     def get_widget(self):
         """Return the top-level widget of Nemo Terminal."""
@@ -410,10 +406,11 @@ class NemoTerminal(object):
         gobject-introspection/python-gi differences force us to try with and
         without the text length. One of them will work.
         """
+        # print("feed '%s'" % text)
         try:
-            self.term.feed_child(text)
+            self.term.feed_child(text.encode())
         except TypeError:
-            self.term.feed_child(text, len(text))
+            self.term.feed_child(text.encode(), len(text))
 
 class Crowbar(object):
     """Modify the Nemo' widget tree when the crowbar is inserted in it.
