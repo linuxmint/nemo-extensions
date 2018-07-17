@@ -8,7 +8,7 @@ XS-Python-Version: >= 2.6
 Homepage: https://github.com/linuxmint/nemo-extensions
 
 Package: nemo-terminal
-Architecture: i386 amd64
+Architecture: all
 Depends: ${misc:Depends},
 		 nemo ( >= 2.0.2),
 		 python ( >= 2.6),
