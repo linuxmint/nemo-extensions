@@ -21,7 +21,7 @@ override_dh_auto_test:
 	# disable tests
 
 override_dh_strip:
-	dh_strip --dbg-package=python-nemo-dbg
+	dh_strip --dbg-package=nemo-python-dbg
 
 override_dh_auto_install:
 	DESTDIR=${CURDIR}/debian/python-nemo \

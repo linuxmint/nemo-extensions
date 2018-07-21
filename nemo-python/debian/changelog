@@ -1,3 +1,9 @@
+nemo-python (3.9.0) UNRELEASED; urgency=medium
+
+  * Dev bump - python2->python3, meson
+
+ -- Michael Webster <miketwebster@gmail.com>  Fri, 20 Jul 2018 22:00:36 -0400
+
 nemo-python (3.8.0) tara; urgency=medium
 
   * 3.8.0
