@@ -7,7 +7,7 @@ from setuptools import setup
 # Setup stage
 setup(
     name         = "nemo-audio-tab",
-    version      = "3.8.0",
+    version      = "3.9.0",
     description  = "View audio tag information from the file manager's properties tab",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",

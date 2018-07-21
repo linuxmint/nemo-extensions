@@ -1,3 +1,9 @@
+nemo-audio-tab (3.9.0) UNRELEASED; urgency=medium
+
+  * 3.9.0 - version bump for python3, nemo-python dependency change
+
+ -- Michael Webster <miketwebster@gmail.com>  Fri, 20 Jul 2018 22:11:26 -0400
+
 nemo-audio-tab (3.8.0) tara; urgency=medium
 
   * 3.8.0

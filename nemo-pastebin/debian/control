@@ -13,7 +13,7 @@ Package: nemo-pastebin
 Architecture: all
 Depends: gir1.2-nemo-3.0,
          pastebinit,
-         python-nemo,
+         nemo-python (>= 3.9.0),
          ${misc:Depends}
 Recommends: gir1.2-notify-0.7
 Description: Nemo extension to send files to a pastebin

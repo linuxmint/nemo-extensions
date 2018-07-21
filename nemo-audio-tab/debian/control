@@ -17,6 +17,6 @@ Depends: ${misc:Depends},
          gir1.2-nemo-3.0,
          gir1.2-gtk-3.0,
          gir1.2-glib-2.0,
-         python-nemo,
+         nemo-python (>= 3.9.0),
          python3-mutagen
 Description: View audio tag information from the file manager's properties tab

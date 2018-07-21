@@ -11,7 +11,7 @@ Standards-Version: 3.9.6
 Package: nemo-media-columns
 Architecture: all
 Depends: ${misc:Depends},
-         python-nemo,
+         nemo-python (>= 3.9.0),
          gir1.2-gexiv2-0.10,
          python3-mutagen,
          python3-pypdf2,
