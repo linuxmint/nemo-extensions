@@ -11,16 +11,14 @@ Build-Depends:
  python-gi-dev,
 Standards-Version: 3.9.6
 
-Package: nemo-python
+Package: python-nemo
 Architecture: any
 Depends: gir1.2-nemo-3.0 (>= 3.6), ${misc:Depends}, ${shlibs:Depends}
-Replaces: python-nemo (<< 3.9.0)
-Breaks: python-nemo (<< 3.9.0)
 Description: Python binding for Nemo components
  Python binding for Nemo, to allow Nemo property page and menu item
  extensions to be written in Python.
 
-Package: nemo-python-dbg
+Package: python-nemo-dbg
 Section: debug
 Architecture: any
 Priority: extra
@@ -29,10 +27,3 @@ Description: Debug packages for python-nemo
  This development package contains unstripped binaries compiled with
  debugging symbols needed by gdb.
 
-Package: python-nemo
-Depends: nemo-python, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.

@@ -13,7 +13,7 @@ Package: nemo-terminal
 Architecture: all
 Depends: ${misc:Depends},
 		 python3 ( >= 3.4),
-		 nemo-python (>= 3.9.0),
+		 python-nemo (>= 3.9.0),
          gir1.2-nemo-3.0,
 		 gir1.2-vte-2.91,
 		 gir1.2-gtk-3.0 (>= 3.8.4~),

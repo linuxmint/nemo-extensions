@@ -15,6 +15,6 @@ Section: utils
 Priority: extra
 Depends: ${misc:Depends},
          gir1.2-nemo-3.0 (>=3.8),
-         nemo-python (>= 3.9.0)
+         python-nemo (>= 3.9.0)
 Description: Change a folder or file emblem
  Change a folder or file emblem in Nemo
