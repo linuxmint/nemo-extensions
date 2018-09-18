@@ -1,0 +1,19 @@
+libnemo_image_converter_sources = [
+  'image-converter.c',
+  'nemo-image-converter.c',
+  'nemo-image-resizer.c',
+  'nemo-image-rotator.c',
+]
+
+
+libnemo_image_converter = library('nemo-image-converter',
+  libnemo_image_converter_sources,
+
+  include_directories: rootInclude,
+  dependencies: [
+    gmodule,
+    gtk3,
+    libnemoext,
+  ],
+  install_dir: nemo_extensiondir,
+)
