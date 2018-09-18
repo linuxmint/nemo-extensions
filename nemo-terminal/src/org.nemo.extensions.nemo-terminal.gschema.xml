@@ -15,7 +15,7 @@
 	<schema path="/org/nemo/extensions/nemo-terminal/" 
 	    id="org.nemo.extensions.nemo-terminal" 
 	    gettext-domain="nemo-terminal">
-	    <key name="default-terminal-height" type="y">    
+	    <key name="default-terminal-height" type="i">    
 	        <default>5</default>
 	        <summary>Set the default number of lines for the terminal.</summary>
 	        <description>Set the default number of lines for the terminal when it is first opened.</description>
@@ -26,7 +26,13 @@
 	        <summary>Default visibility of terminal</summary>
 	        <description>When a new Nemo window is opened, this setting determines whether Nemo terminal is visible by default.</description>
 	    </key>
-	    
+
+        <key name="audible-bell" type="b">
+            <default>true</default>
+            <summary>Enable the pty bell</summary>
+            <description>Controls whether or not the terminal will beep when the child outputs the "bl" sequence.</description>
+        </key>
+
 	    <key name="default-follow-mode" enum="org.nemo.extensions.nemo-terminal.FollowMode">
             <default>"Terminal follows Nemo"</default>
             <summary>Current directory follow behavior</summary>

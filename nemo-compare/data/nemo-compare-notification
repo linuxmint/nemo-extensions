@@ -1,6 +1,0 @@
-Name: Nemo Compare Extension requires restarting Nemo
-Priority: High
-Terminal: False
-DontShowAfterReboot: True
-DisplayIf: pgrep nemo
-Description: Nemo Compare Extension has been installed. Restart of Nemo is needed to make it work properly (hint: 'nemo -q' in terminal). Or if you prefer, a session restart will be more than enough. After restart, a new option will emerge in Nemo context menu. This option lets you compare selected files with your preferred 'diff' tool as well as select files for later comparison.

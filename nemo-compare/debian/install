@@ -1,5 +1,4 @@
 debian/tmp/usr/share/locale
-/data/nemo-compare-notification /usr/share/nemo-compare/
 /src/nemo-compare.py /usr/share/nemo-compare/
 /src/utils.py /usr/share/nemo-compare/
 /src/nemo-compare-preferences.py /usr/share/nemo-compare/

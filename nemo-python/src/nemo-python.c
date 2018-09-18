@@ -17,9 +17,7 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifdef HAVE_CONFIG_H
 # include <config.h>
-#endif
 
 #include <Python.h>
 #include <pygobject.h>
@@ -142,7 +140,7 @@ nemo_python_load_dir (GTypeModule *module,
 				
 				/* sys.path.insert(0, dirname) */
 				sys_path = PySys_GetObject("path");
-				py_path = PyString_FromString(dirname);
+				py_path = PyUnicode_FromString(dirname);
 				PyList_Insert(sys_path, 0, py_path);
 				Py_DECREF(py_path);
 			}
@@ -156,13 +154,13 @@ nemo_python_init_python (void)
 {
 	PyObject *nemo;
 	GModule *libpython;
-	char *argv[] = { "nemo", NULL };
+    wchar_t *argv[] = { L"nemo", NULL };
 
 	if (Py_IsInitialized())
 		return TRUE;
 
-  	debug("g_module_open " PY_LIB_LOC "/libpython" PYTHON_VERSION "." G_MODULE_SUFFIX ".1.0");
-	libpython = g_module_open(PY_LIB_LOC "/libpython" PYTHON_VERSION "." G_MODULE_SUFFIX ".1.0", 0);
+  	debug("g_module_open " PYTHON_LIBPATH);
+	libpython = g_module_open(PYTHON_LIBPATH, 0);
 	if (!libpython)
 		g_warning("g_module_open libpython failed: %s", g_module_error());
 
@@ -183,7 +181,7 @@ nemo_python_init_python (void)
 	}
 	
 	debug("Sanitize the python search path");
-	PyRun_SimpleString("import sys; sys.path = filter(None, sys.path)");
+	PyRun_SimpleString("import sys; sys.path = [path for path in sys.path if path]");
 	if (PyErr_Occurred())
 	{
 		PyErr_Print();
@@ -256,7 +254,7 @@ nemo_module_initialize(GTypeModule *module)
 	all_types = g_array_new(FALSE, FALSE, sizeof(GType));
 
 	// Look in the new global path, $DATADIR/nemo-python/extensions
-	nemo_python_load_dir(module, DATADIR "/nemo-python/extensions");
+	nemo_python_load_dir(module, PYTHON_EXTENSION_DIR);
 
 	// Look in XDG_DATA_DIR, ~/.local/share/nemo-python/extensions
 	user_extensions_dir = g_build_filename(g_get_user_data_dir(), 

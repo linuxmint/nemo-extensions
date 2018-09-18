@@ -1,3 +1,15 @@
+nemo-pastebin (3.9.0) UNRELEASED; urgency=medium
+
+  * 3.9.0 Version bump for python3, nemo-python dependency change.
+
+ -- Michael Webster <miketwebster@gmail.com>  Fri, 20 Jul 2018 22:20:18 -0400
+
+nemo-pastebin (3.8.0) tara; urgency=medium
+
+  * 3.8.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 01 May 2018 13:09:45 +0100
+
 nemo-pastebin (3.6.0) sylvia; urgency=medium
 
   * 3.6.0

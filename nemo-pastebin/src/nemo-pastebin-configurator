@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+
+import subprocess
+import sys
+
+sys.exit(subprocess.call(["/usr/share/nemo-pastebin/nemo-pastebin-configurator.py"]))

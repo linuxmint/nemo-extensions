@@ -3,6 +3,9 @@
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
 
 <refentry id="class-nemo-python-property-page">
+  <refmeta>
+    <refentrytitle>Nemo.PropertyPage</refentrytitle>
+  </refmeta>
   <refnamediv>
     <refname>Nemo.PropertyPage</refname>
     <refpurpose>Nemo.PropertyPage Reference</refpurpose>

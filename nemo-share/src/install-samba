@@ -33,12 +33,20 @@ class Main:
 if __name__ == "__main__":
     ml = GLib.MainLoop.new(None, True)
 
-    if len(sys.argv) == 2:
-        user = sys.argv[1]
-    else:
-        uid = int(os.getenv("PKEXEC_UID"))
+    # prefer using the uid provided by pkexec to the command line argument. if
+    # a user authenticated via pkexec then he should only be able to add
+    # himself to the group.
+    uid = os.getenv("PKEXEC_UID", None)
+
+    if uid != None:
+        uid = int(uid)
         passwd = pwd.getpwuid(uid)
         user = passwd[0]
+    elif len(sys.argv) == 2:
+        user = sys.argv[1]
+    else:
+        print("No target uid in environment or on command line found.")
+        exit(-1)
 
     main = Main(user)
     ml.run()

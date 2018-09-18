@@ -1,6 +1,6 @@
 # Initialization
 
-AC_INIT([nemo-dropbox],3.6.0)
+AC_INIT([nemo-dropbox],3.8.0)
 
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 

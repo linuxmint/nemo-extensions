@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 
 # Folder Color 0.0.11 - http://launchpad.net/folder-color
 # Copyright (C) 2012-2014 Marcos Alvarez Costales https://launchpad.net/~costales
@@ -18,22 +18,26 @@
 # for more information.
 
 
-import os
-import sys
-
-import DistUtilsExtra.auto
-
-# Create data files
-data = [ ('/usr/share/nemo-python/extensions', ['nemo-extension/nemo-emblems.py']) ]
+from setuptools import setup
 
 # Setup stage
-DistUtilsExtra.auto.setup(
+setup(
     name         = "nemo-emblems",
-    version      = "3.6.0",
+    version      = "3.9.0",
     description  = "Change your folder and file emblems",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",
     url          = "https://github.com/linuxmint/nemo-extensions",
     license      = "GPL3",
-    data_files   = data
+
+    # See debian/control for install-depends - this is useless here, except as reference.
+    # install_requires (and only works with python modules.  It's equally as bad to have
+    # some deps here, then draw them into debian/control using {python3:Depends} and add
+    # them to our non-python depends.
+
+    # install_requires = ['gir1.2-nemo-3.0>=3.9',
+    #                     'python-nemo >=3.9'],
+    data_files   = [
+        ('/usr/share/nemo-python/extensions', ['nemo-extension/nemo-emblems.py'])
+    ]
 )

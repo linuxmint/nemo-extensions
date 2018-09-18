@@ -3,6 +3,9 @@
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
 
 <refentry id="class-nemo-python-location-widget-provider">
+  <refmeta>
+    <refentrytitle>Nemo.LocationWidgetProvider</refentrytitle>
+  </refmeta>
   <refnamediv>
     <refname>Nemo.LocationWidgetProvider</refname>
     <refpurpose>Nemo.LocationWidgetProvider Reference</refpurpose>

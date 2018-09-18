@@ -3,17 +3,17 @@ Section: gnome
 Priority: extra
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
-               python-all,
+               python3-all,
+               python3-setuptools,
                dh-python
 Standards-Version: 3.9.6
 
 Package: nemo-compare
 Architecture: all
 Depends: ${misc:Depends},
-         nemo (>= 1),
-         python,
-         python-nemo (>= 1.0),
-         python-xdg,
+         nemo (>= 3.8),
+         python3,
+         python-nemo (>= 3.9.0),
          meld | kdiff3 | kdiff3-qt | diffuse | kompare | fldiff | tkdiff | bcompare
 Description: Context menu comparison extension for Nemo file manager
  Simple context menu file comparison extension for Nemo,

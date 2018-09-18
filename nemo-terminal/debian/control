@@ -3,21 +3,22 @@ Section: gnome
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
+               python3-all,
+               python3-setuptools,
+               dh-python
 Standards-Version: 3.9.4
-XS-Python-Version: >= 2.6
 Homepage: https://github.com/linuxmint/nemo-extensions
 
 Package: nemo-terminal
-Architecture: i386 amd64
+Architecture: all
 Depends: ${misc:Depends},
-		 nemo ( >= 2.0.2),
-		 python ( >= 2.6),
-		 python-nemo (>= 1.0),
-		 python-gi (>= 3.2.2~),
-		 gir1.2-vte-2.90 (>= 1:0.34.6~) | gir1.2-vte-2.91,
+		 python3 ( >= 3.4),
+		 python-nemo (>= 3.9.0),
+         gir1.2-nemo-3.0,
+		 gir1.2-vte-2.91,
 		 gir1.2-gtk-3.0 (>= 3.8.4~),
-		 gir1.2-gdkpixbuf-2.0 (>= 2.28.1~),
-		 gir1.2-glib-2.0 (>= 1.38.0~)
+		 gir1.2-glib-2.0 (>= 1.38.0~),
+         gir1.2-xapp-1.0 (>= 1.1.0)
 Description: Nemo extension to enable an embedded terminal
  Nemo Terminal is an embedded terminal for Nemo, the Cinnamon file manager.
  It embeds a terminal pane into Nemo that is accessible by hotkey (default F4)

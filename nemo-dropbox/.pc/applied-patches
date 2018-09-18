@@ -1,9 +1,0 @@
-unlink-before-extract.patch
-do-not-hardcode-dropboxd-path.patch
-dropbox-update.patch
-display-error-string-when-download-failed.patch
-add-http-proxy-option.patch
-use-var-lib-dropbox.patch
-use-pkexec-to-get-root-rights.patch
-non-interactive-update.patch
-use-dpkg-to-select-platform.patch

@@ -1,7 +1,10 @@
 #!/usr/bin/make -f
 
-%:
-	dh $@ --with python2
+export PYBUILD_NAME=nemo-pastebin
 
-override_dh_auto_install:
-	dh_auto_install -- --install-scripts=/usr/share/nemo-pastebin/
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_install:
+	for file in $$(cd po; ls *.po; cd ..); do echo debian/nemo-pastebin/usr/share/locale/$${file%.po}/LC_MESSAGES; mkdir -p debian/nemo-pastebin/usr/share/locale/$${file%.po}/LC_MESSAGES; msgfmt -f -o debian/nemo-pastebin/usr/share/locale/$${file%.po}/LC_MESSAGES/nemo-pastebin.mo po/$$file; done
+	dh_install

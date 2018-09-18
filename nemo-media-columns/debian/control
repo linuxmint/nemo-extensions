@@ -3,20 +3,21 @@ Section: gnome
 Priority: extra
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper (>= 9),
-               python-all,
+               python3-all,
+               python3-setuptools,
                dh-python
 Standards-Version: 3.9.6
 
 Package: nemo-media-columns
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends},
-         python-nemo,
-         python-mutagen,
-         python-pyexiv2,
-         python-kaa-metadata,
-         libnemo-extension1a,
-         python-pypdf | python-pypdf2,
-         python-pil
+Depends: ${misc:Depends},
+         python-nemo (>= 3.9.0),
+         gir1.2-gexiv2-0.10,
+         python3-mutagen,
+         python3-pypdf2,
+         python3-pil,
+         python3-pymediainfo,
+         gir1.2-nemo-3.0
 Description: Nemo Extension
  A Nemo extension to display music/EXIF and PDF metadata info
  in the Nemo List View.

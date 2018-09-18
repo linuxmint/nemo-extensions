@@ -3,6 +3,9 @@
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
 
 <refentry id="class-nemo-python-menu-item">
+  <refmeta>
+    <refentrytitle>Nemo.MenuItem</refentrytitle>
+  </refmeta>
   <refnamediv>
     <refname>Nemo.MenuItem</refname>
     <refpurpose>Nemo.MenuItem Reference</refpurpose>

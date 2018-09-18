@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #    nemo-compare --- Context menu extension for Nemo file manager
 #    Copyright (C) 2011  Guido Tabbernuk <boamaod@gmail.com>
@@ -17,13 +17,14 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
-import xdg.BaseDirectory
-import ConfigParser
+import configparser
+from gi.repository import GLib
 
 APP = 'nemo-compare'
 
 # settings
-CONFIG_FILES = [os.path.join(xdg.BaseDirectory.xdg_config_home, APP + ".conf"), os.path.join("/etc", APP + ".conf")]
+CONFIG_FILES = []
+CONFIG_FILES = [os.path.join(GLib.get_user_config_dir(), APP + ".conf"), os.path.join("/etc", APP + ".conf")]
 CONFIG_FILE = CONFIG_FILES[0]
 SETTINGS_MAIN = 'Settings'
 
@@ -50,7 +51,12 @@ class NemoCompareConfig:
 
     def load(self):
         '''Loads config options if available. If not, creates them using the best heuristics availabe.'''
-        self.config = ConfigParser.ConfigParser()
+        self.config = configparser.ConfigParser()
+
+        self.config['DEFAULT'] = {DIFF_PATH: 'meld',
+                                  DIFF_PATH_3WAY: 'meld',
+                                  DIFF_PATH_MULTI: '',
+                                  COMPARATORS: 'meld'}
 
         # allow system-wide default settings from /etc/*
         if os.path.isfile(CONFIG_FILES[0]):
@@ -60,17 +66,16 @@ class NemoCompareConfig:
 
         # read from start or flush from the point where cancelled
         try:
-            self.diff_engine = self.config.get(SETTINGS_MAIN, DIFF_PATH)
-            self.diff_engine_3way = self.config.get(SETTINGS_MAIN, DIFF_PATH_3WAY)
-            self.diff_engine_multi = self.config.get(SETTINGS_MAIN, DIFF_PATH_MULTI)
-            self.engines = eval(self.config.get(SETTINGS_MAIN, COMPARATORS))
-
-        except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
-
+            main = self.config[SETTINGS_MAIN]
+            self.diff_engine = main[DIFF_PATH]
+            self.diff_engine_3way = main[DIFF_PATH_3WAY]
+            self.diff_engine_multi = main[DIFF_PATH_MULTI]
+            self.engines = main[COMPARATORS].split(',')
+        except KeyError:
             # maybe settings were half loaded when exception was thrown
             try:
                 self.config.add_section(SETTINGS_MAIN)
-            except ConfigParser.DuplicateSectionError:
+            except configparser.DuplicateSectionError:
                 pass
 
             self.add_missing_predefined_engines()
@@ -90,12 +95,16 @@ class NemoCompareConfig:
 
             self.engines.sort()
 
-            self.config.set(SETTINGS_MAIN, DIFF_PATH, self.diff_engine)
-            self.config.set(SETTINGS_MAIN, DIFF_PATH_3WAY, self.diff_engine_3way)
-            self.config.set(SETTINGS_MAIN, DIFF_PATH_MULTI, self.diff_engine_multi)
-            self.config.set(SETTINGS_MAIN, COMPARATORS, self.engines)
+            main = self.config[SETTINGS_MAIN]
+            main[DIFF_PATH] = self.diff_engine
+            main[DIFF_PATH_3WAY] = self.diff_engine_3way
+            main[DIFF_PATH_MULTI] = self.diff_engine_multi
 
-            with open(CONFIG_FILE, 'wb') as f:
+            strlist = ",".join(self.engines)
+
+            main[COMPARATORS] = strlist
+
+            with open(CONFIG_FILE, 'w') as f:
                 self.config.write(f)
 
     def add_missing_predefined_engines(self):
@@ -112,12 +121,13 @@ class NemoCompareConfig:
         '''Saves config options'''
         try:
             self.config.add_section(SETTINGS_MAIN)
-        except ConfigParser.DuplicateSectionError:
+        except configparser.DuplicateSectionError:
             pass
 
-        self.config.set(SETTINGS_MAIN, DIFF_PATH, self.diff_engine)
-        self.config.set(SETTINGS_MAIN, DIFF_PATH_3WAY, self.diff_engine_3way)
-        self.config.set(SETTINGS_MAIN, DIFF_PATH_MULTI, self.diff_engine_multi)
+        main = self.config[SETTINGS_MAIN]
+        main[DIFF_PATH] = self.diff_engine
+        main[DIFF_PATH_3WAY] = self.diff_engine_3way
+        main[DIFF_PATH_MULTI] = self.diff_engine_multi
 
         if self.diff_engine not in self.engines:
             self.engines.append(self.diff_engine)
@@ -126,6 +136,16 @@ class NemoCompareConfig:
         if self.diff_engine_multi not in self.engines:
             self.engines.append(self.diff_engine_multi)
 
-        self.config.set(SETTINGS_MAIN, COMPARATORS, self.engines)
-        with open(CONFIG_FILE, 'wb') as f:
+        system_utils = []
+        for path in COMPARATOR_PATHS:
+            system_utils += os.listdir(path)
+        for engine in self.engines:
+            if engine not in system_utils:
+                self.engines.remove(engine)
+
+        strlist = ",".join(self.engines)
+
+        main[COMPARATORS] = strlist
+
+        with open(CONFIG_FILE, 'w') as f:
             self.config.write(f)
