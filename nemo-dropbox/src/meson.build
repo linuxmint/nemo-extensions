@@ -15,6 +15,7 @@ libnemo_dropbox = shared_library('nemo-dropbox',
 
   c_args: [
     '-DEMBLEMDIR="@0@"'.format(join_paths(get_option('prefix'), emblems_dir)),
+    '-DNEMOICONDIR="@0@"'.format(join_paths(get_option('datadir'), 'nemo-dropbox', 'icons')),
   ],
 
   install: true,
