@@ -3,7 +3,7 @@
 project(
   'nemo-dropbox',
   'c',
-  version: '3.6.0',
+  version: '3.8.0',
   meson_version: '>=0.43.0'
 )
 

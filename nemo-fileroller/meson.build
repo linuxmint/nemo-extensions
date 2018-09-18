@@ -1,6 +1,6 @@
 project('nemo-fileroller',
   'c',
-  version: '3.6.0',
+  version: '3.8.0',
   meson_version: '>=0.40.0'
 )
 project_url = 'https://github.com/linuxmint/nemo-extensions'
