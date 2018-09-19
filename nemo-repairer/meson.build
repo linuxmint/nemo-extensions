@@ -1,4 +1,4 @@
-project('nemo-preview',
+project('nemo-repairer',
   'c',
   version: '3.8.0',
   meson_version: '>=0.40.0'
@@ -28,28 +28,10 @@ conf.set('NEMO_VERSION_MINOR', nemo_extensionver[1])
 conf.set('NEMO_VERSION_MICRO', nemo_extensionver[2])
 
 ################################################################################
-# Check for Python
+# Dependencies
 
-
-freetype2       = dependency('freetype2')
-glib2           = dependency('glib-2.0', version: '>=2.37.3')
-gobjectintrosp  = dependency('gobject-introspection-1.0', version: '>=0.9.2')
-cjs             = dependency('cjs-1.0', version: '>=1.9.0')
-gobject         = dependency('gobject-2.0', version: '>=2.37.3')
-gtk3            = dependency('gtk+-3.0', version: '>=3.5.12')
-clutter         = dependency('clutter-1.0', version: '>=1.11.4')
-clutter_x11     = dependency('clutter-x11-1.0', version: '>=1.11.4')
-clutter_gtk     = dependency('clutter-gtk-1.0', version: '>=1.0.1')
-clutter_gst     = dependency('clutter-gst-3.0')
-gstreamer       = dependency('gstreamer-1.0')
-gstreamer_pb    = dependency('gstreamer-pbutils-1.0')
-gstreamer_tag   = dependency('gstreamer-tag-1.0')
-libmusicbrainz5 = dependency('libmusicbrainz5')
-xreader_doc     = dependency('xreader-document-1.5')
-xreader_view    = dependency('xreader-view-1.5')
-gtksourceview   = dependency('gtksourceview-3.0')
-webkit2gtk      = dependency('webkit2gtk-4.0')
-
+glib = dependency('glib-2.0')
+gtk3 = dependency('gtk+-3.0')
 
 ################################################################################
 # Generic stuff
@@ -59,7 +41,7 @@ conf.set_quoted('GETTEXT_PACKAGE', gettext_package)
 conf.set_quoted('GNOMELOCALEDIR',  join_paths(
   get_option('prefix'), get_option('datadir'), 'locale'))
 
-conf.set_quoted('NEMO_PREVIEW_PKGDATADIR', join_paths(
+conf.set_quoted('PKGDATADIR', join_paths(
   get_option('prefix'), get_option('datadir'), meson.project_name()))
 
 configure_file(
@@ -67,8 +49,8 @@ configure_file(
   configuration: conf,
 )
 
+add_project_arguments('-DHAVE_CONFIG_H', language: 'c')
 rootInclude = include_directories('.')
 
 subdir('src')
 subdir('po')
-subdir('data')
