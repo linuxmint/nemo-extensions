@@ -1,0 +1,2 @@
+option('gpg-check', type: 'boolean', value: true)
+option('libnotify', type: 'boolean', value: true)
