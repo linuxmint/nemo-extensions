@@ -43,6 +43,9 @@ GUI = """
 
 HIDE_EMBLEMS = ['emblem-desktop', 'emblem-noread', 'emblem-nowrite', 'emblem-readonly', 'emblem-shared', 'emblem-synchronizing', 'emblem-symbolic-link', 'emblem-unreadable']
 
+# The following array is used for translating emblems only
+TRANSLATABLE_EMBLEMS = [_("Art"), _("Camera"), _("Danger"), _("Default"), _("Development"), _("Documents"), _("Downloads"), _("Favorite"), _("Games"), _("Generic"), _("Important"), _("Installed"), _("Mail"), _("Marketing"), _("Money"), _("Multimedia"), _("New"), _("Note"), _("Ohno"), _("Package"), _("People"), _("Personal"), _("Photos"), _("Plan"), _("Presentation"), _("Sales"), _("Sound"), _("System"), _("Urgent"), _("Videos"), _("Web")]
+
 class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAndDescProvider):
 
     def __init__(self):
@@ -98,7 +101,7 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
         top = 0
         for emblem_name, display_name in sorted(list(self.display_names.items()), key=lambda x: x[1]):
             checkbutton = Gtk.CheckButton()
-            checkbutton.set_label(display_name)
+            checkbutton.set_label(_(display_name))
 
             image = Gtk.Image.new_from_icon_name(emblem_name, Gtk.IconSize.BUTTON)
             image.set_pixel_size(24) # this should not be necessary
