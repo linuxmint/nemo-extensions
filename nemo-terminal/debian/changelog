@@ -1,8 +1,8 @@
-nemo-terminal (3.9.0) UNRELEASED; urgency=medium
+nemo-terminal (4.0.0) tessa; urgency=medium
 
-  * 3.9.0 Version bump for python3, nemo-python dependency change.
+  * 4.0.0
 
- -- Michael Webster <miketwebster@gmail.com>  Fri, 20 Jul 2018 22:21:51 -0400
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 01 Nov 2018 13:53:56 +0000
 
 nemo-terminal (3.8.0) tara; urgency=medium
 

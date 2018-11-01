@@ -1,8 +1,8 @@
-nemo-python (3.9.0) UNRELEASED; urgency=medium
+nemo-python (4.0.0) tessa; urgency=medium
 
-  * Dev bump - python2->python3, meson
+  * 4.0.0
 
- -- Michael Webster <miketwebster@gmail.com>  Fri, 20 Jul 2018 22:00:36 -0400
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 01 Nov 2018 13:53:56 +0000
 
 nemo-python (3.8.0) tara; urgency=medium
 

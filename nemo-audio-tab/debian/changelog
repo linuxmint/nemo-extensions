@@ -1,8 +1,8 @@
-nemo-audio-tab (3.9.0) UNRELEASED; urgency=medium
+nemo-audio-tab (4.0.0) tessa; urgency=medium
 
-  * 3.9.0 - version bump for python3, nemo-python dependency change
+  * 4.0.0
 
- -- Michael Webster <miketwebster@gmail.com>  Fri, 20 Jul 2018 22:11:26 -0400
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 01 Nov 2018 13:53:56 +0000
 
 nemo-audio-tab (3.8.0) tara; urgency=medium
 
