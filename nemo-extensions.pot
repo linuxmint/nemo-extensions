@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-01 13:07+0100\n"
+"POT-Creation-Date: 2018-11-01 13:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,19 +74,19 @@ msgstr ""
 msgid "Copyright:"
 msgstr ""
 
-#: nemo-compare/src/nemo-compare-preferences.py:95
+#: nemo-compare/src/nemo-compare-preferences.py:99
 msgid "Nemo Compare"
 msgstr ""
 
-#: nemo-compare/src/nemo-compare-preferences.py:103
+#: nemo-compare/src/nemo-compare-preferences.py:107
 msgid "Normal Diff"
 msgstr ""
 
-#: nemo-compare/src/nemo-compare-preferences.py:115
+#: nemo-compare/src/nemo-compare-preferences.py:122
 msgid "Three-Way Diff"
 msgstr ""
 
-#: nemo-compare/src/nemo-compare-preferences.py:127
+#: nemo-compare/src/nemo-compare-preferences.py:137
 msgid "N-Way Diff"
 msgstr ""
 
@@ -118,7 +118,131 @@ msgstr ""
 msgid "Compare selected files"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:82
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Art"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Camera"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Danger"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Default"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Development"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Documents"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Downloads"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Favorite"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Games"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Generic"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Important"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Installed"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Mail"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Marketing"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Money"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Multimedia"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "New"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Note"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Ohno"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Package"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "People"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Personal"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Photos"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Plan"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Presentation"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Sales"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Sound"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "System"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Urgent"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Videos"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+msgid "Web"
+msgstr ""
+
+#: nemo-emblems/nemo-extension/nemo-emblems.py:85
 msgid "Emblems"
 msgstr ""
 
@@ -433,87 +557,64 @@ msgstr ""
 msgid "_Rotate"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:75
+#: nemo-media-columns/nemo-media-columns.py:72
 msgid "Title"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:76
+#: nemo-media-columns/nemo-media-columns.py:73
 msgid "Album"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:77
+#: nemo-media-columns/nemo-media-columns.py:74
 msgid "Artist"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:78
+#: nemo-media-columns/nemo-media-columns.py:75
 msgid "Track"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:79
+#: nemo-media-columns/nemo-media-columns.py:76
 msgid "Genre"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:80
+#: nemo-media-columns/nemo-media-columns.py:77
 msgid "Date"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:81
+#: nemo-media-columns/nemo-media-columns.py:78
 msgid "Bitrate"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:82
+#: nemo-media-columns/nemo-media-columns.py:79
 msgid "Sample Rate"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:83
+#: nemo-media-columns/nemo-media-columns.py:80
 msgid "Length"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:84
+#: nemo-media-columns/nemo-media-columns.py:81
 msgid "EXIF Date"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:85
+#: nemo-media-columns/nemo-media-columns.py:82
 msgid "EXIF Software"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:86
+#: nemo-media-columns/nemo-media-columns.py:83
 msgid "EXIF Flash"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:87
+#: nemo-media-columns/nemo-media-columns.py:84
 msgid "EXIF Image Size"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:88
+#: nemo-media-columns/nemo-media-columns.py:85
 msgid "EXIF Rating"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:89
+#: nemo-media-columns/nemo-media-columns.py:86
 msgid "Image Size"
-msgstr ""
-
-#: nemo-pastebin/nemo-pastebin-configurator.py:49
-#, python-format
-msgid "Can't find %s in any known prefix!"
-msgstr ""
-
-#: nemo-pastebin/nemo-pastebin.py:111
-msgid "Unable to read or parse the result page."
-msgstr ""
-
-#: nemo-pastebin/nemo-pastebin.py:112
-msgid "It could be a server timeout or a change server side. Try later."
-msgstr ""
-
-#: nemo-pastebin/nemo-pastebin.py:169
-#, python-format
-msgid "Pastebin to %s"
-msgstr ""
-
-#: nemo-pastebin/nemo-pastebin.py:170
-#, python-format
-msgid "Send this file to %s"
 msgstr ""
 
 #: nemo-pastebin/data/nemo-pastebin-configurator.ui.h:1
