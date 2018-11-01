@@ -29,16 +29,16 @@ fi
 PKG_CHECK_MODULES(NEMO, libnemo-extension >= $NEMO_REQUIRED)
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED)
 
-AC_PATH_PROG([PYTHON], [python])
+AC_PATH_PROG([PYTHON], [python2])
 
-AC_PATH_PROG([RST2MAN], [rst2man], [python rst2man.py])
+AC_PATH_PROG([RST2MAN], [rst2man], [python2 rst2man.py])
 AC_SUBST(RST2MAN)
 
 # define module checking macro
 AC_DEFUN([PYTHON_CHECK_MODULE], [
 AC_MSG_CHECKING([for $1])
 
-cat <<EOF | python
+cat <<EOF | python2
 try:
  import $2
 except:
