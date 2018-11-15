@@ -1,5 +1,5 @@
 from urllib import parse
-import locale, gettext, os
+import gettext, os
 import subprocess
 
 from gi.repository import GObject
@@ -7,6 +7,11 @@ from gi.repository import Gio
 from gi.repository import Gtk
 
 from gi.repository import Nemo
+
+# i18n
+gettext.bindtextdomain('nemo-extensions')
+gettext.textdomain('nemo-extensions')
+_ = gettext.gettext
 
 METADATA_EMBLEMS = 'metadata::emblems'
 
@@ -78,10 +83,6 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
         self.file_emblem_names = self.file_info.get_attribute_stringv(METADATA_EMBLEMS)
 
         #GUI
-        locale.setlocale(locale.LC_ALL, '')
-        gettext.bindtextdomain('nemo-extensions')
-        gettext.textdomain('nemo-extensions')
-        _ = gettext.gettext
         self.property_label = Gtk.Label(_('Emblems'))
         self.property_label.show()
 
