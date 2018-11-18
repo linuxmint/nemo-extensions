@@ -472,10 +472,7 @@ class Crowbar(object):
             vpan.show()
             vbox = Gtk.VBox()
             vbox.show()
-            if settings.get_enum("terminal-position") == 0:
-                vpan.add2(vbox)
-            else:
-                vpan.add1(vbox)
+
             #Add the vpan in Nemo, and reparent some widgets
             if len(crowbar_pp_children) == 2:
                 for crowbar_pp_child in crowbar_pp_children:
@@ -483,15 +480,19 @@ class Crowbar(object):
                 crowbar_pp.pack_start(vpan, True, True, 0)
                 vbox.pack_start(crowbar_pp_children[0], False, False, 0)
                 vbox.pack_start(crowbar_pp_children[1], True, True, 0)
-            #Create the terminal
+
             nterm = NemoTerminal(self._uri, self._window)
 
             if hasattr(self._window, "term_visible"):
                 nterm.set_visible(self._window.term_visible)
+
             if settings.get_enum("terminal-position") == 0:
-                vpan.add1(nterm.get_widget())
+                vpan.pack1(nterm.get_widget(), False, False)
+                vpan.pack2(vbox, True, False)
             else:
-                vpan.add2(nterm.get_widget())
+                vpan.pack2(nterm.get_widget(), False, False)
+                vpan.pack1(vbox, True, False)
+
 
     def _on_crowbar_pp_parent_set(self, widget, old_parent):
         """Called when the vpan parent lost his parent.
