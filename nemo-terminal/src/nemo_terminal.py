@@ -406,11 +406,14 @@ class NemoTerminal(object):
         gobject-introspection/python-gi differences force us to try with and
         without the text length. One of them will work.
         """
-        # print("feed '%s'" % text)
+        # print(type(text), "feed '%s'" % text)
         try:
             self.term.feed_child(text.encode())
         except TypeError:
-            self.term.feed_child(text.encode(), len(text))
+            try:
+                self.term.feed_child(text, len(text))
+            except TypeError:
+                self.term.feed_child(text.encode(), len(text))
 
 class Crowbar(object):
     """Modify the Nemo' widget tree when the crowbar is inserted in it.
