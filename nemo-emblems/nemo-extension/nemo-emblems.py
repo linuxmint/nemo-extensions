@@ -9,8 +9,6 @@ from gi.repository import Gtk
 from gi.repository import Nemo
 
 # i18n
-gettext.bindtextdomain('nemo-extensions')
-gettext.textdomain('nemo-extensions')
 _ = gettext.gettext
 
 METADATA_EMBLEMS = 'metadata::emblems'
@@ -81,6 +79,10 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
         self.gio_file = Gio.File.new_for_path(self.filename)
         self.file_info = self.gio_file.query_info(METADATA_EMBLEMS, 0, None)
         self.file_emblem_names = self.file_info.get_attribute_stringv(METADATA_EMBLEMS)
+
+        #i18n domain
+        gettext.bindtextdomain('nemo-extensions')
+        gettext.textdomain('nemo-extensions')
 
         #GUI
         self.property_label = Gtk.Label(_('Emblems'))
