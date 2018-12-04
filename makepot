@@ -56,3 +56,6 @@ rm -f nemo-seahorse/tool/*.xml.h
 intltool-extract --type=gettext/glade nemo-share/interfaces/share-dialog.ui
 xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-share/src/*.c nemo-share/src/*.h nemo-share/interfaces/*.ui.h
 rm -f nemo-share/interfaces/*.ui.h
+
+#nemo-terminal
+xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-terminal/src/*.py
