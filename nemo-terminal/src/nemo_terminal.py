@@ -230,7 +230,7 @@ class NemoTerminal(object):
         """
 
         if settings.get_enum("default-follow-mode") in (0, 2):
-            return 
+            return
 
         self._path = self._uri_to_path(uri)
 
@@ -246,12 +246,14 @@ class NemoTerminal(object):
             # Change directory
             cdcmd_nonewline = settings.get_string("terminal-change-directory-command") \
                 % GLib.shell_quote(self._path)
-            cdcmd = "%s\n" % cdcmd_nonewline
-            self.feed_child(cdcmd.encode().decode("unicode_escape"))
+            cdcmd = " %s \n" % cdcmd_nonewline
+            #self.feed_child(cdcmd.encode().decode("unicode_escape"))
+            self.feed_child(cdcmd)
 
             # Restore user input
             restorelinekeys = settings.get_string("terminal-restore-line")
-            self.feed_child(restorelinekeys.encode().decode("unicode_escape"))
+            self.feed_child(restorelinekeys.encode().decode("unicode_escape") + "\n")
+            #self.feed_child(restorelinekeys + "\n")
 
     def get_widget(self):
         """Return the top-level widget of Nemo Terminal."""
