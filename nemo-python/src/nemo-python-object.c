@@ -551,7 +551,7 @@ nemo_python_object_get_type (GTypeModule *module,
 								 PyObject 	*type)
 {
 	GTypeInfo *info;
-	const char *type_name;
+	gchar *type_name;
 	GType gtype;
 	  
 	static const GInterfaceInfo property_page_provider_iface_info = {
@@ -608,6 +608,9 @@ nemo_python_object_get_type (GTypeModule *module,
 										 G_TYPE_OBJECT,
 										 type_name,
 										 info, 0);
+
+    g_free (info);
+    g_free (type_name);
 
 	if (PyObject_IsSubclass(type, (PyObject*)&PyNemoPropertyPageProvider_Type))
 	{

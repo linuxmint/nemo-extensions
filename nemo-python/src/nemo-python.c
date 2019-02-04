@@ -134,7 +134,6 @@ nemo_python_load_dir (GTypeModule *module,
 				if (!nemo_python_init_python())
 				{
 					g_warning("nemo_python_init_python failed");
-					g_dir_close(dir);
 					break;
 				}
 				
@@ -145,8 +144,12 @@ nemo_python_load_dir (GTypeModule *module,
 				Py_DECREF(py_path);
 			}
 			nemo_python_load_file(module, modulename);
+
+            g_free (modulename);
 		}
-	}	
+	}
+
+    g_dir_close (dir);
 }
 
 static gboolean
@@ -260,6 +263,8 @@ nemo_module_initialize(GTypeModule *module)
 	user_extensions_dir = g_build_filename(g_get_user_data_dir(), 
 		"nemo-python", "extensions", NULL);
 	nemo_python_load_dir(module, user_extensions_dir);
+
+    g_free (user_extensions_dir);
 }
  
 void
