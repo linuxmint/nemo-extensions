@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-01 13:53+0000\n"
+"POT-Creation-Date: 2019-02-08 10:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,131 +118,131 @@ msgstr ""
 msgid "Compare selected files"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Art"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Camera"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Danger"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Default"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Development"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Documents"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Downloads"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Favorite"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Games"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Generic"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Important"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Installed"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Mail"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Marketing"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Money"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Multimedia"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "New"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Note"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Ohno"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Package"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "People"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Personal"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Photos"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Plan"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Presentation"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Sales"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Sound"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "System"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Urgent"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Videos"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:47
+#: nemo-emblems/nemo-extension/nemo-emblems.py:50
 msgid "Web"
 msgstr ""
 
-#: nemo-emblems/nemo-extension/nemo-emblems.py:85
+#: nemo-emblems/nemo-extension/nemo-emblems.py:88
 msgid "Emblems"
 msgstr ""
 
@@ -1504,4 +1504,89 @@ msgstr ""
 msgid ""
 "Samba needs to be installed, and your user account needs to join the "
 "'sambashare' group."
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:44
+msgid "Nemo-Terminal Preferences"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:70
+msgid "Visible by default"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:74
+msgid "Top"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:75
+msgid "Bottom"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:80
+msgid "Terminal position"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:84
+msgid "Independent"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:85
+msgid "Terminal follows view location"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:92
+msgid "Location mode"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:100
+msgid "Terminal bell"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:109
+msgid "Default number of lines for the terminal"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:149
+msgid "Keyboard shortcut"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:152
+msgid "Basic"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:171
+msgid "Shell to use (leave blank for system default)"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:187
+msgid "Terminal erase line key sequence"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:195
+msgid "Terminal restore line key sequence"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:203
+msgid "Change directory command"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:208
+msgid "Restore defaults"
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:217
+msgid "Sequences must be escaped according to python rules."
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:218
+#, python-format
+msgid "'%s' is replaced by the quoted directory name."
+msgstr ""
+
+#: nemo-terminal/src/nemo-terminal-prefs.py:225
+msgid "Advanced"
+msgstr ""
+
+#: nemo-terminal/src/nemo_terminal.py:149
+msgid "Paste Filenames"
 msgstr ""
