@@ -10,8 +10,8 @@ from gi.repository import Gtk, Gio, XApp, Gdk
 
 # i18n
 import gettext
-gettext.bindtextdomain('nemo-terminal', '/usr/share/locale')
-gettext.textdomain('nemo-terminal')
+gettext.bindtextdomain('nemo-extensions')
+gettext.textdomain('nemo-extensions')
 _ = gettext.gettext
 
 
@@ -214,7 +214,7 @@ class NemoTerminalPreferencesWindow(XApp.PreferencesWindow):
 
         button.connect("clicked", on_reset_clicked)
 
-        widget = LabeledItem(_("Sequences must be escaped according to python rules. ") +
+        widget = LabeledItem(_("Sequences must be escaped according to python rules.") + " " +
                              _("'%s' is replaced by the quoted directory name."), button)
         widget.label_widget.set_line_wrap(True)
         widget.label_widget.set_max_width_chars(40)
