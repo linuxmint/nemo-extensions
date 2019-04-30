@@ -73,7 +73,7 @@ typedef struct {
   GtkBuilder *xml;
 
   GtkWidget *main; /* Widget that holds all the rest.  Its "PropertyPage" GObject-data points to this PropertyPage structure */
-  
+
   GtkWidget *switch_share_folder;
   GtkWidget *hbox_share_name;
   GtkWidget *hbox_share_comment;
@@ -106,7 +106,7 @@ property_page_validate_fields (PropertyPage *page)
   const char *name;
 
   name = gtk_entry_get_text (GTK_ENTRY (page->entry_share_name));
-  
+
   if (g_utf8_strlen (name, -1) <= 12)
     property_page_set_normal (page);
   else
@@ -438,7 +438,7 @@ get_fullpath_from_fileinfo(NemoFileInfo *fileinfo)
   gchar *fullpath;
 
   g_assert (fileinfo != NULL);
-  
+
   file = nemo_file_info_get_location(fileinfo);
   fullpath = g_file_get_path(file);
   g_assert (fullpath != NULL && g_file_is_native(file)); /* In the beginning we checked that this was a local URI */
@@ -922,24 +922,24 @@ create_property_page (NemoFileInfo *fileinfo)
 
 /* Implementation of the NemoInfoProvider interface */
 
-/* nemo_info_provider_update_file_info 
- * This function is called by Nemo when it wants the extension to 
+/* nemo_info_provider_update_file_info
+ * This function is called by Nemo when it wants the extension to
  * fill in data about the file.  It passes a NemoFileInfo object,
  * which the extension can use to read data from the file, and which
  * the extension should add data to.
  *
- * If the data can be added immediately (without doing blocking IO), 
- * the extension can do so, and return NEMO_OPERATION_COMPLETE.  
- * In this case the 'update_complete' and 'handle' parameters can be 
+ * If the data can be added immediately (without doing blocking IO),
+ * the extension can do so, and return NEMO_OPERATION_COMPLETE.
+ * In this case the 'update_complete' and 'handle' parameters can be
  * ignored.
- * 
+ *
  * If waiting for the deata would block the UI, the extension should
- * perform the task asynchronously, and return 
- * NEMO_OPERATION_IN_PROGRESS.  The function must also set the 
+ * perform the task asynchronously, and return
+ * NEMO_OPERATION_IN_PROGRESS.  The function must also set the
  * 'handle' pointer to a value unique to the object, and invoke the
  * 'update_complete' closure when the update is done.
- * 
- * If the extension encounters an error, it should return 
+ *
+ * If the extension encounters an error, it should return
  * NEMO_OPERATION_FAILED.
  */
 typedef struct {
@@ -949,7 +949,7 @@ typedef struct {
   GClosure *update_complete;
 } NemoShareHandle;
 
-static NemoShareStatus 
+static NemoShareStatus
 get_share_status_and_free_share_info (ShareInfo *share_info)
 {
   NemoShareStatus result;
@@ -1029,7 +1029,7 @@ get_share_info_for_file_info (NemoFileInfo *file, ShareInfo **share_info, gboole
 }
 
 /*--------------------------------------------------------------------------*/
-static NemoShareStatus 
+static NemoShareStatus
 file_get_share_status_file(NemoFileInfo *file)
 {
   ShareInfo *share_info;
@@ -1050,7 +1050,7 @@ nemo_share_update_file_info (NemoInfoProvider *provider,
 				 NemoOperationHandle **handle)
 {
 /*   gchar *share_status = NULL; */
-  
+
   switch (file_get_share_status_file (file)) {
 
   case NEMO_SHARE_SHARED_RO:
@@ -1084,7 +1084,7 @@ nemo_share_cancel_update (NemoInfoProvider *provider,
 			      NemoOperationHandle *handle)
 {
   NemoShareHandle *share_handle;
-	
+
   share_handle = (NemoShareHandle*)handle;
   share_handle->cancelled = TRUE;
 }
@@ -1099,7 +1099,7 @@ nemo_share_get_name_and_desc (NemoNameAndDescProvider *provider)
     return ret;
 }
 
-static void 
+static void
 nemo_share_info_provider_iface_init (NemoInfoProviderIface *iface)
 {
   iface->update_file_info = nemo_share_update_file_info;
@@ -1114,13 +1114,13 @@ nemo_share_nd_provider_iface_init (NemoNameAndDescProviderIface *iface)
 
 /*--------------------------------------------------------------------------*/
 /* nemo_property_page_provider_get_pages
- *  
+ *
  * This function is called by Nemo when it wants property page
  * items from the extension.
  *
  * This function is called in the main thread before a property page
  * is shown, so it should return quickly.
- * 
+ *
  * The function should return a GList of allocated NemoPropertyPage
  * items.
  */
@@ -1148,7 +1148,7 @@ nemo_share_get_property_pages (NemoPropertyPageProvider *provider,
 
   page = create_property_page (fileinfo);
   gtk_widget_hide (page->button_cancel);
-  
+
   if (share_info)
     shares_free_share_info (share_info);
 
@@ -1163,7 +1163,7 @@ nemo_share_get_property_pages (NemoPropertyPageProvider *provider,
 }
 
 /*--------------------------------------------------------------------------*/
-static void 
+static void
 nemo_share_property_page_provider_iface_init (NemoPropertyPageProviderIface *iface)
 {
   iface->get_pages = nemo_share_get_property_pages;
@@ -1183,13 +1183,13 @@ nemo_share_class_init (NemoShareClass *class)
 }
 
 /* nemo_menu_provider_get_file_items
- *  
+ *
  * This function is called by Nemo when it wants context menu
  * items from the extension.
  *
  * This function is called in the main thread before a context menu
  * is shown, so it should return quickly.
- * 
+ *
  * The function should return a GList of allocated NemoMenuItem
  * items.
  */
@@ -1253,7 +1253,7 @@ nemo_share_get_file_items (NemoMenuProvider *provider,
 
   /* We don't own a reference to the file info to keep it around, so acquire one */
   g_object_ref (fileinfo);
-  
+
   /* FMQ: change the label to "Share with Windows users"? */
   item = nemo_menu_item_new ("NemoShare::share",
 				 _("Sharing Options"),
@@ -1262,7 +1262,7 @@ nemo_share_get_file_items (NemoMenuProvider *provider,
   g_signal_connect (item, "activate",
 		    G_CALLBACK (share_this_folder_callback),
 		    fileinfo);
-  g_object_set_data_full (G_OBJECT (item), 
+  g_object_set_data_full (G_OBJECT (item),
 			  "files",
 			  fileinfo,
 			  g_object_unref); /* Release our reference when the menu item goes away */
@@ -1272,7 +1272,7 @@ nemo_share_get_file_items (NemoMenuProvider *provider,
 }
 
 /*--------------------------------------------------------------------------*/
-static void 
+static void
 nemo_share_menu_provider_iface_init (NemoMenuProviderIface *iface)
 {
 	iface->get_file_items = nemo_share_get_file_items;
@@ -1288,7 +1288,7 @@ static GType share_type = 0;
 #define NEMO_TYPE_SHARE  (nemo_share_get_type ())
 
 static GType
-nemo_share_get_type (void) 
+nemo_share_get_type (void)
 {
   return share_type;
 }
@@ -1301,7 +1301,7 @@ nemo_share_register_type (GTypeModule *module)
     (GBaseInitFunc) NULL,
     (GBaseFinalizeFunc) NULL,
     (GClassInitFunc) nemo_share_class_init,
-    NULL, 
+    NULL,
     NULL,
     sizeof (NemoShare),
     0,
@@ -1319,7 +1319,7 @@ nemo_share_register_type (GTypeModule *module)
     NULL,
     NULL
   };
-	
+
   g_type_module_add_interface (module,
 			       share_type,
 			       NEMO_TYPE_PROPERTY_PAGE_PROVIDER,
@@ -1344,7 +1344,7 @@ nemo_share_register_type (GTypeModule *module)
     NULL,
     NULL
   };
-  
+
   g_type_module_add_interface (module,
 			       share_type,
 			       NEMO_TYPE_MENU_PROVIDER,
@@ -1362,12 +1362,12 @@ nemo_share_register_type (GTypeModule *module)
                                &nd_provider_iface_info);
 }
 
-/* Extension module functions.  These functions are defined in 
- * nemo-extensions-types.h, and must be implemented by all 
+/* Extension module functions.  These functions are defined in
+ * nemo-extensions-types.h, and must be implemented by all
  * extensions. */
 
-/* Initialization function.  In addition to any module-specific 
- * initialization, any types implemented by the module should 
+/* Initialization function.  In addition to any module-specific
+ * initialization, any types implemented by the module should
  * be registered here. */
 void
 nemo_module_initialize (GTypeModule  *module)
@@ -1389,12 +1389,12 @@ nemo_module_shutdown   (void)
 }
 
 /* List all the extension types.  */
-void 
+void
 nemo_module_list_types (const GType **types,
 			    int          *num_types)
 {
   static GType type_list[1];
-	
+
   type_list[0] = NEMO_TYPE_SHARE;
 
   *types = type_list;
