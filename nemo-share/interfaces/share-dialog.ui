@@ -315,7 +315,6 @@
             <property name="can_focus">False</property>
             <property name="halign">start</property>
             <property name="wrap">True</property>
-            <property name="width_chars">50</property>
             <property name="max_width_chars">50</property>
             <attributes>
               <attribute name="weight" value="bold"/>

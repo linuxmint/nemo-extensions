@@ -507,6 +507,33 @@ property_page_validate (PropertyPage *page)
     }
   g_free (encrypted_home_dir);
 
+  // Check if the path is fully accessible by everybody
+  gint exit_status;
+  gchar *output = NULL;
+  const gchar *command = g_strdup_printf ("%s/check-directory-permissions %s", PKGDATADIR, page->path);
+  error = NULL;
+  if (!g_spawn_command_line_sync (command,
+                                  &output,
+                                  NULL,
+                                  &exit_status,
+                                  &error))
+    {
+      g_printerr ("Could not spawn check-directory-permissions: %s\n", error->message);
+      g_error_free (error);
+    }
+  else
+    {
+      if (exit_status != EXIT_SUCCESS)
+        {
+          char * message;
+          message = g_strdup_printf(_("The permissions for %s prevent other users from accessing this share"), output);
+          property_page_set_error (page, message);
+          g_free (message);
+          return FALSE;
+        }
+      g_free (output);
+    }
+
   property_page_set_normal (page);
   return TRUE;
 }
