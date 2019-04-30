@@ -20,12 +20,20 @@ class Main:
         if not success:
             ret = -1
         else:
+            # Add the user to the sambashare group
             try:
                 cp = subprocess.run(["usermod", "-a", "-G", "sambashare", self.user], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
                 ret = cp.returncode
             except subprocess.CalledProcessError as e:
                 print(str(e))
                 ret = e.returncode
+
+        # Set firewall rules to allow Samba through UFW
+        if os.path.exists("/usr/sbin/ufw"):
+            subprocess.run(["/usr/sbin/ufw", "allow", "out", "proto", "tcp", "from", "any", "to", "any", "port", "139,445"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.run(["/usr/sbin/ufw", "allow", "out", "proto", "udp", "from", "any", "to", "any", "port", "137,138"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.run(["/usr/sbin/ufw", "allow", "in", "proto", "tcp", "from", "any", "to", "any", "port", "139,445"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.run(["/usr/sbin/ufw", "allow", "in", "proto", "udp", "from", "any", "to", "any", "port", "137,138"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         ml.quit()
         exit(ret)
