@@ -26,6 +26,7 @@ sambahelperdir = $(datadir)/nemo-share
 
 sambahelper_SCRIPTS = \
         install-samba \
+        check-directory-permissions \
         $(NULL)
 
 polkitdir = $(datadir)/polkit-1/actions
