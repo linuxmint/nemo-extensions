@@ -452,6 +452,12 @@ property_page_set_normal (PropertyPage *page)
 static gboolean
 property_page_validate (PropertyPage *page)
 {
+  if (!gtk_switch_get_active (GTK_SWITCH (page->switch_share_folder)))
+   {
+    property_page_set_normal (page);
+    return TRUE;
+   }
+
   const char *newname;
 
   newname = gtk_entry_get_text (GTK_ENTRY (page->entry_share_name));
@@ -489,6 +495,17 @@ property_page_validate (PropertyPage *page)
           return FALSE;
         }
     }
+
+  // Check if the path is inside an encrypted home directory
+  char *encrypted_home_dir;
+  encrypted_home_dir = g_strdup_printf (_("/home/.ecryptfs/%s"), g_get_user_name ());
+  if (g_str_has_prefix (page->path, g_get_home_dir ()) && g_file_test (encrypted_home_dir, G_FILE_TEST_EXISTS))
+    {
+      g_free (encrypted_home_dir);
+      property_page_set_error (page, _("This folder is located in an encrypted directory. It will not be accessible by other users unless the option 'force user' is specified in /etc/samba/smb.conf."));
+      return FALSE;
+    }
+  g_free (encrypted_home_dir);
 
   property_page_set_normal (page);
   return TRUE;
@@ -635,6 +652,7 @@ check_samba_installed (void)
 static void
 on_switch_share_folder_active_changed (PropertyPage *page)
 {
+  property_page_validate (page);
   property_page_check_sensitivity (page);
 }
 
