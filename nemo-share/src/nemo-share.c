@@ -81,6 +81,7 @@ typedef struct {
   GtkWidget *checkbutton_share_rw_ro;
   GtkWidget *checkbutton_share_guest_ok;
   GtkWidget *entry_share_comment;
+  GtkWidget *image_status;
   GtkWidget *label_status;
   GtkWidget *button_cancel;
   GtkWidget *button_apply;
@@ -96,22 +97,8 @@ typedef struct {
   gboolean samba_check_ok;
 } PropertyPage;
 
-static void property_page_set_warning (PropertyPage *page);
 static void property_page_set_error (PropertyPage *page, const char *message);
 static void property_page_set_normal (PropertyPage *page);
-
-static void
-property_page_validate_fields (PropertyPage *page)
-{
-  const char *name;
-
-  name = gtk_entry_get_text (GTK_ENTRY (page->entry_share_name));
-
-  if (g_utf8_strlen (name, -1) <= 12)
-    property_page_set_normal (page);
-  else
-    property_page_set_warning (page);
-}
 
 static gboolean
 message_confirm_missing_permissions (GtkWidget *widget, const char *path, mode_t need_mask)
@@ -413,7 +400,6 @@ property_page_commit (PropertyPage *page)
     }
   else
     {
-      property_page_validate_fields (page);
       nemo_file_info_invalidate_extension_info (page->fileinfo);
     }
 
@@ -450,37 +436,21 @@ get_fullpath_from_fileinfo(NemoFileInfo *fileinfo)
 
 /*--------------------------------------------------------------------------*/
 static void
-property_page_set_warning (PropertyPage *page)
-{
-  GdkColor  colorYellow;
-
-  gtk_label_set_text (GTK_LABEL (page->label_status), _("Share name is too long"));
-
-  gdk_color_parse ("#ECDF62", &colorYellow);
-  gtk_widget_modify_base (page->entry_share_name, GTK_STATE_NORMAL, &colorYellow);
-}
-
-
-static void
 property_page_set_error (PropertyPage *page, const char *message)
 {
-  GdkColor colorRed;
-
   gtk_label_set_text (GTK_LABEL (page->label_status), message);
-
-  gdk_color_parse ("#C1665A", &colorRed);
-  gtk_widget_modify_base (page->entry_share_name, GTK_STATE_NORMAL, &colorRed);
+  gtk_widget_show (page->image_status);
 }
 
 static void
 property_page_set_normal (PropertyPage *page)
 {
   gtk_label_set_text (GTK_LABEL (page->label_status), "");
-  gtk_widget_modify_base (page->entry_share_name, GTK_STATE_NORMAL, NULL);
+  gtk_widget_hide (page->image_status);
 }
 
 static gboolean
-property_page_share_name_is_valid (PropertyPage *page)
+property_page_validate (PropertyPage *page)
 {
   const char *newname;
 
@@ -491,35 +461,37 @@ property_page_share_name_is_valid (PropertyPage *page)
       property_page_set_error (page, _("The share name cannot be empty"));
       return FALSE;
     }
-  else
+
+  if (g_utf8_strlen(gtk_entry_get_text (GTK_ENTRY (page->entry_share_name)), -1) > 12)
     {
-      GError *error;
-      gboolean exists;
-
-      error = NULL;
-      if (!shares_get_share_name_exists (newname, &exists, &error))
-	{
-	  char *str;
-
-	  str = g_strdup_printf (_("Error while getting share information: %s"), error->message);
-	  property_page_set_error (page, str);
-	  g_free (str);
-	  g_error_free (error);
-
-	  return FALSE;
-	}
-
-      if (exists)
-	{
-	  property_page_set_error (page, _("Another share has the same name"));
-	  return FALSE;
-	}
-      else
-	{
-	  property_page_set_normal (page);
-	  return TRUE;
-	}
+      property_page_set_error (page, _("The share name is too long"));
+      return FALSE;
     }
+
+  GError *error;
+  gboolean exists;
+  error = NULL;
+  // Check if the name already exists
+  if (!page->was_initially_shared)
+    {
+      if (!shares_get_share_name_exists (newname, &exists, &error))
+        {
+          char *str;
+      	  str = g_strdup_printf (_("Error while getting share information: %s"), error->message);
+          property_page_set_error (page, str);
+          g_free (str);
+          g_error_free (error);
+      	  return FALSE;
+        }
+      if (exists)
+        {
+          property_page_set_error (page, _("Another share has the same name"));
+          return FALSE;
+        }
+    }
+
+  property_page_set_normal (page);
+  return TRUE;
 }
 
 static void
@@ -571,10 +543,7 @@ modify_share_name_text_entry  (GtkEditable *editable,
 
   page->is_dirty = TRUE;
 
-  /* This function does simple validation on the share name and sets the error
-   * label; just let it run and ignore the result value.
-   */
-  property_page_share_name_is_valid (page);
+  property_page_validate (page);
 
   property_page_check_sensitivity (page);
 }
@@ -782,6 +751,7 @@ create_property_page (NemoFileInfo *fileinfo)
   page->checkbutton_share_guest_ok = GTK_WIDGET (gtk_builder_get_object (page->xml,"checkbutton_share_guest_ok"));
   page->entry_share_name = GTK_WIDGET (gtk_builder_get_object (page->xml,"entry_share_name"));
   page->entry_share_comment = GTK_WIDGET (gtk_builder_get_object (page->xml,"entry_share_comment"));
+  page->image_status = GTK_WIDGET (gtk_builder_get_object (page->xml,"image_status"));
   page->label_status = GTK_WIDGET (gtk_builder_get_object (page->xml,"label_status"));
   page->button_cancel = GTK_WIDGET (gtk_builder_get_object (page->xml,"button_cancel"));
   page->button_apply = GTK_WIDGET (gtk_builder_get_object (page->xml,"button_apply"));
@@ -798,6 +768,7 @@ create_property_page (NemoFileInfo *fileinfo)
 	    && page->checkbutton_share_guest_ok != NULL
 	    && page->entry_share_name != NULL
 	    && page->entry_share_comment != NULL
+      && page->image_status != NULL
 	    && page->label_status != NULL
 	    && page->button_cancel != NULL
 	    && page->button_apply != NULL);
@@ -844,10 +815,8 @@ create_property_page (NemoFileInfo *fileinfo)
       gtk_switch_set_active (GTK_SWITCH (page->switch_share_folder), FALSE);
     }
 
-  /* Share name */
-
-  if (g_utf8_strlen(gtk_entry_get_text (GTK_ENTRY (page->entry_share_name)), -1) > 12)
-    property_page_set_warning (page);
+  /* Validate page (i.e. show warnings if any) */
+  property_page_validate (page);
 
   /* Permissions */
   if (share_info != NULL && share_info->is_writable)
