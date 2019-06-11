@@ -25,6 +25,8 @@
  *
  */
 
+imports.gi.versions.GtkSource = '3.0';
+
 const GtkClutter = imports.gi.GtkClutter;
 const Gtk = imports.gi.Gtk;
 const GLib = imports.gi.GLib;
