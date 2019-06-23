@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-08 10:11+0000\n"
+"POT-Creation-Date: 2019-06-23 15:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1328,13 +1328,13 @@ msgid_plural "Sign the selected files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: nemo-share/src/nemo-share.c:134
+#: nemo-share/src/nemo-share.c:121
 #, c-format
 msgid ""
 "Nemo needs to add some permissions to your folder \"%s\" in order to share it"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:142
+#: nemo-share/src/nemo-share.c:129
 #, c-format
 msgid ""
 "The folder \"%s\" needs the following extra permissions for sharing to "
@@ -1342,79 +1342,96 @@ msgid ""
 "%s%s%sDo you want Nemo to add these permissions to the folder automatically?"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:146
+#: nemo-share/src/nemo-share.c:133
 msgid "  - read permission by others\n"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:147
+#: nemo-share/src/nemo-share.c:134
 msgid "  - write permission by others\n"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:148
+#: nemo-share/src/nemo-share.c:135
 msgid "  - execute permission by others\n"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:152
+#: nemo-share/src/nemo-share.c:139
 msgid "Add the permissions automatically"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:178
+#: nemo-share/src/nemo-share.c:165
 #, c-format
 msgid "Could not change the permissions of folder \"%s\""
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:457
-msgid "Share name is too long"
-msgstr ""
-
-#: nemo-share/src/nemo-share.c:491
+#: nemo-share/src/nemo-share.c:467
 msgid "The share name cannot be empty"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:504
+#: nemo-share/src/nemo-share.c:473
+msgid "The share name is too long"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:486
 #, c-format
 msgid "Error while getting share information: %s"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:514
+#: nemo-share/src/nemo-share.c:494
 msgid "Another share has the same name"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:561 nemo-share/src/nemo-share.c:867
+#: nemo-share/src/nemo-share.c:501
+#, c-format
+msgid "/home/.ecryptfs/%s"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:505
+msgid ""
+"This folder is located in an encrypted directory. It will not be accessible "
+"by other users unless the option 'force user' is specified in /etc/samba/smb."
+"conf."
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:529
+#, c-format
+msgid "The permissions for %s prevent other users from accessing this share"
+msgstr ""
+
+#: nemo-share/src/nemo-share.c:577 nemo-share/src/nemo-share.c:881
 msgid "Modify _Share"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:561 nemo-share/src/nemo-share.c:869
+#: nemo-share/src/nemo-share.c:577 nemo-share/src/nemo-share.c:883
 msgid "Create _Share"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:600
+#: nemo-share/src/nemo-share.c:613
 msgid "Please reboot to finalize changes"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:603
+#: nemo-share/src/nemo-share.c:616
 msgid ""
 "Something went wrong.  You may need to install samba and add your user to "
 "the 'sambashare' group manually."
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:755
+#: nemo-share/src/nemo-share.c:769
 msgid "There was an error while getting the sharing information"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:1158
+#: nemo-share/src/nemo-share.c:1172
 msgid "Share"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:1218 nemo-share/interfaces/share-dialog.ui.h:1
+#: nemo-share/src/nemo-share.c:1232 nemo-share/interfaces/share-dialog.ui.h:1
 msgid "Folder Sharing"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:1259
+#: nemo-share/src/nemo-share.c:1273
 msgid "Sharing Options"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:1260
+#: nemo-share/src/nemo-share.c:1274
 msgid "Share this Folder"
 msgstr ""
 
