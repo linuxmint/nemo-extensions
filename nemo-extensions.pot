@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-23 15:49+0200\n"
+"POT-Creation-Date: 2019-06-29 16:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1378,11 +1378,6 @@ msgstr ""
 
 #: nemo-share/src/nemo-share.c:494
 msgid "Another share has the same name"
-msgstr ""
-
-#: nemo-share/src/nemo-share.c:501
-#, c-format
-msgid "/home/.ecryptfs/%s"
 msgstr ""
 
 #: nemo-share/src/nemo-share.c:505

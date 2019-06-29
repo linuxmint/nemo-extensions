@@ -498,7 +498,7 @@ property_page_validate (PropertyPage *page)
 
   // Check if the path is inside an encrypted home directory
   char *encrypted_home_dir;
-  encrypted_home_dir = g_strdup_printf (_("/home/.ecryptfs/%s"), g_get_user_name ());
+  encrypted_home_dir = g_strdup_printf ("/home/.ecryptfs/%s", g_get_user_name ());
   if (g_str_has_prefix (page->path, g_get_home_dir ()) && g_file_test (encrypted_home_dir, G_FILE_TEST_EXISTS))
     {
       g_free (encrypted_home_dir);
