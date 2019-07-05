@@ -550,6 +550,7 @@ GType
 nemo_python_object_get_type (GTypeModule *module, 
 								 PyObject 	*type)
 {
+    PyObject *name_str = NULL;
 	GTypeInfo *info;
 	gchar *type_name;
 	GType gtype;
@@ -590,7 +591,9 @@ nemo_python_object_get_type (GTypeModule *module,
         NULL
     };
 
-	debug_enter_args("type=%s", PyUnicode_AsUTF8(PyObject_GetAttrString(type, "__name__")));
+    name_str = PyObject_GetAttrString(type, "__name__");
+
+	debug_enter_args("type=%s", PyUnicode_AsUTF8(name_str));
 	info = g_new0 (GTypeInfo, 1);
 	
 	info->class_size = sizeof (NemoPythonObjectClass);
@@ -602,7 +605,9 @@ nemo_python_object_get_type (GTypeModule *module,
 	Py_INCREF(type);
 
 	type_name = g_strdup_printf("%s+NemoPython",
-								PyUnicode_AsUTF8(PyObject_GetAttrString(type, "__name__")));
+								PyUnicode_AsUTF8(name_str));
+
+    Py_XDECREF(name_str);
 		
 	gtype = g_type_module_register_type (module, 
 										 G_TYPE_OBJECT,
