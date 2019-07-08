@@ -1,0 +1,22 @@
+Source: nemo-hide
+Section: gnome
+Priority: extra
+Maintainer: Linux Mint <root@linuxmint.com>
+Build-Depends: debhelper (>= 9),
+               python3-all,
+               python3-setuptools,
+               dh-python
+Standards-Version: 3.9.6
+Homepage: https://github.com/linuxmint/nemo-extensions
+
+Package: nemo-hide
+Architecture: all
+Section: utils
+Priority: extra
+Depends: ${misc:Depends},
+         gir1.2-nemo-3.0,
+         gir1.2-gtk-3.0,
+         gir1.2-glib-2.0,
+         python-nemo (>= 3.9.0),
+         xautomation (>=1.07)
+Description: Context menu hide extension for Nemo file manager. Simple context menu file hidding extension for Nemo. Hidding is performed by the use of a .hidden file enabling hidding of files and folders without renaming them.

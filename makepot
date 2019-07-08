@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#nemo-hide
+xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-hide/nemo-extension/*.py
+
 #nemo-audio-tab
 intltool-extract --type=gettext/glade nemo-audio-tab/nemo-extension/nemo-audio-tab.glade
 xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot nemo-audio-tab/nemo-extension/*.py nemo-audio-tab/nemo-extension/*.glade.h

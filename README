@@ -14,6 +14,7 @@ nemo-gtkhash: functional (forked from gtkhash-0.7.0)
 nemo-filename-repairer forked from (nautilus-filename-repairer-0.0.6) 
 nemo-image-converter forked from (nautilus-image-converter-0.3.1)
 nemo-audio-tab forked from nemo-media-columns and nemo-emblems
+nemo-hide forked from KDB2's nemo-hide which was forked from nautilus-hide
 
 NOT YET INCLUDED:
 ----------------
