@@ -12,7 +12,7 @@ nemo = dependency('libnemo-extension', required: true)
 
 deps += python3
 deps += nemo
-deps += dependency('pygobject-3.0', version: '>=3.0.0')
+deps += dependency('pygobject-3.0')
 deps += dependency('gtk+-3.0')
 deps += dependency('glib-2.0')
 

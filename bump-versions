@@ -21,7 +21,7 @@ for directory in os.listdir("."):
             if os.path.exists(filename):
                 subprocess.call(["sed", "-i", "/AC_INIT/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
                 subprocess.call(["sed", "-i", "/^VERSION=/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
-        for filename in ["setup.py"]:
+        for filename in ["setup.py", "meson.build"]:
             if os.path.exists(filename):
                 subprocess.call(["sed", "-i", "/version/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
         for filename in ["PKG-INFO"]:
