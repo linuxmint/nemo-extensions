@@ -120,7 +120,7 @@ nemo_image_converter_get_file_items (NemoMenuProvider *provider,
 			item = nemo_menu_item_new ("NemoImageConverter::resize",
 				        _("_Resize Images..."),
 				        _("Resize each selected image"),
-				       "stock_position-size");
+				       NULL);
 			g_signal_connect (item, "activate",
 					  G_CALLBACK (image_resize_callback),
 					  nemo_file_info_list_copy (files));
@@ -130,7 +130,7 @@ nemo_image_converter_get_file_items (NemoMenuProvider *provider,
 			item = nemo_menu_item_new ("NemoImageConverter::rotate",
 				        _("Ro_tate Images..."),
 				        _("Rotate each selected image"),
-				       "stock_rotate");
+				       NULL);
 			g_signal_connect (item, "activate",
 					  G_CALLBACK (image_rotate_callback),
 					  nemo_file_info_list_copy (files));
