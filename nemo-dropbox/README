@@ -18,6 +18,7 @@ You will need the following packages (or equivalent):
 libnemo-extension-dev
 
 In the nemo-dropbox dir just do:
+$ ./autogen.sh
 $ ./configure
 $ make
 $ sudo make install
