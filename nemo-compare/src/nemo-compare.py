@@ -110,7 +110,7 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescP
                     item1 = Nemo.MenuItem(
                         name="NemoCompareExtension::CompareTo",
                         label=_('Compare to: ') + for_later_relative,
-                        tip=_("Compare to the file remembered before")
+                        tip=_("Compare to the file previously selected")
                     )
 
                     # compare the one saved for later to the one selected now
@@ -133,7 +133,7 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescP
                         item1 = Nemo.MenuItem(
                             name="NemoCompareExtension::MultiCompare",
                             label=_('Compare to: ') + for_later_relative,
-                            tip=_("Compare selected files to the file remembered before")
+                            tip=_("Compare to the file previously selected")
                         )
                         # compare the one saved for later to the ones selected now
                         new_paths.insert(0, self.for_later)

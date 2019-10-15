@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-29 16:25+0200\n"
+"POT-Creation-Date: 2019-10-15 11:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,8 +94,8 @@ msgstr ""
 msgid "Compare to: "
 msgstr ""
 
-#: nemo-compare/src/nemo-compare.py:113
-msgid "Compare to the file remembered before"
+#: nemo-compare/src/nemo-compare.py:113 nemo-compare/src/nemo-compare.py:136
+msgid "Compare to the file previously selected"
 msgstr ""
 
 #: nemo-compare/src/nemo-compare.py:122
@@ -104,10 +104,6 @@ msgstr ""
 
 #: nemo-compare/src/nemo-compare.py:123
 msgid "Remember file for later comparison"
-msgstr ""
-
-#: nemo-compare/src/nemo-compare.py:136
-msgid "Compare selected files to the file remembered before"
 msgstr ""
 
 #: nemo-compare/src/nemo-compare.py:147
