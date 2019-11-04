@@ -10,7 +10,7 @@
 
  <action id="org.nemo-share.samba_install">
    <description>Install and configure Samba</description>
-   <message>Authentication is required to install and configure Samba.</message>
+   <message>Authentication is required to install Samba, configure it and add the appropriate firewall rules.</message>
    <icon_name>gksu-root-terminal</icon_name>
    <defaults>
      <allow_any>no</allow_any>
