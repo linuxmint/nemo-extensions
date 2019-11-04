@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-15 11:25+0100\n"
+"POT-Creation-Date: 2019-11-04 13:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1510,8 +1510,8 @@ msgstr ""
 
 #: nemo-share/interfaces/share-dialog.ui.h:8
 msgid ""
-"Samba needs to be installed, and your user account needs to join the "
-"'sambashare' group."
+"Samba needs to be installed, appropriate firewall rules need to be added and "
+"your user account needs to join the 'sambashare' group."
 msgstr ""
 
 #: nemo-terminal/src/nemo-terminal-prefs.py:44
