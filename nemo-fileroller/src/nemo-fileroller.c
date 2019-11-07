@@ -413,21 +413,7 @@ nemo_fr_nd_provider_iface_init (NemoNameAndDescProviderIface *iface)
 static void
 nemo_fr_instance_init (NemoFr *fr)
 {
-    GSettings *settings = g_settings_new ("org.nemo.preferences");
-
-    gchar **keys = g_settings_list_keys (settings);
-    int i;
-
-    for (i = 0; i < g_strv_length (keys); i++) {
-        if (g_strcmp0 (keys[i], "context-menus-show-all-actions")) {
-            always_show_extract_to = g_settings_get_boolean (settings, "context-menus-show-all-actions");
-            break;
-        }
-    }
-    g_strfreev (keys);
-    g_object_unref (settings);
 }
-
 
 static void
 nemo_fr_class_init (NemoFrClass *class)
