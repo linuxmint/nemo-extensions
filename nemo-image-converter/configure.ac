@@ -1,4 +1,4 @@
-AC_INIT([nemo-image-converter], [4.2.1], [j@bitron.ch], [nemo-image-converter])
+AC_INIT([nemo-image-converter], [4.4.0], [j@bitron.ch], [nemo-image-converter])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS(config.h)

@@ -1,5 +1,5 @@
 AC_PREREQ(2.57)
-AC_INIT([nemo-share],[4.2.0])
+AC_INIT([nemo-share],[4.4.0])
 AC_CONFIG_SRCDIR([src/nemo-share.c])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign 1.9 -Wall])
