@@ -7,7 +7,13 @@ gnome = import('gnome')
 
 deps = []
 
-python3 = dependency('python3')
+# In python 3.8, applications which embed python (i.e. not importable modules)
+# must use python3-embed, instead of python3. Check that first.
+# https://bugs.python.org/issue36721
+python3 = dependency('python3-embed', required: false)
+if not python3.found()
+    python3 = dependency('python3')
+endif
 nemo = dependency('libnemo-extension', required: true)
 
 deps += python3
