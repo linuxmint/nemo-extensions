@@ -97,7 +97,6 @@ MainWindow.prototype = {
                                            skipPagerHint: true,
                                            skipTaskbarHint: true,
                                            windowPosition: Gtk.WindowPosition.CENTER,
-                                           gravity: Gdk.Gravity.CENTER,
                                            application: this._application });
 
         let screen = Gdk.Screen.get_default();

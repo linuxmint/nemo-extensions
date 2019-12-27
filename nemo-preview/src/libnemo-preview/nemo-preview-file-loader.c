@@ -584,7 +584,7 @@ nemo_preview_file_loader_get_icon (NemoPreviewFileLoader *self)
   info = gtk_icon_theme_lookup_by_gicon (gtk_icon_theme_get_default (),
                                          g_file_info_get_icon (self->priv->info),
                                          256,
-                                         GTK_ICON_LOOKUP_GENERIC_FALLBACK);
+                                         0);
 
   if (info == NULL)
     return NULL;
