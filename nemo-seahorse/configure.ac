@@ -147,13 +147,6 @@ fi
 AC_SUBST(NEMO_EXTENSION_DIR)
 
 # -----------------------------------------------------------------------------
-# Keyring
-
-PKG_CHECK_MODULES([GNOME_KEYRING], [gnome-keyring-1])
-SEAHORSE_CFLAGS="$SEAHORSE_CFLAGS $GNOME_KEYRING_CFLAGS"
-SEAHORSE_LIBS="$SEAHORSE_LIBS $GNOME_KEYRING_LIBS"
-
-# -----------------------------------------------------------------------------
 # DBus
 
 DBUS_GLIB_REQUIRED=0.78
