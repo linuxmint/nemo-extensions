@@ -1,0 +1,17 @@
+# nemo-python is needed for some of the
+# subprojects to install properly.
+nemo-python
+nemo-audio-tab
+nemo-compare
+nemo-dropbox
+nemo-emblems
+nemo-fileroller
+nemo-gtkhash
+nemo-image-converter
+nemo-media-columns
+nemo-pastebin
+nemo-preview
+nemo-repairer
+nemo-seahorse
+nemo-share
+nemo-terminal
