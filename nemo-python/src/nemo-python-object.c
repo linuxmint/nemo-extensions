@@ -24,6 +24,7 @@
 
 #include <libnemo-extension/nemo-extension-types.h>
 
+#define NO_IMPORT_PYGOBJECT
 #include <pygobject.h>
 
 /* Nemo extension headers */
