@@ -29,6 +29,19 @@
 
 #include <libnemo-extension/nemo-extension-types.h>
 
+PyTypeObject *_PyGtkWidget_Type;
+PyTypeObject *_PyNemoColumn_Type;
+PyTypeObject *_PyNemoColumnProvider_Type;
+PyTypeObject *_PyNemoInfoProvider_Type;
+PyTypeObject *_PyNemoLocationWidgetProvider_Type;
+PyTypeObject *_PyNemoNameAndDescProvider_Type;
+PyTypeObject *_PyNemoMenu_Type;
+PyTypeObject *_PyNemoMenuItem_Type;
+PyTypeObject *_PyNemoMenuProvider_Type;
+PyTypeObject *_PyNemoPropertyPage_Type;
+PyTypeObject *_PyNemoPropertyPageProvider_Type;
+PyTypeObject *_PyNemoOperationHandle_Type;
+
 static const GDebugKey nemo_python_debug_keys[] = {
 	{"misc", NEMO_PYTHON_DEBUG_MISC},
 };

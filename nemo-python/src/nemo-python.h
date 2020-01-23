@@ -37,40 +37,40 @@ extern NemoPythonDebug nemo_python_debug;
 #define debug_enter_args(x, y) { if (nemo_python_debug & NEMO_PYTHON_DEBUG_MISC) \
                                      g_printf("%s: entered " x "\n", __FUNCTION__, y); }
 
-PyTypeObject *_PyGtkWidget_Type;
+extern PyTypeObject *_PyGtkWidget_Type;
 #define PyGtkWidget_Type (*_PyGtkWidget_Type)
 
-PyTypeObject *_PyNemoColumn_Type;
+extern PyTypeObject *_PyNemoColumn_Type;
 #define PyNemoColumn_Type (*_PyNemoColumn_Type)
 
-PyTypeObject *_PyNemoColumnProvider_Type;
+extern PyTypeObject *_PyNemoColumnProvider_Type;
 #define PyNemoColumnProvider_Type (*_PyNemoColumnProvider_Type)
 
-PyTypeObject *_PyNemoInfoProvider_Type;
+extern PyTypeObject *_PyNemoInfoProvider_Type;
 #define PyNemoInfoProvider_Type (*_PyNemoInfoProvider_Type)
 
-PyTypeObject *_PyNemoLocationWidgetProvider_Type;
+extern PyTypeObject *_PyNemoLocationWidgetProvider_Type;
 #define PyNemoLocationWidgetProvider_Type (*_PyNemoLocationWidgetProvider_Type)
 
-PyTypeObject *_PyNemoNameAndDescProvider_Type;
+extern PyTypeObject *_PyNemoNameAndDescProvider_Type;
 #define PyNemoNameAndDescProvider_Type (*_PyNemoNameAndDescProvider_Type)
 
-PyTypeObject *_PyNemoMenu_Type;
+extern PyTypeObject *_PyNemoMenu_Type;
 #define PyNemoMenu_Type (*_PyNemoMenu_Type)
 
-PyTypeObject *_PyNemoMenuItem_Type;
+extern PyTypeObject *_PyNemoMenuItem_Type;
 #define PyNemoMenuItem_Type (*_PyNemoMenuItem_Type)
 
-PyTypeObject *_PyNemoMenuProvider_Type;
+extern PyTypeObject *_PyNemoMenuProvider_Type;
 #define PyNemoMenuProvider_Type (*_PyNemoMenuProvider_Type)
 
-PyTypeObject *_PyNemoPropertyPage_Type;
+extern PyTypeObject *_PyNemoPropertyPage_Type;
 #define PyNemoPropertyPage_Type (*_PyNemoPropertyPage_Type)
 
-PyTypeObject *_PyNemoPropertyPageProvider_Type;
+extern PyTypeObject *_PyNemoPropertyPageProvider_Type;
 #define PyNemoPropertyPageProvider_Type (*_PyNemoPropertyPageProvider_Type)
 
-PyTypeObject *_PyNemoOperationHandle_Type;
+extern PyTypeObject *_PyNemoOperationHandle_Type;
 #define PyNemoOperationHandle_Type (*_PyNemoOperationHandle_Type)
 
 #endif /* NEMO_PYTHON_H */
