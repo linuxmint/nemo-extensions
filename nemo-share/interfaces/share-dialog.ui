@@ -427,7 +427,8 @@
       <packing>
         <property name="expand">False</property>
         <property name="fill">True</property>
-        <property name="position">8</property>
+        <property name="pack_type">end</property>
+        <property name="position">9</property>
       </packing>
     </child>
     <child>
@@ -449,7 +450,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="relief">none</property>
-                <property name="yalign">0.54000002145767212</property>
+                <property name="no_show_all">True</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -505,9 +506,10 @@
         </child>
       </object>
       <packing>
-        <property name="expand">True</property>
-        <property name="fill">True</property>
-        <property name="position">9</property>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="pack_type">end</property>
+        <property name="position">8</property>
       </packing>
     </child>
   </object>

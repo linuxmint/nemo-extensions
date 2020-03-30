@@ -895,6 +895,10 @@ create_property_page (NemoFileInfo *fileinfo)
   if (!check_samba_installed ()) {
     gtk_widget_show (page->samba_infobar);
     gtk_widget_set_sensitive (page->switch_share_folder, FALSE);
+
+    if (!g_find_program_in_path("mint-remove-appllication")) {
+        gtk_widget_hide (page->install_samba_button);
+    }
   } else {
     gtk_widget_hide (page->samba_infobar);
     gtk_widget_set_sensitive (page->switch_share_folder, TRUE);
@@ -1234,7 +1238,7 @@ share_this_folder_callback (NemoMenuItem *item,
   page->standalone_window = window;
   g_signal_connect (page->button_cancel, "clicked",
 		    G_CALLBACK (button_cancel_clicked_cb), window);
-
+  gtk_window_set_default_size(GTK_WINDOW (window), 600, -1);
   gtk_container_add (GTK_CONTAINER (window), page->main);
   gtk_widget_show (window);
 }

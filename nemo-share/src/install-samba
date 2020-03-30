@@ -9,10 +9,14 @@ import os
 import pwd
 import subprocess
 
+import mintcommon.aptdaemon
+
 class Main:
     def __init__(self, user):
         self.user = user
-        CinnamonDesktop.installer_install_packages (["samba"], self.on_install_finished)
+        self.apt = mintcommon.aptdaemon.APT()
+        self.apt.set_finished_callback(self.on_install_finished)
+        self.apt.install_packages(["samba"])
 
     def on_install_finished(self, success, data=None):
         ret = 0
