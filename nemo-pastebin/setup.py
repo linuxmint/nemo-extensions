@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # nemo-pastebin - Nemo extension to paste a file to a pastebin service
 # Written by:
