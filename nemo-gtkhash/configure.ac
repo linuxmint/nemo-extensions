@@ -1,5 +1,5 @@
 AC_PREREQ([2.61])
-AC_INIT([nemo-gtkhash], [4.4.0])
+AC_INIT([nemo-gtkhash], [4.6.0])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_AUX_DIR([build-aux])
