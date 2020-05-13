@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-04 13:21+0000\n"
+"POT-Creation-Date: 2020-05-13 14:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1410,19 +1410,19 @@ msgstr ""
 msgid "There was an error while getting the sharing information"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:1172
+#: nemo-share/src/nemo-share.c:1176
 msgid "Share"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:1232 nemo-share/interfaces/share-dialog.ui.h:1
+#: nemo-share/src/nemo-share.c:1236 nemo-share/interfaces/share-dialog.ui.h:1
 msgid "Folder Sharing"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:1273
+#: nemo-share/src/nemo-share.c:1277
 msgid "Sharing Options"
 msgstr ""
 
-#: nemo-share/src/nemo-share.c:1274
+#: nemo-share/src/nemo-share.c:1278
 msgid "Share this Folder"
 msgstr ""
 

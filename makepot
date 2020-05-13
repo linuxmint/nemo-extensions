@@ -10,7 +10,6 @@ xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot
 
 #nemo-dropbox
 xgettext --language=C --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-dropbox/src/*.c nemo-dropbox/src/*.h
-xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-dropbox/*.py
 
 #nemo-emblems
 xgettext --language=Python --keyword=_ --keyword=N_ --output=nemo-extensions.pot --join-existing nemo-emblems/nemo-extension/*.py
