@@ -81,7 +81,7 @@ var Application = new Lang.Class({
 
     _defineStyleAndThemes : function() {
         let provider = new Gtk.CssProvider();
-        provider.load_from_path(Path.STYLE_DIR + 'gtk-style.css');
+        provider.load_from_resource('/org/nemo/Preview/gtk-style.css');
         Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(),
                                                  provider,
                                                  600);
