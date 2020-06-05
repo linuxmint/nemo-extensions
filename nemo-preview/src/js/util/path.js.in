@@ -27,4 +27,3 @@
 
 var LOCALE_DIR = '@localedir@';
 var ICONS_DIR = '@pkgdatadir@/icons/';
-var STYLE_DIR = '@pkgdatadir@/style/';
