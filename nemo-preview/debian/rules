@@ -1,26 +1,27 @@
 #!/usr/bin/make -f
 
-# Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-export LDFLAGS+=-Wl,--as-needed
-
-# To avoid running configure twice (because gnome-autogen.sh)
-export NOCONFIGURE=yes
-
 %:
-	dh $@ --parallel --with autoreconf
+	dh $@
 
-override_dh_autoreconf:
-	dh_autoreconf --as-needed ./autogen.sh
+override_dh_auto_configure:
+	mkdir -p debian/build
+	meson debian/build \
+		--prefix=/usr \
+		--libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
+		--buildtype=plain \
+		--errorlogs
 
-# List any files which are not installed
-common-binary-post-install-arch:: list-missing
+override_dh_auto_build:
+	ninja -C debian/build
 
-GNOME_MODULE := nemo-preview
+override_dh_auto_test:
+	# disable tests
 
-DEB_DH_MAKESHLIBS_ARGS += -X/usr/lib/nemo-preview
-DEB_DH_GIREPOSITORY_ARGS_ALL += -ldebian/nemo-preview/usr/share/nemo-preview/gir-1.0 /usr/lib/nemo-preview/ /usr/lib/nemo-preview/girepository-1.0/
+override_dh_auto_install:
+	DESTDIR=${CURDIR}/debian/nemo-preview \
+	ninja -C debian/build install
 
-binary-install/nemo-preview::
-	find debian/$(cdbs_curpkg) -name '*.la' -delete
+override_dh_makeshlibs:
+	# disabled
