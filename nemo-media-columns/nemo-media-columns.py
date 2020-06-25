@@ -54,6 +54,7 @@ class FileExtensionInfo():
         self.genre = None
         self.date = None
         self.bitrate = None
+        self.pages = None
         self.samplerate = None
         self.length = None
         self.exif_datetime_original = None
@@ -76,6 +77,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             Nemo.Column(name="NemoPython::genre_column",attribute="genre",label=_("Genre"),description=""),
             Nemo.Column(name="NemoPython::date_column",attribute="date",label=_("Date"),description=""),
             Nemo.Column(name="NemoPython::bitrate_column",attribute="bitrate",label=_("Bitrate"),description=""),
+            Nemo.Column(name="NemoPython::pages_column",attribute="pages",label=_("Pages Count"),description=""),
             Nemo.Column(name="NemoPython::samplerate_column",attribute="samplerate",label=_("Sample Rate"),description=""),
             Nemo.Column(name="NemoPython::length_column",attribute="length",label=_("Length"),description=""),
             Nemo.Column(name="NemoPython::exif_datetime_original_column",attribute="exif_datetime_original",label=_("EXIF Date"),description=""),
@@ -88,7 +90,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
     def set_file_attributes(self, file, info):
         for attribute in ("title", "album", "artist", "tracknumber", \
-                          "genre", "date", "bitrate", "samplerate",\
+                          "genre", "date", "bitrate", "pages", "samplerate",\
                           "length", "exif_datetime_original", "exif_software", \
                           "exif_flash", "exif_pixeldimensions", "exif_rating", "pixeldimensions"):
             value = getattr(info, attribute)
@@ -268,6 +270,8 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 try: info.title = pdf.getDocumentInfo().title
                 except: pass
                 try: info.artist = pdf.getDocumentInfo().author
+                except: pass
+                try: info.pages = str(pdf.getNumPages())
                 except: pass
                 f.close()
             except:
