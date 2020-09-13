@@ -164,7 +164,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 pass
 
         # image handling
-        elif file.is_mime_type('image/jpeg') or file.is_mime_type('image/png') or file.is_mime_type('image/gif') or file.is_mime_type('image/bmp'):
+        elif file.is_mime_type('image/jpeg') or file.is_mime_type('image/png') or file.is_mime_type('image/gif') or file.is_mime_type('image/bmp') or file.is_mime_type('image/tiff'):
             # EXIF handling routines
             try:
                 metadata = GExiv2.Metadata(path=filename)
