@@ -4,24 +4,3 @@
 
 %:
 	dh $@
-
-override_dh_auto_configure:
-	mkdir -p debian/build
-	meson debian/build \
-		--prefix=/usr \
-		--libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
-		--buildtype=plain \
-		--errorlogs
-
-override_dh_auto_build:
-	ninja -C debian/build
-
-override_dh_auto_test:
-	# disable tests
-
-override_dh_auto_install:
-	DESTDIR=${CURDIR}/debian/nemo-preview \
-	ninja -C debian/build install
-
-override_dh_makeshlibs:
-	# disabled

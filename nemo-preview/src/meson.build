@@ -103,6 +103,11 @@ js_conf.set(
   join_paths(datadir, 'locale'),
 )
 
+js_conf.set(
+  'pkgdatadir',
+  join_paths(datadir, 'nemo-preview'),
+)
+
 configure_file(
   input: 'js/util/path.js.in',
   output: 'path.js',
