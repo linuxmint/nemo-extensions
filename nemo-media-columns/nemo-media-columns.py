@@ -77,7 +77,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             Nemo.Column(name="NemoPython::genre_column",attribute="genre",label=_("Genre"),description=""),
             Nemo.Column(name="NemoPython::date_column",attribute="date",label=_("Date"),description=""),
             Nemo.Column(name="NemoPython::bitrate_column",attribute="bitrate",label=_("Bitrate"),description=""),
-            Nemo.Column(name="NemoPython::pages_column",attribute="pages",label=_("Pages Count"),description=""),
+            Nemo.Column(name="NemoPython::pages_column",attribute="pages",label=_("Pages"),description=""),
             Nemo.Column(name="NemoPython::samplerate_column",attribute="samplerate",label=_("Sample Rate"),description=""),
             Nemo.Column(name="NemoPython::length_column",attribute="length",label=_("Length"),description=""),
             Nemo.Column(name="NemoPython::exif_datetime_original_column",attribute="exif_datetime_original",label=_("EXIF Date"),description=""),
