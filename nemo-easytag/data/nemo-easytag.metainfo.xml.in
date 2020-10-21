@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 David King <amigadave@amigadave.com> -->
+<component type="addon">
+    <id>nemo-easytag</id>
+    <extends>org.nemo.desktop</extends>
+    <_name>Open with EasyTAG</_name>
+    <_summary>Open directories and audio files with EasyTAG using the context menu</_summary>
+    <url type="homepage">https://wiki.gnome.org/Apps/EasyTAG</url>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <updatecontact>amigadave@amigadave.com</updatecontact>
+</component>
