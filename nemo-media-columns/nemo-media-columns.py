@@ -26,7 +26,7 @@ import os
 from urllib import parse
 import gi
 gi.require_version('GExiv2', '0.10')
-from gi.repository import Nemo, GObject, Gtk, GdkPixbuf, GExiv2
+from gi.repository import Nemo, GObject, Gtk, GdkPixbuf, GExiv2, GLib
 # for id3 support
 from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MP3
