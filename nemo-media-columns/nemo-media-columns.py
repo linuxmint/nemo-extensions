@@ -26,7 +26,7 @@ import os
 from urllib import parse
 import gi
 gi.require_version('GExiv2', '0.10')
-from gi.repository import Nemo, GObject, Gtk, GdkPixbuf, GExiv2, GLib
+from gi.repository import Nemo, GObject, Gtk, GdkPixbuf, GExiv2, GLib, Gio
 # for id3 support
 from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MP3
@@ -105,7 +105,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             del self.ids_by_handle[handle]
 
     def update_file_info_full(self, provider, handle, closure, file):
-        if file.get_uri_scheme() != 'file':
+        if file.get_uri_scheme() not in ('file', 'recent', 'favorites'):
             return Nemo.OperationResult.COMPLETE
 
         if handle in self.ids_by_handle.keys():
@@ -128,8 +128,14 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
     def do_update_file_info(self, file):
         info = FileExtensionInfo()
 
+        # Recent and Favorites set the G_FILE_ATTRIBUTE_STANDARD_TARGET_URI attribute
+        # to their real files' locations. Use that uri in those cases.
+        uri = file.get_activation_uri()
+        if not uri.startswith("file"):
+            return
+
         # strip file:// to get absolute path
-        filename = parse.unquote(file.get_uri()[7:])
+        filename = parse.unquote(uri[7:])
 
         # mp3 handling
         if file.is_mime_type('audio/mpeg'):
