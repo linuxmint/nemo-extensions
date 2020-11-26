@@ -1,4 +1,4 @@
-AC_INIT([nemo-filename-repairer], [4.6.0], [choe.hwanjin@gmail.com], [nemo-filename-repairer])
+AC_INIT([nemo-filename-repairer], [4.8.0], [choe.hwanjin@gmail.com], [nemo-filename-repairer])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([dist-bzip2])
