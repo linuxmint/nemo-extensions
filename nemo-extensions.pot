@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 14:19+0100\n"
+"POT-Creation-Date: 2020-11-26 13:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -242,27 +242,27 @@ msgstr ""
 msgid "Emblems"
 msgstr ""
 
-#: nemo-fileroller/src/nemo-fileroller.c:333
+#: nemo-fileroller/src/nemo-fileroller.c:335
 msgid "Extract Here"
 msgstr ""
 
-#: nemo-fileroller/src/nemo-fileroller.c:335
+#: nemo-fileroller/src/nemo-fileroller.c:337
 msgid "Extract the selected archive to the current position"
 msgstr ""
 
-#: nemo-fileroller/src/nemo-fileroller.c:353
+#: nemo-fileroller/src/nemo-fileroller.c:355
 msgid "Extract To..."
 msgstr ""
 
-#: nemo-fileroller/src/nemo-fileroller.c:354
+#: nemo-fileroller/src/nemo-fileroller.c:356
 msgid "Extract the selected archive"
 msgstr ""
 
-#: nemo-fileroller/src/nemo-fileroller.c:373
+#: nemo-fileroller/src/nemo-fileroller.c:375
 msgid "Compress..."
 msgstr ""
 
-#: nemo-fileroller/src/nemo-fileroller.c:374
+#: nemo-fileroller/src/nemo-fileroller.c:376
 msgid "Create a compressed archive with the selected objects"
 msgstr ""
 
@@ -553,63 +553,67 @@ msgstr ""
 msgid "_Rotate"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:72
+#: nemo-media-columns/nemo-media-columns.py:73
 msgid "Title"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:73
+#: nemo-media-columns/nemo-media-columns.py:74
 msgid "Album"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:74
+#: nemo-media-columns/nemo-media-columns.py:75
 msgid "Artist"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:75
+#: nemo-media-columns/nemo-media-columns.py:76
 msgid "Track"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:76
+#: nemo-media-columns/nemo-media-columns.py:77
 msgid "Genre"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:77
+#: nemo-media-columns/nemo-media-columns.py:78
 msgid "Date"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:78
+#: nemo-media-columns/nemo-media-columns.py:79
 msgid "Bitrate"
 msgstr ""
 
-#: nemo-media-columns/nemo-media-columns.py:79
-msgid "Sample Rate"
-msgstr ""
-
 #: nemo-media-columns/nemo-media-columns.py:80
-msgid "Length"
+msgid "Pages"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:81
-msgid "EXIF Date"
+msgid "Sample Rate"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:82
-msgid "EXIF Software"
+msgid "Length"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:83
-msgid "EXIF Flash"
+msgid "EXIF Date"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:84
-msgid "EXIF Image Size"
+msgid "EXIF Software"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:85
-msgid "EXIF Rating"
+msgid "EXIF Flash"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:86
+msgid "EXIF Image Size"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:87
+msgid "EXIF Rating"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:88
 msgid "Image Size"
 msgstr ""
 
