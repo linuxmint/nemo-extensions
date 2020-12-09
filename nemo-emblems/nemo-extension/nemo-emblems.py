@@ -44,7 +44,7 @@ GUI = """
   </object>
 </interface>"""
 
-HIDE_EMBLEMS = ['emblem-desktop', 'emblem-noread', 'emblem-nowrite', 'emblem-readonly', 'emblem-shared', 'emblem-synchronizing', 'emblem-symbolic-link', 'emblem-unreadable']
+HIDE_EMBLEMS = ['emblem-desktop', 'emblem-noread', 'emblem-nowrite', 'emblem-readonly', 'emblem-shared', 'emblem-synchronizing', 'emblem-symbolic-link', 'emblem-unreadable', 'emblem-xapp-favorite']
 
 # The following array is used for translating emblems only
 TRANSLATABLE_EMBLEMS = [_("Art"), _("Camera"), _("Danger"), _("Default"), _("Development"), _("Documents"), _("Downloads"), _("Favorite"), _("Games"), _("Generic"), _("Important"), _("Installed"), _("Mail"), _("Marketing"), _("Money"), _("Multimedia"), _("New"), _("Note"), _("Ohno"), _("Package"), _("People"), _("Personal"), _("Photos"), _("Plan"), _("Presentation"), _("Sales"), _("Sound"), _("System"), _("Urgent"), _("Videos"), _("Web")]
@@ -56,15 +56,27 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
         self.display_names = {}
         icon_names = self.default_icon_theme.list_icons(None)
         for icon_name in icon_names:
-            if not icon_name in HIDE_EMBLEMS and icon_name.startswith('emblem-') and not icon_name.endswith('-symbolic') and not icon_name.startswith('emblem-dropbox') and not icon_name.startswith('emblem-ubuntu') and not icon_name.startswith('emblem-rabbitvcs'):
-                # icon_name is emblem
-                icon_info = self.default_icon_theme.lookup_icon(icon_name, 32, 0)
-                display_name = icon_info.get_display_name()
+            if not icon_name.startswith('emblem-'):
+                # Only show emblem icons
+                continue
+            if icon_name.endswith('symbolic'):
+                # Symbolic emblems are not supported... whether it's a *-symbolic icon or a *-symbolic.symbolic icon.
+                continue
+            if icon_name in HIDE_EMBLEMS:
+                # Don't show unwanted emblems
+                continue
+            if icon_name.startswith('emblem-dropbox') or icon_name.startswith('emblem-ubuntu') or icon_name.startswith('emblem-rabbitvcs'):
+                # Hide these as well
+                continue
 
-                if not display_name:
-                    display_name = icon_name[7].upper() + icon_name[8:]
+            # icon_name is emblem
+            icon_info = self.default_icon_theme.lookup_icon(icon_name, 32, 0)
+            display_name = icon_info.get_display_name()
 
-                self.display_names[icon_name] = display_name
+            if not display_name:
+                display_name = icon_name[7].upper() + icon_name[8:]
+
+            self.display_names[icon_name] = display_name
 
     def get_property_pages(self, files):
         # files: list of NemoVFSFile
