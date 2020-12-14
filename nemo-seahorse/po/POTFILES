@@ -1,0 +1,15 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/nemo-seahorse-pgp-encrypted.desktop.in.in
+data/nemo-seahorse-pgp-keys.desktop.in.in
+data/nemo-seahorse-pgp-signature.desktop.in.in
+nemo-ext/nemo-seahorse.c
+tool/seahorse-multi-encrypt.xml
+tool/seahorse-notification.c
+tool/seahorse-notify.xml
+tool/seahorse-passphrase.c
+tool/seahorse-progress.xml
+tool/seahorse-tool-files.c
+tool/seahorse-tool.c
+tool/seahorse-util.c
+tool/seahorse-widget.c
