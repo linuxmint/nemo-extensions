@@ -28,7 +28,6 @@ setup(
 
     data_files = [
         ('/usr/share/nemo-python/extensions', ['src/nemo_terminal.py']),
-        ('/usr/bin',                          ['src/nemo-terminal-prefs']),
         ('/usr/share/nemo-terminal',          ['src/nemo-terminal-prefs.py',
                                                'pixmap/logo_120x120.png']),
         ('/usr/share/glib-2.0/schemas',       ['src/org.nemo.extensions.nemo-terminal.gschema.xml'])

@@ -1,6 +1,0 @@
-#!/usr/bin/python3
-
-import subprocess
-import sys
-
-sys.exit(subprocess.call(["/usr/share/nemo-terminal/nemo-terminal-prefs.py"]))
