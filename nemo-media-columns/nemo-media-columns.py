@@ -22,6 +22,7 @@
 # Julien Blanc: fix bug caused by missing Exif.Image.Software key
 # mtwebster: convert for use as a nemo extension
 import os
+import stopit
 
 from urllib import parse
 import gi
@@ -116,7 +117,32 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         return Nemo.OperationResult.IN_PROGRESS
 
     def update_cb(self, provider, handle, closure, file):
-        self.do_update_file_info(file)
+        # stopit uses threads, so don't give it anything that isn't safe
+
+        mimetype = file.get_mime_type()
+        # Recent and Favorites set the G_FILE_ATTRIBUTE_STANDARD_TARGET_URI attribute
+        # to their real files' locations. Use that uri in those cases.
+        uri = file.get_activation_uri()
+        info = None
+
+        if uri.startswith("file"):
+            try:
+                with stopit.ThreadingTimeout(.1):
+                    info = self.get_media_info(uri, mimetype)
+            except stopit.utils.TimeoutException:
+                print("nemo-media-columns failed to process '%s' within a reasonable amount of time" % (gfile.get_uri(), e))
+
+        # TODO: we shouldn't set attributes on files that didn't match any of our mimetypes.
+        # we do currently so the given columns can be set to '' - we should maybe do this in
+        # nemo (https://github.com/linuxmint/nemo/blob/master/libnemo-private/nemo-file.c#L6811-L6814)
+        # so that here we only set files that we support.
+        #
+        # get_media_info can return None if nothing matched, or there was an error, instead of always
+        # adding the attributes to a file whether it's useful or not.
+
+        # if info:
+        self.set_file_attributes(file, info)
+        del info
 
         if handle in self.ids_by_handle.keys():
             del self.ids_by_handle[handle]
@@ -124,22 +150,23 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         Nemo.info_provider_update_complete_invoke(closure, provider, handle, Nemo.OperationResult.COMPLETE)
 
         return False
-
-    def do_update_file_info(self, file):
-        info = FileExtensionInfo()
-
-        # Recent and Favorites set the G_FILE_ATTRIBUTE_STANDARD_TARGET_URI attribute
-        # to their real files' locations. Use that uri in those cases.
-        uri = file.get_activation_uri()
-        if not uri.startswith("file"):
-            return
-
+ 
+    def get_media_info(self, uri, mimetype):
         # strip file:// to get absolute path
         filename = parse.unquote(uri[7:])
 
+        def file_is_one_of_these(mimetype_list):
+            for t in mimetype_list:
+                if Gio.content_type_is_a(mimetype, t):
+                    return True
+
         # mp3 handling
-        if file.is_mime_type('audio/mpeg'):
+        if file_is_one_of_these(('audio/mpeg',)):
+            info = FileExtensionInfo()
             # attempt to read ID3 tag
+            id3_good = True
+            mp3_good = True
+
             try:
                 audio = EasyID3(filename)
                 # sometimes the audio variable will not have one of these items defined, that's why
@@ -157,7 +184,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 try: info.date = audio["date"][0]
                 except: pass
             except Exception as e:
-                pass
+                id3_good = False
 
             # try to read MP3 information (bitrate, length, samplerate)
             try:
@@ -169,11 +196,15 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                     # [SabreWolfy[ to allow for correct column sorting by length
                     info.length = "%02i:%02i:%02i" % ((int(mpinfo.length/3600)), (int(mpinfo.length/60%60)), (int(mpinfo.length%60)))
             except Exception:
-                pass
+                mp3_good = False
 
+            return info # if (id3_good or mp3_good) else None
         # image handling
-        elif file.is_mime_type('image/jpeg') or file.is_mime_type('image/png') or file.is_mime_type('image/gif') or file.is_mime_type('image/bmp') or file.is_mime_type('image/tiff'):
+        elif file_is_one_of_these(('image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff')):
+            info = FileExtensionInfo()
             # EXIF handling routines
+            exiv_good = True
+            pil_good = True
             try:
                 metadata = GExiv2.Metadata(path=filename)
 
@@ -186,17 +217,22 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 info.exif_flash = metadata.get('Exif.Photo.Flash', None)
                 info.exif_rating = metadata.get('Xmp.xmp.Rating', None)
             except GLib.Error as e:
-                pass
+                exif = False
                 
             # try read image info directly
             try:
                 im = PIL.Image.open(filename)
                 info.pixeldimensions = str(im.size[0])+'x'+str(im.size[1])
             except Exception as e:
-                pass
+                pil_good = False
 
+            return info # if (exiv_good or pil_good) else None
         # video/flac handling
-        elif file.is_mime_type('video/x-msvideo') | file.is_mime_type('video/mpeg') | file.is_mime_type('video/x-ms-wmv') | file.is_mime_type('video/mp4') | file.is_mime_type('audio/x-flac') | file.is_mime_type('video/x-flv') | file.is_mime_type('video/x-matroska') | file.is_mime_type('audio/x-wav'):
+        elif file_is_one_of_these(('video/x-msvideo', 'video/mpeg', 'video/x-ms-wmv', 'video/mp4',
+                                   'audio/x-flac', 'video/x-flv', 'video/x-matroska', 'audio/x-wav')):
+            info = FileExtensionInfo()
+            mediainfo_good = True
+
             try:
                 mediainfo = MediaInfo.parse(filename)
 
@@ -266,26 +302,31 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                     seconds = duration / 1000 # ms to s
                     info.length = "%02i:%02i:%02i" % ((seconds / 3600), (seconds / 60 % 60), (seconds % 60))
             except Exception as e:
-                pass
+                mediainfo_good = False
+
+            return info #if mediainfo_good else None
 
         # pdf handling
-        elif file.is_mime_type('application/pdf'):
+        elif file_is_one_of_these(('application/pdf',)):
+            info = FileExtensionInfo()
+            pdf_good = True
+
             try:
-                f = open(filename, "rb")
-                pdf = PdfFileReader(f)
-                try: info.title = pdf.getDocumentInfo().title
-                except: pass
-                try: info.artist = pdf.getDocumentInfo().author
-                except: pass
-                try: info.pages = str(pdf.getNumPages())
-                except: pass
-                f.close()
+                with open(filename, "rb") as f:
+                    pdf = PdfFileReader(f)
+                    try: info.title = pdf.getDocumentInfo().title
+                    except: pass
+                    try: info.artist = pdf.getDocumentInfo().author
+                    except: pass
+                    try: info.pages = str(pdf.getNumPages())
+                    except: pass
             except:
-                pass
+                pdf_good = False
 
-        self.set_file_attributes(file, info)
+            return info # if pdf_good else None
 
-        del info
+        # return None # TODO - not a file we care about, we shouldn't add attributes to a file in this case.
+        return FileExtensionInfo()
 
     def get_name_and_desc(self):
         return [("Nemo Media Columns:::Provides additional columns for the list view")]
