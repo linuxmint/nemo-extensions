@@ -140,6 +140,9 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         # get_media_info can return None if nothing matched, or there was an error, instead of always
         # adding the attributes to a file whether it's useful or not.
 
+        if info == None:
+            info = FileExtensionInfo()
+
         # if info:
         self.set_file_attributes(file, info)
         del info
