@@ -66,7 +66,9 @@ static GObjectClass *parent_class;
         py_files = PyList_New(0);                                      \
 		for (l = files; l; l = l->next)                                \
 		{                                                              \
-			PyList_Append(py_files, pygobject_new((GObject*)l->data)); \
+            PyObject *item = pygobject_new ((GObject *)l->data);       \
+            PyList_Append(py_files, item);                             \
+            Py_DECREF (item);                                          \
 		}                                                              \
 	}
 
@@ -207,6 +209,7 @@ nemo_python_object_get_property_pages (NemoPropertyPageProvider *provider,
 	HANDLE_LIST(py_ret, NemoPropertyPage, "Nemo.PropertyPage");
 	
  beach:
+    free_pygobject_data_list (files);
 	Py_XDECREF(py_ret);
 	pyg_gil_state_release(state);
     return ret;
@@ -255,6 +258,7 @@ nemo_python_object_get_widget (NemoLocationWidgetProvider *provider,
 	ret = (GtkWidget *)g_object_ref(py_ret_gobj->obj);
 
  beach:
+    Py_XDECREF(py_uri);
 	Py_XDECREF(py_ret);
 	pyg_gil_state_release(state);
 	return ret;
