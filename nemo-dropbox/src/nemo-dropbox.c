@@ -728,8 +728,8 @@ nemo_dropbox_get_file_items(NemoMenuProvider *provider,
 
     if (!nemo_dropbox_parse_menu(options, root_menu, action_string,
 				     toret, provider, files)) {
-	g_object_unref(toret);
-	toret = NULL;
+        g_list_free_full (toret, (GDestroyNotify) g_object_unref);
+        toret = NULL;
     }
 
     nemo_menu_item_set_submenu(root_item, root_menu);
