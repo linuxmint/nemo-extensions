@@ -63,7 +63,7 @@ gnome.generate_gir(
     'GstTag-1.0',
     'GdkPixbuf-2.0',
     'Gtk-3.0',
-    'GtkSource-3.0',
+    'GtkSource-4',
     'XreaderDocument-1.5',
   ],
   install: true,
