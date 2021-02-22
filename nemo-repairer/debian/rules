@@ -3,18 +3,3 @@
 
 %:
 	dh $@
-
-override_dh_auto_configure:
-	NOCONFIGURE=1 ./autogen.sh
-	dh_auto_configure --
-
-override_dh_makeshlibs:
-	dh_makeshlibs -Xlibnemo-filename-repairer
-
-override_dh_install:
-	dh_install --list-missing
-
-override_dh_auto_install:
-	dh_auto_install
-	find debian -name "*.la" -delete
-

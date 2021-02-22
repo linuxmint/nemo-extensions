@@ -4,17 +4,3 @@ LDFLAGS += -Wl,-O1 -Wl,--as-needed
 
 %:
 	dh $@
-
-override_dh_auto_configure:
-	NOCONFIGURE=1 ./autogen.sh
-	dh_auto_configure --
-
-override_dh_makeshlibs:
-	# libnemo-seahorse.so is a plugin, not a shared library
-	dh_makeshlibs -Xlibnemo-seahorse
-
-override_dh_auto_install:
-	dh_auto_install
-	find debian -name "*.a" -delete
-	find debian -name "*.la" -delete
-

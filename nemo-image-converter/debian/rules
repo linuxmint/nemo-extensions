@@ -21,9 +21,5 @@ endif
 override_dh_autoreconf:
 	dh_autoreconf --as-needed
 
-override_dh_install:
-	rm `find $(CURDIR)/debian -name '*.la'`
-	dh_install
-
 override_dh_makeshlibs:
 	#Pass, the .so is a plugin, not a library.
