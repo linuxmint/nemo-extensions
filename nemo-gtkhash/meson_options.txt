@@ -1,7 +1,7 @@
 option('zlib',          type: 'boolean', value: 'true', description: 'Use Zlib')
 option('linux-crypto',  type: 'boolean', value: 'true', description: 'Use Linux hash algorithm interface')
 option('gcrypt',        type: 'boolean', value: 'true', description: 'Use gcrypt')
-option('libcrypto',     type: 'boolean', value: 'true', description: 'Use libcrypto')
+option('libcrypto',     type: 'boolean', value: 'false',description: 'Use libcrypto')
 option('mbedtls',       type: 'boolean', value: 'true', description: 'Use mbed TLS')
 option('nettle',        type: 'boolean', value: 'true', description: 'Use nettle')
 option('nss',           type: 'boolean', value: 'true', description: 'Use nss')
@@ -10,7 +10,7 @@ option('mhash',         type: 'boolean', value: 'true', description: 'Use mhash'
 option('internal-md6',  type: 'boolean', value: 'true', description: 'Use the internal md6 library')
 
 
-option('build-gtkhash', type: 'boolean', value: 'true', description: 'Build GTKHash')
-option('build-nautilus',type: 'boolean', value: 'true', description: 'Build the Nautilus extension')
-option('build-nemo',    type: 'boolean', value: 'true', description: 'Build the Nemo extension')
-option('build-thunar',  type: 'boolean', value: 'true', description: 'Build the Thunar extension')
+option('build-gtkhash', type: 'boolean', value: 'false',description: 'Build GTKHash')
+option('build-nautilus',type: 'boolean', value: 'false',description: 'Build the Nautilus extension')
+option('build-nemo',    type: 'boolean', value: 'false',description: 'Build the Nemo extension')
+option('build-thunar',  type: 'boolean', value: 'false',description: 'Build the Thunar extension')

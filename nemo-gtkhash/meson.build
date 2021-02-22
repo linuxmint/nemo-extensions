@@ -1,7 +1,7 @@
 project('nemo-gtkhash',
     'c',
     version: '4.8.0',
-    meson_version: '>=0.50.0'
+    meson_version: '>=0.49.0'
 )
 
 project_url = 'https://github.com/linuxmint/nemo-extensions'
@@ -60,7 +60,13 @@ config.set10('ENABLE_NETTLE', nettle.found())
 nss = get_option('nss') ? dependency('nss') : no_dep
 config.set10('ENABLE_NSS', nss.found())
 
-mhash = get_option('mhash') ? cc.find_library('mhash', has_headers: 'mhash.h') : no_dep
+if meson.version().version_compare('>=0.50.0')
+    mhash = get_option('mhash') ? cc.find_library('mhash', has_headers: 'mhash.h') : no_dep
+else # Remove when LMDE is updated
+    mhash = get_option('mhash') ? cc.find_library('mhash') : no_dep
+    mhash = cc.has_header('mhash.h') ? mhash : no_dep
+endif
+
 config.set10('ENABLE_MHASH', mhash.found())
 
 
@@ -73,10 +79,19 @@ config.set10('ENABLE_LINUX_CRYPTO', get_option('linux-crypto'))
 
 
 if get_option('mbedtls')
-    mbedtls = cc.find_library('mbedcrypto', has_headers: 'mbedtls/md.h', required: false)
+    if meson.version().version_compare('>=0.50.0')
+        mbedtls = cc.find_library('mbedcrypto', has_headers: 'mbedtls/md.h', required: false)
+    else # Remove when LMDE is updated
+        mbedtls = cc.has_header('mbedtls/md.h') ? cc.find_library('mbedcrypto', required: false) : no_dep
+    endif
     mbedtls_version = 2
     if not mbedtls.found()
-        mbedtls = cc.find_library('polarssl', has_headers: 'polarssl/md.h', required: false)
+
+        if meson.version().version_compare('>=0.50.0')
+            mbedtls = cc.find_library('polarssl', has_headers: 'polarssl/md.h', required: false)
+        else # Remove when LMDE is updated
+            mbedtls = cc.has_header('polarssl/md.h') ? cc.find_library('polarssl', required: false) : no_dep
+        endif
         mbedtls_version = 1
     endif
     if not mbedtls.found()
@@ -86,7 +101,7 @@ else
     mbedtls = no_dep
 endif
 config.set10('ENABLE_MBEDTLS', mbedtls.found())
-config.set10('HAVE_MBEDTLS_2_0_0', mbedtls_version == 2)
+config.set10('HAVE_MBEDTLS_2_0_0', mbedtls.found() and mbedtls_version == 2)
 
 
 config.set10('ENABLE_GLIB_CHECKSUMS', get_option('glib-checksums'))
