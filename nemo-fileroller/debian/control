@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends:
  debhelper (>= 10),
+ meson,
  libglib2.0-dev (>= 2.14.0),
  libnemo-extension-dev (>= 1.0.0),
 Standards-Version: 3.9.6
