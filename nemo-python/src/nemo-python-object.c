@@ -258,7 +258,6 @@ nemo_python_object_get_widget (NemoLocationWidgetProvider *provider,
 	ret = (GtkWidget *)g_object_ref(py_ret_gobj->obj);
 
  beach:
-    Py_XDECREF(py_uri);
 	Py_XDECREF(py_ret);
 	pyg_gil_state_release(state);
 	return ret;
