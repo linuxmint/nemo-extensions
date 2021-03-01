@@ -2,10 +2,13 @@ Source: nemo-dropbox
 Section: non-free/gnome
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper-compat (= 11),
+               dh-python,
                libnemo-extension-dev (>= 1.0.0),
                libglib2.0-dev (>= 2.14.0),
-               dh-autoreconf,
+               python3-all,
+               python3-docutils,
+               python3-gi
 Standards-Version: 3.9.6
 XS-Autobuild: yes
 Homepage: http://www.dropbox.com/
@@ -15,9 +18,9 @@ Architecture: i386 amd64
 Depends: nemo,
          policykit-1,
          procps,
+         python3-gi,
          ${shlibs:Depends},
-         ${misc:Depends},
-         dropbox
+         ${misc:Depends}
 Description: Dropbox integration for Nemo
  Nemo Dropbox is an extension that integrates the Dropbox web service with
  your Cinnamon Desktop.

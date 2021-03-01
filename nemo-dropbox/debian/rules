@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --with=autoreconf
+	dh $@ --with=python3
 
 override_dh_autoreconf:
 	dh_autoreconf --as-needed
