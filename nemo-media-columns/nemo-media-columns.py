@@ -266,7 +266,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                             pass
 
                         try:
-                            duration = int(track['duration'])
+                            duration = int(float(track['duration']))
                         except:
                             pass
 
