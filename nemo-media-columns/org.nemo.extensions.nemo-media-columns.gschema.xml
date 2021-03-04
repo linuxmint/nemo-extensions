@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema path="/org/nemo/extensions/nemo-media-columns/" 
+        id="org.nemo.extensions.nemo-media-columns">
+
+        <key name="use-timeout" type="b">
+            <default>true</default>
+            <summary>How long to allow the plugin to run for each file before aborting.</summary>
+        </key>
+        <key name="timeout" type="d">
+            <default>0.2</default>
+            <range min="0.1" max="30.0"/>
+            <summary>Time to allow the plugin to process a single file.</summary>
+            <description>The plugin will abort and move to the next file if it takes more than this long (seconds).</description>
+        </key>
+	</schema>
+</schemalist>

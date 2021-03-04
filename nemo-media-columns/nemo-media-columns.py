@@ -65,9 +65,24 @@ class FileExtensionInfo():
         self.exif_rating = None
         self.pixeldimensions = None
 
+
+
 class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, Nemo.NameAndDescProvider):
     def __init__(self):
         self.ids_by_handle = {}
+
+        self.settings = Gio.Settings(schema_id="org.nemo.extensions.nemo-media-columns")
+        self.load_settings(self.settings)
+        self.settings.connect("changed", self.load_settings)
+
+    def load_settings(self, settings, pspec=None, data=None):
+        use_timeout = self.settings.get_boolean("use-timeout")
+
+        # I don't think we should ever allow it to run forever, regardless
+        # of preference.
+        self.timeout = self.settings.get_double("timeout") if use_timeout else 30.0
+
+        print("nemo-media-columns: using a timeout of %.2f second(s) for file processing" % self.timeout)
 
     def get_columns(self):
         return (
@@ -127,7 +142,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
         if uri.startswith("file"):
             try:
-                with stopit.ThreadingTimeout(.1):
+                with stopit.ThreadingTimeout(self.timeout):
                     info = self.get_media_info(uri, mimetype)
             except stopit.utils.TimeoutException:
                 print("nemo-media-columns failed to process '%s' within a reasonable amount of time" % (gfile.get_uri(), e))
@@ -332,4 +347,4 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         return FileExtensionInfo()
 
     def get_name_and_desc(self):
-        return [("Nemo Media Columns:::Provides additional columns for the list view")]
+        return [("Nemo Media Columns:::Provides additional columns for the list view:::nemo-media-columns-prefs")]

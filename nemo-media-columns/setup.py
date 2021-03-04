@@ -27,6 +27,8 @@ setup(
     #                     'pil',
     #                     'pymediainfo'],
     data_files   = [
-        ('/usr/share/nemo-python/extensions', ['nemo-media-columns.py'])
+        ('/usr/share/nemo-python/extensions', ['nemo-media-columns.py']),
+        ('/usr/bin',                          ['nemo-media-columns-prefs']),
+        ('/usr/share/glib-2.0/schemas',       ['org.nemo.extensions.nemo-media-columns.gschema.xml'])
     ]
 )
