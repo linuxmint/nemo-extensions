@@ -7,7 +7,6 @@ UPDATENOTIFIERDIR=/var/lib/update-notifier/user.d
 case "$1" in
     configure)
 	unset DISPLAY # No GUI launched from postinst please
-	dropbox update || true
 
         echo "Please restart all running instances of Nemo, or you will experience problems. i.e. nemo --quit"
 
