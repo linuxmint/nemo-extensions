@@ -1,15 +1,14 @@
 #!/bin/sh
+set -e
 
-for i in `find ./ -maxdepth 1 -mindepth 1 -type d`; do
-   if [ $i = "./.git" ]; then
-      continue
-   fi
+for i in `find ./ -maxdepth 1 -mindepth 1 -type d ! -name ".*"`; do
    cd $i
    echo     ....
    echo     ....
    echo     ........................................... BUILDING: $i
    echo     ....
    echo     ....
-   dpkg-buildpackage -j$((    $(cat /proc/cpuinfo | grep processor | wc -l)+1    ))
+   sudo mk-build-deps -ir
+   dpkg-buildpackage -us -uc -j$((    $(cat /proc/cpuinfo | grep processor | wc -l)+1    ))
    cd ..
 done
