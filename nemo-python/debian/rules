@@ -1,31 +1,12 @@
 #!/usr/bin/make -f
 
-#export DH_VERBOSE=1
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
 
 %:
-	dh $@
+	dh $@ --buildsystem=meson
 
 override_dh_auto_configure:
-	mkdir -p debian/build
-	meson debian/build \
-		--prefix=/usr \
-		--libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
-		--buildtype=plain \
-		-D gtk_doc=true \
-		--errorlogs
+	dh_auto_configure -- -D gtk_doc=true --errorlogs
 
-override_dh_auto_build:
-	ninja -C debian/build
-
-override_dh_auto_test:
-	# disable tests
-
-override_dh_strip:
-	dh_strip --dbg-package=python-nemo-dbg
-
-override_dh_auto_install:
-	DESTDIR=${CURDIR}/debian/python-nemo \
-	ninja -C debian/build install
-
+# Don't generate a shlibs file for the plugin
 override_dh_makeshlibs:
-	# disabled

@@ -4,4 +4,3 @@ export PYBUILD_NAME=nemo-audio-tab
 
 %:
 	dh $@ --with python3 --buildsystem=pybuild
-

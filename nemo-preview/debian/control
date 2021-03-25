@@ -2,7 +2,7 @@ Source: nemo-preview
 Section: gnome
 Priority: extra
 Maintainer: Clement Lefebvre <root@linuxmint.com>
-Build-Depends: debhelper (>= 11),
+Build-Depends: debhelper-compat (= 12),
                meson,
                gir1.2-xreader,
                gnome-pkg-tools (>= 0.11),
