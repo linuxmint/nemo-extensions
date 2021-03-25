@@ -1,19 +1,14 @@
 #!/usr/bin/make -f
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
+
 %:
-	dh $@ --with=autoreconf
+	dh $@ --buildsystem=meson
 
-override_dh_autoreconf:
-	dh_autoreconf --as-needed
-
+# Don't generate a shlibs file for the plugin
 override_dh_makeshlibs:
-	# Don't generate a shlibs file for the plugin
-	dh_makeshlibs -X/usr/lib/nemo/
 
 override_dh_auto_install:
 	dh_auto_install
 	# Drop useless files
-	rm -f debian/nemo-dropbox/usr/lib/nemo/extensions-*/libnemo-dropbox.a
-	rm -f debian/nemo-dropbox/usr/lib/nemo/extensions-*/libnemo-dropbox.la
 	rm -rf debian/nemo-dropbox/usr/share/icons/*
-

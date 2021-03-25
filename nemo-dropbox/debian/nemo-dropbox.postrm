@@ -4,7 +4,7 @@ set -e
 
 case "$1" in
     purge)
-	rm -rf /var/lib/dropbox
+        rm -rf /var/lib/dropbox
     ;;
 esac
 

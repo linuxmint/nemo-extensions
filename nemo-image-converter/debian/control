@@ -3,7 +3,7 @@ Section: gnome
 Priority: optional
 Maintainer: Julien Lavergne <julien.lavergne@gmail.com>
 Homepage: http://github.com/linuxmint/nemo-extensions
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper-compat (= 12),
                meson,
                pkg-config,
                libxml-parser-perl,

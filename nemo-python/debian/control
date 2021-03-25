@@ -3,12 +3,12 @@ Section: python
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends:
- debhelper (>= 10),
- gtk-doc-tools,
- meson,
- libnemo-extension-dev (>= 3.6),
- python3-dev,
- python-gi-dev,
+    debhelper-compat (= 12),
+    gtk-doc-tools,
+    meson,
+    libnemo-extension-dev (>= 3.6),
+    python3-dev,
+    python-gi-dev,
 Standards-Version: 3.9.6
 
 Package: python-nemo
@@ -26,4 +26,3 @@ Depends: python-nemo (= ${binary:Version}), ${misc:Depends}
 Description: Debug packages for python-nemo
  This development package contains unstripped binaries compiled with
  debugging symbols needed by gdb.
-

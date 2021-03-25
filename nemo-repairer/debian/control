@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Homepage: https://github.com/linuxmint/nemo-extensions
 Build-Depends: cdbs,
-               debhelper (>= 9),
+               debhelper-compat (= 12),
                meson,
                libnemo-extension-dev (>= 2.2.0),
                libglib2.0-dev (>= 2.24.0),
