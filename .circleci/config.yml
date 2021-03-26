@@ -1,7 +1,6 @@
 version: 2.0
 
 shared: &shared
-
     steps:
 
         - checkout
@@ -21,21 +20,8 @@ shared: &shared
                 rm -rf packages
 
         - run:
-            name: Build project
-            command: |
-                for i in `find ./ -maxdepth 1 -mindepth 1 -type d`; do
-                   if [ $i = "./.git" ]; then
-                      continue
-                   fi
-                   cd $i
-                   echo     ....
-                   echo     ....
-                   echo     ........................................... BUILDING: $i
-                   echo     ....
-                   echo     ....
-                   mint-build
-                   cd ..
-                done
+            name: Build all extensions
+            command: ./build
 
         - run:
             name: Prepare packages
