@@ -50,8 +50,8 @@ int main(int argc, char** argv)
 			_("Nemo Filename Repairer: Select Files To Rename"),
 			NULL,
 			GTK_FILE_CHOOSER_ACTION_OPEN,
-			GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-			GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+			_("_Cancel"), GTK_RESPONSE_CANCEL,
+			_("_Open"), GTK_RESPONSE_ACCEPT,
 			NULL));
 	gtk_file_chooser_set_select_multiple(GTK_FILE_CHOOSER(dialog), TRUE);
 	res = gtk_dialog_run(dialog);

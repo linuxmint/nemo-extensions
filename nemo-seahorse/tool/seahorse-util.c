@@ -414,8 +414,8 @@ seahorse_util_chooser_save_new (const gchar *title, GtkWindow *parent)
 
     dialog = gtk_file_chooser_dialog_new (title,
                 parent, GTK_FILE_CHOOSER_ACTION_SAVE,
-                GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+                _("_Cancel"), GTK_RESPONSE_CANCEL,
+                _("_Save"), GTK_RESPONSE_ACCEPT,
                 NULL);
 
     gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
@@ -501,7 +501,7 @@ seahorse_util_chooser_save_prompt (GtkWidget *dialog)
                         GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_QUESTION,
                         GTK_BUTTONS_NONE, _("<b>A file already exists with this name.</b>\n\nDo you want to replace it with a new file?"));
             gtk_dialog_add_buttons (GTK_DIALOG (edlg),
-                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                        _("_Stock"), GTK_RESPONSE_CANCEL,
                         _("_Replace"), GTK_RESPONSE_ACCEPT, NULL);
 
             gtk_dialog_set_default_response (GTK_DIALOG (edlg), GTK_RESPONSE_CANCEL);

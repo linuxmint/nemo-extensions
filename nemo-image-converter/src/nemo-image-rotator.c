@@ -206,7 +206,7 @@ op_finished (GPid pid, gint status, gpointer data)
 		g_free (name);
 		
 		gtk_dialog_add_button (GTK_DIALOG (msg_dialog), _("_Skip"), 1);
-		gtk_dialog_add_button (GTK_DIALOG (msg_dialog), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+		gtk_dialog_add_button (GTK_DIALOG (msg_dialog), _("_Cancel"), GTK_RESPONSE_CANCEL);
 		gtk_dialog_add_button (GTK_DIALOG (msg_dialog), _("_Retry"), 0);
 		gtk_dialog_set_default_response (GTK_DIALOG (msg_dialog), 0);
 		

@@ -333,9 +333,9 @@ setup_fallback_notification (SeahorseNotification *snotif, gboolean urgent,
     if (snotif->icon)
         image = gtk_image_new_from_file (snotif->icon);
     else
-        image = gtk_image_new_from_stock (urgent ?
-                                            GTK_STOCK_DIALOG_WARNING :
-                                            GTK_STOCK_DIALOG_INFO,
+        image = gtk_image_new_from_icon_name (urgent ?
+                                            "dialog-warning" :
+                                            "dialog-information",
                                           GTK_ICON_SIZE_DIALOG);
     gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
 

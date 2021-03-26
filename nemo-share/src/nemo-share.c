@@ -135,7 +135,7 @@ message_confirm_missing_permissions (GtkWidget *widget, const char *path, mode_t
 					    (need_mask & (S_IXGRP | S_IXOTH)) ? _("  - execute permission by others\n") : "");
   g_free (display_name);
 
-  gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+  gtk_dialog_add_button (GTK_DIALOG (dialog), _("_Cancel"), GTK_RESPONSE_CANCEL);
   gtk_dialog_add_button (GTK_DIALOG (dialog), _("Add the permissions automatically"), GTK_RESPONSE_ACCEPT);
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
 
@@ -884,7 +884,7 @@ create_property_page (NemoFileInfo *fileinfo)
 
   gtk_button_set_label (GTK_BUTTON (page->button_apply), apply_button_label);
   gtk_button_set_use_underline (GTK_BUTTON (page->button_apply), TRUE);
-  gtk_button_set_image (GTK_BUTTON (page->button_apply), gtk_image_new_from_stock (GTK_STOCK_SAVE, GTK_ICON_SIZE_BUTTON));
+  gtk_button_set_image (GTK_BUTTON (page->button_apply), gtk_image_new_from_icon_name (_("_Save"), GTK_ICON_SIZE_BUTTON));
 
   gtk_widget_set_sensitive (page->button_apply, FALSE);
 
