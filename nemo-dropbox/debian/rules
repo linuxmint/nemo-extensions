@@ -10,5 +10,3 @@ override_dh_makeshlibs:
 
 override_dh_auto_install:
 	dh_auto_install
-	# Drop useless files
-	rm -rf debian/nemo-dropbox/usr/share/icons/*

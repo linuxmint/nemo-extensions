@@ -70,11 +70,21 @@ static GList *my_g_hash_table_get_keys(GHashTable *ght) {
 }
 #endif
 
-/* probably my favorite function */
+/*
+  Simplifies a path by removing navigation elements such as '.' and '..'
+
+  Arguments:
+    - path: input path to be canonicalized
+
+  Returns:
+    Canonicalized path if input path is valid.
+    NULL otherwise.
+*/
 static gchar *
 canonicalize_path(gchar *path) {
   int i, j = 0;
-  gchar *toret, **cpy, **elts;
+  gchar *toret = NULL;
+  gchar **cpy, **elts;
   
   g_assert(path != NULL);
   g_assert(path[0] == '/');
@@ -84,7 +94,14 @@ canonicalize_path(gchar *path) {
   cpy[j++] = "/";
   for (i = 0; elts[i] != NULL; i++) {
     if (strcmp(elts[i], "..") == 0) {
-      j--;
+      if (j > 0) {
+        j--;
+      }
+      else {
+        // Input path has too many parent directory references and is invalid
+        toret = NULL;
+        goto exit;
+      }
     }
     else if (strcmp(elts[i], ".") != 0 && elts[i][0] != '\0') {
       cpy[j++] = elts[i];
@@ -93,6 +110,8 @@ canonicalize_path(gchar *path) {
   
   cpy[j] = NULL;
   toret = g_build_filenamev(cpy);
+
+exit:
   g_free(cpy);
   g_strfreev(elts);
   
@@ -145,6 +164,10 @@ changed_cb(NemoFileInfo *file, NemoDropbox *cvs) {
   uri = nemo_file_info_get_uri(file);
   pfilename = g_filename_from_uri(uri, NULL, NULL);
   filename = pfilename ? canonicalize_path(pfilename) : NULL;
+
+  /* Canonicalization will only null-out a non-null filename if it is invalid */
+  g_assert((pfilename == NULL && filename == NULL) || (pfilename != NULL && filename != NULL));
+
   filename2 =  g_hash_table_lookup(cvs->obj2filename, file);
 
   g_free(pfilename);
@@ -221,6 +244,10 @@ nemo_dropbox_update_file_info(NemoInfoProvider     *provider,
       
       filename = canonicalize_path(pfilename);
       g_free(pfilename);
+      if (filename == NULL) {
+        /* pfilename path was invalid if canonicalize operation nulled it out */
+        return NEMO_OPERATION_FAILED;
+      }
       stored_filename = g_hash_table_lookup(cvs->obj2filename, file);
 
       /* don't worry about the dup checks, gcc is smart enough to optimize this
@@ -303,16 +330,17 @@ handle_shell_touch(GHashTable *args, NemoDropbox *cvs) {
     gchar *filename;
 
     filename = canonicalize_path(path[0]);
+    if (filename != NULL) {
+      debug("shell touch for %s", filename);
 
-    debug("shell touch for %s", filename);
+      file = g_hash_table_lookup(cvs->filename2obj, filename);
 
-    file = g_hash_table_lookup(cvs->filename2obj, filename);
-
-    if (file != NULL) {
-      debug("gonna reset %s", filename);
-      reset_file(file);
+      if (file != NULL) {
+        debug("gonna reset %s", filename);
+        reset_file(file);
+      }
+      g_free(filename);
     }
-    g_free(filename);
   }
 
   return;
@@ -505,8 +533,14 @@ int GhettoURLDecode(gchar* out, gchar* in, int n) {
 
   for(out_initial = out; out-out_initial < n && *in != '\0'; out++) {
     if (*in == '%') {
-      *out = from_hex(in[1]) << 4 | from_hex(in[2]);
-      in += 3;
+      if ((in[1] != '\0') && (in[2] != '\0')) {
+        *out = from_hex(in[1]) << 4 | from_hex(in[2]);
+        in += 3;
+      }
+      else {
+        // Input string isn't well-formed
+        return -1;
+      }
     }
     else {
       *out = *in;

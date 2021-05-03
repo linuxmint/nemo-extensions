@@ -3,10 +3,7 @@ install_subdir('emblems',
 )
 
 if get_option('install-dropbox-files')
-    install_subdir('icons/hicolor',
-        install_dir: get_option('datadir') / 'icons',
-    )
-    install_data('icons/nemo-dropbox/nemo-dropbox-symbolic.svg',
-        install_dir: project_datadir / 'icons',
+    install_subdir('icons',
+        install_dir: get_option('datadir'),
     )
 endif
