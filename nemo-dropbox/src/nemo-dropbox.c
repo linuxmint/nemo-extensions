@@ -729,10 +729,13 @@ nemo_dropbox_get_file_items(NemoMenuProvider *provider,
   /*
    * 4. We have to block until it's done because nemo expects a reply.  But we will
    * only block for 50 ms for a reply.
+   *
+   * *** 5-3-2021 - Increase to 100ms max delay, it seems it can fail pretty
+   *                regularly at only 50.
    */
 
   g_get_current_time(&gtv);
-  g_time_val_add(&gtv, 50000);
+  g_time_val_add(&gtv, 100 * 1000);
 
   GHashTable *context_options_response = g_async_queue_timed_pop(reply_queue, &gtv);
   g_async_queue_unref(reply_queue);
