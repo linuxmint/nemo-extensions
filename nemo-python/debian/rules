@@ -10,3 +10,7 @@ override_dh_auto_configure:
 
 # Don't generate a shlibs file for the plugin
 override_dh_makeshlibs:
+
+override_dh_auto_install:
+	DESTDIR=${CURDIR}/debian/python-nemo \
+	ninja -C obj-$(DEB_HOST_MULTIARCH) install
