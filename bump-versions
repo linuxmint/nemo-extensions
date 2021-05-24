@@ -9,26 +9,24 @@ parser.add_argument('-c', '--codename', required=True, help='a Mint codename')
 parser.add_argument('-v', '--version', required=True, help='a version number')
 args = parser.parse_args()
 
-for directory in os.listdir("."):
-    if directory == ".git":
-        continue
-    if os.path.isdir(directory):
-        os.chdir(directory)
-        print("")
-        print("    ", directory)
-        print("----------------")
-        for filename in ["configure.in", "configure.ac"]:
-            if os.path.exists(filename):
-                subprocess.call(["sed", "-i", "/AC_INIT/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
-                subprocess.call(["sed", "-i", "/^VERSION=/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
-        for filename in ["setup.py", "meson.build"]:
-            if os.path.exists(filename):
-                subprocess.call("sed -i '/version/ {/dependency/! s/[0-9].[0-9].[0-9]/%s/}' %s" % (args.version, filename), shell=True)
-        for filename in ["PKG-INFO"]:
-            if os.path.exists(filename):
-                subprocess.call(["sed", "-i", "/Version:/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
-        subprocess.call(["dch", "--distribution", args.codename, "-v", args.version,  args.version], stdout=None, stderr=None)
-        os.chdir("..")
-        print("----------------")
 
+with open('build-order') as build_order_file:
+    projects = [line.strip() for line in build_order_file if not '#' in line]
 
+for project in projects:
+    os.chdir(project)
+    print("")
+    print("    ", project)
+    print("----------------")
+
+    for filename in ["setup.py", "meson.build"]:
+        if os.path.exists(filename):
+            subprocess.call("sed -i '/version/ {/dependency/! s/[0-9].[0-9].[0-9]/%s/}' %s" % (args.version, filename), shell=True)
+
+    for filename in ["PKG-INFO"]:
+        if os.path.exists(filename):
+            subprocess.call(["sed", "-i", "/Version:/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
+
+    subprocess.call(["dch", "--distribution", args.codename, "-v", args.version,  args.version], stdout=None, stderr=None)
+    os.chdir("..")
+    print("----------------")
