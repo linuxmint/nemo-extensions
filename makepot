@@ -27,9 +27,6 @@ potfiles_c=(
     nemo-dropbox/src/*.h
     nemo-fileroller/src/*.c
     nemo-fileroller/src/*.h
-    nemo-gtkhash/src/*.c
-    nemo-gtkhash/src/*/*.c
-    nemo-gtkhash/src/*/*/*.c
     nemo-image-converter/data/*.ui.h
     nemo-image-converter/src/*.c
     nemo-image-converter/src/*.h
