@@ -28,6 +28,8 @@ nemo_seahorse = executable('nemo-seahorse-tool',
         libnotify,
         avahi,
     ],
+    install: true,
+    install_dir: join_paths(get_option('prefix'), get_option('bindir')),
 )
 
 install_data(

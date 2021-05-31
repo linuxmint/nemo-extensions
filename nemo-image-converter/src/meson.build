@@ -12,5 +12,6 @@ libnemo_image_converter = library('nemo-image-converter',
         libnemo,
         gtk3,
     ],
+    install: true,
     install_dir: libnemo_extension_dir,
 )
