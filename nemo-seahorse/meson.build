@@ -1,6 +1,6 @@
 project('nemo-seahorse',
   'c',
-  version: '4.8.0',
+  version: '5.0.0',
   meson_version: '>=0.49.0'
 )
 
