@@ -36,18 +36,10 @@ dbus_glib = dependency('dbus-glib-1', version: '>=0.78')
 cryptui = dependency('cryptui-0.0')
 gcr = dependency('gcr-3', version: '>=3.4.0')
 
-if get_option('libnotify')
-    libnotify = dependency('libnotify', version: '>=0.7.0')
-else
-    libnotify = dependency('', required: false)
-endif
+libnotify = dependency('libnotify', version: '>=0.7.0', required: get_option('libnotify'))
 config.set('HAVE_LIBNOTIFY', libnotify.found())
 
-if get_option('sharing')
-    avahi = dependency('avahi-glib')
-else
-    avahi = dependency('', required: false)
-endif
+avahi = dependency('avahi-glib', required: get_option('sharing'))
 config.set('WITH_SHARING', avahi.found())
 
 
