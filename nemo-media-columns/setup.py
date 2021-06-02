@@ -25,7 +25,8 @@ setup(
     #                     'mutagen',
     #                     'pypdf2',
     #                     'pil',
-    #                     'pymediainfo'],
+    #                     'pymediainfo'
+    #                     'stopit'],
     data_files   = [
         ('/usr/share/nemo-python/extensions', ['nemo-media-columns.py']),
         ('/usr/bin',                          ['nemo-media-columns-prefs']),
