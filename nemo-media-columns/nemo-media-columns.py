@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 # change log:
+# HarHarLinks: fix video bitrate support
 # geb666: original bsc.py, based on work by Giacomo Bordiga
 # jmdsdf: version 2 adds extra ID3 and EXIF tag support
 # jmdsdf: added better error handling for ID3 tags, added mp3 length support, distinguished
