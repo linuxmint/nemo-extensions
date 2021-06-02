@@ -269,12 +269,18 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                             duration = int(float(track['duration']))
                         except:
                             pass
+                        if not info.bitrate:
+                            try:
+                                info.bitrate = track['other_bit_rate'][0]
+                            except:
+                                pass
 
                     if track["track_type"] == "Audio":
-                        try:
-                            info.bitrate = track['other_bit_rate'][0]
-                        except:
-                            pass
+                        if not info.bitrate:
+                            try:
+                                info.bitrate = track['other_bit_rate'][0]
+                            except:
+                                pass
                         try:
                             info.samplerate = track['other_sampling_rate'][0]
                         except:
@@ -286,6 +292,10 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                             pass
 
                     if track["track_type"] == "General":
+                        try:
+                            info.bitrate = track['other_overall_bit_rate'][0]
+                        except:
+                            pass
                         try:
                             if duration == 0:
                                 duration = int(track['duration'])
