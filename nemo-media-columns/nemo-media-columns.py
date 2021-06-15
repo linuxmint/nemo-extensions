@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 # change log:
+# HarHarLinks: fix video bitrate support
 # geb666: original bsc.py, based on work by Giacomo Bordiga
 # jmdsdf: version 2 adds extra ID3 and EXIF tag support
 # jmdsdf: added better error handling for ID3 tags, added mp3 length support, distinguished
@@ -272,10 +273,6 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
                     if track["track_type"] == "Audio":
                         try:
-                            info.bitrate = track['other_bit_rate'][0]
-                        except:
-                            pass
-                        try:
                             info.samplerate = track['other_sampling_rate'][0]
                         except:
                             pass
@@ -286,6 +283,10 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                             pass
 
                     if track["track_type"] == "General":
+                        try:
+                            info.bitrate = track['other_overall_bit_rate'][0]
+                        except:
+                            pass
                         try:
                             if duration == 0:
                                 duration = int(track['duration'])
