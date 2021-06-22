@@ -38,7 +38,7 @@ config.set_quoted('INTERFACES_DIR', get_option('prefix') / interfaces_dir)
 
 gettext_package = meson.project_name()
 config.set_quoted('GETTEXT_PACKAGE', gettext_package)
-config.set_quoted('NEMO_SHARE_LOCALEDIR', get_option('localedir'))
+config.set_quoted('NEMO_SHARE_LOCALEDIR', get_option('prefix') / get_option('localedir'))
 config.set_quoted('PKGDATADIR', get_option('prefix')/get_option('datadir')/meson.project_name())
 
 add_project_arguments('-DG_LOG_DOMAIN="Nemo-Share"', language: 'c')
