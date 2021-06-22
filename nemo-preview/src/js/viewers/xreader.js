@@ -181,6 +181,10 @@ let handler = new MimeHandler.MimeHandler();
 let renderer = new XreaderRenderer();
 
 let mimeTypes = NemoPreview.query_supported_document_types();
+// xreader uses WebKit.WebView to render epub files, which is incompatible
+// with GtkClutter.
+mimeTypes = mimeTypes.filter(type_str => type_str !== "application/epub+zip");
+
 handler.registerMimeTypes(mimeTypes, renderer);
 
 let officeTypes = [
