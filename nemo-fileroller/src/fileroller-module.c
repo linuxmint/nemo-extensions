@@ -31,10 +31,10 @@
 void
 nemo_module_initialize (GTypeModule*module)
 {
-	nemo_fr_register_type (module);
+    bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+    bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
-	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+	nemo_fr_register_type (module);
 }
 
 
