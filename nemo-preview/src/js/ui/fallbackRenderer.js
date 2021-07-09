@@ -25,6 +25,8 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
+
 const Gio = imports.gi.Gio;
 const Gtk = imports.gi.Gtk;
 const GtkClutter = imports.gi.GtkClutter;
