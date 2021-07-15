@@ -25,6 +25,8 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
+
 const Format = imports.format;
 const Gettext = imports.gettext;
 
