@@ -252,7 +252,7 @@ class NemoTerminal(object):
 
             # Restore user input
             restorelinekeys = settings.get_string("terminal-restore-line")
-            self.feed_child(restorelinekeys.encode().decode("unicode_escape") + "\n")
+            self.feed_child(restorelinekeys.encode().decode("unicode_escape"))
             #self.feed_child(restorelinekeys + "\n")
 
     def get_widget(self):
