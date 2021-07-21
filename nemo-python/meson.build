@@ -1,6 +1,6 @@
 project('python-nemo',
     'c',
-    version : '5.0.0'
+    version : '5.0.1'
 )
 
 gnome = import('gnome')
