@@ -59,13 +59,13 @@
 	    </key>
 	    
 	    <key name="terminal-erase-line" type="s">
-           <default>"\\x05\\x15"</default>
+           <default>" \\x05\\x15"</default>
            <summary>Erase line key sequence</summary>
            <description>Key sequence to safely erase the current line in the terminal. Should be escaped according to Python rules. Use \xhh for non-printing characters, where hh is the hex value (including any leading zeroes) of the ASCII character. Default values are valid for Bash.</description>
         </key>
         
         <key name="terminal-restore-line" type="s">
-           <default>"\\x19"</default>
+           <default>"\\x19\\x08"</default>
            <summary>Restore line key sequence</summary>
            <description>Key sequence to restore the line erased by the erase line sequence. Use \xhh for non-printing characters, where hh is the hex value (including any leading zeroes) of the ASCII character. Default values are valid for Bash.</description>
         </key>
