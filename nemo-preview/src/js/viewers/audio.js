@@ -25,6 +25,7 @@
  *
  */
 
+imports.gi.versions.ClutterGst = '3.0';
 const GdkPixbuf = imports.gi.GdkPixbuf;
 const Gio = imports.gi.Gio;
 const Gst = imports.gi.Gst;
