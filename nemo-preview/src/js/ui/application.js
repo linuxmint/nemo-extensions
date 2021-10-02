@@ -42,15 +42,18 @@ const NEMO_PREVIEW_DBUS_PATH = '/org/nemo/Preview';
 const NEMO_PREVIEW_DBUS_NAME = 'org.nemo.Preview';
 
 const NemoPreviewIface = '<node> \
-<interface name="org.nemo.Preview"> \
-<method name="ShowFile"> \
-    <arg type="s" direction="in" name="uri" /> \
-    <arg type="i" direction="in" name="xid" /> \
-    <arg type="b" direction="in" name="closeIfAlreadyShown" /> \
-</method> \
-<method name="Close"> \
-</method> \
-</interface> \
+    <interface name="org.nemo.Preview"> \
+        <method name="ShowFile"> \
+            <arg type="s" direction="in" name="uri" /> \
+            <arg type="i" direction="in" name="xid" /> \
+            <arg type="b" direction="in" name="closeIfAlreadyShown" /> \
+        </method> \
+        <method name="Close"> \
+        </method> \
+        <signal name="SelectionEvent"> \
+            <arg type="q" name="direction" /> \
+        </signal> \
+    </interface> \
 </node>';
 
 var Application = new Lang.Class({
@@ -105,5 +108,12 @@ var Application = new Lang.Class({
         }
         this._mainWindow.setParent(xid);
         this._mainWindow.setFile(file);
+    },
+
+    emitSelectionEvent(direction) {
+        this._dbusImpl.emit_signal(
+            'SelectionEvent',
+            new GLib.Variant('(u)', [direction])
+        );
     }
 });
