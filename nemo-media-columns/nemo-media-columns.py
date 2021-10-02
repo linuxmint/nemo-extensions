@@ -59,6 +59,8 @@ class FileExtensionInfo():
         self.pages = None
         self.samplerate = None
         self.length = None
+        self.composer = None
+        self.description = None
         self.exif_datetime_original = None
         self.exif_software = None
         self.exif_flash = None
@@ -97,6 +99,8 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             Nemo.Column(name="NemoPython::pages_column",attribute="pages",label=_("Pages"),description=""),
             Nemo.Column(name="NemoPython::samplerate_column",attribute="samplerate",label=_("Sample Rate"),description=""),
             Nemo.Column(name="NemoPython::length_column",attribute="length",label=_("Length"),description=""),
+            Nemo.Column(name="NemoPython::composer_column", attribute="composer", label=_("Composer"), description=""),
+            Nemo.Column(name="NemoPython::description_column", attribute="description", label=_("Description"), description=""),
             Nemo.Column(name="NemoPython::exif_datetime_original_column",attribute="exif_datetime_original",label=_("EXIF Date"),description=""),
             Nemo.Column(name="NemoPython::exif_software_column",attribute="exif_software",label=_("EXIF Software"),description=""),
             Nemo.Column(name="NemoPython::exif_flash_column",attribute="exif_flash",label=_("EXIF Flash"),description=""),
@@ -106,9 +110,9 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         )
 
     def set_file_attributes(self, file, info):
-        for attribute in ("title", "album", "artist", "tracknumber", \
-                          "genre", "date", "bitrate", "pages", "samplerate",\
-                          "length", "exif_datetime_original", "exif_software", \
+        for attribute in ("title", "album", "artist", "tracknumber",
+                          "genre", "date", "bitrate", "pages", "samplerate",
+                          "length", 'composer', 'description', "exif_datetime_original", "exif_software",
                           "exif_flash", "exif_pixeldimensions", "exif_rating", "pixeldimensions"):
             value = getattr(info, attribute)
             if value is None:
@@ -248,12 +252,14 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             return info # if (exiv_good or pil_good) else None
         # video/flac handling
         elif file_is_one_of_these(('video/x-msvideo', 'video/mpeg', 'video/x-ms-wmv', 'video/mp4',
-                                   'audio/x-flac', 'video/x-flv', 'video/x-matroska', 'audio/x-wav')):
+                                   'audio/x-flac', 'video/x-flv', 'video/x-matroska', 'audio/x-wav',
+                                   'audio/m4a', 'audio/mp4')):
             info = FileExtensionInfo()
             mediainfo_good = True
 
             try:
                 mediainfo = MediaInfo.parse(filename)
+                print(f'parsing {filename}')
 
                 duration = 0
 
@@ -316,6 +322,14 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                             info.album = track['album']
                         except:
                             pass
+                        try:
+                            info.description = track['description']
+                        except:
+                            pass
+                        try:
+                            info.composer = track['composer']
+                        except:
+                            pass
 
                 if duration > 0:
                     seconds = duration / 1000 # ms to s
@@ -343,6 +357,9 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 pdf_good = False
 
             return info # if pdf_good else None
+
+        else:
+            print(f"No known mime type found for {filename}")
 
         # return None # TODO - not a file we care about, we shouldn't add attributes to a file in this case.
         return FileExtensionInfo()
