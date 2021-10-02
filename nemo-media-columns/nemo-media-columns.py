@@ -173,7 +173,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         Nemo.info_provider_update_complete_invoke(closure, provider, handle, Nemo.OperationResult.COMPLETE)
 
         return False
- 
+
     def get_media_info(self, uri, mimetype):
         # strip file:// to get absolute path
         filename = parse.unquote(uri[7:])
@@ -191,7 +191,9 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             mp3_good = True
 
             try:
+                print(f'parsing audio file: {filename}')
                 audio = EasyID3(filename)
+                
                 # sometimes the audio variable will not have one of these items defined, that's why
                 # there is this long try / except attempt
                 try: info.title = audio["title"][0]
@@ -205,6 +207,10 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 try: info.genre = audio["genre"][0]
                 except: pass
                 try: info.date = audio["date"][0]
+                except: pass
+                try: info.composer = audio["composer"][0]
+                except: pass
+                try: info.description = audio["version"][0]
                 except: pass
             except Exception as e:
                 id3_good = False
@@ -241,7 +247,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 info.exif_rating = metadata.get('Xmp.xmp.Rating', None)
             except GLib.Error as e:
                 exif = False
-                
+
             # try read image info directly
             try:
                 im = PIL.Image.open(filename)
