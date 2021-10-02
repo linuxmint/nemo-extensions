@@ -94,14 +94,15 @@ var Application = new Lang.Class({
         this._mainWindow.close();
     },
 
-    ShowFile : function(uri, xid, closeIfAlreadyShown) {
-	let file = Gio.file_new_for_uri(uri);
-	if (closeIfAlreadyShown &&
-	    this._mainWindow.file &&
-	    this._mainWindow.file.equal(file)) {
-	    this._mainWindow.close();
-	    return;
-	}
+    ShowFile: function(uri, xid, closeIfAlreadyShown) {
+        let file = Gio.file_new_for_uri(uri);
+        if (closeIfAlreadyShown &&
+            this._mainWindow.file &&
+            this._mainWindow.file.equal(file)
+        ) {
+            this._mainWindow.close();
+            return;
+        }
         this._mainWindow.setParent(xid);
         this._mainWindow.setFile(file);
     }
