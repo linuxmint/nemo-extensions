@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-26 13:57+0000\n"
+"POT-Creation-Date: 2021-11-15 13:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -239,6 +239,7 @@ msgid "Web"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:88
+#: nemo-emblems/nemo-extension/nemo-emblems.py:100
 msgid "Emblems"
 msgstr ""
 
@@ -554,66 +555,82 @@ msgid "_Rotate"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:73
+#: nemo-media-columns/nemo-media-columns.py:92
 msgid "Title"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:74
+#: nemo-media-columns/nemo-media-columns.py:93
 msgid "Album"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:75
+#: nemo-media-columns/nemo-media-columns.py:94
 msgid "Artist"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:76
+#: nemo-media-columns/nemo-media-columns.py:95
 msgid "Track"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:77
+#: nemo-media-columns/nemo-media-columns.py:96
 msgid "Genre"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:78
+#: nemo-media-columns/nemo-media-columns.py:97
 msgid "Date"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:79
+#: nemo-media-columns/nemo-media-columns.py:98
 msgid "Bitrate"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:80
+#: nemo-media-columns/nemo-media-columns.py:99
 msgid "Pages"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:81
+#: nemo-media-columns/nemo-media-columns.py:100
 msgid "Sample Rate"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:82
+#: nemo-media-columns/nemo-media-columns.py:101
 msgid "Length"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:83
+#: nemo-media-columns/nemo-media-columns.py:104
 msgid "EXIF Date"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:84
+#: nemo-media-columns/nemo-media-columns.py:105
 msgid "EXIF Software"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:85
+#: nemo-media-columns/nemo-media-columns.py:106
 msgid "EXIF Flash"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:86
+#: nemo-media-columns/nemo-media-columns.py:107
 msgid "EXIF Image Size"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:87
+#: nemo-media-columns/nemo-media-columns.py:108
 msgid "EXIF Rating"
 msgstr ""
 
 #: nemo-media-columns/nemo-media-columns.py:88
+#: nemo-media-columns/nemo-media-columns.py:109
 msgid "Image Size"
 msgstr ""
 
@@ -657,6 +674,7 @@ msgid "Empty Folder"
 msgstr ""
 
 #: nemo-preview/src/js/ui/fallbackRenderer.js:123
+#: nemo-preview/src/js/ui/fallbackRenderer.js:125
 msgid "Type"
 msgstr ""
 
@@ -664,22 +682,29 @@ msgstr ""
 #: nemo-preview/src/js/ui/fallbackRenderer.js:133
 #: nemo-preview/src/js/ui/fallbackRenderer.js:139
 #: nemo-preview/src/js/ui/spinnerBox.js:60
+#: nemo-preview/src/js/ui/fallbackRenderer.js:126
+#: nemo-preview/src/js/ui/fallbackRenderer.js:135
+#: nemo-preview/src/js/ui/fallbackRenderer.js:141
 msgid "Loading..."
 msgstr ""
 
 #: nemo-preview/src/js/ui/fallbackRenderer.js:132
+#: nemo-preview/src/js/ui/fallbackRenderer.js:134
 msgid "Size"
 msgstr ""
 
 #: nemo-preview/src/js/ui/fallbackRenderer.js:138
+#: nemo-preview/src/js/ui/fallbackRenderer.js:140
 msgid "Modified"
 msgstr ""
 
 #: nemo-preview/src/js/viewers/audio.js:176
+#: nemo-preview/src/js/viewers/audio.js:177
 msgid "from"
 msgstr ""
 
 #: nemo-preview/src/js/viewers/audio.js:178
+#: nemo-preview/src/js/viewers/audio.js:179
 msgid "by"
 msgstr ""
 
@@ -1601,4 +1626,12 @@ msgstr ""
 
 #: nemo-terminal/src/nemo_terminal.py:149
 msgid "Paste Filenames"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:102
+msgid "Composer"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:103
+msgid "Description"
 msgstr ""
