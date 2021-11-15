@@ -191,9 +191,8 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             mp3_good = True
 
             try:
-                print(f'parsing audio file: {filename}')
                 audio = EasyID3(filename)
-                
+
                 # sometimes the audio variable will not have one of these items defined, that's why
                 # there is this long try / except attempt
                 try: info.title = audio["title"][0]
@@ -265,7 +264,6 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
             try:
                 mediainfo = MediaInfo.parse(filename)
-                print(f'parsing {filename}')
 
                 duration = 0
 
@@ -363,9 +361,6 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 pdf_good = False
 
             return info # if pdf_good else None
-
-        else:
-            print(f"No known mime type found for {filename}")
 
         # return None # TODO - not a file we care about, we shouldn't add attributes to a file in this case.
         return FileExtensionInfo()
