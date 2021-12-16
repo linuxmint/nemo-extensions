@@ -25,6 +25,8 @@ import signal
 from gi.repository import GLib
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
+import gi
+gi.require_version('Nemo', '3.0')
 from gi.repository import Nemo, GObject, Gio
 
 sys.path.append("/usr/share/nemo-compare")
