@@ -43,10 +43,14 @@ def get_meta(filename):
     tags = {}
     tags['duration'] = 'unknown'
     if 'duration' in stream:
-        dur = float(stream["duration"])
-        min_ = int(dur // 60)
-        sec = dur - 60*min_
-        tags['duration'] = f'{min_}:{sec:.3f} (min:s.ms)'
+        total_duration = float(stream["duration"])
+        hours_ = int(total_duration // 3600)
+        total_duration -= 3600*hours_
+        min_ = int(total_duration // 60)
+        total_duration -= 60*min_
+        sec_ = int(total_duration)
+        ms_ = int(1000*(total_duration-sec_))
+        tags['duration'] = f'{hours_:02}:{min_:02}:{sec_:02}.{ms_} (h:min:s.ms)'
 
     tags['bitrate'] = 'unknown'
     if 'bit_rate' in stream:
