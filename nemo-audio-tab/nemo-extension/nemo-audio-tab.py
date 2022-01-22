@@ -3,31 +3,50 @@
 # change log:
 # RavetcoFX: Forked from nemo-media-columns and nemo-emblems
 
-from urllib import parse
-import locale
 import gettext
+import json
+import locale
 import os
-
-import ffmpeg
+import subprocess
+from urllib import parse
 
 from gi.repository import GObject, Gtk, Nemo
 
 
+def probe(filename):
+    """Run ffprobe on the specified file and return a JSON representation of the output.
+
+    Raises:
+        :class:`ffmpeg.Error`: if ffprobe returns a non-zero exit code,
+            an :class:`Error` is returned with a generic error message.
+            The stderr output can be retrieved by accessing the
+            ``stderr`` property of the exception.
+    """
+    args = ['ffprobe', '-show_format', '-show_streams', '-of', 'json', filename]
+
+    p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = p.communicate()
+    if p.returncode != 0:
+        return None
+    return json.loads(out.decode('utf-8'))
+
+
 def get_meta(filename):
     """returns None if falure"""
-    try:
-        probe = ffmpeg.probe(filename)
-    except ffmpeg.Error:
+    streams = probe(filename)
+    if streams is None:
         return None
-    else:
-        stream = next((s for s in probe['streams'] if s['codec_type'] == 'audio'), None)
-        if stream is None:
-            return None
+    stream = next((s for s in streams['streams'] if s['codec_type'] == 'audio'), None)
+    if stream is None:
+        return None
 
     tags = {}
     tags['duration'] = 'unknown'
     if 'duration' in stream:
-        tags['duration'] = f'{float(stream["duration"]):.2f} (s)'
+        dur = float(stream["duration"])
+        min_ = int(dur // 60)
+        sec = dur - 60*min_
+        tags['duration'] = f'{min_}:{sec:.3f} (min:s.ms)'
 
     tags['bitrate'] = 'unknown'
     if 'bit_rate' in stream:
@@ -55,7 +74,7 @@ def get_meta(filename):
 
     tags['other'] = {
         **(stream['tags'] if 'tags' in stream else {}),
-        **(probe['format']['tags'] if 'tags' in probe['format'] else {}),
+        **(streams['format']['tags'] if 'tags' in streams['format'] else {}),
     }
 
     return tags
