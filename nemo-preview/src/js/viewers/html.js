@@ -25,10 +25,11 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
 imports.gi.versions.WebKit2 = '4.0';
-const GtkClutter = imports.gi.GtkClutter;
 const Gtk = imports.gi.Gtk;
 const GLib = imports.gi.GLib;
+const GtkClutter = imports.gi.GtkClutter;
 const WebKit = imports.gi.WebKit2;
 const NemoPreview = imports.gi.NemoPreview;
 

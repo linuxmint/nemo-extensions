@@ -25,7 +25,9 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
 imports.gi.versions.GdkX11 = '3.0';
+const Gtk = imports.gi.Gtk;
 
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
@@ -42,7 +44,6 @@ GLib.setenv("CLUTTER_SCALE", Math.max(s, 1).toString(), true);
 
 const GdkX11 = imports.gi.GdkX11;
 const GdkPixbuf = imports.gi.GdkPixbuf;
-const Gtk = imports.gi.Gtk;
 const GtkClutter = imports.gi.GtkClutter;
 const Clutter = imports.gi.Clutter;
 const Pango = imports.gi.Pango;

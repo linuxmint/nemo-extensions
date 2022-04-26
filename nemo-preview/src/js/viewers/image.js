@@ -25,9 +25,10 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
+const Gtk = imports.gi.Gtk;
 const GdkPixbuf = imports.gi.GdkPixbuf;
 const GtkClutter = imports.gi.GtkClutter;
-const Gtk = imports.gi.Gtk;
 const GLib = imports.gi.GLib;
 
 const Gettext = imports.gettext.domain('nemo-extensions');

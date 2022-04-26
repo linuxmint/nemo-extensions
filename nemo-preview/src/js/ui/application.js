@@ -25,6 +25,9 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
+const Gtk = imports.gi.Gtk;
+
 const Lang = imports.lang;
 
 // util imports
@@ -32,7 +35,6 @@ const Path = imports.util.path;
 
 // gi imports
 const GLib = imports.gi.GLib;
-const Gtk = imports.gi.Gtk;
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 

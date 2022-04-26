@@ -25,13 +25,15 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
+const Gtk = imports.gi.Gtk;
+
 const MimeHandler = imports.ui.mimeHandler;
 const Utils = imports.ui.utils;
 
 const Lang = imports.lang;
 
 const GtkClutter = imports.gi.GtkClutter;
-const Gtk = imports.gi.Gtk;
 const GLib = imports.gi.GLib;
 const NemoPreview = imports.gi.NemoPreview;
 

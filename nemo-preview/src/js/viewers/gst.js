@@ -28,11 +28,11 @@
 imports.gi.versions.ClutterGst = '3.0';
 imports.gi.versions.Gtk = '3.0';
 imports.gi.versions.Gdk = '3.0';
+const Gtk = imports.gi.Gtk;
 const ClutterGst = imports.gi.ClutterGst;
 const Clutter = imports.gi.Clutter;
 const Gdk = imports.gi.Gdk;
 const GObject = imports.gi.GObject;
-const Gtk = imports.gi.Gtk;
 const GtkClutter = imports.gi.GtkClutter;
 
 const Lang = imports.lang;

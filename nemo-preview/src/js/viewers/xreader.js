@@ -25,9 +25,10 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
+const Gtk = imports.gi.Gtk;
 const EvDoc = imports.gi.XreaderDocument;
 const EvView = imports.gi.XreaderView;
-const Gtk = imports.gi.Gtk;
 const GtkClutter = imports.gi.GtkClutter;
 const NemoPreview = imports.gi.NemoPreview;
 

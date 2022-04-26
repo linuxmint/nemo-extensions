@@ -25,10 +25,11 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
 imports.gi.versions.GtkSource = '4';
 
-const GtkClutter = imports.gi.GtkClutter;
 const Gtk = imports.gi.Gtk;
+const GtkClutter = imports.gi.GtkClutter;
 const GLib = imports.gi.GLib;
 const GtkSource = imports.gi.GtkSource;
 const Gio = imports.gi.Gio;

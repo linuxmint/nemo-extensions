@@ -24,10 +24,11 @@
  * Authors: Cosimo Cecchi <cosimoc@redhat.com>
  *
  */
+imports.gi.versions.Gtk = '3.0';
+const Gtk = imports.gi.Gtk;
 
 const Gettext = imports.gettext.domain('nemo-extensions');
 const _ = Gettext.gettext;
-const Gtk = imports.gi.Gtk;
 const GtkClutter = imports.gi.GtkClutter;
 
 const Tweener = imports.ui.tweener;

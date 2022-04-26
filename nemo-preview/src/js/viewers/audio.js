@@ -25,11 +25,13 @@
  *
  */
 
+imports.gi.versions.Gtk = '3.0';
 imports.gi.versions.ClutterGst = '3.0';
+
+const Gtk = imports.gi.Gtk;
 const GdkPixbuf = imports.gi.GdkPixbuf;
 const Gio = imports.gi.Gio;
 const Gst = imports.gi.Gst;
-const Gtk = imports.gi.Gtk;
 const GtkClutter = imports.gi.GtkClutter;
 const NemoPreview = imports.gi.NemoPreview;
 
