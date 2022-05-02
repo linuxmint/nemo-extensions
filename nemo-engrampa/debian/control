@@ -1,0 +1,19 @@
+Source: nemo-engrampa
+Section: misc
+Priority: optional
+Maintainer: Clement Lefebvre <root@linuxmint.com>
+Build-Depends:
+    debhelper-compat (= 12),
+    meson,
+    libglib2.0-dev (>= 2.14.0),
+    libnemo-extension-dev (>= 1.0.0),
+Standards-Version: 3.9.6
+
+Package: nemo-engrampa
+Architecture: any
+Depends: engrampa, nemo, ${misc:Depends}, ${shlibs:Depends}
+Recommends: cinnamon-l10n
+Description: Engrampa integration for Nemo
+ Nemo Engrampa is an Nemo extension which allows you to create and extract
+ archives in Nemo. This extension adds "Extract Here" (for archive files) and
+ "Compress..." items to the right-click menu.

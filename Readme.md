@@ -14,6 +14,7 @@
 - nemo-filename-repairer forked from (nautilus-filename-repairer-0.0.6)
 - nemo-image-converter forked from (nautilus-image-converter-0.3.1)
 - nemo-audio-tab forked from nemo-media-columns and nemo-emblems
+- nemo-engrampa: functional
 
 ## NOT YET INCLUDED:
 
