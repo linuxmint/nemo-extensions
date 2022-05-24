@@ -18,10 +18,9 @@ You will need the following packages (or equivalent):
 libnemo-extension-dev
 
 In the nemo-dropbox dir just do:
-$ ./autogen.sh
-$ ./configure
-$ make
-$ sudo make install
+$ meson builddir && cd builddir
+$ meson compile
+$ meson install
 
 After installing the package you must restart Nemo. You can do that by issuing the following command (note: if you're running compiz, doing so may lock up your computer - log out and log back in instead):
 
