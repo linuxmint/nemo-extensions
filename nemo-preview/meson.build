@@ -1,7 +1,7 @@
 project(
   'nemo-preview',
   'c',
-  version: '5.2.1',
+  version: '5.4.0',
   meson_version: '>=0.42.0'
 )
 

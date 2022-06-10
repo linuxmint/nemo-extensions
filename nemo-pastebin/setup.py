@@ -41,7 +41,7 @@ pkg_short_dsc = "Nemo extension to send files to a pastebin"
 pkg_long_dsc = """nemo-pastebin is a Nemo extension written in Python, which allows users to upload text-only files to a pastebin service just by right-clicking on them. Users can also add their favorite service just by creatine new presets."""
 
 setup(name='nemo-pastebin',
-      version='5.2.0',
+      version='5.4.0',
       author='Linux Mint',
       author_email='root@linuxmint.com',
       license='GPL-2',
