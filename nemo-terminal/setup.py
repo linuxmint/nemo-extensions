@@ -5,7 +5,7 @@
 from setuptools import setup
 
 # Setup stage
-setup(
+setup( packages=[],
     name         = "nemo-terminal",
     version      = "5.4.0",
     description  = "Embedded VTE terminal for Nemo file manager",

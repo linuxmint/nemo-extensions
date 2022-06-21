@@ -21,7 +21,7 @@
 from setuptools import setup
 
 # Setup stage
-setup(
+setup( packages=[],
     name         = "nemo-emblems",
     version      = "5.4.0",
     description  = "Change your folder and file emblems",
