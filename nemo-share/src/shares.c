@@ -623,7 +623,7 @@ add_share (ShareInfo *info, GError **error)
 		return FALSE;
 
 	argv[0] = "add";
-	argv[1] = "-l";
+	argv[1] = "--long";
 	argv[2] = info->share_name;
 	argv[3] = info->path;
 	argv[4] = info->comment;
