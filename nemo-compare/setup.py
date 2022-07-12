@@ -5,7 +5,7 @@
 from setuptools import setup
 
 # Setup stage
-setup(
+setup( packages=[],
     name         = "nemo-compare",
     version      = "5.4.0",
     description  = "Context menu comparison extension for Nemo file manager",

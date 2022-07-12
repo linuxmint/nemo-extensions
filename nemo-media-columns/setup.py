@@ -5,7 +5,7 @@
 from setuptools import setup
 
 # Setup stage
-setup(
+setup( packages=[],
     name         = "nemo-media-columns",
     version      = "5.4.0",
     description  = "Column provider for nemo to show additional metadata for media and image files",

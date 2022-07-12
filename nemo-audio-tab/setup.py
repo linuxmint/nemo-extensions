@@ -5,7 +5,7 @@ from setuptools import setup
 # Create data files
 
 # Setup stage
-setup(
+setup( packages=[],
     name         = "nemo-audio-tab",
     version      = "5.4.0",
     description  = "View audio tag information from the file manager's properties tab",
