@@ -136,6 +136,7 @@
                             <property name="can_focus">False</property>
                             <property name="has_entry">True</property>
                             <property name="entry_text_column">0</property>
+                            <property name="active">6</property>
                             <items>
                               <item translatable="yes">16x16</item>
                               <item translatable="yes">32x32</item>
