@@ -372,9 +372,6 @@ nemo_image_resizer_init(NemoImageResizer *resizer)
 	priv->name_entry = GTK_ENTRY (gtk_builder_get_object (ui, "name_entry"));
 	priv->inplace_radiobutton = GTK_RADIO_BUTTON (gtk_builder_get_object (ui, "inplace_radiobutton"));
 
-	/* Set default item in combo box */
-	/* gtk_combo_box_set_active  (priv->size_combobox, 4);  1024x768 */
-
 	/* Connect signal */
 	g_signal_connect (G_OBJECT (priv->resize_dialog), "response",
 			  (GCallback) nemo_image_resizer_response_cb,
