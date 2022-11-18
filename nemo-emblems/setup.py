@@ -23,7 +23,7 @@ from setuptools import setup
 # Setup stage
 setup( packages=[],
     name         = "nemo-emblems",
-    version      = "5.4.1",
+    version      = "5.6.0",
     description  = "Change your folder and file emblems",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",
