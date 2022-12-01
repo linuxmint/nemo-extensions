@@ -134,7 +134,7 @@ add_callback (NemoMenuItem *item,
 	for (scan = files; scan; scan = scan->next) {
 		NemoFileInfo *file = scan->data;
 
-		uri = nemo_file_info_get_uri (file);
+		uri = nemo_file_info_get_activation_uri (file);
 		quoted_uri = g_shell_quote (uri);
 		g_string_append_printf (cmd, " %s", quoted_uri);
 		g_free (uri);
