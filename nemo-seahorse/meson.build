@@ -1,7 +1,7 @@
 project('nemo-seahorse',
   'c',
   version: '5.6.0',
-  meson_version: '>=0.49.0'
+  meson_version: '>=0.51.0'
 )
 
 project_url = 'https://github.com/linuxmint/nemo-extensions'
@@ -60,14 +60,7 @@ if get_option('gpg-check')
     endif
 endif
 
-libgpgme = meson.get_compiler('c').find_library('gpgme')
-gpgme_config = find_program('gpgme-config')
-gpgme_ver = run_command(gpgme_config, '--version').stdout().strip()
-gpgme_ver_required = '>=1.2.0'
-if not gpgme_ver.version_compare(gpgme_ver_required)
-    error('GPGME version @0@ was found, @1@ is required.'.format(
-        gpgme_ver, gpgme_ver_required))
-endif
+libgpgme = dependency('gpgme', version: '>=1.2.0')
 
 ################################################################################
 # Generic stuff
