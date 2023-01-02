@@ -243,6 +243,10 @@ msgstr ""
 msgid "Emblems"
 msgstr ""
 
+#: nemo-emblems/nemo-extension/nemo-emblems.py:158
+msgid "Nemo Emblems:::Change a folder or file emblem"
+msgstr ""
+
 #: nemo-fileroller/src/nemo-fileroller.c:335
 msgid "Extract Here"
 msgstr ""
@@ -265,6 +269,10 @@ msgstr ""
 
 #: nemo-fileroller/src/nemo-fileroller.c:376
 msgid "Create a compressed archive with the selected objects"
+msgstr ""
+
+#: nemo-fileroller/src/nemo-fileroller.c:398
+msgid "Nemo Fileroller:::Allows managing of archives from the context menu"
 msgstr ""
 
 #: nemo-gtkhash/src/callbacks.c:47
@@ -1511,6 +1519,10 @@ msgstr ""
 msgid ""
 "Cannot change the path of an existing share; please remove the old share "
 "first and add a new one"
+msgstr ""
+
+#: nemo-share/src/shares.c:1115
+msgid "Nemo Share:::Allows you to quickly share a folder from the context menu"
 msgstr ""
 
 #: nemo-share/interfaces/share-dialog.ui.h:2
