@@ -169,7 +169,7 @@ nemo_python_object_get_name_and_desc (NemoNameAndDescProvider *provider)
                                 " must return a sequence of strings");
                 goto beach;
             }
-            ret = g_list_append (ret, (gchar *) PyUnicode_AsUTF8(py_item));
+            ret = g_list_append (ret, g_strdup ((gchar *) PyUnicode_AsUTF8(py_item)));
             Py_DECREF(py_item);
         }
  beach:
