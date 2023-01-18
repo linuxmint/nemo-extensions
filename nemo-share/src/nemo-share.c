@@ -1111,8 +1111,9 @@ static GList *
 nemo_share_get_name_and_desc (NemoNameAndDescProvider *provider)
 {
     GList *ret = NULL;
-
-    ret = g_list_append (ret, ("Nemo Share:::Allows you to quickly share a folder from the context menu"));
+    gchar *string = g_strdup_printf ("Nemo Share:::%s",
+      _("Allows you to quickly share a folder from the context menu"));
+    ret = g_list_append (ret, (string));
 
     return ret;
 }
