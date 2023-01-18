@@ -135,7 +135,7 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
                 left = 0
                 top += 1
 
-        return Nemo.PropertyPage(name="NemoPython::emblem", label=self.property_label, page=self.mainWindow),
+        return [Nemo.PropertyPage(name="NemoPython::emblem", label=self.property_label, page=self.mainWindow),]
 
     def on_button_toggled(self, button, emblem_name):
         if button.get_active() and not emblem_name in self.file_emblem_names:
