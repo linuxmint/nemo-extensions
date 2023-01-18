@@ -1,5 +1,5 @@
 from urllib import parse
-import gettext, os
+import gettext, locale, os
 import subprocess
 
 from gi.repository import GObject
@@ -9,7 +9,15 @@ from gi.repository import Gtk
 from gi.repository import Nemo
 
 # i18n
+APP = 'nemo-extensions'
+LOCALE_DIR = "/usr/share/locale"
+locale.bindtextdomain(APP, LOCALE_DIR)
+gettext.bindtextdomain(APP, LOCALE_DIR)
+gettext.textdomain(APP)
 _ = gettext.gettext
+
+PLUGIN_TITLE = _("Nemo Emblems")
+PLUGIN_DESCRIPTION = _("Change a folder or file emblem")
 
 METADATA_EMBLEMS = 'metadata::emblems'
 
@@ -155,4 +163,4 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
             subprocess.call(["touch", self.filename])
 
     def get_name_and_desc(self):
-        return [("Nemo Emblems:::Change a folder or file emblem")]
+        return [(f"{PLUGIN_TITLE}:::{PLUGIN_DESCRIPTION}")]
