@@ -5,8 +5,8 @@ These are unstable bindings for the Nemo extension library.
 
 For examples and documentation check the examples sub directory.
 
-As of nemo-python 0.7.0, scripts are also loaded from $XDG_DATA_DIR/nemo-python/extensions,
-which includes ~/.local/share and /usr/share (or whatever your $XDG_DATA_DIR is 
+As of nemo-python 0.7.0, scripts are also loaded from $XDG_DATA_DIRS/nemo-python/extensions,
+which includes ~/.local/share and /usr/share (or whatever your $XDG_DATA_DIRS is 
 set to).
 
 Try to copy test.py to that directory for an example
