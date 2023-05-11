@@ -22,7 +22,7 @@ gtk_dep = dependency('gtk+-3.0', version: '>=3.5.12')
 gtksourceview_dep = dependency('gtksourceview-4', version: '>=4.0.3')
 introspection_dep = dependency('gobject-introspection-1.0', version: '>=0.9.2')
 musicbrainz_dep = dependency('libmusicbrainz5')
-webkit_dep = dependency('webkit2gtk-4.0')
+webkit_dep = dependency('webkit2gtk-4.1')
 
 bindir = join_paths(get_option('prefix'), get_option('bindir'))
 datadir = join_paths(get_option('prefix'), get_option('datadir'))
