@@ -18,7 +18,8 @@ libnemo_share = shared_library('nemo-share',
 install_data(
     'install-samba',
     'check-directory-permissions',
-    install_dir: get_option('datadir') / meson.project_name()
+    install_dir: get_option('datadir') / meson.project_name(),
+    install_mode: 'rwxr-xr-x'
 )
 
 data_conf = configuration_data()

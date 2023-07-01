@@ -896,7 +896,7 @@ create_property_page (NemoFileInfo *fileinfo)
     gtk_widget_show (page->samba_infobar);
     gtk_widget_set_sensitive (page->switch_share_folder, FALSE);
 
-    if (!g_find_program_in_path("mint-remove-appllication")) {
+    if (!g_find_program_in_path("mint-remove-application")) {
         gtk_widget_hide (page->install_samba_button);
     }
   } else {
