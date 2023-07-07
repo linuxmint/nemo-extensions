@@ -1,6 +1,6 @@
 project('nemo-share',
     'c',
-    version: '5.8.0',
+    version: '5.8.2',
     meson_version: '>=0.49.0'
 )
 
