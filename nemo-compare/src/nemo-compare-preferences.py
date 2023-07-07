@@ -155,11 +155,11 @@ class NemoCompareExtensionPreferences:
         confirm_hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=0)
         main_vbox.pack_start(confirm_hbox, False, False, 0)
 
-        cancel_button = Gtk.Button.new_from_icon_name("dialog-cancel", Gtk.IconSize.BUTTON)
+        cancel_button = Gtk.Button(label=_("Cancel"))
         cancel_button.connect_object("clicked", self.cancel_event, self.window, None)
         confirm_hbox.pack_start(cancel_button, True, True, 5)
 
-        ok_button = Gtk.Button.new_from_icon_name("dialog-ok", Gtk.IconSize.BUTTON)
+        ok_button = Gtk.Button(label=_("Ok"))
         ok_button.connect_object("clicked", self.save_event, self.window, None)
         confirm_hbox.pack_start(ok_button, True, True, 5)
 
