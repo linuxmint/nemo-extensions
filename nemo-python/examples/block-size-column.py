@@ -1,5 +1,5 @@
 import os
-import urllib
+import urllib.parse
 
 from gi.repository import GObject, Nemo
 
@@ -17,6 +17,6 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider):
         if file.get_uri_scheme() != 'file':
             return
 
-        filename = urllib.unquote(file.get_uri()[7:])
+        filename = urllib.parse.unquote(file.get_uri()[7:])
 
         file.add_string_attribute('block_size', str(os.stat(filename).st_blksize))
