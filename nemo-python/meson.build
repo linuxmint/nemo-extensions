@@ -1,6 +1,7 @@
 project('python-nemo',
     'c',
-    version : '5.8.0'
+    version : '5.8.0',
+    meson_version : '>=0.56.0'
 )
 
 gnome = import('gnome')
@@ -37,7 +38,7 @@ libpath = join_paths(get_option('prefix'), get_option('libdir'), py_so_filename)
 datadir = join_paths(get_option('prefix'), get_option('datadir'))
 pyextdir = join_paths(get_option('prefix'), get_option('datadir'), 'nemo-python/extensions')
 
-cdata.set_quoted('NEMO_EXTENSION_DIR', nemo.get_pkgconfig_variable('extensiondir'))
+cdata.set_quoted('NEMO_EXTENSION_DIR', nemo.get_variable(pkgconfig: 'extensiondir'))
 cdata.set_quoted('PYTHON_LIBPATH', libpath)
 cdata.set('PYGOBJECT_MAJOR_VERSION', 3)
 cdata.set('PYGOBJECT_MINOR_VERSION', 0)
@@ -80,6 +81,6 @@ message('|  targeting lib: @0@'.format(libpath))
 message('|')
 message('|  build docs: @0@'.format(gtkdoc_enabled))
 message('|')
-message('|  python extension dir: @0@'.format(nemo.get_pkgconfig_variable('extensiondir')))
+message('|  python extension dir: @0@'.format(nemo.get_variable(pkgconfig: 'extensiondir')))
 message('|')
 message('|....................................................................')

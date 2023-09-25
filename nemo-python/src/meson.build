@@ -9,7 +9,7 @@ mod = shared_module('nemo-python',
     sources  : sources,
     include_directories: [top_inc],
     dependencies: deps,
-    install_dir: nemo.get_pkgconfig_variable('extensiondir'),
+    install_dir: nemo.get_variable(pkgconfig: 'extensiondir'),
     install: true
 )
 

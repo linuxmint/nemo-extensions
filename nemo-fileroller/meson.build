@@ -1,7 +1,7 @@
 project('nemo-fileroller',
     'c',
     version: '5.8.0',
-    meson_version: '>=0.49.0'
+    meson_version: '>=0.56.0'
 )
 
 project_url = 'https://github.com/linuxmint/nemo-extensions'
@@ -16,7 +16,7 @@ config = configuration_data()
 # Find libnemo-extensions
 
 libnemo = dependency('libnemo-extension', version: '>=2.0.0')
-libnemo_extension_dir = libnemo.get_pkgconfig_variable('extensiondir')
+libnemo_extension_dir = libnemo.get_variable(pkgconfig: 'extensiondir')
 libnemo_extension_ver = libnemo.version().split('.')
 
 config.set('NEMO_VERSION_MAJOR', libnemo_extension_ver[0])
