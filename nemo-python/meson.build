@@ -25,7 +25,7 @@ deps += dependency('glib-2.0')
 cdata = configuration_data()
 
 version_array = python3.version().split('.')
-ret = run_command('python3-config', '--abiflags')
+ret = run_command(['python3-config', '--abiflags'], check: true)
 
 py_so_filename = 'libpython@0@.@1@@2@.so.1.0'.format(
     version_array[0],

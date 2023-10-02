@@ -47,12 +47,12 @@ if get_option('gpg-check')
     accepted_versions = [ '=1.2', '=1.4', '=2.0', '>=2.1', ]
 
     gpg = find_program('gpg', 'gpg2')
-    gpg_ver = run_command(gpg, '--version').stdout().split(' ')[2]
+    gpg_ver = run_command([gpg, '--version'], check: true).stdout().split(' ')[2]
 
     accepted = false
     foreach ver : accepted_versions
         if gpg_ver.version_compare(ver)
-        accepted = true
+            accepted = true
         endif
     endforeach
     if not accepted
