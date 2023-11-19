@@ -1,5 +1,5 @@
 import hashlib
-import urllib
+import urllib.parse
 
 from gi.repository import Nemo, Gtk, GObject
 
@@ -18,7 +18,7 @@ class MD5SumPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
         if file.is_directory():
             return
 
-        filename = urllib.unquote(file.get_uri()[7:])
+        filename = urllib.parse.unquote(file.get_uri()[7:])
 
         self.property_label = Gtk.Label('MD5Sum')
         self.property_label.show()
@@ -35,9 +35,8 @@ class MD5SumPropertyPage(GObject.GObject, Nemo.PropertyPageProvider):
 
         md5sum = hashlib.md5()
         with open(filename,'rb') as f:
-            for chunk in iter(lambda: f.read(8192), ''):
+            while chunk := f.read(8192):
                 md5sum.update(chunk)
-        f.close()
 
         self.value_label.set_text(md5sum.hexdigest())
         self.value_label.show()

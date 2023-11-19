@@ -6,6 +6,7 @@ BACKGROUND_KEY = 'picture-uri'
 
 class BackgroundImageExtension(GObject.GObject, Nemo.MenuProvider):
     def __init__(self):
+        super(BackgroundImageExtension, self).__init__()
         self.bgsettings = Gio.Settings.new(BACKGROUND_SCHEMA)
 
     def menu_activate_cb(self, menu, file):
