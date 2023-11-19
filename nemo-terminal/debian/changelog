@@ -1,3 +1,9 @@
+nemo-terminal (6.0.0) virginia; urgency=medium
+
+  * 6.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 19 Nov 2023 14:33:21 +0000
+
 nemo-terminal (5.8.0) victoria; urgency=medium
 
   * 5.8.0

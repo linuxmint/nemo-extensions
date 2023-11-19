@@ -1,3 +1,9 @@
+nemo-fileroller (6.0.0) virginia; urgency=medium
+
+  * 6.0.0
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 19 Nov 2023 14:33:20 +0000
+
 nemo-fileroller (5.8.0) victoria; urgency=medium
 
   * 5.8.0
