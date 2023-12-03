@@ -1,0 +1,65 @@
+# Russian translation for the Nemo Compare
+# Copyright (C) 2023 Almaz Mannanov <almazworks@gmail.com>
+# This file is distributed under the same license as the nemo-compare package.
+# Almaz Mannanov <almazworks@gmail.com>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nemo Compare 6.0.0\n"
+"Report-Msgid-Bugs-To: almazworks@gmail.com\n"
+"POT-Creation-Date: 2023-12-04 02:00+0500\n"
+"PO-Revision-Date: 2023-12-04 02:00+0500\n"
+"Last-Translator: Almaz Mannanov <almazworks@gmail.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Meld 3.20.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"Language: ru\n"
+
+#: src/nemo-compare.py:106 src/nemo-compare.py:129
+msgid "Compare to "
+msgstr "Сравнить с "
+
+#: src/nemo-compare.py:107
+msgid "Compare to the file remembered before"
+msgstr "Сравнить с файлом, запомненным ранее"
+
+#: src/nemo-compare.py:116
+msgid "Compare Later"
+msgstr "Сравнить позже"
+
+#: src/nemo-compare.py:117
+msgid "Remember file for later comparison"
+msgstr "Запомнить файл для сравнения позже"
+
+#: src/nemo-compare.py:130
+msgid "Compare selected files to the file remembered before"
+msgstr "Сравнить выбранные файлы с файлом, запомненным ранее"
+
+#: src/nemo-compare.py:141
+msgid "Compare"
+msgstr "Сравнить"
+
+#: src/nemo-compare.py:142
+msgid "Compare selected files"
+msgstr "Сравнить выбранные файлы"
+
+#: src/nemo-compare-setup.py:92
+msgid "Nemo Compare Extension Preferences"
+msgstr "Настройки расширения Nemo Compare"
+
+#: src/nemo-compare-setup.py:100
+msgid "Normal Diff"
+msgstr "Обычное сравнение"
+
+#: src/nemo-compare-setup.py:112
+msgid "Three-Way Diff"
+msgstr "Трёхполосное сравнение"
+
+#: src/nemo-compare-setup.py:124
+msgid "N-Way Diff"
+msgstr "N-полосное сравнение"
