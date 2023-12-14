@@ -178,7 +178,10 @@ seahorse_nemo_get_name_and_desc (NemoNameAndDescProvider *provider)
 {
     GList *ret = NULL;
 
-    ret = g_list_append (ret, ("Nemo Seahorse:::Allows encryption and decryption of OpenPGP files from the context menu"));
+    gchar *string = g_strdup_printf ("%s:::%s",
+                                     "Nemo Seahorse",
+                                     _("Allows encryption and decryption of OpenPGP files from the context menu"));
+    ret = g_list_append (ret, (string));
 
     return ret;
 }
