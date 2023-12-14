@@ -35,6 +35,7 @@
 #include <glib.h>
 #include <glib/gprintf.h>
 #include <glib-object.h>
+#include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 
 #include <libnemo-extension/nemo-extension-types.h>
@@ -458,7 +459,11 @@ nemo_dropbox_cancel_update(NemoInfoProvider     *provider,
 static GList *
 nemo_dropbox_get_name_and_desc (NemoNameAndDescProvider *provider) {
   GList *ret = NULL;
-  ret = g_list_append (ret, ("Nemo DropBox:::Allows managing of Dropbox web service from the context menu"));
+
+  gchar *string = g_strdup_printf ("%s:::%s",
+                                   "Nemo DropBox",
+                                   _("Allows managing of Dropbox web service from the context menu"));
+  ret = g_list_append (ret, (string));
   return ret;
 }
 

@@ -26,6 +26,7 @@
 #endif
 
 #include <glib-object.h>
+#include <glib/gi18n-lib.h>
 
 #include <gdk/gdk.h>
 #include <gtk/gtk.h>
@@ -37,6 +38,9 @@ static GType type_list[1];
 void
 nemo_module_initialize (GTypeModule *module) {
   g_print ("Initializing %s\n", PACKAGE_STRING);
+
+  bindtextdomain (GETTEXT_PACKAGE, GETTEXT_LOCALEDIR);
+  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
   nemo_dropbox_register_type (module);
   type_list[0] = NEMO_TYPE_DROPBOX;
