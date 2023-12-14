@@ -29,6 +29,7 @@
 #include <locale.h>
 
 #include <glib.h>
+#include <glib/gi18n-lib.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
 
@@ -36,7 +37,6 @@
 #include <libnemo-extension/nemo-name-and-desc-provider.h>
 
 #include "nemo-filename-repairer.h"
-#include "nemo-filename-repairer-i18n.h"
 
 static GType filename_repairer_type = 0;
 
@@ -520,7 +520,10 @@ nemo_filename_repairer_get_name_and_desc (NemoNameAndDescProvider *provider)
 {
     GList *ret = NULL;
 
-    ret = g_list_append (ret, ("Nemo Filename Repairer:::Allows filename encoding repair from the context menu"));
+    gchar *string = g_strdup_printf ("%s:::%s",
+                                     _("Nemo Filename Repairer"),
+                                     _("Allows filename encoding repair from the context menu"));
+    ret = g_list_append (ret, (string));
 
     return ret;
 }

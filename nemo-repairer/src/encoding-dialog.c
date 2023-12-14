@@ -26,7 +26,7 @@
 
 #include <gtk/gtk.h>
 
-#include "nemo-filename-repairer-i18n.h"
+#include <glib/gi18n-lib.h>
 #include "encoding-dialog.h"
 
 #define ENCODINGS_DIALOG_UI PKGDATADIR "/encoding-dialog.ui"
