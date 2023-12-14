@@ -33,6 +33,17 @@ sys.path.append("/usr/share/nemo-compare")
 
 import utils
 
+# initialize i18n
+APP = 'nemo-extensions'
+LOCALE_DIR = "/usr/share/locale"
+locale.bindtextdomain(APP, LOCALE_DIR)
+gettext.bindtextdomain(APP, LOCALE_DIR)
+gettext.textdomain(APP)
+_ = gettext.gettext
+
+PLUGIN_TITLE = _("Nemo Compare")
+PLUGIN_DESCRIPTION = _("Allows file comparison from the context menu")
+
 class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescProvider):
     '''Class for the extension itself'''
 
@@ -81,10 +92,9 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescP
         if len(paths) < 1:
             return
 
-        # initialize i18n
-        locale.setlocale(locale.LC_ALL, '')
-        gettext.bindtextdomain("nemo-extensions")
-        gettext.textdomain("nemo-extensions")
+        locale.bindtextdomain(APP, LOCALE_DIR)
+        gettext.bindtextdomain(APP, LOCALE_DIR)
+        gettext.textdomain(APP)
         _ = gettext.gettext
 
         item1 = None
@@ -165,4 +175,4 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescP
         return []
 
     def get_name_and_desc(self):
-        return [("Nemo Compare:::Allows file comparison from the context menu:::nemo-compare-preferences")]
+        return [(f"{PLUGIN_TITLE}:::{PLUGIN_DESCRIPTION}:::nemo-compare-preferences")]
