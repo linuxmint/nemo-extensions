@@ -51,6 +51,9 @@ gettext.bindtextdomain("nemo-extensions")
 gettext.textdomain("nemo-extensions")
 _ = gettext.gettext
 
+PLUGIN_TITLE = _("Nemo Terminal")
+PLUGIN_DESCRIPTION = _("Embedded terminal for Nemo")
+
 import gi
 gi.require_version('Vte', '2.91')
 gi.require_version('Nemo', '3.0')
@@ -576,7 +579,7 @@ class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider, Nemo.Na
         return Gdk.EVENT_PROPAGATE
 
     def get_name_and_desc(self):
-        return [("Nemo Terminal:::Embedded terminal for Nemo:::nemo-terminal-prefs")]
+        return [(f"{PLUGIN_TITLE}:::{PLUGIN_DESCRIPTION}::nemo-terminal-prefs")]
 
 if __name__ == "__main__":
     #Code for testing Nemo Terminal outside of Nemo
