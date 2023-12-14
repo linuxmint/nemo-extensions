@@ -1111,8 +1111,9 @@ static GList *
 nemo_share_get_name_and_desc (NemoNameAndDescProvider *provider)
 {
     GList *ret = NULL;
-    gchar *string = g_strdup_printf ("Nemo Share:::%s",
-      _("Allows you to quickly share a folder from the context menu"));
+    gchar *string = g_strdup_printf ("%s:::%s",
+                                     _("Nemo Share"),
+                                     _("Allows you to quickly share a folder from the context menu"));
     ret = g_list_append (ret, (string));
 
     return ret;
@@ -1393,8 +1394,8 @@ nemo_module_initialize (GTypeModule  *module)
 {
   /*g_print ("Initializing nemo-share extension\n");*/
 
-  bindtextdomain("nemo-extensions", NEMO_SHARE_LOCALEDIR);
-  bind_textdomain_codeset("nemo-extensions", "UTF-8");
+  bindtextdomain(GETTEXT_PACKAGE, NEMO_SHARE_LOCALEDIR);
+  bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
 
   nemo_share_register_type (module);
 }
