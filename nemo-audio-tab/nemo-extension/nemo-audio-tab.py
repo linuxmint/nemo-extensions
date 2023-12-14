@@ -13,6 +13,16 @@ from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MP3
 from mutagen.flac import FLAC, StreamInfo
 
+APP = 'nemo-extensions'
+LOCALE_DIR = "/usr/share/locale"
+locale.bindtextdomain(APP, LOCALE_DIR)
+gettext.bindtextdomain(APP, LOCALE_DIR)
+gettext.textdomain(APP)
+_ = gettext.gettext
+
+PLUGIN_TITLE = _("Nemo Audio Tab")
+PLUGIN_DESCRIPTION = _("View audio tag information from the properties tab")
+
 class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAndDescProvider):
 
     def get_property_pages(self, files):
@@ -33,11 +43,6 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
         filename = parse.unquote(file.get_uri()[7:])
 
         #GUI
-        locale.setlocale(locale.LC_ALL, '')
-        gettext.bindtextdomain("nemo-extensions")
-        gettext.textdomain("nemo-extensions")
-        _ = gettext.gettext
-
         self.property_label = Gtk.Label(_('Audio'))
         self.property_label.show()
 
@@ -192,4 +197,4 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
         ]
 
     def get_name_and_desc(self):
-        return [("Nemo Audio Tab:::View audio tag information from the properties tab")]
+        return [(f"{PLUGIN_TITLE}:::{PLUGIN_DESCRIPTION}")]
