@@ -3,6 +3,9 @@ set -Eeuo pipefail
 
 pot="nemo-extensions.pot"
 
+rm -f ${pot}
+touch ${pot}
+
 potfiles_to_extract=(
     nemo-audio-tab/nemo-extension/nemo-audio-tab.glade
     nemo-image-converter/data/nemo-image-resize.ui
