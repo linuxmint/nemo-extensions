@@ -24,7 +24,8 @@
 # mtwebster: convert for use as a nemo extension
 import os
 import stopit
-
+import locale
+import gettext
 from urllib import parse
 import gi
 gi.require_version('GExiv2', '0.10')
@@ -42,10 +43,16 @@ from PyPDF2 import PdfFileReader
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-import gettext
-gettext.bindtextdomain("nemo-extensions")
-gettext.textdomain("nemo-extensions")
+# initialize i18n
+APP = 'nemo-extensions'
+LOCALE_DIR = "/usr/share/locale"
+locale.bindtextdomain(APP, LOCALE_DIR)
+gettext.bindtextdomain(APP, LOCALE_DIR)
+gettext.textdomain(APP)
 _ = gettext.gettext
+
+PLUGIN_TITLE = _("Nemo Media Columns")
+PLUGIN_DESCRIPTION = _("Provides additional columns for the list view")
 
 class FileExtensionInfo():
     def __init__(self):
@@ -88,6 +95,11 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         print("nemo-media-columns: using a timeout of %.2f second(s) for file processing" % self.timeout)
 
     def get_columns(self):
+        locale.bindtextdomain(APP, LOCALE_DIR)
+        gettext.bindtextdomain(APP, LOCALE_DIR)
+        gettext.textdomain(APP)
+        _ = gettext.gettext
+
         return (
             Nemo.Column(name="NemoPython::title_column",attribute="title",label=_("Title"),description=""),
             Nemo.Column(name="NemoPython::album_column",attribute="album",label=_("Album"),description=""),
@@ -366,4 +378,4 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         return FileExtensionInfo()
 
     def get_name_and_desc(self):
-        return [("Nemo Media Columns:::Provides additional columns for the list view:::nemo-media-columns-prefs")]
+        return [(f"{PLUGIN_TITLE}:::{PLUGIN_DESCRIPTION}:::nemo-media-columns-prefs")]
