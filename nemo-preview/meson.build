@@ -31,10 +31,9 @@ libexecdir = join_paths(get_option('prefix'), get_option('libexecdir'))
 
 add_project_arguments(
   '-DNEMO_PREVIEW_PKGDATADIR="' + join_paths(datadir, 'nemo-preview') + '"',
-  '-DGETTEXT_PACKAGE="' + meson.project_name() + '"',
+  '-DGETTEXT_PACKAGE="nemo-extensions"',
   language: 'c',
 )
 
 subdir('data')
-subdir('po')
 subdir('src')
