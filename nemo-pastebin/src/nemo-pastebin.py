@@ -50,6 +50,10 @@ MAINTAINER_MODE = True
 
 gettext.install("nemo-extensions")
 
+
+PLUGIN_TITLE = "Nemo Pastebin"
+PLUGIN_DESCRIPTION = _("Send files to a paste service via the context menu")
+
 class log:
     def log(self, message):
         if self.logger:
@@ -193,4 +197,4 @@ class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescPr
                 Gtk.main_iteration()
 
     def get_name_and_desc(self):
-        return [("Nemo Pastebin:::Send files to a paste service via the context menu:::nemo-pastebin-configurator")]
+        return [(f"{PLUGIN_TITLE}:::{PLUGIN_DESCRIPTION}:::nemo-pastebin-configurator")]
