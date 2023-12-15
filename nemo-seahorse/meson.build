@@ -84,7 +84,6 @@ configure_file(
 
 rootInclude = include_directories('.')
 
-subdir('po')
 subdir('data')
 subdir('nemo-ext')
 subdir('tool')
