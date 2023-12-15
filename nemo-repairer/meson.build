@@ -46,4 +46,3 @@ configure_file(
 rootInclude = include_directories('.')
 
 subdir('src')
-subdir('po')

@@ -27,8 +27,8 @@
 #include <string.h>
 #include <locale.h>
 #include <gtk/gtk.h>
+#include <glib/gi18n-lib.h>
 
-#include "nemo-filename-repairer-i18n.h"
 #include "repair-dialog.h"
 #include "encoding-dialog.h"
 

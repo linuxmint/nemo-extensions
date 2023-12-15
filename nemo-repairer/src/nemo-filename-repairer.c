@@ -29,6 +29,7 @@
 #include <locale.h>
 
 #include <glib.h>
+#include <glib/gi18n-lib.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
 
@@ -36,7 +37,6 @@
 #include <libnemo-extension/nemo-name-and-desc-provider.h>
 
 #include "nemo-filename-repairer.h"
-#include "nemo-filename-repairer-i18n.h"
 
 static GType filename_repairer_type = 0;
 

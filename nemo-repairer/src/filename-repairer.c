@@ -26,9 +26,8 @@
 
 #include <glib.h>
 #include <glib-object.h>
-
+#include <glib/gi18n-lib.h>
 #include "nemo-filename-repairer.h"
-#include "nemo-filename-repairer-i18n.h"
 
 static GType type_list[1];
 
