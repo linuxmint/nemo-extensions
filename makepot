@@ -52,6 +52,7 @@ potfiles_python=(
     nemo-emblems/nemo-extension/*.py
     nemo-media-columns/*.py
     nemo-pastebin/*.py
+    nemo-pastebin/src/*.py
     nemo-pastebin/data/*.ui.h
     nemo-terminal/src/*.py
 
