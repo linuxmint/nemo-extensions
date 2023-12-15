@@ -193,4 +193,5 @@ class PastebinitExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescPr
                 Gtk.main_iteration()
 
     def get_name_and_desc(self):
-        return [("Nemo Pastebin:::Send files to a paste service via the context menu:::nemo-pastebin-configurator")]
+        description = _("Send files to a paste service via the context menu")
+        return [(f"nemo-pastebin:::{description}:::nemo-pastebin-configurator")]

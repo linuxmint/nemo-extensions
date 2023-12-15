@@ -519,8 +519,9 @@ static GList *
 nemo_filename_repairer_get_name_and_desc (NemoNameAndDescProvider *provider)
 {
     GList *ret = NULL;
-
-    ret = g_list_append (ret, ("Nemo Filename Repairer:::Allows filename encoding repair from the context menu"));
+    gchar *string = g_strdup_printf ("nemo-filename-repairer:::%s",
+      _("Allows filename encoding repair from the context menu"));
+    ret = g_list_append (ret, (string));
 
     return ret;
 }

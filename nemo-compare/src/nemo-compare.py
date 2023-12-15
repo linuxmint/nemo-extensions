@@ -165,4 +165,5 @@ class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescP
         return []
 
     def get_name_and_desc(self):
-        return [("Nemo Compare:::Allows file comparison from the context menu:::nemo-compare-preferences")]
+        description = _("Allows file comparison from the context menu")
+        return [(f"nemo-compare:::{description}:::nemo-compare-preferences")]

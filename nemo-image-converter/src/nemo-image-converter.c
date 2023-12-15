@@ -148,9 +148,12 @@ nemo_image_converter_get_file_items (NemoMenuProvider *provider,
 
 static GList *
 nemo_image_converter_get_name_and_desc (NemoNameAndDescProvider *provider) {
-	GList *ret = NULL;
-	ret = g_list_append (ret, ("Nemo Image Converter:::Allows image resizing and rotation from the context menu"));
-	return ret;
+    GList *ret = NULL;
+    gchar *string = g_strdup_printf ("nemo-image-converter:::%s",
+      _("Allows image resizing and rotation from the context menu"));
+    ret = g_list_append (ret, (string));
+
+    return ret;
 }
 
 static void

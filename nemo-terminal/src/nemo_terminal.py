@@ -576,7 +576,8 @@ class NemoTerminalProvider(GObject.GObject, Nemo.LocationWidgetProvider, Nemo.Na
         return Gdk.EVENT_PROPAGATE
 
     def get_name_and_desc(self):
-        return [("Nemo Terminal:::Embedded terminal for Nemo:::nemo-terminal-prefs")]
+        description = _("Embedded terminal for Nemo")
+        return [(f"nemo-terminal:::{description}:::nemo-terminal-prefs")]
 
 if __name__ == "__main__":
     #Code for testing Nemo Terminal outside of Nemo

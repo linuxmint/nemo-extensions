@@ -394,7 +394,7 @@ static GList *
 nemo_fr_get_name_and_desc (NemoNameAndDescProvider *provider)
 {
     GList *ret = NULL;
-    gchar *string = g_strdup_printf ("Nemo Fileroller:::%s",
+    gchar *string = g_strdup_printf ("nemo-fileroller:::%s",
       _("Allows managing of archives from the context menu"));
     ret = g_list_append (ret, (string));
 

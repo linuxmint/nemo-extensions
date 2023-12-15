@@ -16,9 +16,6 @@ gettext.bindtextdomain(APP, LOCALE_DIR)
 gettext.textdomain(APP)
 _ = gettext.gettext
 
-PLUGIN_TITLE = _("Nemo Emblems")
-PLUGIN_DESCRIPTION = _("Change a folder or file emblem")
-
 METADATA_EMBLEMS = 'metadata::emblems'
 
 GUI = """
@@ -163,4 +160,5 @@ class EmblemPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAn
             subprocess.call(["touch", self.filename])
 
     def get_name_and_desc(self):
-        return [(f"{PLUGIN_TITLE}:::{PLUGIN_DESCRIPTION}")]
+        description = _("Change a folder or file emblem")
+        return [(f"nemo-emblems:::{description}")]

@@ -457,9 +457,12 @@ nemo_dropbox_cancel_update(NemoInfoProvider     *provider,
 
 static GList *
 nemo_dropbox_get_name_and_desc (NemoNameAndDescProvider *provider) {
-  GList *ret = NULL;
-  ret = g_list_append (ret, ("Nemo DropBox:::Allows managing of Dropbox web service from the context menu"));
-  return ret;
+    GList *ret = NULL;
+    gchar *string = g_strdup_printf ("nemo-dropbox:::%s",
+      _("Allows managing of Dropbox web service from the context menu"));
+    ret = g_list_append (ret, (string));
+
+    return ret;
 }
 
 static void
