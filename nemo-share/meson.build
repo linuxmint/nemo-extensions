@@ -36,7 +36,7 @@ config.set_quoted('INTERFACES_DIR', get_option('prefix') / interfaces_dir)
 ################################################################################
 # Specific stuff to the extension
 
-gettext_package = meson.project_name()
+gettext_package = 'nemo-extensions'
 config.set_quoted('GETTEXT_PACKAGE', gettext_package)
 config.set_quoted('NEMO_SHARE_LOCALEDIR', get_option('prefix') / get_option('localedir'))
 config.set_quoted('PKGDATADIR', get_option('prefix')/get_option('datadir')/meson.project_name())
@@ -52,5 +52,4 @@ configure_file(
 rootInclude = include_directories('.')
 
 subdir('interfaces')
-subdir('po')
 subdir('src')
