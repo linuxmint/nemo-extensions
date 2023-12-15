@@ -13,6 +13,7 @@ Standards-Version: 3.9.6
 
 Package: python-nemo
 Architecture: any
+Provides: nemo-python
 Depends: gir1.2-nemo-3.0 (>= 3.6), ${misc:Depends}, ${shlibs:Depends}
 Description: Python binding for Nemo components
  Python binding for Nemo, to allow Nemo property page and menu item
