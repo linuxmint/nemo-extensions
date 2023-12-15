@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-18 16:07+0000\n"
+"POT-Creation-Date: 2023-12-15 13:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,162 +118,194 @@ msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Art"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Camera"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Danger"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Default"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Development"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Documents"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Downloads"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Favorite"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Games"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Generic"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Important"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Installed"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Mail"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Marketing"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Money"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Multimedia"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "New"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Note"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Ohno"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Package"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "People"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Personal"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Photos"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Plan"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Presentation"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Sales"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Sound"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "System"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Urgent"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Videos"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:50
 #: nemo-emblems/nemo-extension/nemo-emblems.py:58
+#: nemo-emblems/nemo-extension/nemo-emblems.py:55
 msgid "Web"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:88
 #: nemo-emblems/nemo-extension/nemo-emblems.py:100
 #: nemo-emblems/nemo-extension/nemo-emblems.py:108
+#: nemo-emblems/nemo-extension/nemo-emblems.py:105
 msgid "Emblems"
 msgstr ""
 
@@ -1018,10 +1050,12 @@ msgid "Passphrase"
 msgstr ""
 
 #: nemo-seahorse/tool/seahorse-passphrase.c:135
+#: nemo-compare/src/nemo-compare-preferences.py:162
 msgid "Ok"
 msgstr ""
 
 #: nemo-seahorse/tool/seahorse-passphrase.c:136
+#: nemo-compare/src/nemo-compare-preferences.py:158
 msgid "Cancel"
 msgstr ""
 
@@ -1688,5 +1722,38 @@ msgid "Nemo Emblems"
 msgstr ""
 
 #: nemo-emblems/nemo-extension/nemo-emblems.py:20
+#: nemo-emblems/nemo-extension/nemo-emblems.py:163
 msgid "Change a folder or file emblem"
+msgstr ""
+
+#: nemo-dropbox/src/nemo-dropbox.c:462
+msgid "Allows managing of Dropbox web service from the context menu"
+msgstr ""
+
+#: nemo-image-converter/src/nemo-image-converter.c:153
+msgid "Allows image resizing and rotation from the context menu"
+msgstr ""
+
+#: nemo-repairer/src/nemo-filename-repairer.c:523
+msgid "Allows filename encoding repair from the context menu"
+msgstr ""
+
+#: nemo-seahorse/nemo-ext/nemo-seahorse.c:181
+msgid "Allows encryption and decryption of OpenPGP files from the context menu"
+msgstr ""
+
+#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:195
+msgid "View audio tag information from the properties tab"
+msgstr ""
+
+#: nemo-compare/src/nemo-compare.py:168
+msgid "Allows file comparison from the context menu"
+msgstr ""
+
+#: nemo-media-columns/nemo-media-columns.py:369
+msgid "Provides additional columns for the list view"
+msgstr ""
+
+#: nemo-terminal/src/nemo_terminal.py:579
+msgid "Embedded terminal for Nemo"
 msgstr ""
