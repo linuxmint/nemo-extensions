@@ -35,6 +35,7 @@
 #include <glib.h>
 #include <glib/gprintf.h>
 #include <glib-object.h>
+#include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 
 #include <libnemo-extension/nemo-extension-types.h>

@@ -30,6 +30,7 @@ glib = dependency('glib-2.0', version: '>=2.14.0')
 
 project_datadir = get_option('datadir') / meson.project_name()
 
+config.set_quoted('GETTEXT_PACKAGE', 'nemo-extensions')
 config.set_quoted('PACKAGE_STRING', meson.project_name() )
 config.set_quoted('EMBLEMDIR',      get_option('prefix') / project_datadir / 'emblems')
 config.set_quoted('NEMOICONDIR',    get_option('datadir') / 'nemo-dropbox' / 'icons')
