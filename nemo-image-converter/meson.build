@@ -50,4 +50,3 @@ rootInclude = include_directories('.')
 
 subdir('src')
 subdir('data')
-subdir('po')
