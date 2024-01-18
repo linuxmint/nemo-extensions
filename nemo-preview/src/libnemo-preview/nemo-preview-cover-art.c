@@ -505,7 +505,7 @@ cache_file_query_info_cb (GObject *source,
     file = get_gfile_for_amazon (self);
     g_error_free (error);
   } else {
-    file = g_object_ref (source);
+    file = G_FILE (g_object_ref (source));
   }
 
   try_read_from_file (self, file);
