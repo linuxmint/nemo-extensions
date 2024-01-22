@@ -3,19 +3,92 @@
 # change log:
 # RavetcoFX: Forked from nemo-media-columns and nemo-emblems
 
+import gettext
+import json
+import locale
+import os
+import subprocess
 from urllib import parse
-import locale, gettext, os
-import mutagen
 
-from gi.repository import GObject, Gio, Gtk, Nemo
-# for id3 support
-from mutagen.easyid3 import EasyID3
-from mutagen.mp3 import MP3
-from mutagen.flac import FLAC, StreamInfo
+from gi.repository import GObject, Gtk, Nemo
+
+
+def probe(filename):
+    """Run ffprobe on the specified file and return a JSON representation of the output.
+
+    Raises:
+        :class:`ffmpeg.Error`: if ffprobe returns a non-zero exit code,
+            an :class:`Error` is returned with a generic error message.
+            The stderr output can be retrieved by accessing the
+            ``stderr`` property of the exception.
+    """
+    args = ['ffprobe', '-show_format', '-show_streams', '-of', 'json', filename]
+
+    p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = p.communicate()
+    if p.returncode != 0:
+        return None
+    return json.loads(out.decode('utf-8'))
+
+
+def get_meta(filename):
+    """returns None if falure"""
+    streams = probe(filename)
+    if streams is None:
+        return None
+    stream = next((s for s in streams['streams'] if s['codec_type'] == 'audio'), None)
+    if stream is None:
+        return None
+
+    tags = {}
+    tags['duration'] = 'unknown'
+    if 'duration' in stream:
+        total_duration = float(stream["duration"])
+        hours_ = int(total_duration // 3600)
+        total_duration -= 3600*hours_
+        min_ = int(total_duration // 60)
+        total_duration -= 60*min_
+        sec_ = int(total_duration)
+        ms_ = int(1000*(total_duration-sec_))
+        tags['duration'] = f'{hours_:02}:{min_:02}:{sec_:02}.{ms_} (h:min:s.ms)'
+
+    tags['bitrate'] = 'unknown'
+    if 'bit_rate' in stream:
+        tags['bitrate'] = f'{float(stream["bit_rate"])/1000:.2f} (kbit/s)'
+
+    tags['samplerate'] = 'unknown'
+    if 'sample_rate' in stream:
+        tags['samplerate'] = f'{stream["sample_rate"]} (Hz)'
+
+    tags['channels'] = 'unknown'
+    if 'channels' in stream:
+        tags['channels'] = (
+            str(stream['channels'])
+            + (
+                f' ({stream["channel_layout"]})'
+                if 'channel_layout' in stream else ''
+            )
+        )
+
+    tags['codec'] = 'unknown'
+    if 'codec_long_name' in stream:
+        tags['codec'] = stream['codec_long_name']
+    elif 'codec_name' in stream:
+        tags['codec'] = stream['codec_name']
+
+    tags['other'] = {
+        **(stream['tags'] if 'tags' in stream else {}),
+        **(streams['format']['tags'] if 'tags' in streams['format'] else {}),
+    }
+
+    return tags
+
+
 
 class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAndDescProvider):
 
     def get_property_pages(self, files):
+
         # files: list of NemoVFSFile
         if len(files) != 1:
             return []
@@ -27,10 +100,11 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
         if file.is_directory():
             return []
 
-        if not(file.is_mime_type('audio/mpeg') or file.is_mime_type('audio/flac')):
-            return []
-
         filename = parse.unquote(file.get_uri()[7:])
+
+        tags = get_meta(filename)
+        if tags is None:
+            return []
 
         #GUI
         locale.setlocale(locale.LC_ALL, '')
@@ -51,139 +125,17 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
                 name = Gtk.Buildable.get_name(obj)
                 setattr(self, name, obj)
 
-        # set defaults to blank to prevent nonetype errors
-        file.add_string_attribute('title', '')
-        file.add_string_attribute('album', '')
-        file.add_string_attribute('artist', '')
-        file.add_string_attribute('albumartist', '')
-        file.add_string_attribute('tracknumber', '')
-        file.add_string_attribute('genre', '')
-        file.add_string_attribute('date', '')
-        file.add_string_attribute('bitrate', '')
-        file.add_string_attribute('samplerate', '')
-        file.add_string_attribute('length', '')
-        file.add_string_attribute('encodedby', '')
-        file.add_string_attribute('copyright', '')
-
         no_info = _("No Info")
-        mutaFile = mutagen.File(filename)
 
-        #MP3
-        if file.is_mime_type('audio/mpeg'):
-            # attempt to read ID3 tag
-            try:
-                audio = EasyID3(filename)
-                # sometimes the audio variable will not have one of these items defined, that's why
-                # there is this long try / except attempt
-                try: file.add_string_attribute('title', audio["title"][0])
-                except: file.add_string_attribute('title', no_info)
-                try: file.add_string_attribute('album', audio["album"][0])
-                except: file.add_string_attribute('album', no_info)
-                try: file.add_string_attribute('artist', audio["artist"][0])
-                except: file.add_string_attribute('artist', no_info)
-                try: file.add_string_attribute('albumartist', audio["performer"][0])
-                except: file.add_string_attribute('albumartist', no_info)
-                try: file.add_string_attribute('tracknumber', audio["tracknumber"][0])
-                except: file.add_string_attribute('tracknumber', no_info)
-                try: file.add_string_attribute('genre', audio["genre"][0])
-                except: file.add_string_attribute('genre', no_info)
-                try: file.add_string_attribute('date', audio["date"][0])
-                except: file.add_string_attribute('date', no_info)
-                try: file.add_string_attribute('encodedby', audio["encodedby"][0])
-                except: file.add_string_attribute('encodedby', no_info)
-                try: file.add_string_attribute('copyright', audio["copyright"][0])
-                except: file.add_string_attribute('copyright', no_info)
-            except:
-                # [SabreWolfy] some files have no ID3 tag and will throw this exception:
-                file.add_string_attribute('title', no_info)
-                file.add_string_attribute('album', no_info)
-                file.add_string_attribute('artist', no_info)
-                file.add_string_attribute('albumartist', no_info)
-                file.add_string_attribute('tracknumber', no_info)
-                file.add_string_attribute('genre', no_info)
-                file.add_string_attribute('date', no_info)
-                file.add_string_attribute('encodedby', no_info)
-                file.add_string_attribute('copyright', no_info)
+        for attribute in ('duration', 'bitrate', 'samplerate', 'channels', 'codec'):
+            file.add_string_attribute(attribute, tags[attribute])
+        if tags['other']:
+            file.add_string_attribute('other', '\n'.join(f'{key}: {val}' for key, val in tags['other'].items()))
+        else:
+            file.add_string_attribute('other', no_info)
 
-                # try to read MP3 information (bitrate, length, samplerate)
-            try:
-                with open(filename, 'rb') as mpfile:
-                    mpinfo = MP3(mpfile).info
-                    file.add_string_attribute('bitrate', str(mpinfo.bitrate/1000) + " Kbps")
-
-                    file.add_string_attribute('samplerate', str(mpinfo.sample_rate) + " Hz")
-                    # [SabreWolfy] added consistent formatting of times in format hh:mm:ss
-                    mp3length = "%02i:%02i:%02i" % ((int(mpinfo.length/3600)), (int(mpinfo.length/60%60)), (int(mpinfo.length%60)))
-                    file.add_string_attribute('length', mp3length)
-            except Exception as e:
-                print(e)
-                file.add_string_attribute('bitrate', no_info)
-                file.add_string_attribute('length', no_info)
-                file.add_string_attribute('samplerate', no_info)
-
-        #FLAC
-        if file.is_mime_type('audio/flac'):
-            try:
-                audio = FLAC(filename)
-                # sometimes the audio variable will not have one of these items defined, that's why
-                # there is this long try / except attempt
-                try: file.add_string_attribute('title', audio["title"][0])
-                except: file.add_string_attribute('title', no_info)
-                try: file.add_string_attribute('album', audio["album"][0])
-                except: file.add_string_attribute('album', no_info)
-                try: file.add_string_attribute('artist', audio["artist"][0])
-                except: file.add_string_attribute('artist', no_info)
-                try: file.add_string_attribute('albumartist', audio["albumartist"][0]) # this tag is different then mp3s
-                except: file.add_string_attribute('albumartist', no_info)
-                try: file.add_string_attribute('tracknumber', audio["tracknumber"][0])
-                except: file.add_string_attribute('tracknumber', no_info)
-                try: file.add_string_attribute('genre', audio["genre"][0])
-                except: file.add_string_attribute('genre', no_info)
-                try: file.add_string_attribute('date', audio["date"][0])
-                except: file.add_string_attribute('date', no_info)
-                try: file.add_string_attribute('encodedby', audio["encoded-by"][0]) # this tag is different then mp3s
-                except: file.add_string_attribute('encodedby', no_info)
-                try: file.add_string_attribute('copyright', audio["copyright"][0])
-                except: file.add_string_attribute('copyright', no_info)
-            except:
-                # [SabreWolfy] some files have no ID3 tag and will throw this exception:
-                file.add_string_attribute('title', no_info)
-                file.add_string_attribute('album', no_info)
-                file.add_string_attribute('artist', no_info)
-                file.add_string_attribute('albumartist', no_info)
-                file.add_string_attribute('tracknumber', no_info)
-                file.add_string_attribute('genre', no_info)
-                file.add_string_attribute('date', no_info)
-                file.add_string_attribute('encodedby', no_info)
-                file.add_string_attribute('copyright', no_info)
-
-                # try to read the FLAC information (length, samplerate)
-            try:
-                fcinfo = StreamInfo(filename)
-
-                file.add_string_attribute('samplerate', str(fcinfo.sample_rate) + " Hz")
-
-                # [SabreWolfy] added consistent formatting of times in format hh:mm:ss
-                flaclength = "%02i:%02i:%02i" % ((int(mutaFile.info.length/3600)), (int(mutaFile.info.length/60%60)), (int(mutaFile.info.length%60)))
-                file.add_string_attribute('length', flaclength)
-                file.add_string_attribute('bitrate', no_info) # flac doesn't really have a bitrate
-            except:
-                file.add_string_attribute('bitrate', no_info)
-                file.add_string_attribute('length', no_info)
-                file.add_string_attribute('samplerate', no_info)
-
-        self.builder.get_object("title_text").set_label(file.get_string_attribute('title'))
-        self.builder.get_object("album_text").set_label(file.get_string_attribute('album'))
-        self.builder.get_object("album_artist_text").set_label(file.get_string_attribute('albumartist'))
-        self.builder.get_object("artist_text").set_label(file.get_string_attribute('artist'))
-        self.builder.get_object("genre_text").set_label(file.get_string_attribute('genre'))
-        self.builder.get_object("year_text").set_label(file.get_string_attribute('date'))
-        self.builder.get_object("track_number_text").set_label(file.get_string_attribute('tracknumber'))
-        self.builder.get_object("sample_rate_text").set_label(file.get_string_attribute('samplerate'))
-        self.builder.get_object("length_number").set_label(file.get_string_attribute('length'))
-        self.builder.get_object("bitrate_number").set_label(file.get_string_attribute('bitrate'))
-        self.builder.get_object("encoded_by_text").set_label(file.get_string_attribute('encodedby'))
-        self.builder.get_object("copyright_text").set_label(file.get_string_attribute('copyright'))
+        for attribute in ('duration', 'bitrate', 'samplerate', 'channels', 'codec', 'other'):
+            self.builder.get_object(f'{attribute}_text').set_label(file.get_string_attribute(attribute))
 
         return [
             Nemo.PropertyPage(name="NemoPython::audio",
