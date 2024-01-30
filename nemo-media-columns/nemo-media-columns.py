@@ -40,6 +40,9 @@ import PIL.Image
 # for reading pdf
 from PyPDF2 import PdfFileReader
 
+# Import the gettext function and alias it as _
+from gettext import gettext as _
+
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 

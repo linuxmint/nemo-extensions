@@ -47,6 +47,10 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 import codecs
 
 import gettext
+
+# Import the gettext function and alias it as _
+from gettext import gettext as _
+
 gettext.bindtextdomain("nemo-extensions")
 gettext.textdomain("nemo-extensions")
 _ = gettext.gettext

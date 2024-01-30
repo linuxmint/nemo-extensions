@@ -13,6 +13,9 @@ from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MP3
 from mutagen.flac import FLAC, StreamInfo
 
+# Import the gettext function and alias it as _
+from gettext import gettext as _
+
 class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAndDescProvider):
 
     def get_property_pages(self, files):

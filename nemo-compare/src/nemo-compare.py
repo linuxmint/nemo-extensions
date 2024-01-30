@@ -25,6 +25,9 @@ import signal
 from gi.repository import GLib
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
+# Import the gettext function and alias it as _
+from gettext import gettext as _
+
 import gi
 gi.require_version('Nemo', '3.0')
 from gi.repository import Nemo, GObject, Gio
