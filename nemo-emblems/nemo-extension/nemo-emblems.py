@@ -8,6 +8,9 @@ from gi.repository import Gtk
 
 from gi.repository import Nemo
 
+# Import the gettext function and alias it as _
+from gettext import gettext as _
+
 # i18n
 APP = 'nemo-extensions'
 LOCALE_DIR = "/usr/share/locale"
