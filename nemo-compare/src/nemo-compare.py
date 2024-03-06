@@ -33,6 +33,14 @@ sys.path.append("/usr/share/nemo-compare")
 
 import utils
 
+# i18n
+APP = 'nemo-extensions'
+LOCALE_DIR = "/usr/share/locale"
+locale.bindtextdomain(APP, LOCALE_DIR)
+gettext.bindtextdomain(APP, LOCALE_DIR)
+gettext.textdomain(APP)
+_ = gettext.gettext
+
 class NemoCompareExtension(GObject.GObject, Nemo.MenuProvider, Nemo.NameAndDescProvider):
     '''Class for the extension itself'''
 
