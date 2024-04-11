@@ -37,6 +37,9 @@ from gi.repository import GObject, Gdk, Gio, Gtk
 gi.require_version('Nemo', '3.0')
 from gi.repository import Nemo
 
+# Import the gettext function and alias it as _
+from gettext import gettext as _
+
 try:
     gi.require_version('Notify', '0.7')
     from gi.repository import Notify
