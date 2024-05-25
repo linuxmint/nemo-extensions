@@ -38,7 +38,7 @@ from pymediainfo import MediaInfo
 # for reading image dimensions
 import PIL.Image
 # for reading pdf
-from PyPDF2 import PdfFileReader
+from pypdf import PdfReader
 
 # Import the gettext function and alias it as _
 from gettext import gettext as _
@@ -362,12 +362,12 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
             try:
                 with open(filename, "rb") as f:
-                    pdf = PdfFileReader(f)
-                    try: info.title = pdf.getDocumentInfo().title
+                    pdf = PdfReader(f)
+                    try: info.title = pdf.metadata.title
                     except: pass
-                    try: info.artist = pdf.getDocumentInfo().author
+                    try: info.artist = pdf.metadata.author
                     except: pass
-                    try: info.pages = str(pdf.getNumPages())
+                    try: info.pages = str(len(pdf.pages))
                     except: pass
             except:
                 pdf_good = False
