@@ -23,7 +23,7 @@ setup( packages=[],
     #                     'python-nemo >=3.8',
     #                     'gir1.2-gexiv2-0.10',
     #                     'mutagen',
-    #                     'pypdf2',
+    #                     'pypdf',
     #                     'pil',
     #                     'pymediainfo'
     #                     'stopit'],
