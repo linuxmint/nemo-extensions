@@ -111,7 +111,10 @@ class NemoCompareConfig:
         '''Adds predefined engines which are installed, but missing in engines list.'''
         system_utils = []
         for path in COMPARATOR_PATHS:
-            system_utils += os.listdir(path)
+            try:
+                system_utils += os.listdir(path)
+            except:
+                pass
         for engine in PREDEFINED_ENGINES:
             if engine not in self.engines and engine in system_utils:
                 self.engines.append(engine)
@@ -138,7 +141,10 @@ class NemoCompareConfig:
 
         system_utils = []
         for path in COMPARATOR_PATHS:
-            system_utils += os.listdir(path)
+            try:
+                system_utils += os.listdir(path)
+            except:
+                pass
         for engine in self.engines:
             if engine not in system_utils:
                 self.engines.remove(engine)
