@@ -9,12 +9,12 @@ import os
 import pwd
 import subprocess
 
-import mintcommon.aptdaemon
+import aptkit.simpleclient
 
 class Main:
     def __init__(self, user):
         self.user = user
-        self.apt = mintcommon.aptdaemon.APT()
+        self.apt = aptkit.simpleclient.SimpleAPTClient()
         self.apt.set_finished_callback(self.on_install_finished)
         self.apt.install_packages(["samba"])
 
