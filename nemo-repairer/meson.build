@@ -1,6 +1,6 @@
 project('nemo-filename-repairer',
     'c',
-    version: '6.2.0',
+    version: '6.4.0',
     meson_version: '>=0.56.0'
 )
 
