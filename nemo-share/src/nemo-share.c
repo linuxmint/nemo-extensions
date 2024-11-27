@@ -32,8 +32,6 @@
 #include <libnemo-extension/nemo-property-page-provider.h>
 #include <libnemo-extension/nemo-name-and-desc-provider.h>
 
-#include <libcinnamon-desktop/gnome-installer.h>
-
 #include "nemo-share.h"
 
 #include <glib/gi18n-lib.h>
