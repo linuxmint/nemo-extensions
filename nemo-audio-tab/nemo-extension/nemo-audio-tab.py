@@ -11,7 +11,7 @@ from gi.repository import GObject, Gio, Gtk, Nemo
 # for id3 support
 from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MP3
-from mutagen.flac import FLAC, StreamInfo
+from mutagen.flac import FLAC
 
 # Import the gettext function and alias it as _
 from gettext import gettext as _
@@ -162,14 +162,15 @@ class AudioPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.NameAnd
 
                 # try to read the FLAC information (length, samplerate)
             try:
-                fcinfo = StreamInfo(filename)
-
-                file.add_string_attribute('samplerate', str(fcinfo.sample_rate) + " Hz")
-
+                
+                file.add_string_attribute('samplerate', (mutaFile.info.sample_rate) + " Hz")
+                
                 # [SabreWolfy] added consistent formatting of times in format hh:mm:ss
                 flaclength = "%02i:%02i:%02i" % ((int(mutaFile.info.length/3600)), (int(mutaFile.info.length/60%60)), (int(mutaFile.info.length%60)))
                 file.add_string_attribute('length', flaclength)
-                file.add_string_attribute('bitrate', no_info) # flac doesn't really have a bitrate
+                flacbitrate0 = (mutaFile.info.bitrate) / 1000
+                flacbitrate = f"{flacbitrate0:.3f} kbps"
+                file.add_string_attribute('bitrate', flacbitrate)
             except:
                 file.add_string_attribute('bitrate', no_info)
                 file.add_string_attribute('length', no_info)
