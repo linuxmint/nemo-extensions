@@ -92,6 +92,22 @@ def _rgba_from_str(s):
 default_font = config.get("DEFAULT", "font",       fallback="Hack, 10")
 fg_rgba      = _rgba_from_str(config.get("DEFAULT", "foreground", fallback="1.0,1.0,1.0,1.0"))
 bg_rgba      = _rgba_from_str(config.get("DEFAULT", "background",fallback="0.20,0.22,0.27,1.0"))                                          
+
+highlight_rgba = _rgba_from_str(
+    config.get(
+        "HIGHLIGHT",
+        "background",
+        fallback="0.50,0.25,0.75,1.0"  # 127/255,63/255,191/255,1.0
+    )
+)
+highlight_fg_rgba = _rgba_from_str(
+    config.get(
+        "HIGHLIGHT",
+        "foreground",
+        fallback="0.8,0.8,0.8,1.0"
+    )
+)
+
 # ─────────────────────────────────────────────────────────────────────────────
 
 
@@ -129,8 +145,10 @@ class NemoTerminal(object):
             bg_rgba,      # from config (default dark gray)
             palette
         )
-        self.term.set_color_highlight(Gdk.RGBA(127/255, 63/255, 191/255, 1.0))
-        self.term.set_color_highlight_foreground(Gdk.RGBA(0.8, 0.8, 0.8, 1.0))        
+        
+        self.term.set_color_highlight(highlight_rgba)
+        self.term.set_color_highlight_foreground(highlight_fg_rgba)
+
 		# ─────────────────────────────────────────────────────────────────────────────
         
 
