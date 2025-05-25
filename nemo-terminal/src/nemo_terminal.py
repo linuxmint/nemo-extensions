@@ -59,6 +59,7 @@ import gi
 gi.require_version('Vte', '2.91')
 gi.require_version('Nemo', '3.0')
 from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio
+from gi.repository import Pango, Gdk
 
 BASE_KEY = "org.nemo.extensions.nemo-terminal"
 settings = Gio.Settings.new(BASE_KEY)
@@ -85,6 +86,25 @@ class NemoTerminal(object):
         #Term
         self.shell_pid = -1
         self.term = Vte.Terminal()
+
+        #=====================================================================
+        #=====================================================================
+        #=====================================================================
+        #self.term.set_font(Pango.FontDescription.from_string("Noto Mono, 9"))
+        self.term.set_font(Pango.FontDescription.from_string("Hack, 10"))
+        palette = [Gdk.RGBA(0.4, 0.8, 0.8, 1.0)] * 16
+        self.term.set_colors(
+          Gdk.RGBA(1.0, 1.0, 1.0, 1.0),    # Foreground (text) color: white
+          #Gdk.RGBA(0.2, 0.2, 0.2, 1.0),    # Background color: dark gray
+          Gdk.RGBA(53/255, 57/255, 70/255, 1.0),    # Background color: dark gray
+        palette
+        )
+        self.term.set_color_highlight(Gdk.RGBA(127/255, 63/255, 191/255, 1.0))
+        self.term.set_color_highlight_foreground(Gdk.RGBA(0.8, 0.8, 0.8, 1.0))
+        #=====================================================================
+        #=====================================================================
+        #=====================================================================
+
 
         settings.bind("audible-bell", self.term, "audible-bell", Gio.SettingsBindFlags.GET)
 
