@@ -64,6 +64,37 @@ from gi.repository import Pango, Gdk
 BASE_KEY = "org.nemo.extensions.nemo-terminal"
 settings = Gio.Settings.new(BASE_KEY)
 
+# ─────────────────────────────────────────────────────────────────────────────
+
+import configparser
+#import os
+# ─────────────────────────────────────────────────────────────────────────────
+# Load the terminal settings from a simple INI file:
+# ~/.config/nemo/nemo-terminal.conf
+#
+# Example ~/.config/nemo/nemo-terminal.conf:
+#
+# [DEFAULT]
+# font       = Hack, 10
+# foreground = 1.0,1.0,1.0,1.0
+# background = 53/255,57/255,70/255,1.0
+# ─────────────────────────────────────────────────────────────────────────────
+
+config = configparser.ConfigParser()
+conf_path = os.path.expanduser("~/.config/nemo/nemo-terminal.conf")
+config.read(conf_path)
+
+# Fetch and split RGBA floats
+def _rgba_from_str(s):
+    parts = [float(x.strip()) for x in s.split(",")]
+    return Gdk.RGBA(*parts)
+
+default_font = config.get("DEFAULT", "font",       fallback="Hack, 10")
+fg_rgba      = _rgba_from_str(config.get("DEFAULT", "foreground", fallback="1.0,1.0,1.0,1.0"))
+bg_rgba      = _rgba_from_str(config.get("DEFAULT", "background",fallback="0.20,0.22,0.27,1.0"))                                          
+# ─────────────────────────────────────────────────────────────────────────────
+
+
 def terminal_or_default():
     """Enforce a default value for terminal from GSettings"""
     terminalcmd = settings.get_string("terminal-shell")
@@ -87,23 +118,23 @@ class NemoTerminal(object):
         self.shell_pid = -1
         self.term = Vte.Terminal()
 
-        #=====================================================================
-        #=====================================================================
-        #=====================================================================
-        #self.term.set_font(Pango.FontDescription.from_string("Noto Mono, 9"))
-        self.term.set_font(Pango.FontDescription.from_string("Hack, 10"))
+		# ─────────────────────────────────────────────────────────────────────────────
+        # load font and colors from ~/.config/nemo//usr/nemo-terminal.conf
+        self.term.set_font(
+            Pango.FontDescription.from_string(default_font)
+        )
         palette = [Gdk.RGBA(0.4, 0.8, 0.8, 1.0)] * 16
         self.term.set_colors(
-          Gdk.RGBA(1.0, 1.0, 1.0, 1.0),    # Foreground (text) color: white
-          #Gdk.RGBA(0.2, 0.2, 0.2, 1.0),    # Background color: dark gray
-          Gdk.RGBA(53/255, 57/255, 70/255, 1.0),    # Background color: dark gray
-        palette
+            fg_rgba,      # from config (default white)
+            bg_rgba,      # from config (default dark gray)
+            palette
         )
         self.term.set_color_highlight(Gdk.RGBA(127/255, 63/255, 191/255, 1.0))
-        self.term.set_color_highlight_foreground(Gdk.RGBA(0.8, 0.8, 0.8, 1.0))
-        #=====================================================================
-        #=====================================================================
-        #=====================================================================
+        self.term.set_color_highlight_foreground(Gdk.RGBA(0.8, 0.8, 0.8, 1.0))        
+		# ─────────────────────────────────────────────────────────────────────────────
+        
+
+
 
 
         settings.bind("audible-bell", self.term, "audible-bell", Gio.SettingsBindFlags.GET)
@@ -119,7 +150,9 @@ class NemoTerminal(object):
         self.term.connect("button-press-event", self._on_term_popup_menu)
 
         #Accelerators
-        accel_group = Gtk.AccelGroup()
+        accel_group = Gtk.AccelGroup()# after all your set-up of self.term
+        
+
         self._window.add_accel_group(accel_group)
         self.term.add_accelerator(
             "paste-clipboard",
@@ -141,6 +174,8 @@ class NemoTerminal(object):
             [Gtk.TargetEntry.new("text/uri-list", 0, 80)],
             Gdk.DragAction.COPY,
         )
+        
+
         self.term.drag_dest_add_uri_targets()
         self.term.connect("drag_data_received", self._on_drag_data_received)
 
