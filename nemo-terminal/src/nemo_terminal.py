@@ -74,40 +74,38 @@ import configparser
 #
 # Example ~/.config/nemo/nemo-terminal.conf:
 #
-# [DEFAULT]
-# font       = Hack, 10
-# foreground = 1.0,1.0,1.0,1.0
-# background = 53/255,57/255,70/255,1.0
+#[DEFAULT]
+#font       = Hack, 10
+#foreground = 255,255,255
+#background = 53,57,70
+
+#[HIGHLIGHT]
+#background = 127,63,191
+#foreground = 204,204,204
+
 # ─────────────────────────────────────────────────────────────────────────────
 
 config = configparser.ConfigParser()
 conf_path = os.path.expanduser("~/.config/nemo/nemo-terminal.conf")
 config.read(conf_path)
 
-# Fetch and split RGBA floats
+# Fetch and split RGB integers (0–255); alpha is always 1.0
 def _rgba_from_str(s):
-    parts = [float(x.strip()) for x in s.split(",")]
-    return Gdk.RGBA(*parts)
+    parts = [int(x.strip()) for x in s.split(",")]
+    if len(parts) < 3:
+        raise ValueError(f"Invalid color string ‘{s}’, expected R,G,B")
+    r, g, b = parts[:3]
+    return Gdk.RGBA(r/255.0, g/255.0, b/255.0, 1.0)
 
-default_font = config.get("DEFAULT", "font",       fallback="Hack, 10")
-fg_rgba      = _rgba_from_str(config.get("DEFAULT", "foreground", fallback="1.0,1.0,1.0,1.0"))
-bg_rgba      = _rgba_from_str(config.get("DEFAULT", "background",fallback="0.20,0.22,0.27,1.0"))                                          
+default_font = config.get("DEFAULT", "font", fallback="Hack, 10")
 
-highlight_rgba = _rgba_from_str(
-    config.get(
-        "HIGHLIGHT",
-        "background",
-        fallback="0.50,0.25,0.75,1.0"  # 127/255,63/255,191/255,1.0
-    )
-)
-highlight_fg_rgba = _rgba_from_str(
-    config.get(
-        "HIGHLIGHT",
-        "foreground",
-        fallback="0.8,0.8,0.8,1.0"
-    )
-)
+# now expects e.g. “255,255,255”
+fg_rgba = _rgba_from_str(config.get("DEFAULT", "foreground", fallback="255,255,255"))
+bg_rgba = _rgba_from_str(config.get("DEFAULT", "background", fallback="53,57,70"))
 
+# in [HIGHLIGHT] section, keys “background” and “foreground”
+highlight_rgba = _rgba_from_str(config.get("HIGHLIGHT", "background", fallback="127,63,191"))
+highlight_fg_rgba = _rgba_from_str(config.get("HIGHLIGHT", "foreground", fallback="204,204,204"))
 # ─────────────────────────────────────────────────────────────────────────────
 
 
@@ -134,8 +132,8 @@ class NemoTerminal(object):
         self.shell_pid = -1
         self.term = Vte.Terminal()
 
-		# ─────────────────────────────────────────────────────────────────────────────
-        # load font and colors from ~/.config/nemo//usr/nemo-terminal.conf
+        # ─────────────────────────────────────────────────────────────────────────────
+        # load font and colors from ~/.config/nemo/nemo-terminal.conf
         self.term.set_font(
             Pango.FontDescription.from_string(default_font)
         )
@@ -145,15 +143,11 @@ class NemoTerminal(object):
             bg_rgba,      # from config (default dark gray)
             palette
         )
-        
+
         self.term.set_color_highlight(highlight_rgba)
         self.term.set_color_highlight_foreground(highlight_fg_rgba)
 
-		# ─────────────────────────────────────────────────────────────────────────────
-        
-
-
-
+        # ─────────────────────────────────────────────────────────────────────────────
 
         settings.bind("audible-bell", self.term, "audible-bell", Gio.SettingsBindFlags.GET)
 
@@ -168,9 +162,7 @@ class NemoTerminal(object):
         self.term.connect("button-press-event", self._on_term_popup_menu)
 
         #Accelerators
-        accel_group = Gtk.AccelGroup()# after all your set-up of self.term
-        
-
+        accel_group = Gtk.AccelGroup()
         self._window.add_accel_group(accel_group)
         self.term.add_accelerator(
             "paste-clipboard",
@@ -192,8 +184,6 @@ class NemoTerminal(object):
             [Gtk.TargetEntry.new("text/uri-list", 0, 80)],
             Gdk.DragAction.COPY,
         )
-        
-
         self.term.drag_dest_add_uri_targets()
         self.term.connect("drag_data_received", self._on_drag_data_received)
 
