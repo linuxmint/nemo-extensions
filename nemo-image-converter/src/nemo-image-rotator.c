@@ -261,16 +261,17 @@ run_op (NemoImageRotator *rotator)
 	g_object_unref (new_location);
 
 	/* FIXME: check whether new_uri already exists and provide "Replace _All", "_Skip", and "_Replace" options */
-	
-	gchar *argv[8];
+
+	gchar *argv[9];
 	argv[0] = "/usr/bin/convert";
 	argv[1] = filename;
-	argv[2] = "-rotate";
-	argv[3] = priv->angle;
-	argv[4] = "-orient";
-	argv[5] = "TopLeft";
-	argv[6] = new_filename;
-	argv[7] = NULL;
+	argv[2] = "-auto-orient";
+	argv[3] = "-rotate";
+	argv[4] = priv->angle;
+	argv[5] = "-orient";
+	argv[6] = "TopLeft";
+	argv[7] = new_filename;
+	argv[8] = NULL;
 	
 	pid_t pid;
 
