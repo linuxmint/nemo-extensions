@@ -59,9 +59,55 @@ import gi
 gi.require_version('Vte', '2.91')
 gi.require_version('Nemo', '3.0')
 from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio
+from gi.repository import Pango, Gdk
 
 BASE_KEY = "org.nemo.extensions.nemo-terminal"
 settings = Gio.Settings.new(BASE_KEY)
+
+# ─────────────────────────────────────────────────────────────────────────────
+
+import configparser
+#import os
+# ─────────────────────────────────────────────────────────────────────────────
+# Load the terminal settings from a simple INI file:
+# ~/.config/nemo/nemo-terminal.conf
+#
+# Example ~/.config/nemo/nemo-terminal.conf:
+#
+#[DEFAULT]
+#font       = Hack, 10
+#foreground = 255,255,255
+#background = 53,57,70
+
+#[HIGHLIGHT]
+#background = 127,63,191
+#foreground = 204,204,204
+
+# ─────────────────────────────────────────────────────────────────────────────
+
+config = configparser.ConfigParser()
+conf_path = os.path.expanduser("~/.config/nemo/nemo-terminal.conf")
+config.read(conf_path)
+
+# Fetch and split RGB integers (0–255); alpha is always 1.0
+def _rgba_from_str(s):
+    parts = [int(x.strip()) for x in s.split(",")]
+    if len(parts) < 3:
+        raise ValueError(f"Invalid color string ‘{s}’, expected R,G,B")
+    r, g, b = parts[:3]
+    return Gdk.RGBA(r/255.0, g/255.0, b/255.0, 1.0)
+
+default_font = config.get("DEFAULT", "font", fallback="Hack, 10")
+
+# now expects e.g. “255,255,255”
+fg_rgba = _rgba_from_str(config.get("DEFAULT", "foreground", fallback="255,255,255"))
+bg_rgba = _rgba_from_str(config.get("DEFAULT", "background", fallback="53,57,70"))
+
+# in [HIGHLIGHT] section, keys “background” and “foreground”
+highlight_rgba = _rgba_from_str(config.get("HIGHLIGHT", "background", fallback="127,63,191"))
+highlight_fg_rgba = _rgba_from_str(config.get("HIGHLIGHT", "foreground", fallback="204,204,204"))
+# ─────────────────────────────────────────────────────────────────────────────
+
 
 def terminal_or_default():
     """Enforce a default value for terminal from GSettings"""
@@ -85,6 +131,23 @@ class NemoTerminal(object):
         #Term
         self.shell_pid = -1
         self.term = Vte.Terminal()
+
+        # ─────────────────────────────────────────────────────────────────────────────
+        # load font and colors from ~/.config/nemo/nemo-terminal.conf
+        self.term.set_font(
+            Pango.FontDescription.from_string(default_font)
+        )
+        palette = [Gdk.RGBA(0.4, 0.8, 0.8, 1.0)] * 16
+        self.term.set_colors(
+            fg_rgba,      # from config (default white)
+            bg_rgba,      # from config (default dark gray)
+            palette
+        )
+
+        self.term.set_color_highlight(highlight_rgba)
+        self.term.set_color_highlight_foreground(highlight_fg_rgba)
+
+        # ─────────────────────────────────────────────────────────────────────────────
 
         settings.bind("audible-bell", self.term, "audible-bell", Gio.SettingsBindFlags.GET)
 
