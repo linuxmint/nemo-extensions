@@ -13,7 +13,7 @@ Homepage: http://www.dropbox.com/
 Package: nemo-dropbox
 Architecture: i386 amd64
 Depends: nemo,
-         policykit-1,
+         pkexec,
          procps,
          ${shlibs:Depends},
          ${misc:Depends},
