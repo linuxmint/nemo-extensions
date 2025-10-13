@@ -307,7 +307,7 @@
           <object class="GtkImage" id="image_status">
             <property name="can_focus">False</property>
             <property name="halign">end</property>
-            <property name="icon_name">dialog-warning-symbolic</property>
+            <property name="icon_name">xapp-dialog-warning-symbolic</property>
           </object>
           <packing>
             <property name="expand">False</property>

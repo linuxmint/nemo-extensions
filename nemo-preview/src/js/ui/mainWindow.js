@@ -600,7 +600,7 @@ MainWindow.prototype = {
 
         this._quitButton =
             new Gtk.Button({ image: new Gtk.Image ({ icon_size: Gtk.IconSize.MENU,
-                                                     icon_name: 'window-close-symbolic' })});
+                                                     icon_name: 'xapp-window-close-symbolic' })});
         this._quitButton.get_style_context().add_class('np-decoration');
         this._quitButton.show();
 

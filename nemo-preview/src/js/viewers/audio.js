@@ -63,7 +63,7 @@ AudioRenderer.prototype = {
 
         this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
                                   spacing: 6 });
-        this._image = new Gtk.Image({ icon_name: 'media-optical-symbolic',
+        this._image = new Gtk.Image({ icon_name: 'xapp-media-optical-symbolic',
                                       pixel_size: 256 });
         this._box.pack_start(this._image, false, false, 0);
 
@@ -154,7 +154,7 @@ AudioRenderer.prototype = {
 
     _onCoverArtChanged : function() {
         if (!this._artFetcher.cover) {
-            this._image.set_from_icon_name('media-optical-symbolic');
+            this._image.set_from_icon_name('xapp-media-optical-symbolic');
             return;
         }
 
@@ -240,10 +240,10 @@ AudioRenderer.prototype = {
     _onPlayerStateChanged : function() {
         switch(this._player.state) {
         case NemoPreview.SoundPlayerState.PLAYING:
-            this._toolbarPlay.set_icon_name('media-playback-pause-symbolic');
+            this._toolbarPlay.set_icon_name('xapp-media-playback-pause-symbolic');
             break;
         default:
-            this._toolbarPlay.set_icon_name('media-playback-start-symbolic');
+            this._toolbarPlay.set_icon_name('xapp-media-playback-start-symbolic');
         }
     },
 
@@ -270,7 +270,7 @@ AudioRenderer.prototype = {
                                                     opacity: 0,
                                                     x_expand: true });
 
-        this._toolbarPlay = new Gtk.ToolButton({ icon_name: 'media-playback-pause-symbolic' });
+        this._toolbarPlay = new Gtk.ToolButton({ icon_name: 'xapp-media-playback-pause-symbolic' });
         this._toolbarPlay.show();
         this._mainToolbar.insert(this._toolbarPlay, 0);
 

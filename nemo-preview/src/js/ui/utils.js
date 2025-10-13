@@ -109,13 +109,13 @@ function createToolButton(iconName, callback) {
 }
 
 function createFullScreenButton(mainWindow) {
-    return createToolButton('view-fullscreen-symbolic', Lang.bind(this, function() {
+    return createToolButton('xapp-view-fullscreen-symbolic', Lang.bind(this, function() {
         mainWindow.toggleFullScreen();
     }));
 }
 
 function createOpenButton(file, mainWindow) {
-    return createToolButton('document-open-symbolic', Lang.bind(this, function(widget) {
+    return createToolButton('xapp-document-open-symbolic', Lang.bind(this, function(widget) {
         let timestamp = Gtk.get_current_event_time();
         try {
             Gtk.show_uri(widget.get_screen(),
