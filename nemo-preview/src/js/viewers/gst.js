@@ -134,9 +134,9 @@ GstRenderer.prototype = {
 
     _onVideoPlayingChange : function() {
         if (this._player.playing)
-            this._toolbarPlay.set_icon_name('xapp-media-playback-pause-symbolic');
+            this._toolbarPlay.set_icon_name('xsi-media-playback-pause-symbolic');
         else
-            this._toolbarPlay.set_icon_name('xapp-media-playback-start-symbolic');
+            this._toolbarPlay.set_icon_name('xsi-media-playback-start-symbolic');
     },
 
     getSizeForAllocation : function(allocation) {
@@ -160,7 +160,7 @@ GstRenderer.prototype = {
                                                     opacity: 0,
                                                     x_expand: true });
 
-        this._toolbarPlay = new Gtk.ToolButton({ icon_name: 'xapp-media-playback-pause-symbolic' });
+        this._toolbarPlay = new Gtk.ToolButton({ icon_name: 'xsi-media-playback-pause-symbolic' });
         this._toolbarPlay.show();
         this._mainToolbar.insert(this._toolbarPlay, 0);
 

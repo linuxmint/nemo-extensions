@@ -137,7 +137,7 @@ XreaderRenderer.prototype = {
         this._toolbarActor = new GtkClutter.Actor({ contents: this._mainToolbar });
 
         this._toolbarBack = new Gtk.ToolButton({ expand: false,
-                                                 icon_name: 'xapp-go-previous-symbolic' });
+                                                 icon_name: 'xsi-go-previous-symbolic' });
         this._toolbarBack.show();
         this._mainToolbar.insert(this._toolbarBack, -1);
 
@@ -150,7 +150,7 @@ XreaderRenderer.prototype = {
         this._mainToolbar.insert(labelItem, -1);
 
         this._toolbarForward = new Gtk.ToolButton({ expand: false,
-                                                    icon_name: 'xapp-go-next-symbolic' });
+                                                    icon_name: 'xsi-go-next-symbolic' });
         this._toolbarForward.show();
         this._mainToolbar.insert(this._toolbarForward, -1);
 
