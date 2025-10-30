@@ -300,7 +300,6 @@ event_cb (void *data, gpgme_event_io_t type, void *type_data)
         break;
 
     case GPGME_EVENT_NEXT_KEY:
-    case GPGME_EVENT_NEXT_TRUSTITEM:
     default:
         /* Ignore unsupported event types */
         break;
