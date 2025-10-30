@@ -87,6 +87,34 @@ sign_callback (NemoMenuItem *item, gpointer user_data)
     g_string_free (cmd, TRUE);
 }
 
+static void
+decrypt_callback (NemoMenuItem *item, gpointer user_data)
+{
+    GList *files, *scan;
+    char *uri, *t;
+    GString *cmd;
+
+    files = g_object_get_data (G_OBJECT (item), "files");
+    g_assert (files != NULL);
+
+    cmd = g_string_new ("nemo-seahorse-tool");
+    g_string_append_printf (cmd, " --decrypt");
+
+    for (scan = files; scan; scan = scan->next) {
+        uri = nemo_file_info_get_uri ((NemoFileInfo*)scan->data);
+        t = g_shell_quote (uri);
+        g_free (uri);
+
+        g_string_append_printf (cmd, " %s", t);
+        g_free (t);
+    }
+
+    g_print ("EXEC: %s\n", cmd->str);
+    g_spawn_command_line_async (cmd->str, NULL);
+
+    g_string_free (cmd, TRUE);
+}
+
 static char *pgp_encrypted_types[] = {
     "application/pgp",
     "application/pgp-encrypted",
@@ -122,6 +150,43 @@ is_all_mime_types (GList *files, char* types[])
     return TRUE;
 }
 
+static gboolean
+is_encrypted_file (NemoFileInfo *file)
+{
+    char *name;
+    gboolean result = FALSE;
+
+    /* Check MIME type first */
+    if (is_mime_types (file, pgp_encrypted_types))
+        return TRUE;
+
+    /* Check file extension for .gpg and .asc files */
+    name = nemo_file_info_get_name (file);
+    if (name != NULL) {
+        int len = strlen (name);
+        if ((len > 4 && g_ascii_strcasecmp (name + len - 4, ".gpg") == 0) ||
+            (len > 4 && g_ascii_strcasecmp (name + len - 4, ".asc") == 0) ||
+            (len > 4 && g_ascii_strcasecmp (name + len - 4, ".sig") == 0)) {
+            result = TRUE;
+        }
+    }
+    g_free (name);
+
+    return result;
+}
+
+static gboolean
+is_all_encrypted_files (GList *files)
+{
+    while (files) {
+        if (!is_encrypted_file ((NemoFileInfo*)(files->data)))
+            return FALSE;
+        files = g_list_next (files);
+    }
+
+    return TRUE;
+}
+
 static GList*
 seahorse_nemo_get_file_items (NemoMenuProvider *provider,
                                   GtkWidget *window, GList *files)
@@ -147,15 +212,22 @@ seahorse_nemo_get_file_items (NemoMenuProvider *provider,
             return NULL;
     }
 
-    /* A single encrypted file, no menu items */
-    if (num == 1 &&
-        is_mime_types ((NemoFileInfo*)files->data, pgp_encrypted_types))
-        return NULL;
-
     /* All 'no display' types, no menu items */
     if (is_all_mime_types (files, no_display_types))
         return NULL;
 
+    /* Encrypted files get decrypt menu */
+    if (is_all_encrypted_files (files)) {
+        item = nemo_menu_item_new ("NemoSh::decrypt", _("Decrypt..."),
+            ngettext ("Decrypt the selected file", "Decrypt the selected files", num), NULL);
+        g_object_set_data_full (G_OBJECT (item), "files", nemo_file_info_list_copy (files),
+                                     (GDestroyNotify) nemo_file_info_list_free);
+        g_signal_connect (item, "activate", G_CALLBACK (decrypt_callback), provider);
+        items = g_list_append (items, item);
+        return items;
+    }
+
+    /* Regular files get encrypt and sign menu */
     item = nemo_menu_item_new ("NemoSh::crypt", _("Encrypt..."),
         ngettext ("Encrypt (and optionally sign) the selected file", "Encrypt the selected files", num), NULL);
     g_object_set_data_full (G_OBJECT (item), "files", nemo_file_info_list_copy (files),
