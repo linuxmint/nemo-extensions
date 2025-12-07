@@ -1,0 +1,26 @@
+Source: nemo-tags
+Section: utils
+Priority: optional
+Maintainer: DIMFLIX <dimflix.official@gmail.com>
+Build-Depends: debhelper (>= 9),
+               python3-all,
+               python3-setuptools,
+               dh-python
+Standards-Version: 3.9.6
+Homepage: https://github.com/meowrch/nemo-tags
+
+Package: nemo-tags
+Architecture: all
+Section: utils
+Priority: optional
+Depends: ${misc:Depends},
+         gir1.2-nemo-3.0 (>=3.8),
+         python-nemo (>= 3.9.0),
+         python3-gi,
+         gir1.2-gtk-3.0
+Description: Powerful tagging system for Nemo File Manager
+ A Nemo extension that allows users to add, edit, and manage tags
+ for files and folders directly from the Nemo file manager.
+ .
+ Features include tag creation, tag search, color-coded tags,
+ and a convenient GUI for tag management.
