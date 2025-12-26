@@ -1,0 +1,35 @@
+Source: nemo-fits-extension
+Section: gnome
+Priority: optional
+Maintainer: Linux Mint <root@linuxmint.com>
+Build-Depends: debhelper-compat (= 13),
+               meson (>= 0.56.0),
+               libglib2.0-dev (>= 2.50.0),
+               libgtk-3-dev (>= 3.22.0),
+               libnemo-extension-dev (>= 3.0.0),
+               libcfitsio-dev (>= 3.0),
+               gettext,
+               intltool
+Standards-Version: 4.6.0
+Homepage: https://github.com/linuxmint/nemo-extensions
+
+Package: nemo-fits-extension
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         nemo (>= 3.0.0),
+         libcfitsio9 | libcfitsio10
+Description: Nemo extension for FITS files
+ nemo-fits-extension is a Nemo extension that provides an "Image" tab
+ in the file properties dialog for FITS (Flexible Image Transport
+ System) files commonly used in astronomy.
+ .
+ The extension displays metadata from FITS headers including:
+  - Image dimensions and data type
+  - Object name and observation details
+  - Telescope and instrument information
+  - Date of observation and exposure time
+  - Filter and coordinate system information
+ .
+ FITS is the standard astronomical data format endorsed by NASA
+ and the International Astronomical Union.

@@ -1,0 +1,3 @@
+usr/lib/*/nemo/extensions-3.0/libnemo-fits-extension.so
+usr/bin/fits-thumbnailer
+usr/share/thumbnailers/fits.thumbnailer
