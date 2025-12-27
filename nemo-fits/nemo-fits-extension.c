@@ -1,14 +1,3 @@
-/*
- * nemo-fits-extension.c
- * 
- * Copyright (C) 2024 Linux Mint
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- */
-
 #include <config.h>
 #include "nemo-fits-extension.h"
 
@@ -151,14 +140,14 @@ get_pages (NemoPropertyPageProvider *provider, GList *files)
 			g_snprintf (key, sizeof(key), "NAXIS%d", i);
 			status = 0;
 			if (!fits_read_key (fptr, TLONG, key, &naxes[i-1], NULL, &status)) {
-				if (i > 1) g_string_append (dims, " × ");
+				if (i > 1) g_string_append (dims, " x ");
 				g_string_append_printf (dims, "%ld", naxes[i-1]);
 			}
 		}
 		if (naxis == 2)
-			g_string_append (dims, _(" (width × height)"));
+			g_string_append (dims, _(" (width x height)"));
 		else if (naxis == 3)
-			g_string_append (dims, _(" (width × height × depth)"));
+			g_string_append (dims, _(" (width x height x depth)"));
 		
 		add_row (GTK_GRID (grid), row++, _("Dimensions:"), dims->str);
 		g_string_free (dims, TRUE);
@@ -172,7 +161,7 @@ get_pages (NemoPropertyPageProvider *provider, GList *files)
 		int has_y = !fits_read_key (fptr, TINT, "YBINNING", &ybin, NULL, &status);
 		
 		if (has_x || has_y) {
-			char *bin = g_strdup_printf ("%d × %d", has_x ? xbin : 0, has_y ? ybin : 0);
+			char *bin = g_strdup_printf ("%d x %d", has_x ? xbin : 0, has_y ? ybin : 0);
 			add_row (GTK_GRID (grid), row++, _("Binning:"), bin);
 			g_free (bin);
 		}

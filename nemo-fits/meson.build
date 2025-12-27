@@ -14,10 +14,10 @@ gdk_pixbuf_dep = dependency('gdk-pixbuf-2.0')
 nemo_extension_dep = dependency('libnemo-extension', version: '>= 3.0.0')
 cfitsio_dep = dependency('cfitsio', version: '>= 3.0')
 
-# Configuration
+# Configuration - Use repository-wide translation domain
 conf_data = configuration_data()
 conf_data.set_quoted('VERSION', meson.project_version())
-conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+conf_data.set_quoted('GETTEXT_PACKAGE', 'nemo-extensions')
 conf_data.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
 
 config_h = configure_file(
@@ -57,6 +57,7 @@ shared_module('nemo-fits-extension',
 
 # Build the thumbnailer executable
 thumbnailer_sources = files('fits-thumbnailer.c')
+
 executable('fits-thumbnailer',
   sources: thumbnailer_sources,
   dependencies: [glib_dep, gdk_pixbuf_dep, cfitsio_dep],
@@ -68,6 +69,3 @@ executable('fits-thumbnailer',
 install_data('fits.thumbnailer',
   install_dir: join_paths(get_option('datadir'), 'thumbnailers')
 )
-
-# i18n
-subdir('po')

@@ -1,0 +1,19 @@
+Nemo Extension For fits Files
+
+About
+nemo-fits is a nemo extension which provides:
+A thumbnail of .fits files.
+Information from the .fits file header in the Image tab.
+
+Project page:
+https://github.com/linuxmint/nemo-extensions/
+
+Bug Tracker
+https://github.com/linuxmint/nemo-extensions/issues/
+
+Install
+$ ./configure
+$ make
+# make install
+
+Please read INSTALL, for detailed installation instructions.
