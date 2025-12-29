@@ -30,6 +30,8 @@ potfiles_c=(
     nemo-dropbox/src/*.h
     nemo-fileroller/src/*.c
     nemo-fileroller/src/*.h
+    nemo-fits/*.c
+    nemo-fits/*.h
     nemo-image-converter/data/*.ui.h
     nemo-image-converter/src/*.c
     nemo-image-converter/src/*.h

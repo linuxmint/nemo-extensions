@@ -18,6 +18,7 @@ nemo-compare/debian/nemo-compare/
 nemo-dropbox/debian/nemo-dropbox/
 nemo-emblems/debian/nemo-emblems/
 nemo-fileroller/debian/nemo-fileroller/
+nemo-fits/debian/nemo-fits/
 nemo-image-converter/debian/nemo-image-converter/
 nemo-media-columns/debian/nemo-media-columns/
 nemo-pastebin/debian/nemo-pastebin/
