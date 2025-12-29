@@ -2,9 +2,6 @@ nemo-fits (6.6.0-1) wilma; urgency=medium
 
   * Initial release
   * View FITS image metadata in properties tab
-  * Support for standard FITS keywords
-  * Display image dimensions, data type, observation details
-  * Display telescope, instrument, and coordinate information
-  * Written in C using CFITSIO library for robust FITS support
+  * Provide thumbnails
 
  -- Linux Mint <ed@thefamilee.co.uk>  Tue, 24 Dec 2024 12:00:00 +0000
