@@ -1,4 +1,0 @@
-[Thumbnailer Entry]
-TryExec=fits-thumbnailer
-Exec=fits-thumbnailer -s %s %i %o
-MimeType=image/fits;image/x-fits;application/fits;
