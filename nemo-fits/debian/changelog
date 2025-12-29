@@ -1,4 +1,4 @@
-nemo-fits-extension (6.4.0-1) wilma; urgency=medium
+nemo-fits (6.6.0-1) wilma; urgency=medium
 
   * Initial release
   * View FITS image metadata in properties tab

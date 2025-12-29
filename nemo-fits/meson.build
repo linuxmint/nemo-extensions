@@ -1,8 +1,10 @@
-project('nemo-fits-extension', 'c',
-  version: '6.4.0',
-  license: 'GPL2',
+project('nemo-fits', 
+  'c',
+  version: '6.6.0',
   meson_version: '>=0.56.0'
 )
+
+project_url = 'https://github.com/linuxmint/nemo-extensions'
 
 i18n = import('i18n')
 gnome = import('gnome')
@@ -27,11 +29,11 @@ config_h = configure_file(
 
 # Extension source files
 extension_sources = files(
-  'nemo-fits-extension.c',
+  'nemo-fits.c',
 )
 
 extension_headers = files(
-  'nemo-fits-extension.h',
+  'nemo-fits.h',
 )
 
 extension_deps = [
@@ -45,7 +47,7 @@ extension_deps = [
 include_dirs = include_directories('.')
 
 # Build the extension as a shared module
-shared_module('nemo-fits-extension',
+shared_module('nemo-fits',
   sources: [extension_sources, extension_headers, config_h],
   dependencies: extension_deps,
   include_directories: include_dirs,

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 18:10+0000\n"
+"POT-Creation-Date: 2025-12-29 14:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,88 +50,87 @@ msgstr ""
 msgid "Allows managing of archives from the context menu"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:93
-#: nemo-audio-tab/nemo-extension/nemo-audio-tab.py:71
+#: nemo-fits/nemo-fits.c:82 nemo-audio-tab/nemo-extension/nemo-audio-tab.py:71
 msgid "No Info"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:143
+#: nemo-fits/nemo-fits.c:132
 msgid "Error:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:143
+#: nemo-fits/nemo-fits.c:132
 msgid "Could not open FITS file"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:159
+#: nemo-fits/nemo-fits.c:148
 msgid " (width x height)"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:161
+#: nemo-fits/nemo-fits.c:150
 msgid " (width x height x depth)"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:163
+#: nemo-fits/nemo-fits.c:152
 msgid "Dimensions:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:176
+#: nemo-fits/nemo-fits.c:165
 msgid "Binning:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:193
+#: nemo-fits/nemo-fits.c:182
 msgid "Data Type:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:199
+#: nemo-fits/nemo-fits.c:188
 msgid "Object:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:203
+#: nemo-fits/nemo-fits.c:192
 msgid "Telescope:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:207
+#: nemo-fits/nemo-fits.c:196
 msgid "Instrument:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:211
+#: nemo-fits/nemo-fits.c:200
 msgid "Observer:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:217
+#: nemo-fits/nemo-fits.c:206
 msgid "Date Observed:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:225 nemo-fits/nemo-fits-extension.c:228
+#: nemo-fits/nemo-fits.c:214 nemo-fits/nemo-fits.c:217
 msgid "Exposure Time:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:233
+#: nemo-fits/nemo-fits.c:222
 msgid "Filter:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:237
+#: nemo-fits/nemo-fits.c:226
 msgid "Bayer Pattern:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:245 nemo-fits/nemo-fits-extension.c:248
+#: nemo-fits/nemo-fits.c:234 nemo-fits/nemo-fits.c:237
 msgid "Gain:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:257 nemo-fits/nemo-fits-extension.c:260
+#: nemo-fits/nemo-fits.c:246 nemo-fits/nemo-fits.c:249
 msgid "Offset:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:269 nemo-fits/nemo-fits-extension.c:272
+#: nemo-fits/nemo-fits.c:258 nemo-fits/nemo-fits.c:261
 msgid "CCD Temperature:"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:284
+#: nemo-fits/nemo-fits.c:273
 msgid "Image"
 msgstr ""
 
-#: nemo-fits/nemo-fits-extension.c:312
+#: nemo-fits/nemo-fits.c:301
 msgid "View FITS image information from the properties tab"
 msgstr ""
 

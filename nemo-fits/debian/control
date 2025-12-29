@@ -1,4 +1,4 @@
-Source: nemo-fits-extension
+Source: nemo-fits
 Section: gnome
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
@@ -13,14 +13,14 @@ Build-Depends: debhelper-compat (= 13),
 Standards-Version: 4.6.0
 Homepage: https://github.com/linuxmint/nemo-extensions
 
-Package: nemo-fits-extension
+Package: nemo-fits
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          nemo (>= 3.0.0),
          libcfitsio9 | libcfitsio10
 Description: Nemo extension for FITS files
- nemo-fits-extension is a Nemo extension that provides an "Image" tab
+ nemo-fits is a Nemo extension that provides an "Image" tab
  in the file properties dialog for FITS (Flexible Image Transport
  System) files commonly used in astronomy.
  .

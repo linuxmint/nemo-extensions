@@ -1,5 +1,5 @@
 #include <config.h>
-#include "nemo-fits-extension.h"
+#include "nemo-fits.h"
 
 #include <libnemo-extension/nemo-property-page-provider.h>
 #include <libnemo-extension/nemo-info-provider.h>
@@ -297,7 +297,7 @@ info_provider_iface_init (NemoInfoProviderIface *iface)
 static GList *
 get_name_and_desc (NemoNameAndDescProvider *provider)
 {
-	return g_list_append (NULL, g_strdup_printf ("nemo-fits-extension:::%s",
+	return g_list_append (NULL, g_strdup_printf ("nemo-fits:::%s",
 	                      _("View FITS image information from the properties tab")));
 }
 
