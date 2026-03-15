@@ -30,3 +30,4 @@ nemo-seahorse/debian/nemo-seahorse/
 nemo-share/debian/nemo-share/
 nemo-terminal/debian/nemo-terminal/
 tmp/
+*.vscode

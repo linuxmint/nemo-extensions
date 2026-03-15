@@ -24,10 +24,14 @@ Description: Nemo extension for FITS files
  in the file properties dialog for FITS files commonly used in astronomy.
  .
  The extension displays metadata from FITS headers including:
-  - Image dimensions and data type
+  - Image dimensions, colour mode, and data type
   - Object name and observation details
   - Telescope and instrument information
   - Date of observation and exposure time
-  - Filter and coordinate system information
+  - Filter, Bayer pattern, and coordinate system information
  .
- A thumbnailer is also provided.
+ A live preview with toggleable auto-stretch is shown in the properties tab.
+ The auto-stretch setting is saved persistently per user.
+ .
+ A thumbnailer is also provided, supporting greyscale and RGB colour images,
+ with auto-stretch applied by default.
