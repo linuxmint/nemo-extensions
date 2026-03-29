@@ -65,6 +65,7 @@ class FileExtensionInfo():
         self.bitrate = None
         self.framerate = None
         self.video_codec = None
+        self.date_encoded = None
         self.pages = None
         self.samplerate = None
         self.length = None
@@ -112,6 +113,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             Nemo.Column(name="NemoPython::bitrate_column",attribute="bitrate",label=_("Bitrate"),description=""),
             Nemo.Column(name="NemoPython::framerate_column",attribute="framerate",label=_("Framerate"),description=""),
             Nemo.Column(name="NemoPython::video_codec_column",attribute="video_codec",label=_("Video Codec"),description=""),
+            Nemo.Column(name="NemoPython::date_encoded_column",attribute="date_encoded",label=_("Date Encoded"),description=""),
             Nemo.Column(name="NemoPython::pages_column",attribute="pages",label=_("Pages"),description=""),
             Nemo.Column(name="NemoPython::samplerate_column",attribute="samplerate",label=_("Sample Rate"),description=""),
             Nemo.Column(name="NemoPython::length_column",attribute="length",label=_("Length"),description=""),
@@ -127,7 +129,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
     def set_file_attributes(self, file, info):
         for attribute in ("title", "album", "artist", "tracknumber",
-                          "genre", "date", "bitrate", "framerate", "video_codec", "pages", "samplerate",
+                          "genre", "date", "bitrate", "framerate", "video_codec", "date_encoded", "pages", "samplerate",
                           "length", 'composer', 'description', "exif_datetime_original", "exif_software",
                           "exif_flash", "exif_pixeldimensions", "exif_rating", "pixeldimensions"):
             value = getattr(info, attribute)
@@ -358,6 +360,10 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                             pass
                         try:
                             info.composer = track['composer']
+                        except:
+                            pass
+                        try:
+                            info.date_encoded = track['encoded_date']
                         except:
                             pass
 
