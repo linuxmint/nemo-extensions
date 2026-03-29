@@ -246,7 +246,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
             return info # if (id3_good or mp3_good) else None
         # image handling
-        elif file_is_one_of_these(('image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff')):
+        elif file_is_one_of_these(('image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff', 'image/psd', 'image/webp', 'image/x-dds', 'image/tga')):
             info = FileExtensionInfo()
             # EXIF handling routines
             exiv_good = True
@@ -276,7 +276,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         # video/flac handling
         elif file_is_one_of_these(('video/x-msvideo', 'video/mpeg', 'video/x-ms-wmv', 'video/mp4',
                                    'audio/x-flac', 'video/x-flv', 'video/x-matroska', 'audio/x-wav',
-                                   'audio/m4a', 'audio/mp4')):
+                                   'audio/m4a', 'audio/mp4', 'video/quicktime', 'video/webm', 'audio/ogg')):
             info = FileExtensionInfo()
             mediainfo_good = True
 
