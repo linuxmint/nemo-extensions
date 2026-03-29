@@ -63,6 +63,7 @@ class FileExtensionInfo():
         self.genre = None
         self.date = None
         self.bitrate = None
+        self.framerate = None
         self.pages = None
         self.samplerate = None
         self.length = None
@@ -108,6 +109,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             Nemo.Column(name="NemoPython::genre_column",attribute="genre",label=_("Genre"),description=""),
             Nemo.Column(name="NemoPython::date_column",attribute="date",label=_("Date"),description=""),
             Nemo.Column(name="NemoPython::bitrate_column",attribute="bitrate",label=_("Bitrate"),description=""),
+            Nemo.Column(name="NemoPython::framerate_column",attribute="framerate",label=_("Framerate"),description=""),
             Nemo.Column(name="NemoPython::pages_column",attribute="pages",label=_("Pages"),description=""),
             Nemo.Column(name="NemoPython::samplerate_column",attribute="samplerate",label=_("Sample Rate"),description=""),
             Nemo.Column(name="NemoPython::length_column",attribute="length",label=_("Length"),description=""),
@@ -123,7 +125,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
     def set_file_attributes(self, file, info):
         for attribute in ("title", "album", "artist", "tracknumber",
-                          "genre", "date", "bitrate", "pages", "samplerate",
+                          "genre", "date", "bitrate", "framerate", "pages", "samplerate",
                           "length", 'composer', 'description', "exif_datetime_original", "exif_software",
                           "exif_flash", "exif_pixeldimensions", "exif_rating", "pixeldimensions"):
             value = getattr(info, attribute)
@@ -292,6 +294,12 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                             duration = int(float(track['duration']))
                         except:
                             pass
+
+                        try:
+                            info.framerate = (track['frame_rate'])
+                        except:
+                            pass
+
 
                     if track["track_type"] == "Audio":
                         try:
