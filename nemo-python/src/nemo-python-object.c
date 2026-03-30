@@ -36,6 +36,7 @@
 #include <libnemo-extension/nemo-menu-provider.h>
 #include <libnemo-extension/nemo-property-page-provider.h>
 #include <libnemo-extension/nemo-name-and-desc-provider.h>
+#include <libnemo-extension/nemo-selection-provider.h>
 
 #include <string.h>
 
@@ -550,6 +551,42 @@ nemo_python_object_class_init (NemoPythonObjectClass *class,
 	G_OBJECT_CLASS (class)->finalize = nemo_python_object_finalize;
 }
 
+#define METHOD_NAME "selection_changed"
+static void
+nemo_python_object_selection_changed (NemoSelectionProvider *provider,
+                                      GtkWidget             *window,
+                                      GList                 *files)
+{
+    NemoPythonObject *object = (NemoPythonObject *) provider;
+    PyObject *py_files = NULL, *py_ret = NULL;
+    PyGILState_STATE state = pyg_gil_state_ensure ();
+
+    debug_enter ();
+
+    CHECK_OBJECT (object);
+    CHECK_METHOD_NAME (object->instance);
+
+    CONVERT_LIST (py_files, files);
+
+    py_ret = PyObject_CallMethod (object->instance,
+                                  METHOD_PREFIX METHOD_NAME,
+                                  "(NN)",
+                                  pygobject_new ((GObject *) window),
+                                  py_files);
+    HANDLE_RETVAL (py_ret);
+
+beach:
+    Py_XDECREF (py_ret);
+    pyg_gil_state_release (state);
+}
+#undef METHOD_NAME
+
+static void
+nemo_python_object_selection_provider_iface_init (NemoSelectionProviderInterface *iface)
+{
+    iface->selection_changed = nemo_python_object_selection_changed;
+}
+
 GType 
 nemo_python_object_get_type (GTypeModule *module, 
 								 PyObject 	*type)
@@ -591,6 +628,12 @@ nemo_python_object_get_type (GTypeModule *module,
 
     static const GInterfaceInfo nd_provider_iface_info = {
         (GInterfaceInitFunc) nemo_python_object_name_and_desc_provider_iface_init,
+        NULL,
+        NULL
+    };
+
+    static const GInterfaceInfo selection_provider_iface_info = {
+        (GInterfaceInitFunc) nemo_python_object_selection_provider_iface_init,
         NULL,
         NULL
     };
@@ -661,6 +704,13 @@ nemo_python_object_get_type (GTypeModule *module,
         g_type_module_add_interface (module, gtype, 
                                      NEMO_TYPE_NAME_AND_DESC_PROVIDER,
                                      &nd_provider_iface_info);
+    }
+
+    if (PyObject_IsSubclass (type, (PyObject *) &PyNemoSelectionProvider_Type))
+    {
+        g_type_module_add_interface (module, gtype,
+                                     NEMO_TYPE_SELECTION_PROVIDER,
+                                     &selection_provider_iface_info);
     }
 
     return gtype;
