@@ -41,6 +41,7 @@ PyTypeObject *_PyNemoMenuProvider_Type;
 PyTypeObject *_PyNemoPropertyPage_Type;
 PyTypeObject *_PyNemoPropertyPageProvider_Type;
 PyTypeObject *_PyNemoOperationHandle_Type;
+PyTypeObject *_PyNemoSelectionProvider_Type;
 
 static const GDebugKey nemo_python_debug_keys[] = {
 	{"misc", NEMO_PYTHON_DEBUG_MISC},
@@ -103,7 +104,8 @@ nemo_python_load_file(GTypeModule *type_module,
 			PyObject_IsSubclass(value, (PyObject*)&PyNemoInfoProvider_Type) ||
 			PyObject_IsSubclass(value, (PyObject*)&PyNemoLocationWidgetProvider_Type) ||
 			PyObject_IsSubclass(value, (PyObject*)&PyNemoMenuProvider_Type) ||
-			PyObject_IsSubclass(value, (PyObject*)&PyNemoPropertyPageProvider_Type))
+			PyObject_IsSubclass(value, (PyObject*)&PyNemoPropertyPageProvider_Type) ||
+			PyObject_IsSubclass(value, (PyObject*)&PyNemoSelectionProvider_Type))
 		{
 			gtype = nemo_python_object_get_type(type_module, value);
 			g_array_append_val(all_types, gtype);
@@ -244,6 +246,7 @@ nemo_python_init_python (void)
 	IMPORT(PropertyPageProvider, "PropertyPageProvider");
     IMPORT(NameAndDescProvider, "NameAndDescProvider");
 	IMPORT(OperationHandle, "OperationHandle");
+    IMPORT(SelectionProvider, "SelectionProvider");
 
 #undef IMPORT
 	
