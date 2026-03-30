@@ -63,6 +63,9 @@ class FileExtensionInfo():
         self.genre = None
         self.date = None
         self.bitrate = None
+        self.framerate = None
+        self.video_codec = None
+        self.date_encoded = None
         self.pages = None
         self.samplerate = None
         self.length = None
@@ -108,6 +111,9 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             Nemo.Column(name="NemoPython::genre_column",attribute="genre",label=_("Genre"),description=""),
             Nemo.Column(name="NemoPython::date_column",attribute="date",label=_("Date"),description=""),
             Nemo.Column(name="NemoPython::bitrate_column",attribute="bitrate",label=_("Bitrate"),description=""),
+            Nemo.Column(name="NemoPython::framerate_column",attribute="framerate",label=_("Framerate"),description=""),
+            Nemo.Column(name="NemoPython::video_codec_column",attribute="video_codec",label=_("Video Codec"),description=""),
+            Nemo.Column(name="NemoPython::date_encoded_column",attribute="date_encoded",label=_("Date Encoded"),description=""),
             Nemo.Column(name="NemoPython::pages_column",attribute="pages",label=_("Pages"),description=""),
             Nemo.Column(name="NemoPython::samplerate_column",attribute="samplerate",label=_("Sample Rate"),description=""),
             Nemo.Column(name="NemoPython::length_column",attribute="length",label=_("Length"),description=""),
@@ -123,7 +129,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
     def set_file_attributes(self, file, info):
         for attribute in ("title", "album", "artist", "tracknumber",
-                          "genre", "date", "bitrate", "pages", "samplerate",
+                          "genre", "date", "bitrate", "framerate", "video_codec", "date_encoded", "pages", "samplerate",
                           "length", 'composer', 'description', "exif_datetime_original", "exif_software",
                           "exif_flash", "exif_pixeldimensions", "exif_rating", "pixeldimensions"):
             value = getattr(info, attribute)
@@ -240,7 +246,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
             return info # if (id3_good or mp3_good) else None
         # image handling
-        elif file_is_one_of_these(('image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff')):
+        elif file_is_one_of_these(('image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff', 'image/psd', 'image/webp', 'image/x-dds', 'image/tga')):
             info = FileExtensionInfo()
             # EXIF handling routines
             exiv_good = True
@@ -270,7 +276,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         # video/flac handling
         elif file_is_one_of_these(('video/x-msvideo', 'video/mpeg', 'video/x-ms-wmv', 'video/mp4',
                                    'audio/x-flac', 'video/x-flv', 'video/x-matroska', 'audio/x-wav',
-                                   'audio/m4a', 'audio/mp4')):
+                                   'audio/m4a', 'audio/mp4', 'video/quicktime', 'video/webm', 'audio/ogg')):
             info = FileExtensionInfo()
             mediainfo_good = True
 
@@ -290,6 +296,16 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
                         try:
                             duration = int(float(track['duration']))
+                        except:
+                            pass
+
+                        try:
+                            info.framerate = (track['frame_rate'])
+                        except:
+                            pass
+
+                        try:
+                            info.video_codec = (track['format'])
                         except:
                             pass
 
@@ -344,6 +360,10 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                             pass
                         try:
                             info.composer = track['composer']
+                        except:
+                            pass
+                        try:
+                            info.date_encoded = track['encoded_date']
                         except:
                             pass
 
