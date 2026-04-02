@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
+
+%:
+	dh $@ --buildsystem=meson
+
+# Don't generate a shlibs file for the plugin
+override_dh_makeshlibs:

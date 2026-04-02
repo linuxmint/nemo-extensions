@@ -1,0 +1,17 @@
+nemo-fits (6.7.0-1) wilma; urgency=medium
+
+  * Add auto-stretch for thumbnail and preview images using PixInsight
+    median/MADN algorithm (ported from KStars/Ekos)
+  * Add RGB colour image support for FITS cube format (NAXIS3=3)
+  * Add persistent auto-stretch toggle in properties page
+  * Show colour mode in image metadata
+
+ -- Linux Mint <ed@thefamilee.co.uk>  Sat, 14 Mar 2026 12:00:00 +0000
+
+nemo-fits (6.6.0-1) wilma; urgency=medium
+
+  * Initial release
+  * View FITS image metadata in properties tab
+  * Provide thumbnails
+
+ -- Linux Mint <ed@thefamilee.co.uk>  Tue, 24 Dec 2024 12:00:00 +0000
