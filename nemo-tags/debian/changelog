@@ -1,0 +1,8 @@
+nemo-tags (1.0.0) vanessa; urgency=medium
+
+  * Initial release
+  * Add tagging system for files and folders
+  * Tag management GUI
+  * Search by tags functionality
+
+ -- DIMFLIX <dimflix.official@gmail.com>  Sun, 07 Dec 2025 17:47:00 +0300
