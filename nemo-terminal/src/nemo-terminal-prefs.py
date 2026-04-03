@@ -19,7 +19,8 @@ class LabeledItem(Gtk.Box):
     def __init__(self, label, item):
         super(LabeledItem, self).__init__(orientation=Gtk.Orientation.HORIZONTAL)
 
-        self.label_widget = Gtk.Label(label)
+        # Fixed: Use keyword argument instead of positional
+        self.label_widget = Gtk.Label(label=label)
 
         self.pack_start(self.label_widget, False, False, 6)
         self.pack_end(item, False, False, 6)
@@ -205,7 +206,8 @@ class NemoTerminalPreferencesWindow(XApp.PreferencesWindow):
 
         box.pack_start(Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL), False, False, 6)
 
-        button = Gtk.Button(_("Restore defaults"))
+        # Fixed: Use keyword argument instead of positional
+        button = Gtk.Button(label=_("Restore defaults"))
         button.set_valign(Gtk.Align.CENTER)
 
         def on_reset_clicked(button, data=None):
