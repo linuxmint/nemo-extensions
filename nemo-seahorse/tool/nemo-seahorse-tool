@@ -1,0 +1,984 @@
+#!/usr/bin/python3
+
+import sys
+import os
+import stat
+import argparse
+import gettext
+import locale
+import threading
+import subprocess
+from urllib.parse import urlparse, unquote
+
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('GLib', '2.0')
+gi.require_version('Gio', '2.0')
+from gi.repository import Gtk, GLib, Gio
+
+try:
+    import gpg
+    import gpg.constants
+    import gpg.constants.sig
+    import gpg.constants.sigsum
+    import gpg.constants.validity
+    import gpg.errors
+    HAVE_GPG = True
+except ImportError:
+    HAVE_GPG = False
+
+locale.setlocale(locale.LC_ALL, '')
+gettext.bindtextdomain('nemo-extensions')
+gettext.textdomain('nemo-extensions')
+_ = gettext.gettext
+ngettext = gettext.ngettext
+
+SETTINGS_SCHEMA = 'org.nemo.plugins.seahorse'
+
+
+def get_settings():
+    try:
+        return Gio.Settings.new(SETTINGS_SCHEMA)
+    except Exception:
+        return None
+
+
+def uri_to_local_path(uri):
+    """Return a local filesystem path for a file:// URI, else None."""
+    f = Gio.File.new_for_uri(uri)
+    return f.get_path()
+
+
+def local_path_to_uri(path):
+    return Gio.File.new_for_path(path).get_uri()
+
+
+def uri_exists(uri):
+    return Gio.File.new_for_uri(uri).query_exists(None)
+
+def show_error(title, body):
+    show_dialog(title, body, icon_name="dialog-error-symbolic")
+
+def show_dialog(title, body, icon_name="dialog-information-symbolic"):
+    dlg = Gtk.Dialog()
+    dlg.set_title("")
+    dlg.set_resizable(False)
+    dlg.set_border_width(12)
+
+    content = dlg.get_content_area()
+    content.set_spacing(0)
+
+    hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
+    hbox.set_margin_bottom(12)
+
+    icon = Gtk.Image.new_from_icon_name(icon_name, Gtk.IconSize.DIALOG)
+    icon.set_valign(Gtk.Align.START)
+    hbox.pack_start(icon, False, False, 0)
+
+    vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+    title_label = Gtk.Label()
+    title_label.set_markup("<b>%s</b>" % GLib.markup_escape_text(title))
+    title_label.set_halign(Gtk.Align.START)
+    vbox.pack_start(title_label, False, False, 0)
+
+    if body:
+        body_label = Gtk.Label(label=body)
+        body_label.set_halign(Gtk.Align.START)
+        body_label.set_line_wrap(True)
+        body_label.set_max_width_chars(50)
+        vbox.pack_start(body_label, False, False, 0)
+
+    hbox.pack_start(vbox, True, True, 0)
+    content.pack_start(hbox, True, True, 0)
+
+    btn = dlg.add_button(_("Close"), Gtk.ResponseType.CLOSE)
+    btn.set_margin_top(8)
+
+    dlg.show_all()
+    dlg.run()
+    dlg.destroy()
+
+def chooser_save_prompt(title, suggest_path):
+    """Show a save-file dialog; return chosen path or None if cancelled."""
+    dlg = Gtk.FileChooserDialog(
+        title=title,
+        action=Gtk.FileChooserAction.SAVE,
+        buttons=(_('Cancel'), Gtk.ResponseType.CANCEL,
+                 _('Save'),   Gtk.ResponseType.ACCEPT))
+    dlg.set_default_response(Gtk.ResponseType.ACCEPT)
+    dlg.set_local_only(False)
+    if suggest_path:
+        dlg.set_filename(suggest_path)
+
+    result = None
+    while dlg.run() == Gtk.ResponseType.ACCEPT:
+        chosen_uri = dlg.get_uri()
+        if chosen_uri and uri_exists(chosen_uri):
+            confirm = Gtk.MessageDialog(
+                transient_for=dlg,
+                modal=True,
+                message_type=Gtk.MessageType.QUESTION,
+                buttons=Gtk.ButtonsType.NONE)
+            confirm.set_markup(
+                _('<b>A file already exists with this name.</b>\n\n'
+                  'Do you want to replace it with a new file?'))
+            confirm.add_buttons(_('Cancel'),  Gtk.ResponseType.CANCEL,
+                                _('Replace'), Gtk.ResponseType.ACCEPT)
+            confirm.set_default_response(Gtk.ResponseType.CANCEL)
+            r = confirm.run()
+            confirm.destroy()
+            if r != Gtk.ResponseType.ACCEPT:
+                continue
+        if chosen_uri:
+            result = Gio.File.new_for_uri(chosen_uri).get_path()
+        break
+
+    dlg.destroy()
+    return result
+
+
+def _resolve_dest(src_path, default_dest, prompt_title):
+    """
+    Return dest_path for a crypto output file.
+    If default_dest already exists, prompt the user for an alternative.
+    Returns None if the user cancelled.
+    """
+    if not os.path.exists(default_dest):
+        return default_dest
+    return chooser_save_prompt(prompt_title % os.path.basename(src_path),
+                               default_dest)
+
+def _key_display_label(key):
+    if key.uids:
+        uid = key.uids[0]
+        name  = (uid.name  or '').strip()
+        email = (uid.email or '').strip()
+        if name and email:
+            return '{} <{}>'.format(name, email)
+        if name:
+            return name
+        if email:
+            return email
+    if key.subkeys:
+        return key.subkeys[0].keyid
+    return _('Unknown key')
+
+
+def _collect_keys(secret=False):
+    """Return a list of gpg.Key, skipping revoked/expired/disabled ones."""
+    try:
+        with gpg.Context() as ctx:
+            return [k for k in ctx.keylist(secret=secret)
+                    if not k.revoked and not k.expired and not k.disabled]
+    except Exception:
+        return []
+
+
+def _key_can_sign(key):
+    if not key.secret:
+        return False
+    for sub in key.subkeys:
+        if sub.can_sign and not sub.revoked and not sub.expired:
+            return True
+    return False
+
+
+def _key_label_from_fpr(fpr):
+    try:
+        with gpg.Context() as ctx:
+            key = ctx.get_key(fpr)
+            return _key_display_label(key)
+    except Exception:
+        return fpr[-16:] if fpr and len(fpr) > 16 else (fpr or '')
+
+
+class RecipientChooserDialog(Gtk.Dialog):
+    """Select encryption recipients (and optionally a signer)."""
+
+    _COL_CHECKED = 0
+    _COL_LABEL   = 1
+
+    def __init__(self, title=None):
+        super().__init__(title=title or _('Encryption settings'), modal=True)
+        self.add_buttons(_('Cancel'), Gtk.ResponseType.CANCEL,
+                         _('Encrypt'), Gtk.ResponseType.OK)
+        self.set_default_response(Gtk.ResponseType.OK)
+        self.set_default_size(520, 440)
+
+        self._pub_keys = _collect_keys(secret=False)
+        self._sec_keys = [k for k in _collect_keys(secret=True)
+                          if _key_can_sign(k)]
+
+        content = self.get_content_area()
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+        vbox.set_border_width(12)
+        content.pack_start(vbox, True, True, 0)
+
+        lbl = Gtk.Label()
+        lbl.set_markup("<b>%s</b>" % _('Choose recipients:'))
+        lbl.set_halign(Gtk.Align.START)
+        vbox.pack_start(lbl, False, False, 0)
+
+        # Recipient list
+        self._rec_store = Gtk.ListStore(bool, str)
+        for k in self._pub_keys:
+            self._rec_store.append([False, _key_display_label(k)])
+
+        tree = Gtk.TreeView(model=self._rec_store)
+        tog = Gtk.CellRendererToggle()
+        tog.connect('toggled', self._on_toggled)
+        tree.append_column(Gtk.TreeViewColumn('', tog, active=0))
+        col = Gtk.TreeViewColumn(_('Key'), Gtk.CellRendererText(), text=1)
+        col.set_expand(True)
+        tree.append_column(col)
+
+        scroll = Gtk.ScrolledWindow()
+        scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        scroll.set_shadow_type(Gtk.ShadowType.IN)
+        scroll.set_size_request(-1, 180)
+        scroll.add(tree)
+        vbox.pack_start(scroll, True, True, 0)
+
+        vbox.pack_start(
+            Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL),
+            False, False, 4)
+
+        # Symmetric option
+        self._sym_check = Gtk.CheckButton.new_with_mnemonic(
+            _('Use passphrase (symmetric) encryption'))
+        vbox.pack_start(self._sym_check, False, False, 0)
+
+        # Sign option (only when secret keys exist)
+        self._sign_check = None
+        self._sig_combo  = None
+        if self._sec_keys:
+            vbox.pack_start(
+                Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL),
+                False, False, 4)
+            self._sign_check = Gtk.CheckButton.new_with_mnemonic(_('Sign as:'))
+            vbox.pack_start(self._sign_check, False, False, 0)
+
+            sig_store = Gtk.ListStore(str)
+            for k in self._sec_keys:
+                sig_store.append([_key_display_label(k)])
+            self._sig_combo = Gtk.ComboBox.new_with_model(sig_store)
+            r = Gtk.CellRendererText()
+            self._sig_combo.pack_start(r, True)
+            self._sig_combo.add_attribute(r, 'text', 0)
+            self._sig_combo.set_active(0)
+            self._sig_combo.set_sensitive(False)
+
+            row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+            row.pack_start(Gtk.Label(label='    '), False, False, 0)
+            row.pack_start(self._sig_combo, True, True, 0)
+            vbox.pack_start(row, False, False, 0)
+
+            self._sign_check.connect('toggled', self._on_sign_toggled)
+
+        self.show_all()
+
+    def _on_toggled(self, renderer, path):
+        it = self._rec_store.get_iter(Gtk.TreePath(path))
+        self._rec_store.set_value(it, 0, not self._rec_store.get_value(it, 0))
+
+    def _on_sign_toggled(self, btn):
+        if self._sig_combo:
+            self._sig_combo.set_sensitive(btn.get_active())
+
+    def get_results(self):
+        """Returns (recipients: list[gpg.Key], signer: gpg.Key|None, symmetric: bool)."""
+        symmetric = self._sym_check.get_active()
+
+        signer = None
+        if self._sign_check and self._sign_check.get_active():
+            idx = self._sig_combo.get_active()
+            if 0 <= idx < len(self._sec_keys):
+                signer = self._sec_keys[idx]
+
+        recipients = []
+        if not symmetric:
+            it = self._rec_store.get_iter_first()
+            idx = 0
+            while it:
+                if self._rec_store.get_value(it, 0):
+                    recipients.append(self._pub_keys[idx])
+                it = self._rec_store.iter_next(it)
+                idx += 1
+
+        return recipients, signer, symmetric
+
+
+class SignerChooserDialog(Gtk.Dialog):
+    """Select a signing key."""
+
+    def __init__(self, title=None):
+        super().__init__(title=title or _('Choose Signer'), modal=True)
+        self.add_buttons(_('Cancel'), Gtk.ResponseType.CANCEL,
+                         _('OK'),     Gtk.ResponseType.OK)
+        self.set_default_response(Gtk.ResponseType.OK)
+        self.set_default_size(420, 320)
+
+        self._sec_keys = [k for k in _collect_keys(secret=True)
+                          if _key_can_sign(k)]
+
+        content = self.get_content_area()
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+        vbox.set_border_width(12)
+        content.pack_start(vbox, True, True, 0)
+
+        lbl = Gtk.Label()
+        lbl.set_markup("<b>%s</b>" % _('Select a key to sign as:'))
+        lbl.set_halign(Gtk.Align.START)
+        vbox.pack_start(lbl, False, False, 0)
+
+        store = Gtk.ListStore(str)
+        for k in self._sec_keys:
+            store.append([_key_display_label(k)])
+        self._tree = Gtk.TreeView(model=store)
+        col = Gtk.TreeViewColumn(_('Key'), Gtk.CellRendererText(), text=0)
+        col.set_expand(True)
+        self._tree.append_column(col)
+        sel = self._tree.get_selection()
+        sel.set_mode(Gtk.SelectionMode.SINGLE)
+        first = store.get_iter_first()
+        if first:
+            sel.select_iter(first)
+
+        scroll = Gtk.ScrolledWindow()
+        scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        scroll.set_shadow_type(Gtk.ShadowType.IN)
+        scroll.set_size_request(-1, 180)
+        scroll.add(self._tree)
+        vbox.pack_start(scroll, True, True, 0)
+
+        self.show_all()
+
+    def get_key(self):
+        store, it = self._tree.get_selection().get_selected()
+        if it is None:
+            return None
+        idx = store.get_path(it).get_indices()[0]
+        return self._sec_keys[idx] if 0 <= idx < len(self._sec_keys) else None
+
+
+def _program_in_path(name):
+    return GLib.find_program_in_path(name) is not None
+
+
+def _available_archive_extensions():
+    exts = []
+    seen = set()
+    if _program_in_path('tar'):
+        for prog, ext in [('gzip', '.tar.gz'), ('bzip2', '.tar.bz2')]:
+            if _program_in_path(prog) and ext not in seen:
+                exts.append(ext)
+                seen.add(ext)
+    if _program_in_path('zip') and '.zip' not in seen:
+        exts.append('.zip')
+        seen.add('.zip')
+    if _program_in_path('7za') and '.7z' not in seen:
+        exts.append('.7z')
+        seen.add('.7z')
+    return exts or ['.zip']
+
+
+class MultiEncryptDialog(Gtk.Dialog):
+    """Ask whether to encrypt files separately or bundled in an archive."""
+
+    def __init__(self, n_files, n_folders, remote, settings):
+        super().__init__(title=_('Encrypt Multiple Files'), modal=True)
+        self.add_buttons(_('Cancel'), Gtk.ResponseType.CANCEL,
+                         _('OK'),     Gtk.ResponseType.OK)
+        self.set_default_response(Gtk.ResponseType.OK)
+        self._settings = settings
+        self._remote   = remote
+
+        content = self.get_content_area()
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        vbox.set_border_width(12)
+        content.pack_start(vbox, True, True, 0)
+
+        msg = self._make_message(n_files, n_folders)
+        lbl = Gtk.Label()
+        lbl.set_markup('<b>{}</b>'.format(GLib.markup_escape_text(msg)))
+        lbl.set_halign(Gtk.Align.START)
+        vbox.pack_start(lbl, False, False, 0)
+
+        if remote:
+            info = Gtk.Label(label=_(
+                'Because the files are located remotely, each file will be encrypted separately.'))
+            info.set_line_wrap(True)
+            info.set_halign(Gtk.Align.START)
+            vbox.pack_start(info, False, False, 0)
+        else:
+            sep_default = settings.get_boolean('separate-files') if settings else False
+
+            self._sep_radio = Gtk.RadioButton.new_with_mnemonic(
+                None, _('Encrypt each file separately'))
+            self._pkg_radio = Gtk.RadioButton.new_with_mnemonic_from_widget(
+                self._sep_radio, _('Encrypt packed together in a package'))
+            self._sep_radio.set_active(sep_default)
+            self._pkg_radio.set_active(not sep_default)
+            vbox.pack_start(self._sep_radio, False, False, 0)
+            vbox.pack_start(self._pkg_radio, False, False, 0)
+
+            row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+            row.pack_start(Gtk.Label(label=_('Package Name:')), False, False, 0)
+            self._name_entry = Gtk.Entry()
+            self._name_entry.set_text('encrypted-package')
+            row.pack_start(self._name_entry, True, True, 0)
+
+            exts = _available_archive_extensions()
+            self._ext_combo = Gtk.ComboBoxText()
+            saved_ext = (settings.get_string('package-extension')
+                         if settings else '.zip')
+            active_i = 0
+            for i, ext in enumerate(exts):
+                self._ext_combo.append_text(ext)
+                if ext == saved_ext:
+                    active_i = i
+            self._ext_combo.set_active(active_i)
+            row.pack_start(self._ext_combo, False, False, 0)
+            vbox.pack_start(row, False, False, 0)
+
+            self._pkg_radio.connect('toggled', self._on_pkg_toggled)
+            self._on_pkg_toggled(self._pkg_radio)
+
+        self.show_all()
+
+    @staticmethod
+    def _make_message(nf, nd):
+        if nf > 0 and nd > 0:
+            s1 = ngettext('You have selected %d file ',
+                          'You have selected %d files ', nf) % nf
+            s2 = ngettext('and %d folder', 'and %d folders', nd) % nd
+            return s1 + s2
+        if nf > 0:
+            return ngettext('You have selected %d file',
+                            'You have selected %d files', nf) % nf
+        return ngettext('You have selected %d folder',
+                        'You have selected %d folders', nd) % nd
+
+    def _on_pkg_toggled(self, btn):
+        pkg = self._pkg_radio.get_active()
+        self._name_entry.set_sensitive(pkg)
+        self._ext_combo.set_sensitive(pkg)
+
+    def get_results(self):
+        """Returns (separate: bool, package_filename: str|None)."""
+        if self._remote:
+            return True, None
+        sep = self._sep_radio.get_active()
+        if self._settings:
+            self._settings.set_boolean('separate-files', sep)
+        if sep:
+            return True, None
+        name = self._name_entry.get_text().strip() or 'encrypted-package'
+        ext  = self._ext_combo.get_active_text() or '.zip'
+        if self._settings:
+            self._settings.set_string('package-extension', ext)
+        return False, name + ext
+
+class ProgressDialog(Gtk.Dialog):
+    """Cancellable progress window shown during crypto operations."""
+
+    def __init__(self, title):
+        super().__init__(title=title, modal=False)
+        self.add_button(_('Cancel'), Gtk.ResponseType.CANCEL)
+        self._cancelled = False
+
+        inner = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+        inner.set_border_width(12)
+        self.get_content_area().pack_start(inner, True, True, 0)
+
+        self._label = Gtk.Label(label=_('Preparing...'))
+        self._label.set_halign(Gtk.Align.START)
+        inner.pack_start(self._label, False, False, 0)
+
+        self._bar = Gtk.ProgressBar()
+        self._bar.set_size_request(300, -1)
+        inner.pack_start(self._bar, False, False, 0)
+
+        self.connect('response', lambda d, r: setattr(self, '_cancelled', True))
+        self.show_all()
+
+    @property
+    def cancelled(self):
+        return self._cancelled
+
+    def update(self, fraction, message=None):
+        """GLib.idle_add target — update bar and label from main thread."""
+        if message:
+            self._label.set_text(message)
+        if fraction < 0:
+            self._bar.pulse()
+        else:
+            self._bar.set_fraction(min(1.0, max(0.0, fraction)))
+        return False
+
+def _read_file(path):
+    with open(path, 'rb') as fh:
+        return fh.read()
+
+
+def _write_file(path, data):
+    with open(path, 'wb') as fh:
+        fh.write(data)
+    os.chmod(path, stat.S_IRUSR | stat.S_IWUSR)
+
+
+def _package_files(local_paths, pkg_filename, dest_dir):
+    """Bundle local_paths into an archive via file-roller."""
+    archive_path = os.path.join(dest_dir, pkg_filename)
+    cmd = ['file-roller', '--add-to=' + archive_path] + local_paths
+    try:
+        r = subprocess.run(cmd, capture_output=True)
+        if r.returncode != 0:
+            show_error(_("Couldn't package files"),
+                       _('The file-roller process did not complete successfully'))
+            return None
+    except FileNotFoundError:
+        show_error(_("Couldn't package files"),
+                   _('file-roller is not installed'))
+        return None
+    try:
+        os.chmod(archive_path, stat.S_IRUSR | stat.S_IWUSR)
+    except OSError:
+        pass
+    return archive_path
+
+def _finish(prog, errors, title):
+    prog.destroy()
+    for e in errors:
+        show_error(title, str(e))
+    Gtk.main_quit()
+    return False
+
+def op_encrypt(uris):
+    pub_keys = _collect_keys(secret=False)
+
+    if not pub_keys:
+        dlg = Gtk.MessageDialog(message_type=Gtk.MessageType.WARNING,
+                                buttons=Gtk.ButtonsType.NONE)
+        dlg.set_property('text', _('No public keys found'))
+        dlg.format_secondary_text(
+            _('There are no public keys available for encryption.\n'
+              'Would you like to encrypt using a passphrase '
+              '(symmetric encryption) instead?'))
+        dlg.add_buttons(_('Cancel'),        Gtk.ResponseType.CANCEL,
+                        _('Use Passphrase'), Gtk.ResponseType.ACCEPT)
+        dlg.set_default_response(Gtk.ResponseType.CANCEL)
+        r = dlg.run()
+        dlg.destroy()
+        if r != Gtk.ResponseType.ACCEPT:
+            return
+        recipients, signer, symmetric = [], None, True
+    else:
+        chooser = RecipientChooserDialog()
+        resp = chooser.run()
+        if resp != Gtk.ResponseType.OK:
+            chooser.destroy()
+            return
+        recipients, signer, symmetric = chooser.get_results()
+        chooser.destroy()
+        if not symmetric and not recipients:
+            return
+
+    settings = get_settings()
+    armor    = settings.get_boolean('armor-mode') if settings else False
+    ext      = '.asc' if armor else '.pgp'
+
+    # Resolve local paths and detect remote
+    paths  = [uri_to_local_path(u) for u in uris]
+    remote = any(p is None for p in paths)
+
+    # For multiple files: ask whether to package
+    work_paths = [p for p in paths if p]
+    if len(uris) > 1:
+        n_files   = sum(1 for p in work_paths if os.path.isfile(p))
+        n_folders = sum(1 for p in work_paths if os.path.isdir(p))
+        multi_dlg = MultiEncryptDialog(n_files, n_folders, remote, settings)
+        resp = multi_dlg.run()
+        if resp != Gtk.ResponseType.OK:
+            multi_dlg.destroy()
+            return
+        separate, pkg_filename = multi_dlg.get_results()
+        multi_dlg.destroy()
+
+        if not separate and pkg_filename and work_paths:
+            dest_dir = os.path.dirname(work_paths[0])
+            archive  = _package_files(work_paths, pkg_filename, dest_dir)
+            if archive is None:
+                return
+            work_paths = [archive]
+
+    # Pre-resolve all destination paths (in main thread, before spawning worker)
+    dest_map = {}  # src_path -> dest_path
+    for p in work_paths:
+        default = p + ext
+        dest = _resolve_dest(p, default,
+                             _("Choose Encrypted File Name for '%s'"))
+        if dest is None:
+            return  # user cancelled
+        dest_map[p] = dest
+
+    prog   = ProgressDialog(_('Encrypting'))
+    errors = []
+
+    def do_encrypt():
+        try:
+            total = len(dest_map)
+            for i, (src, dst) in enumerate(dest_map.items()):
+                if prog.cancelled:
+                    break
+                GLib.idle_add(prog.update, i / total, os.path.basename(src))
+                try:
+                    with gpg.Context(armor=armor) as ctx:
+                        ctx.signers = [signer] if signer else []
+                        data = _read_file(src)
+                        ciphertext, _er, _ec = ctx.encrypt(
+                            data,
+                            recipients=recipients,
+                            sign=bool(signer),
+                            always_trust=True)
+                    _write_file(dst, ciphertext)
+                except gpg.errors.GPGMEError as e:
+                    if e.getcode() != gpg.errors.CANCELED:
+                        errors.append(_("Couldn't encrypt '%s': %s") %
+                                      (os.path.basename(src), str(e)))
+                except Exception as e:
+                    errors.append(_("Couldn't encrypt '%s': %s") %
+                                  (os.path.basename(src), str(e)))
+        finally:
+            GLib.idle_add(_finish, prog, errors, _('Encryption failed'))
+
+    threading.Thread(target=do_encrypt, daemon=True).start()
+    Gtk.main()
+
+def op_sign(uris):
+    sec_keys = [k for k in _collect_keys(secret=True) if _key_can_sign(k)]
+    if not sec_keys:
+        show_error(_('No signing keys'),
+                   _('No secret keys suitable for signing are available.\n'
+                     'Please create or import a key pair first.'))
+        return
+
+    if len(sec_keys) == 1:
+        signer = sec_keys[0]
+    else:
+        dlg = SignerChooserDialog()
+        resp = dlg.run()
+        signer = dlg.get_key() if resp == Gtk.ResponseType.OK else None
+        dlg.destroy()
+        if signer is None:
+            return
+
+    settings = get_settings()
+    armor    = settings.get_boolean('armor-mode') if settings else False
+    ext      = '.asc' if armor else '.sig'
+
+    # Pre-resolve destinations
+    paths    = [uri_to_local_path(u) for u in uris]
+    dest_map = {}
+    for p in [x for x in paths if x]:
+        default = p + ext
+        dest = _resolve_dest(p, default,
+                             _("Choose Signature File Name for '%s'"))
+        if dest is None:
+            return
+        dest_map[p] = dest
+
+    prog   = ProgressDialog(_('Signing'))
+    errors = []
+
+    def do_sign():
+        try:
+            total = len(dest_map)
+            for i, (src, dst) in enumerate(dest_map.items()):
+                if prog.cancelled:
+                    break
+                GLib.idle_add(prog.update, i / total, os.path.basename(src))
+                try:
+                    with gpg.Context(armor=armor) as ctx:
+                        ctx.signers = [signer]
+                        data = _read_file(src)
+                        sig_data, _sr = ctx.sign(
+                            data, mode=gpg.constants.sig.mode.DETACH)
+                    _write_file(dst, sig_data)
+                except gpg.errors.GPGMEError as e:
+                    if e.getcode() != gpg.errors.CANCELED:
+                        errors.append(_("Couldn't sign '%s': %s") %
+                                      (os.path.basename(src), str(e)))
+                except Exception as e:
+                    errors.append(_("Couldn't sign '%s': %s") %
+                                  (os.path.basename(src), str(e)))
+        finally:
+            GLib.idle_add(_finish, prog, errors, _('Signing failed'))
+
+    threading.Thread(target=do_sign, daemon=True).start()
+    Gtk.main()
+
+
+def op_decrypt(uris):
+    paths = [uri_to_local_path(u) for u in uris]
+
+    # Pre-resolve output paths
+    dest_map = {}
+    for p in [x for x in paths if x]:
+        default = p[:-4] if len(p) > 4 else p + '.decrypted'
+        dest = _resolve_dest(p, default,
+                             _("Choose Decrypted File Name for '%s'"))
+        if dest is None:
+            return
+        dest_map[p] = dest
+
+    prog    = ProgressDialog(_('Decrypting'))
+    errors  = []
+    sigs    = []   # list of (filename, signatures)
+
+    def do_decrypt():
+        try:
+            total = len(dest_map)
+            for i, (src, dst) in enumerate(dest_map.items()):
+                if prog.cancelled:
+                    break
+                GLib.idle_add(prog.update, i / total, os.path.basename(src))
+                try:
+                    with gpg.Context() as ctx:
+                        data = _read_file(src)
+                        plaintext, _dr, verify_result = ctx.decrypt(
+                            data, verify=True)
+                    _write_file(dst, plaintext)
+                    if verify_result and verify_result.signatures:
+                        sigs.append((os.path.basename(src),
+                                     verify_result.signatures))
+                except gpg.errors.GPGMEError as e:
+                    if e.getcode() != gpg.errors.CANCELED:
+                        errors.append(_("Couldn't decrypt '%s': %s") %
+                                      (os.path.basename(src), str(e)))
+                except Exception as e:
+                    errors.append(_("Couldn't decrypt '%s': %s") %
+                                  (os.path.basename(src), str(e)))
+        finally:
+            GLib.idle_add(_finish_with_sigs, prog, errors, sigs,
+                          _('Decryption failed'))
+
+    threading.Thread(target=do_decrypt, daemon=True).start()
+    Gtk.main()
+
+
+def op_verify(uris):
+    paths = [uri_to_local_path(u) for u in uris]
+
+    # For each .sig/.asc file, find or ask for the signed original
+    sig_pairs = []   # list of (sig_path, original_path)
+    for p in [x for x in paths if x]:
+        original = p[:-4] if len(p) > 4 else None
+        if not original or not os.path.exists(original):
+            dlg = Gtk.FileChooserDialog(
+                title=_("Choose Original File for '%s'") % os.path.basename(p),
+                action=Gtk.FileChooserAction.OPEN,
+                buttons=(_('Cancel'), Gtk.ResponseType.CANCEL,
+                         _('Open'),   Gtk.ResponseType.ACCEPT))
+            dlg.set_local_only(False)
+            if original:
+                dlg.set_filename(original)
+            if dlg.run() == Gtk.ResponseType.ACCEPT:
+                original = dlg.get_filename()
+            else:
+                original = None
+            dlg.destroy()
+        if original:
+            sig_pairs.append((p, original))
+
+    if not sig_pairs:
+        return
+
+    prog   = ProgressDialog(_('Verifying'))
+    errors = []
+    sigs   = []
+
+    def do_verify():
+        try:
+            total = len(sig_pairs)
+            for i, (sig_path, orig_path) in enumerate(sig_pairs):
+                if prog.cancelled:
+                    break
+                GLib.idle_add(prog.update, i / total,
+                              os.path.basename(orig_path))
+                try:
+                    with gpg.Context() as ctx:
+                        signed_data = _read_file(orig_path)
+                        sig_data    = _read_file(sig_path)
+                        _vr, result = ctx.verify(signed_data, sig_data)
+                    if result.signatures:
+                        sigs.append((os.path.basename(orig_path),
+                                     result.signatures))
+                    else:
+                        errors.append(
+                            _("No valid signatures found in '%s'") %
+                            os.path.basename(sig_path))
+                except gpg.errors.GPGMEError as e:
+                    if e.getcode() != gpg.errors.CANCELED:
+                        errors.append(_("Couldn't verify '%s': %s") %
+                                      (os.path.basename(sig_path), str(e)))
+                except Exception as e:
+                    errors.append(_("Couldn't verify '%s': %s") %
+                                  (os.path.basename(sig_path), str(e)))
+        finally:
+            GLib.idle_add(_finish_with_sigs, prog, errors, sigs,
+                          _('Verification failed'))
+
+    threading.Thread(target=do_verify, daemon=True).start()
+    Gtk.main()
+
+
+def _finish_with_sigs(prog, errors, sig_list, err_title):
+    prog.destroy()
+    for filename, signatures in sig_list:
+        for sig in signatures:
+            title, body, urgent = _sig_status(sig)
+            show_dialog(title, body)
+    for e in errors:
+        show_error(err_title, str(e))
+    Gtk.main_quit()
+    return False
+
+def _do_import(prog, paths):
+    errors     = []
+    n_imported  = 0
+    n_unchanged = 0
+    try:
+        total = len(paths)
+        for i, p in enumerate(paths):
+            if prog.cancelled:
+                break
+            GLib.idle_add(prog.update, i / total, os.path.basename(p))
+            try:
+                with gpg.Context() as ctx:
+                    data   = _read_file(p)
+                    result = ctx.key_import(data)
+                    if result:
+                        n_imported += result.imported
+                        n_unchanged += result.unchanged
+            except Exception as e:
+                errors.append(_("Couldn't import keys from '%s': %s") %
+                              (os.path.basename(p), str(e)))
+    finally:
+        GLib.idle_add(_finish_import, prog, errors, n_imported, n_unchanged)
+
+def op_import(uris):
+    paths = [uri_to_local_path(u) for u in uris if uri_to_local_path(u)]
+    if not paths:
+        show_error(_('Import failed'),
+                   _('Remote key files cannot be imported directly.'))
+        return
+
+    prog = ProgressDialog(_('Importing'))
+    threading.Thread(target=_do_import, args=(prog, paths),
+                     daemon=True).start()
+    Gtk.main()
+
+def _finish_import(prog, errors, n_imported, n_unchanged):
+    prog.destroy()
+    if not errors:
+        if n_imported > 0:
+            show_dialog(_('Keys Imported'), _('Keys were imported.'))
+        elif n_unchanged > 0:
+            show_dialog(_('Keys Already Present'), _('The keys are already in the keyring.'))
+        else:
+            show_error(_('Import Failed'), _('Keys were found but not imported.'))
+    for e in errors:
+        show_error(_('Import failed'), str(e))
+    Gtk.main_quit()
+    return False
+
+def _sig_status(sig):
+    """Return (title, body, urgent) describing a gpgme signature result."""
+    summary = sig.summary
+    fpr     = sig.fpr or ''
+    label   = _key_label_from_fpr(fpr)
+
+    if summary & gpg.constants.sigsum.KEY_REVOKED:
+        return (_('Revoked Signature'),
+                _('Signed by %s.') % label,
+                True)
+    if summary & gpg.constants.sigsum.KEY_EXPIRED:
+        return (_('Invalid Signature'),
+                _('Signed by %s.') % label,
+                True)
+    if summary & gpg.constants.sigsum.SIG_EXPIRED:
+        return (_('Expired Signature'),
+                _('Signed by %s.') % label,
+                True)
+    if summary & gpg.constants.sigsum.KEY_MISSING:
+        return (_('Unknown Signature'),
+                _('Signing key not in keyring.'),
+                False)
+    if summary & gpg.constants.sigsum.RED:
+        return (_('Bad Signature'),
+                _('Bad or forged signature. The signed data was modified.'),
+                True)
+    if summary & gpg.constants.sigsum.VALID:
+        if sig.validity >= gpg.constants.validity.FULL:
+            return (_('Good Signature'),
+                    _('Signed by %s.') % label,
+                    False)
+        return (_('Valid Signature'),
+                _('Signed by %s (untrusted).') % label,
+                False)
+    # GREEN set, or no flags at all (GPGME verified the signature but the key
+    # has unknown trust): cryptographically valid, but key not certified.
+    return (_('Valid Signature'),
+            _('Signed by %s (key not certified).') % label,
+            False)
+
+
+def main():
+    if not HAVE_GPG:
+        # Can't use show_error yet (Gtk not init'd), so fallback to stderr
+        Gtk.init(sys.argv[:1])
+        show_error(
+            _('python3-gpg not installed'),
+            _('The python3-gpg package is required to encrypt or sign files.'))
+        sys.exit(1)
+
+    Gtk.init(sys.argv[:1])
+
+    parser = argparse.ArgumentParser(prog='nemo-seahorse-tool')
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--encrypt',      action='store_true')
+    group.add_argument('--sign',         action='store_true')
+    group.add_argument('--encrypt-sign', dest='encrypt_sign',
+                       action='store_true')
+    group.add_argument('--decrypt',      action='store_true')
+    group.add_argument('--verify',       action='store_true')
+    group.add_argument('--import',       dest='do_import', action='store_true')
+    parser.add_argument('--uri-list',    dest='uri_list',  action='store_true',
+                        help='Read URIs from stdin instead of arguments')
+    parser.add_argument('uris', nargs='*')
+    args = parser.parse_args()
+
+    if args.uri_list:
+        uris = [line.strip() for line in sys.stdin if line.strip()]
+    else:
+        uris = args.uris
+
+    if not uris:
+        print('nemo-seahorse-tool: must specify files', file=sys.stderr)
+        sys.exit(2)
+
+    if args.encrypt or args.encrypt_sign:
+        op_encrypt(uris)
+    elif args.sign:
+        op_sign(uris)
+    elif args.decrypt:
+        op_decrypt(uris)
+    elif args.verify:
+        op_verify(uris)
+    elif args.do_import:
+        op_import(uris)
+
+
+if __name__ == '__main__':
+    main()

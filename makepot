@@ -13,9 +13,6 @@ potfiles_to_extract=(
     nemo-pastebin/data/nemo-pastebin-configurator.ui
     nemo-repairer/src/encoding-dialog.ui
     nemo-repairer/src/repair-dialog.ui
-    nemo-seahorse/tool/seahorse-multi-encrypt.xml
-    nemo-seahorse/tool/seahorse-notify.xml
-    nemo-seahorse/tool/seahorse-progress.xml
     nemo-share/interfaces/share-dialog.ui
 )
 
@@ -39,11 +36,6 @@ potfiles_c=(
     nemo-repairer/src/*.c
     nemo-repairer/src/*.h
     nemo-repairer/src/*.ui.h
-    nemo-seahorse/nemo-ext/*.c
-    nemo-seahorse/nemo-ext/*.h
-    nemo-seahorse/tool/*.c
-    nemo-seahorse/tool/*.h
-    nemo-seahorse/tool/*.xml.h
     nemo-share/interfaces/*.ui.h
     nemo-share/src/*.c
     nemo-share/src/*.h
@@ -57,8 +49,9 @@ potfiles_python=(
     nemo-pastebin/*.py
     nemo-pastebin/src/*.py
     nemo-pastebin/data/*.ui.h
+    nemo-seahorse/tool/nemo-seahorse-tool
     nemo-terminal/src/*.py
-
+    generate_desktop_files
 )
 potfiles_javascript=(
     nemo-preview/src/js/*/*.js
@@ -67,5 +60,6 @@ potfiles_javascript=(
 xgettext --language=C           --keyword=_ --keyword=N_ --keyword=g_dngettext:2,3 --output="$pot" --join-existing "${potfiles_c[@]}"
 xgettext --language=JavaScript  --keyword=_ --keyword=N_ --output="$pot" --join-existing "${potfiles_javascript[@]}"
 xgettext --language=Python      --keyword=_ --keyword=N_ --output="$pot" --join-existing "${potfiles_python[@]}"
+xgettext --language=Desktop                                --output="$pot" --join-existing nemo-seahorse/data/*.nemo_action
 
 rm -f "${potfiles_extracted[@]}"

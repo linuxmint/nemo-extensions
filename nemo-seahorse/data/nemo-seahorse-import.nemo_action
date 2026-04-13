@@ -1,0 +1,8 @@
+[Nemo Action]
+Name=Import Key
+Comment=Import the PGP key from the selected file
+Active=true
+Exec=nemo-seahorse-tool --import %U
+Icon-Name=xsi-certificate-symbolic
+Selection=notnone
+Extensions=asc;gpg;pgp;

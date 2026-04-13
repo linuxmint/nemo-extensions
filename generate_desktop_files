@@ -1,0 +1,58 @@
+#!/usr/bin/python3
+
+DOMAIN = "nemo-extensions"
+PATH = "/usr/share/locale"
+
+import os
+import gettext
+from mintcommon import additionalfiles
+
+os.environ['LANGUAGE'] = "en_US.UTF-8"
+gettext.install(DOMAIN, PATH)
+
+prefix = "[Nemo Action]\n"
+
+suffix = """Active=true
+Exec=nemo-seahorse-tool --sign %U
+Icon-Name=xsi-certificate-symbolic
+Selection=notnone
+Extensions=any;
+"""
+
+additionalfiles.generate(DOMAIN, PATH, "nemo-seahorse/data/nemo-seahorse-sign.nemo_action", prefix, _("Sign"), _("Sign the selected files"), suffix)
+
+suffix = """Active=true
+Exec=nemo-seahorse-tool --encrypt %U
+Icon-Name=xsi-certificate-symbolic
+Selection=notnone
+Extensions=any;
+"""
+
+additionalfiles.generate(DOMAIN, PATH, "nemo-seahorse/data/nemo-seahorse-encrypt.nemo_action", prefix, _("Encrypt..."), _("Encrypt the selected files"), suffix)
+
+suffix = """Active=true
+Exec=nemo-seahorse-tool --decrypt %U
+Icon-Name=xsi-certificate-symbolic
+Selection=notnone
+Extensions=gpg;pgp;asc;
+"""
+
+additionalfiles.generate(DOMAIN, PATH, "nemo-seahorse/data/nemo-seahorse-decrypt.nemo_action", prefix, _("Decrypt"), _("Decrypt the selected files"), suffix)
+
+suffix = """Active=true
+Exec=nemo-seahorse-tool --verify %U
+Icon-Name=xsi-certificate-symbolic
+Selection=notnone
+Extensions=sig;asc;
+"""
+
+additionalfiles.generate(DOMAIN, PATH, "nemo-seahorse/data/nemo-seahorse-verify.nemo_action", prefix, _("Verify Signature"), _("Verify the signature of the selected file"), suffix)
+
+suffix = """Active=true
+Exec=nemo-seahorse-tool --import %U
+Icon-Name=xsi-certificate-symbolic
+Selection=notnone
+Extensions=asc;gpg;pgp;
+"""
+
+additionalfiles.generate(DOMAIN, PATH, "nemo-seahorse/data/nemo-seahorse-import.nemo_action", prefix, _("Import Key"), _("Import the PGP key from the selected file"), suffix)

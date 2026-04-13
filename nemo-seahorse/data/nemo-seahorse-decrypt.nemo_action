@@ -1,0 +1,8 @@
+[Nemo Action]
+Name=Decrypt
+Comment=Decrypt the selected files
+Active=true
+Exec=nemo-seahorse-tool --decrypt %U
+Icon-Name=xsi-certificate-symbolic
+Selection=notnone
+Extensions=gpg;pgp;asc;
