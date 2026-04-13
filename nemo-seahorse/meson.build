@@ -1,5 +1,5 @@
 project('nemo-seahorse',
-  version: '6.6.0',
+  version: '6.7.0',
   meson_version: '>=0.56.0'
 )
 
