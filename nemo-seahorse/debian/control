@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: debhelper-compat (= 12),
                meson,
-               libgpgme11-dev (>= 1.2.0),
+               libgpgme-dev (>= 1.2.0),
                libnotify-dev (>= 0.7.0),
                libdbus-glib-1-dev (>= 0.78),
                libcryptui-dev,
