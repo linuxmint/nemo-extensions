@@ -73,4 +73,7 @@ extern PyTypeObject *_PyNemoPropertyPageProvider_Type;
 extern PyTypeObject *_PyNemoOperationHandle_Type;
 #define PyNemoOperationHandle_Type (*_PyNemoOperationHandle_Type)
 
+extern PyTypeObject *_PyNemoSelectionProvider_Type;
+#define PyNemoSelectionProvider_Type (*_PyNemoSelectionProvider_Type)
+
 #endif /* NEMO_PYTHON_H */
