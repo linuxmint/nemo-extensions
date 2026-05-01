@@ -201,6 +201,19 @@ MainWindow.prototype = {
             key == Gdk.KEY_F11)
             this.toggleFullScreen();
 
+        if (key == Gdk.KEY_Down) {
+            this._application.emitSelectionEvent(Gtk.DirectionType.DOWN);
+        }
+        else if (key == Gdk.KEY_Up) {
+            this._application.emitSelectionEvent(Gtk.DirectionType.UP);
+        }
+        else if (key == Gdk.KEY_Left) {
+            this._application.emitSelectionEvent(Gtk.DirectionType.LEFT);
+        }
+        else if (key == Gdk.KEY_Right) {
+            this._application.emitSelectionEvent(Gtk.DirectionType.RIGHT);
+        }
+
         return false;
     },
 
