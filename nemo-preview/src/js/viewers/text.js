@@ -40,6 +40,22 @@ const Utils = imports.ui.utils;
 
 const Lang = imports.lang;
 
+/* The scheme name is read from the Xed editor settings, but GtkSourceView's
+ * default StyleSchemeManager only searches its own data directories. Editors
+ * install their style schemes under <data dir>/xed/styles (and gedit under
+ * <data dir>/gedit/styles), so without registering those paths the configured
+ * scheme silently fails to resolve and no colors are applied. Add them here,
+ * once, so the preview loads the same scheme the editor uses. */
+function _addEditorStyleSchemePaths() {
+    let manager = GtkSource.StyleSchemeManager.get_default();
+    let dataDirs = [GLib.get_user_data_dir()].concat(GLib.get_system_data_dirs());
+    for (let i = 0; i < dataDirs.length; i++) {
+        manager.append_search_path(GLib.build_filenamev([dataDirs[i], 'xed', 'styles']));
+        manager.append_search_path(GLib.build_filenamev([dataDirs[i], 'gedit', 'styles']));
+    }
+}
+_addEditorStyleSchemePaths();
+
 function TextRenderer(args) {
     this._init(args);
 }
@@ -76,13 +92,47 @@ TextRenderer.prototype = {
         return this._actor;
     },
 
+    /* Guess the GtkSource language for the previewed file from its name and
+     * content type, so that GtkSourceView can highlight its syntax. */
+    _guessLanguage : function() {
+        let manager = GtkSource.LanguageManager.get_default();
+
+        let fileName = null;
+        try {
+            fileName = this._file.get_basename();
+        } catch (e) {
+            fileName = null;
+        }
+
+        let contentType = null;
+        if (this._mainWindow && this._mainWindow._fileInfo) {
+            contentType = this._mainWindow._fileInfo.get_content_type();
+        }
+
+        if (!fileName && !contentType)
+            return null;
+
+        return manager.guess_language(fileName, contentType);
+    },
+
     _onBufferLoaded : function(loader, buffer) {
         this._buffer = buffer;
         this._buffer.highlight_syntax = true;
 
+        /* The text loader only fills the buffer with the file contents;
+         * it doesn't assign a source language. GtkSourceView only
+         * highlights syntax once a language is set, so guess one from the
+         * file name and content type here. */
+        if (!this._buffer.get_language()) {
+            let language = this._guessLanguage();
+            if (language)
+                this._buffer.set_language(language);
+        }
+
         let styleManager = GtkSource.StyleSchemeManager.get_default();
         let scheme = styleManager.get_scheme(this._geditScheme);
-        this._buffer.set_style_scheme(scheme);
+        if (scheme)
+            this._buffer.set_style_scheme(scheme);
 
         this._view = new GtkSource.View({ buffer: this._buffer,
                                           editable: false,
