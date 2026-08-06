@@ -4,13 +4,9 @@ import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('XApp', '1.0')
 import sys
-import os
-import shutil
-import subprocess
-import threading
 
 import gettext
-from gi.repository import Gtk, Gio, XApp, Gdk, GLib
+from gi.repository import Gtk, Gio, XApp, Gdk
 
 # i18n
 import gettext
@@ -53,7 +49,6 @@ class NemoTerminalPreferencesWindow(XApp.PreferencesWindow):
         self.connect("destroy", Gtk.main_quit)
 
         self.settings = Gio.Settings(schema_id="org.nemo.extensions.nemo-terminal")
-        self._theme_tool = self._resolve_theme_tool()
 
         # Basic
 
@@ -156,98 +151,6 @@ class NemoTerminalPreferencesWindow(XApp.PreferencesWindow):
 
         self.add_page(page, "main", _("Basic"))
 
-        # Appearance
-
-        page = Page()
-
-        frame = Gtk.Frame()
-        frame.get_style_context().add_class("view")
-        page.add(frame)
-
-        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        frame.add(box)
-
-        fontbutton = Gtk.FontButton()
-        self.settings.bind("terminal-font",
-                           fontbutton, "font",
-                           Gio.SettingsBindFlags.DEFAULT)
-        box.pack_start(LabeledItem(_("Font (blank for system monospace)"), fontbutton),
-                       False, False, 6)
-
-        box.pack_start(LabeledItem(_("Foreground color"),
-                                   self._make_color_button("terminal-foreground-color")),
-                       False, False, 6)
-        box.pack_start(LabeledItem(_("Background color"),
-                                   self._make_color_button("terminal-background-color")),
-                       False, False, 6)
-        box.pack_start(LabeledItem(_("Cursor color"),
-                                   self._make_color_button("terminal-cursor-color")),
-                       False, False, 6)
-
-        combo = Gtk.ComboBoxText()
-        combo.append("block", _("Block"))
-        combo.append("ibeam", _("Beam"))
-        combo.append("underline", _("Underline"))
-        self.settings.bind("terminal-cursor-shape",
-                           combo, "active-id",
-                           Gio.SettingsBindFlags.DEFAULT)
-        box.pack_start(LabeledItem(_("Cursor shape"), combo), False, False, 6)
-
-        spinner = Gtk.SpinButton.new_with_range(-1, 1000000, 100)
-        spinner.set_digits(0)
-        self.settings.bind("terminal-scrollback-lines",
-                           spinner, "value",
-                           Gio.SettingsBindFlags.DEFAULT)
-        box.pack_start(LabeledItem(_("Scrollback lines (-1 for unlimited)"), spinner),
-                       False, False, 6)
-
-        # Gogh theme picker
-
-        frame = Gtk.Frame()
-        frame.get_style_context().add_class("view")
-        page.add(frame)
-
-        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        frame.add(box)
-
-        self._theme_combo = Gtk.ComboBoxText.new_with_entry()
-
-        # Type-to-filter over the (long) theme list: a substring-matching
-        # EntryCompletion on the combo's entry, so typing e.g. "mocha" narrows
-        # the suggestions instead of scrolling hundreds of names.
-        self._theme_store = Gtk.ListStore(str)
-        completion = Gtk.EntryCompletion()
-        completion.set_model(self._theme_store)
-        completion.set_text_column(0)
-        completion.set_match_func(self._theme_match_func, self._theme_store)
-        completion.set_popup_completion(True)
-        self._theme_combo.get_child().set_completion(completion)
-
-        apply_button = Gtk.Button(_("Apply theme"))
-        apply_button.set_valign(Gtk.Align.CENTER)
-        apply_button.connect("clicked", self._on_apply_theme)
-
-        theme_row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        theme_row.pack_start(self._theme_combo, True, True, 0)
-        theme_row.pack_end(apply_button, False, False, 6)
-        box.pack_start(LabeledItem(_("Change theme (powered by Gogh)"), theme_row),
-                       False, False, 6)
-
-        self._theme_status = Gtk.Label(label="")
-        self._theme_status.set_line_wrap(True)
-        self._theme_status.set_xalign(0.0)
-        box.pack_start(self._theme_status, False, False, 6)
-
-        if self._theme_tool:
-            threading.Thread(target=self._load_theme_list, daemon=True).start()
-        else:
-            self._theme_combo.set_sensitive(False)
-            apply_button.set_sensitive(False)
-            self._theme_status.set_text(
-                _("'nemo-terminal-theme' not found — install it to switch themes."))
-
-        self.add_page(page, "appearance", _("Appearance"))
-
         # Advanced
 
         page = Page()
@@ -324,80 +227,6 @@ class NemoTerminalPreferencesWindow(XApp.PreferencesWindow):
         self.show_all()
 
         self.present()
-
-    def _make_color_button(self, key):
-        """A ColorButton kept in sync with a string GSettings color key.
-
-        ColorButton exposes a Gdk.RGBA property, not a string, so we bridge it
-        by hand: load the key into the button, write the button's color back on
-        change, and reload when the key changes elsewhere (e.g. a theme apply)."""
-        button = Gtk.ColorButton()
-        button.set_use_alpha(False)
-
-        def load(*args):
-            rgba = Gdk.RGBA()
-            if rgba.parse(self.settings.get_string(key)):
-                button.set_rgba(rgba)
-
-        load()
-        button.connect("color-set",
-                       lambda b: self.settings.set_string(key, b.get_rgba().to_string()))
-        self.settings.connect("changed::" + key, load)
-        return button
-
-    def _resolve_theme_tool(self):
-        """Locate the nemo-terminal-theme importer (PATH, repo tools/, or /usr/bin)."""
-        found = shutil.which("nemo-terminal-theme")
-        if found:
-            return found
-        here = os.path.dirname(os.path.abspath(__file__))
-        for candidate in (os.path.join(here, "..", "tools", "nemo-terminal-theme"),
-                          "/usr/bin/nemo-terminal-theme"):
-            if os.path.isfile(candidate) and os.access(candidate, os.X_OK):
-                return os.path.abspath(candidate)
-        return None
-
-    def _load_theme_list(self):
-        """Populate the theme dropdown from `nemo-terminal-theme --list` (off-thread)."""
-        try:
-            proc = subprocess.run([self._theme_tool, "--list"],
-                                  capture_output=True, text=True, timeout=30)
-            names = [n for n in proc.stdout.splitlines() if n.strip()] \
-                if proc.returncode == 0 else []
-        except Exception:
-            names = []
-        GLib.idle_add(self._populate_theme_combo, names)
-
-    def _populate_theme_combo(self, names):
-        for name in names:
-            self._theme_combo.append_text(name)
-            self._theme_store.append([name])
-        return False
-
-    def _theme_match_func(self, completion, key, iter_, store):
-        # Match the typed text anywhere in the theme name (case-insensitive).
-        # GTK passes `key` already case-folded.
-        return key in store[iter_][0].lower()
-
-    def _on_apply_theme(self, button):
-        name = (self._theme_combo.get_active_text() or "").strip()
-        if not name:
-            self._theme_status.set_text(_("Enter or pick a theme name first."))
-            return
-        self._theme_status.set_text(_("Applying '%s'…") % name)
-        threading.Thread(target=self._apply_theme_thread,
-                         args=(name,), daemon=True).start()
-
-    def _apply_theme_thread(self, name):
-        try:
-            proc = subprocess.run([self._theme_tool, name],
-                                  capture_output=True, text=True, timeout=60)
-            ok = proc.returncode == 0
-            output = (proc.stdout if ok else proc.stderr).strip().splitlines()
-            msg = output[-1] if output else (_("done") if ok else _("failed"))
-        except Exception as exc:
-            ok, msg = False, str(exc)
-        GLib.idle_add(self._theme_status.set_text, ("✓ " if ok else "✗ ") + msg)
 
     def quit(self, *args):
         self.destroy()

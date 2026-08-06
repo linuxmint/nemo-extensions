@@ -11,14 +11,8 @@
         <value value="2" nick="Nemo follows Terminal"/>
         <value value="3" nick="Nemo and Terminal Synchronized"/>
     </enum>
-
-    <enum id="org.nemo.extensions.nemo-terminal.CursorShape">
-        <value value="0" nick="block"/>
-        <value value="1" nick="ibeam"/>
-        <value value="2" nick="underline"/>
-    </enum>
-
-	<schema path="/org/nemo/extensions/nemo-terminal/"
+	
+	<schema path="/org/nemo/extensions/nemo-terminal/" 
 	    id="org.nemo.extensions.nemo-terminal" 
 	    gettext-domain="nemo-terminal">
 	    <key name="default-terminal-height" type="i">    
@@ -80,48 +74,6 @@
            <default>" cd %s &amp;&amp; tput cuu1 &amp;&amp; tput el &amp;&amp; tput cuu1"</default>
            <summary>Change directory command</summary>
            <description>The command used by the terminal to change directory. %s is replaced by the shell-quoted directory name in the shell. This command will have a new line appended.</description>
-        </key>
-
-        <key name="terminal-font" type="s">
-           <default>""</default>
-           <summary>Terminal font</summary>
-           <description>Pango font description used by the terminal, e.g. "Monospace 11". Blank uses the system monospace font.</description>
-        </key>
-
-        <key name="terminal-foreground-color" type="s">
-           <default>""</default>
-           <summary>Terminal foreground color</summary>
-           <description>Text color, as any string Gdk.RGBA can parse, e.g. "#d3d7cf" or "white". Blank uses the VTE default.</description>
-        </key>
-
-        <key name="terminal-background-color" type="s">
-           <default>""</default>
-           <summary>Terminal background color</summary>
-           <description>Background color, as any string Gdk.RGBA can parse, e.g. "#1e1e2e" or "black". Blank uses the VTE default.</description>
-        </key>
-
-        <key name="terminal-cursor-color" type="s">
-           <default>""</default>
-           <summary>Terminal cursor color</summary>
-           <description>Cursor color, as any string Gdk.RGBA can parse, e.g. "#f5e0dc". Blank uses the VTE default.</description>
-        </key>
-
-        <key name="terminal-cursor-shape" enum="org.nemo.extensions.nemo-terminal.CursorShape">
-           <default>"block"</default>
-           <summary>Cursor shape</summary>
-           <description>Shape of the terminal cursor: "block" (classic), "ibeam" (beam) or "underline".</description>
-        </key>
-
-        <key name="terminal-palette" type="as">
-           <default>[]</default>
-           <summary>Terminal color palette</summary>
-           <description>The ANSI color palette as a list of color strings Gdk.RGBA can parse (e.g. "#45475a"). A full theme uses 16 entries (the 8 normal + 8 bright colors); 8, 232 or 256 entries are also accepted. Empty leaves the VTE default palette and only the foreground/background keys apply.</description>
-        </key>
-
-        <key name="terminal-scrollback-lines" type="i">
-           <default>10000</default>
-           <summary>Scrollback lines</summary>
-           <description>Number of scrollback lines the terminal keeps. Use -1 for unlimited.</description>
         </key>
 	</schema>
 </schemalist>
