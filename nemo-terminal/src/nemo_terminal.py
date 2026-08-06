@@ -40,6 +40,8 @@ __website__ = "http://github.com/linuxmint/nemo-extensions"
 
 import os
 import sys
+import shutil
+import subprocess
 from signal import SIGTERM, SIGKILL
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
@@ -58,7 +60,8 @@ _ = gettext.gettext
 import gi
 gi.require_version('Vte', '2.91')
 gi.require_version('Nemo', '3.0')
-from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio
+gi.require_version('Pango', '1.0')
+from gi.repository import GObject, Nemo, Gtk, Gdk, Vte, GLib, Gio, Pango
 
 BASE_KEY = "org.nemo.extensions.nemo-terminal"
 settings = Gio.Settings.new(BASE_KEY)
@@ -87,6 +90,18 @@ class NemoTerminal(object):
         self.term = Vte.Terminal()
 
         settings.bind("audible-bell", self.term, "audible-bell", Gio.SettingsBindFlags.GET)
+
+        # Appearance (font/colors/scrollback). Connect on the shared settings object
+        # so a value change live-updates every open terminal; disconnected in destroy().
+        self._appearance_handler_ids = []
+        self._apply_appearance()
+        for key in ("terminal-font", "terminal-foreground-color",
+                    "terminal-background-color", "terminal-cursor-color",
+                    "terminal-cursor-shape", "terminal-palette",
+                    "terminal-scrollback-lines"):
+            hid = settings.connect("changed::%s" % key,
+                                   lambda *a: self._apply_appearance())
+            self._appearance_handler_ids.append(hid)
 
         self.shell_pid = self.term.spawn_sync(Vte.PtyFlags.DEFAULT, self._path, [terminal_or_default()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)[1]
 
@@ -153,22 +168,14 @@ class NemoTerminal(object):
         menu_item_pastefilenames.set_label(_("Paste Filenames"))
         self.menu_item_pastefilenames = menu_item_pastefilenames
         self.menu.add(menu_item_pastefilenames)
-        #MenuItem => separator #TODO: Implement the preferences window
-        #menu_item = Gtk.SeparatorMenuItem()
-        #self.menu.add(menu_item)
-        #MenuItem => preferences
-        #menu_item = Gtk.ImageMenuItem.new_from_stock("gtk-preferences", None)
-        #self.menu.add(menu_item)
-        #MenuItem => separator
-        #menu_item = Gtk.SeparatorMenuItem()
-        #self.menu.add(menu_item)
-        #MenuItem => Goto current terminal directory
-        #menu_item = Gtk.MenuItem.new_with_label(_("Goto current terminal directory"))
-        #menu_item.connect_after("activate",
-        #        lambda w: self._goto_current_terminal_directory())
-        #self.menu.add(menu_item)
         #MenuItem => separator
         menu_item = Gtk.SeparatorMenuItem()
+        self.menu.add(menu_item)
+        #MenuItem => Preferences
+        menu_item = Gtk.ImageMenuItem.new_from_stock("gtk-preferences", None)
+        menu_item.set_label(_("Preferences"))
+        menu_item.connect_after("activate",
+                                lambda w: self._open_preferences())
         self.menu.add(menu_item)
         #MenuItem => About
         menu_item = Gtk.ImageMenuItem.new_from_stock("gtk-about", None)
@@ -303,6 +310,25 @@ class NemoTerminal(object):
         else:
             self.hbox.hide()
 
+    def _open_preferences(self):
+        """Launch the preferences GUI from the terminal's context menu.
+
+        Prefer the installed `nemo-terminal-prefs` launcher on PATH; fall back
+        to running the implementation directly from its installed location or
+        from the source tree (when developing against a symlinked extension).
+        """
+        launcher = shutil.which("nemo-terminal-prefs")
+        if launcher:
+            subprocess.Popen([launcher])
+            return
+        here = os.path.dirname(os.path.realpath(__file__))
+        for script in (os.path.join(here, "nemo-terminal-prefs.py"),
+                       "/usr/share/nemo-terminal/nemo-terminal-prefs.py"):
+            if os.path.exists(script):
+                subprocess.Popen(["/usr/bin/python3", script])
+                return
+        print("[%s] W: nemo-terminal-prefs not found" % __app_disp_name__)
+
     def show_about_dialog(self):
         """Display the about dialog."""
         about_dlg = Gtk.AboutDialog()
@@ -323,6 +349,10 @@ class NemoTerminal(object):
 
     def destroy(self):
         """Release widgets and the shell process."""
+        #Disconnect live appearance handlers from the shared settings object
+        for hid in self._appearance_handler_ids:
+            settings.disconnect(hid)
+        self._appearance_handler_ids = []
         #Terminate the shell
         self._respawn_lock = True
         try:
@@ -363,6 +393,61 @@ class NemoTerminal(object):
             return path
         else:
             return ""
+
+    def _apply_appearance(self):
+        """Apply font, colors and scrollback from GSettings to the VTE widget.
+
+        Called once at construction and on every change of an appearance key, so
+        edits take effect live in already-open terminals. Blank/unparsable values
+        leave the corresponding VTE default untouched rather than erroring.
+        """
+        # Reading an absent key aborts the process, so guard every read against
+        # code/schema version skew (e.g. an updated .py but the system schema
+        # not yet recompiled): a missing key just falls back to its default.
+        schema = settings.get_property("settings-schema")
+
+        def _get(getter, key, default):
+            return getattr(settings, getter)(key) if schema.has_key(key) else default
+
+        font = _get("get_string", "terminal-font", "")
+        if font:
+            self.term.set_font(Pango.FontDescription.from_string(font))
+        else:
+            self.term.set_font(None)
+
+        fg = Gdk.RGBA()
+        fg_ok = fg.parse(_get("get_string", "terminal-foreground-color", ""))
+        bg = Gdk.RGBA()
+        bg_ok = bg.parse(_get("get_string", "terminal-background-color", ""))
+
+        # A full theme also needs the ANSI palette. When a valid-sized palette is
+        # present, set everything in one call so foreground/background and the
+        # 16 (or 8/232/256) palette colors stay consistent; otherwise just apply
+        # the individual foreground/background colors.
+        palette = []
+        for color in _get("get_strv", "terminal-palette", []):
+            rgba = Gdk.RGBA()
+            if rgba.parse(color):
+                palette.append(rgba)
+        if len(palette) in (8, 16, 232, 256):
+            self.term.set_colors(fg if fg_ok else None,
+                                 bg if bg_ok else None,
+                                 palette)
+        else:
+            if fg_ok:
+                self.term.set_color_foreground(fg)
+            if bg_ok:
+                self.term.set_color_background(bg)
+
+        cursor = Gdk.RGBA()
+        if cursor.parse(_get("get_string", "terminal-cursor-color", "")):
+            self.term.set_color_cursor(cursor)
+
+        # Cursor shape: enum values match Vte.CursorShape (block=0, ibeam=1, underline=2)
+        self.term.set_cursor_shape(
+            Vte.CursorShape(_get("get_enum", "terminal-cursor-shape", 0)))
+
+        self.term.set_scrollback_lines(_get("get_int", "terminal-scrollback-lines", 10000))
 
     def _set_term_height(self, height):
         """Change the terminal height.

@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+#
+# nemo-terminal-theme — apply a Gogh color theme to nemo-terminal.
+#
+# Gogh (https://github.com/Gogh-Co/Gogh) ships each theme as a small YAML file
+# defining 16 ANSI palette colors plus background/foreground/cursor. The Gogh
+# installer only knows how to configure a fixed set of terminals, so this script
+# fetches a theme's color definition directly and writes it into nemo-terminal's
+# GSettings (org.nemo.extensions.nemo-terminal) instead.
+#
+# Usage:
+#   nemo-terminal-theme "Catppuccin Mocha"   # apply a theme by its Gogh name
+#   nemo-terminal-theme --list [FILTER]      # list available Gogh theme names
+#
+# Only colors are changed; font, cursor shape and scrollback are left as-is.
+
+set -euo pipefail
+
+SCHEMA="org.nemo.extensions.nemo-terminal"
+RAW_BASE="https://raw.githubusercontent.com/Gogh-Co/Gogh/master/themes"
+API_THEMES="https://api.github.com/repos/Gogh-Co/Gogh/contents/themes"
+
+die() { echo "nemo-terminal-theme: $*" >&2; exit 1; }
+
+command -v curl >/dev/null || die "curl is required"
+
+# Resolve a gsettings whose GIO has the dconf backend. A non-system gsettings
+# (e.g. one earlier on PATH from Homebrew or conda) may be built without the
+# dconf settings backend and then silently writes to an in-memory backend —
+# `set` succeeds but nothing persists to dconf. Prefer the system binary.
+if [ -x /usr/bin/gsettings ]; then
+    GSETTINGS=/usr/bin/gsettings
+else
+    GSETTINGS="$(command -v gsettings || true)"
+fi
+
+urlencode() {  # percent-encode anything outside the RFC3986 unreserved set
+    local s="$1" out="" c i
+    for (( i=0; i<${#s}; i++ )); do
+        c="${s:i:1}"
+        case "$c" in
+            [a-zA-Z0-9._~-]) out+="$c" ;;
+            *) printf -v c '%%%02X' "'$c"; out+="$c" ;;
+        esac
+    done
+    printf '%s' "$out"
+}
+
+list_themes() {
+    local filter="${1:-}"
+    curl -fsSL "$API_THEMES" \
+        | grep -oE '"name": "[^"]+\.yml"' \
+        | sed -E 's/"name": "(.*)\.yml"/\1/' \
+        | { if [ -n "$filter" ]; then grep -i -- "$filter"; else cat; fi; }
+}
+
+if [ "${1:-}" = "--list" ] || [ "${1:-}" = "-l" ]; then
+    list_themes "${2:-}"
+    exit 0
+fi
+[ $# -ge 1 ] || die 'usage: nemo-terminal-theme "Theme Name" | --list [FILTER]'
+
+# Applying needs gsettings and the schema (with the appearance keys) installed.
+[ -n "$GSETTINGS" ] || die "gsettings is required to apply a theme"
+"$GSETTINGS" list-keys "$SCHEMA" >/dev/null 2>&1 \
+    || die "schema '$SCHEMA' not found — install the nemo-terminal gschema first."
+"$GSETTINGS" list-keys "$SCHEMA" | grep -qx "terminal-palette" \
+    || die "schema '$SCHEMA' has no 'terminal-palette' key — update and recompile the gschema first."
+
+theme="$*"
+url="$RAW_BASE/$(urlencode "$theme").yml"
+yml="$(curl -fsSL "$url")" \
+    || die "could not fetch theme '$theme'. Run with --list to see available names."
+
+field() {  # extract the value of a 'key: <value>' line, ignoring quotes/comments
+    printf '%s\n' "$yml" \
+        | sed -n -E "s/^$1:[[:space:]]*'?([^'[:space:]]+).*/\1/p" | head -n1
+}
+
+# Build the 16-colour palette as a GVariant array literal.
+palette="["
+for i in $(seq -w 1 16); do
+    c="$(field "color_$i")"
+    [ -n "$c" ] || die "theme '$theme' is missing color_$i"
+    palette+="'$c',"
+done
+palette="${palette%,}]"
+
+bg="$(field background)"; fg="$(field foreground)"; cur="$(field cursor)"
+[ -n "$bg" ] && [ -n "$fg" ] || die "theme '$theme' is missing background/foreground"
+
+"$GSETTINGS" set "$SCHEMA" terminal-palette "$palette"
+"$GSETTINGS" set "$SCHEMA" terminal-background-color "$bg"
+"$GSETTINGS" set "$SCHEMA" terminal-foreground-color "$fg"
+[ -n "$cur" ] && "$GSETTINGS" set "$SCHEMA" terminal-cursor-color "$cur"
+
+echo "Applied Gogh theme '$theme' to nemo-terminal."
+echo "  background=$bg  foreground=$fg  cursor=${cur:-<unchanged>}"
