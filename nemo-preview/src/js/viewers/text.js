@@ -32,13 +32,16 @@ const Gtk = imports.gi.Gtk;
 const GtkClutter = imports.gi.GtkClutter;
 const GLib = imports.gi.GLib;
 const GtkSource = imports.gi.GtkSource;
-const Gio = imports.gi.Gio;
 const NemoPreview = imports.gi.NemoPreview;
 
 const MimeHandler = imports.ui.mimeHandler;
 const Utils = imports.ui.utils;
 
 const Lang = imports.lang;
+
+/* The preview always uses the dark GTK theme (see application.js), so pick a
+ * matching dark scheme instead of importing a text editor's preference. */
+const STYLE_SCHEME = 'oblivion';
 
 function TextRenderer(args) {
     this._init(args);
@@ -59,17 +62,6 @@ TextRenderer.prototype = {
         this._textLoader.connect('loaded',
                                  Lang.bind(this, this._onBufferLoaded));
         this._textLoader.uri = file.get_uri();
-
-        this._geditScheme = 'tango';
-        let schemaName = 'org.x.editor.preferences.editor';
-        let installedSchemas = Gio.Settings.list_schemas();
-        if (installedSchemas.indexOf(schemaName) > -1) {
-            let geditSettings = new Gio.Settings({ schema: schemaName });
-            let geditSchemeName = geditSettings.get_string('scheme');
-            if (geditSchemeName != '')
-                this._geditScheme = geditSchemeName;
-        }
-
     },
 
     render : function() {
@@ -81,8 +73,12 @@ TextRenderer.prototype = {
         this._buffer.highlight_syntax = true;
 
         let styleManager = GtkSource.StyleSchemeManager.get_default();
-        let scheme = styleManager.get_scheme(this._geditScheme);
-        this._buffer.set_style_scheme(scheme);
+        let scheme = styleManager.get_scheme(STYLE_SCHEME);
+
+        /* Setting a null scheme clears the buffer's default one, leaving the
+         * text with no colors at all - keep the default if the lookup fails. */
+        if (scheme)
+            this._buffer.set_style_scheme(scheme);
 
         this._view = new GtkSource.View({ buffer: this._buffer,
                                           editable: false,
