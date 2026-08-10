@@ -93,17 +93,20 @@ nemo_preview_create_rounded_background (void)
  * nemo_preview_create_foreign_window:
  * @xid:
  *
- * Returns: (transfer full): a #GdkWindow
+ * Returns: (transfer full) (nullable): a #GdkWindow, or %NULL if @xid can't be
+ * looked up. Nemo sends 0 when it has no X11 window to parent us to.
  */
 GdkWindow *
 nemo_preview_create_foreign_window (guint xid)
 {
-  GdkWindow *retval;
+  GdkDisplay *display = gdk_display_get_default ();
 
-  retval = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (),
-                                                   xid);
+  /* gdk_x11_window_foreign_new_for_display() only checks for GDK_IS_DISPLAY,
+   * so a wayland display would be cast to a GdkX11Display and crash. */
+  if (xid == 0 || !GDK_IS_X11_DISPLAY (display))
+    return NULL;
 
-  return retval;
+  return gdk_x11_window_foreign_new_for_display (display, xid);
 }
 
 /**

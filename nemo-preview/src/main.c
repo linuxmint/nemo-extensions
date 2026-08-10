@@ -108,6 +108,11 @@ main (int argc, char **argv)
   GjsContext *js_context;
   GError *error;
 
+  /* Clutter, the ARGB visual and foreign window parenting are all X11 only,
+   * so run under XWayland rather than fail on a wayland display. */
+  g_setenv ("GDK_BACKEND", "x11", TRUE);
+  g_setenv ("CLUTTER_BACKEND", "x11", TRUE);
+
 #ifdef GDK_WINDOWING_X11
   XInitThreads ();
 #endif
