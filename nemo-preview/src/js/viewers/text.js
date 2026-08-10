@@ -85,8 +85,10 @@ TextRenderer.prototype = {
                                           cursor_visible: false });
         this._view.set_can_focus(false);
 
-        if (this._buffer.get_language())
+        if (this._buffer.get_language()) {
             this._view.set_show_line_numbers(true);
+            this._view.get_style_context().add_class('np-code');
+        }
 
         // FIXME: *very* ugly wokaround to the fact that we can't
         // access event.button from a button-press callback to block
