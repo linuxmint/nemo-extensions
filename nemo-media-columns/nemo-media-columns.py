@@ -219,7 +219,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                 except: pass
                 try: info.artist = audio["artist"][0]
                 except: pass
-                try: info.tracknumber = "{:0>2}".format(audio["tracknumber"][0])
+                try: info.tracknumber = audio["tracknumber"][0].split("/")[0].strip()
                 except: pass
                 try: info.genre = audio["genre"][0]
                 except: pass
@@ -343,7 +343,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
                         except:
                             pass
                         try:
-                            info.tracknumber = track['track_name_position']
+                            info.tracknumber = str(track['track_name_position']).split("/")[0].strip()
                         except:
                             pass
                         try:

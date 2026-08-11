@@ -17,7 +17,7 @@ Depends: ${misc:Depends},
          python3-pypdf,
          python3-pil,
          python3-pymediainfo,
-         gir1.2-nemo-3.0,
+         gir1.2-nemo-3.0 (>= 6.7.4),
          python3-stopit
 Description: Nemo Extension
  A Nemo extension to display music/EXIF and PDF metadata info
