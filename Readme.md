@@ -10,6 +10,7 @@
 - nemo-pastebin: functional
 - nemo-compare: functional
 - nemo-python (python bindings for Nemo): functional
+- nemo-action-bar: functional
 - nemo-terminal: functional (forked from nautilus-terminal-1.0.0)
 - nemo-filename-repairer forked from (nautilus-filename-repairer-0.0.6)
 - nemo-image-converter forked from (nautilus-image-converter-0.3.1)

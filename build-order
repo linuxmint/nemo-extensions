@@ -1,6 +1,7 @@
 # nemo-python is needed for some of the
 # subprojects to install properly.
 nemo-python
+nemo-action-bar
 nemo-audio-tab
 nemo-compare
 nemo-dropbox

@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "appearance": {
+    "alignment": "end",
+    "icon-size": 16,
+    "show-labels": false,
+    "spacing": 2
+  },
+  "buttons": [
+    {
+      "id": "new-folder",
+      "label": "New Folder",
+      "icon": "folder-new-symbolic",
+      "action": "new-folder"
+    },
+    { "type": "separator" },
+    {
+      "id": "cut",
+      "label": "Cut",
+      "icon": "edit-cut-symbolic",
+      "action": "cut"
+    },
+    {
+      "id": "copy",
+      "label": "Copy",
+      "icon": "edit-copy-symbolic",
+      "action": "copy"
+    },
+    {
+      "id": "paste",
+      "label": "Paste",
+      "icon": "edit-paste-symbolic",
+      "action": "paste"
+    },
+    {
+      "id": "duplicate",
+      "label": "Duplicate",
+      "icon": "nemo-action-bar-duplicate-symbolic",
+      "action": "duplicate"
+    },
+    {
+      "id": "rename",
+      "label": "Rename",
+      "icon": "document-edit-symbolic",
+      "action": "rename"
+    },
+    { "type": "separator" },
+    {
+      "id": "undo",
+      "label": "Undo",
+      "icon": "edit-undo-symbolic",
+      "action": "undo"
+    },
+    {
+      "id": "redo",
+      "label": "Redo",
+      "icon": "edit-redo-symbolic",
+      "action": "redo"
+    },
+    { "type": "separator" },
+    {
+      "id": "properties",
+      "label": "Properties",
+      "icon": "document-properties-symbolic",
+      "action": "properties"
+    },
+    {
+      "id": "select-all",
+      "label": "Select All",
+      "icon": "edit-select-all-symbolic",
+      "action": "select-all"
+    },
+    {
+      "id": "show-hidden",
+      "label": "Toggle Hidden Files",
+      "icon": "view-reveal-symbolic",
+      "action": "show-hidden"
+    },
+    { "type": "separator" },
+    {
+      "id": "copy-path",
+      "label": "Copy Paths",
+      "icon": "insert-link-symbolic",
+      "action": "copy-path"
+    },
+    {
+      "id": "open-terminal",
+      "label": "Open in Terminal",
+      "icon": "utilities-terminal-symbolic",
+      "action": "open-terminal"
+    },
+    {
+      "id": "open-admin",
+      "label": "Open as Administrator",
+      "icon": "dialog-password-symbolic",
+      "action": "open-admin",
+      "enabled": false
+    },
+    {
+      "id": "favorite",
+      "label": "Toggle Favorite",
+      "icon": "xsi-favorite-symbolic",
+      "action": "favorite-toggle",
+      "enabled": false
+    },
+    {
+      "id": "archive-create",
+      "label": "Create Archive",
+      "icon": "xsi-add-files-to-archive-symbolic",
+      "action": "archive-create",
+      "enabled": false
+    },
+    {
+      "id": "archive-extract",
+      "label": "Extract Here",
+      "icon": "xsi-extract-archive-symbolic",
+      "action": "archive-extract",
+      "enabled": false
+    },
+    { "type": "separator" },
+    {
+      "id": "trash",
+      "label": "Move to Trash",
+      "icon": "user-trash-symbolic",
+      "action": "trash"
+    }
+  ]
+}
