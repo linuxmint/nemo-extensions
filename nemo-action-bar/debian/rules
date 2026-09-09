@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=nemo-action-bar
+
+%:
+	dh $@ --buildsystem=pybuild
+
+override_dh_auto_install:
+	install -D -m 0644 src/nemo_action_bar.py \
+		debian/nemo-action-bar/usr/share/nemo-python/extensions/nemo_action_bar.py
+	install -D -m 0644 src/buttons.json \
+		debian/nemo-action-bar/usr/share/nemo-action-bar/buttons.json
+	install -D -m 0644 src/icons/nemo-action-bar-duplicate-symbolic.svg \
+		debian/nemo-action-bar/usr/share/nemo-action-bar/icons/nemo-action-bar-duplicate-symbolic.svg

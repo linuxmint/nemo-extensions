@@ -1,0 +1,8 @@
+nemo-action-bar (2.0.0) unstable; urgency=medium
+
+  * Add Nemo Action Bar as a configurable native GTK action bar.
+  * Copy the current Nemo folder path when Copy Paths is used without a
+    selection.
+  * Preserve selected file and folder path copying.
+
+ -- Claudiu Schuster <info@claudiuschuster.de>  Wed, 09 Sep 2026 17:45:00 +0200
