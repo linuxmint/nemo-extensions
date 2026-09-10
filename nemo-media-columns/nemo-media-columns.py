@@ -167,8 +167,8 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             try:
                 with stopit.ThreadingTimeout(self.timeout):
                     info = self.get_media_info(uri, mimetype)
-            except stopit.utils.TimeoutException:
-                print("nemo-media-columns failed to process '%s' within a reasonable amount of time" % (gfile.get_uri(), e))
+            except stopit.utils.TimeoutException as e:
+                print("nemo-media-columns failed to process '%s' within a reasonable amount of time: %s" % (uri, e))
 
         # TODO: we shouldn't set attributes on files that didn't match any of our mimetypes.
         # we do currently so the given columns can be set to '' - we should maybe do this in
