@@ -1,6 +1,6 @@
 project('nemo-fileroller',
     'c',
-    version: '6.7.1',
+    version: '6.7.2',
     meson_version: '>=0.56.0'
 )
 
