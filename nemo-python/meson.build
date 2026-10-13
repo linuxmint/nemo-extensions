@@ -1,6 +1,6 @@
 project('python-nemo',
     'c',
-    version : '6.7.2',
+    version : '6.7.3',
     meson_version : '>=0.56.0'
 )
 
