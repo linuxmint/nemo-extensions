@@ -64,4 +64,5 @@ Active=true
 Exec=nemo-seahorse-tool --encrypt %U
 Icon-Name=xsi-certificate-symbolic
 Selection=notnone
-Extensions=any;
+Extensions=nodirs;
+UriScheme=file

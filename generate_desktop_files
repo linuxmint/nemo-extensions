@@ -15,8 +15,9 @@ prefix = "[Nemo Action]\n"
 suffix = """Active=true
 Exec=nemo-seahorse-tool --sign %U
 Icon-Name=xsi-certificate-symbolic
-Selection=notnone
-Extensions=any;
+Selection=s
+Extensions=nodirs;
+UriScheme=file
 """
 
 additionalfiles.generate(DOMAIN, PATH, "nemo-seahorse/data/nemo-seahorse-sign.nemo_action", prefix, _("Sign"), _("Sign the selected files"), suffix)
@@ -25,7 +26,8 @@ suffix = """Active=true
 Exec=nemo-seahorse-tool --encrypt %U
 Icon-Name=xsi-certificate-symbolic
 Selection=notnone
-Extensions=any;
+Extensions=nodirs;
+UriScheme=file
 """
 
 additionalfiles.generate(DOMAIN, PATH, "nemo-seahorse/data/nemo-seahorse-encrypt.nemo_action", prefix, _("Encrypt..."), _("Encrypt the selected files"), suffix)
