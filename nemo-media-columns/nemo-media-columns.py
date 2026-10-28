@@ -54,6 +54,20 @@ gettext.bindtextdomain(APP, LOCALE_DIR)
 gettext.textdomain(APP)
 _ = gettext.gettext
 
+MP3_TYPES = ('audio/mpeg',)
+IMAGE_TYPES = ('image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff', 'image/psd', 'image/webp', 'image/x-dds', 'image/tga')
+MEDIAINFO_TYPES = ('video/x-msvideo', 'video/mpeg', 'video/x-ms-wmv', 'video/mp4',
+                   'audio/x-flac', 'video/x-flv', 'video/x-matroska', 'audio/x-wav',
+                   'audio/m4a', 'audio/mp4', 'video/quicktime', 'video/webm', 'audio/ogg')
+PDF_TYPES = ('application/pdf',)
+SUPPORTED_TYPES = MP3_TYPES + IMAGE_TYPES + MEDIAINFO_TYPES + PDF_TYPES
+
+def content_type_is_one_of(mimetype, mimetype_list):
+    for t in mimetype_list:
+        if Gio.content_type_is_a(mimetype, t):
+            return True
+    return False
+
 class FileExtensionInfo():
     def __init__(self):
         self.title = None
@@ -163,7 +177,8 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         uri = file.get_activation_uri()
         info = None
 
-        if uri.startswith("file"):
+        # Each timeout starts a thread, so skip files we don't read anything from.
+        if uri.startswith("file") and content_type_is_one_of(mimetype, SUPPORTED_TYPES):
             try:
                 with stopit.ThreadingTimeout(self.timeout):
                     info = self.get_media_info(uri, mimetype)
@@ -196,13 +211,8 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
         # strip file:// to get absolute path
         filename = parse.unquote(uri[7:])
 
-        def file_is_one_of_these(mimetype_list):
-            for t in mimetype_list:
-                if Gio.content_type_is_a(mimetype, t):
-                    return True
-
         # mp3 handling
-        if file_is_one_of_these(('audio/mpeg',)):
+        if content_type_is_one_of(mimetype, MP3_TYPES):
             info = FileExtensionInfo()
             # attempt to read ID3 tag
             id3_good = True
@@ -246,7 +256,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
             return info # if (id3_good or mp3_good) else None
         # image handling
-        elif file_is_one_of_these(('image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff', 'image/psd', 'image/webp', 'image/x-dds', 'image/tga')):
+        elif content_type_is_one_of(mimetype, IMAGE_TYPES):
             info = FileExtensionInfo()
             # EXIF handling routines
             exiv_good = True
@@ -274,9 +284,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
 
             return info # if (exiv_good or pil_good) else None
         # video/flac handling
-        elif file_is_one_of_these(('video/x-msvideo', 'video/mpeg', 'video/x-ms-wmv', 'video/mp4',
-                                   'audio/x-flac', 'video/x-flv', 'video/x-matroska', 'audio/x-wav',
-                                   'audio/m4a', 'audio/mp4', 'video/quicktime', 'video/webm', 'audio/ogg')):
+        elif content_type_is_one_of(mimetype, MEDIAINFO_TYPES):
             info = FileExtensionInfo()
             mediainfo_good = True
 
@@ -376,7 +384,7 @@ class ColumnExtension(GObject.GObject, Nemo.ColumnProvider, Nemo.InfoProvider, N
             return info #if mediainfo_good else None
 
         # pdf handling
-        elif file_is_one_of_these(('application/pdf',)):
+        elif content_type_is_one_of(mimetype, PDF_TYPES):
             info = FileExtensionInfo()
             pdf_good = True
 
