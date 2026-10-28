@@ -7,7 +7,7 @@ from setuptools import setup
 # Setup stage
 setup( packages=[],
     name         = "nemo-terminal",
-    version      = "6.7.3",
+    version      = "6.8.0",
     description  = "Embedded VTE terminal for Nemo file manager",
     author       = "Linux Mint",
     author_email = "root@linuxmint.com",

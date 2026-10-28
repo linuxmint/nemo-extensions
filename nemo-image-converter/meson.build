@@ -1,6 +1,6 @@
 project('nemo-image-converter',
     'c',
-    version: '6.7.3',
+    version: '6.8.0',
     meson_version: '>=0.56.0'
 )
 
