@@ -482,13 +482,15 @@ class Crowbar(object):
             vbox = Gtk.VBox()
             vbox.show()
 
-            #Add the vpan in Nemo, and reparent some widgets
-            if len(crowbar_pp_children) == 2:
-                for crowbar_pp_child in crowbar_pp_children:
-                    crowbar_pp.remove(crowbar_pp_child)
-                crowbar_pp.pack_start(vpan, True, True, 0)
-                vbox.pack_start(crowbar_pp_children[0], False, False, 0)
-                vbox.pack_start(crowbar_pp_children[1], True, True, 0)
+            #Add the vpan in Nemo, and reparent the slot's children into it
+            for crowbar_pp_child in crowbar_pp_children:
+                expand, fill, padding, pack_type = crowbar_pp.query_child_packing(crowbar_pp_child)
+                crowbar_pp.remove(crowbar_pp_child)
+                if pack_type == Gtk.PackType.START:
+                    vbox.pack_start(crowbar_pp_child, expand, fill, padding)
+                else:
+                    vbox.pack_end(crowbar_pp_child, expand, fill, padding)
+            crowbar_pp.pack_start(vpan, True, True, 0)
 
             nterm = NemoTerminal(self._uri, self._window)
 
