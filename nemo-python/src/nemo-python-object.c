@@ -522,10 +522,13 @@ nemo_python_object_instance_init (NemoPythonObject *object)
   	debug_enter();
 
 	class = (NemoPythonObjectClass*)(((GTypeInstance*)object)->g_class);
+	PyGILState_STATE state = pyg_gil_state_ensure();
 
 	object->instance = PyObject_CallObject(class->type, NULL);
 	if (object->instance == NULL)
 		PyErr_Print();
+
+	pyg_gil_state_release(state);
 }
 
 static void
@@ -533,8 +536,12 @@ nemo_python_object_finalize (GObject *object)
 {
   	debug_enter();
 
+	PyGILState_STATE state = pyg_gil_state_ensure();
+
 	if (((NemoPythonObject *)object)->instance != NULL)
 		Py_DECREF(((NemoPythonObject *)object)->instance);
+
+	pyg_gil_state_release(state);
 }
 
 static void

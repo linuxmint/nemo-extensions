@@ -51,6 +51,7 @@ NemoPythonDebug nemo_python_debug;
 static gboolean nemo_python_init_python(void);
 
 static GArray *all_types = NULL;
+static PyThreadState *main_thread_state = NULL;
 
 
 static inline gboolean 
@@ -278,6 +279,9 @@ nemo_module_initialize(GTypeModule *module)
 	nemo_python_load_dir(module, user_extensions_dir);
 
     g_free (user_extensions_dir);
+
+    if (Py_IsInitialized())
+        main_thread_state = PyEval_SaveThread();
 }
  
 void
@@ -286,7 +290,11 @@ nemo_module_shutdown(void)
 	debug_enter();
 
 	if (Py_IsInitialized())
+	{
+		if (main_thread_state)
+			PyEval_RestoreThread(main_thread_state);
 		Py_Finalize();
+	}
 
 	g_array_free(all_types, TRUE);
 }
