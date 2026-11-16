@@ -27,6 +27,7 @@ for project in projects:
         if os.path.exists(filename):
             subprocess.call(["sed", "-i", "/Version:/s/[0-9].[0-9].[0-9]/%s/" % args.version, filename])
 
-    subprocess.call(["dch", "--distribution", args.codename, "-v", args.version,  args.version], stdout=None, stderr=None)
+    subprocess.call(["dch", "--distribution", args.codename, "--force-distribution", "-v", args.version,  args.version],
+                    env=dict(os.environ, DEBEMAIL="root@linuxmint.com"))
     os.chdir("..")
     print("----------------")
